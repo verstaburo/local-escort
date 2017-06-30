@@ -1,25 +1,13 @@
-doctype html
-html(class="no-js", lang="ru")
+extends ../components/layout-default/layout-default
+include ../components/header/header
+include ../components/footer/footer
 
-    include ../components/head/head.pug
-    include ../components/footer/footer.pug
+block header
+    +header
 
-    head
-        +head(head.defaults)
-    body.page
-        |%=symbols=%
+block content
+    //- put your components here
+    h1 Hello World!
 
-        section.page__wrapper
-
-            //- Include your components here
-
-            .page__buffer
-
-        .page__footer
-            +footer()
-
-        script(src='%=static=%js/separate-js/svg4everybody.min.js')
-        script svg4everybody();
-
-        //- Main scripts. You can replace it, but I recommend you to leave it here
-        script(src='%=static=%js/main%=hash=%%=min=%.js')
+block footer
+    +footer

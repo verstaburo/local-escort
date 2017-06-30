@@ -23,5 +23,74 @@ m-blocks-justify()
     text-align justify
     text-justify newspaper
 
+/*
+Быстренько подрубаем аппаратное ускорение для анимирующихся элементов.
+Пример использования:
+div {
+  performance
+}
+*/
+performance(backfase = true, perspective = 1000)
+    if backface
+            backface-visibility hidden
+    perspective perspective
 
-// You can add your own mixins here:
+/*
+Миксин для обрезания длинной строки троеточием.
+Пример использования:
+p {
+  ellipsis(100%)
+}
+*/
+ellipsis(truncation-boundary) {
+    max-width truncation-boundary
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+}
+
+/*
+Миксин для того, чтоб скрыть элемент, но при этом он все равно рендерился
+и был доступен в DOM.
+Пример использования:
+div {
+    visual-hide
+}
+*/
+visual-hide()
+    margin 0
+    padding 0
+    width 0
+    height 0
+    overflow hidden
+    clip rect(0 0 0 0)
+    clip rect(0, 0, 0, 0)
+
+// Standart project transition
+transition(value1, value2 = false)
+    if value2
+        transition value1 .25s ease-in-out, value2 .25s ease-in-out
+
+    else
+        transition value1 .25s ease-in-out
+
+/*
+Миксин для изображений.
+Нужен, чтобы картинка заполняла другой блок подобно background-size: cover
+Пример использования:
+div {
+  fill-img
+}
+*/
+fill-img()
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    margin auto
+    object-fit cover
+    font-family 'object-fit: cover'
+    width 0
+    min-width 100%
+    min-height 100%

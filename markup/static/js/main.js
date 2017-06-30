@@ -1,5 +1,7 @@
-'use strict';
+import svg4everybody from 'svg4everybody';
+import objectFitImages from 'object-fit-images';
 
-/*
-    This file can be used as entry point for webpack!
- */
+$(() => {
+    svg4everybody();
+    objectFitImages();
+});

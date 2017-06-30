@@ -1,0 +1,25 @@
+doctype html
+html(class="no-js", lang="en")
+
+    include ../../../node_modules/bemto.pug/bemto
+    include ../head/head
+
+    head
+        +head(head.defaults)
+    body.page
+        |%=symbols=%
+
+        block header
+
+        section.page__wrapper
+
+            block content
+
+            .page__buffer
+
+        block footer
+
+        block scripts
+
+        //- Main scripts. You can replace it, but I recommend you to leave it here
+        script(src='%=static=%js/main%=hash=%%=min=%.js')
