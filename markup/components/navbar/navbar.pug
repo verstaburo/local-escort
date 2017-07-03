@@ -1,0 +1,28 @@
+mixin navbar
+    +b.UL.navbar&attributes(attributes)
+        block
+
+mixin navbar-item
+    +e.LI.item&attributes(attributes)
+        block
+
+
+mixin navbar-link
+    +e.A.link&attributes(attributes)
+        block
+
+mixin navbar-heading
+    +e.SPAN.heading&attributes(attributes)
+        block
+
+mixin navbar-description
+    +e.SPAN.description&attributes(attributes)
+        block
+
+mixin navbar-col
+    +e.DIV.col&attributes(attributes)
+        block
+
+mixin navbar-badge
+    +e.SPAN.badge&attributes(attributes)
+        block

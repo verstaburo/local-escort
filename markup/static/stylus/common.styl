@@ -3,9 +3,14 @@
 html, body
     height 100%
 
-
 .page
-    // Стили для body
+    margin: 0
+    padding: 0
+    overflow-x: hidden // Убираем горизонтальный скролл
+    color darkGreyColor
+    font-family fontMain
+    font-weight 400
+    letter-spacing 1px/16px
 
 .page__wrapper
     min-height 100%
@@ -62,21 +67,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     transition: background-color 50000000000s ease-in-out 0s !important; // Убираем желтую заливку для автозаполнения в Chrome
 }
 
-/* ##########
-Основные стили
-########## */
-
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; // Убираем горизонтальный скролл
-    width: 100%;
-    min-height: 100%;
-}
-
 body {
-    font-family: $font-main; // Задаем основной шрифт
-    font-size: 0; // Убираем проблему с отступами между inline-элементами
+    font-family: fontMain // Задаем основной шрифт
     box-sizing: border-box; // Задаем box-sizing: border-box по умолчанию
 }
 

@@ -1,3 +1,49 @@
+include ../navbar/navbar
+include ../logo/logo
+include ../search-bar/search-bar
+include ../avatar/avatar
+
 mixin header()
     +b.HEADER.header&attributes(attributes)
-        block
+        +navbar.__navbar
+            +navbar-item
+                +navbar-link(href='#')
+                    +logo
+
+            +navbar-item
+                +navbar-link(href='#')
+                    +navbar-heading All Escorts
+                    +navbar-description 44062
+
+            +navbar-item
+                +navbar-link(href='#')
+                    +navbar-heading Independent
+                    +navbar-description 41908
+
+            +navbar-item
+                +navbar-link(href='#')
+                    +navbar-heading Agency's
+                    +navbar-description 2154
+
+            +navbar-item._flexible
+                +search-bar
+
+            +navbar-item
+                +navbar-link(href='#')
+                    +navbar-heading City
+                    +navbar-description Los Angeles
+
+            +navbar-item
+                +navbar-link(href='#')
+                    +navbar-heading Credits
+                    +navbar-description
+                        | 2260
+                        != pugHelpers.Icon.call(locals, {iconName: 'currency', className: 'navbar__icon_currency', iconWidth: '14', iconHeight: '13'})
+            +navbar-item
+                +navbar-link(href='#')._row._has_badge
+                    +navbar-badge._top_right 2
+                    +navbar-col
+                        +avatar(src='static/img/content/avatars/navbar.png')._size_small
+                    +navbar-col
+                        +navbar-heading Megan
+                        +navbar-description menu
