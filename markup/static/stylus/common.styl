@@ -17,3 +17,113 @@ html, body
 
 .page__buffer
     height 50px
+
+/* ##########
+Убираем outline
+########## */
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+/* ##########
+Цвет выделения текста
+########## */
+
+::selection {
+    background: colorMain;
+    color: white;
+}
+
+/* ##########
+Стандартный цвет плейсхолдера
+########## */
+
+input, textarea {
+
+    &::placeholder {
+        color: colorPlaceholder;
+    }
+}
+
+/* ##########
+Настройки для автозаполнения Chrome
+########## */
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: colorInput !important; // Поменять цвет на аналогичный цвету input
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    transition: background-color 50000000000s ease-in-out 0s !important; // Убираем желтую заливку для автозаполнения в Chrome
+}
+
+/* ##########
+Основные стили
+########## */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; // Убираем горизонтальный скролл
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: $font-main; // Задаем основной шрифт
+    font-size: 0; // Убираем проблему с отступами между inline-элементами
+    box-sizing: border-box; // Задаем box-sizing: border-box по умолчанию
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+img {
+    box-sizing: content-box;
+}
+
+header, section, footer {
+    width: 100%;
+    float: left; // float: left нужен, чтобы убрать пустое место под нижней секцией
+}
+
+/* ##########
+Сброс стандартных отступов для типографики и списков
+########## */
+
+h1, h2, h3, h4, h5, h6, p, span, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+span {
+    font-style: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+/* ##########
+Сброс стилей для активных элементов, добавляем стандарнтый transition
+########## */
+
+a, input, button, select, textarea {
+    transition: all .25s ease-in-out;
+}
+
+select, input, textarea, button {
+    color: colorInput;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0; // Убираем авто-закругление углов на iOS
+}
