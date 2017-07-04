@@ -1,0 +1,68 @@
+photoTapeItemWidth = 88px
+
+.photo-tape
+    display: block
+    //overflow-x: scroll
+    //overflow-y: hidden
+
+    &__items
+        display: flex
+
+        &:hover ^[0]__photo
+            opacity: .3
+
+    &__item:hover &__photo
+        opacity: 1
+
+    &__link
+        position: relative
+        display: block
+        background-color: #000;
+        text-decoration: none
+        font-size: 0
+
+    &__photo
+        width: photoTapeItemWidth
+        height: photoTapeItemWidth
+        pointer-events none
+
+        transition(opacity)
+
+    &__badge
+        position: absolute
+        top: photoTapeItemWidth
+        right: 0
+        transform: translateY(-100%)
+        display: block
+        box-shadow: 0 4px 8px rgba(210, 163, 111, 0.3)
+        border-radius: 4px 0 0
+        width: 24px
+        height: 24px
+        background-color: mainColor
+
+        &::before, &::after
+            position: absolute
+            content: ''
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            display: block
+            background-color: #fff
+
+        &::before
+            width: 8px
+            height: 2px
+
+        &::after
+            width: 2px
+            height: 8px
+
+    &__text
+        display: block
+        max-width: photoTapeItemWidth
+        padding: 12px 12px 10px
+        background-color: bgColor
+        border: 1px solid borderColor
+        color darkGreyColor
+        font-size: 12px
+        text-transform: uppercase

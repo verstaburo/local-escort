@@ -2,6 +2,7 @@ include ../navbar/navbar
 include ../logo/logo
 include ../search-bar/search-bar
 include ../avatar/avatar
+include ../photo-tape/photo-tape
 
 mixin header()
     +b.HEADER.header&attributes(attributes)
@@ -47,3 +48,4 @@ mixin header()
                     +navbar-col
                         +navbar-heading Megan
                         +navbar-description menu
+        +photo-tape
