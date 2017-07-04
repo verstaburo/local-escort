@@ -1,0 +1,24 @@
+mixin range-slider
+    +b.range-slider&attributes(attributes)
+        block
+
+mixin range-slider-fields
+    +e.fields&attributes(attributes)
+        block
+
+mixin range-slider-field
+    +e.field&attributes(attributes)
+        block
+
+mixin range-slider-input
+    +e.INPUT.input&attributes(attributes)
+
+mixin range-slider-text
+    +e.DIV.text&attributes(attributes)
+        +e.B.value
+        +e.SPAN.label
+            block
+
+mixin range-slider-control
+    +e.slider&attributes(attributes)
+

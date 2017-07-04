@@ -1,0 +1,24 @@
+include ../range-slider/range-slider
+
+mixin filter()
+    +b.FORM(method='POST' action='#').filter&attributes(attributes)
+        +e.col
+            +range-slider
+                +range-slider-fields
+                    +range-slider-field
+                        +range-slider-input(type='hidden' name='age-min')._min
+                        +range-slider-text y.o
+                    +range-slider-field
+                        +range-slider-input(type='hidden' name='age-max')._max
+                        +range-slider-text y.o
+                +range-slider-control#filter-age
+        +e.col
+            +range-slider
+                +range-slider-fields
+                    +range-slider-field
+                        +range-slider-input(type='hidden' name='cost-min')._min
+                        +range-slider-text $
+                    +range-slider-field
+                        +range-slider-input(type='hidden' name='cost-max')._max
+                        +range-slider-text $
+                +range-slider-control#filter-cost

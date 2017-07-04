@@ -1,0 +1,54 @@
+.range-slider
+    display: block
+
+    &__fields
+        display: flex
+        border: 1px solid borderColor
+
+    &__field
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 117px
+        height: 60px
+
+        &:not(:last-child)
+            border-right: 1px solid borderColor
+
+    &__input
+        display: block
+
+    &__value
+        font-weight: 700
+        letter-spacing initial
+
+    &__label
+        initial-letter initial
+        margin-left: 2px
+
+    &__slider
+        display: block
+
+        &.ui-slider-horizontal
+            height: 2px
+
+        &.ui-widget-content
+            border: 0
+
+        &.ui-corner-all
+            border-radius: 0
+
+        &.ui-widget-content
+            background-color: transparent;
+
+        .ui-slider-handle
+            top: -7px
+            margin-left: -7px
+            width 14px
+            height 14px
+            border 2px solid mainColor
+            border-radius: 50%
+            background-color #fff
+
+        .ui-widget-header
+            background-color mainColor

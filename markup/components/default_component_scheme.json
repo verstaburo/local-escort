@@ -5,7 +5,7 @@
             "content": "mixin __componentName__()\n    +b.__componentName__&attributes(attributes)\n        block"
         }, {
             "name": "__componentName__.__cssExtension__",
-            "content": ".__componentName__ \n   display: block\n"
+            "content": ".__componentName__ \n\tisplay: block\n"
         }, {
             "name": "__componentName__.js",
             "content": "export default function __componentName__() {\n    \n}"

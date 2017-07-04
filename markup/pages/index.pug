@@ -1,12 +1,15 @@
 extends ../components/layout-default/layout-default
 include ../components/header/header
 include ../components/footer/footer
+include ../components/filter/filter
+include ../components/container/container
 
 block header
     +header
 
 block content
-
+    +container
+        +filter
 
 block footer
     +footer

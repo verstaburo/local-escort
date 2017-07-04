@@ -7,6 +7,7 @@
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "bemto.pug": "^2.1.0",
+    "jquery-ui": "^1.12.1",
     "object-fit-images": "^3.2.3",
     "rupture": "^0.6.2",
     "svg4everybody": "^2.1.8"
