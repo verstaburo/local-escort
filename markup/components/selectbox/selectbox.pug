@@ -1,0 +1,19 @@
+mixin selectbox(initialValue)
+    +b.selectbox&attributes(attributes)
+        //- TODO initialValue ДЛЯ ЗАГЛУШКИ
+        +e.box
+            +e.SPAN.value= initialValue
+        != pugHelpers.Icon.call(locals, {iconName: 'arrow-sl', className: 'selectbox__arrow', iconWidth: '8', iconHeight: '8'})
+        block
+
+mixin selectbox-control
+    +e.SELECT.control&attributes(attributes)
+        block
+
+mixin selectbox-list
+    +e.UL.list&attributes(attributes)
+        block
+
+mixin selectbox-list-item
+    +e.LI.item&attributes(attributes)
+        block
