@@ -1,0 +1,8 @@
+mixin tags
+    +b.UL.tags&attributes(attributes)
+        block
+
+mixin tags-item(href)
+    +e.LI.item&attributes(attributes)
+        +e.A(href=href || '#').link
+            block
