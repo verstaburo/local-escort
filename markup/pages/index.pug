@@ -3,6 +3,7 @@ include ../components/header/header
 include ../components/footer/footer
 include ../components/filter/filter
 include ../components/container/container
+include ../components/model-common-info/model-common-info
 
 block header
     +header
@@ -10,6 +11,7 @@ block header
 block content
     +container
         +filter
+        +model-common-info('Megan', 22, 390)
 
 block footer
     +footer

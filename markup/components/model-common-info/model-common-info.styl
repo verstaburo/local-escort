@@ -1,0 +1,41 @@
+.model-common-info
+    display: flex
+    width: 100%
+    min-height: 98px
+    background-color: transparent
+    border: 1px solid borderColor
+
+    &__col
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        &_left
+            padding: 0 29px
+            border-right: 1px solid borderColor
+            flex: 1
+
+        &_right
+            align-items: center
+            padding: 0 27px
+
+    &__name
+        font-size: 20px
+        text-transform: uppercase
+
+    &__age
+        margin-top: 4px
+        letter-spacing initial
+
+    &__price
+        font-family: fontSecond
+        font-size 21px
+        font-weight: 500
+        letter-spacing initial
+
+    &__label
+        margin-top: 5px
+        font-family: fontSecond
+        font-size: 18px
+        color: mainColor
+        letter-spacing initial

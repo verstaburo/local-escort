@@ -1,0 +1,9 @@
+mixin model-common-info(name, age, price)
+    +b.model-common-info&attributes(attributes)
+        +e.P.col._left
+            +e.SPAN.name= name
+            +e.SPAN.age= `${age} age`
+
+        +e.P.col._right
+            +e.SPAN.price= price
+            +e.SPAN.label $ / h
