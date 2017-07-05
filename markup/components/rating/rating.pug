@@ -1,0 +1,14 @@
+mixin rating(firstLetter, secondLetter)
+    +b.rating&attributes(attributes)
+        +e.stars
+            - var activeModifier = 'rating__star_active';
+            - var defaultStar = 'rating__star';
+
+            - for (var i = 0; i < 5; i++)
+                - var className = (i + 1) <= Number(firstLetter) ? defaultStar + ' ' + activeModifier : defaultStar;
+
+                != pugHelpers.Icon.call(locals, {iconName: 'star', className, iconWidth: '16', iconHeight: '15'})
+
+        +e.DIV.value
+            b= `${firstLetter},`
+            span= secondLetter || 0

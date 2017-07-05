@@ -1,0 +1,26 @@
+.rating
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    &__stars
+        display: flex
+        font-size: 0
+
+    &__star
+        fill: #e6e6e6
+
+        &:not(:last-child)
+            margin-right: 8px
+
+        &_active
+            fill: mainColor
+
+    &__value
+
+        b, span
+            font-family: fontSecond
+
+        b
+            font-weight: 500
+            font-size: 21px
