@@ -1,0 +1,26 @@
+include ../model-common-info/model-common-info
+include ../rating/rating
+include ../short-info/short-info
+include ../tags/tags
+
+mixin model-info-popup()
+    +b.model-info-popup&attributes(attributes)
+        +model-common-info('Megan', 22, 390).__header
+        +rating(4).__rating
+        +e.info
+            +short-info
+                +short-info-heading BDSM
+                +short-info-content
+                    +short-info-text Independed
+            +short-info
+                +short-info-heading Languages
+                +short-info-content
+                    +short-info-text En, Fr
+
+        +tags.__tags
+            +tags-item('#') Incall
+            +tags-item('#') Outcall
+            +tags-item('#') Pornstar
+            +tags-item('#') With Video
+
+        +e.A.action(href='#') View profile

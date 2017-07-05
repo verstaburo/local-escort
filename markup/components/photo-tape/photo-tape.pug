@@ -1,11 +1,18 @@
+include ../model-info-popup/model-info-popup
+
 mixin photo-tape()
     +b.photo-tape&attributes(attributes)
         +e.UL.items
+            +e.LI.item
+                +e.A.link(href='#')
+                    +e.IMG(src=`static/img/content/photo-tape/1.jpg` alt=`Model 1`).photo
+                    +e.SPAN.badge
+                    +e.SPAN.text put me here
+
             - for (var i = 0; i < 2; i++)
                 - for (var j = 1; j <= 15; j++)
                     +e.LI.item
                         +e.A.link(href='#')
                             +e.IMG(src=`static/img/content/photo-tape/${j}.jpg` alt=`Model ${j}`).photo
-                            - if (i == 0 && j === 1)
-                                +e.SPAN.badge
-                                +e.SPAN.text put me here
+
+                        +model-info-popup

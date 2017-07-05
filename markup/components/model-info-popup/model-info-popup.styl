@@ -1,0 +1,51 @@
+modelInfoPopupBigXPadding = 30px
+modelInfoPopupMediumXPadding = 18px
+
+.model-info-popup
+    position: absolute;
+    top: 100%
+    left: 50%;
+    transform: translate(-50%, -4px)
+    display: none
+    width: 258px
+    background-color: #fff
+    z-index: 50
+
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translate(-50%, -50%) rotate(45deg)
+        width: 9px
+        height: 9px
+        background-color: #fff
+
+    &__header
+        border: 0
+
+    &__rating
+        padding: 23px modelInfoPopupBigXPadding 22px;
+        border-top: 1px solid borderColor
+        border-bottom: 1px solid borderColor
+
+    &__info
+        display: flex
+        justify-content: space-between
+        padding: 22px modelInfoPopupBigXPadding 18px;
+
+    &__tags
+        padding-left: 18px
+        padding-right: 18px
+
+    &__action
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-top: 18px
+        width: 100%
+        height: 60px
+        border-top: 1px solid borderColor
+        text-transform: uppercase
+        text-decoration: none
+        color: darkGreyColor
