@@ -1,5 +1,8 @@
+include ../icon-button/icon-button
+
 mixin search-bar()
     +b.FORM(method='POST' action='#').search-bar&attributes(attributes)
         +e.INPUT.input(type='text' name='search' placeholder='search')
         +e.BUTTON.button(type='submit')
             != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'search-bar__icon', iconWidth: '16', iconHeight: '16'})
+        +icon-button('close', 16, 16).__close
