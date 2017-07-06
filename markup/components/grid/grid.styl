@@ -1,0 +1,24 @@
+grid-col-width = grid-container-width / grid-cols // Ширина одной колонки
+grid-modifiers = ( one two three four five six seven eight nine ten elevel twelve thirteen fourteen fifteen )
+
+.grid
+    font-size 0
+    display block // fallback для старых браузеров
+    display flex
+    flex-wrap wrap
+    margin-left -(grid-gap / 2)
+    margin-right -(grid-gap / 2)
+
+    &first-of-type
+        margin-top -grid-gap
+
+    &__col
+        display inline-block // fallback для старых браузеров
+        box-sizing border-box
+        padding grid-gap (grid-gap / 2) 0
+        margin 0
+
+
+        for i in range(0,(length(grid-modifiers) - 1))
+            &_{grid-modifiers[i]}
+                width (i + 1) * grid-col-width
