@@ -1394,6 +1394,10 @@ svg4everybody@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/svg4everybody/-/svg4everybody-2.1.8.tgz#c4fb648999104fc02225852f847ccfbc0b6d7586"
 
+swiper@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-3.4.2.tgz#39d6b410b1a39833e1f72d3b72999df5f5e38392"
+
 through2@^0.6.1:
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-0.6.5.tgz#41ab9c67b29d57209071410e1d7a7a968cd3ad48"

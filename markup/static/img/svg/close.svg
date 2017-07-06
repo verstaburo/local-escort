@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="18" height="2" viewBox="0 0 18 2"><path fill="#1a1b1c" d="M0 2V0h18v2z"/><path fill="#1a1b1c" d="M0 2V0h18v2z"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="01-Model-list" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01_List_8_search-2" transform="translate(-896.000000, -36.000000)" fill="#1A1B1C">
+            <g id="search" transform="translate(169.000000, 0.000000)">
+                <g id="action" transform="translate(646.000000, 14.000000)">
+                    <g id="close" transform="translate(59.000000, 0.000000)">
+                        <path d="M28.7279221,28.7279221 L20.7279221,28.7279221 L20.7279221,30.7279221 L28.7279221,30.7279221 L28.7279221,38.7279221 L30.7279221,38.7279221 L30.7279221,30.7279221 L38.7279221,30.7279221 L38.7279221,28.7279221 L30.7279221,28.7279221 L30.7279221,20.7279221 L28.7279221,20.7279221 L28.7279221,28.7279221 Z" id="Combined-Shape" transform="translate(29.727922, 29.727922) rotate(-45.000000) translate(-29.727922, -29.727922) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

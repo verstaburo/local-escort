@@ -1,0 +1,196 @@
+.model-preview
+    display: block
+    max-width: 258px
+    box-shdow: 0 0 0 0 rgba(0, 0, 0, 0)
+    transition(box-shadow)
+
+    &:hover
+        box-shadow: 0 10px 40px rgba(29, 29, 29, 0.1)
+
+        & ^[0]__info
+            background-color: #fff
+            border-left-color transparent
+            border-right-color transparent
+            border-top-color transparent
+
+        & ^[0]__actions
+            opacity: 1
+            pointer-events all
+
+        & ^[0]__pagination
+            opacity: 1
+
+    &__content
+        position: relative
+        display: block
+
+
+    &__info
+        transition(background-color, border-color)
+
+    &__footer
+        display: block
+        position: relative
+
+    &__actions
+        position: absolute
+        top: 100%
+        left: 0
+        display: flex
+        width: 100%
+        background-color: #fff
+        opacity: 0
+        pointer-events none
+        transition(opacity)
+        z-index: 3
+
+    &__action
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 60px
+        text-decoration: none
+
+        &_info
+            width: 60px
+            color mainColor
+            font-family fontSecond
+            font-size 23px
+            letter-spacing initial
+
+        &_profile
+            flex: 1
+            color darkGreyColor
+            font-family fontMain
+            font-size 16px
+            font-weight 400
+            letter-spacing 1px
+            text-transform uppercase
+
+    &__badges
+        position: absolute
+        left: 0
+        display: flex
+        justify-content: flex-end
+        width: 100%
+        height: 24px
+        z-index: 1
+        overflow: hidden
+
+        &_top
+            top: 0
+
+            & ^[0]__badge_skew
+                transform: skew(20deg)
+
+                span
+                    transform: skew(-20deg)
+
+        &_bottom
+            bottom: 0
+
+            & ^[0]__badge_skew
+                transform: skew(-20deg)
+
+                span
+                    transform: skew(20deg)
+
+    &__badge
+        line-height: 24px
+        white-space: nowrap
+        text-transform: uppercase
+        padding: 0 18px
+
+        &_skew
+            margin-right: -5px
+
+        span
+            display: block
+
+        &_vip
+            color: #fff
+            font-size: 13px
+            font-weight: 700
+            text-transform: uppercase
+            background-color: mainColor
+
+        &_verified
+            text-transform: uppercase
+            font-size: 13px
+            color: #fff
+            background-color: darkGreyColor;
+
+        &_new
+            background-color darkGreyColor
+            text-transform: uppercase
+            font-size: 13px
+            font-weight: 700
+            color: mainColor
+
+        &_info
+            background-color: darkGreyColor
+            padding: 0 7px
+            font-size: 12px
+            color: rgba(255, 255, 255, .7)
+            margin-right: 0
+
+    &__button
+        position: absolute
+        top: 0
+        width: 50%
+        height: 100%
+        opacity: 0
+        background-color: #000
+        transition(opacity)
+        cursor: pointer
+        z-index: 5
+
+        &.swiper-button-disabled
+            pointer-events none
+
+        &:hover
+            opacity: .2
+
+        &_prev
+            left: 0
+
+        &_next
+            right: 0
+
+    &__photo
+        width: 100%
+        height: auto
+
+    &__online
+        position: absolute
+        top: 7px
+        left: 7px
+        display: block
+        box-shadow: 0 2px 8px rgba(66, 222, 159, .5)
+        width: 9px
+        height: 9px
+        background-color: #42de9f
+        border-radius: 50%
+        z-index: 2
+
+    &__pagination
+        position: absolute
+        bottom: 12px
+        left: 12px
+        z-index: 20
+        opacity: 0
+        transition(opacity)
+
+        .swiper-pagination-bullet
+            width 4px
+            height 4px
+            box-shadow 0 2px 9px rgba(0, 0, 0, .5)
+            background-color rgba(255, 255, 255, .3)
+            margin: 0
+            transition(background-color)
+
+            &:not(:last-child)
+                margin-left: 8px
+
+            &-active
+                background-color #fff

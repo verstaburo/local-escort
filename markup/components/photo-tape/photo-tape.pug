@@ -5,7 +5,7 @@ mixin photo-tape()
         +e.UL.items
             +e.LI.item
                 +e.A.link(href='#')
-                    +e.IMG(src=`static/img/content/photo-tape/1.jpg` alt=`Model 1`).photo
+                    +e.IMG(src=`%=static=%img/content/photo-tape/1.jpg` alt=`Model 1`).photo
                     +e.SPAN.badge
                     +e.SPAN.text put me here
 
@@ -13,6 +13,6 @@ mixin photo-tape()
                 - for (var j = 1; j <= 15; j++)
                     +e.LI.item
                         +e.A.link(href='#')
-                            +e.IMG(src=`static/img/content/photo-tape/${j}.jpg` alt=`Model ${j}`).photo
+                            +e.IMG(src=`%=static=%img/content/photo-tape/${j}.jpg` alt=`Model ${j}`).photo
 
                         +model-info-popup.__popup

@@ -12,6 +12,10 @@ mixin grid()
     .grid&attributes(attributes)
         block
 
+mixin grid-masonry()
+    +grid.js-masonry&attributes(attributes)
+        block
+
 mixin col(number)
     - var colnumber = "one";
     - if (number === 1)

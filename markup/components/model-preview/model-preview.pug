@@ -1,0 +1,28 @@
+include ../model-common-info/model-common-info
+
+mixin model-preview(photos, name, age, price, isOnline)
+    +b.model-preview&attributes(attributes)
+        +e.content.swiper-container
+            +e.photos.swiper-wrapper
+                each photo in photos
+                    +e.IMG.photo.swiper-slide(src=`%=static=%img/content/model-preview/${photo}.jpg` alt=`Model ${name}`)
+            if isOnline
+                +e.online
+            block
+            +e.pagination
+            +e.button._prev
+            +e.button._next
+
+        +e.footer
+            +model-common-info(name, age, price).__info
+            +e.actions
+                +e.A(href='#').action._info i
+                +e.A(href='#').action._profile View profile
+
+mixin model-preview-badges
+    +e.badges&attributes(attributes)
+        block
+
+mixin model-preview-badge
+    +e.SPAN.badge&attributes(attributes)
+        block
