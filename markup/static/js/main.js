@@ -3,6 +3,7 @@ import objectFitImages from 'object-fit-images';
 import filter from '../../components/filter/filter';
 import searchBar from '../../components/search-bar/search-bar';
 import modelPreview from '../../components/model-preview/model-preview';
+import grid from '../../components/grid/grid';
 
 $(() => {
     svg4everybody();
@@ -10,4 +11,6 @@ $(() => {
     filter();
     searchBar();
     modelPreview();
+    grid();
+    window.rebuildGrd = grid;
 });

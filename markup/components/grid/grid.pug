@@ -12,42 +12,42 @@ mixin grid()
     .grid&attributes(attributes)
         block
 
-mixin grid-masonry()
-    +grid.js-masonry&attributes(attributes)
+mixin grid-masonry(columns, blockClass)
+    +grid.js-masonry(data-columns=columns data-block=blockClass)&attributes(attributes)
         block
 
 mixin col(number)
     - var colnumber = "one";
     - if (number === 1)
-    - colnumber = 'one';
+        - colnumber = 'one';
     - if (number === 2)
-    - colnumber = 'two';
+        - colnumber = 'two';
     - if (number === 3)
-    - colnumber = 'three';
+        - colnumber = 'three';
     - if (number === 4)
-    - colnumber = 'four';
+        - colnumber = 'four';
     - if (number === 5)
-    - colnumber = 'five';
+        - colnumber = 'five';
     - if (number === 6)
-    - colnumber = 'six';
+        - colnumber = 'six';
     - if (number === 7)
-    - colnumber = 'seven';
+        - colnumber = 'seven';
     - if (number === 8)
-    - colnumber = 'eight';
+        - colnumber = 'eight';
     - if (number === 9)
-    - colnumber = 'nine';
+        - colnumber = 'nine';
     - if (number === 10)
-    - colnumber = 'ten';
+        - colnumber = 'ten';
     - if (number === 11)
-    - colnumber = 'eleven';
+        - colnumber = 'eleven';
     - if (number === 12)
-    - colnumber = 'twelve';
+        - colnumber = 'twelve';
     - if (number === 13)
-    - colnumber = 'thirteen';
+        - colnumber = 'thirteen';
     - if (number === 14)
-    - colnumber = 'fourteen';
+        - colnumber = 'fourteen';
     - if (number === 15)
-    - colnumber = 'fifteen';
+        - colnumber = 'fifteen';
 
     .grid__col(class="grid__col_" + colnumber)&attributes(attributes)
         block
