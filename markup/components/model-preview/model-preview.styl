@@ -23,10 +23,26 @@
         & ^[0]__pagination
             opacity: 1
 
+        & ^[0]__content::before
+            opacity: .2
+
     &__content
         position: relative
         display: block
 
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            display: block
+            width: 100%
+            height: 60px
+            background-color: #fff
+            background-image: linear-gradient(transparent, #000)
+            opacity: 0
+            z-index: 2
+            transition(opacity)
 
     &__info
         transition(background-color, border-color)
@@ -77,7 +93,7 @@
         justify-content: flex-end
         width: 100%
         height: 24px
-        z-index: 1
+        z-index: 3
         overflow: hidden
 
         &_top

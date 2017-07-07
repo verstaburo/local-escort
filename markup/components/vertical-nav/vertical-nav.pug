@@ -1,0 +1,8 @@
+mixin vertical-nav()
+    +b.UL.vertical-nav&attributes(attributes)
+        block
+
+mixin vertical-nav-item(href)
+    +e.LI.item&attributes(attributes)
+        +e.A(href=href).link
+            block

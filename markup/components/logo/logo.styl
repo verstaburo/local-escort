@@ -1,6 +1,7 @@
 .logo
     display: flex
     align-items: center
+    text-decoration: none
 
     &::before
         content: ''
@@ -9,6 +10,15 @@
         border-radius 50%
         background-color #d8d8d8
         opacity .6
+
+    &_light
+
+        & ^[0]__text
+            color #fff
+
+        &::before
+            background-color: #d8d8d8
+            opacity: .09
 
     &__text
         margin-left: 12px

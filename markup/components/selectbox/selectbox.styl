@@ -2,6 +2,26 @@
     position: relative
     display: block
 
+    &_dark
+        & ^[0]__box
+            border: transparent
+
+        & ^[0]__value
+            color: mainColor
+
+    &_small
+        & ^[0]__box
+          padding: 0
+          height: initial
+
+        & ^[0]__arrow
+            bottom: 4px
+            right: 0
+
+    &_default-text
+        & ^[0]__value
+            text-transform: initial;
+
     &__box
         display: flex
         align-items: center

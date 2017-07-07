@@ -1,3 +1,69 @@
+include ../container/container
+include ../grid/grid
+include ../logo/logo
+include ../selectbox/selectbox
+include ../vertical-nav/vertical-nav
+
 mixin footer()
     +b.FOOTER.footer&attributes(attributes)
-        block
+        +container
+            +grid
+                +col(6)
+                    +grid.footer__row
+                        +col(4).footer__col
+                            +logo.A(href='#')._light
+                        +col(4).footer__col
+                            +e.select
+                                +e.SPAN.heading._big City
+                                +selectbox('Los Angeles')._dark._small._default-text
+                        +col(4).footer__col
+                            +e.social
+                                +e.SPAN.heading Follow us
+
+                                +e.social-items
+                                    a(href='#')
+                                        != pugHelpers.Icon.call(locals, {iconName: 's-fb', className: 'footer__icon footer__icon_fb', iconWidth: '9', iconHeight: '19'})
+                                    a(href='#')
+                                        != pugHelpers.Icon.call(locals, {iconName: 's-tw', className: 'footer__icon footer__icon_tw', iconWidth: '19', iconHeight: '15'})
+                    +grid.footer__row
+                        +col(4).footer__col
+                            +e.A(href='#').item
+                                span All escorts
+                                span 44062
+                        +col(4).footer__col
+                            +e.A(href='#').item._white
+                                span Independent
+                                span 41908
+                        +col(4).footer__col
+                            +e.A(href='#').item._white
+                                span Agency’s
+                                span 2154
+                +col(6)
+                    +grid.footer__row
+                        +col(4).footer__col
+                            +vertical-nav
+                                +vertical-nav-item('#') My Profile
+                                +vertical-nav-item('#') Edit
+                                +vertical-nav-item('#') LogOut
+                        +col(4).footer__col
+                            +vertical-nav
+                                +vertical-nav-item('#') Buy Credits
+                                +vertical-nav-item('#') Boost Me Up
+                                +vertical-nav-item('#') Help
+                        +col(4).footer__col
+                            +vertical-nav
+                                +vertical-nav-item('#') Privacy & Terms
+                                +vertical-nav-item('#') About Us
+                                +vertical-nav-item('#') Contact Us
+
+                    +grid.footer__row
+                        +col(4).footer__col
+                            +e.SPAN.copyright © 2016 LocalEscorts.xxx All escorts were 18 or older at the time of depiction.
+                        +col(4).footer__col
+                            +e.select
+                                +e.SPAN.heading._big Language
+                                +selectbox('Los Angeles')._dark._small._default-text
+                        +col(4).footer__col
+                            +e.select
+                                +e.SPAN.heading._big CY.
+                                +selectbox('DOL $')._dark._small._default-text
