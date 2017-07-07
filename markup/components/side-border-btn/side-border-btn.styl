@@ -1,0 +1,17 @@
+.side-border-btn
+    display: flex
+    align-items: center
+    width: 100%
+
+    &::before, &::after
+        content: ''
+        display: block
+        width: 100%
+        height: 1px
+        background-color: borderColor
+
+    &__button
+        min-width: 258px
+        flex-shrink: 0
+        border-bottom: 2px solid mainColor
+        text-transform: uppercase

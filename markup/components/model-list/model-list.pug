@@ -1,0 +1,54 @@
+include ../filter/filter
+include ../container/container
+include ../model-preview/model-preview
+include ../grid/grid
+include ../side-border-btn/side-border-btn
+
+mixin model-list()
+    +b.model-list&attributes(attributes)
+        +container
+            +filter
+
+            +grid-masonry(4, '.model-preview').js-model-preview-grid
+                +model-preview([7, 7, 7], 'Sonya', 20, 325, true)
+                    +model-preview-badges._top
+                        +model-preview-badge._new._skew
+                            span New
+                        +model-preview-badge._info
+                            span 1 hour ago
+                +model-preview([5, 5, 5, 5], 'Megan', 22, 390)
+                    +model-preview-badges._top
+                        +model-preview-badge._vip._skew
+                            span Vip
+                    +model-preview-badges._bottom
+                        +model-preview-badge._verified._skew
+                            span Verified
+                +model-preview([8, 8, 8, 8], 'Valeria', 26, 420)
+                    +model-preview-badges._top
+                        +model-preview-badge._vip._skew
+                            span Vip
+                +model-preview([9, 9, 9, 9, 9, 9, 9], 'Sonya', 20, 325)
+                    +model-preview-badges._bottom._skew
+                        +model-preview-badge._verified._skew
+                            span Verified
+                +model-preview([2, 2, 2], 'Christine', 27, 370, true)
+                    +model-preview-badges._top
+                        +model-preview-badge._vip._skew
+                            span Vip
+                +model-preview([6, 6, 6, 6], 'Anita', 24, 350)
+                    +model-preview-badges._top
+                        +model-preview-badge._new._skew
+                            span New
+                        +model-preview-badge._info._skew
+                            span 1 hour ago
+                        +model-preview-badge._vip._skew
+                            span Vip
+                +model-preview([1, 1, 1, 1, 1, 1], 'Kate', 25, 380)
+                    +model-preview-badges._top
+                        +model-preview-badge._vip._skew
+                            span Vip
+                +model-preview([10, 10], 'Anna', 22, 390)
+                +model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325)
+                +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390)
+
+            +side-border-btn('button').__load Load more
