@@ -6,46 +6,71 @@ include ../photo-tape/photo-tape
 
 mixin header()
     +b.HEADER.header&attributes(attributes)
-        +navbar.__navbar
-            +navbar-item._logo
-                +navbar-link(href='#')
-                    +logo
+        // DESKTOP NAVBAR
+        +e.NAV.navbar
+            +navbar
+                +navbar-item._logo
+                    +navbar-link(href='#')
+                        +logo
 
-            +navbar-item
-                +navbar-link(href='#')
-                    +navbar-heading All Escorts
-                    +navbar-description 44062
+                +navbar-item
+                    +navbar-link(href='#')
+                        +navbar-heading All Escorts
+                        +navbar-description 44062
 
-            +navbar-item
-                +navbar-link(href='#')
-                    +navbar-heading Independent
-                    +navbar-description 41908
+                +navbar-item
+                    +navbar-link(href='#')
+                        +navbar-heading Independent
+                        +navbar-description 41908
 
-            +navbar-item
-                +navbar-link(href='#')
-                    +navbar-heading Agency's
-                    +navbar-description 2154
+                +navbar-item
+                    +navbar-link(href='#')
+                        +navbar-heading Agency's
+                        +navbar-description 2154
 
-            +navbar-item._flexible
-                +search-bar
+                +navbar-item._flexible
+                    +search-bar
 
-            +navbar-item
-                +navbar-link(href='#')
-                    +navbar-heading City
-                    +navbar-description Los Angeles
+                +navbar-item
+                    +navbar-link(href='#')
+                        +navbar-heading City
+                        +navbar-description Los Angeles
 
-            +navbar-item
-                +navbar-link(href='#')
-                    +navbar-heading Credits
-                    +navbar-description
-                        | 2260
-                        != pugHelpers.Icon.call(locals, {iconName: 'currency', className: 'navbar__icon_currency', iconWidth: '14', iconHeight: '13'})
-            +navbar-item
-                +navbar-link(href='#')._row._has_badge
-                    +navbar-badge._top_right 2
-                    +navbar-col
+                +navbar-item
+                    +navbar-link(href='#')
+                        +navbar-heading Credits
+                        +navbar-description
+                            | 2260
+                            != pugHelpers.Icon.call(locals, {iconName: 'currency', className: 'navbar__icon_currency', iconWidth: '14', iconHeight: '13'})
+                +navbar-item
+                    +navbar-link(href='#')._row._has_badge
+                        +navbar-badge._top_right 2
+                        +navbar-col
+                            +avatar(src='static/img/content/avatars/navbar.png')._size_small
+                        +navbar-col
+                            +navbar-heading Megan
+                            +navbar-description menu
+        // MOBILE NAVBAR
+        +e.NAV.navbar_mobile
+            +navbar
+                +navbar-item
+                    +navbar-link(href='#')
+                        +logo
+                +navbar-item
+                    +navbar-link(href='#')._active-style_main.js-header-toggle-search-bar
+                        != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'navbar__icon_search', iconWidth: '14', iconHeight: '14'})
+                +navbar-item
+                    +navbar-link(href='#')
+                        != pugHelpers.Icon.call(locals, {iconName: 'filter-button', className: 'navbar__icon_filter', iconWidth: '19', iconHeight: '12'})
+                +navbar-item
+                    +navbar-link(href='#')
+                        != pugHelpers.Icon.call(locals, {iconName: 'location', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
+                +navbar-item
+                    +navbar-link(href='#')
+                        +navbar-badge._top_right 2
                         +avatar(src='static/img/content/avatars/navbar.png')._size_small
-                    +navbar-col
-                        +navbar-heading Megan
-                        +navbar-description menu
+
+        +e.search-bar
+            +search-bar._extended
+
         +photo-tape

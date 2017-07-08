@@ -9,6 +9,9 @@
         & > ^[0]__close
             display: table-cell
 
+            +below(768px)
+                display: none
+
     &__input
         flex: 1
         height: 100%
@@ -26,6 +29,9 @@
         margin-right: 24px
         border: 0
         background-color: transparent
+
+    &__icon
+        stroke: darkGreyColor
 
     &__close
         display: none

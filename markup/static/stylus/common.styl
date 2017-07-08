@@ -1,3 +1,4 @@
+@import 'rupture'
 // Common styles of the project
 
 html, body
@@ -14,16 +15,29 @@ html, body
     letter-spacing 1/16em
     background-color: bgColor
 
-.page__wrapper
-    min-height 100%
-    margin-bottom -50px
+    &__overlay
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(#1a1b1c, .2)
+        z-index: 50
+        display: none
 
+    &__wrapper
+        position: relative
+        min-height 100%
+        margin-bottom -50px
+        display: none
+
+    &__buffer
+        height 50px
 
 * html .page__wrapper
     height 100%
-
-.page__buffer
-    height 50px
 
 /* ##########
 Убираем outline

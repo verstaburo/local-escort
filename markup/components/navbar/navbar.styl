@@ -4,12 +4,19 @@
     height: 88px
     background-color: bgColor;
 
+    +below(768px)
+        height: 62px
+
     &__item
         display: block
         min-width: 149px
 
         &_flexible
             flex: 1
+
+        +below(768px)
+            min-width: initial
+            flex: 1 0 60px
 
         &:not(:last-child)
             border-right: 1px solid borderColor
@@ -26,6 +33,10 @@
         transition: all .25s ease-in-out
         flex-shrink: 0
 
+        +below(768px)
+            align-items: center
+            padding: 0 12px
+
         &_has_badge
             position: relative
 
@@ -34,11 +45,30 @@
             justify-content: initial
             align-items: center
 
-        &:hover, &.active
+        +above(768px)
+            &:hover
+                background-color: #fff
+
+        &.active
             background-color: #fff
+
+        &_active-style_main
+
+            &.active
+                background-color: mainColor
+                color: #fff
+
+                & ^[0]__icon_search
+                    stroke: #fff
 
     &__col:not(:first-child)
         margin-left: 12px
+
+    &__icon
+        transition(stroke, fill)
+
+        &_search
+            stroke: darkGreyColor
 
     &__heading
         display: block
