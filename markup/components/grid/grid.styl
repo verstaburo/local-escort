@@ -19,6 +19,8 @@ grid-modifiers = ( one two three four five six seven eight nine ten elevel twelv
         margin 0
         vertical-align top
 
+        &_push_right
+            margin-left: auto
 
         for i in range(0,(length(grid-modifiers) - 1))
             &_{grid-modifiers[i]}

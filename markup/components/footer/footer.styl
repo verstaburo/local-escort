@@ -3,14 +3,50 @@
     padding: (60px - grid-gap) 0 60px 0
     background-color: darkGreyColor
     min-height: 345px
-    display: none
 
+    .container
+        padding: 0
+
+    .hide-mob
+        +below(768px)
+            display: none
+
+    .hide-desktop
+        +above(768px)
+            display: none
+
+    +below(768px)
+        padding: 0
+        min-height: initial
+
+    &__grid
+        +below(768px)
+            & ^[0]__column
+                width: 100%
+                padding: 0 31px
+
+            & ^[0]__col_half-mob
+                +below(768px)
+                    width: 50%
+
+            .no-padding-top
+                padding-top: 0
+
+            .order-4
+                order: 4
     &__row
         min-height: 114px
+
+        +below(768px)
+            min-height: initial
+            padding: 40px 0
+            border-bottom: 1px solid rgba(#efefef, .06)
 
         &:not(:last-child)
             margin-bottom: 33px
 
+            +below(768px)
+                margin-bottom: 0
     &__col
         height: 100%
 
@@ -34,6 +70,9 @@
     &__select
         display: block
         padding-right: 24px
+
+        +below(768px)
+            padding-right: 0
 
     &__social-items
         margin-top: 21px
