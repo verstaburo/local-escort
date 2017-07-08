@@ -4,6 +4,13 @@
 html, body
     height 100%
 
+.hide-mob
+    +below(768px)
+        display: none !important
+
+.hide-desktop
+    +above(768px)
+        display: none !important
 .page
     margin: 0
     padding: 0

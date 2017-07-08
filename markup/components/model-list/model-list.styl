@@ -1,6 +1,13 @@
 .model-list
     display: block
 
+    +below(768px)
+        .grid__col_three
+            width: 100%
+
+        .grid
+            padding: 0 19px
+
     &__header
         margin-top: 32px
         margin-bottom: 8px
