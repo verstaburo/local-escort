@@ -2,13 +2,22 @@ include ../filter/filter
 include ../container/container
 include ../model-preview/model-preview
 include ../grid/grid
+include ../selectbox/selectbox
 include ../side-border-btn/side-border-btn
 
 mixin model-list()
     +b.model-list&attributes(attributes)
         +container
             +filter
-
+            +e.header
+                +e.header-col._flexible
+                    +e.H1.heading Independent
+                        span 38970
+                +e.header-col
+                    +e.label Sort by
+                    +selectbox('Date').__control
+                +e.header-col
+                    +button.A(href='#')._dark._uppercase.__control View on map
             +grid-masonry(4, '.model-preview').js-model-preview-grid
                 +model-preview([7, 7, 7], 'Sonya', 20, 325, true)
                     +model-preview-badges._top

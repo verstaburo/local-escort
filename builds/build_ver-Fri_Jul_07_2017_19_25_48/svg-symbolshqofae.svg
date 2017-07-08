@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important;" class="root-svg-symbols-element">
+  <defs>
+      <clipPath id="a"><path fill="#fff" d="M1155 58.5c0-1.93 3.13-3.5 7-3.5s7 1.57 7 3.5-3.13 3.5-7 3.5-7-1.57-7-3.5z"/></clipPath><clipPath id="b"><path fill="#fff" d="M1155 55.5c0-1.93 3.13-3.5 7-3.5s7 1.57 7 3.5-3.13 3.5-7 3.5-7-1.57-7-3.5z"/></clipPath><clipPath id="c"><path fill="#fff" d="M1155 52.5c0-1.93 3.13-3.5 7-3.5s7 1.57 7 3.5-3.13 3.5-7 3.5-7-1.57-7-3.5z"/></clipPath>
+  </defs>
+    <symbol id="arrow-sl" viewBox="0 0 8 8">
+      <path fill="#d2a36f" d="M0 8V6h6V0h2v8z"/>
+    </symbol>
+    <symbol id="close" viewBox="0 0 15 15">
+      <title>Combined Shape</title><path d="M6.314 7.728L.657 13.385l1.414 1.414 5.657-5.657 5.657 5.657 1.414-1.414-5.657-5.657L14.8 2.07 13.385.657 7.728 6.314 2.07.657.657 2.07l5.657 5.657z" fill="#1A1B1C" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="currency" viewBox="0 0 14 13">
+      <path fill="#f7f7f7" d="M0 9.5C0 7.57 3.13 6 7 6s7 1.57 7 3.5S10.87 13 7 13s-7-1.57-7-3.5z"/><path fill="none" stroke="#d2a36f" stroke-miterlimit="50" stroke-width="2" d="M1155 58.5c0-1.93 3.13-3.5 7-3.5s7 1.57 7 3.5-3.13 3.5-7 3.5-7-1.57-7-3.5z" clip-path="url(&quot;#a&quot;)" transform="translate(-1155 -49)"/><path fill="#f7f7f7" d="M0 6.5C0 4.57 3.13 3 7 3s7 1.57 7 3.5S10.87 10 7 10 0 8.43 0 6.5z"/><path fill="none" stroke="#d2a36f" stroke-miterlimit="50" stroke-width="2" d="M1155 55.5c0-1.93 3.13-3.5 7-3.5s7 1.57 7 3.5-3.13 3.5-7 3.5-7-1.57-7-3.5z" clip-path="url(&quot;#b&quot;)" transform="translate(-1155 -49)"/><path fill="#f7f7f7" d="M0 3.5C0 1.57 3.13 0 7 0s7 1.57 7 3.5S10.87 7 7 7 0 5.43 0 3.5z"/><path fill="none" stroke="#d2a36f" stroke-miterlimit="50" stroke-width="2" d="M1155 52.5c0-1.93 3.13-3.5 7-3.5s7 1.57 7 3.5-3.13 3.5-7 3.5-7-1.57-7-3.5z" clip-path="url(&quot;#c&quot;)" transform="translate(-1155 -49)"/>
+    </symbol>
+    <symbol id="filter-button" viewBox="0 0 23 16">
+      <title>Group</title><path d="M17.17 14H1v-2h16.17a3.001 3.001 0 1 1 0 2zM5.83 2H22v2H5.83a3.001 3.001 0 1 1 0-2zM3 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm17 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" fill="#1A1B1C"/>
+    </symbol>
+    <symbol id="s-fb" viewBox="0 0 9 19">
+      <path fill="#d2a36f" d="M5.79 6.13V4.52c0-.25.02-.43.04-.56.02-.14.07-.27.15-.4.08-.13.21-.21.39-.26.17-.05.41-.08.71-.08h1.61V0H6.11C4.62 0 3.55.35 2.9 1.06c-.65.71-.97 1.75-.97 3.13v1.94H0v3.22h1.93v9.35h3.86V9.35h2.58l.34-3.22z"/>
+    </symbol>
+    <symbol id="s-tw" viewBox="0 0 19 16">
+      <path fill="#d2a36f" d="M5.86 15.14c7.03 0 10.88-5.82 10.88-10.88l-.01-.49a7.61 7.61 0 0 0 1.9-1.98 7.5 7.5 0 0 1-2.19.6A3.86 3.86 0 0 0 18.12.28a7.8 7.8 0 0 1-2.43.93 3.83 3.83 0 0 0-6.51 3.48A10.82 10.82 0 0 1 1.3.7a3.82 3.82 0 0 0 1.18 5.1 3.74 3.74 0 0 1-1.73-.48v.05a3.82 3.82 0 0 0 3.06 3.75 3.7 3.7 0 0 1-1.72.06 3.82 3.82 0 0 0 3.57 2.66A7.73 7.73 0 0 1 0 13.42a10.78 10.78 0 0 0 5.86 1.72"/>
+    </symbol>
+    <symbol id="search" viewBox="0 0 17.71 17.71">
+      <path fill="none" stroke="#1a1b1c" stroke-miterlimit="50" stroke-width="2" d="M13 13l4 4M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8z"/>
+    </symbol>
+    <symbol id="star" viewBox="0 0 16 15">
+      <path d="M7.89 0l2.43 4.94 5.45.79-3.94 3.84.93 5.43-4.87-2.56L3.01 15l.93-5.43L0 5.73l5.45-.79z"/>
+    </symbol></svg>
