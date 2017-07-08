@@ -2,6 +2,8 @@ extends ../components/layout-default/layout-default
 include ../components/header/header
 include ../components/footer/footer
 include ../components/model-list/model-list
+include ../components/image-bg/image-bg
+include ../components/popup-welcome/popup-welcome
 
 block header
     +header
@@ -9,6 +11,7 @@ block header
 block content
     +photo-tape
     //+model-list
+    +popup-welcome
 
 block scripts
     script(src='%=static=%js/separate-js/ajax/model-list-load.js')
