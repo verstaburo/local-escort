@@ -69,8 +69,9 @@ mixin header()
                     +navbar-link(href='#')
                         +navbar-badge._top_right 2
                         +avatar(src='static/img/content/avatars/navbar.png')._size_small
+                //+navbar-item
+                //    +navbar-link(href='#')
+                //        != pugHelpers.Icon.call(locals, {iconName: 'location', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
 
         +e.search-bar
             +search-bar._extended
-
-        +photo-tape

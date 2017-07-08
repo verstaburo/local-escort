@@ -5,11 +5,13 @@ import searchBar from '../../components/search-bar/search-bar';
 import modelPreview from '../../components/model-preview/model-preview';
 import grid from '../../components/grid/grid';
 import header from '../../components/header/header';
+import photoTape from '../../components/photo-tape/photo-tape';
 
 $(() => {
     svg4everybody();
     objectFitImages();
     header();
+    photoTape();
     filter();
     searchBar();
     modelPreview();

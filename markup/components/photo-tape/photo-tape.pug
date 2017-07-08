@@ -1,9 +1,9 @@
 include ../model-info-popup/model-info-popup
 
 mixin photo-tape()
-    +b.photo-tape&attributes(attributes)
-        +e.UL.items
-            +e.LI.item
+    +b.photo-tape&attributes(attributes).swiper-container
+        +e.UL.items.swiper-wrapper
+            +e.LI.item.swiper-slide
                 +e.A.link(href='#')
                     +e.IMG(src=`%=static=%img/content/photo-tape/1.jpg` alt=`Model 1`).photo
                     +e.SPAN.badge
@@ -11,7 +11,7 @@ mixin photo-tape()
 
             - for (var i = 0; i < 2; i++)
                 - for (var j = 1; j <= 15; j++)
-                    +e.LI.item
+                    +e.LI.item.swiper-slide
                         +e.A.link(href='#')
                             +e.IMG(src=`%=static=%img/content/photo-tape/${j}.jpg` alt=`Model ${j}`).photo
 

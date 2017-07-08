@@ -1,8 +1,8 @@
 photoTapeItemWidth = 88px
+photoTapeItemWidthMobile = 60px
 
 .photo-tape
     display: block
-    display: none
 
     &__items
         display: flex
@@ -11,7 +11,11 @@ photoTapeItemWidth = 88px
             opacity: .3
 
     &__item
+        width: photoTapeItemWidth
         position: relative
+
+        +below(768px)
+            width: photoTapeItemWidthMobile
 
         &:hover
             & > ^[0]__popup
@@ -28,10 +32,9 @@ photoTapeItemWidth = 88px
         font-size: 0
 
     &__photo
-        width: photoTapeItemWidth
-        height: photoTapeItemWidth
+        width: 100%
+        height: auto
         pointer-events none
-
         transition(opacity)
 
     &__badge
@@ -45,6 +48,9 @@ photoTapeItemWidth = 88px
         width: 24px
         height: 24px
         background-color: mainColor
+
+        +below(768px)
+            top: photoTapeItemWidthMobile
 
         &::before, &::after
             position: absolute
@@ -76,3 +82,6 @@ photoTapeItemWidth = 88px
         color darkGreyColor
         font-size: 12px
         text-transform: uppercase
+
+        +below(768px)
+            display: none
