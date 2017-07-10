@@ -6,6 +6,7 @@ import modelPreview from '../../components/model-preview/model-preview';
 import grid from '../../components/grid/grid';
 import header from '../../components/header/header';
 import photoTape from '../../components/photo-tape/photo-tape';
+import arrowUp from '../../components/arrow-up/arrow-up';
 
 $(() => {
     svg4everybody();
@@ -17,4 +18,5 @@ $(() => {
     modelPreview();
     grid();
     window.rebuildGrd = grid;
+    arrowUp();
 });

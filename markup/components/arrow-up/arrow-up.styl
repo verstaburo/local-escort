@@ -1,0 +1,27 @@
+.arrow-up
+    width 60px
+    height 60px
+    border 1px solid mainColor
+    background-color #fff
+    border-radius 50%
+    text-align center
+    cursor pointer
+    pointer-events none
+    opacity 0
+    z-index 5
+    -webkit-tap-highlight-color transparent
+
+    transition(opacity, background-color)
+    +below(768px)
+        display none
+
+    &:hover {
+        background-color rgba(mainColor, .3)
+    }
+
+    &.active
+        pointer-events all
+        opacity 1
+
+    &__icon
+        height 100%
