@@ -3,6 +3,7 @@ include ../container/container
 include ../model-preview/model-preview
 include ../grid/grid
 include ../selectbox/selectbox
+include ../sort-ui/sort-ui
 include ../side-border-btn/side-border-btn
 
 mixin model-list()
@@ -18,6 +19,8 @@ mixin model-list()
                     +selectbox('Date').__control
                 +e.header-col.hide-mob
                     +button.A(href='#')._color_white._bg_darkGrey._uppercase.__control View on map
+                +e.header-col.hide-desktop
+                    +sort-ui
             +grid-masonry(4, '.model-preview').js-model-preview-grid
                 +model-preview([7, 7, 7], 'Sonya', 20, 325, true)
                     +model-preview-badges._top
