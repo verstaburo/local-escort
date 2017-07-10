@@ -1,0 +1,41 @@
+.checkbox
+    cursor pointer
+    display inline-block
+
+    &__input
+        display none
+        opacity 0
+        pointer-events none
+
+        &:checked + .checkbox__box
+            border-color mainColor
+            background-color mainColor
+
+            svg
+                fill white
+
+    &__box
+        display inline-block
+        vertical-align middle
+        width 24px
+        height 24px
+        border 1px solid borderColor
+        background-color bgColor
+
+        transition(background-color, border-color)
+
+    &__text
+        display inline-block
+        vertical-align middle
+        margin-left 15px
+        font-size 16px
+        line-height 1.5
+        user-select none
+
+    &_black
+        & ^[0]__box
+            border-color #000306
+            background-color #1E1F20
+
+        & ^[0]__text
+            color #fff

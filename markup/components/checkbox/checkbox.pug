@@ -1,0 +1,6 @@
+mixin checkbox(text, checked, name, value)
+  +b.LABEL.checkbox&attributes(attributes)
+    +e.INPUT.input(type='checkbox' name=name||'', value=value||text, checked=checked||false)
+    +e.SPAN.box
+        //- != pugHelpers.Icon.call(locals, {iconName: 'check', iconWidth: '10', iconHeight: '6'})
+    +e.SPAN.text= text
