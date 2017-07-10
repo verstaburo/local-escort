@@ -2,6 +2,7 @@ include ../navbar/navbar
 include ../logo/logo
 include ../search-bar/search-bar
 include ../avatar/avatar
+include ../follow-us/follow-us
 include ../photo-tape/photo-tape
 
 mixin header()
@@ -36,20 +37,80 @@ mixin header()
                         +navbar-heading City
                         +navbar-description Los Angeles
 
-                +navbar-item
-                    +navbar-link(href='#')
+                +navbar-item._dropdown
+                    +navbar-link-dropdown(href='#')
                         +navbar-heading Credits
                         +navbar-description
                             | 2260
                             != pugHelpers.Icon.call(locals, {iconName: 'currency', className: 'navbar__icon_currency', iconWidth: '14', iconHeight: '13'})
-                +navbar-item
-                    +navbar-link(href='#')._row._has_badge
+                    +navbar-dropdown
+                        +navbar-items
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-heading Buy credits
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-heading Transaction history
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-heading Boost my account
+                +navbar-item._dropdown
+                    +navbar-link-dropdown(href='#')._row._has_badge
                         +navbar-badge._top_right 2
                         +navbar-col
                             +avatar(src='static/img/content/avatars/navbar.png')._size_small
                         +navbar-col
                             +navbar-heading Megan
                             +navbar-description menu
+                    +navbar-dropdown
+                        +navbar-items
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-heading My Profile
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-heading Settings
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-col
+                                        +navbar-heading Messages
+                                    +navbar-col
+                                        +navbar-badge._default 1
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-col
+                                        +navbar-heading Visitors
+                                    +navbar-col
+                                        +navbar-badge._default._dark
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-col
+                                        +navbar-heading FEEDS
+                                    +navbar-col
+                                        +navbar-badge._default 2
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-col
+                                        +navbar-heading Invite Friends
+                                    +navbar-col
+                                        +navbar-badge._default._dark
+                            +navbar-item
+                                +navbar-link(href='#')._row
+                                    +navbar-heading Invite Friends
+
+                        +navbar-items
+                            +navbar-item
+                                +navbar-link(href='#')._row._transparentify
+                                    +navbar-heading About us
+                            +navbar-item
+                                +navbar-link(href='#')._row._transparentify
+                                    +navbar-heading Help
+                            +navbar-item
+                                +navbar-link(href='#')._row._transparentify
+                                    +navbar-heading privacy & Terms
+                            +navbar-item
+                                +navbar-link.DIV
+                                    +follow-us
                 //+navbar-item
                 //    +navbar-link(href='#')._row
                 //        +navbar-col

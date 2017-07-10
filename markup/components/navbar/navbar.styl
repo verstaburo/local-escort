@@ -7,9 +7,49 @@
     +below(768px)
         height: 62px
 
+    &__dropdown
+        & ^[0]__item
+            min-width: initial
+
+            &:not(:last-child)
+                border-right: 0
+
+        & ^[0]__link
+              padding: 0
+
+              &:hover
+                opacity: .75
+                background-color: transparent
+
+        & ^[0]__heading
+            color: #fff
+
+    &__items
+        display: flex
+        width: 100%
+        min-height: 80px
+        justify-content: space-between
+
+        &:not(:last-child)
+            border-bottom: 1px solid #262728
+
     &__item
         display: block
         min-width: 149px
+
+        &_dropdown:hover
+            & ^[0]__link
+              background-color: darkGreyColor
+
+            & ^[0]__heading
+              color: #fff
+
+            & > ^[0]__dropdown
+                opacity: 1
+                pointer-events: all
+
+            & ^[0]__arrow
+              opacity: 1
 
         &_flexible
             flex: 1
@@ -30,8 +70,14 @@
         height: 100%
         text-decoration: none
         background-color: inherit
-        transition: all .25s ease-in-out
+        transition(all)
         flex-shrink: 0
+
+        &_dropdown
+            position: relative
+
+        &_transparentify
+            opacity: .5
 
         +below(768px)
             align-items: center
@@ -60,6 +106,13 @@
 
                 & ^[0]__icon_search
                     stroke: #fff
+
+    &__arrow
+        position: absolute
+        bottom: 6px
+        right: 7px
+        opacity: 0
+        transition(opacity)
 
     &__col:not(:first-child)
         margin-left: 12px
@@ -104,7 +157,28 @@
         font-size 12px
         font-weight 700
 
+        &_dark
+            background-color: #212223
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0)
+
+        &_default
+            position: static
+            margin-left: 8px
+            border-radius: 4px
+
         &_top_right
             top: 0
             right: 0
             border-radius 0 0 0 4px
+
+    &__dropdown
+        position: absolute
+        top: 100%
+        left: 0
+        display: block
+        width: 100%
+        background-color: #1a1b1c
+        z-index: 50
+        opacity: 0
+        transition(opacity)
+        pointer-events none

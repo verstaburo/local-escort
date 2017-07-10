@@ -1,3 +1,5 @@
+include ../container/container
+
 mixin navbar
     +b.UL.navbar&attributes(attributes)
         block
@@ -6,6 +8,10 @@ mixin navbar-item
     +e.LI.item&attributes(attributes)
         block
 
+mixin navbar-link-dropdown
+    +e.A.link._dropdown&attributes(attributes)
+        block
+        != pugHelpers.Icon.call(locals, {iconName: 'arrow-sl', className: 'navbar__arrow', iconWidth: '8', iconHeight: '8'})
 
 mixin navbar-link
     +e.A.link&attributes(attributes)
@@ -25,4 +31,13 @@ mixin navbar-col
 
 mixin navbar-badge
     +e.SPAN.badge&attributes(attributes)
+        block
+
+mixin navbar-dropdown
+    +e.DIV.dropdown&attributes(attributes)
+        +container
+            block
+
+mixin navbar-items
+    +e.UL.items&attributes(attributes)
         block
