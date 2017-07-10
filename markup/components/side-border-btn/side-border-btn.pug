@@ -3,9 +3,9 @@ include ../button/button
 mixin side-border-btn(tag, href)
     +b.side-border-btn&attributes(attributes)
         if tag === 'a' || !tag
-            +button(tag)(href=href).__button
+            +button(tag)(href=href)._border_standart._color_darkGrey.__button
                 block
         else
-            +button(tag).__button
+            +button(tag)._border_standart._color_darkGrey.__button
                 block
 

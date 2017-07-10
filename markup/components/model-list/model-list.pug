@@ -17,7 +17,7 @@ mixin model-list()
                     +e.label Sort by
                     +selectbox('Date').__control
                 +e.header-col.hide-mob
-                    +button.A(href='#')._dark._uppercase.__control View on map
+                    +button.A(href='#')._color_white._bg_darkGrey._uppercase.__control View on map
             +grid-masonry(4, '.model-preview').js-model-preview-grid
                 +model-preview([7, 7, 7], 'Sonya', 20, 325, true)
                     +model-preview-badges._top
