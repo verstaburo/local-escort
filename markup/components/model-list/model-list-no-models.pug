@@ -12,8 +12,8 @@ mixin model-list()
             +filter.hide-mob
             +e.header
                 +e.header-col._flexible
-                    +e.H1.heading Independent
-                        span 38970
+                    +e.H1.heading All escorts
+                        span 0
                 +e.header-col.hide-mob
                     +e.label Sort by
                     +selectbox('Date').__control
@@ -21,6 +21,15 @@ mixin model-list()
                     +sort-ui
                 +e.header-col.hide-mob
                     +button.A(href='#')._color_white._bg_darkGrey._uppercase.__control View on map
+            +e.SECTION.not-found
+                +e.not-found-content
+                    +e.not-found-picture
+                        != pugHelpers.Icon.call(locals, {iconName: 'leg', className: 'model-list__not-found-icon', iconWidth: '32', iconHeight: '60'})
+                    +e.H2.not-found-title Models not found
+                    +e.P.not-found-description Unfortunately, the models on specified criteria was not found. Try changing the settings
+
+            +e.H2.heading._margin You may be interested in
+
             +grid-masonry(4, '.model-preview').js-model-preview-grid
                 +model-preview([7, 7, 7], 'Sonya', 20, 325, true)
                     +model-preview-badges._top
@@ -60,7 +69,3 @@ mixin model-list()
                         +model-preview-badge._vip._skew
                             span Vip
                 +model-preview([10, 10], 'Anna', 22, 390)
-                +model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325)
-                +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390)
-
-            +side-border-btn('button').__load Load more

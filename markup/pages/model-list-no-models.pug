@@ -1,0 +1,16 @@
+extends ../components/layout-default/layout-default
+include ../components/header/header
+include ../components/footer/footer
+include ../components/model-list/model-list-no-models
+include ../components/image-bg/image-bg
+include ../components/popup-welcome/popup-welcome
+
+block header
+    +header
+
+block content
+    +photo-tape
+    +model-list
+
+block footer
+    +footer
