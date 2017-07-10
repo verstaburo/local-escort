@@ -1,0 +1,12 @@
+include ../container/container
+include ../button/button
+
+mixin banner-welcome()
+    +b.banner-welcome&attributes(attributes)
+        +container
+            +e.text-block
+                +e.P.text._big Megan, welcome to LocalEscort!
+                +e.P.text Please add a profile photo to attract new visitors to your profile.
+            +e.buttons
+                +button()._color_white._bg_darkGrey._uppercase.__button add photo
+                +button()._color_white._uppercase._border_light-white.__button hide

@@ -1,0 +1,52 @@
+.banner-welcome
+    width 100%
+    padding-top 25px
+    padding-bottom 25px
+    background-color mainColor
+
+    +below(768px)
+        padding-bottom 30px
+
+    .container
+        display flex
+        justify-content space-between
+
+        +below(768px)
+            flex-direction column
+            padding-left 30px
+            padding-right 30px
+
+    &__text-block
+        color #fff
+
+    &__text
+        line-height 1.375
+        font-size 16px
+
+        &:not(:first-of-type)
+            margin-top 10px
+
+        &_big
+            line-height 1.2
+            font-size 20px
+
+    &__buttons
+        display flex
+        align-items center
+
+        +below(768px)
+            margin-top 30px
+            flex-direction column
+
+    &__button
+        min-width 164px
+
+        +below(768px)
+            width 100%
+            max-width 540px
+
+        &:not(:first-of-type)
+            +above(768px)
+                margin-left 25px
+            +below(768px)
+                margin-top 10px
