@@ -1,0 +1,38 @@
+include ../filter/filter
+include ../container/container
+include ../model-preview/model-preview
+include ../grid/grid
+include ../selectbox/selectbox
+include ../sort-ui/sort-ui
+include ../side-border-btn/side-border-btn
+
+mixin model-list()
+    +b.model-list&attributes(attributes)
+        +container
+            +filter.hide-mob
+            +e.header
+                +e.header-col._flexible
+                    +e.H1.heading Search result
+                        span 2
+                +e.header-col.hide-mob
+                    +e.label Sort by
+                    +selectbox('Date').__control
+                +e.header-col.hide-desktop
+                    +sort-ui
+                +e.header-col.hide-mob
+                    +button.A(href='#')._color_white._bg_darkGrey._uppercase.__control View on map
+
+            +grid-masonry(4, '.model-preview').js-model-preview-grid
+                +model-preview([7, 7, 7], 'Megan', 20, 325, true)
+                    +model-preview-badges._top
+                        +model-preview-badge._new._skew
+                            span New
+                        +model-preview-badge._info
+                            span 1 hour ago
+                +model-preview([5, 5, 5, 5], 'Megan', 22, 390)
+                    +model-preview-badges._top
+                        +model-preview-badge._vip._skew
+                            span Vip
+                    +model-preview-badges._bottom
+                        +model-preview-badge._verified._skew
+                            span Verified

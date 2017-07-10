@@ -1,5 +1,6 @@
 .model-list
     display: block
+    padding-bottom: 40px
 
     +below(768px)
         .grid__col_three
@@ -30,6 +31,9 @@
         letter-spacing initial
         font-weight: 400
 
+        +below(768px)
+            font-size: 26px
+
         span
             display: inline-block
             vertical-align top
@@ -48,4 +52,50 @@
         margin-right: 20px
 
     &__load
-        margin: 40px 0
+        margin-top: 40px
+
+    &__not-found
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 40px 0
+        min-height: 441px
+        border-bottom: 1px solid borderColor
+        margin-bottom: 23px
+
+        +below(768px)
+            min-height: 300px
+
+        &-content
+            max-width: 330px
+            text-align: center
+
+            +below(768px)
+                max-width: 280px
+
+        &-picture
+            position: relative
+            margin-left: auto
+            margin-right: auto
+            display: block
+            width: 78px
+            height: 78px
+            background-color: #e8e8e8
+            border-radius: 50%
+
+        &-icon
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translateX(-50%)
+
+        &-title
+            margin-top: 28px
+            font-size 20px
+            font-weight: 400
+
+        &-description
+            margin-top: 8px
+            opacity .59
+            font-size 16px
+            line-height 22px

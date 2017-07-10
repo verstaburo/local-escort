@@ -50,6 +50,12 @@ mixin header()
                         +navbar-col
                             +navbar-heading Megan
                             +navbar-description menu
+                //+navbar-item
+                //    +navbar-link(href='#')._row
+                //        +navbar-col
+                //            != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
+                //        +navbar-col
+                //            +navbar-description._dark._solo login
         // MOBILE NAVBAR
         +e.NAV.navbar_mobile
             +navbar
@@ -65,13 +71,14 @@ mixin header()
                 +navbar-item
                     +navbar-link(href='#')
                         != pugHelpers.Icon.call(locals, {iconName: 'location', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
+
                 +navbar-item
                     +navbar-link(href='#')
                         +navbar-badge._top_right 2
                         +avatar(src='static/img/content/avatars/navbar.png')._size_small
                 //+navbar-item
                 //    +navbar-link(href='#')
-                //        != pugHelpers.Icon.call(locals, {iconName: 'location', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
+                //        != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
 
         +e.search-bar
             +search-bar._extended

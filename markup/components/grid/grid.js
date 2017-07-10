@@ -34,7 +34,7 @@ export default function grid() {
         return $(`<div class="${className}"></div>`);
     };
 
-    const columnElements = new Array(COLUMNS)
+    const columnElements = new Array(blocks.length >= COLUMNS ? COLUMNS : blocks.length)
         .fill(0)
         .map(() => getColumn(GRID_COLUMNS_COUNT / COLUMNS));
 
