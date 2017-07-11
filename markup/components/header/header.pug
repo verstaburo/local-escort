@@ -4,6 +4,7 @@ include ../search-bar/search-bar
 include ../avatar/avatar
 include ../follow-us/follow-us
 include ../photo-tape/photo-tape
+include ../city-suggest/city-suggest
 
 mixin header()
     +b.HEADER.header&attributes(attributes)
@@ -32,10 +33,11 @@ mixin header()
                 +navbar-item._flexible
                     +search-bar
 
-                +navbar-item
-                    +navbar-link(href='#')
+                +navbar-item._relative
+                    +navbar-link-dropdown(href='#')
                         +navbar-heading City
                         +navbar-description Los Angeles
+                    +city-suggest.__suggest
 
                 +navbar-item._dropdown
                     +navbar-link-dropdown(href='#')

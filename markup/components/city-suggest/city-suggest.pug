@@ -1,0 +1,9 @@
+include ../button/button
+
+mixin city-suggest()
+    +b.city-suggest&attributes(attributes)
+        +e.P.heading Your City Los Angeles
+        +e.buttons
+            +button()._uppercase._color_main.__button#confirmCity
+                <b>Yes, this is my city</b>
+            +button()._uppercase._color_grey.__button#anotherCity Select another city
