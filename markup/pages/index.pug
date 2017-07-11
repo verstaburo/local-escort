@@ -3,16 +3,19 @@ include ../components/header/header
 include ../components/footer/footer
 include ../components/arrow-up/arrow-up
 include ../components/demo/demo
+include ../components/container/container
+include ../components/accordion/accordion
 
 block header
     +header
 
 block content
     +photo-tape
-    +demo
-        +demo-link('model-list.html') 01_List_1
-        +demo-link('model-list-no-models.html') 01_List_1_no models
-        +demo-link('model-list-search-result.html') 01_List_8_search 2
+    +container
+        +demo
+            +demo-link('model-list.html') 01_List_1
+            +demo-link('model-list-no-models.html') 01_List_1_no models
+            +demo-link('model-list-search-result.html') 01_List_8_search 2
     +arrow-up
 
 block footer

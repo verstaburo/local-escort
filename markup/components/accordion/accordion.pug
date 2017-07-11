@@ -1,0 +1,15 @@
+mixin accordion(closeOther)
+    - var s = !!closeOther + ''
+    .accordion(data-close-other=s)&attributes(attributes)
+        block
+
+mixin accordion-item(heading, showText, hideText)
+    .accordion__item(data-hide-text=hideText, data-show-text=showText)&attributes(attributes)
+        .accordion__button
+            .accordion__heading=heading
+            .accordion__close
+                if showText && hideText
+                    .accordion__close-text=showText
+                != pugHelpers.Icon.call(locals, {iconName: 'close', className: 'accordion__close-icon', iconWidth: '14', iconHeight: '14'})
+        .accordion__content
+            block

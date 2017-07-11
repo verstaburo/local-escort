@@ -1,0 +1,55 @@
+.accordion
+    display: block
+
+    &_dark
+        background-color: darkGreyColor
+
+        & ^[0]__heading
+            color: #fff
+
+        & ^[0]__item:not(:last-child)
+            border-color: rgba(#efefef, .06)
+
+    &__item
+        display: block
+        padding: 35px 0
+
+        &:not(:last-child)
+            border-bottom: 1px solid borderColor
+
+        &.active
+            & ^[0]__close-icon
+                transform: rotate(0)
+
+    &__button
+        display: flex
+        width: 100%
+        justify-content: space-between
+        align-items: center
+        cursor: pointer
+
+    &__heading
+        display: block
+        font-font: fontSecond
+        font-size 26px
+        letter-spacing initial
+        margin-right: 15px
+        font-weight: 400
+
+    &__close
+        display: flex
+        align-items: center
+
+        &-text
+            color mainColor
+            font-size 16px
+            margin-right: 12px
+
+        &-icon
+            fill: mainColor
+            transform: rotate(-45deg)
+            transition(fill, transform)
+
+    &__content
+        padding-top: 35px
+        display: none

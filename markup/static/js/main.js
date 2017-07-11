@@ -8,6 +8,7 @@ import header from '../../components/header/header';
 import photoTape from '../../components/photo-tape/photo-tape';
 import arrowUp from '../../components/arrow-up/arrow-up';
 import citySuggest from '../../components/city-suggest/city-suggest';
+import accordion from '../../components/accordion/accordion';
 
 $(() => {
     svg4everybody();
@@ -21,4 +22,5 @@ $(() => {
     window.rebuildGrd = grid;
     arrowUp();
     citySuggest();
+    accordion();
 });
