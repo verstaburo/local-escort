@@ -1,0 +1,26 @@
+.city-suggest
+    background-color darkGreyColor
+
+    &::after
+        triangle(darkGreyColor, up)
+
+        right 50px
+        top -6px
+
+    &__heading
+        color #fff
+        font-size 18px
+        line-height 1.67
+        text-align center
+        padding 23px 45px
+        border-bottom 1px solid #262728;
+
+    &__buttons
+        display flex
+        justify-content space-around
+
+    &__button
+        transition(opacity)
+
+        &:hover
+            opacity .5

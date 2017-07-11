@@ -7,6 +7,7 @@ import grid from '../../components/grid/grid';
 import header from '../../components/header/header';
 import photoTape from '../../components/photo-tape/photo-tape';
 import arrowUp from '../../components/arrow-up/arrow-up';
+import citySuggest from '../../components/city-suggest/city-suggest';
 
 $(() => {
     svg4everybody();
@@ -19,4 +20,5 @@ $(() => {
     grid();
     window.rebuildGrd = grid;
     arrowUp();
+    citySuggest();
 });

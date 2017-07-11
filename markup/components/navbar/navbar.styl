@@ -58,6 +58,9 @@
             min-width: initial
             flex: 1 0 60px
 
+        &_relative
+            position relative
+
         &:not(:last-child)
             border-right: 1px solid borderColor
 
@@ -182,3 +185,10 @@
         opacity: 0
         transition(opacity)
         pointer-events none
+
+    &__suggest
+        display none
+        position absolute
+        top 100%
+        right -10px
+        width 463px
