@@ -16,8 +16,9 @@ mixin range-slider-input
 mixin range-slider-text
     +e.DIV.text&attributes(attributes)
         +e.B.value
-        +e.SPAN.label
-            block
+        if block
+            +e.SPAN.label
+                block
 
 mixin range-slider-control
     +e.slider&attributes(attributes)

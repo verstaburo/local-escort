@@ -1,45 +1,161 @@
 include ../range-slider/range-slider
 include ../selectbox/selectbox
 include ../icon-button/icon-button
+include ../grid/grid
+include ../button/button
+include ../checkbox/checkbox
 
 mixin filter()
     +b.FORM(method='POST' action='#').filter&attributes(attributes)
-        +e.col
-            +selectbox('Escort')
-                +selectbox-control(name='escorts')
-                    option(value='escorts') escorts
-                    option(value='item1') item 1
-                    option(value='item2') item 2
-                    option(value='item3') item 3
+        +container.filter__container
+            +e.col
+                +selectbox('Escort')
+                    +selectbox-control(name='escorts')
+                        option(value='escorts') escorts
+                        option(value='item1') item 1
+                        option(value='item2') item 2
+                        option(value='item3') item 3
 
-        +e.col
-            +range-slider
-                +range-slider-fields
-                    +range-slider-field
-                        +range-slider-input(type='hidden' name='age-min')._min
-                        +range-slider-text y.o
-                    +range-slider-field
-                        +range-slider-input(type='hidden' name='age-max')._max
-                        +range-slider-text y.o
-                +range-slider-control#filter-age
-        +e.col
-            +range-slider
-                +range-slider-fields
-                    +range-slider-field
-                        +range-slider-input(type='hidden' name='cost-min')._min
-                        +range-slider-text $
-                    +range-slider-field
-                        +range-slider-input(type='hidden' name='cost-max')._max
-                        +range-slider-text $
-                +range-slider-control#filter-cost
+            +e.col
+                +range-slider
+                    +range-slider-fields
+                        +range-slider-field
+                            +range-slider-input(type='hidden' name='age-min')._min
+                            +range-slider-text y.o
+                        +range-slider-field
+                            +range-slider-input(type='hidden' name='age-max')._max
+                            +range-slider-text y.o
+                    +range-slider-control.js-filter-age
+            +e.col
+                +range-slider
+                    +range-slider-fields
+                        +range-slider-field
+                            +range-slider-input(type='hidden' name='cost-min')._min
+                            +range-slider-text $
+                        +range-slider-field
+                            +range-slider-input(type='hidden' name='cost-max')._max
+                            +range-slider-text $
+                    +range-slider-control#filter-cost
 
-        +e.col
-            +selectbox('Incall/Outcall')
-                +selectbox-control(name='escorts')
-                    option(value='escorts') escorts
-                    option(value='item1') item 1
-                    option(value='item2') item 2
-                    option(value='item3') item 3
+            +e.col
+                +selectbox('Incall/Outcall')
+                    +selectbox-control(name='escorts')
+                        option(value='escorts') escorts
+                        option(value='item1') item 1
+                        option(value='item2') item 2
+                        option(value='item3') item 3
 
-        +e.col._no_width._push_right
-            +icon-button('filter-button', 21, 12).__button
+            +e.col._no_width._push_right
+                +icon-button('filter-button', 21, 12).__button
+
+mixin filter-extended
+    +b.FORM(method='POST' action='#').filter._extended&attributes(attributes)
+        +container
+            +grid
+                +col(3)
+                    +e.header
+                        +e.SPAN.label Categories
+                    +selectbox('Escorts')
+                        +selectbox-control(name='escorts')
+                            option(value='escorts') escorts
+                            option(value='item1') item 1
+                            option(value='item2') item 2
+                            option(value='item3') item 3
+                +col(3)
+                    +e.header
+                        +e.SPAN.label Age
+                    +range-slider
+                        +range-slider-fields
+                            +range-slider-field
+                                +range-slider-input(type='hidden' name='age-min')._min
+                                +range-slider-text
+                            +range-slider-field
+                                +range-slider-input(type='hidden' name='age-max')._max
+                                +range-slider-text
+                        +range-slider-control.js-filter-age
+                +col(3)
+                    +e.header
+                        +e.SPAN.label Rate per hour
+                    +range-slider
+                        +range-slider-fields
+                            +range-slider-field
+                                +range-slider-input(type='hidden' name='cost-min')._min
+                                +range-slider-text
+                            +range-slider-field
+                                +range-slider-input(type='hidden' name='cost-max')._max
+                                +range-slider-text
+                        +range-slider-control.js-filter-rate
+                +col(3)
+                    +e.header
+                        +e.SPAN.label Availability
+                    +selectbox('All')
+                        +selectbox-control(name='availability')
+                            option(value='all') All
+                            option(value='item1') item 1
+                            option(value='item2') item 2
+                            option(value='item3') item 3
+                +col(3)
+                    +e.header
+                        +e.SPAN.label Orientation
+                    +selectbox('All')
+                        +selectbox-control(name='orientation')
+                            option(value='all') All
+                            option(value='item1') item 1
+                            option(value='item2') item 2
+                            option(value='item3') item 3
+                +col(3)
+                    +e.header
+                        +e.SPAN.label Height
+                    +range-slider
+                        +range-slider-fields
+                            +range-slider-field
+                                +range-slider-input(type='hidden' name='height-min')._min
+                                +range-slider-text
+                            +range-slider-field
+                                +range-slider-input(type='hidden' name='height-max')._max
+                                +range-slider-text
+                        +range-slider-control.js-filter-height
+                +col(3)
+                    +e.header
+                        +e.SPAN.label Weight
+                    +range-slider
+                        +range-slider-fields
+                            +range-slider-field
+                                +range-slider-input(type='hidden' name='weight-min')._min
+                                +range-slider-text
+                            +range-slider-field
+                                +range-slider-input(type='hidden' name='weight-max')._max
+                                +range-slider-text
+                        +range-slider-control.js-filter-weight
+                +col(3)
+                    +e.header
+                        +e.SPAN.label Ethnicity
+                    +selectbox('All')
+                        +selectbox-control(name='ethnicity')
+                            option(value='all') All
+                            option(value='item1') item 1
+                            option(value='item2') item 2
+                            option(value='item3') item 3
+            +grid
+                +col(2)
+                    +checkbox(true, 'verified', 1) Verified
+                +col(2)
+                    +checkbox(true, 'top_100', 1) TOP 100
+                +col(2)
+                    +checkbox(true, 'with_video', 1) With Video
+                +col(2)
+                    +checkbox(false, 'porn_star', 1) Porn Star
+                +col(2)
+                    +checkbox(false, 'on_tour', 1) on Tour
+                +col(2)
+                    +checkbox(false, 'with_reviews', 1) With reviews
+
+            +grid
+                +col(3)
+                    +button._uppercase._border_standart + show more options
+                +col(3)
+                    +button._uppercase._bg_darkGrey._color_main Apply <span>(19405)</span>
+                +col(3)
+                    +button._uppercase._border_standart reset options
+                +col(3).grid__col_align_right.grid__col_align_right._push_right
+                    +icon-button('filter-button', 21, 12)._uppercase Hide

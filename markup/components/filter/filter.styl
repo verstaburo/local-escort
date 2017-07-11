@@ -3,6 +3,31 @@
     padding: 24px 0
     border-bottom: 1px solid borderColor
 
+    &_extended
+        display: block
+        padding: 0
+        border-bottom: 0
+        background-color: #fff
+
+        .grid
+            padding-top: 16px
+            padding-bottom: 40px
+
+            &:first-child
+                padding-top: 0
+
+            &:not(:first-child)
+                border-top: 1px solid borderColor
+
+    &__header
+        display: flex
+        justify-content: space-between
+        width: 100%
+        margin-bottom: 17px
+
+    &__label
+        font-size 16px
+
     &__col
         min-width: 235px
 
@@ -18,3 +43,6 @@
     &__button
         width: 60px
         height: 60px
+
+    &__container
+        display: flex

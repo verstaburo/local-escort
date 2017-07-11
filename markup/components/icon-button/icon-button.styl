@@ -1,12 +1,26 @@
 .icon-button
-    display: table-cell
+    display: inline-block
+    vertical-align middle
     background-color: transparent
-    border: 1px solid borderColor
-    vertical-align: middle
     text-align: center
     text-decoration: none
+    line-height 3.75
+    padding: 0 19px
+    cursor pointer
+    border: 1px solid borderColor
+
+    &_uppercase
+        text-transform: uppercase
+
+    &__text
+        display: inline-block
+        vertical-align middle
+        font-size: 16px
+        margin-right: 20px
 
     &__icon
+        display: inline-block
+        vertical-align middle
 
         &_fill
             fill: darkGreyColor

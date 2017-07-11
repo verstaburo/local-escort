@@ -1,3 +1,6 @@
 mixin icon-button(name, width, height, className)
     +b.BUTTON.icon-button&attributes(attributes)
+        if block
+            +e.text
+                block
         != pugHelpers.Icon.call(locals, {iconName: name, className: className || 'icon-button__icon', iconWidth: width, iconHeight: height})
