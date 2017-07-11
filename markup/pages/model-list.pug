@@ -1,19 +1,19 @@
 extends ../components/layout-default/layout-default
 include ../components/header/header
 include ../components/footer/footer
+include ../components/model-list/model-list
 include ../components/arrow-up/arrow-up
-include ../components/demo/demo
 
 block header
     +header
 
 block content
     +photo-tape
-    +demo
-        +demo-link('model-list.html') 01_List_1
-        +demo-link('model-list-no-models.html') 01_List_1_no models
-        +demo-link('model-list-search-result.html') 01_List_8_search 2
+    +model-list
     +arrow-up
+
+block scripts
+    script(src='%=static=%js/separate-js/ajax/model-list-load.js')
 
 block footer
     +footer

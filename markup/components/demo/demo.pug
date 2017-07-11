@@ -1,0 +1,16 @@
+include ../container/container
+
+mixin demo()
+    +b.demo&attributes(attributes)
+        +container
+            +e.H1.heading Demo page (sitemap)
+
+            +e.UL.list
+                block
+
+mixin demo-link(href)
+    +e.LI.item
+        +e.A(href=href target='_blank').link
+            b
+                block
+            span=`(${href})`
