@@ -1,0 +1,56 @@
+.rating-interactive
+    display: inline-flex
+    flex-direction: row-reverse
+    justify-content: flex-end
+    border: 1px solid borderColor
+
+    &_dark
+        border-color #262728
+
+        & ^[0]__star:not(:last-child)
+            border-color: #262728
+
+        & ^[0]__icon
+            fill: rgba(#fff, .15)
+
+        & ^[0]__reset
+            border-color #262728
+            color: rgba(#fff, .1)
+
+    &__reset
+        display: flex
+        align-items: center
+        justify-content: center
+        border-left: 1px solid borderColor
+        padding: 0 22px
+        cursor: pointer
+        font-size 16px
+        font-weight 400
+        text-transform uppercase
+
+    &__star
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 60px
+        height: 60px
+        cursor: pointer
+
+        &:not(:last-child)
+            border-left: 1px solid borderColor
+
+        &:hover ~ ^[0]__star ^[0]__icon,
+        &:hover ^[0]__icon,
+        &.active ~ ^[0]__star ^[0]__icon,
+        &.active ^[0]__icon
+            fill: mainColor
+
+    &__control
+        display: none
+
+    &__icon
+        width 16px
+        height 15px
+        fill: #e6e6e6
+        //fill: rgba(#fff, .15)
+        transition(all)11

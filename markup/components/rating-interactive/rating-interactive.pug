@@ -1,0 +1,7 @@
+mixin rating-interactive(num, name)
+    +b.rating-interactive&attributes(attributes)
+        +e.reset reset
+        - for (var i = num; i >= 1; i--)
+            +e.LABEL.__star
+                +e.INPUT(type='radio' name=name value=i).__control
+                != pugHelpers.Icon.call(locals, {iconName: 'star', className: 'rating-interactive__icon', iconWidth: '16', iconHeight: '15'})
