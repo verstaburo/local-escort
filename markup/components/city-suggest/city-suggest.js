@@ -28,8 +28,4 @@ export default () => {
         closeSuggest();
         openCityList();
     });
-
-    parentItem.click(function () {
-        openSuggest();
-    });
 };
