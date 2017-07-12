@@ -48,7 +48,7 @@ mixin filter()
                         option(value='item3') item 3
 
             +e.col._no_width._push_right
-                +icon-button('filter-button', 21, 12).__button
+                +icon-button('filter-button', 21, 12).__button.js-toggle-extended-filter
 
 mixin filter-additional
     +b.filter-additional
@@ -290,7 +290,11 @@ mixin filter-additional
                 +col(3)
                     +button._uppercase._bg_darkGrey._color_white._border_grey Reset options
                 +col(3).grid__col_push_right
-                    +button._uppercase._bg_darkGrey._color_white._border_grey  – hide more options
+                    +button(
+                        data-show-text='+ show more options',
+                        data-hide-text='- hide more options'
+                    )._uppercase._bg_darkGrey._color_white._border_grey.js-toggle-filter-additional + show more options
+
 mixin filter-extended
     +b.FORM(method='POST' action='#').filter._extended&attributes(attributes)
         +container
@@ -395,11 +399,14 @@ mixin filter-extended
 
             +grid
                 +col(3)
-                    +button._uppercase._border_standart + show more options
+                    +button(
+                        data-show-text='+ show more options',
+                        data-hide-text='- hide more options'
+                    )._uppercase._border_standart.js-toggle-filter-additional + show more options
                 +col(3)
-                    +button._uppercase._bg_darkGrey._color_main Apply <span>(19405)</span>
+                    +button._uppercase._bg_darkGrey._color_main.__hide-additional Apply <span>(19405)</span>
                 +col(3)
-                    +button._uppercase._border_standart reset options
+                    +button._uppercase._border_standart.__hide-additional reset options
                 +col(3).grid__col_align_right.grid__col_align_right._push_right
-                    +icon-button('filter-button', 21, 12)._uppercase Hide
+                    +icon-button('filter-button', 21, 12)._uppercase.js-toggle-extended-filter Hide
         +filter-additional

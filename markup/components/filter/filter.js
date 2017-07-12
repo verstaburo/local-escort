@@ -95,6 +95,32 @@ const rateSlider = () => {
     });
 };
 
+const filterExtended = () => {
+    const block = $(document).find('.filter_extended');
+
+    block.on('toggleFilter', () => {
+        block.slideToggle(250, () => {
+            const isActive = block.is(':visible');
+            const overlay = $('.page__overlay');
+
+            $(document)
+                .find('.js-toggle-extended-filter')
+                .toggleClass('active', isActive);
+
+            if (isActive) {
+                overlay.fadeIn();
+            } else {
+                overlay.fadeOut();
+            }
+        });
+    });
+
+    $(document).on('click', '.js-toggle-extended-filter', (e) => {
+        e.preventDefault();
+        block.trigger('toggleFilter');
+    });
+};
+
 const heightSlider = () => {
     const slider = $('.js-filter-height');
 
@@ -287,6 +313,33 @@ const shoeSlider = () => {
     });
 };
 
+const toggleAdditional = () => {
+    const block = $('.filter-additional');
+
+    if (!block.length) {
+        return;
+    }
+
+    $(document).on('click', '.js-toggle-filter-additional', function (e) {
+        e.preventDefault();
+        const el = $(this);
+
+        block.slideToggle(250, () => {
+            const isActive = block.is(':visible');
+            const nextText = isActive ? el.data('hide-text') : el.data('show-text');
+
+            $(document)
+                .find('.js-toggle-filter-additional')
+                .text(nextText)
+                .toggleClass('active', isActive);
+
+            block
+                .parents('.filter_extended')
+                .toggleClass('filter_additional', isActive);
+        });
+    });
+};
+
 export default function filter() {
     const block = $('.filter');
 
@@ -300,4 +353,6 @@ export default function filter() {
     weightSlider();
     breastSlider();
     shoeSlider();
+    toggleAdditional();
+    filterExtended();
 }

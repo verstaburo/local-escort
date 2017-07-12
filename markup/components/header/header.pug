@@ -9,6 +9,7 @@ include ../accordion/accordion
 include ../button/button
 include ../city-list/city-list
 include ../selectbox/selectbox
+include ../filter/filter
 
 mixin header()
     +b.HEADER.header&attributes(attributes)
@@ -60,7 +61,7 @@ mixin header()
                             +accordion-item('Africa')
                                 +city-list
                 +navbar-item._filter.show-fixed
-                    +navbar-link(href='#')._row._has_badge
+                    +navbar-link(href='#')._row._has_badge.js-toggle-extended-filter
                         +navbar-badge._top_right 2
                         +navbar-col
                             +navbar-heading Filter
@@ -161,7 +162,7 @@ mixin header()
                     +navbar-link(href='#')._active-style_main.js-header-toggle-search-bar
                         != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'navbar__icon_search', iconWidth: '14', iconHeight: '14'})
                 +navbar-item
-                    +navbar-link(href='#')
+                    +navbar-link(href='#').js-toggle-extended-filter
                         != pugHelpers.Icon.call(locals, {iconName: 'filter-button', className: 'navbar__icon_filter', iconWidth: '19', iconHeight: '12'})
                 +navbar-item
                     +navbar-link(href='#')
@@ -179,3 +180,4 @@ mixin header()
             +search-bar._extended
 
         +photo-tape
+        +filter-extended
