@@ -1,6 +1,20 @@
 .range-slider
     display: block
 
+    &_dark
+        & ^[0]__fields
+            border-color: rgba(#efefef, .06)
+
+        & ^[0]__field:not(:last-child)
+            border-color: rgba(#efefef, .06)
+
+        & ^[0]__text
+            color: #fff
+            font-weight: 700
+
+        & ^[0]__slider .ui-slider-handle
+            background-color: #1e1f20
+
     &__fields
         display: flex
         border: 1px solid borderColor

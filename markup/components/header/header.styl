@@ -1,7 +1,95 @@
 .header
-    display: block
+    display: flex
+    flex-direction: column
+    width: 100%
     position: relative
-    z-index: 100
+    z-index: 200
+
+    .show-fixed
+        display: none
+
+    &__navbar
+        position: relative
+        z-index: 150
+
+    &.fixed
+        position: fixed
+        top: 0
+        left: 0
+        transform: translate3d(0, 0, 0)
+        box-shadow: 0 10px 40px rgba(29, 29, 29, .1)
+
+        .show-fixed
+            display: block
+
+            .selectbox__box
+                border-color: transparent
+
+        & ^[0]__navbar_desktop
+            order: 2
+
+            .navbar
+                height: 60px
+
+            .search-bar__close
+                margin: 0
+                border: 0
+                border-left: 1px solid borderColor
+
+            .navbar
+                z-index: 150
+
+                &__link
+                    &:hover, &.active
+                        .navbar__heading, .navbar__description
+                            color: mainColor
+
+                &__item_logo
+                    min-width: initial
+
+                    .navbar__link
+                        padding: 10px
+
+                    .logo__text
+                        display: none
+
+                &__item_filter
+                    min-width: 163px
+
+                    .navbar__col:first-of-type
+                        margin-left: 0
+                        margin-right: 12px
+                    .navbar__col:last-of-type
+                        margin-left: auto
+
+                &__item_city
+                    display: none
+
+                &__item_credits
+                    min-width: initial
+
+                    .navbar__heading
+                        display: none
+
+                    .navbar__description
+                        display: block
+                        color: darkGreyColor
+                        fill: darkGreyColor
+
+                &__item_profile
+                    min-width: initial
+
+                    .navbar__link
+                        padding-right: 30px
+
+                    .navbar__col
+                        margin: 0
+
+                        &:nth-child(3)
+                            display: none
+
+                &__description
+                    display: none
 
     &__search-bar
         position: absolute
@@ -19,7 +107,8 @@
 
     +below(768px)
         &__navbar
-            display: none
+            &_desktop
+                display: none
 
             &_mobile
                 display: block

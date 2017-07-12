@@ -4,6 +4,8 @@ include ../icon-button/icon-button
 include ../grid/grid
 include ../button/button
 include ../checkbox/checkbox
+include ../accordion/accordion
+include ../rating-interactive/rating-interactive
 
 mixin filter()
     +b.FORM(method='POST' action='#').filter&attributes(attributes)
@@ -35,7 +37,7 @@ mixin filter()
                         +range-slider-field
                             +range-slider-input(type='hidden' name='cost-max')._max
                             +range-slider-text $
-                    +range-slider-control#filter-cost
+                    +range-slider-control.js-filter-rate
 
             +e.col
                 +selectbox('Incall/Outcall')
@@ -47,6 +49,126 @@ mixin filter()
 
             +e.col._no_width._push_right
                 +icon-button('filter-button', 21, 12).__button
+
+mixin filter-additional
+    +b.filter-additional
+        +container
+            +e.row
+                +e.heading Choose Additional Options
+                +e.rating
+                    +grid.grid_items_center
+                        +col(6)
+                            +e.SPAN.label._left Rating
+                            +rating-interactive(5)._dark
+                        +col(6).grid__col_align_right
+                            +e.SPAN.sublabel Select minimum stars rating
+            +e.row
+                +grid
+                    +col(12)
+                        +e.SPAN.label._top Parameters
+                    +col(3)
+                        +e.header
+                            +e.SPAN.sublabel Nationality
+                        +selectbox('any')._deep-dark
+                            +selectbox-control(name='nationality')
+                                option(value='any') any
+                                option(value='item1') item 1
+                                option(value='item2') item 2
+                                option(value='item3') item 3
+                    +col(3)
+                        +e.header
+                            +e.SPAN.sublabel Language
+                        +selectbox('any')._deep-dark
+                            +selectbox-control(name='language')
+                                option(value='any') any
+                                option(value='item1') item 1
+                                option(value='item2') item 2
+                                option(value='item3') item 3
+                    +col(3)
+                        +e.header
+                            +e.SPAN.sublabel Hair color
+                        +selectbox('any')._deep-dark
+                            +selectbox-control(name='hair_color')
+                                option(value='any') any
+                                option(value='item1') item 1
+                                option(value='item2') item 2
+                                option(value='item3') item 3
+                    +col(3)
+                        +e.header
+                            +e.SPAN.sublabel Eye color
+                        +selectbox('any')._deep-dark
+                            +selectbox-control(name='eye_color')
+                                option(value='any') any
+                                option(value='item1') item 1
+                                option(value='item2') item 2
+                                option(value='item3') item 3
+                    +col(3)
+                        +e.header
+                            +e.SPAN.sublabel Breast size
+                        +range-slider._dark
+                            +range-slider-fields
+                                +range-slider-field
+                                    +range-slider-input(type='hidden' name='breast-min')._min
+                                    +range-slider-text A
+                                +range-slider-field
+                                    +range-slider-input(type='hidden' name='breast-max')._max
+                                    +range-slider-text FF
+                            +range-slider-control.js-filter-breast
+                    +col(3)
+                        +e.header
+                            +e.SPAN.sublabel Shoe size
+                        +range-slider._dark
+                            +range-slider-fields
+                                +range-slider-field
+                                    +range-slider-input(type='hidden' name='shoe-min')._min
+                                    +range-slider-text
+                                +range-slider-field
+                                    +range-slider-input(type='hidden' name='shoe-max')._max
+                                    +range-slider-text
+                            +range-slider-control.js-filter-shoe
+            +e.row
+                +grid
+                    +col(12)
+                        +e.SPAN.label._top Service for
+
+                    +col(2)
+                        +checkbox(false, 'service-for', 'men')._black Men
+                    +col(2)
+                        +checkbox(false, 'service-for', 'women')._black Women
+                    +col(2)
+                        +checkbox(false, 'service-for', 'couples')._black Couples
+                    +col(2)
+                        +checkbox(false, 'service-for', 'trans')._black Trans
+                    +col(2)
+                        +checkbox(false, 'service-for', 'gays')._black Gays
+                    +col(2)
+                        +checkbox(false, 'service-for', '2+')._black 2+
+            +accordion('Keywords', 'Show', 'Hide')
+                +grid
+                    +col(2)
+                        +checkbox(true, 'keywords', 'vip_companion') Vip Companion
+                    +col(2)
+                        +checkbox(true, 'keywords', 'muscular') Muscular
+                    +col(2)
+                        +checkbox(false, 'keywords', 'model_ex-model') Model/Ex-model
+                    +col(2)
+                        +checkbox(false, 'keywords', 'occasional') Occasional
+                    +col(2)
+                        +checkbox(false, 'keywords', 'super-busty') Super busty
+                    +col(2)
+                        +checkbox(false, 'keywords', 'super-booty') Super booty
+                    +col(2)
+                        +checkbox(false, 'keywords', 'petite') Petite
+                    +col(2)
+                        +checkbox(false, 'keywords', 'all-natural') All natural
+                    +col(2)
+                        +checkbox(false, 'keywords', 'college-girl') College girl
+                    +col(2)
+                        +checkbox(false, 'keywords', 'bbw') BBW
+                    +col(2)
+                        +checkbox(false, 'keywords', 'fitness-girl') Fitness girl
+                    +col(2)
+                        +checkbox(false, 'keywords', 'mature') Mature
 
 mixin filter-extended
     +b.FORM(method='POST' action='#').filter._extended&attributes(attributes)
@@ -159,3 +281,4 @@ mixin filter-extended
                     +button._uppercase._border_standart reset options
                 +col(3).grid__col_align_right.grid__col_align_right._push_right
                     +icon-button('filter-button', 21, 12)._uppercase Hide
+        +filter-additional

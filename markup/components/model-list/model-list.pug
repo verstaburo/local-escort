@@ -14,12 +14,12 @@ mixin model-list()
                 +e.header-col._flexible
                     +e.H1.heading Independent
                         span 38970
-                +e.header-col.hide-mob
+                +e.header-col.hide-mob.hide-when-header-fixed
                     +e.label Sort by
                     +selectbox('Date').__control
                 +e.header-col.hide-desktop
                     +sort-ui
-                +e.header-col.hide-mob
+                +e.header-col.hide-mob.hide-when-header-fixed
                     +button.A(href='#')._color_white._bg_darkGrey._uppercase.__control View on map
             +grid-masonry(4, '.model-preview').js-model-preview-grid
                 +model-preview([7, 7, 7], 'Sonya', 20, 325, true)

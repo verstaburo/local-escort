@@ -1,5 +1,8 @@
 export default function header() {
     const header = $('.header');
+    const photoTape = header.find('.photo-tape').offset().top;
+    const pageWrapper = $('.page__wrapper');
+    const hideWhenFixed = $('.hide-when-header-fixed');
 
     if (!header.length) {
         return;
@@ -22,5 +25,35 @@ export default function header() {
             el.addClass('active');
             searchBar.slideDown();
         }
+    });
+
+    let shouldBeFixed = false;
+
+    $(window).on('scroll', () => {
+       const sT = $(window).scrollTop();
+
+       if ($(window).width() > 768) {
+           shouldBeFixed = sT >= photoTape
+       } else {
+           shouldBeFixed = sT > 0;
+       }
+
+       if (shouldBeFixed) {
+           if (header.hasClass('fixed')) {
+               return;
+           }
+
+           header.addClass('fixed');
+           pageWrapper.css('margin-top', header.outerHeight());
+           hideWhenFixed.css({ opacity: 0, 'pointer-events': 'none' });
+       } else {
+           if (!header.hasClass('fixed')) {
+               return;
+           }
+
+           header.removeClass('fixed');
+           pageWrapper.css('margin-top', 0);
+           hideWhenFixed.css({ opacity: 1, 'pointer-events': 'all' });
+       }
     });
 }
