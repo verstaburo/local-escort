@@ -2,6 +2,14 @@
     position: relative
     display: block
 
+    &_deep-dark
+        & ^[0]__box
+            border-color: rgba(#efefef, .06)
+            background-color: rgba(255, 255, 255, .02)
+
+        & ^[0]__value
+            color: #fff
+
     &_dark
         & ^[0]__box
             border: transparent

@@ -8,7 +8,7 @@ include ../side-border-btn/side-border-btn
 
 mixin model-list()
     +b.model-list&attributes(attributes)
-        +filter.hide-mob.hide-when-header-fixed
+        +filter-extended.hide-mob
         +container
             +e.header
                 +e.header-col._flexible

@@ -46,3 +46,53 @@
 
     &__container
         display: flex
+
+.filter-additional
+    display: block
+    box-shadow 0 10px 40px rgba(29, 29, 29, .1)
+    background-color darkGreyColor
+    padding: 15px 0
+
+    .grid
+        padding-top: 0
+        padding-bottom: 0
+
+    &__row
+        padding: 43px 0
+
+        &:not(:last-child)
+            border-bottom: 1px solid rgba(#efefef, .06)
+
+    &__heading
+        color #fff
+        font-family fontSecond
+        font-size 26px
+        font-weight 400
+        letter-spacing: initial
+
+    &__label
+        color #fff
+        font-size 20px
+        letter-spacing initial
+
+        &_left
+            margin-right: 38px
+
+        &_top
+            margin-bottom: 32px
+
+    &__sublabel
+        opacity .35
+        color #fff
+        font-size 16px
+        line-height 26px
+        letter-spacing initial
+
+    &__header
+        display: flex
+        justify-content: space-between
+        width: 100%
+        margin-bottom: 17px
+
+    &__rating
+        padding-top: 18px
