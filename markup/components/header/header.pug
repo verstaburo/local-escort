@@ -5,11 +5,13 @@ include ../avatar/avatar
 include ../follow-us/follow-us
 include ../photo-tape/photo-tape
 include ../city-suggest/city-suggest
+include ../button/button
+include ../selectbox/selectbox
 
 mixin header()
     +b.HEADER.header&attributes(attributes)
         // DESKTOP NAVBAR
-        +e.NAV.navbar
+        +e.NAV.navbar._desktop
             +navbar
                 +navbar-item._logo
                     +navbar-link(href='#')
@@ -33,13 +35,24 @@ mixin header()
                 +navbar-item._flexible
                     +search-bar
 
-                +navbar-item._relative
+                +navbar-item._relative._city
                     +navbar-link-dropdown(href='#')
                         +navbar-heading City
                         +navbar-description Los Angeles
                     +city-suggest.__suggest
+                +navbar-item._filter.show-fixed
+                    +navbar-link(href='#')._row._has_badge
+                        +navbar-badge._top_right 2
+                        +navbar-col
+                            +navbar-heading Filter
+                        +navbar-col
+                            != pugHelpers.Icon.call(locals, {iconName: 'filter-button', className: 'header__filter-icon', iconWidth: 21, iconHeight: 12})
 
-                +navbar-item._dropdown
+                +navbar-item.show-fixed
+                    +selectbox('Date').__control
+                +navbar-item.show-fixed
+                    +button(href='#')._color_white._bg_darkGrey._uppercase View on map
+                +navbar-item._dropdown._credits
                     +navbar-link-dropdown(href='#')
                         +navbar-heading Credits
                         +navbar-description
@@ -56,7 +69,7 @@ mixin header()
                             +navbar-item
                                 +navbar-link(href='#')._row
                                     +navbar-heading Boost my account
-                +navbar-item._dropdown
+                +navbar-item._dropdown._profile
                     +navbar-link-dropdown(href='#')._row._has_badge
                         +navbar-badge._top_right 2
                         +navbar-col
@@ -145,3 +158,6 @@ mixin header()
 
         +e.search-bar
             +search-bar._extended
+
+        +photo-tape
+
