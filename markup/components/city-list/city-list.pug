@@ -1,0 +1,83 @@
+mixin city-list()
+    +b.city-list&attributes(attributes)
+        +cities-container
+            +cities-all
+        +button._uppercase._bg_grey._color_main.__button apply (18021)
+
+mixin city(title, count)
+    +e.LABEL.item&attributes(attributes)
+        +e.INPUT(type='radio', name='city', value=title).control
+        +e.SPAN.title= title
+        +e.SPAN.badge= count
+
+mixin cities-container
+    +e.container&attributes(attributes)
+        block
+
+mixin cities-all
+    +city('Alberta', 4760)._bold
+    +city('Galgary', 931)
+    +city('Edmonton', 573)
+    +city('ft mcmurray', 1945)
+    +city('grande prairie', 25)
+    +city('lethbridge', 452)
+    +city('Medicine Hat', 46)
+    +city('Red Deer', 427)
+    +city('St. Albert', 341)
+    +city('british columbia', 11246)._bold
+    +city('Abbotsford', 567)
+    +city('Cariboo', 345)
+    +city('Comox Valley', 4682)
+    +city('Cranbrook', 99)
+    +city('Kamloops', 426)
+    +city('Kelowna', 65)
+    +city('Nanaimo', 102)
+    +city('Peace River Country', 34)
+    +city('Prince George', 3457)
+    +city('Skeena', 1945)
+    +city('Sunshine Coast', 331)
+    +city('vancouver', 593)
+    +city('Victoria', 345)
+    +city('Whistler', 46)
+    +city('manitoba', 10344)._bold
+    +city('brandon', 931)
+    +city('winnipeg', 573)
+    +city('new brunswick', 2781)._bold
+    +city('federiction', 421)
+    +city('moncton', 579)
+    +city('st. john', 46)
+    +city('newfoundland & labrador', 98)._bold
+    +city('northwest territories', 351)._bold
+    +city('nova scotia', 1234)._bold
+    +city('ontario', 20344)._bold
+    +city('Barrie', 491)
+    +city('Belleville', 492)
+    +city('Brantford', 3456)
+    +city('Chatham', 20)
+    +city('Cornwall', 212)
+    +city('Guelph', 40)
+    +city('Hamilton', 357)
+    +city('Kingston', 3562)
+    +city('Kitchener', 466)
+    +city('London', 328)
+    +city('Niagara', 9334)
+    +city('Ottawa', 239)
+    +city('Owen Sound', 32)
+    +city('Peterborough', 426)
+    +city('Sarnia', 1235)
+    +city('Sault Ste Marie', 301)
+    +city('Sudbury', 99)
+    +city('Thunder Bay', 4267)
+    +city('Toronto', 1245)
+    +city('Windsor', 235)
+    +city('quebec', 6251)._bold
+    +city('Montreal', 325)
+    +city('Quebec City', 363)
+    +city('Saguenay', 2367)
+    +city('Sherbrooke', 56)
+    +city('Trois-Rivières', 784)
+    +city('saskatchewan', 2351)._bold
+    +city('prince albert', 956)
+    +city('regina', 452)
+    +city('saskatoon', 24)
+    +city('yukon', 953)._bold

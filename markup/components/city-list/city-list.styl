@@ -1,0 +1,72 @@
+.city-list
+
+    &__container
+        max-height 565px
+        display flex
+        flex-direction column
+        flex-wrap wrap
+
+
+    &__item
+        display flex
+        justify-content space-between
+        align-items center
+        width 23.5%
+        cursor pointer
+        margin-right 23px
+
+        & + .city-list__item_bold
+            margin-top 13px
+
+        &:hover
+            & ^[0]__title
+                opacity .85
+
+        &_bold
+            margin-bottom 11px
+
+            & ^[0]__title, & ^[0]__badge
+                font-weight 700
+                opacity 1
+
+            & + .city-list__item_bold
+                margin-top 0
+
+            // & + ^[1]
+            //     margin-top 10px
+
+    &__control
+        display none
+
+        &:checked~^[0]__title,
+        &:checked~^[0]__badge
+            opacity 1
+            color mainColor
+
+    &__title
+        color #fff
+        opacity .7
+        font-size 16px
+        line-height 1.88
+        cursor pointer
+        text-transform uppercase
+        letter-spacing 1px
+
+        transition(opacity, color)
+
+    &__badge
+        background-color #212223
+        padding 5px 10px
+        text-align center
+        display inline-block
+        color #fff
+        opacity .35
+        font-size 12px
+        line-height 1.17
+
+        transition(opacity, color)
+
+    &__button
+        display inline-block
+        min-width 258px
+        margin-top 30px
