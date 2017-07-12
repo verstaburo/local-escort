@@ -5,7 +5,9 @@ include ../avatar/avatar
 include ../follow-us/follow-us
 include ../photo-tape/photo-tape
 include ../city-suggest/city-suggest
+include ../accordion/accordion
 include ../button/button
+include ../city-list/city-list
 include ../selectbox/selectbox
 
 mixin header()
@@ -35,11 +37,28 @@ mixin header()
                 +navbar-item._flexible
                     +search-bar
 
-                +navbar-item._relative._city
+                +navbar-item._city
                     +navbar-link-dropdown(href='#')
                         +navbar-heading City
                         +navbar-description Los Angeles
-                    +city-suggest.__suggest
+                    +navbar-popup-wrapper
+                        +city-suggest.__suggest
+                    +navbar-dropdown
+                        +accordion(true).accordion_dark
+                            +accordion-item('United States')
+                                +city-list
+                            +accordion-item('Canada')
+                                +city-list
+                            +accordion-item('Europe')
+                                +city-list
+                            +accordion-item('Asia, Pacific and Middle East')
+                                +city-list
+                            +accordion-item('Australia and Oceania')
+                                +city-list
+                            +accordion-item('Latin America and Caribbean')
+                                +city-list
+                            +accordion-item('Africa')
+                                +city-list
                 +navbar-item._filter.show-fixed
                     +navbar-link(href='#')._row._has_badge
                         +navbar-badge._top_right 2
@@ -160,4 +179,3 @@ mixin header()
             +search-bar._extended
 
         +photo-tape
-
