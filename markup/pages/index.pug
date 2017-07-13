@@ -4,6 +4,8 @@ include ../components/footer/footer
 include ../components/arrow-up/arrow-up
 include ../components/demo/demo
 include ../components/container/container
+include ../components/filter/filter
+include ../components/popup-welcome/popup-welcome
 
 block header
     +header
@@ -15,6 +17,10 @@ block content
             +demo-link('model-list-no-models.html') 01_List_1_no models
             +demo-link('model-list-search-result.html') 01_List_8_search 2
     +arrow-up
+
+block popups
+    +popup-welcome
+    +filter-extended
 
 block footer
     +footer

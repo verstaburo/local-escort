@@ -3,6 +3,7 @@ include ../components/header/header
 include ../components/footer/footer
 include ../components/model-list/model-list-no-models
 include ../components/image-bg/image-bg
+include ../components/filter/filter
 include ../components/popup-welcome/popup-welcome
 
 block header
@@ -10,6 +11,10 @@ block header
 
 block content
     +model-list
+
+block popups
+    +popup-welcome
+    +filter-extended
 
 block footer
     +footer
