@@ -12,6 +12,8 @@ import accordion from '../../components/accordion/accordion';
 import ratingInteractive from '../../components/rating-interactive/rating-interactive';
 import popup from '../../components/popup/popup';
 import popupWelcome from '../../components/popup-welcome/popup-welcome';
+import selectCityPopup from '../../components/select-city-popup/select-city-popup';
+import cityList from '../../components/city-list/city-list';
 
 $(() => {
     svg4everybody();
@@ -29,4 +31,6 @@ $(() => {
     ratingInteractive();
     popup();
     popupWelcome();
+    selectCityPopup();
+    cityList();
 });

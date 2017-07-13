@@ -1,0 +1,24 @@
+include ../popup/popup
+include ../accordion/accordion
+include ../city-list/city-list
+include ../container/container
+
+mixin select-city-popup()
+    +popup#select-city
+        +b.select-city-popup&attributes(attributes)
+            +container
+                +accordion(true).accordion_dark
+                    +accordion-item('United States')
+                        +city-list
+                    +accordion-item('Canada')
+                        +city-list
+                    +accordion-item('Europe')
+                        +city-list
+                    +accordion-item('Asia, Pacific and Middle East')
+                        +city-list
+                    +accordion-item('Australia and Oceania')
+                        +city-list
+                    +accordion-item('Latin America and Caribbean')
+                        +city-list
+                    +accordion-item('Africa')
+                        +city-list

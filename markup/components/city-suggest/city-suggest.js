@@ -1,31 +1,20 @@
-export default () => {
-
+export default function citySuggest() {
     const suggestPopup = $('.city-suggest');
-    const parentItem = suggestPopup.parents('.navbar__item');
 
-    function openSuggest() {
-        suggestPopup.fadeIn();
+    if (!suggestPopup.length) {
+        return;
     }
-    function closeSuggest() {
+
+    try {
+        if (!sessionStorage.getItem('selectedCity')) {
+            setTimeout(() => { suggestPopup.fadeIn() }, 1500);
+        }
+    } catch (e) {}
+
+    suggestPopup.on('click', '#confirmCity', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         suggestPopup.fadeOut();
-    }
-    function openCityList() {
-        parentItem.addClass('navbar__item_active');
-    }
-    function closeCityList() {
-        parentItem.removeClass('navbar__item_active');
-    }
-
-    setTimeout(function () {
-        openSuggest();
-    }, 1500);
-
-    $('#confirmCity').click(function () {
-        closeSuggest();
-    });
-
-    $('#anotherCity').click(function () {
-        closeSuggest();
-        openCityList();
+        sessionStorage.setItem('selectedCity', true);
     });
 };
