@@ -8,6 +8,7 @@ export default function popup() {
     const DATA_ACTION_ATTR = 'action';
     const DATA_ACTION_SHOW = 'show';
     const DATA_ACTION_HIDE = 'hide';
+    const DATA_ACTION_TOGGLE = 'toggle';
     const DATA_ATTR = 'popup-id';
     const SHOW_EVENT = 'show';
     const HIDE_EVENT = 'hide';
@@ -19,6 +20,20 @@ export default function popup() {
     if (!popups.length) {
         return;
     }
+
+    const getCurrentPopupButtons = (id) => {
+        return $(document)
+            .find(TOGGLE_BTN_CLASS)
+            .filter(function() {
+                const el = $(this);
+                const action = el.data(DATA_ACTION_ATTR);
+
+                return (action === DATA_ACTION_SHOW || DATA_ACTION_TOGGLE) && el.data(DATA_ATTR) === id;
+            })
+            .each(function() {
+                $(this).addClass('active');
+            });
+    };
 
     const onShow = function () {
         const popup = $(this);
@@ -32,6 +47,7 @@ export default function popup() {
                 .addClass(ACTIVE_POPUP_CLASS)
                 .trigger(AFTER_SHOW_EVENT);
 
+            getCurrentPopupButtons('#' + popup.attr('id')).addClass('active');
             freeze();
         });
     };
@@ -47,7 +63,7 @@ export default function popup() {
             popup
                 .removeClass(ACTIVE_POPUP_CLASS)
                 .trigger(AFTER_HIDE_EVENT);
-
+            getCurrentPopupButtons('#' + popup.attr('id')).removeClass('active');
             unfreeze();
         });
     };
@@ -64,6 +80,8 @@ export default function popup() {
         }
 
         switch (action) {
+            case DATA_ACTION_TOGGLE:
+                return target.hasClass(ACTIVE_POPUP_CLASS) ? target.trigger(HIDE_EVENT) : target.trigger(SHOW_EVENT);
             case DATA_ACTION_SHOW:
                 return target.trigger(SHOW_EVENT);
             case DATA_ACTION_HIDE:

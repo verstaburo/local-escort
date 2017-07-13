@@ -96,29 +96,30 @@ const rateSlider = () => {
 };
 
 const filterExtended = () => {
-    const block = $(document).find('.filter_extended');
+    $(document)
+        .find('#filter-extended')
+        .on('show', function() {
+            const header = $('.header');
+            const el = $(this);
 
-    block.on('toggleFilter', () => {
-        block.slideToggle(250, () => {
-            const isActive = block.is(':visible');
-            const overlay = $('.page__overlay');
+            header
+                .css('z-index', +el.css('z-index') + 1)
+                .addClass('no-shadow');
+            el
+                .find('.popup__wrapper')
+                .css('padding-top', header.outerHeight());
+        })
+        .on('afterhide', function() {
+            const header = $('.header');
+            const el = $(this);
 
-            $(document)
-                .find('.js-toggle-extended-filter')
-                .toggleClass('active', isActive);
-
-            if (isActive) {
-                overlay.fadeIn();
-            } else {
-                overlay.fadeOut();
-            }
+            header
+                .css('z-index', '')
+                .removeClass('no-shadow');
+            el
+                .find('.popup__wrapper')
+                .css('padding-top', '');
         });
-    });
-
-    $(document).on('click', '.js-toggle-extended-filter', (e) => {
-        e.preventDefault();
-        block.trigger('toggleFilter');
-    });
 };
 
 const heightSlider = () => {
