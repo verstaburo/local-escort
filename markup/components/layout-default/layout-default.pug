@@ -2,6 +2,7 @@ doctype html
 html(class="no-js", lang="en")
 
     include ../../../node_modules/bemto.pug/bemto
+    include ../popup/popup
     include ../head/head
 
     head
@@ -20,7 +21,7 @@ html(class="no-js", lang="en")
         block footer
 
         .page__overlay
-            block popups
+        block popups
         block scripts
         script(src='%=static=%js/separate-js/jquery-ui.min.js')
         script(src='%=static=%js/main%=hash=%%=min=%.js')

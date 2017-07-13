@@ -10,6 +10,7 @@ import arrowUp from '../../components/arrow-up/arrow-up';
 import citySuggest from '../../components/city-suggest/city-suggest';
 import accordion from '../../components/accordion/accordion';
 import ratingInteractive from '../../components/rating-interactive/rating-interactive';
+import popup from '../../components/popup/popup';
 
 $(() => {
     svg4everybody();
@@ -25,4 +26,5 @@ $(() => {
     citySuggest();
     accordion();
     ratingInteractive();
+    popup();
 });

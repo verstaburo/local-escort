@@ -1,0 +1,42 @@
+//- Использование попапа
+
+//- Подключаем попап в блок с попапом (например, у нас есть блок popup-welcome)
+//- +popup#popup-welcome
+//-     +b.popup-welcome
+//-         ...
+//- теперь блок popup-welcome, подключаем на страницу в блок с попапами
+//- pageName.pug
+//- block popups
+//-     +popup-welcome
+
+//- Открыть попап/закрыть можно двумя способами
+
+//- 1)  С помощью элемента
+//-     Например, есть кнопка +button, что бы при клике на нее открылся попап (popup-welcome),
+//-     нужно ее изменить след образом:
+//-     +button(data-popup-id='#popup-welcome' data-action='show').js-toggle-popup
+//-     Что бы закрыть попап, нужно:
+//-     +button(data-popup-id='#popup-welcome' data-action='hide').js-toggle-popup
+//-
+//- 2) С помощью события
+//-    Например, нам с помощью JS (без элемента нужно открыть/закрыть попап)
+//-    $('#popup-welcome').trigger('show') - откроет попап с id #popup-welcome
+//-    Закрыть попап, так же
+//-    $('#popup-welcome').trigger('hide')
+
+//- Если нужно что-то сделать во время/после открытия/закрытия попапа
+
+//- Событие - во время открытия попапа = 'show'
+//- Событие - после открытия попапа = 'aftershow'
+//- Событие - во время закрытия попапа = 'hide'
+//- Событие - после закрытия попапа = 'afterhide'
+//- Пример (вместо eventName пишем название события)
+//- $('#my-popup').on(eventName, function() {
+//-    ...
+//- });
+
+
+mixin popup()
+    .popup&attributes(attributes)
+        .popup__wrapper
+            block

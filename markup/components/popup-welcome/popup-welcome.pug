@@ -1,17 +1,19 @@
 include ../button/button
 include ../image-bg/image-bg
 include ../count-info/count-info
+include ../popup/popup
 
 mixin popup-welcome()
-    +b.popup-welcome&attributes(attributes)
-        +image-bg('popup/welcome.jpg').__img
-        +e.text-block
-            +e.H2.heading Adult content 18+
-            +e.P.description is an innovative and dynamic educational and life skills program for students and professionals aged 18 to 35
-            +e.info-container
-                +count-info('Independent', '41908').__count-info
-                +count-info('Agency’s', '2154').__count-info
-            +e.buttons
-                +button()._uppercase._bg_grey._color_main.__button yes, I have 18
-                +button()._uppercase._border_grey.__button no, I don’t have 18
-                +e.A(href='#').terms Terms of use
+    +popup#popup-welcome
+        +b.popup-welcome&attributes(attributes)
+            +image-bg('popup/welcome.jpg').__img
+            +e.text-block
+                +e.H2.heading Adult content 18+
+                +e.P.description is an innovative and dynamic educational and life skills program for students and professionals aged 18 to 35
+                +e.info-container
+                    +count-info('Independent', '41908').__count-info
+                    +count-info('Agency’s', '2154').__count-info
+                +e.buttons
+                    +button()(data-popup-id='#popup-welcome' data-action='hide')._uppercase._bg_grey._color_main.__button.js-toggle-popup yes, I have 18
+                    +button()._uppercase._border_grey.__button no, I don’t have 18
+                    +e.A(href='#').terms Terms of use

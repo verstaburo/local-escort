@@ -1,0 +1,23 @@
+.popup
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    transform: translate3d(0, 0, 0)
+    width: 100%
+    height: 100vh
+    background-color: rgba(darkGreyColor, .8)
+    z-index: 500
+
+    &.active
+        display: block
+
+    &__wrapper
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 40px
+        width: 100%
+        height: 100vh
+        overflow-y: auto
+        overflow-x: hidden

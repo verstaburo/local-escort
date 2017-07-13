@@ -3,6 +3,7 @@ include ../components/header/header
 include ../components/footer/footer
 include ../components/model-list/model-list
 include ../components/arrow-up/arrow-up
+include ../components/popup-welcome/popup-welcome
 
 block header
     +header
@@ -10,6 +11,9 @@ block header
 block content
     +model-list
     +arrow-up
+
+block popups
+    +popup-welcome
 
 block scripts
     script(src='%=static=%js/separate-js/ajax/model-list-load.js')
