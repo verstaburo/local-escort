@@ -6,6 +6,12 @@
         flex-direction column
         flex-wrap wrap
 
+        +below(1124px)
+            max-height 770px
+
+        +below(768px)
+            max-height initial
+
 
     &__item
         display flex
@@ -14,6 +20,13 @@
         width 23.5%
         cursor pointer
         margin-right 23px
+
+        +below(1124px)
+            width 32%
+
+        +below(768px)
+            width 100%
+            margin-right 0
 
         & + .city-list__item_bold
             margin-top 13px
