@@ -1,0 +1,56 @@
+include ../grid/grid
+
+mixin model-info()
+    +b.model-info&attributes(attributes)
+        +e.heading About me
+        +e.P.description
+            | Mon nom est Megan, cultivée, je suis la plus belle compagne aventureuse pour
+            | n’importe quelle occasion. im the perfect woman that can give you the satisfaction,
+            | if you need relax and massage, call me, im real naughty, clean and safety so my picture is
+            | recent and 100% real, i propose Full package series kiseessss call me baby
+
+        +grid
+            +col(12)
+                +e.subheading Service for
+            +col(6)
+                +e.item
+                    != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
+                    span Women
+            +col(6)
+                +e.item
+                    != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
+                    span Man
+
+        +grid
+            +col(12)
+                +e.subheading Keywords
+            +col(6)
+                +e.item
+                    != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
+                    span Vip Companion
+            +col(6)
+                +e.item
+                    != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
+                    span Mature
+
+        +grid
+            +col(12)
+                +e.subheading Service
+            +col(6)
+                +e.item
+                    != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
+                    span Sex
+            +col(6)
+                +e.item
+                    != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
+                    span Mature
+
+            +col(6)
+                +e.item
+                    != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
+                    span BJ with condom
+            +col(6)
+                +e.item
+                    != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
+                    span BJ without condom
+                    i + $50

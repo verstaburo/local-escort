@@ -1,0 +1,38 @@
+include ../popup/popup
+include ../profile-card/profile-card
+include ../model-photos/model-photos
+include ../short-info/short-info
+include ../agency-info/agency-info
+include ../model-info/model-info
+
+mixin profile-popup()
+    +popup.popup_start#profile-popup
+        +container
+            +b.profile-popup&attributes(attributes)
+                +e.main
+                    +e.content
+                        +model-photos
+                        +e.row
+                            +agency-info
+                        +e.row
+                            +model-info
+                    +e.ASIDE.sidebar
+                        +profile-card
+
+                        +e.short-info
+                            +short-info
+                                +short-info-heading Profile ID
+                                +short-info-content
+                                    +short-info-text 8715552
+                            +short-info
+                                +short-info-heading page views
+                                +short-info-content
+                                    +short-info-text 14,485 (Since 01.11.12)
+                            +short-info
+                                +short-info-heading Hand verified
+                                +short-info-content
+                                    +short-info-text 22.08.2015
+                            +short-info
+                                +short-info-heading last modified
+                                +short-info-content
+                                    +short-info-text 03.09.2015

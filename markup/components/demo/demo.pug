@@ -9,7 +9,7 @@ mixin demo()
                 block
 
 mixin demo-link(href)
-    +e.LI.item
+    +e.LI.item&attributes(attributes)
         +e.A(href=href target='_blank').link
             b
                 block

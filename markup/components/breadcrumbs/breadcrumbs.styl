@@ -1,0 +1,25 @@
+.breadcrumbs
+    display: inline-flex
+    align-items: center
+
+    &__item
+        display: flex
+        align-items: center
+
+        &:not(:first-child)::before
+            content: ''
+            display: block
+            width 9px
+            height 1px
+            background-color #dadada
+            margin-left: 9px
+            margin-right: 9px
+            flex-shrink: 0
+
+    &__link
+        color rgba(darkGreyColor, .5)
+        font-family fontMain
+        font-size 12px
+        font-weight 400
+        text-transform uppercase
+        text-decoration: none
