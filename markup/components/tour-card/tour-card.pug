@@ -1,0 +1,23 @@
+include ../short-info/short-info
+
+mixin tour-card(heading, date, phone, status)
+    +b.tour-card&attributes(attributes)
+        +e.header
+            +e.H3.heading=heading
+            != pugHelpers.Icon.call(locals, {iconName: 'plane', className: 'tour-card__plane', iconWidth: 14, iconHeight: 14})
+        +e.info
+            +e.col
+                +short-info
+                    +short-info-heading Date
+                    +short-info-content
+                        +short-info-text= date
+            +e.col
+                +short-info
+                    +short-info-heading tour phone
+                    +short-info-content
+                        +short-info-text= phone
+            +e.col
+                +short-info
+                    +short-info-heading Status
+                    +short-info-content
+                        +short-info-text= status

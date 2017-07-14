@@ -1,0 +1,5 @@
+mixin breadcrumbs(...items)
+    +b.UL.breadcrumbs&attributes(attributes)
+        for item in items
+            +e.LI.item
+                +e.A(href='#').link=item

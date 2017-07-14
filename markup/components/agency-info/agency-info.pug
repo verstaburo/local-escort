@@ -1,0 +1,42 @@
+include ../table/table
+include ../breadcrumbs/breadcrumbs
+include ../grid/grid
+
+mixin agency-info()
+    +b.agency-info&attributes(attributes)
+        +e.header
+            +e.H2.heading
+                span Agency
+                b Premium Escape
+            +breadcrumbs('USA', 'los angeles', 'agency', 'Massage')
+
+        +grid
+            +col(6)
+                +e.row
+                    +e.col Age
+                    +e.col 22
+                +e.row
+                    +e.col Gender
+                    +e.col Female
+                +e.row
+                    +e.col Orientation
+                    +e.col Heterosexual
+                +e.row
+                    +e.col Ethnicity
+                    +e.col American
+            +col(6)
+                +e.row
+                    +e.col Height
+                    +e.col 173 cm / 5 ft 8 in
+                +e.row
+                    +e.col Weight
+                    +e.col 59 kg / 130 lbs
+                +e.row
+                    +e.col Hair color
+                    +e.col Brown
+                +e.row
+                    +e.col Eye color
+                    +e.col Blue
+                +e.row
+                    +e.col Breast size
+                    +e.col 34D / 2
