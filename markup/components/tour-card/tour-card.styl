@@ -1,2 +1,42 @@
 .tour-card
     display: block
+    background-color: #fff
+    padding: 40px
+
+    &_dark
+        background-color: darkGreyColor
+
+        & ^[0]__heading
+            color: #fff
+
+        & ^[0]__plane
+            fill: mainColor
+
+        .short-info
+            &__heading
+                color: rgba(#fff, .5)
+
+            &__text
+                color: #fff
+
+    &__header
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__heading
+        color darkGreyColor
+        font-family fontMain
+        font-size 20px
+        font-weight 400
+
+    &__plane
+        fill: #dfdfdf
+        transform: rotate(90deg)
+
+    &__info
+        margin-top: 23px
+        display: flex
+
+    &__col:not(:last-child)
+        margin-right: 60px

@@ -10,14 +10,14 @@ mixin tour-card(heading, date, phone, status)
                 +short-info
                     +short-info-heading Date
                     +short-info-content
-                        +short-info-text= date
+                        +short-info-text!= date
             +e.col
                 +short-info
                     +short-info-heading tour phone
                     +short-info-content
-                        +short-info-text= phone
+                        +short-info-text!= phone
             +e.col
                 +short-info
                     +short-info-heading Status
                     +short-info-content
-                        +short-info-text= status
+                        +short-info-text!= status
