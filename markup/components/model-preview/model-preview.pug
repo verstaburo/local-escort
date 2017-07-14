@@ -18,11 +18,3 @@ mixin model-preview(photos, name, age, price, isOnline)
             +e.actions
                 +e.A(href='#').action._info i
                 +e.A(href='#').action._profile View profile
-
-mixin model-preview-badges
-    +e.badges&attributes(attributes)
-        block
-
-mixin model-preview-badge
-    +e.SPAN.badge&attributes(attributes)
-        block

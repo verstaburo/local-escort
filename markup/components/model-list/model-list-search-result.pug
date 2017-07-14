@@ -5,6 +5,7 @@ include ../grid/grid
 include ../selectbox/selectbox
 include ../sort-ui/sort-ui
 include ../side-border-btn/side-border-btn
+include ../badges/badges
 
 mixin model-list()
     +b.model-list&attributes(attributes)
@@ -24,15 +25,15 @@ mixin model-list()
 
             +grid-masonry(4, '.model-preview').js-model-preview-grid
                 +model-preview([7, 7, 7], 'Megan', 20, 325, true)
-                    +model-preview-badges._top
-                        +model-preview-badge._new._skew
+                    +badges._top
+                        +badges-item._new._skew
                             span New
-                        +model-preview-badge._info
+                        +badges-item._info
                             span 1 hour ago
                 +model-preview([5, 5, 5, 5], 'Megan', 22, 390)
-                    +model-preview-badges._top
-                        +model-preview-badge._vip._skew
+                    +badges._top
+                        +badges-item._vip._skew
                             span Vip
-                    +model-preview-badges._bottom
-                        +model-preview-badge._verified._skew
+                    +badges._bottom
+                        +badges-item._verified._skew
                             span Verified
