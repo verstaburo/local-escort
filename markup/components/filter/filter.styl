@@ -3,11 +3,26 @@
     padding: 24px 0
     border-bottom: 1px solid borderColor
 
+    .grid__col_three
+        +below(1104px)
+            width 50%
+
+        +below(768px)
+            width 100%
+
+    .grid__col_two
+        +below(1104px)
+            min-width 50%
+            width auto
+
     &_additional
 
         & ^[0]__hide-additional
             opacity: 0
             pointer-events: none
+
+            +below(768px)
+                display none
 
     &_extended
         align-self: flex-start
@@ -60,6 +75,23 @@
     box-shadow 0 10px 40px rgba(29, 29, 29, .1)
     background-color darkGreyColor
     padding: 15px 0
+
+    &__keywords
+
+        .grid__col
+            +below(1124px)
+                width 33%
+
+            +below(768px)
+                width auto
+                min-width 50%
+
+    &__services
+
+        .grid__col_three
+            +below(991px)
+                width auto
+                min-width 50%
 
     .accordion__content .grid:first-child
         margin-top: -24px

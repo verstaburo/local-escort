@@ -3,6 +3,10 @@
     flex-direction: row-reverse
     justify-content: flex-end
     border: 1px solid borderColor
+    position relative
+
+    +below(768px)
+        padding-bottom 62px
 
     &_dark
         border-color #262728
@@ -28,6 +32,14 @@
         font-weight 400
         text-transform uppercase
 
+        +below(768px)
+            position: absolute;
+            width: 100%;
+            border-top: 1px solid;
+            top: 62px;
+            left 0
+            height: 62px;
+
     &__star
         display: flex
         align-items: center
@@ -35,6 +47,9 @@
         width: 60px
         height: 60px
         cursor: pointer
+
+        +below(768px)
+            width 52px
 
         &:not(:last-child)
             border-left: 1px solid borderColor
