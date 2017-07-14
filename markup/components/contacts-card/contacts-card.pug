@@ -1,0 +1,41 @@
+include ../button/button
+include ../short-info/short-info
+
+mixin contacts-card()
+    +b.contacts-card&attributes(attributes)
+        +e.col
+            +e.block._map
+            +button(href='#')._uppercase._bg_darkGrey._color_main View nearby models
+        +e.col
+            +e.block._info
+                +e.row
+                    +short-info
+                        +short-info-heading address
+                        +short-info-content
+                            +short-info-text 700 Jackson St
+                            +short-info-text Los Angeles, CA 90012, USA
+                +e.row
+                    +grid
+                        +col(6)
+                            +short-info
+                                +short-info-heading call & SMS
+                                +short-info-content
+                                    +short-info-text +1 818 554—9937
+                        +col(6)
+                            +short-info
+                                +short-info-heading Apps Available
+                                +short-info-content
+                                    +short-info-text WhatsApp, Viber
+                        +col(6)
+                            +short-info
+                                +short-info-heading on web
+                                +short-info-content
+                                    .contacts-card__icons
+                                        a(href='#').contacts-card__link
+                                            != pugHelpers.Icon.call(locals, { iconName: 's-fb', className: 'contacts-card__icon contacts-card__icon_fb', iconWidth: '8', iconHeight: '17' })
+                                        a(href='#').contacts-card__link
+                                            != pugHelpers.Icon.call(locals, { iconName: 's-tw', className: 'contacts-card__icon contacts-card__icon_tw', iconWidth: '17', iconHeight: '14' })
+                                        a(href='#').contacts-card__link
+                                            != pugHelpers.Icon.call(locals, { iconName: 's-link', className: 'contacts-card__icon contacts-card__icon_link', iconWidth: '16', iconHeight: '16' })
+
+            +button(href='#')._uppercase._bg_white._border_standart Private message

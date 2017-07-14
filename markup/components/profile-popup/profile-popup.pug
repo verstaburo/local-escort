@@ -4,6 +4,7 @@ include ../model-photos/model-photos
 include ../short-info/short-info
 include ../agency-info/agency-info
 include ../model-info/model-info
+include ../profile-contacts/profile-contacts
 
 mixin profile-popup()
     +popup.popup_start#profile-popup
@@ -16,6 +17,8 @@ mixin profile-popup()
                             +agency-info
                         +e.row
                             +model-info
+                        +e.row
+                            +profile-contacts
                     +e.ASIDE.sidebar
                         +profile-card
 

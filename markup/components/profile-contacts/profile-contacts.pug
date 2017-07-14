@@ -1,0 +1,43 @@
+include ../grid/grid
+include ../contacts-card/contacts-card
+
+mixin profile-contacts()
+    +b.profile-contacts&attributes(attributes)
+        +e.H2.heading Contacts
+        +contacts-card
+        +grid
+            +col(12)
+                +e.subheading Available
+            +col(6)
+                +e.item._row
+                    span Monday
+                    b 12:00 - 24:00
+            +col(6)
+                +e.item._row
+                    span Tuesday
+                    b 03:00 - 15:00
+            +col(6)
+                +e.item._row
+                    span Friday
+                    b 00:00 - 24:00
+            +col(6)
+                +e.item._row
+                    span Sunday
+                    b 00:00 - 24:00
+
+        +grid
+            +col(6)
+                +grid
+                    +col(12)
+                        +e.subheading Incall
+                    +col(12)
+                        +e.item._row
+                            span Hotel room
+                            b 5 stars
+            +col(6)
+                +grid
+                    +col(12)
+                        +e.subheading Outcall
+                    +col(12)
+                        +e.item
+                            span Home visit only
