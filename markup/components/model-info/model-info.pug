@@ -1,4 +1,5 @@
 include ../grid/grid
+include ../tour-card/tour-card
 
 mixin model-info()
     +b.model-info&attributes(attributes)
@@ -54,3 +55,11 @@ mixin model-info()
                     != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
                     span BJ without condom
                     i + $50
+
+        +e.row
+            +e.heading Tours
+            +tour-card('Girls is on tour in Roterdam', '25 JUL – 29 JUL', '818—554—9937', 'I’m right now on tour <span>(4 more days)</span>')._dark.__tour
+
+        +e.row
+            +e.subheading Upcoming tours
+            +tour-card('Visiting Amsterdam', '06 AUG – 08 AUG', '818—554—9937', 'I’m coming soon to tour <span>(15 days)</span>').__tour
