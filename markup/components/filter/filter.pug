@@ -60,7 +60,7 @@ mixin filter-additional
                         +col(6)
                             +e.SPAN.label._left Rating
                             +rating-interactive(5)._dark
-                        +col(6).grid__col_align_right
+                        +col(6).grid__col_align_right.hide-mob
                             +e.SPAN.sublabel Select minimum stars rating
             +e.row
                 +grid
@@ -144,7 +144,7 @@ mixin filter-additional
                     +col(2)
                         +checkbox(false, 'service-for', '2+')._black 2+
             +accordion.accordion_dark
-                +accordion-item('Keywords', 'Show', 'Hide')
+                +accordion-item('Keywords', 'Show', 'Hide').filter-additional__keywords
                     +grid
                         +col(2)
                             +checkbox(true, 'keywords', 'vip_companion')._black Vip Companion
@@ -171,7 +171,7 @@ mixin filter-additional
                         +col(2)
                             +checkbox(false, 'keywords', 'mature')._black Mature
 
-                +accordion-item('Services', 'Show', 'Hide')
+                +accordion-item('Services', 'Show', 'Hide').filter-additional__services
                     +grid
                         +col(12)
                             +e.SPAN.label._top Sex
@@ -303,7 +303,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Categories
-                        +selectbox('Escorts')
+                        +selectbox('Escorts')._grey
                             +selectbox-control(name='escorts')
                                 option(value='escorts') escorts
                                 option(value='item1') item 1
@@ -336,7 +336,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Availability
-                        +selectbox('All')
+                        +selectbox('All')._grey
                             +selectbox-control(name='availability')
                                 option(value='all') All
                                 option(value='item1') item 1
@@ -345,7 +345,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Orientation
-                        +selectbox('All')
+                        +selectbox('All')._grey
                             +selectbox-control(name='orientation')
                                 option(value='all') All
                                 option(value='item1') item 1
@@ -378,7 +378,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Ethnicity
-                        +selectbox('All')
+                        +selectbox('All')._grey
                             +selectbox-control(name='ethnicity')
                                 option(value='all') All
                                 option(value='item1') item 1
