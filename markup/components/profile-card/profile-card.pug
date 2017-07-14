@@ -1,0 +1,58 @@
+include ../badges/badges
+include ../avatar/avatar
+include ../rating/rating
+include ../button/button
+include ../icon-button/icon-button
+include ../table/table
+
+mixin profile-card()
+    +b.profile-card&attributes(attributes)
+        +badges._top
+            +badges-item._vip._skew
+                span Vip
+        +avatar('profile-card.png', null, true)._size_big.__avatar
+        +e.SPAN.heading Megan
+        +e.rating
+            +rating(4)
+        +e.buttons
+            +button._uppercase.button_bg_darkGrey._color_white call me
+            +icon-button('dots', 19, 3)
+        +table
+            +table-header
+                +table-header-col('Rates')._flexible
+                +table-header-col('Incall')._width_50
+                +table-header-col('Outcall')._width_50
+            +table-row
+                +table-col._flexible
+                    +table-text 1/2 hour
+                +table-col._width_50
+                    +table-text —
+                +table-col._width_50
+                    +table-text —
+            +table-row
+                +table-col._flexible
+                    +table-text 1 hour
+                +table-col._width_50
+                    +table-text 187 $
+                +table-col._width_50
+                    +table-text 187 $
+            +table-row
+                +table-col._flexible
+                    +table-text 2 hours
+                +table-col._width_50
+                    +table-text 374 $
+                +table-col._width_50
+                    +table-text 374 $
+            +table-row
+                +table-col._flexible
+                    +table-text Night
+                +table-col._width_50
+                    +table-text 1090 $
+                +table-col._width_50
+                    +table-text 1090 $
+        +e.share
+            +e.SPAN.share-heading share
+            +e.share-links
+                a(href='#') WhatsApp
+                a(href='#') SMS
+                a(href='#') Viber

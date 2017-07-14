@@ -1,2 +1,5 @@
-mixin avatar()
-    img(alt='avatar').avatar&attributes(attributes)
+mixin avatar(src, alt, isOnline)
+    +b.avatar&attributes(attributes)
+        +e.IMG(src='%=static=%img/content/avatars/'+src alt=alt||'avatar').img
+        if isOnline
+            +e.SPAN.online

@@ -7,12 +7,15 @@ include ../components/container/container
 include ../components/filter/filter
 include ../components/popup-welcome/popup-welcome
 include ../components/select-city-popup/select-city-popup
+include ../components/profile-card/profile-card
 
 block header
     +header
 
 block content
     +container
+        div(style='width: 316px; height: 1000px; background-color: #fff')
+            +profile-card
         +demo
             +demo-link('model-list.html') 01_List_1
             +demo-link('model-list-no-models.html') 01_List_1_no models
