@@ -7,6 +7,8 @@ include ../model-info/model-info
 include ../profile-contacts/profile-contacts
 include ../agency-card/agency-card
 include ../share/share
+include ../grid/grid
+include ../model-preview/model-preview
 
 mixin profile-popup()
     +popup.popup_start#profile-popup
@@ -25,6 +27,14 @@ mixin profile-popup()
                             +agency-card
                         +e.row
                             +share
+                        +e.row
+                            +grid
+                                +col(4)
+                                    +button()(href='#')._uppercase._border_standart Report
+                                +col(4)
+                                    +button()(href='#')._uppercase._border_standart QR Code
+                                +col(4)
+                                    +button()(href='#')._uppercase._border_standart Save as PDF
                     +e.ASIDE.sidebar
                         +profile-card
 
@@ -45,3 +55,8 @@ mixin profile-popup()
                                 +short-info-heading last modified
                                 +short-info-content
                                     +short-info-text 03.09.2015
+                +e.row
+                    //- recomended slider
+
+                +e.row
+                    //- Reviews
