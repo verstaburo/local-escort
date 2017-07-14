@@ -6,6 +6,7 @@ include ../agency-info/agency-info
 include ../model-info/model-info
 include ../profile-contacts/profile-contacts
 include ../agency-card/agency-card
+include ../share/share
 
 mixin profile-popup()
     +popup.popup_start#profile-popup
@@ -22,6 +23,8 @@ mixin profile-popup()
                             +profile-contacts
                         +e.row
                             +agency-card
+                        +e.row
+                            +share
                     +e.ASIDE.sidebar
                         +profile-card
 
