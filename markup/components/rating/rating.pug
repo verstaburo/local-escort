@@ -12,3 +12,15 @@ mixin rating(firstLetter, secondLetter)
         +e.DIV.value
             b= `${firstLetter},`
             span= secondLetter || 0
+
+            if block
+                != pugHelpers.Icon.call(locals, {iconName: 'arrow-sl', className: 'rating__arrow', iconWidth: '8', iconHeight: '8'})
+
+        if block
+            +e.dropdown
+                block
+
+mixin rating-dropdown-item(category)
+    +e.row&attributes(attributes)
+        +e.SPAN.heading=category
+        block

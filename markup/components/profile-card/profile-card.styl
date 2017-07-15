@@ -1,7 +1,10 @@
 .profile-card
     position: relative
     display: block
-    padding: 46px 40px 0
+    padding-top 46px
+
+    &__container
+        padding: 0 40px
 
     &__avatar
         margin: 0 auto
@@ -16,9 +19,15 @@
         text-transform uppercase
 
     &__rating
+        position: relative
         margin-top: 13px
-        margin-left: 32px
-        margin-right: 32px
+
+        & > .rating
+            margin-left: 72px
+            margin-right: 72px
+
+        .rating
+            position: static
 
     &__buttons
         display: flex

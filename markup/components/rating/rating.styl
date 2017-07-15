@@ -1,7 +1,12 @@
 .rating
+    position: relative
     display: flex
     justify-content: space-between
     align-items: center
+
+    &:hover > &__dropdown
+        opacity: 1
+        pointer-events all
 
     &__stars
         display: flex
@@ -27,3 +32,54 @@
 
         span
             font-size: 16px
+
+    &__arrow
+        margin-left: 8px
+
+    &__row
+        display: flex
+        align-items: center
+
+        &:not(:last-child)
+            margin-bottom: 25px
+
+    &__dropdown
+        opacity: 0
+        pointer-events: none
+        padding: 25px
+        position: absolute
+        top: 100%
+        left: 0
+        display: block
+        width: 100%
+        background-color: darkGreyColor
+        transition(opacity)
+
+        &::before
+            triangle(darkGreyColor, up)
+            left: 50%
+            top: 0
+            transform: translate(-50%, -100%)
+
+        .rating
+            margin-left: 15px
+            flex-shrink: 0
+
+            &__value
+                color: #fff
+                margin-left: 15px
+
+            &__star
+                fill: #878889
+
+                &_active
+                    fill: mainColor
+
+    &__heading
+        display: block
+        font-size 12px
+        font-weight 400
+        text-transform uppercase
+        color: #878889
+        width: 62px
+        ellipsis(62px)
