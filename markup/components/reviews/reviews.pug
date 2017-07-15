@@ -1,0 +1,14 @@
+mixin reviews()
+    +b.reviews&attributes(attributes)
+        +e.heading Reviews
+        +e.FORM(method='POST' action='#').form
+            +e.TEXTAREA.control(placeholder='Give feedback')
+
+        +e.items
+            unless block
+                +e.SPAN.no-reviews There are no reviews
+            block
+
+mixin reviews-item
+    +e.item&attributes(attributes)
+        block

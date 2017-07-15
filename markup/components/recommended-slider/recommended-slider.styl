@@ -1,0 +1,36 @@
+.recommended-slider
+    display: block
+
+    &__items
+        position: relative
+        margin-top: 58px
+
+    &__heading
+        color darkGreyColor
+        font-family fontSecond
+        font-size 33px
+        font-weight 400
+        letter-spacing initial
+
+    &__button
+        position: absolute
+        top: 45%
+        transform: translateY(-50%)
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        z-index: 1
+        background-color: darkGreyColor
+        cursor: pointer
+        opacity: 1
+        transition(opacity)
+
+        &.swiper-button-disabled
+            opacity: 0
+            pointer-events: none
+
+        &_prev
+            left: 50px
+
+        &_next
+            right: 50px

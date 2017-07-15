@@ -9,6 +9,8 @@ include ../agency-card/agency-card
 include ../share/share
 include ../grid/grid
 include ../model-preview/model-preview
+include ../recommended-slider/recommended-slider
+include ../reviews/reviews
 
 mixin profile-popup()
     +popup.popup_start#profile-popup
@@ -55,8 +57,8 @@ mixin profile-popup()
                                 +short-info-heading last modified
                                 +short-info-content
                                     +short-info-text 03.09.2015
-                +e.row
-                    //- recomended slider
+                +e.row._left_padding
+                    +recommended-slider
 
                 +e.row
-                    //- Reviews
+                    +reviews
