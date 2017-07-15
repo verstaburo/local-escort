@@ -2,13 +2,14 @@ include ../avatar/avatar
 include ../rating/rating
 include ../short-info/short-info
 include ../button/button
+include ../heading/heading
 
 mixin agency-card()
     +b.agency-card&attributes(attributes)
         +e.row
             +avatar('navbar.png')
             +e.info
-                +e.heading Premium Escape
+                +heading._md._uppercase Premium Escape
                 +e.UL.description
                     li Models 4057
                     li Since nov 16, 2012

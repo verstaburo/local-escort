@@ -1,9 +1,10 @@
 include ../grid/grid
 include ../tour-card/tour-card
+include ../heading/heading
 
 mixin model-info()
     +b.model-info&attributes(attributes)
-        +e.heading About me
+        +heading About me
         +e.P.description
             | Mon nom est Megan, cultivée, je suis la plus belle compagne aventureuse pour
             | n’importe quelle occasion. im the perfect woman that can give you the satisfaction,
@@ -12,7 +13,7 @@ mixin model-info()
 
         +grid
             +col(12)
-                +e.subheading Service for
+                +heading._md Service for
             +col(6)
                 +e.item
                     != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
@@ -24,7 +25,7 @@ mixin model-info()
 
         +grid
             +col(12)
-                +e.subheading Keywords
+                +heading._md Keywords
             +col(6)
                 +e.item
                     != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
@@ -36,7 +37,7 @@ mixin model-info()
 
         +grid
             +col(12)
-                +e.subheading Service
+                +heading._md Service
             +col(6)
                 +e.item
                     != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'model-info__icon-ok', iconWidth: '10', iconHeight: '6'})
@@ -57,9 +58,9 @@ mixin model-info()
                     i + $50
 
         +e.row
-            +e.heading Tours
+            +heading Tours
             +tour-card('Girls is on tour in Roterdam', '25 JUL – 29 JUL', '818—554—9937', 'I’m right now on tour <span>(4 more days)</span>')._dark.__tour
 
         +e.row
-            +e.subheading Upcoming tours
+            +heading._md Upcoming tours
             +tour-card('Visiting Amsterdam', '06 AUG – 08 AUG', '818—554—9937', 'I’m coming soon to tour <span>(15 days)</span>').__tour

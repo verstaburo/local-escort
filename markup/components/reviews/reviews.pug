@@ -1,6 +1,8 @@
+include ../heading/heading
+
 mixin reviews()
     +b.reviews&attributes(attributes)
-        +e.heading Reviews
+        +heading Reviews
         +e.FORM(method='POST' action='#').form
             +e.TEXTAREA.control(placeholder='Give feedback')
 

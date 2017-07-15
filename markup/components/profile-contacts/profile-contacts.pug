@@ -1,5 +1,6 @@
 include ../grid/grid
 include ../contacts-card/contacts-card
+include ../heading/heading
 
 mixin profile-contacts()
     +b.profile-contacts&attributes(attributes)
@@ -7,7 +8,7 @@ mixin profile-contacts()
         +contacts-card
         +grid
             +col(12)
-                +e.subheading Available
+                +heading._md Available
             +col(6)
                 +e.item._row
                     span Monday
@@ -29,7 +30,7 @@ mixin profile-contacts()
             +col(6)
                 +grid
                     +col(12)
-                        +e.subheading Incall
+                        +heading._md Incall
                     +col(12)
                         +e.item._row
                             span Hotel room
@@ -37,7 +38,7 @@ mixin profile-contacts()
             +col(6)
                 +grid
                     +col(12)
-                        +e.subheading Outcall
+                        +heading._md Outcall
                     +col(12)
                         +e.item
                             span Home visit only
