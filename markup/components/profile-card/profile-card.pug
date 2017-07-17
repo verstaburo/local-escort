@@ -11,7 +11,11 @@ mixin profile-card()
             +badges-item._vip._skew
                 span Vip
         +avatar('profile-card.png', null, true)._size_big.__avatar
-        +e.container
+        +e.container._center
+            if block
+                +e.label
+                    span
+                        block
             +e.SPAN.heading Megan
         +e.rating
             +rating(4)

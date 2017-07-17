@@ -6,6 +6,9 @@
     &__container
         padding: 0 40px
 
+        &_center
+            text-align: center
+
     &__avatar
         margin: 0 auto
 
@@ -74,3 +77,32 @@
                 border: 1px solid borderColor
                 margin-left: -1px
                 margin-top: -1px
+
+    &__label
+        margin: 20px auto
+        display: inline-flex
+        align-items: center
+        height: 26px
+        padding: 0 10px
+        border: 1px solid #efefef
+
+        & + ^[0]__heading
+            margin-top: 0
+
+        span
+            display: flex
+            align-items: center
+            color darkGreyColor
+            font-family fontMain
+            font-size 14px
+            font-weight 400
+
+            &::before
+                content: ''
+                display: block
+                width 9px
+                height 9px
+                margin-right: 8px
+                box-shadow 0 2px 8px rgba(210, 163, 111, .5)
+                background-color mainColor
+                border-radius: 50%
