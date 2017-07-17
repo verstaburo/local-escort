@@ -16,6 +16,7 @@ import selectCityPopup from '../../components/select-city-popup/select-city-popu
 import cityList from '../../components/city-list/city-list';
 import recommendedSlider from '../../components/recommended-slider/recommended-slider';
 import profilePopup from '../../components/profile-popup/profile-popup';
+import dottedDropdown from '../../components/dotted-dropdown/dotted-dropdown';
 
 $(() => {
     svg4everybody();
@@ -37,4 +38,5 @@ $(() => {
     cityList();
     recommendedSlider();
     profilePopup();
+    dottedDropdown();
 });

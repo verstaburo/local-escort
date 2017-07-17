@@ -4,6 +4,8 @@ include ../rating/rating
 include ../button/button
 include ../icon-button/icon-button
 include ../table/table
+include ../list/list
+include ../dotted-dropdown/dotted-dropdown
 
 mixin profile-card()
     +b.profile-card&attributes(attributes)
@@ -32,7 +34,33 @@ mixin profile-card()
         +e.container
             +e.buttons
                 +button._uppercase.button_bg_darkGrey._color_white call me
-                +icon-button('dots', 19, 3)
+                +dotted-dropdown._shadow
+                    +list
+                        +list-item
+                            +list-button(href='#') Following
+                        +list-item._dropdown
+                            +list-button.DIV Social network
+                            +list
+                                +list-item._dark
+                                    +list-button(href='#') Item #1
+                                +list-item._dark
+                                    +list-button(href='#') Item #2
+                                +list-item._dark
+                                    +list-button(href='#') Item #3
+
+                        +list-item
+                            +list-button(href='#') Send a private message
+                        +list-item._dropdown
+                            +list-button.DIV Share
+                            +list
+                                +list-item._dark
+                                    +list-button(href='#') Twitter
+                                +list-item._dark
+                                    +list-button(href='#') SMS
+                                +list-item._dark
+                                    +list-button(href='#') WhatsApp
+                                +list-item._dark
+                                    +list-button(href='#') Viber
             +table
                 +table-header
                     +table-header-col('Rates')._flexible

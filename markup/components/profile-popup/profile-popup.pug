@@ -11,7 +11,6 @@ include ../grid/grid
 include ../model-preview/model-preview
 include ../recommended-slider/recommended-slider
 include ../reviews/reviews
-include ../list/list
 
 mixin profile-popup()
     +popup.popup_start#profile-popup
@@ -49,32 +48,6 @@ mixin profile-popup()
                                             +button()(href='#')._uppercase._border_standart Save as PDF
                             +e.ASIDE.sidebar
                                 +profile-card I'm working now!
-                                +list
-                                    +list-item
-                                        +list-button(href='#') Following
-                                    +list-item._dropdown
-                                        +list-button.DIV Social network
-                                        +list
-                                            +list-item._dark
-                                                +list-button(href='#') Item #1
-                                            +list-item._dark
-                                                +list-button(href='#') Item #2
-                                            +list-item._dark
-                                                +list-button(href='#') Item #3
-
-                                    +list-item
-                                        +list-button(href='#') Send a private message
-                                    +list-item._dropdown
-                                        +list-button.DIV Share
-                                        +list
-                                            +list-item._dark
-                                                +list-button(href='#') Twitter
-                                            +list-item._dark
-                                                +list-button(href='#') SMS
-                                            +list-item._dark
-                                                +list-button(href='#') WhatsApp
-                                            +list-item._dark
-                                                +list-button(href='#') Viber
                                 +e.short-info
                                     +short-info
                                         +short-info-heading Profile ID
