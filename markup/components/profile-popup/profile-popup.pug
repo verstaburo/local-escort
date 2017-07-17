@@ -41,9 +41,9 @@ mixin profile-popup()
                                 +e.row
                                     +grid
                                         +col(4)
-                                            +button()(href='#')._uppercase._border_standart Report
+                                            +button()(data-popup-id='#profile-report' data-action='show')._uppercase._border_standart.js-toggle-popup Report
                                         +col(4)
-                                            +button()(href='#')._uppercase._border_standart QR Code
+                                            +button()(data-popup-id='#profile-qr' data-action='show')._uppercase._border_standart.js-toggle-popup QR Code
                                         +col(4)
                                             +button()(href='#')._uppercase._border_standart Save as PDF
                             +e.ASIDE.sidebar

@@ -1,14 +1,38 @@
 include ../icon-button/icon-button
 
+mixin share-button(kind)
+    - var params = []
+
+    case kind
+        when 'vk'
+            +icon-button('s-vk', 21, 12, 'share__icon_vk')(href='#').A.__button
+        when 'fb'
+            +icon-button('s-fb', 9, 19, 'share__icon_fb')(href='#').A.__button
+        when 'tw'
+            +icon-button('s-tw', 19, 15, 'share__icon_tw')(href='#').A.__button
+        when 'ok'
+            +icon-button('s-ok', 12, 19, 'share__icon_ok')(href='#').A.__button
+        when 'email'
+            +icon-button('s-email', 21, 20, 'share__icon_email')(href='#').A.__button
+        when 'g+'
+            +icon-button('s-g-plus', 26, 17, 'share__icon_gp')(href='#').A.__button
+        when 'dots'
+            +icon-button('dots', 19, 3, 'share__icon_dots').A.__button.__button
+
+mixin share-buttons
+    +b.share&attributes(attributes)
+        +e.buttons
+            block
+
 mixin share()
     +b.share&attributes(attributes)
         +e.SPAN.label Share
         +e.buttons
-            +icon-button('s-vk', 21, 12, 'share__icon_vk')(href='#').A.__button
-            +icon-button('s-fb', 9, 19, 'share__icon_fb')(href='#').A.__button
-            +icon-button('s-tw', 19, 15, 'share__icon_tw')(href='#').A.__button
-            +icon-button('s-ok', 12, 19, 'share__icon_ok')(href='#').A.__button
-            +icon-button('s-email', 21, 20, 'share__icon_email')(href='#').A.__button
-            +icon-button('s-g-plus', 26, 17, 'share__icon_gp')(href='#').A.__button
+            +share-button('vk')
+            +share-button('fb')
+            +share-button('tw')
+            +share-button('ok')
+            +share-button('email')
+            +share-button('g+')
 
         +icon-button('dots', 19, 3, 'share__icon_dots').A.__button._dots

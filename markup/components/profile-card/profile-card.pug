@@ -33,7 +33,7 @@ mixin profile-card()
                     +rating(2)
         +e.container
             +e.buttons
-                +button._uppercase.button_bg_darkGrey._color_white call me
+                +button(data-popup-id='#profile-call' data-action='show')._uppercase.button_bg_darkGrey._color_white.js-toggle-popup call me
                 +dotted-dropdown._shadow
                     +list
                         +list-item

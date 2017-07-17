@@ -1,0 +1,61 @@
+include ../popup/popup
+include ../image-bg/image-bg
+include ../rating/rating
+include ../grid/grid
+include ../button/button
+include ../heading/heading
+include ../share/share
+include ../info-control/info-control
+
+mixin profile-common-popup(id)
+    +popup(id=id)
+        +b.profile-common-popup&attributes(attributes)
+            +e.col._card
+                +e.card
+                    +image-bg('model-photo/5.jpg')
+                    +e.footer._column
+                        +heading._md._uppercase Sonya
+                        +e.rating
+                            +rating(4)._dark
+            +e.col._info
+                block
+
+mixin profile-common-popup-call
+    +profile-common-popup('profile-call')
+        +b.profile-common-popup-call
+            +e.A(href='+12244578900').phone
+                != pugHelpers.Icon.call(locals, {iconName: 'phone', className: 'profile-common-popup-call__icon', iconWidth: 24, iconHeight: 39})
+                +heading +1 224 457-89-00
+            +e.ARTICLE.content
+                +heading._md Tell me that you found his ad on LocalEscort.
+                +e.P.text Attention! Do not settle for an advance payment if you are not sure of the seller's reliability. Check the goods before transferring money. Do not trust too cheap offers.
+
+        .profile-common-popup__footer
+            +button(href='#')._border_standart._uppercase.profile-common-popup__button Ok
+
+mixin profile-common-popup-qr
+    +profile-common-popup('profile-qr')
+        +b.profile-common-popup-qr
+            +e.IMG(src='__static__img/content/qrcode.jpg' alt='qr-code').img
+        .profile-common-popup__footer
+            +share-buttons
+                +share-button('vk')
+                +share-button('fb')
+                +share-button('tw')
+                +share-button('ok')
+                +share-button('email')
+                +share-button('dots')
+
+mixin profile-common-popup-report
+    +profile-common-popup('profile-report')
+        +b.FORM(method='post' action='#').profile-common-popup-report
+            +e.step
+                +info-control('radio', 'reason', 1) Theme name for report one
+                +info-control('radio', 'reason', 2) Theme name for report
+                +info-control('radio', 'reason', 3, true) Theme name for report three
+                +info-control('radio', 'reason', 4) Other
+            +e.step
+                +e.TEXTAREA(placeholder='Please describe your complaint').control
+        .profile-common-popup__footer
+            +button(href='#')._border_standart._uppercase.profile-common-popup__button.js-profile-report-next Continue
+            +button(href='#')._border_standart._uppercase.profile-common-popup__button.js-profile-report-submit Send report

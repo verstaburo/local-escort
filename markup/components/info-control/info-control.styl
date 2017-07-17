@@ -1,0 +1,44 @@
+.info-control
+    display: block
+    width: 100%
+    height: 60px
+    cursor: pointer
+
+    &__control
+        display: none
+
+        &:checked
+            & + ^[0]__box
+                background-color: darkGreyColor
+                border-color: transparent
+
+                & ^[0]__label
+                    color: #fff
+
+                & ^[0]__ok
+                    transform: scale(1)
+
+    &__box
+        display: flex
+        align-items: center
+        height: 100%
+        padding: 0 20px
+        background-color: #fff
+        border: 1px solid borderColor
+        transition(background-color, border-color)
+
+    &__label
+        color darkGreyColor
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        ellipsis(100%)
+        transition(color)
+        margin-right: 20px
+
+    &__ok
+        margin-left: auto
+        flex-shrink: 0
+        fill: mainColor
+        transform: scale(0)
+        transition(transform)

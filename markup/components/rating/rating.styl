@@ -8,6 +8,16 @@
         opacity: 1
         pointer-events all
 
+    &_dark
+        & ^[0]__value
+            color: #fff
+
+        & ^[0]__star
+            fill: #878889
+
+            &_active
+                fill: mainColor
+
     &__stars
         display: flex
         font-size: 0

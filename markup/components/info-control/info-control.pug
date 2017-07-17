@@ -1,0 +1,7 @@
+mixin info-control(type, name, value, checked)
+    +b.LABEL.info-control&attributes(attributes)
+        +e.INPUT(type=type||'checkbox' name=name value=value checked=!!checked).control
+        +e.box
+            +e.SPAN.label
+                block
+            != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'info-control__ok', iconWidth: '10', iconHeight: '6'})
