@@ -14,51 +14,60 @@ include ../reviews/reviews
 
 mixin profile-popup()
     +popup.popup_start#profile-popup
-        +container
-            +b.profile-popup&attributes(attributes)
-                +e.main
-                    +e.content
-                        +model-photos
-                        +e.row
-                            +agency-info
-                        +e.row
-                            +model-info
-                        +e.row
-                            +profile-contacts
-                        +e.row
-                            +agency-card
-                        +e.row
-                            +share
-                        +e.row
-                            +grid
-                                +col(4)
-                                    +button()(href='#')._uppercase._border_standart Report
-                                +col(4)
-                                    +button()(href='#')._uppercase._border_standart QR Code
-                                +col(4)
-                                    +button()(href='#')._uppercase._border_standart Save as PDF
-                    +e.ASIDE.sidebar
-                        +profile-card I'm working now!
+        +b.profile-popup-button._prev
+            +e.icon-container
+                != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
+        +b.profile-popup-button._next
+            +e.icon-container
+                != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
 
-                        +e.short-info
-                            +short-info
-                                +short-info-heading Profile ID
-                                +short-info-content
-                                    +short-info-text 8715552
-                            +short-info
-                                +short-info-heading page views
-                                +short-info-content
-                                    +short-info-text 14,485 <span>(Since 01.11.12)</span>
-                            +short-info
-                                +short-info-heading Hand verified
-                                +short-info-content
-                                    +short-info-text 22.08.2015
-                            +short-info
-                                +short-info-heading last modified
-                                +short-info-content
-                                    +short-info-text 03.09.2015
-                +e.row._left_padding
-                    +recommended-slider
+        +container.swiper-container
+            .swiper-wrapper
+                - for (var i = 0; i < 4; i++)
+                    +b.profile-popup.swiper-slide
+                        +e.main
+                            +e.content
+                                +model-photos
+                                +e.row
+                                    +agency-info
+                                +e.row
+                                    +model-info
+                                +e.row
+                                    +profile-contacts
+                                +e.row
+                                    +agency-card
+                                +e.row
+                                    +share
+                                +e.row
+                                    +grid
+                                        +col(4)
+                                            +button()(href='#')._uppercase._border_standart Report
+                                        +col(4)
+                                            +button()(href='#')._uppercase._border_standart QR Code
+                                        +col(4)
+                                            +button()(href='#')._uppercase._border_standart Save as PDF
+                            +e.ASIDE.sidebar
+                                +profile-card I'm working now!
 
-                +e.row
-                    +reviews
+                                +e.short-info
+                                    +short-info
+                                        +short-info-heading Profile ID
+                                        +short-info-content
+                                            +short-info-text 8715552
+                                    +short-info
+                                        +short-info-heading page views
+                                        +short-info-content
+                                            +short-info-text 14,485 <span>(Since 01.11.12)</span>
+                                    +short-info
+                                        +short-info-heading Hand verified
+                                        +short-info-content
+                                            +short-info-text 22.08.2015
+                                    +short-info
+                                        +short-info-heading last modified
+                                        +short-info-content
+                                            +short-info-text 03.09.2015
+                        +e.row._left_padding
+                            +recommended-slider
+
+                        +e.row
+                            +reviews

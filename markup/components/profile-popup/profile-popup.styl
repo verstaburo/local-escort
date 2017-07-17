@@ -2,6 +2,7 @@
     display: block
     background-color bgColor
     padding-bottom: 58px
+    box-sizing: border-box
 
     &__main
         display: flex
@@ -33,3 +34,57 @@
 
         &_left_padding
             padding-right: 0
+
+    &-button
+        position: fixed
+        display: block
+        width: 156px
+        height: 156px
+        top: 50%
+        background-color: rgba(#fff, .05)
+        cursor: pointer
+        border-radius: 50%
+        transition(transform, background-color)
+
+        &__icon-container
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 50%
+            height: 100%
+
+        svg
+            stroke: rgba(#fff, .4)
+            transition(background-color)
+
+        &:hover
+            background-color: rgba(#fff, .08)
+
+            svg
+                stroke: #fff
+
+        &_prev
+            left: 0
+            transform: translate3d(-50%, -50%, 0)
+
+            &.swiper-button-disabled
+                transform: translate3d(-100%, -50%, 0)
+
+            .profile-popup-button__icon-container
+                margin-left: auto
+
+            svg
+                transform: rotate(-90deg)
+
+        &_next
+            right: 0
+            transform: translate3d(50%, -50%, 0)
+
+            &.swiper-button-disabled
+                transform: translate3d(100%, -50%, 0)
+
+            .profile-popup-button__icon-container
+                margin-right: auto
+
+            svg
+                transform: rotate(90deg)
