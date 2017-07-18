@@ -1,9 +1,6 @@
 @import 'rupture'
 // Common styles of the project
 
-html, body
-    height 100%
-
 .hide-when-header-fixed
     transition(all)
 
@@ -15,16 +12,9 @@ html, body
     +above(768px)
         display: none !important
 .page
-    margin: 0
-    padding: 0
-    overflow-x: hidden // Убираем горизонтальный скролл
-    color darkGreyColor
-    font-family fontMain
-    font-weight 400
-    font-size: 0
-    letter-spacing .0625em
-    background-color: bgColor
-    box-sizing: border-box; // Задаем box-sizing: border-box по умолчанию
+    font-family: fontMain // Задаем основной шрифт
+    font-size: 0 // Убираем проблему с отступами между inline-элементами
+    box-sizing: border-box // Задаем box-sizing: border-box по умолчанию
 
     &__overlay
         position: fixed
@@ -40,19 +30,12 @@ html, body
 
     &__wrapper
         position: relative
-        min-height 100%
-        margin-bottom -50px
+        //min-height 100%
 
         .arrow-up
             position absolute
             right 35px
             bottom 85px
-
-    &__buffer
-        height 50px
-
-* html .page__wrapper
-    height 100%
 
 /* ##########
 Убираем outline
@@ -104,6 +87,14 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 img {
     box-sizing: content-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; // Убираем горизонтальный скролл
+    width: 100%;
+    min-height: 100%;
 }
 
 header, section, footer {
