@@ -1,0 +1,31 @@
+include ../popup/popup
+include ../image-bg/image-bg
+
+mixin profile-photo-popup()
+    +popup#profile-photo
+        +b.profile-photo-popup&attributes(attributes)
+            +e.gallery.swiper-container
+                +e.UL.gallery-items.swiper-wrapper
+                    - for (var i = 0; i < 15; i++)
+                        +e.LI.gallery-item.swiper-slide
+                            +image-bg('photo-popup/gallery/1.jpg')
+                            +e.footer
+                                +e.A(href='#').like
+                                    != pugHelpers.Icon.call(locals, {iconName: 'like', className: 'profile-photo-popup__like-icon', iconWidth: 13, iconHeight: 11})
+                                    +e.SPAN.link Like
+
+                                +e.links
+                                    +e.A(href='#').link Share
+                                    +e.A(href='#').link Report
+
+                +e.button._prev
+                    != pugHelpers.Icon.call(locals, {iconName: 'caret', className: 'profile-photo-popup__caret-icon', iconWidth: 11, iconHeight: 22})
+                +e.button._next
+                    != pugHelpers.Icon.call(locals, {iconName: 'caret', className: 'profile-photo-popup__caret-icon', iconWidth: 11, iconHeight: 22})
+
+            +e.thumbs.swiper-container
+                +e.UL.thumbs-items.swiper-wrapper
+                    - for (var i = 0; i < 15; i++)
+                        +e.LI.thumbs-item.swiper-slide
+                            +image-bg('photo-popup/thumbs/1.jpg')
+                            != pugHelpers.Icon.call(locals, {iconName: 'zoom', className: 'profile-photo-popup__zoom-icon', iconWidth: 13, iconHeight: 13})

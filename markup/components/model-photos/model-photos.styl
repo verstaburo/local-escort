@@ -57,3 +57,21 @@
             font-size 12px
             font-weight 400
             text-transform uppercase
+
+    &__play
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 60px
+        height: 60px
+        background-color: mainColor
+        border-radius: 50%
+
+        &::before
+            content: ''
+            width: 0
+            height: 0
+            border-style: solid
+            border-width: 9px 0 9px 16px
+            border-color: transparent transparent transparent #fff

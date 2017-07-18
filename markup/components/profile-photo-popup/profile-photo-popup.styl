@@ -1,0 +1,132 @@
+.profile-photo-popup
+    display: flex
+    flex-direction: column
+    height: 100%
+    padding-left: 20px
+
+    pointer-events none
+
+    *
+        pointer-events all
+
+    &__footer
+        display: flex
+        justify-content: space-between
+        padding: 0 25px
+        height 60px
+        box-shadow 0 10px 40px rgba(29, 29, 29, .1)
+        background-color darkGreyColor
+
+    &__link
+        color rgba(#fff, .5)
+        display: flex
+        align-items: center
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        text-decoration: none
+
+    &__like
+        display: flex
+        height: 100%
+        align-items: center
+        text-decoration: none
+
+        &-icon
+            fill: #fff
+            margin-right: 13px
+
+    &__links
+        display: flex
+        height: 100%
+        margin-left: auto
+
+        & ^[0]__link
+            height: 100%
+
+            &:not(:last-child)
+                margin-right: 48px
+
+    &__caret-icon
+        stroke: #fff
+
+    &__button
+        display: flex
+        align-items: center
+        width: 20%
+        height: calc(100% - 60px)
+        cursor: pointer
+        position: absolute
+        top: 0
+        z-index: 1
+        transform: translate3d(0, 0, 0)
+        transition: transform .5s ease-in-out
+
+        &_prev
+            left: 0
+            padding-left: 41px
+
+            &.swiper-button-disabled
+                transform: translate3d(-100%, 0, 0)
+
+            & ^[0]__caret-icon
+                transform: rotate(-180deg)
+
+        &_next
+            padding-right: 41px
+            right: 0
+
+            &.swiper-button-disabled
+                opacity: 0
+                transform: translate3d(100%, 0, 0)
+
+            & ^[0]__caret-icon
+                margin-left: auto
+
+    &__zoom-icon
+        position: absolute
+        top: 8px
+        right: 8px
+        opacity: 0
+        transition(opacity)
+
+    &__gallery
+        margin-top: auto
+        margin-bottom: auto
+        display: block
+        max-width: 916px
+
+        .image-bg
+            z-index: initial
+            width 916px
+            height 515px
+
+        &-items
+            position: relative
+
+    &__thumbs
+        margin-top: auto
+        display: block
+
+        .swiper-wrapper
+            margin-left: calc(-50% + 187.5px) // 187.5px = (slide width) * 1.5
+
+        &-item
+            position: relative
+            width 125px
+            height 94px
+            background-color: darkGreyColor
+
+            &.swiper-slide-active
+
+                .image-bg
+                    opacity: .5
+
+                & ^[0]__zoom-icon
+                    opacity: 1
+
+        .image-bg
+            z-index: initial
+            width: 100%
+            height: 100%
+            transition(opacity)

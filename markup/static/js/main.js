@@ -19,6 +19,7 @@ import profilePopup from '../../components/profile-popup/profile-popup';
 import dottedDropdown from '../../components/dotted-dropdown/dotted-dropdown';
 import { profileReportPopup } from '../../components/profile-common-popup/profile-common-popup';
 import youtubeVideo from '../../components/youtube-video/youtube-video';
+import profilePhotoPopup from '../../components/profile-photo-popup/profile-photo-popup';
 
 $(() => {
     svg4everybody();
@@ -43,4 +44,5 @@ $(() => {
     dottedDropdown();
     profileReportPopup();
     youtubeVideo();
+    profilePhotoPopup();
 });
