@@ -1,7 +1,16 @@
-mixin rating-interactive(num, name)
+mixin rating-interactive(num, name, noReset)
     +b.rating-interactive&attributes(attributes)
-        +e.reset reset
+        unless noReset
+            +e.reset reset
+
         - for (var i = num; i >= 1; i--)
-            +e.LABEL.__star
-                +e.INPUT(type='radio' name=name value=i).__control
+            +e.LABEL.star
+                +e.INPUT(type='radio' name=name value=i).control
                 != pugHelpers.Icon.call(locals, {iconName: 'star', className: 'rating-interactive__icon', iconWidth: '16', iconHeight: '15'})
+
+mixin rating-interactive-counter(num, name, heading)
+    +b.rating-interactive-counter&attributes(attributes)
+        +e.header
+            +e.SPAN.heading=heading
+            +e.SPAN.counter
+        +rating-interactive(num, name, true)

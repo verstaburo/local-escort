@@ -13,7 +13,33 @@ export default function ratingInteractive() {
 
             activeStar.removeClass('active');
             star.addClass('active');
-            star.children('rating-interactive__control')[0].checked = true;
+            const cb = star.children('.rating-interactive__control');
+
+            cb[0].checked = true;
+
+            const counter = star
+                .parents('.rating-interactive-counter')
+                .find('.rating-interactive-counter__counter');
+
+            const val = Number(cb.val());
+
+            if (!counter.length) {
+                return;
+            }
+
+            if (val === 1) {
+                if (!counter.is(':visible')) {
+                    counter.fadeIn();
+                }
+                counter.text(`${val} star`);
+            } else if (val > 1) {
+                if (!counter.is(':visible')) {
+                    counter.fadeIn();
+                }
+                counter.text(`${val} stars`);
+            } else {
+                counter.fadeOut();
+            }
         })
         .on('click', '.rating-interactive__reset', function (e) {
             e.preventDefault();
@@ -26,5 +52,4 @@ export default function ratingInteractive() {
                     $(this)[0].checked = false;
                 });
         });
-
 }

@@ -13,6 +13,7 @@ export default function profilePopup() {
         slidesPerView: 1,
         prevButton: '.profile-popup-button_prev',
         nextButton: '.profile-popup-button_next',
+        touchRatio: 0,
     });
 
     popup.on('aftershow', function() {

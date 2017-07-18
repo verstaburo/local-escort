@@ -47,12 +47,22 @@
         width: 60px
         height: 60px
         cursor: pointer
+        background-color: transparent
+        transition(border-color, background-color)
 
         +below(768px)
             width 52px
 
         &:not(:last-child)
             border-left: 1px solid borderColor
+
+        &.active
+            background-color: darkGreyColor
+            border-left-color: #262728
+
+            & ~ ^[0]__star
+                background-color: darkGreyColor
+                border-left-color: #262728
 
         &:hover ~ ^[0]__star ^[0]__icon,
         &:hover ^[0]__icon,
@@ -68,4 +78,25 @@
         height 15px
         fill: #e6e6e6
         //fill: rgba(#fff, .15)
-        transition(all)11
+        transition(all)
+
+
+    &-counter
+        display: inline-flex
+        flex-direction: column
+
+        &__header
+            display: flex
+            width: 100%
+            justify-content: space-between
+            align-items: center
+            margin-bottom: 15px
+            color: darkGreyColor
+            font-family: fontMain
+            font-size: 16px
+            font-weight: 400
+            line-height: 22px
+
+        &__counter
+            display: block
+            color: mainColor

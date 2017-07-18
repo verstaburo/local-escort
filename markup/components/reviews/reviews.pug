@@ -1,8 +1,31 @@
 include ../heading/heading
+include ../rating-interactive/rating-interactive
 
 mixin reviews()
     +b.reviews&attributes(attributes)
         +heading Reviews
+        +e.FORM(method='POST' action='#').form
+            +e.TEXTAREA.control(placeholder='Give feedback')
+
+        +e.items
+            unless block
+                +e.SPAN.no-reviews There are no reviews
+            block
+
+mixin reviews-rate()
+    +b.reviews&attributes(attributes)
+        +heading Reviews
+        +e.rate-heading Rate the quality of services
+
+        +e.rate
+            +e.rate-row
+                +rating-interactive-counter(5, 'service-1', 'Service')
+                +rating-interactive-counter(5, 'service-2', 'Service')
+                +rating-interactive-counter(5, 'service-3', 'Service')
+            +e.rate-row
+                +rating-interactive-counter(5, 'service-4', 'Service')
+                +rating-interactive-counter(5, 'service-5', 'Service')
+
         +e.FORM(method='POST' action='#').form
             +e.TEXTAREA.control(placeholder='Give feedback')
 
