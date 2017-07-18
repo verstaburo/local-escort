@@ -40,3 +40,7 @@ mixin popup()
     .popup&attributes(attributes)
         .popup__wrapper
             block
+
+mixin popup-close()
+    .popup__close&attributes(attributes)
+        != pugHelpers.Icon.call(locals, {iconName: 'close', className: 'popup__close-icon', iconWidth: 18, iconHeight: 18})

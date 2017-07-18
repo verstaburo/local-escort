@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="13" viewBox="0 0 24 13"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M1 12L12 1l11 11"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="25px" viewBox="0 0 14 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="02-Model-card" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02_Card/slider" transform="translate(-1327.000000, -438.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="arrow-right" transform="translate(1288.000000, 372.000000)">
+                <path d="M56.2928932,84.7071068 C56.6834175,85.0976311 57.3165825,85.0976311 57.7071068,84.7071068 C58.0976311,84.3165825 58.0976311,83.6834175 57.7071068,83.2928932 L46.7071068,72.2928932 C46.3165825,71.9023689 45.6834175,71.9023689 45.2928932,72.2928932 L34.2928932,83.2928932 C33.9023689,83.6834175 33.9023689,84.3165825 34.2928932,84.7071068 C34.6834175,85.0976311 35.3165825,85.0976311 35.7071068,84.7071068 L46,74.4142136 L56.2928932,84.7071068 Z" id="Path-5" transform="translate(46.000000, 78.500000) rotate(-270.000000) translate(-46.000000, -78.500000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

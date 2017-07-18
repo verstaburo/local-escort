@@ -32,6 +32,10 @@ export default function header() {
     $(window).on('scroll', () => {
        const sT = $(window).scrollTop();
 
+       if ($(document).find('.popup.active').length) {
+           return;
+       }
+
        if ($(window).width() > 768) {
            shouldBeFixed = sT >= photoTape
        } else {

@@ -11,6 +11,10 @@
     overflow-y: auto
     overflow-x: hidden
 
+    +below(768px)
+        padding-top: 24px
+        padding-bottom: 24px
+
     &_start
         & ^[0]__wrapper
           align-items: flex-start
@@ -19,6 +23,7 @@
         display: block
 
     &__wrapper
+        position: relative
         display: flex
         justify-content: center
         align-items: center
@@ -27,3 +32,27 @@
 
         &_full
             width 100%
+
+    &__close
+        display: none
+        position: absolute
+        top: 0
+        right: 0
+        transform: translate(-50%, -50%)
+        justify-content: center
+        align-items: center
+        width: 60px
+        height: 60px
+
+        +below(768px)
+            display: flex
+
+        &_kind_square
+            background-color: mainColor
+
+        &_kind_circle
+            background-color: darkGreyColor
+            border-radius: 50%
+
+        &-icon
+            fill: #fff
