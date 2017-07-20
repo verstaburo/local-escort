@@ -1,16 +1,46 @@
 include ../heading/heading
 include ../rating-interactive/rating-interactive
+include ../button/button
+include ../share/share
+include ../avatar/avatar
+include ../rating/rating
+
+mixin review
+    +b.review&attributes(attributes)
+        block
+
+mixin review-header(avatar, name, date)
+    +e.header&attributes(atttributes)
+        +e.user
+            +avatar(avatar)
+            +e.SPAN.name=name
+        +e.SPAN.date=date
+
+mixin review-rating
+    +e.UL.items&attributes(attributes)
+        block
+
+mixin review-rating-item(category, ...rating)
+    +e.LI.item&attributes(attributes)
+        +e.category= category
+        +rating(rating)
+
+mixin review-comment
+    +e.P.comment&attributes(attributes)
+        block
 
 mixin reviews()
     +b.reviews&attributes(attributes)
         +heading Reviews
         +e.FORM(method='POST' action='#').form
             +e.TEXTAREA.control(placeholder='Give feedback')
+            +e.BUTTON.button Send review
+        unless block
+            +e.SPAN.no-reviews There are no reviews
 
-        +e.items
-            unless block
-                +e.SPAN.no-reviews There are no reviews
-            block
+        if block
+            +e.items
+                block
 
 mixin reviews-rate()
     +b.reviews&attributes(attributes)
@@ -28,12 +58,76 @@ mixin reviews-rate()
 
         +e.FORM(method='POST' action='#').form
             +e.TEXTAREA.control(placeholder='Give feedback')
+            +e.BUTTON.button Send review
 
-        +e.items
-            unless block
-                +e.SPAN.no-reviews There are no reviews
-            block
+        unless block
+            +e.SPAN.no-reviews There are no reviews
 
-mixin reviews-item
-    +e.item&attributes(attributes)
-        block
+        if block
+            +e.items
+                block
+
+mixin reviews-rate-no-login()
+    +b.reviews&attributes(attributes)
+        +heading Reviews
+        +e.rate-heading Rate the quality of services
+
+        +e.rate
+            +e.rate-row
+                +rating-interactive-counter(5, 'service-1', 'Service')
+                +rating-interactive-counter(5, 'service-2', 'Service')
+                +rating-interactive-counter(5, 'service-3', 'Service')
+            +e.rate-row
+                +rating-interactive-counter(5, 'service-4', 'Service')
+                +rating-interactive-counter(5, 'service-5', 'Service')
+
+        +e.FORM(method='POST' action='#').form
+            +e.TEXTAREA.control(placeholder='Give feedback') This is the biggest site in the sex industry and i enjoy the best looking cocks in the whole channel. The very common desire of woman love is to get the bigest cocks they want from men.
+            +e.BUTTON.button Send review
+
+        +e.login
+            +e.SPAN.login-heading To leave a comment you need to enter through
+            +e.login-buttons
+                +button()(href='#')._uppercase._bg_darkGrey._color_main Login
+                +e.login-sep Or
+                +share-buttons
+                    +share-button('vk')
+                    +share-button('fb')
+                    +share-button('tw')
+                    +share-button('ok')
+                    +share-button('email')
+                    +share-button('g+')
+                    +share-button('dots')
+
+mixin reviews-feedbacks
+    +b.reviews&attributes(attributes)
+        +heading(3) Reviews
+        +e.rate-heading Rate the quality of services
+
+        +e.rate
+            +e.rate-row
+                +rating-interactive-counter(5, 'service-1', 'Service')
+                +rating-interactive-counter(5, 'service-2', 'Service')
+                +rating-interactive-counter(5, 'service-3', 'Service')
+            +e.rate-row
+                +rating-interactive-counter(5, 'service-4', 'Service')
+                +rating-interactive-counter(5, 'service-5', 'Service')
+
+        +e.FORM(method='POST' action='#').form
+            +e.TEXTAREA.control(placeholder='Give feedback')
+            +e.BUTTON.button Send review
+
+        +e.UL.items
+            +review
+                +review-header('nikolas.png', 'Nikolas', '1 month ago')
+                +review-rating
+                    each rate in [4, 5, 5, 3, 4]
+                        +review-rating-item('Category 1', rate)
+                +review-comment Hi, Rabbits,,,you not take the review the Teens Love Black Cocks ...?
+
+            +review
+                +review-header('jackson.png', 'Jackson', '1 year ago')
+                +review-rating
+                    each rate in [4, 4, 2, 2, 3]
+                        +review-rating-item('Category 1', rate)
+                +review-comment weak.....one of those sites where the pics of dicks in the stills are photoshopped and then when you click on the movie for that still you find the dick isnt nearly as big as pictured.....the problem is most of the guys are white and most white guys need some photoshopping when it comes to dick size.....totally weak stuff.45/100

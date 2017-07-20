@@ -9,22 +9,46 @@
         letter-spacing initial
 
     &__form
+        position: relative
         margin-top: 58px
-        display: block
-        padding: 20px
+        padding:  27px 29px
+        display: flex
+        align-items: flex-end
+        min-height: 136px
         background-color: #fff
 
     &__control
         width: 100%
-        padding: 15px 0
-        min-height: 50px
-        height: 50px
+        padding-bottom: 20px
+        padding-right: 39px
         font-size: 14px
-        resize: vertical
+        resize: none
         border-bottom: 1px solid borderColor
+        flex: 1
 
         &::placeholder
             opacity: 1
+
+    &__button
+        opacity: 0
+        visibility: hidden
+        pointer-events: none
+        padding-top: 21px
+        padding-bottom: 21px
+        border-bottom: 2px solid mainColor
+        color darkGreyColor
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        text-transform uppercase
+        background-color: transparent
+        flex-shrink: 0
+        transition(opacity)
+
+        &.active
+            opacity: 1
+            visibility: visible
+            pointer-events: all
 
     &__rate-heading
         display: block
@@ -51,3 +75,86 @@
         display: block
         font-size: 16px
         color: rgba(darkGreyColor, .5)
+
+    &__login
+        margin-top: 50px
+
+        &-heading, &-sep
+            color darkGreyColor
+            font-family fontMain
+            font-size 16px
+            font-weight 400
+            line-height 1.375
+
+        &-sep
+            padding-left: 24px
+            padding-right: 24px
+            color: rgba(darkGreyColor, .3)
+
+        &-buttons
+            display: flex
+            align-items: center
+            margin-top: 15px
+
+            &.button
+                min-width: 131px
+
+    &__items
+        margin-top: 54px
+
+        .review:not(:first-child)
+            margin-top: 40px
+
+.review
+    display: block
+
+    .avatar
+        width: 50px
+        height: 50px
+        flex-shrink: 0
+
+    &__header
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__user
+        display: flex
+        align-items: center
+
+    &__name
+        display: block
+        color darkGreyColor
+        font-size 16px
+        text-transform uppercase
+        margin-left: 18px
+        text-decoration: none
+
+    &__date
+        color rgba(darkGreyColor, .3)
+        font-size 14px
+
+    &__items
+        margin-top: 12px
+        display: flex
+        padding-right: 1px
+        padding-top: 1px
+
+    &__item
+        display: block
+        margin-left: -1px
+        margin-top: -1px
+        padding: 22px 23px 19px 22px
+        border: 1px solid borderColor
+        flex: 0 1 20%
+
+    &__category
+        color rgba(darkGreyColor, .5)
+        font-size 12px
+        text-transform uppercase
+
+    &__comment
+        font-size 16px
+        line-height 1.375
+        padding: 25px 24px 28px
+        border-bottom: 1px solid borderColor

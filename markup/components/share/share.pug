@@ -1,8 +1,6 @@
 include ../icon-button/icon-button
 
 mixin share-button(kind)
-    - var params = []
-
     case kind
         when 'vk'
             +icon-button('s-vk', 21, 12, 'share__icon_vk')(href='#').A.__button
@@ -17,7 +15,7 @@ mixin share-button(kind)
         when 'g+'
             +icon-button('s-g-plus', 26, 17, 'share__icon_gp')(href='#').A.__button
         when 'dots'
-            +icon-button('dots', 19, 3, 'share__icon_dots').A.__button.__button
+            +icon-button('dots', 19, 3, 'share__icon_dots').A.__button
 
 mixin share-buttons
     +b.share&attributes(attributes)

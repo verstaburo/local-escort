@@ -30,3 +30,35 @@ mixin agency-card()
 
             +e.col._push_right
                 +button(href='#')._uppercase._border_standart more
+
+mixin agency-card-new
+    +b.agency-card-new&attributes(attributes)
+        +badges._top
+            +badges-item._vip._skew
+                span top 1
+
+        +avatar('navbar.png')
+
+        +e.header
+            +e.IMG(src='' alt='Agency').picture
+            +e.content
+                +e.col
+                    +heading._md._uppercase Premium Escape
+                    +e.UL.description
+                        li Models 4057
+                        li Since nov 16, 2012
+                +e.col
+                    +e.rating
+                        +e.SPAN.rating-label rating
+                        +rating(4)
+        +e.info
+            +e.col
+                +short-info
+                    +short-info-heading Locataion
+                        +short-info-content
+                            +short-info-text United Kingdom, London
+            +e.col
+                +short-info
+                    +short-info-heading Phone
+                        +short-info-content
+                            +short-info-text +44 3069—990852

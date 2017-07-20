@@ -6,6 +6,7 @@ include ../selectbox/selectbox
 include ../sort-ui/sort-ui
 include ../side-border-btn/side-border-btn
 include ../badges/badges
+include ../heading/heading
 
 mixin model-list()
     +b.model-list&attributes(attributes)
@@ -13,8 +14,7 @@ mixin model-list()
             +filter.hide-mob
             +e.header
                 +e.header-col._flexible
-                    +e.H1.heading Search result
-                        span 2
+                    +heading(2).H1 Search result
                 +e.header-col.hide-mob
                     +e.label Sort by
                     +selectbox('Date').__control

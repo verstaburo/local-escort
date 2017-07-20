@@ -1,14 +1,28 @@
 .heading
-    display: block
-    color darkGreyColor
     font-family fontSecond
     font-size 33px
-    font-weight 400
+    letter-spacing initial
+    font-weight: 400
+
+    +below(768px)
+        font-size: 26px
+
+    span
+        display: inline-block
+        vertical-align top
+        margin-left: 9px
+        color mainColor
+        font-family fontMain
+        font-size 16px
+        font-weight 700
 
     &_md
         color darkGreyColor
         font-family fontMain
         font-size 20px
+
+        +below(768px)
+            font-size: 18px
 
     &_uppercase
         text-transform: uppercase
