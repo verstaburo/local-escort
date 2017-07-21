@@ -1,7 +1,6 @@
 $(function() {
-    var wrapper = $('.model-list'),
-        container = wrapper.find('.js-model-preview-grid'),
-        loadBtn = wrapper.find('.model-list__load');
+    var container = $('.js-model-preview-grid'),
+        loadBtn = $('.js-load-models');
 
     loadBtn.click(function(e) {
         e.preventDefault();

@@ -21,6 +21,7 @@ import { profileReportPopup } from '../../components/profile-common-popup/profil
 import youtubeVideo from '../../components/youtube-video/youtube-video';
 import profilePhotoPopup from '../../components/profile-photo-popup/profile-photo-popup';
 import reviews from '../../components/reviews/reviews';
+import agency from '../../components/agency/agency';
 
 $(() => {
     svg4everybody();
@@ -47,4 +48,5 @@ $(() => {
     youtubeVideo();
     profilePhotoPopup();
     reviews();
+    agency();
 });
