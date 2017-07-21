@@ -1,0 +1,53 @@
+.vip
+    display: flex
+    flex-direction: column
+    max-width 258px
+    min-height 400px
+    background-color darkGreyColor
+
+    &_masonry:not(:last-child)
+        margin-bottom: grid-gap;
+
+    &__content
+        padding: 40px
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: center
+        flex: 1
+
+    &__icon
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 78px
+        height: 78px
+        background-color: mainColor
+        color #fff
+        font-family fontMain
+        font-size 18px
+        font-weight 700
+        text-transform uppercase
+        border-radius: 50%
+
+    &__heading
+        color #fff
+        font-family fontMain
+        font-size 20px
+        font-weight 400
+        text-decoration: none
+        margin-top: 28px
+        margin-bottom: 5px
+
+    &__text
+        display: block
+        color rgba(#fff, .56)
+        font-family fontSecond
+        font-size 18px
+        font-weight 400
+        line-height 21/18
+
+    .button
+        margin-top: auto
+        border-top-color: rgba(borderColor, .08)
+        flex-shrink: 0

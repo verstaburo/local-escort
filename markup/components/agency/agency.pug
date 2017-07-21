@@ -7,6 +7,8 @@ include ../heading/heading
 include ../image-bg/image-bg
 include ../rating/rating
 include ../short-info/short-info
+include ../boost/boost
+include ../vip/vip
 
 mixin agency()
     +b.agency&attributes(attributes)
@@ -66,33 +68,34 @@ mixin agency()
 
             +e.models
                 +heading Agency models
-                +grid-masonry(4, '.model-preview').js-model-preview-grid
-                    +model-preview([7, 7, 7], 'Sonya', 20, 325, true)
+                +grid-masonry(4, '.js-masonry-item').js-model-preview-grid
+                    +boost(true).js-masonry-item
+                    +model-preview([7, 7, 7], 'Sonya', 20, 325, true).js-masonry-item
                         +badges._top
                             +badges-item._new._skew
                                 span New
                             +badges-item._info
                                 span 1 hour ago
-                    +model-preview([5, 5, 5, 5], 'Megan', 22, 390)
+                    +model-preview([5, 5, 5, 5], 'Megan', 22, 390).js-masonry-item
                         +badges._top
                             +badges-item._vip._skew
                                 span Vip
                         +badges._bottom
                             +badges-item._verified._skew
                                 span Verified
-                    +model-preview([8, 8, 8, 8], 'Valeria', 26, 420)
+                    +model-preview([8, 8, 8, 8], 'Valeria', 26, 420).js-masonry-item
                         +badges._top
                             +badges-item._vip._skew
                                 span Vip
-                    +model-preview([9, 9, 9, 9, 9, 9, 9], 'Sonya', 20, 325)
+                    +model-preview([9, 9, 9, 9, 9, 9, 9], 'Sonya', 20, 325).js-masonry-item
                         +badges._bottom._skew
                             +badges-item._verified._skew
                                 span Verified
-                    +model-preview([2, 2, 2], 'Christine', 27, 370, true)
+                    +model-preview([2, 2, 2], 'Christine', 27, 370, true).js-masonry-item
                         +badges._top
                             +badges-item._vip._skew
                                 span Vip
-                    +model-preview([6, 6, 6, 6], 'Anita', 24, 350)
+                    +model-preview([6, 6, 6, 6], 'Anita', 24, 350).js-masonry-item
                         +badges._top
                             +badges-item._new._skew
                                 span New
@@ -100,12 +103,13 @@ mixin agency()
                                 span 1 hour ago
                             +badges-item._vip._skew
                                 span Vip
-                    +model-preview([1, 1, 1, 1, 1, 1], 'Kate', 25, 380)
+                    +model-preview([1, 1, 1, 1, 1, 1], 'Kate', 25, 380).js-masonry-item
                         +badges._top
                             +badges-item._vip._skew
                                 span Vip
-                    +model-preview([10, 10], 'Anna', 22, 390)
-                    +model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325)
-                    +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390)
+                    +model-preview([10, 10], 'Anna', 22, 390).js-masonry-item
+                    +vip(true).js-masonry-item
+                    +model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325).js-masonry-item
+                    +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390).js-masonry-item
 
                 +side-border-btn('button').__load.js-load-models Load more

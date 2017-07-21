@@ -1,0 +1,12 @@
+include ../button/button
+
+mixin vip(masonry)
+    - var masonryModifier = !!masonry ? '_masonry' : '';
+
+    +b.vip(class=masonryModifier)&attributes(attributes)
+        +e.content
+            +e.icon vip
+            +e.SPAN.heading Your VIP profile
+            +e.P.text Only
+            +e.P.text 80 $ / month
+        +button()(href='#')._uppercase._bg_darkGrey._color_main <b>Become a VIP</b>

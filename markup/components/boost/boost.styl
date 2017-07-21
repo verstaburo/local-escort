@@ -3,6 +3,9 @@
     border 1px solid borderColor
     display block
 
+    &_masonry:not(:last-child)
+        margin-bottom: grid-gap;
+
     +below(768px)
         display none
 
