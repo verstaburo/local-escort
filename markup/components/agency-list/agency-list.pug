@@ -1,0 +1,19 @@
+include ../button/button
+include ../container/container
+include ../agency-card/agency-card
+include ../grid/grid
+include ../side-border-btn/side-border-btn
+include ../heading/heading
+
+mixin agency-list()
+    +b.agency-list&attributes(attributes)
+        +container
+            +e.header
+                +heading(2156) Agency’s
+                +button.A(href='#')._color_white._bg_darkGrey._uppercase View on map
+            +grid
+                - for (var i = 0; i < 6; i++)
+                    +col(6)
+                        +agency-card-new
+
+            +side-border-btn('button').__load Load more

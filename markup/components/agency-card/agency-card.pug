@@ -3,17 +3,18 @@ include ../rating/rating
 include ../short-info/short-info
 include ../button/button
 include ../heading/heading
+include ../badges/badges
 
 mixin agency-card()
     +b.agency-card&attributes(attributes)
         +e.row
-            +avatar('navbar.png')
+            +avatar('navbar.png')._size_medium
             +e.info
                 +heading._md._uppercase Premium Escape
                 +e.UL.description
                     li Models 4057
                     li Since nov 16, 2012
-            +e.rating
+            +e.rating.__col
                 +e.SPAN.rating-label rating
                 +rating(4)
         +e.row
@@ -32,26 +33,24 @@ mixin agency-card()
                 +button(href='#')._uppercase._border_standart more
 
 mixin agency-card-new
-    +b.agency-card-new&attributes(attributes)
+    +b.agency-card._new&attributes(attributes)
         +badges._top
             +badges-item._vip._skew
                 span top 1
 
-        +avatar('navbar.png')
+        +avatar('navbar.png')._size_medium
 
-        +e.header
-            +e.IMG(src='' alt='Agency').picture
-            +e.content
-                +e.col
-                    +heading._md._uppercase Premium Escape
-                    +e.UL.description
-                        li Models 4057
-                        li Since nov 16, 2012
-                +e.col
-                    +e.rating
-                        +e.SPAN.rating-label rating
-                        +rating(4)
-        +e.info
+        +e.row._top
+            +e.IMG(src='%=static=%img/content/agency-card/bg.jpg' alt='Agency').picture
+            +e.info
+                +heading._md._uppercase Premium Escape
+                +e.UL.description
+                    li Models 4057
+                    li Since nov 16, 2012
+            +e.rating
+                +e.SPAN.rating-label rating
+                +rating(4)._dark
+        +e.row._bottom
             +e.col
                 +short-info
                     +short-info-heading Locataion
