@@ -2,10 +2,10 @@ include ../../node_modules/bemto.pug/bemto
 include ../components/model-preview/model-preview
 include ../components/badges/badges
 
-+model-preview([1, 1, 1, 1, 1, 1], 'Kate', 25, 380)
++model-preview([1, 1, 1, 1, 1, 1], 'Kate', 25, 380).js-masonry-item
     +badges._top
         +badges-item._vip._skew
             span Vip
-+model-preview([10, 10], 'Anna', 22, 390)
-+model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325)
-+model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390)
++model-preview([10, 10], 'Anna', 22, 390).js-masonry-item
++model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325).js-masonry-item
++model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390).js-masonry-item
