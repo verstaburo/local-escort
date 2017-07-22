@@ -1,0 +1,20 @@
+extends ../components/layout-default/layout-default
+include ../components/header/header
+include ../components/filter/filter
+include ../components/popup-welcome/popup-welcome
+include ../components/select-city-popup/select-city-popup
+include ../components/map/map
+
+block header
+    +header.js-always-fixed
+
+block content
+    +map
+
+block popups
+    +popup-welcome
+    +filter-extended(true)
+    +select-city-popup
+
+block scripts
+    +map-scripts('model')

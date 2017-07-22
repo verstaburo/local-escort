@@ -13,10 +13,12 @@ photoTapeItemWidthMobile = 60px
 
     &__item
         width: photoTapeItemWidth
+        height: photoTapeItemWidth
         position: relative
 
         +below(768px)
             width: photoTapeItemWidthMobile
+            height: photoTapeItemWidthMobile
 
         &:hover
             & > ^[0]__popup

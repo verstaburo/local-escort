@@ -27,6 +27,14 @@ export default function header() {
         }
     });
 
+    if (header.hasClass('js-always-fixed')) {
+        header.addClass('fixed');
+        pageWrapper.css('margin-top', header.outerHeight());
+        hideWhenFixed.css({ opacity: 0, 'pointer-events': 'none' });
+
+        return;
+    }
+
     let shouldBeFixed = false;
 
     $(window).on('scroll', () => {

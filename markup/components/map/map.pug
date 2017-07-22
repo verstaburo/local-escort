@@ -1,0 +1,17 @@
+mixin map()
+    +b.map&attributes(attributes)
+        +e.heading
+            +e.SPAN.text All escorts
+            +e.SPAN.text._main 41908
+        +e.buttons
+            +e.button.js-map-zoom-in
+                != pugHelpers.Icon.call(locals, {iconName: 'plus', className: 'map__zoom-in', iconWidth: 18, iconHeight: 18})
+            +e.button.js-map-zoom-out
+                != pugHelpers.Icon.call(locals, {iconName: 'minus', className: 'map__zoom-out', iconWidth: 18, iconHeight: 2})
+            +e.button.js-map-my-location
+                != pugHelpers.Icon.call(locals, {iconName: 'my-location', className: 'map__location', iconWidth: 19, iconHeight: 19})
+        +e.block#map
+
+mixin map-scripts(src)
+    script(src=`%=static=%js/separate-js/maps/${src}.js`)
+    script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCb75twxWdJqfiHIVuKVReb-39Yo1EFQUQ&callback=initMap")

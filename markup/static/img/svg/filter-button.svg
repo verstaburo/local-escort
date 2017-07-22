@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="23px" height="16px" viewBox="0 0 23 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
-    <title>Group</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="filter" transform="translate(-1194.000000, -46.000000)" fill-rule="nonzero" fill="#1A1B1C">
-            <g id="filter-button" transform="translate(1175.000000, 24.000000)">
-                <g id="Group" transform="translate(19.000000, 22.000000)">
-                    <path d="M17.1707057,14 L1,14 L1,12 L17.1707057,12 C17.5825421,10.8348076 18.6937812,10 20,10 C21.6568542,10 23,11.3431458 23,13 C23,14.6568542 21.6568542,16 20,16 C18.6937812,16 17.5825421,15.1651924 17.1707057,14 Z M5.82929429,2 L22,2 L22,4 L5.82929429,4 C5.41745788,5.16519237 4.30621883,6 3,6 C1.34314575,6 0,4.65685425 0,3 C0,1.34314575 1.34314575,0 3,0 C4.30621883,0 5.41745788,0.834807627 5.82929429,2 Z M3,4 C3.55228475,4 4,3.55228475 4,3 C4,2.44771525 3.55228475,2 3,2 C2.44771525,2 2,2.44771525 2,3 C2,3.55228475 2.44771525,4 3,4 Z M20,14 C20.5522847,14 21,13.5522847 21,13 C21,12.4477153 20.5522847,12 20,12 C19.4477153,12 19,12.4477153 19,13 C19,13.5522847 19.4477153,14 20,14 Z" id="Combined-Shape"></path>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 16"><path d="M17.17,14H1V12H17.17a3,3,0,1,1,0,2ZM5.83,2H22V4H5.83a3,3,0,1,1,0-2ZM3,4A1,1,0,1,0,2,3,1,1,0,0,0,3,4ZM20,14a1,1,0,1,0-1-1A1,1,0,0,0,20,14Z"/></svg>

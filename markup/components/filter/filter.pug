@@ -50,7 +50,7 @@ mixin filter()
             +e.col._no_width._push_right
                 +icon-button('filter-button', 21, 12)(data-popup-id='#filter-extended' data-action='show').__button.js-toggle-popup
 
-mixin filter-additional
+mixin filter-additional()
     +b.filter-additional
         +container
             +e.row
@@ -295,15 +295,28 @@ mixin filter-additional
                         data-hide-text='- hide more options'
                     )._uppercase._bg_darkGrey._color_white._border_grey.js-toggle-filter-additional + show more options
 
-mixin filter-extended
+mixin filter-extended-wrapper
+    +b.FORM(method='POST' action='#').filter._extended&attributes(attributes)
+        block
+
+mixin filter-extended(dark)
+    - var FilterModifier = !!dark ? '_dark' : '';
+    - var SelectModifier = !!dark ? '_deep-dark' : '_grey';
+    - var RangeModifier = !!dark ? '_dark' : '';
+    - var CheckboxModifier = !!dark ? '_black' : '';
+    - var ApplyButtonModifier = !!dark ? '_bg_light _color_main' : '_bg_darkGrey _color_main';
+    - var ResetButtonModifier = !!dark ? '_bg_darkGrey _color_white _border_grey' : '_border_standart';
+    - var MoreOptionsButtonModifier = !!dark ? '_bg_darkGrey _color_white _border_grey' : '_border_standart';
+    - var IconButtonModifier = !!dark ? '_color_white _border_grey' : '';
+
     +popup#filter-extended
-        +b.FORM(method='POST' action='#').filter._extended&attributes(attributes)
+        +filter-extended-wrapper(class=FilterModifier)
             +container
                 +grid
                     +col(3)
                         +e.header
                             +e.SPAN.label Categories
-                        +selectbox('Escorts')._grey
+                        +selectbox('Escorts')(class=SelectModifier)
                             +selectbox-control(name='escorts')
                                 option(value='escorts') escorts
                                 option(value='item1') item 1
@@ -312,7 +325,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Age
-                        +range-slider
+                        +range-slider(class=RangeModifier)
                             +range-slider-fields
                                 +range-slider-field
                                     +range-slider-input(type='hidden' name='age-min')._min
@@ -324,7 +337,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Rate per hour
-                        +range-slider
+                        +range-slider(class=RangeModifier)
                             +range-slider-fields
                                 +range-slider-field
                                     +range-slider-input(type='hidden' name='cost-min')._min
@@ -336,7 +349,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Availability
-                        +selectbox('All')._grey
+                        +selectbox('All')(class=SelectModifier)
                             +selectbox-control(name='availability')
                                 option(value='all') All
                                 option(value='item1') item 1
@@ -345,7 +358,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Orientation
-                        +selectbox('All')._grey
+                        +selectbox('All')(class=SelectModifier)
                             +selectbox-control(name='orientation')
                                 option(value='all') All
                                 option(value='item1') item 1
@@ -354,7 +367,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Height
-                        +range-slider
+                        +range-slider(class=RangeModifier)
                             +range-slider-fields
                                 +range-slider-field
                                     +range-slider-input(type='hidden' name='height-min')._min
@@ -366,7 +379,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Weight
-                        +range-slider
+                        +range-slider(class=RangeModifier)
                             +range-slider-fields
                                 +range-slider-field
                                     +range-slider-input(type='hidden' name='weight-min')._min
@@ -378,7 +391,7 @@ mixin filter-extended
                     +col(3)
                         +e.header
                             +e.SPAN.label Ethnicity
-                        +selectbox('All')._grey
+                        +selectbox('All')(class=SelectModifier)
                             +selectbox-control(name='ethnicity')
                                 option(value='all') All
                                 option(value='item1') item 1
@@ -386,28 +399,32 @@ mixin filter-extended
                                 option(value='item3') item 3
                 +grid
                     +col(2)
-                        +checkbox(true, 'verified', 1) Verified
+                        +checkbox(true, 'verified', 1)(class=CheckboxModifier) Verified
                     +col(2)
-                        +checkbox(true, 'top_100', 1) TOP 100
+                        +checkbox(true, 'top_100', 1)(class=CheckboxModifier) TOP 100
                     +col(2)
-                        +checkbox(true, 'with_video', 1) With Video
+                        +checkbox(true, 'with_video', 1)(class=CheckboxModifier) With Video
                     +col(2)
-                        +checkbox(false, 'porn_star', 1) Porn Star
+                        +checkbox(false, 'porn_star', 1)(class=CheckboxModifier) Porn Star
                     +col(2)
-                        +checkbox(false, 'on_tour', 1) on Tour
+                        +checkbox(false, 'on_tour', 1)(class=CheckboxModifier) on Tour
                     +col(2)
-                        +checkbox(false, 'with_reviews', 1) With reviews
+                        +checkbox(false, 'with_reviews', 1)(class=CheckboxModifier) With reviews
 
                 +grid
                     +col(3)
                         +button(
                             data-show-text='+ show more options',
-                            data-hide-text='- hide more options'
-                        )._uppercase._border_standart.js-toggle-filter-additional + show more options
+                            data-hide-text='- hide more options',
+                            class=MoreOptionsButtonModifier
+                        )._uppercase.js-toggle-filter-additional + show more options
                     +col(3)
-                        +button._uppercase._bg_darkGrey._color_main.__hide-additional Apply <span>(19405)</span>
+                        +button()(class=ApplyButtonModifier)._uppercase.__hide-additional Apply <span>(19405)</span>
                     +col(3)
-                        +button._uppercase._border_standart.__hide-additional reset options
+                        +button()(class=ResetButtonModifier)._uppercase.__hide-additional reset options
                     +col(3).grid__col_align_right.grid__col_align_right._push_right
-                        +icon-button('filter-button', 21, 12)(data-popup-id='#filter-extended' data-action='hide')._uppercase.js-toggle-popup Hide
+                        +icon-button('filter-button', 21, 12, 'icon-button__icon icon-button__icon_fill')(
+                            data-popup-id='#filter-extended',
+                            data-action='hide'
+                            class=IconButtonModifier)._uppercase.js-toggle-popup Hide
             +filter-additional
