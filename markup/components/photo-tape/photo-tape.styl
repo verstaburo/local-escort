@@ -5,6 +5,9 @@ photoTapeItemWidthMobile = 60px
     display: block
     background-color: bgColor
 
+    .swiper-container
+        overflow: visible
+
     &__items
         display: flex
 
@@ -77,14 +80,14 @@ photoTapeItemWidthMobile = 60px
         top: 100%
         left: 0
         display: block
-        width: 100%
-        max-width: photoTapeItemWidth
+        width: photoTapeItemWidth
         padding: 12px 12px 10px
         background-color: bgColor
         border: 1px solid borderColor
         color darkGreyColor
         font-size: 12px
         text-transform: uppercase
+        box-sizing: border-box
 
         +below(768px)
             display: none

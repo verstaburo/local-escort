@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 
 export default function photoTape() {
-    const block = $('.photo-tape');
+    const block = $('.photo-tape .swiper-container');
 
     if (!block.length) {
         return;
@@ -9,5 +9,6 @@ export default function photoTape() {
 
     new Swiper(block, {
         slidesPerView: 'auto',
+        freeMode: true
     });
 }
