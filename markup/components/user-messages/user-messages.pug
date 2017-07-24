@@ -1,0 +1,44 @@
+include ../heading/heading
+include ../container/container
+include ../message/message
+
+mixin user-messages()
+    +b.user-messages&attributes(attributes)
+        +container
+            +heading(1) Messages
+            +e.content
+                +e.left
+                    +e.nav
+                        +message('kira.png', 'Kira', '10 hours ago')._truncate
+                            | Eva moved to LA a few months ago to lorem ispum dolor sit amet
+                        +message('valentin.png', 'Valentin', '1 hours ago', null, null, true)._truncate
+                            | We have officially
+                        +message('john.png', 'John', 'Dec 23, 2016', 1)._truncate
+                            | Check out this exclusive video on some video service
+                        +message('andrew.png', 'Andrew', '10 hours ago', null, true)._truncate
+                            | Good luck everyone!
+                        +message('orlando.png', 'Orlando', '10 hours ago')._truncate
+                            | Mark Rockwell joined the program 3
+                        +message('kira.png', 'Kira', '10 hours ago')
+                            | Eva moved to LA a few months ago to lorem ispum dolor sit amet
+                        +message('valentin.png', 'Valentin', '1 hours ago', null, null, true)._truncate
+                            | We have officially
+                        +message('john.png', 'John', 'Dec 23, 2016', 1)._truncate
+                            | Check out this exclusive video on some video service
+                        +message('andrew.png', 'Andrew', '10 hours ago', null, true)._truncate
+                            | Good luck everyone!
+                        +message('orlando.png', 'Orlando', '10 hours ago')._truncate
+                            | Mark Rockwell joined the program 3
+                +e.right
+                    +e.header
+                        +e.SPAN.heading
+                            | message with
+                            span Kira
+                        +e.messages
+                            +message('kira.png', 'Kira', '10 hours ago')._white
+                                | Take it like a champ Megan!
+                            +message('valentin.png', 'Michael', '11 hours ago')._white
+                                | Perhaps they'll take notice & make changes for the betterment overall
+                            +message('kira.png', 'Kira', 'Dec 23, 2016 12:30 PM')._white
+                                | Says the unverified, pic-less profiler. hysterical. you do realize you voiced your response to several previous winners
+

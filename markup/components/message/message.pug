@@ -1,0 +1,18 @@
+include ../avatar/avatar
+
+mixin message(avatar, name, date, badge, isOnline, isYou)
+    +b.message&attributes(attributes)
+        +avatar(avatar)._size_small
+        if badge
+            +e.badge= badge
+        if isOnline
+            +e.online
+        +e.content
+            +e.header
+                +e.SPAN.name= name
+                +e.SPAN.date= date
+            +e.P.msg
+                if isYou
+                    +e.SPAN.you You:
+
+                block
