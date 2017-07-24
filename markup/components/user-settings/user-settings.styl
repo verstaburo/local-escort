@@ -1,0 +1,72 @@
+.user-settings
+    display: block
+    padding-bottom: 54px
+
+    .heading
+        margin-top: 47px
+
+    &__input
+        display: block
+        width: 100%
+        border: 1px solid borderColor
+        color darkGreyColor
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        line-height 3.625
+        padding: 0 20px
+        background-color: transparent
+
+    &__label
+        display: block
+        margin-bottom: 17px
+        color darkGreyColor
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+
+    &__field
+        display: block
+
+    &__action
+        width: 100%
+
+    &__avatar
+        display: flex
+        justify-content: space-between
+        align-items: center
+        border: 1px solid borderColor
+        width: 100%
+        min-height: 168px
+        padding: 24px 54px 24px 24px
+
+        &-buttons
+            display: inline-flex
+            align-items: center
+
+        &-button
+            display: flex
+            align-items: center
+
+            &:not(:last-child)::after
+                content: ''
+                margin-left: 24px
+                margin-right: 24px
+                display: block
+                height: 21px
+                width: 1px
+                background-color: borderColor
+
+        &-btn
+            color darkGreyColor
+            font-family fontMain
+            font-size 16px
+            font-weight 400
+            letter-spacing 1px
+            text-transform uppercase
+            border: 0
+            background-color: transparent
+            cursor: pointer
+
+    &__file
+        display: none
