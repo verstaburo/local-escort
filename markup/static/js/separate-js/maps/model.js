@@ -108,13 +108,30 @@ function initMap() {
 
     var zoomInBtn = document.querySelector('.js-map-zoom-in'),
         zoomOutBtn = document.querySelector('.js-map-zoom-out'),
-        myLocBtn = document.querySelector('.js-map-my-location');
+        myLocBtn = document.querySelector('.js-map-my-location'),
+        posMarker = new google.maps.Marker({
+            map: map,
+            animation: google.maps.Animation.DROP,
+            position: { lat: -9999, lng: -9999 },
+        });
 
     google.maps.event.addDomListener(zoomInBtn, 'click', function() {
-        map.setZoom(map.getZoom() + 0.5);
+        map.setZoom(map.getZoom() + 1);
     });
 
     google.maps.event.addDomListener(zoomOutBtn, 'click', function() {
-        map.setZoom(map.getZoom() - 0.5);
+        map.setZoom(map.getZoom() - 1);
     });
+
+    if ('geolocation' in navigator) {
+        google.maps.event.addDomListener(myLocBtn, 'click', function() {
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                map.setCenter(latlng);
+                posMarker.setPosition(latlng);
+            });
+        });
+    } else {
+        $(myLocBtn).hide();
+    }
 }

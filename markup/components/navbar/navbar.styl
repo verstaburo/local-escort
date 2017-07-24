@@ -194,3 +194,39 @@
         position relative
         width 100%
         height 0
+
+    &_dark
+        background-color: darkGreyColor
+
+        .logo::before
+            background-color: #2a2a2b
+
+        & ^[0]__heading
+            color: mainColor
+
+        & ^[0]__description
+            color: mainColor
+
+        & ^[0]__link
+
+            +above(768px)
+                &:hover
+                    background-color: mainColor
+                    color: #fff
+
+                    & ^[0]__heading
+                        color: #fff !important
+                    & ^[0]__description
+                        color: #fff !important
+
+                &.active
+                    background-color: mainColor
+                    color: #fff
+
+                    & ^[0]__heading
+                        color: #fff !important
+                    & ^[0]__description
+                        color: #fff !important
+
+        & ^[0]__item:not(:last-child)
+            border-color: #262728

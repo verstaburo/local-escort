@@ -10,11 +10,11 @@ include ../button/button
 include ../city-list/city-list
 include ../selectbox/selectbox
 
-mixin header()
+mixin header(dark)
     +b.HEADER.header&attributes(attributes)
         // DESKTOP NAVBAR
         +e.NAV.navbar._desktop
-            +navbar
+            +navbar(class=!!dark ? '_dark' : '')
                 +navbar-item._logo
                     +navbar-link(href='#')
                         +logo
@@ -35,7 +35,7 @@ mixin header()
                         +navbar-description 2154
 
                 +navbar-item._flexible
-                    +search-bar
+                    +search-bar(class=!!dark ? '_dark' : '')
 
                 +navbar-item(data-popup-id='#select-city' data-action='toggle')._city._dropdown.js-toggle-popup
                     +navbar-link-dropdown(href='#')
@@ -138,7 +138,7 @@ mixin header()
                 //            +navbar-description._dark._solo login
         // MOBILE NAVBAR
         +e.NAV.navbar_mobile
-            +navbar
+            +navbar(class=!!dark ? '_dark' : '')
                 +navbar-item
                     +navbar-link(href='#')
                         +logo
@@ -161,6 +161,6 @@ mixin header()
                 //        != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
 
         +e.search-bar
-            +search-bar._extended
+            +search-bar(class=!!dark ? '_dark' : '')._extended
 
         +photo-tape
