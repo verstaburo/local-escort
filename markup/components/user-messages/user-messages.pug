@@ -10,34 +10,33 @@ mixin user-messages()
         +container
             +heading(1) Messages
             +e.content
-                +e.left
-                    +e.scroll
-                        +message('nikolas.png', 'Nikolas', '10 hours ago')._truncate.active
-                            | Eva moved to LA a few months ago to lorem ispum dolor sit amet
-                        +message('valentin.png', 'Valentin', '1 hours ago', null, null, true)._truncate
-                            | We have officially
-                        +message('john.png', 'John', 'Dec 23, 2016', 1)._truncate
-                            | Check out this exclusive video on some video service
-                        +message('andrew.png', 'Andrew', '10 hours ago', null, true)._truncate
-                            | Good luck everyone!
-                        +message('orlando.png', 'Orlando', '10 hours ago')._truncate
-                            | Mark Rockwell joined the program 3
-                        +message('kira.png', 'Kira', '10 hours ago')._truncate
-                            | Eva moved to LA a few months ago to lorem ispum dolor sit amet
-                        +message('valentin.png', 'Valentin', '1 hours ago', null, null, true)._truncate
-                            | We have officially
-                        +message('john.png', 'John', 'Dec 23, 2016', 1)._truncate
-                            | Check out this exclusive video on some video service
-                        +message('andrew.png', 'Andrew', '10 hours ago', null, true)._truncate
-                            | Good luck everyone!
-                        +message('orlando.png', 'Orlando', '10 hours ago')._truncate
-                            | Mark Rockwell joined the program 3
+                +e.left.js-user-messages-scrollable
+                    +message('nikolas.png', 'Nikolas', '10 hours ago')._truncate.active
+                        | Eva moved to LA a few months ago to lorem ispum dolor sit amet
+                    +message('valentin.png', 'Valentin', '1 hours ago', null, null, true)._truncate
+                        | We have officially
+                    +message('john.png', 'John', 'Dec 23, 2016', 1)._truncate
+                        | Check out this exclusive video on some video service
+                    +message('andrew.png', 'Andrew', '10 hours ago', null, true)._truncate
+                        | Good luck everyone!
+                    +message('orlando.png', 'Orlando', '10 hours ago')._truncate
+                        | Mark Rockwell joined the program 3
+                    +message('kira.png', 'Kira', '10 hours ago')._truncate
+                        | Eva moved to LA a few months ago to lorem ispum dolor sit amet
+                    +message('valentin.png', 'Valentin', '1 hours ago', null, null, true)._truncate
+                        | We have officially
+                    +message('john.png', 'John', 'Dec 23, 2016', 1)._truncate
+                        | Check out this exclusive video on some video service
+                    +message('andrew.png', 'Andrew', '10 hours ago', null, true)._truncate
+                        | Good luck everyone!
+                    +message('orlando.png', 'Orlando', '10 hours ago')._truncate
+                        | Mark Rockwell joined the program 3
                 +e.right
                     +e.header
                         +e.SPAN.heading
                             | Message with
                             span Nikolas
-                        +dotted-dropdown._pure
+                        +dotted-dropdown-pure
                             +list._shadow
                                 +list-item._deep_dark
                                     +list-button(href='#') Delete
@@ -45,7 +44,7 @@ mixin user-messages()
                                     +list-button(href='#') Mark as Spam
                                 +list-item._deep_dark
                                     +list-button(href='#') Block User
-                    +e.scroll
+                    .js-user-messages-scrollable
                         +e.messages
                             +message('nikolas.png', 'Nikolas', '10 hours ago')._white._left
                                 | Take it like a champ Megan!
