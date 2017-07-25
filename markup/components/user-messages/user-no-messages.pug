@@ -1,0 +1,12 @@
+include ../heading/heading
+include ../container/container
+
+mixin user-no-messages()
+    +b.user-messages&attributes(attributes)
+        +container
+            +heading Messages
+            +e.content
+                +e.no-messages
+                    +e.no-messages-picture
+                        != pugHelpers.Icon.call(locals, {iconName: 'mail', className: 'user-messages__no-messages-icon', iconWidth: '30', iconHeight: '23'})
+                    +e.SPAN.no-messages-text While no personal message
