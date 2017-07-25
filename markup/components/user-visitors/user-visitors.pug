@@ -1,0 +1,14 @@
+include ../container/container
+include ../heading/heading
+include ../message/message
+
+mixin user-visitors()
+    +b.user-visitors&attributes(attributes)
+        +container
+            +heading Visitors
+            +e.content
+                +message-no-msg('valentin.png', 'Valentin', '1 hours ago')
+                +message-no-msg('john.png', 'John', '2 hours ago')
+                +message-no-msg('andrew.png', 'Andrew', 'Dec 23, 2016')
+                +message-no-msg('kira.png', 'Maya', 'Dec 07, 2016')
+                +message-no-msg('orlando.png', 'Alex', 'Nov 30, 2015')

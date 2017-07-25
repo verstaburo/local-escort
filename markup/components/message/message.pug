@@ -16,3 +16,15 @@ mixin message(avatar, name, date, badge, isOnline, isYou)
                     +e.SPAN.you You:
 
                 block
+
+mixin message-no-msg(avatar, name, date, badge, isOnline)
+    +b.message&attributes(attributes)
+        +avatar(avatar)._size_small
+        if badge
+            +e.badge= badge
+        if isOnline
+            +e.online
+        +e.content
+            +e.header._full
+                +e.SPAN.name= name
+                +e.SPAN.date= date
