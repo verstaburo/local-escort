@@ -31,6 +31,9 @@ grid-modifiers = ( one two three four five six seven eight nine ten elevel twelv
         &_push_right
             margin-left: auto
 
+        &_push_bottom
+            margin-top: auto
+
         for i in range(0,(length(grid-modifiers) - 1))
             &_{grid-modifiers[i]}
                 width (i + 1) * grid-col-width

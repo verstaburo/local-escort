@@ -48,3 +48,57 @@ mixin user-settings()
                         +button('button')._uppercase._border_standart.__action Cancel
                     +col(3).grid__col_push_right
                         +button('button')._uppercase._border_standart.__action Delete account
+
+mixin user-settings2()
+    +b.user-settings&attributes(attributes)
+        +container
+            +heading Settings
+            +e.FORM(method="post" action="#" enctype='multipart/form-data').form
+                +grid
+                    +col(4)
+                        +e.LABEL.field
+                            +e.SPAN.label Nickname
+                            +selectbox('English')._default-text
+                    +col(4)
+                        +e.LABEL.field
+                            +e.SPAN.label Email
+                            +e.INPUT(type="text").input
+                    +col(4)
+                        +e.LABEL.field
+                            +e.SPAN.label Nickname
+                            +e.INPUT(type="text").input
+                    +col(12)
+                        +e.field
+                            +e.SPAN.label Avatar
+                            +e.avatar
+                                +avatar('agency.png')._size_big
+                                +e.avatar-buttons
+                                    +e.LABEL.avatar-button
+                                        +e.avatar-btn Select new file
+                                        +e.INPUT(type='file').file
+                                    +e.avatar-button
+                                        +e.BUTTON.avatar-btn delete
+                    +col(6)
+                        +e.LABEL.field
+                            +e.SPAN.label Current password
+                            +e.INPUT(type="password").input
+                    +col(6)
+                        +e.LABEL.field
+                            +e.SPAN.label New password
+                            +e.INPUT(type="password").input
+                    +col(6)
+                        +e.LABEL.field
+                            +e.SPAN.label Repeat new password
+                            +e.INPUT(type="password").input
+                    +col(3).grid__col_push_bottom
+                        +button('button')._uppercase._bg_main._color_white.__action Change password
+                    +col(3).grid__col_push_bottom
+                        +button('button')._uppercase._border_standart.__action Cancel
+                    +col(3)
+                        +button('button')._uppercase._bg_darkGrey._color_main.__action Save changes
+                    +col(3)
+                        +button('button')._uppercase._border_standart.__action Cancel
+                    +col(3)
+                        +button('button')._uppercase._border_standart.__action Deactivate account
+                    +col(3).grid__col_push_right
+                        +button('button')._uppercase._border_standart.__action Delete account
