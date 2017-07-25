@@ -1,6 +1,9 @@
 .list
     display: block
 
+    &_shadow
+        box-shadow: 0 10px 40px rgba(29, 29, 29, .1)
+
     &__item
         display: block
         cursor: pointer
@@ -36,6 +39,22 @@
 
                     & > ^[0]__text
                         color: #fff
+
+
+        &_deep_dark
+            & > ^[0]__button
+                background-color: darkGreyColor
+
+                & > ^[0]__text
+                    color: #fff
+
+            &:hover, &.active
+                & > ^[0]__button
+                    background-color: #212223
+
+                    & > ^[0]__text
+                        color: mainColor
+
 
     &__button
         position: relative

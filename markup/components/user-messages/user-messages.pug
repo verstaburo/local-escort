@@ -1,6 +1,9 @@
 include ../heading/heading
 include ../container/container
 include ../message/message
+include ../dotted-dropdown/dotted-dropdown
+include ../list/list
+include ../send-form/send-form
 
 mixin user-messages()
     +b.user-messages&attributes(attributes)
@@ -8,8 +11,8 @@ mixin user-messages()
             +heading(1) Messages
             +e.content
                 +e.left
-                    +e.nav
-                        +message('kira.png', 'Kira', '10 hours ago')._truncate
+                    +e.scroll
+                        +message('nikolas.png', 'Nikolas', '10 hours ago')._truncate.active
                             | Eva moved to LA a few months ago to lorem ispum dolor sit amet
                         +message('valentin.png', 'Valentin', '1 hours ago', null, null, true)._truncate
                             | We have officially
@@ -19,7 +22,7 @@ mixin user-messages()
                             | Good luck everyone!
                         +message('orlando.png', 'Orlando', '10 hours ago')._truncate
                             | Mark Rockwell joined the program 3
-                        +message('kira.png', 'Kira', '10 hours ago')
+                        +message('kira.png', 'Kira', '10 hours ago')._truncate
                             | Eva moved to LA a few months ago to lorem ispum dolor sit amet
                         +message('valentin.png', 'Valentin', '1 hours ago', null, null, true)._truncate
                             | We have officially
@@ -32,13 +35,28 @@ mixin user-messages()
                 +e.right
                     +e.header
                         +e.SPAN.heading
-                            | message with
-                            span Kira
+                            | Message with
+                            span Nikolas
+                        +dotted-dropdown._pure
+                            +list._shadow
+                                +list-item._deep_dark
+                                    +list-button(href='#') Delete
+                                +list-item._deep_dark
+                                    +list-button(href='#') Mark as Spam
+                                +list-item._deep_dark
+                                    +list-button(href='#') Block User
+                    +e.scroll
                         +e.messages
-                            +message('kira.png', 'Kira', '10 hours ago')._white
+                            +message('nikolas.png', 'Nikolas', '10 hours ago')._white._left
                                 | Take it like a champ Megan!
-                            +message('valentin.png', 'Michael', '11 hours ago')._white
+                            +message('navbar.png', 'Megan', '11 hours ago')._white._right
                                 | Perhaps they'll take notice & make changes for the betterment overall
-                            +message('kira.png', 'Kira', 'Dec 23, 2016 12:30 PM')._white
+                            +message('nikolas.png', 'Nikolas', 'Dec 23, 2016 12:30 PM')._white._left
                                 | Says the unverified, pic-less profiler. hysterical. you do realize you voiced your response to several previous winners
-
+                            +message('nikolas.png', 'Nikolas', '10 hours ago')._white._left
+                                | Take it like a champ Megan!
+                            +message('navbar.png', 'Megan', '11 hours ago')._white._right
+                                | Perhaps they'll take notice & make changes for the betterment overall
+                            +message('nikolas.png', 'Nikolas', 'Dec 23, 2016 12:30 PM')._white._left
+                                | Says the unverified, pic-less profiler. hysterical. you do realize you voiced your response to several previous winners
+                    +send-form('Message', 'Send message')

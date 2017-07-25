@@ -1,0 +1,6 @@
+mixin send-form(placeholder, buttonValue)
+    +b.FORM(action="#" method="POST").send-form&attributes(attributes)
+        +e.controls
+            +e.control(placeholder=placeholder contenteditable name='message')
+                block
+            +e.BUTTON.button=buttonValue

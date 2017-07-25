@@ -4,6 +4,21 @@
     width: 100%
     padding: 24px 25px
 
+    &_right
+        margin-left: auto
+
+    &_left
+        margin-right: auto
+
+    &_truncate
+
+        & ^[0]__content
+            overflow hidden
+            text-overflow ellipsis
+
+        & ^[0]__msg
+            ellipsis(100%)
+
     &_white
         background-color: #fff
         box-shadow 0 20px 50px rgba(29, 29, 29, .02)
@@ -11,13 +26,11 @@
         & ^[0]__name
             color mainColor
 
-    &_truncate
-        ^ &[0]__msg
-            +ellipsis(100%)
+        & ^[0]__msg
+            color darkGreyColor
 
     .avatar
         flex-shrink: 0
-        margin-right: 12px
 
     &__badge
         position: absolute
@@ -36,7 +49,8 @@
         border-radius 0 0 0 4px
 
     &__content
-        flex: 1
+        width: 100%
+        padding-left: 12px
 
     &__header
         display: flex

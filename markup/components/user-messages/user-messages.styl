@@ -4,3 +4,82 @@
 
     .heading
         margin-top: 47px
+
+    .dotted-dropdown
+        z-index: 100
+
+    .send-form
+        flex-shrink: 0
+        margin-top: 23px
+
+    &__content
+        display: flex
+        margin-top: 46px
+        height: 486px
+        border 1px solid borderColor
+
+    &__left
+        width: 352px
+        flex-shrink: 0
+        padding-top: 1px
+        overflow: hidden
+
+        .message
+            margin-top: -1px
+            height 88px
+            box-sizing: border-box
+            border-right: 1px solid borderColor
+            cursor: pointer
+
+            &:not(:last-child)
+                border-bottom 1px solid borderColor
+
+            &.active
+                background-color #fff
+                border-color transparent
+    &__right
+        display: flex
+        flex-direction: column
+        flex: 1
+        overflow: hidden
+
+        .message
+            display: inline-flex
+            width: initial
+            min-width: 278px
+            flex: 0
+
+            &:not(:last-child)
+                margin-bottom: 12px
+
+    &__messages
+        display: flex
+        flex-direction: column
+        box-sizing: border-box
+        padding-top: 23px
+
+    &__scroll
+        width: 100%
+        height: 100%
+        overflow: auto
+        padding-right: 28px
+        box-sizing content-box
+
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        height: 65px
+        border-bottom: 1px solid borderColor
+        flex-shrink: 0
+
+    &__heading
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        line-height 1.375
+        color darkGreyColor
+
+        span
+            color: mainColor
+            margin-left: 5px

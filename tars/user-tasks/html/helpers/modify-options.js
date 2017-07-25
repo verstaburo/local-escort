@@ -32,7 +32,12 @@ module.exports = {
     //                                          Default: unlimited
     // @param {Boolean} indent_handlebars       format and indent {{#foo}} and {{/foo}}. Default: false
     prettifyOpts: {
-
+        indent_size: 2,
+        brace_style: 'expand',
+        indent_inner_html: true,
+        wrap_line_length: 250,
+        max_preserve_newlines: 50,
+        unformatted: ['use'],
     }
 
     /* eslint-enable camelcase */

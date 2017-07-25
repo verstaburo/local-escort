@@ -23,6 +23,7 @@ import profilePhotoPopup from '../../components/profile-photo-popup/profile-phot
 import reviews from '../../components/reviews/reviews';
 import agency from '../../components/agency/agency';
 import map from '../../components/map/map';
+import sendForm from '../../components/send-form/send-form';
 
 $(() => {
     svg4everybody();
@@ -51,4 +52,5 @@ $(() => {
     reviews();
     agency();
     map();
+    sendForm();
 });

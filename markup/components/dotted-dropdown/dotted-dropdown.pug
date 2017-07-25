@@ -5,3 +5,10 @@ mixin dotted-dropdown()
             != pugHelpers.Icon.call(locals, {iconName: 'close', className: 'dotted-dropdown__icon dotted-dropdown__icon_close', iconWidth: 18, iconHeight: 18})
         +e.content
             block
+
+mixin dotted-dropdown-pure
+    +b.dotted-dropdown._pure&attributes(attributes)
+        +e.button
+            != pugHelpers.Icon.call(locals, { iconName: 'dots', className: 'dotted-dropdown__icon dotted-dropdown__icon_dots', iconWidth: 19, iconHeight: 3 })
+        +e.content
+            block

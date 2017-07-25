@@ -59,3 +59,30 @@
         right: 0
         width: 236px
         display: none
+
+    &_pure
+        & ^[0]__button
+            background-color: transparent
+            border-color: transparent
+
+            &:hover
+                background-color: transparent
+                border-color: transparent
+
+                & ^[0]__icon_dots
+                    fill: darkGreyColor
+
+        &.active
+            & ^[0]__content
+                display: block
+
+            & ^[0]__button
+                background-color: transparent
+                border-color: transparent
+
+            & ^[0]__icon_dots
+                opacity: 1
+
+            & ^[0]__icon_close
+                opacity: 0
+
