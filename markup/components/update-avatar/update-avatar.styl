@@ -1,0 +1,37 @@
+.update-avatar
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border: 1px solid borderColor
+    width: 100%
+    min-height: 168px
+    padding: 24px 54px 24px 24px
+
+    &__buttons
+        display: inline-flex
+        align-items: center
+
+    &__action
+        display: flex
+        align-items: center
+        color darkGreyColor
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        letter-spacing 1px
+        text-transform uppercase
+        border: 0
+        background-color: transparent
+        cursor: pointer
+
+        &:not(:last-child)::after
+            content: ''
+            margin-left: 24px
+            margin-right: 24px
+            display: block
+            height: 21px
+            width: 1px
+            background-color: borderColor
+
+    &__control
+        display: none

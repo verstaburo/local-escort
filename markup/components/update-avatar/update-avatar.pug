@@ -1,0 +1,8 @@
+mixin update-avatar()
+    +b.DIV.update-avatar&attributes(attributes)
+        +avatar('agency.png')._size_big
+        +e.buttons
+            +e.LABEL.action._select
+                | select new file
+                +e.INPUT(type='file' name='avatar' accept="image/*").control
+            +e.action._delete delete

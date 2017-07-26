@@ -5,6 +5,7 @@ include ../avatar/avatar
 include ../grid/grid
 include ../container/container
 include ../field/field
+include ../update-avatar/update-avatar
 
 mixin user-settings()
     +b.user-settings&attributes(attributes)
@@ -25,16 +26,9 @@ mixin user-settings()
                             +field-label Nickname
                             +field-input
                     +col(12)
-                        +e.field
+                        +field.DIV
                             +field-label Avatar
-                            +e.avatar
-                                +avatar('agency.png')._size_big
-                                +e.avatar-buttons
-                                    +e.LABEL.avatar-button
-                                        +e.avatar-btn Select new file
-                                        +e.INPUT(type='file').file
-                                    +e.avatar-button
-                                        +e.BUTTON.avatar-btn delete
+                            +update-avatar
                     +col(6)
                         +field
                             +field-label Password
@@ -71,14 +65,7 @@ mixin user-settings2()
                     +col(12)
                         +field.DIV
                             +field-label Avatar
-                            +e.avatar
-                                +avatar('agency.png')._size_big
-                                +e.avatar-buttons
-                                    +e.LABEL.avatar-button
-                                        +e.avatar-btn Select new file
-                                        +e.INPUT(type='file').file
-                                    +e.avatar-button
-                                        +e.BUTTON.avatar-btn delete
+                            +update-avatar
                     +col(6)
                         +field
                             +field-label Current password

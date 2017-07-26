@@ -4,6 +4,7 @@ include ../button/button
 include ../field/field
 include ../heading/heading
 include ../file/file
+include ../update-avatar/update-avatar
 
 mixin registration()
     +b.registration&attributes(attributes)
@@ -32,10 +33,12 @@ mixin registration()
                         +field-input
 
                 +col(12)
-                    +field
+                    +field.DIV
                         +field-label Avatar
-                        +file.DIV
-
+                        .registration__avatar.registration__avatar_upload
+                            +file(null, null, 'image/*')
+                        .registration__avatar.registration__avatar_update
+                            +update-avatar
                 +col(4)
                     +field
                         +field-label Password
