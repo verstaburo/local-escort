@@ -4,6 +4,7 @@ include ../button/button
 include ../share/share
 include ../avatar/avatar
 include ../rating/rating
+include ../send-form/send-form
 
 mixin review
     +b.review&attributes(attributes)
@@ -32,9 +33,7 @@ mixin review-comment
 mixin reviews()
     +b.reviews&attributes(attributes)
         +heading Reviews
-        +e.FORM(method='POST' action='#').form
-            +e.TEXTAREA.control(placeholder='Give feedback')
-            +e.BUTTON.button Send review
+        +send-form('Give feedback', 'Send review')
         unless block
             +e.SPAN.no-reviews There are no reviews
 
@@ -56,9 +55,7 @@ mixin reviews-rate()
                 +rating-interactive-counter(5, 'service-4', 'Service')
                 +rating-interactive-counter(5, 'service-5', 'Service')
 
-        +e.FORM(method='POST' action='#').form
-            +e.TEXTAREA.control(placeholder='Give feedback')
-            +e.BUTTON.button Send review
+        +send-form('Give feedback', 'Send review')
 
         unless block
             +e.SPAN.no-reviews There are no reviews
@@ -81,9 +78,7 @@ mixin reviews-rate-no-login()
                 +rating-interactive-counter(5, 'service-4', 'Service')
                 +rating-interactive-counter(5, 'service-5', 'Service')
 
-        +e.FORM(method='POST' action='#').form
-            +e.TEXTAREA.control(placeholder='Give feedback') This is the biggest site in the sex industry and i enjoy the best looking cocks in the whole channel. The very common desire of woman love is to get the bigest cocks they want from men.
-            +e.BUTTON.button Send review
+        +send-form('Give feedback', 'Send review')
 
         +e.login
             +e.SPAN.login-heading To leave a comment you need to enter through
@@ -113,9 +108,7 @@ mixin reviews-feedbacks
                 +rating-interactive-counter(5, 'service-4', 'Service')
                 +rating-interactive-counter(5, 'service-5', 'Service')
 
-        +e.FORM(method='POST' action='#').form
-            +e.TEXTAREA.control(placeholder='Give feedback')
-            +e.BUTTON.button Send review
+        +send-form('Give feedback', 'Send review')
 
         +e.UL.items
             +review
