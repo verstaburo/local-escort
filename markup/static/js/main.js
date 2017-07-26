@@ -25,6 +25,7 @@ import agency from '../../components/agency/agency';
 import map from '../../components/map/map';
 import sendForm from '../../components/send-form/send-form';
 import userMessages from '../../components/user-messages/user-messages';
+import fileUpload from '../../components/file/file';
 
 $(() => {
     svg4everybody();
@@ -55,4 +56,5 @@ $(() => {
     map();
     sendForm();
     userMessages();
+    fileUpload();
 });
