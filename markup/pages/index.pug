@@ -11,6 +11,7 @@ include ../components/profile-popup/profile-popup
 include ../components/profile-common-popup/profile-common-popup
 include ../components/profile-video-popup/profile-video-popup
 include ../components/profile-photo-popup/profile-photo-popup
+include ../components/auth-popup/auth-popup
 
 block header
     +header
@@ -39,6 +40,8 @@ block content
             +demo-link('user-following.html') 06/User/Following
             +demo-link('user-activity.html') 06/User/Activity
             +demo-link('user-feeds.html') 06/User/Feeds
+            +demo-link('#registration-popup')(data-popup-id='#registration-popup' data-action='show').js-toggle-popup 05/Registration_1,1
+            +demo-link('#login-popup')(data-popup-id='#login-popup' data-action='show').js-toggle-popup 05/Registration_1,2
     +arrow-up
 
 block popups
@@ -51,6 +54,8 @@ block popups
     +profile-common-popup-report
     +profile-video-popup
     +profile-photo-popup
+    +registration-popup
+    +login-popup
 
 block footer
     +footer

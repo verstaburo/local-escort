@@ -1,0 +1,70 @@
+.auth-popup
+    display: flex
+    width: 100%
+    height: 100%
+
+    .heading
+        margin-bottom: 39px
+
+    &__col
+        position: relative
+        width: 50%
+        height: 100%
+        overflow: hidden
+
+    &__image
+        fill-img()
+
+    &__content
+        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 100%
+        z-index: 1
+        background-color: darkGreyColor
+
+        &_transparentify
+            background-color: rgba(darkGreyColor, .2)
+
+    &__button
+        min-width: 258px
+
+        &:hover
+            background-color #212223
+            color: mainColor
+
+    &__fields
+        margin-bottom: 40px
+
+    &__input
+        display: flex
+        align-items: center
+        padding: 0 20px
+        width 258px
+        height 60px
+        border 1px solid #262728
+        color #fff
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        letter-spacing 1px
+        text-transform uppercase
+        background-color: darkGreyColor
+
+        &::placeholder
+            color #fff
+
+        &:not(:last-child)
+            margin-bottom: 12px
+
+    &__link
+        margin-top: 39px
+        color rgba(#fff, .4)
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        line-height: 1.25
+        text-decoration: none
