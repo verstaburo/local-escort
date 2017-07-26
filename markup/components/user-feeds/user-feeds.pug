@@ -1,0 +1,73 @@
+include ../container/container
+include ../heading/heading
+include ../message/message
+include ../reviews/reviews
+include ../tour-card/tour-card
+
+mixin user-feeds()
+    +b.user-feeds&attributes(attributes)
+        +container
+            +heading Feeds
+            +e.content
+                +message-custom('sarah.png')
+                    +message-custom-badge
+                        +e.oval
+                    +message-custom-content
+                        +message-custom-header('Sarah', '1 hours ago')
+                        +message-custom-msg Changed personal information
+                        +message-custom-info
+                            +message-custom-info-item
+                                 +message-custom-info-text._grey After:
+                                 +message-custom-info-text._main Height — 173 cm / 5 ft 8 in
+                            +message-custom-info-item
+                                 +message-custom-info-text._grey Before:
+                                 +message-custom-info-text._dark Height — 169 cm / 5 ft 8 in
+
+                +message-custom('anya.png')
+                    +message-custom-content
+                        +message-custom-header('Anya', '1 hours ago')
+                        +message-custom-msg
+                            != pugHelpers.Icon.call(locals, {iconName: 'like', className: 'user-feeds__like-icon', iconWidth: '15', iconHeight: '13'})
+                            | Added 3 new photos
+                        +message-custom-photos(['likes/1.jpg', 'likes/2.jpg', 'likes/3.jpg'])
+
+                +message-custom('sarah.png')
+                    +message-custom-content
+                        +message-custom-header('Sarah', '1 hours ago')
+                        +message-custom-msg Changed the information of the hourly rate
+                        +message-custom-info
+                            +message-custom-info-item
+                                +message-custom-info-text._grey After:
+                                +message-custom-info-text._main 1 hour – 187$ (incall) 187 (outcall)
+                            +message-custom-info-item
+                                +message-custom-info-text._grey Before:
+                                +message-custom-info-text._dark 1 hour – 180$ (incall) 180 (outcall)
+
+                +message-custom('sarah.png')
+                    +message-custom-content
+                        +message-custom-header('Sarah', '1 hours ago')
+                        +message-custom-msg Went on tour
+                        +tour-card('Girls is on tour in Roterdam', '25 JUL – 29 JUL', '818—554—9937', 'I’m right now on tour <span>(4 more days)</span>')._dark
+
+                +message('sarah.png', 'Sarah', '1 hours ago') Changed the information in the section About me
+
+                +message-custom('sarah.png')
+                    +message-custom-content
+                        +message-custom-header('Sarah', '1 hours ago')
+                        +message-custom-msg Changed the information in the section About me
+                        +message-custom-info
+                            +message-custom-info-item
+                                != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'user-feeds__ok-icon', iconWidth: '11', iconHeight: '8'})
+                                +message-custom-info-text._dark Vip Companion
+
+                +message-custom('sarah.png')
+                    +message-custom-content
+                        +message-custom-header('Sarah', '1 hours ago')
+                        +message-custom-msg Changed contact information
+                        +message-custom-info
+                            +message-custom-info-item
+                                +message-custom-info-text._grey After:
+                                +message-custom-info-text._main Phone +1 818 554—9937
+                            +message-custom-info-item
+                                +message-custom-info-text._grey Before:
+                                +message-custom-info-text._dark Phone +1 818 456—6332

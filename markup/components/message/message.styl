@@ -116,3 +116,44 @@
 
         &__items
             margin-top: 0
+
+    .tour-card
+        margin-top: 26px
+        display: inline-block
+
+    &__info
+        display: inline-flex
+        margin-top: 26px
+        padding: 18px 0
+        border-top: 1px solid borderColor
+        border-bottom: 1px solid borderColor
+
+        &-item
+            display: flex
+            align-items: center
+
+            &:not(:last-child)
+                margin-right: 24px
+
+        &-text
+            display: inline-block
+            vertical-align top
+            font-family fontMain
+            font-size 16px
+            font-weight 400
+            line-height 1.375
+
+            &:not(:first-child)
+                margin-left: 5px
+
+            &_grey
+                color #757576
+
+            &_dark
+                color darkGreyColor
+
+            &_main
+                color mainColor
+
+        svg
+            margin-right: 12px

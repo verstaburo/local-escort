@@ -64,3 +64,14 @@ mixin message-custom-reviews
         +e.items
             block
 
+mixin message-custom-info
+    +e.UL.info&attributes(attributes)
+        block
+
+mixin message-custom-info-item
+    +e.LI.info-item
+        block
+
+mixin message-custom-info-text
+    +e.SPAN.info-text&attributes(attributes)
+        block
