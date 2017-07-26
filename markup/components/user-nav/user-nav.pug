@@ -1,0 +1,32 @@
+mixin user-nav-model(activeItem)
+    +b.UL.user-nav&attributes(attributes)
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 1 ? 'active' : '').link My profile
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 2 ? 'active' : '').link Settings
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 3 ? 'active' : '').link Messages
+            +e.SPAN.badge 1
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 4 ? 'active' : '').link Visitors
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 5 ? 'active' : '').link Feeds
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 6 ? 'active' : '').link Invite Friends
+
+mixin user-nav-user(activeItem)
+    +b.UL.user-nav&attributes(attributes)
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 1 ? 'active' : '').link following
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 2 ? 'active' : '').link My activity
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 3 ? 'active' : '').link Messages
+            +e.SPAN.badge 1
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 4 ? 'active' : '').link Feeds
+            +e.SPAN.badge 1
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 5 ? 'active' : '').link Settings
+        +e.LI.item
+            +e.A(href='#' class=activeItem === 6 ? 'active' : '').link Invite Friends
