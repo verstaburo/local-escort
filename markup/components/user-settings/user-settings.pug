@@ -4,6 +4,7 @@ include ../button/button
 include ../avatar/avatar
 include ../grid/grid
 include ../container/container
+include ../field/field
 
 mixin user-settings()
     +b.user-settings&attributes(attributes)
@@ -12,20 +13,20 @@ mixin user-settings()
             +e.FORM(method="post" action="#" enctype='multipart/form-data').form
                 +grid
                     +col(4)
-                        +e.LABEL.field
-                            +e.SPAN.label Nickname
+                        +field
+                            +field-label Nickname
                             +selectbox('English')._default-text
                     +col(4)
-                        +e.LABEL.field
-                            +e.SPAN.label Email
-                            +e.INPUT(type="text").input
+                        +field
+                            +field-label Email
+                            +field-input
                     +col(4)
-                        +e.LABEL.field
-                            +e.SPAN.label Nickname
-                            +e.INPUT(type="text").input
+                        +field
+                            +field-label Nickname
+                            +field-input
                     +col(12)
                         +e.field
-                            +e.SPAN.label Avatar
+                            +field-label Avatar
                             +e.avatar
                                 +avatar('agency.png')._size_big
                                 +e.avatar-buttons
@@ -35,13 +36,13 @@ mixin user-settings()
                                     +e.avatar-button
                                         +e.BUTTON.avatar-btn delete
                     +col(6)
-                        +e.LABEL.field
-                            +e.SPAN.label Password
-                            +e.INPUT(type="password").input
+                        +field
+                            +field-label Password
+                            +field-input(type="password")
                     +col(6)
-                        +e.LABEL.field
-                            +e.SPAN.label Confirm password
-                            +e.INPUT(type="password").input
+                        +field
+                            +field-label Confirm password
+                            +field-input(type="password")
                     +col(3)
                         +button('button')._uppercase._bg_darkGrey._color_main.__action Save changes
                     +col(3)
@@ -56,20 +57,20 @@ mixin user-settings2()
             +e.FORM(method="post" action="#" enctype='multipart/form-data').form
                 +grid
                     +col(4)
-                        +e.LABEL.field
-                            +e.SPAN.label Nickname
+                        +field
+                            +field-label Nickname
                             +selectbox('English')._default-text
                     +col(4)
-                        +e.LABEL.field
-                            +e.SPAN.label Email
-                            +e.INPUT(type="text").input
+                        +field
+                            +field-label Email
+                            +field-input
                     +col(4)
-                        +e.LABEL.field
-                            +e.SPAN.label Nickname
-                            +e.INPUT(type="text").input
+                        +field
+                            +field-label Nickname
+                            +field-input
                     +col(12)
-                        +e.field
-                            +e.SPAN.label Avatar
+                        +field.DIV
+                            +field-label Avatar
                             +e.avatar
                                 +avatar('agency.png')._size_big
                                 +e.avatar-buttons
@@ -79,17 +80,17 @@ mixin user-settings2()
                                     +e.avatar-button
                                         +e.BUTTON.avatar-btn delete
                     +col(6)
-                        +e.LABEL.field
-                            +e.SPAN.label Current password
-                            +e.INPUT(type="password").input
+                        +field
+                            +field-label Current password
+                            +field-input(type="password")
                     +col(6)
-                        +e.LABEL.field
-                            +e.SPAN.label New password
-                            +e.INPUT(type="password").input
+                        +field
+                            +field-label New password
+                            +field-input(type="password")
                     +col(6)
-                        +e.LABEL.field
-                            +e.SPAN.label Repeat new password
-                            +e.INPUT(type="password").input
+                        +field
+                            +field-label Repeat new password
+                            +field-input(type="password")
                     +col(3).grid__col_push_bottom
                         +button('button')._uppercase._bg_main._color_white.__action Change password
                     +col(3).grid__col_push_bottom

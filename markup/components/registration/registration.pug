@@ -1,0 +1,50 @@
+include ../grid/grid
+include ../info-control/info-control
+include ../button/button
+include ../field/field
+include ../heading/heading
+
+mixin registration()
+    +b.registration&attributes(attributes)
+        +container
+            +heading Registration
+
+            +grid.FORM(method='post' action='#')
+                +col(4)
+                    +info-control('radio', 'profile-type', 'regular', true)._light Regular member
+                +col(4)
+                    +info-control('radio', 'profile-type', 'independent')._light Independent
+                +col(4)
+                    +info-control('radio', 'profile-type', 'agency')._light Agency
+
+                +col(4)
+                    +field
+                        +field-label Your name
+                        +field-input
+                +col(4)
+                    +field
+                        +field-label Nickname
+                        +field-input
+                +col(4)
+                    +field
+                        +field-label Email
+                        +field-input
+
+                +col(12)
+                    +field
+                        +field-label Avatar
+                        +field-input
+
+                +col(4)
+                    +field
+                        +field-label Password
+                        +field-input(type='password')
+                +col(4)
+                    +field
+                        +field-label Confirm password
+                        +field-input(type='password')
+                +col(4).grid__col_push_bottom
+                    .g-recaptcha(data-sitekey="6LfEjSoUAAAAAFQHsQmbifMEftYf5OJVqIlX_AyW")
+
+                +col(4).grid__col_push_center
+                    +button('button')._uppercase._bg_darkGrey._color_main.__button sign up

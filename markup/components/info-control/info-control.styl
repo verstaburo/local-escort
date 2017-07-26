@@ -25,7 +25,7 @@
         padding: 0 20px
         background-color: #fff
         border: 1px solid borderColor
-        transition(background-color, border-color)
+        transition(all)
 
     &__label
         color darkGreyColor
@@ -42,3 +42,21 @@
         fill: mainColor
         transform: scale(0)
         transition(transform)
+
+    &_light
+
+        & ^[0]__box
+            background-color: transparent
+            box-shadow 0 0 0 rgba(0, 0, 0, 0)
+
+        & ^[0]__control
+            display: none
+
+            &:checked
+                & + ^[0]__box
+                    background-color: #fff
+                    border-color: transparent
+                    box-shadow 0 20px 50px rgba(29, 29, 29, 0.02)
+
+                    & ^[0]__label
+                        color: darkGreyColor

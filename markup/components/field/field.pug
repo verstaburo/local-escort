@@ -1,0 +1,10 @@
+mixin field
+    +b.LABEL.field&attributes(attributes)
+        block
+
+mixin field-label
+    +e.SPAN.label&attributes(attributes)
+        block
+
+mixin field-input
+    +e.INPUT(type="text").input&attributes(attributes)
