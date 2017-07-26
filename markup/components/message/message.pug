@@ -58,3 +58,9 @@ mixin message-custom-photos(photos)
         each src in photos
             +e.photo
                 img(src='__static__img/content/'+src alt='')
+
+mixin message-custom-reviews
+    +b.reviews&attributes(attributes)
+        +e.items
+            block
+

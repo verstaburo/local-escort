@@ -1,0 +1,29 @@
+include ../container/container
+include ../heading/heading
+include ../message/message
+include ../reviews/reviews
+
+mixin user-activity()
+    +b.user-activity&attributes(attributes)
+        +container
+            +heading My activity
+            +e.content
+                +message-custom('anya.png')
+                    +message-custom-content
+                        +message-custom-header('Anya', '1 hours ago')
+                        +message-custom-msg
+                            != pugHelpers.Icon.call(locals, {iconName: 'like', className: 'user-activity__like-icon', iconWidth: '15', iconHeight: '13'})
+                            | Like 4 of your photos
+                        +message-custom-photos(['likes/1.jpg', 'likes/2.jpg', 'likes/3.jpg'])
+                +message-custom('miya.png')
+                    +message-custom-content
+                        +message-custom-header('Miya', '9 hours ago')
+                        +message-custom-msg Leave a review
+                        +message-custom-reviews
+                            +review
+                                +review-rating
+                                    each rate in [4, 4, 2, 2, 3]
+                                        +review-rating-item('Category 1', rate)
+                                +review-comment weak.....one of those sites where the pics of dicks in the stills are photoshopped and then when you click on the movie for that still you find the dick isnt nearly as big as pictured.....the problem is most of the guys are white and most white guys need some photoshopping when it comes to dick size.....totally weak stuff.45/100
+
+                +message('mika.png', 'Mika', '1 hours ago') Started to following
