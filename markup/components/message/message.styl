@@ -79,6 +79,35 @@
         font-weight 400
         line-height: 1.375
 
+        svg
+            margin-right: 8px
+
     &__you
         color mainColor
         margin-right: 3px
+
+    &__oval
+        width: 6px
+        height: 6px
+        background-color: #fff
+        border-radius: 50%
+
+    &__photos
+        display: inline-block // fallback
+        vertical-align top // fallback
+        display: flex
+        flex-wrap wrap
+        margin-top: 14px
+        margin-left: -12px
+        margin-bottom: -12px
+
+    &__photo
+        position: relative
+        margin-left: 12px
+        margin-bottom: 12px
+        width: 125px
+        height: 94px
+
+        img
+            fill-img()
+

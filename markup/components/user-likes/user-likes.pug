@@ -1,0 +1,22 @@
+include ../container/container
+include ../heading/heading
+include ../message/message
+include ../badges/badges
+
+mixin user-likes()
+    +b.user-likes&attributes(attributes)
+        +container
+            +heading(1) Likes
+            +e.content
+                +message-custom('nikolas.png')
+                    +message-custom-badge
+                        +e.oval
+                    +message-custom-content
+                        +message-custom-header('Nikolas', '10 hours ago')
+                        +message-custom-msg
+                            != pugHelpers.Icon.call(locals, {iconName: 'like', className: 'user-likes__like-icon', iconWidth: '15', iconHeight: '13'})
+                            | Like 4 of your photos
+                        +message-custom-photos(['likes/1.jpg', 'likes/2.jpg', 'likes/3.jpg'])
+                +message('valentin.png', 'Valentin', '1 hours ago') Follows you
+                +message('valentin.png', 'John', 'Dec 23, 2016') Follows you
+                +message('andrew.png', 'Andrew', '10 hours ago') Follows you

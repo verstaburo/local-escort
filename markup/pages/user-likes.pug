@@ -1,0 +1,23 @@
+extends ../components/layout-default/layout-default
+include ../components/header/header
+include ../components/footer/footer
+include ../components/user-likes/user-likes
+include ../components/arrow-up/arrow-up
+include ../components/filter/filter
+include ../components/popup-welcome/popup-welcome
+include ../components/select-city-popup/select-city-popup
+
+block header
+    +header
+
+block content
+    +user-likes
+    +arrow-up
+
+block popups
+    +popup-welcome
+    +filter-extended
+    +select-city-popup
+
+block footer
+    +footer
