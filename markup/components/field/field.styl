@@ -13,6 +13,23 @@
         padding: 0 20px
         background-color: transparent
 
+        &-ok
+            display: block
+            width: 100%
+            position: relative
+
+            &-icon
+                position: absolute
+                top: 50%
+                right: 20px
+                transform: translateY(-50%)
+                fill: mainColor
+                display: none
+
+
+            & ^[0]__input
+                padding-right: 50px
+
     &__label
         display: block
         margin-bottom: 17px

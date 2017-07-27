@@ -7,6 +7,7 @@ export default function fileUpload() {
        if (!!fileNames) {
            text.text(fileNames);
        } else {
+            console.log(text.data('placeholder'));
            text.text(text.data('placeholder'));
        }
     });

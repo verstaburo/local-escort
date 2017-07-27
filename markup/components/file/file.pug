@@ -1,6 +1,7 @@
 mixin file(placeholder, name, accept)
     +b.LABEL.file&attributes(attributes)
-        +e.text(data-placeholder=placeholder)=placeholder||'Select the file or drag and drop them here'
+        - var placeholder = placeholder || 'Select the file or drag and drop them here'
+        +e.text(data-placeholder=placeholder)=placeholder
         +e.INPUT(type='file' name=name||'file' accept=accept).control
         +e.button
             != pugHelpers.Icon.call(locals, {iconName: 'plus', className: 'file__icon', iconWidth: '14', iconHeight: '14'})

@@ -8,3 +8,8 @@ mixin field-label
 
 mixin field-input
     +e.INPUT(type="text").input&attributes(attributes)
+
+mixin field-input-ok
+    +e.input-ok
+        +e.INPUT(type="text").input&attributes(attributes)
+        != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'field__input-ok-icon', iconWidth: '10', iconHeight: '6'})

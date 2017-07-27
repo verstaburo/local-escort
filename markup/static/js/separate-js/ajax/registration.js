@@ -7,6 +7,10 @@ $(function() {
         var reader = new FileReader(),
             input = this;
 
+        if (!input.files.length) {
+            return;
+        }
+
         reader.onload = function (e) {
             updateAvatar
                 .find('img')
