@@ -5,6 +5,8 @@ export default function grid() {
         return;
     }
 
+    const GRID_COLUMNS_COUNT = 12;
+
     let COLUMNS = Math.ceil(gridElement.data('columns'));
     const blocks = $(gridElement.data('block'));
 
@@ -12,12 +14,11 @@ export default function grid() {
         return;
     }
 
-    if (COLUMNS % 2 !== 0) {
+    if (COLUMNS % 2 !== 0 && GRID_COLUMNS_COUNT % COLUMNS !== 0) {
         console.warn(`data-columns should be an even number, you have specified ${COLUMNS}, it just changed to ${COLUMNS - 1}`);
         COLUMNS -= 1;
     }
 
-    const GRID_COLUMNS_COUNT = 12;
     const COLUMN_CLASSNAME = 'grid__col';
 
     const getColumn = n => {

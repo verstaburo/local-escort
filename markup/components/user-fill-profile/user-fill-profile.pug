@@ -1,0 +1,29 @@
+include ../container/container
+include ../heading/heading
+include ../uploaded-photo/uploaded-photo
+include ../fill-profile-nav/fill-profile-nav
+include ../grid/grid
+include ../file/file
+
+mixin user-fill-profile()
+    +b.user-fill-profile&attributes(attributes)
+        +container
+            +heading My Profile
+            +e.content
+                +e.main
+                    +heading._md Photos
+                    +grid-masonry(3, '.user-fill-profile__masonry-item').js-user-fill-profile-photos
+                        +uploaded-photo('profile/photos/1.jpg').user-fill-profile__masonry-item
+                        +uploaded-photo('profile/photos/2.jpg').user-fill-profile__masonry-item
+                        +file-column(null, 'photo', 'image/*', false, 'Add photo', 'The size should not exceed 2 MB').user-fill-profile__masonry-item
+                +e.sidebar
+                    +fill-profile-nav
+                        +fill-profile-nav-item.current Photo & Video
+                        +fill-profile-nav-item Personal data
+                        +fill-profile-nav-item Availability
+                        +fill-profile-nav-item Contact
+                        +fill-profile-nav-item Rate
+                        +fill-profile-nav-item About me
+                        +fill-profile-nav-item Service
+                        +fill-profile-nav-item Tours
+                        +fill-profile-nav-item._main Get verified

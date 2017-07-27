@@ -15,6 +15,16 @@
         font-family fontMain
         font-size 16px
         font-weight 400
+        line-height: 1.375
+        letter-spacing initial
+
+    &__description
+        color rgba(darkGreyColor, .59)
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        line-height: 1.375
+        letter-spacing initial
 
     &__button
         display: flex
@@ -24,10 +34,50 @@
         height: 60px
         background-color: mainColor
         cursor pointer
-        flex-shrink: 0;
+        flex-shrink: 0
 
     &__icon
         fill: #fff
 
     &__control
         display: none
+
+    &__heading
+        color darkGreyColor
+        font-family fontMain
+        font-size 20px
+        font-weight 400
+        margin-top: auto
+
+    &__content
+        margin-top: auto
+        margin-bottom: auto
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        min-height: 280px
+        text-align: center
+        padding: 24px
+        border: 1px solid borderColor
+        border-bottom: 0
+
+    &_column
+        flex-direction: column
+
+        & ^[0]__text
+            display: inline-block
+            vertical-align top
+            height: initial
+            border: 0
+            padding: 0
+            background-color: initial
+            max-width: 151px
+            margin-top: 9px
+            flex: 0
+
+        & ^[0]__description
+            margin-top: auto
+
+        & ^[0]__button
+            width: 100%
