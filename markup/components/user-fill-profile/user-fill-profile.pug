@@ -4,6 +4,8 @@ include ../uploaded-photo/uploaded-photo
 include ../fill-profile-nav/fill-profile-nav
 include ../grid/grid
 include ../file/file
+include ../field/field
+include ../button/button
 
 mixin user-fill-profile()
     +b.user-fill-profile&attributes(attributes)
@@ -11,11 +13,28 @@ mixin user-fill-profile()
             +heading My Profile
             +e.content
                 +e.main
-                    +heading._md Photos
-                    +grid-masonry(3, '.user-fill-profile__masonry-item').js-user-fill-profile-photos
-                        +uploaded-photo('profile/photos/1.jpg').user-fill-profile__masonry-item
-                        +uploaded-photo('profile/photos/2.jpg').user-fill-profile__masonry-item
-                        +file-column(null, 'photo', 'image/*', false, 'Add photo', 'The size should not exceed 2 MB').user-fill-profile__masonry-item
+                    +e.section
+                        +heading._md Photos
+                        +grid-masonry(3, '.user-fill-profile__masonry-item').js-user-fill-profile-photos
+                            +uploaded-photo('profile/photos/1.jpg').user-fill-profile__masonry-item
+                            +uploaded-photo('profile/photos/2.jpg').user-fill-profile__masonry-item
+                            +file-column(null, 'photo', 'image/*', false, 'Add photo', 'The size should not exceed 2 MB').user-fill-profile__masonry-item
+                    +e.section
+                        +heading._md Video
+                        +grid
+                            +col(6)
+                                +field
+                                    +field-label Video file
+                                    +file(null, 'video-file', 'video/*', true)
+                            +col(6)
+                                +field
+                                    +field-label Video URL
+                                    +field-input
+
+                            +col(4)
+                                +button('button')._uppercase._bg_darkGrey._color_main.__action Save & Exit
+                            +col(4)
+                                +button('button')._uppercase._bg_main._color_white.__action continue
                 +e.sidebar
                     +fill-profile-nav
                         +fill-profile-nav-item.current Photo & Video
