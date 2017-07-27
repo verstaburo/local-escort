@@ -1,0 +1,14 @@
+include ../heading/heading
+include ../share/share
+
+mixin registration-success()
+    +b.registration-success&attributes(attributes)
+        +heading Congratulations
+        +e.P.text You have successfully registered. We sent a letter to your email to confirm registration
+
+        +e.follow
+            +e.follow-us Follow Us On
+            +share-buttons
+                +share-button('vk')
+                +share-button('fb')
+                +share-button('tw')
