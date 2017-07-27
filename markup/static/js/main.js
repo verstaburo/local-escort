@@ -26,6 +26,7 @@ import map from '../../components/map/map';
 import sendForm from '../../components/send-form/send-form';
 import userMessages from '../../components/user-messages/user-messages';
 import fileUpload from '../../components/file/file';
+import authPopup from '../../components/auth-popup/auth-popup';
 
 $(() => {
     svg4everybody();
@@ -57,4 +58,5 @@ $(() => {
     sendForm();
     userMessages();
     fileUpload();
+    authPopup();
 });

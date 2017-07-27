@@ -8,10 +8,29 @@
 
     &__col
         position: relative
-        width: 50%
+        width: 100%
         height: 100%
         overflow: hidden
+        background-color: darkGreyColor
 
+        &_action
+            position: static
+            width: 50%
+            height: 100%
+            overflow: initial
+
+            & ^[0]__col
+                display: none
+
+                &:first-child
+                    display: block
+
+            &.active
+                & ^[0]__col
+                    display: block
+
+                    &:first-child
+                        display: none
     &__image
         fill-img()
 

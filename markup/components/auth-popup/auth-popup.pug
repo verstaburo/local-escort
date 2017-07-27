@@ -2,21 +2,36 @@ include ../popup/popup
 include ../button/button
 include ../heading/heading
 
-mixin registration-popup()
-    +popup.popup_paddings#registration-popup
+mixin auth-popup()
+    +popup.popup_paddings#auth-popup
         +container.container__height_100p
             +b.auth-popup&attributes(attributes)
-                +e.col
-                    +e.IMG(src='__static__img/content/auth-popup/singup.jpg' alt='').image
-                    +e.content._transparentify
-                        +heading._color_white Login
-                        +button(href='#')._uppercase._color_white._bg_darkGrey.__button Enter your account
-                +e.col
-                    +e.content
-                        +heading._color_white New Account
-                        +button(href='#')._uppercase._color_white._bg_darkGrey.__button regular member
-                        +button(href='#')._uppercase._color_white._bg_darkGrey.__button independent
-                        +button(href='#')._uppercase._color_white._bg_darkGrey.__button Agency
+                +e.col._action
+                    +e.col
+                        +e.IMG(src='__static__img/content/auth-popup/singup.jpg' alt='').image
+                        +e.content._transparentify
+                            +heading._color_white Login
+                            +button('div')._uppercase._color_white._bg_darkGrey.__button.js-auth-popup-action-btn Enter your account
+                    +e.col
+                        +e.FORM(action='#' method='POST').content
+                            +heading._color_white Login
+                            +e.fields
+                                +e.INPUT(type='text' name='email' placeholder='email').input
+                                +e.INPUT(type='password' name='password' placeholder='password').input
+                            +button(href='#')._uppercase._color_main._bg_grey.__button login
+                            +e.A(href='#').link Forgot your password?
+                +e.col._action
+                    +e.col
+                        +e.IMG(src='__static__img/content/auth-popup/signin.jpg' alt='').image
+                        +e.content._transparentify
+                            +heading._color_white New Account
+                            +button('div')._uppercase._color_white._bg_darkGrey.__button.js-auth-popup-action-btn Register Now
+                    +e.col
+                        +e.content
+                            +heading._color_white New Account
+                            +button(href='#')._uppercase._color_white._bg_darkGrey.__button regular member
+                            +button(href='#')._uppercase._color_white._bg_darkGrey.__button independent
+                            +button(href='#')._uppercase._color_white._bg_darkGrey.__button Agency
 
 mixin login-popup()
     +popup.popup_paddings#login-popup
