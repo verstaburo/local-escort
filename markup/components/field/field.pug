@@ -13,3 +13,7 @@ mixin field-input-ok
     +e.input-ok
         +e.INPUT(type="text").input&attributes(attributes)
         != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'field__input-ok-icon', iconWidth: '10', iconHeight: '6'})
+
+mixin field-description
+    +e.SPAN.description&attributes(attributes)
+        block

@@ -1,0 +1,31 @@
+include ../button/button
+include ../field/field
+include ../selectbox/selectbox
+include ../grid/grid
+include ../heading/heading
+include ../container/container
+
+mixin phone-number()
+    +b.phone-number&attributes(attributes)
+        +container
+            +heading Phone number
+            +grid
+                +col(2)
+                    +field
+                        +field-label Country code
+                        +selectbox('+1')
+                +col(4)
+                    +field
+                        +field-label Phone number
+                        +field-input
+                +col(3)
+                    +field
+                        +field-label SMS code
+                        +field-input
+                        +field-description We sent you a SMS code to verify the phone number
+
+                +col(3)
+                    +button(href='#')._uppercase._bg_darkGrey._color_white.__button._resend Resend code
+
+                +col(4).grid__col_push_center.grid__col_push_bottom
+                    +button(href='#')._uppercase._bg_darkGrey._color_main.__button sign up
