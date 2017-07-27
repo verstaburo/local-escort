@@ -12,7 +12,7 @@ mixin user-fill-profile()
         +container
             +heading My Profile
             +e.content
-                +e.main
+                +e.FORM(action='#' enctype='multipart/form-data' method='post').main
                     +e.section
                         +heading._md Photos
                         +grid-masonry(3, '.user-fill-profile__masonry-item').js-user-fill-profile-photos
@@ -37,7 +37,7 @@ mixin user-fill-profile()
                                 +button('button')._uppercase._bg_main._color_white.__action continue
                 +e.sidebar
                     +fill-profile-nav
-                        +fill-profile-nav-item.current Photo & Video
+                        +fill-profile-nav-item.active Photo & Video
                         +fill-profile-nav-item Personal data
                         +fill-profile-nav-item Availability
                         +fill-profile-nav-item Contact
