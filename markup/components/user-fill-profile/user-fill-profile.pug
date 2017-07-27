@@ -6,7 +6,10 @@ include ../grid/grid
 include ../file/file
 include ../field/field
 include ../button/button
+include ../selectbox/selectbox
+include ../checkbox/checkbox
 
+//- Photo & Video
 mixin user-fill-profile()
     +b.user-fill-profile&attributes(attributes)
         +container
@@ -37,12 +40,148 @@ mixin user-fill-profile()
                                 +button('button')._uppercase._bg_main._color_white.__action continue
                 +e.sidebar
                     +fill-profile-nav
-                        +fill-profile-nav-item.active Photo & Video
-                        +fill-profile-nav-item Personal data
-                        +fill-profile-nav-item Availability
-                        +fill-profile-nav-item Contact
-                        +fill-profile-nav-item Rate
-                        +fill-profile-nav-item About me
-                        +fill-profile-nav-item Service
-                        +fill-profile-nav-item Tours
-                        +fill-profile-nav-item._main Get verified
+                        +fill-profile-nav-item('user-fill-profile.html').active Photo & Video
+                        +fill-profile-nav-item('user-fill-profile2.html') Personal data
+                        +fill-profile-nav-item('user-fill-profile3.html') Availability
+                        +fill-profile-nav-item('user-fill-profile4.html') Contact
+                        +fill-profile-nav-item('user-fill-profile5.html') Rate
+                        +fill-profile-nav-item('user-fill-profile6.html') About me
+                        +fill-profile-nav-item('user-fill-profile7.html') Service
+                        +fill-profile-nav-item('user-fill-profile8.html') Tours
+                        +fill-profile-nav-item('user-fill-profile9.html')._main Get verified
+
+//- Personal data
+mixin user-fill-profile2()
+    +b.user-fill-profile&attributes(attributes)
+        +container
+            +heading My Profile
+            +e.content
+                +e.FORM(action='#' enctype='multipart/form-data' method='post').main
+                    +e.section
+                        +heading._md Personal data
+                        +grid
+                            +col(4)
+                                +field
+                                    +field-label Your age
+                                    +field-input(value=22)
+
+                            +col(4)
+                                +field
+                                    +field-label Sex
+                                    +selectbox('Female')
+
+                            +col(4)
+                                +field
+                                    +field-label Orientation
+                                    +selectbox('Besexual')
+
+                            +col(4)
+                                +field
+                                    +field-label Categories
+                                    +selectbox('Escorts')
+
+                            +col(4)
+                                +field
+                                    +field-label Ethnicity
+                                    +selectbox('American')
+                    +e.section
+                        +heading._md Languages
+                        +grid
+                            +col(4)
+                                +field
+                                    +field-label Language 1
+                                    +selectbox('English')
+                            +col(4)
+                                +field
+                                    +field-label Language 2
+                                    +selectbox('French')
+                            +col(4)
+                                +field
+                                    +field-label Add more languages
+                                    +icon-button('plus', 14, 14).user-fill-profile__add-btn.js-user-fill-profile-add-language
+
+                    +e.section
+                        +heading._md External data
+                        +grid
+                            +col(4)
+                                +field
+                                    +field-label
+                                        | Breast size
+                                        +selectbox('eur')._small
+                                    +selectbox('4d')
+                            +col(4)
+                                +field
+                                    +field-label
+                                        | Height
+                                        +selectbox('cm')._small
+                                    +selectbox('175')
+                            +col(4)
+                                +field
+                                    +field-label
+                                        | Weight
+                                        +selectbox('kg')._small
+                                    +selectbox('55')
+                            +col(4)
+                                +field
+                                    +field-label Hair color
+                                    +selectbox('Brown')
+                            +col(4)
+                                +field
+                                    +field-label Eye color
+                                        +selectbox('eur')._small
+                                    +selectbox('blue')
+                            +col(4)
+                                +field
+                                    +field-label
+                                        | Shoe size
+                                        +selectbox('eur')._small
+                                    +selectbox('175')
+
+                    +e.section
+                        +heading._md Service for
+                        +grid
+                            +col(4)
+                                +checkbox(true, 'service-for', 'women') Women
+                            +col(4)
+                                +checkbox(false, 'service-for', 'men') Men
+                    +e.section
+                        +grid
+                            +col(4)
+                                +checkbox(true, 'keywords', 'vip_companion') Vip Companion
+                            +col(4)
+                                +checkbox(false, 'keywords', 'muscular') Muscular
+                            +col(4)
+                                +checkbox(false, 'keywords', 'model_ex-model') Model/Ex-model
+                            +col(4)
+                                +checkbox(true, 'keywords', 'occasional') Occasional
+                            +col(4)
+                                +checkbox(false, 'keywords', 'super-busty') Super busty
+                            +col(4)
+                                +checkbox(false, 'keywords', 'super-booty') Super booty
+                            +col(4)
+                                +checkbox(true, 'keywords', 'petite') Petite
+                            +col(4)
+                                +checkbox(false, 'keywords', 'all-natural') All natural
+                            +col(4)
+                                +checkbox(false, 'keywords', 'college-girl') College girl
+                            +col(4)
+                                +checkbox(true, 'keywords', 'bbw') BBW
+                            +col(4)
+                                +checkbox(false, 'keywords', 'fitness-girl') Fitness girl
+                            +col(4)
+                                +checkbox(false, 'keywords', 'mature') Mature
+                            +col(4)
+                                +button('button')._uppercase._bg_darkGrey._color_main.__action Save & Exit
+                            +col(4)
+                                +button('button')._uppercase._bg_main._color_white.__action continue
+                +e.sidebar
+                    +fill-profile-nav
+                        +fill-profile-nav-item('user-fill-profile.html').completed Photo & Video
+                        +fill-profile-nav-item('user-fill-profile2.html').active Personal data
+                        +fill-profile-nav-item('user-fill-profile3.html') Availability
+                        +fill-profile-nav-item('user-fill-profile4.html') Contact
+                        +fill-profile-nav-item('user-fill-profile5.html') Rate
+                        +fill-profile-nav-item('user-fill-profile6.html') About me
+                        +fill-profile-nav-item('user-fill-profile7.html') Service
+                        +fill-profile-nav-item('user-fill-profile8.html') Tours
+                        +fill-profile-nav-item('user-fill-profile9.html')._main Get verified

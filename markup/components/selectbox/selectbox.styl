@@ -80,3 +80,21 @@
         &:hover
             background-color #212223
             color: mainColor
+
+    &_small
+        display: flex
+        align-items: flex-end
+
+        & ^[0]__box
+            padding: 0
+            height initial
+            border 0
+
+        & ^[0]__value
+            font-weight 700
+            margin-right: 6px
+            text-transform: lowercase
+
+        & ^[0]__arrow
+            position: static
+            margin-bottom: 4px
