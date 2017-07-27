@@ -145,6 +145,7 @@ mixin user-fill-profile2()
                             +col(4)
                                 +checkbox(false, 'service-for', 'men') Men
                     +e.section
+                        +heading._md Keywords
                         +grid
                             +col(4)
                                 +checkbox(true, 'keywords', 'vip_companion') Vip Companion
@@ -179,6 +180,52 @@ mixin user-fill-profile2()
                         +fill-profile-nav-item('user-fill-profile.html').completed Photo & Video
                         +fill-profile-nav-item('user-fill-profile2.html').active Personal data
                         +fill-profile-nav-item('user-fill-profile3.html') Availability
+                        +fill-profile-nav-item('user-fill-profile4.html') Contact
+                        +fill-profile-nav-item('user-fill-profile5.html') Rate
+                        +fill-profile-nav-item('user-fill-profile6.html') About me
+                        +fill-profile-nav-item('user-fill-profile7.html') Service
+                        +fill-profile-nav-item('user-fill-profile8.html') Tours
+                        +fill-profile-nav-item('user-fill-profile9.html')._main Get verified
+
+//- Personal data
+mixin user-fill-profile3()
+    +b.user-fill-profile&attributes(attributes)
+        +container
+            +heading My Profile
+            +e.content
+                +e.FORM(action='#' enctype='multipart/form-data' method='post').main
+                    +e.section
+                        +heading._md Choose below your availability
+                        +grid
+                            +col(6)
+                                +checkbox(true, 'incall', 1) Incall
+                            +col(6)
+                                +checkbox(true, 'outcall', 1) Outcall
+                            +col(6)
+                            +col(6)
+                                //+radio(true, 'incall-availability', 1) Private Apartment
+
+                            +col(6)
+                                //+radio(true, 'incall-availability', 2) Hotel Room
+                            +col(6)
+                            +col(6)
+                                //+radio(true, 'incall-availability', 3) Club/Studio
+                            +col(6)
+                            +col(6)
+                            +col(6)
+                            +col(6)
+                            +col(6)
+                    +e.section
+                        +grid
+                            +col(4)
+                                +button('button')._uppercase._bg_darkGrey._color_main.__action Save & Exit
+                            +col(4)
+                                +button('button')._uppercase._bg_main._color_white.__action continue
+                +e.sidebar
+                    +fill-profile-nav
+                        +fill-profile-nav-item('user-fill-profile.html').completed Photo & Video
+                        +fill-profile-nav-item('user-fill-profile2.html').completed Personal data
+                        +fill-profile-nav-item('user-fill-profile3.html').active Availability
                         +fill-profile-nav-item('user-fill-profile4.html') Contact
                         +fill-profile-nav-item('user-fill-profile5.html') Rate
                         +fill-profile-nav-item('user-fill-profile6.html') About me
