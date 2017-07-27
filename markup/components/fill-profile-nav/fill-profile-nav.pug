@@ -1,0 +1,23 @@
+include ../list/list
+
+mixin fill-profile-nav()
+    +b.UL.fill-profile-nav&attributes(attributes)
+        block
+
+mixin fill-profile-nav-item(href)
+    +e.LI.item&attributes(attributes)
+        +e.A(href=href||'#').link
+            block
+            != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'fill-profile-nav__icon', iconWidth: '10', iconHeight: '6'})
+
+//-
+    +fill-profile-nav
+        +fill-profile-nav-item.completed Photo & Video
+        +fill-profile-nav-item.current Personal data
+        +fill-profile-nav-item Availability
+        +fill-profile-nav-item Contact
+        +fill-profile-nav-item Rate
+        +fill-profile-nav-item About me
+        +fill-profile-nav-item Service
+        +fill-profile-nav-item Tours
+        +fill-profile-nav-item._main Get verified
