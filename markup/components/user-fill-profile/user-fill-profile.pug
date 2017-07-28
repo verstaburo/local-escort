@@ -8,6 +8,7 @@ include ../field/field
 include ../button/button
 include ../selectbox/selectbox
 include ../checkbox/checkbox
+include ../radio/radio
 
 //- Photo & Video
 mixin user-fill-profile()
@@ -196,25 +197,31 @@ mixin user-fill-profile3()
                 +e.FORM(action='#' enctype='multipart/form-data' method='post').main
                     +e.section
                         +heading._md Choose below your availability
-                        +grid
-                            +col(6)
-                                +checkbox(true, 'incall', 1) Incall
-                            +col(6)
-                                +checkbox(true, 'outcall', 1) Outcall
-                            +col(6)
-                            +col(6)
-                                //+radio(true, 'incall-availability', 1) Private Apartment
-
-                            +col(6)
-                                //+radio(true, 'incall-availability', 2) Hotel Room
-                            +col(6)
-                            +col(6)
-                                //+radio(true, 'incall-availability', 3) Club/Studio
-                            +col(6)
-                            +col(6)
-                            +col(6)
-                            +col(6)
-                            +col(6)
+                        +e.subsection
+                            +e.col
+                                +grid
+                                    +col(12)
+                                        +checkbox(true, 'incall', 1) Incall
+                                    +col(12)
+                                        +radio(false, 'incall-availability', 1) Private Apartment
+                                    +col(12)
+                                        +radio(false, 'incall-availability', 2) Hotel Room
+                                    +col(12)
+                                        +radio(false, 'incall-availability', 3) Club/Studio
+                                    +col(12)
+                                        //- other in
+                            +e.col
+                                +grid
+                                    +col(12)
+                                        +checkbox(true, 'outcall', 1) Outcall
+                                    +col(12)
+                                        +radio(false, 'outcall-availability', 1) Hotel visits only
+                                    +col(12)
+                                        +radio(false, 'outcall-availability', 2) Home visits only
+                                    +col(12)
+                                        +radio(false, 'outcall-availability', 3) Hotel & Home visits
+                                    +col(12)
+                                        //- other out
                     +e.section
                         +grid
                             +col(4)

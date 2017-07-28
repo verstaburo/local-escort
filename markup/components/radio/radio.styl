@@ -1,0 +1,44 @@
+.radio
+    cursor pointer
+    display inline-flex
+    align-items: center
+
+    &__input
+        display none
+        opacity 0
+        pointer-events none
+
+        &:checked + .radio__box
+            border-color mainColor
+            background-color mainColor
+
+            &::before
+                transform: scale(1)
+
+    &__box
+        display: flex
+        align-items: center
+        justify-content: center
+        width 24px
+        height 24px
+        border 1px solid borderColor
+        background-color bgColor
+        transition(background-color, border-color)
+        border-radius: 50%
+
+        &::before
+            content: ''
+            width: 6px
+            height: 6px
+            background-color: #fff
+            transform: scale(0)
+            transition(transform)
+            border-radius: 50%
+
+    &__text
+        display inline-block
+        vertical-align middle
+        margin-left 15px
+        font-size 16px
+        line-height 1.5
+        user-select none

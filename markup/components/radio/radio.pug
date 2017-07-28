@@ -1,0 +1,7 @@
+mixin radio(checked, name, value)
+    +b.LABEL.radio&attributes(attributes)
+        +e.INPUT.input(type='radio' name=name||'', value=value||'', checked=checked||false)
+        +e.SPAN.box
+        if block
+            +e.SPAN.text
+                block
