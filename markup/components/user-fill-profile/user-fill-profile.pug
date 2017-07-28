@@ -228,7 +228,7 @@ mixin user-fill-profile3()
                     +e.section
                         +grid
                             +col(4).grid__col_space_between
-                                +checkbox(false, 'select-all', 1)
+                                +checkbox(false, 'select-all', 1).js-user-fill-profile-days Select all
                                 +selectbox('24 h')._small
                             +col(4)
                                 +e.SPAN.label._flex_end From
@@ -237,7 +237,7 @@ mixin user-fill-profile3()
 
                             each day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
                                 +col(4).grid__col_align_center
-                                    +checkbox(false, 'day', day) #{day}
+                                    +checkbox(false, 'day', day).js-user-fill-profile-day #{day}
                                 +col(4)
                                     +selectbox('00:00')
                                 +col(4)
