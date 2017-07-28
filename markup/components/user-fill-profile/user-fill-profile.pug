@@ -9,6 +9,7 @@ include ../button/button
 include ../selectbox/selectbox
 include ../checkbox/checkbox
 include ../radio/radio
+include ../textarea/textarea
 
 //- Photo & Video
 mixin user-fill-profile()
@@ -209,7 +210,8 @@ mixin user-fill-profile3()
                                     +col(12)
                                         +radio(false, 'incall-availability', 3) Club/Studio
                                     +col(12)
-                                        //- other in
+                                        +radio(false, 'incall-availability', 4) Other
+                                        +textarea('incall-details', 'Details here').__other-textarea
                             +e.col
                                 +grid
                                     +col(12)
@@ -221,9 +223,26 @@ mixin user-fill-profile3()
                                     +col(12)
                                         +radio(false, 'outcall-availability', 3) Hotel & Home visits
                                     +col(12)
-                                        //- other out
+                                        +radio(false, 'outcall-availability', 4) Other
+                                        +textarea('outcall-details', 'Details here').__other-textarea
                     +e.section
                         +grid
+                            +col(4).grid__col_space_between
+                                +checkbox(false, 'select-all', 1)
+                                +selectbox('24 h')._small
+                            +col(4)
+                                +e.SPAN.label._flex_end From
+                            +col(4)
+                                +e.SPAN.label._flex_end To
+
+                            each day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                                +col(4).grid__col_align_center
+                                    +checkbox(false, 'day', day) #{day}
+                                +col(4)
+                                    +selectbox('00:00')
+                                +col(4)
+                                    +selectbox('24:00')
+
                             +col(4)
                                 +button('button')._uppercase._bg_darkGrey._color_main.__action Save & Exit
                             +col(4)
