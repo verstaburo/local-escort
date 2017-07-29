@@ -11,7 +11,8 @@ block header
     +header
 
 block content
-    +user-fill-profile
+    +user-fill-profile(1)
+        +user-fill-profile-1
     +arrow-up
 
 block popups
@@ -20,6 +21,10 @@ block popups
     +select-city-popup
 
 block scripts
+    script(src='%=static=%js/separate-js/ajax/fill-profile/common.js')
     script(src='%=static=%js/separate-js/ajax/fill-profile/step1.js')
+    script(src='%=static=%js/separate-js/ajax/fill-profile/step2.js')
+    script(src='%=static=%js/separate-js/ajax/fill-profile/step3.js')
+
 block footer
     +footer

@@ -9,252 +9,240 @@ include ../button/button
 include ../selectbox/selectbox
 include ../checkbox/checkbox
 include ../radio/radio
+include ../icon-button/icon-button
 include ../textarea/textarea
 
 //- Photo & Video
-mixin user-fill-profile()
+mixin user-fill-profile(activeItem)
     +b.user-fill-profile&attributes(attributes)
         +container
             +heading My Profile
             +e.content
-                +e.FORM(action='#' enctype='multipart/form-data' method='post').main
-                    +e.section
-                        +heading._md Photos
-                        +grid-masonry(3, '.user-fill-profile__masonry-item').js-user-fill-profile-photos
-                            +uploaded-photo('profile/photos/1.jpg').user-fill-profile__masonry-item
-                            +uploaded-photo('profile/photos/2.jpg').user-fill-profile__masonry-item
-                            +file-column(null, 'photo', 'image/*', false, 'Add photo', 'The size should not exceed 2 MB').user-fill-profile__masonry-item
-                    +e.section
-                        +heading._md Video
-                        +grid
-                            +col(6)
-                                +field
-                                    +field-label Video file
-                                    +file(null, 'video-file', 'video/*', true)
-                            +col(6)
-                                +field
-                                    +field-label Video URL
-                                    +field-input
-
-                            +col(4)
-                                +button('button')._uppercase._bg_darkGrey._color_main.__action Save & Exit
-                            +col(4)
-                                +button('button')._uppercase._bg_main._color_white.__action continue
+                block
                 +e.sidebar
+                    -
+                        var menuItems = [
+                            { title: 'Photo & Video', href: 'user-fill-profile-ajax-1.html'},
+                            { title: 'Personal data', href: 'user-fill-profile-ajax-2.html'},
+                            { title: 'Availability', href: 'user-fill-profile-ajax-3.html'},
+                            { title: 'Contact', href: 'user-fill-profile-ajax-4.html'},
+                            { title: 'Rate', href: 'user-fill-profile-ajax-5.html'},
+                            { title: 'About me', href: 'user-fill-profile-ajax-6.html'},
+                            { title: 'Service', href: 'user-fill-profile-ajax-7.html'},
+                            { title: 'Tours', href: 'user-fill-profile-ajax-8.html'},
+                            { title: 'Get verified', href: 'user-fill-profile-ajax-9.html'}
+                        ];
+
                     +fill-profile-nav
-                        +fill-profile-nav-item('user-fill-profile.html').active Photo & Video
-                        +fill-profile-nav-item('user-fill-profile2.html') Personal data
-                        +fill-profile-nav-item('user-fill-profile3.html') Availability
-                        +fill-profile-nav-item('user-fill-profile4.html') Contact
-                        +fill-profile-nav-item('user-fill-profile5.html') Rate
-                        +fill-profile-nav-item('user-fill-profile6.html') About me
-                        +fill-profile-nav-item('user-fill-profile7.html') Service
-                        +fill-profile-nav-item('user-fill-profile8.html') Tours
-                        +fill-profile-nav-item('user-fill-profile9.html')._main Get verified
+                        each item, index in menuItems
+                            - i = index + 1
+                            if i < activeItem
+                                +fill-profile-nav-item(item.href).completed= item.title
+                            else if i === activeItem
+                                +fill-profile-nav-item(item.href).active= item.title
+                            else if i === menuItems.length
+                                +fill-profile-nav-item(item.href)._main= item.title
+                            else
+                                +fill-profile-nav-item(item.href)= item.title
+
+mixin user-fill-profile-1
+    form(action='#' enctype='multipart/form-data' method='post').user-fill-profile__main
+        .user-fill-profile__section
+            +heading._md Photos
+            +grid-masonry(3, '.user-fill-profile__masonry-item').js-user-fill-profile-photos
+                +uploaded-photo('profile/photos/1.jpg').user-fill-profile__masonry-item
+                +uploaded-photo('profile/photos/2.jpg').user-fill-profile__masonry-item
+                +file-column(null, 'photo', 'image/*', false, 'Add photo', 'The size should not exceed 2 MB').user-fill-profile__masonry-item
+        .user-fill-profile__section
+            +heading._md Video
+            +grid
+                +col(6)
+                    +field
+                        +field-label Video file
+                        +file(null, 'video-file', 'video/*', true)
+                +col(6)
+                    +field
+                        +field-label Video URL
+                        +field-input
+
+                +col(4)
+                    +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
+                +col(4)
+                    +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue
 
 //- Personal data
-mixin user-fill-profile2()
-    +b.user-fill-profile&attributes(attributes)
-        +container
-            +heading My Profile
-            +e.content
-                +e.FORM(action='#' enctype='multipart/form-data' method='post').main
-                    +e.section
-                        +heading._md Personal data
-                        +grid
-                            +col(4)
-                                +field
-                                    +field-label Your age
-                                    +field-input(value=22)
+mixin user-fill-profile-2
+    form(action='#' method='post').user-fill-profile__main
+        .user-fill-profile__section
+            +heading._md Personal data
+            +grid
+                +col(4)
+                    +field
+                        +field-label Your age
+                        +field-input(value=22)
 
-                            +col(4)
-                                +field
-                                    +field-label Sex
-                                    +selectbox('Female')
+                +col(4)
+                    +field
+                        +field-label Sex
+                        +selectbox('Female')
 
-                            +col(4)
-                                +field
-                                    +field-label Orientation
-                                    +selectbox('Besexual')
+                +col(4)
+                    +field
+                        +field-label Orientation
+                        +selectbox('Besexual')
 
-                            +col(4)
-                                +field
-                                    +field-label Categories
-                                    +selectbox('Escorts')
+                +col(4)
+                    +field
+                        +field-label Categories
+                        +selectbox('Escorts')
 
-                            +col(4)
-                                +field
-                                    +field-label Ethnicity
-                                    +selectbox('American')
-                    +e.section
-                        +heading._md Languages
-                        +grid
-                            +col(4)
-                                +field
-                                    +field-label Language 1
-                                    +selectbox('English')
-                            +col(4)
-                                +field
-                                    +field-label Language 2
-                                    +selectbox('French')
-                            +col(4)
-                                +field
-                                    +field-label Add more languages
-                                    +icon-button('plus', 14, 14).user-fill-profile__add-btn.js-user-fill-profile-add-language
+                +col(4)
+                    +field
+                        +field-label Ethnicity
+                        +selectbox('American')
+        .user-fill-profile__section
+            +heading._md Languages
+            +grid
+                +col(4)
+                    +field
+                        +field-label Language 1
+                        +selectbox('English')
+                +col(4)
+                    +field
+                        +field-label Language 2
+                        +selectbox('French')
+                +col(4)
+                    +field
+                        +field-label Add more languages
+                        +icon-button('plus', 14, 14).user-fill-profile__add-btn.js-user-fill-profile-add-language
 
-                    +e.section
-                        +heading._md External data
-                        +grid
-                            +col(4)
-                                +field
-                                    +field-label
-                                        | Breast size
-                                        +selectbox('eur')._small
-                                    +selectbox('4d')
-                            +col(4)
-                                +field
-                                    +field-label
-                                        | Height
-                                        +selectbox('cm')._small
-                                    +selectbox('175')
-                            +col(4)
-                                +field
-                                    +field-label
-                                        | Weight
-                                        +selectbox('kg')._small
-                                    +selectbox('55')
-                            +col(4)
-                                +field
-                                    +field-label Hair color
-                                    +selectbox('Brown')
-                            +col(4)
-                                +field
-                                    +field-label Eye color
-                                        +selectbox('eur')._small
-                                    +selectbox('blue')
-                            +col(4)
-                                +field
-                                    +field-label
-                                        | Shoe size
-                                        +selectbox('eur')._small
-                                    +selectbox('175')
+        .user-fill-profile__section
+            +heading._md External data
+            +grid
+                +col(4)
+                    +field
+                        +field-label
+                            | Breast size
+                            +selectbox('eur')._small
+                        +selectbox('4d')
+                +col(4)
+                    +field
+                        +field-label
+                            | Height
+                            +selectbox('cm')._small
+                        +selectbox('175')
+                +col(4)
+                    +field
+                        +field-label
+                            | Weight
+                            +selectbox('kg')._small
+                        +selectbox('55')
+                +col(4)
+                    +field
+                        +field-label Hair color
+                        +selectbox('Brown')
+                +col(4)
+                    +field
+                        +field-label Eye color
+                            +selectbox('eur')._small
+                        +selectbox('blue')
+                +col(4)
+                    +field
+                        +field-label
+                            | Shoe size
+                            +selectbox('eur')._small
+                        +selectbox('175')
 
-                    +e.section
-                        +heading._md Service for
-                        +grid
-                            +col(4)
-                                +checkbox(true, 'service-for', 'women') Women
-                            +col(4)
-                                +checkbox(false, 'service-for', 'men') Men
-                    +e.section
-                        +heading._md Keywords
-                        +grid
-                            +col(4)
-                                +checkbox(true, 'keywords', 'vip_companion') Vip Companion
-                            +col(4)
-                                +checkbox(false, 'keywords', 'muscular') Muscular
-                            +col(4)
-                                +checkbox(false, 'keywords', 'model_ex-model') Model/Ex-model
-                            +col(4)
-                                +checkbox(true, 'keywords', 'occasional') Occasional
-                            +col(4)
-                                +checkbox(false, 'keywords', 'super-busty') Super busty
-                            +col(4)
-                                +checkbox(false, 'keywords', 'super-booty') Super booty
-                            +col(4)
-                                +checkbox(true, 'keywords', 'petite') Petite
-                            +col(4)
-                                +checkbox(false, 'keywords', 'all-natural') All natural
-                            +col(4)
-                                +checkbox(false, 'keywords', 'college-girl') College girl
-                            +col(4)
-                                +checkbox(true, 'keywords', 'bbw') BBW
-                            +col(4)
-                                +checkbox(false, 'keywords', 'fitness-girl') Fitness girl
-                            +col(4)
-                                +checkbox(false, 'keywords', 'mature') Mature
-                            +col(4)
-                                +button('button')._uppercase._bg_darkGrey._color_main.__action Save & Exit
-                            +col(4)
-                                +button('button')._uppercase._bg_main._color_white.__action continue
-                +e.sidebar
-                    +fill-profile-nav
-                        +fill-profile-nav-item('user-fill-profile.html').completed Photo & Video
-                        +fill-profile-nav-item('user-fill-profile2.html').active Personal data
-                        +fill-profile-nav-item('user-fill-profile3.html') Availability
-                        +fill-profile-nav-item('user-fill-profile4.html') Contact
-                        +fill-profile-nav-item('user-fill-profile5.html') Rate
-                        +fill-profile-nav-item('user-fill-profile6.html') About me
-                        +fill-profile-nav-item('user-fill-profile7.html') Service
-                        +fill-profile-nav-item('user-fill-profile8.html') Tours
-                        +fill-profile-nav-item('user-fill-profile9.html')._main Get verified
+        .user-fill-profile__section
+            +heading._md Service for
+            +grid
+                +col(4)
+                    +checkbox(true, 'service-for', 'women') Women
+                +col(4)
+                    +checkbox(false, 'service-for', 'men') Men
+        .user-fill-profile__section
+            +heading._md Keywords
+            +grid
+                +col(4)
+                    +checkbox(true, 'keywords', 'vip_companion') Vip Companion
+                +col(4)
+                    +checkbox(false, 'keywords', 'muscular') Muscular
+                +col(4)
+                    +checkbox(false, 'keywords', 'model_ex-model') Model/Ex-model
+                +col(4)
+                    +checkbox(true, 'keywords', 'occasional') Occasional
+                +col(4)
+                    +checkbox(false, 'keywords', 'super-busty') Super busty
+                +col(4)
+                    +checkbox(false, 'keywords', 'super-booty') Super booty
+                +col(4)
+                    +checkbox(true, 'keywords', 'petite') Petite
+                +col(4)
+                    +checkbox(false, 'keywords', 'all-natural') All natural
+                +col(4)
+                    +checkbox(false, 'keywords', 'college-girl') College girl
+                +col(4)
+                    +checkbox(true, 'keywords', 'bbw') BBW
+                +col(4)
+                    +checkbox(false, 'keywords', 'fitness-girl') Fitness girl
+                +col(4)
+                    +checkbox(false, 'keywords', 'mature') Mature
+                +col(4)
+                    +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
+                +col(4)
+                    +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue
 
 //- Personal data
-mixin user-fill-profile3()
-    +b.user-fill-profile&attributes(attributes)
-        +container
-            +heading My Profile
-            +e.content
-                +e.FORM(action='#' enctype='multipart/form-data' method='post').main
-                    +e.section
-                        +heading._md Choose below your availability
-                        +e.subsection
-                            +e.col
-                                +grid
-                                    +col(12)
-                                        +checkbox(true, 'incall', 1) Incall
-                                    +col(12)
-                                        +radio(false, 'incall-availability', 1) Private Apartment
-                                    +col(12)
-                                        +radio(false, 'incall-availability', 2) Hotel Room
-                                    +col(12)
-                                        +radio(false, 'incall-availability', 3) Club/Studio
-                                    +col(12)
-                                        +radio(false, 'incall-availability', 4) Other
-                                        +textarea('incall-details', 'Details here').__other-textarea
-                            +e.col
-                                +grid
-                                    +col(12)
-                                        +checkbox(true, 'outcall', 1) Outcall
-                                    +col(12)
-                                        +radio(false, 'outcall-availability', 1) Hotel visits only
-                                    +col(12)
-                                        +radio(false, 'outcall-availability', 2) Home visits only
-                                    +col(12)
-                                        +radio(false, 'outcall-availability', 3) Hotel & Home visits
-                                    +col(12)
-                                        +radio(false, 'outcall-availability', 4) Other
-                                        +textarea('outcall-details', 'Details here').__other-textarea
-                    +e.section
-                        +grid
-                            +col(4).grid__col_space_between
-                                +checkbox(false, 'select-all', 1).js-user-fill-profile-days Select all
-                                +selectbox('24 h')._small
-                            +col(4)
-                                +e.SPAN.label._flex_end From
-                            +col(4)
-                                +e.SPAN.label._flex_end To
+mixin user-fill-profile-3
+    form(action='#' method='post').user-fill-profile__main
+        .user-fill-profile__section
+            +heading._md Choose below your availability
+            .user-fill-profile__subsection
+                .user-fill-profile__col
+                    +grid
+                        +col(12)
+                            +checkbox(true, 'incall', 1) Incall
+                        +col(12)
+                            +radio(false, 'incall-availability', 1) Private Apartment
+                        +col(12)
+                            +radio(false, 'incall-availability', 2) Hotel Room
+                        +col(12)
+                            +radio(false, 'incall-availability', 3) Club/Studio
+                        +col(12)
+                            +radio(false, 'incall-availability', 4) Other
+                            +textarea('incall-details', 'Details here').__other-textarea
+                .user-fill-profile__col
+                    +grid
+                        +col(12)
+                            +checkbox(true, 'outcall', 1) Outcall
+                        +col(12)
+                            +radio(false, 'outcall-availability', 1) Hotel visits only
+                        +col(12)
+                            +radio(false, 'outcall-availability', 2) Home visits only
+                        +col(12)
+                            +radio(false, 'outcall-availability', 3) Hotel & Home visits
+                        +col(12)
+                            +radio(false, 'outcall-availability', 4) Other
+                            +textarea('outcall-details', 'Details here').__other-textarea
+        .user-fill-profile__section
+            +grid
+                +col(4).grid__col_space_between
+                    +checkbox(false, 'select-all', 1).js-user-fill-profile-days Select all
+                    +selectbox('24 h')._small
+                +col(4)
+                    SPAN.label._flex_end From
+                +col(4)
+                    SPAN.label._flex_end To
 
-                            each day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-                                +col(4).grid__col_align_center
-                                    +checkbox(false, 'day', day).js-user-fill-profile-day #{day}
-                                +col(4)
-                                    +selectbox('00:00')
-                                +col(4)
-                                    +selectbox('24:00')
+                each day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                    +col(4).grid__col_align_center
+                        +checkbox(false, 'day', day).js-user-fill-profile-day #{day}
+                    +col(4)
+                        +selectbox('00:00')
+                    +col(4)
+                        +selectbox('24:00')
 
-                            +col(4)
-                                +button('button')._uppercase._bg_darkGrey._color_main.__action Save & Exit
-                            +col(4)
-                                +button('button')._uppercase._bg_main._color_white.__action continue
-                +e.sidebar
-                    +fill-profile-nav
-                        +fill-profile-nav-item('user-fill-profile.html').completed Photo & Video
-                        +fill-profile-nav-item('user-fill-profile2.html').completed Personal data
-                        +fill-profile-nav-item('user-fill-profile3.html').active Availability
-                        +fill-profile-nav-item('user-fill-profile4.html') Contact
-                        +fill-profile-nav-item('user-fill-profile5.html') Rate
-                        +fill-profile-nav-item('user-fill-profile6.html') About me
-                        +fill-profile-nav-item('user-fill-profile7.html') Service
-                        +fill-profile-nav-item('user-fill-profile8.html') Tours
-                        +fill-profile-nav-item('user-fill-profile9.html')._main Get verified
+                +col(4)
+                    +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
+                +col(4)
+                    +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue

@@ -1,12 +1,11 @@
 $(function() {
-    var pageWrapper = $('.user-fill-profile'),
-        photosWrapper = pageWrapper.find('.js-user-fill-profile-photos');
+    var pageWrapper = $('.user-fill-profile');
 
     /*
      UPLOAD PHOTO
     */
 
-    photosWrapper.on('change', '.file__control', function() {
+    pageWrapper.on('change', '.js-user-fill-profile-photos .file__control', function() {
         var control = this;
 
         if (!control.files.length) {
@@ -14,10 +13,11 @@ $(function() {
         }
 
         // put it into ajax query (success callback)
-        var reader = new FileReader();
+        var reader = new FileReader(),
+            photosWrapper = pageWrapper.find('.js-user-fill-profile-photos');
 
         reader.onload = function (e) {
-            photosWrapper
+            pageWrapper
                 .find('.uploaded-photo')
                 .eq(0)
                 .clone(true)
