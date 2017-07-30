@@ -11,8 +11,8 @@ include ../checkbox/checkbox
 include ../radio/radio
 include ../icon-button/icon-button
 include ../textarea/textarea
+include ../accordion/accordion
 
-//- Photo & Video
 mixin user-fill-profile(activeItem)
     +b.user-fill-profile&attributes(attributes)
         +container
@@ -44,7 +44,7 @@ mixin user-fill-profile(activeItem)
                                 +fill-profile-nav-item(item.href)._main= item.title
                             else
                                 +fill-profile-nav-item(item.href)= item.title
-
+//- Photo & Video
 mixin user-fill-profile-1
     form(action='#' enctype='multipart/form-data' method='post').user-fill-profile__main
         .user-fill-profile__section
@@ -192,7 +192,7 @@ mixin user-fill-profile-2
                 +col(4)
                     +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue
 
-//- Personal data
+//- Availability
 mixin user-fill-profile-3
     form(action='#' method='post').user-fill-profile__main
         .user-fill-profile__section
@@ -245,6 +245,78 @@ mixin user-fill-profile-3
                     +col(4)
                         +selectbox('24:00')
 
+                +col(4)
+                    +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
+                +col(4)
+                    +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue
+
+//- Contact
+mixin user-fill-profile-4
+    form(action='#' method='post').user-fill-profile__main
+        .user-fill-profile__section
+            +heading._md Contact
+            +grid
+                +col(3)
+                    +field
+                        +field-label Country code
+                        +selectbox('+1')
+                +col(4)
+                    +field
+                        +field-label Phone
+                        +field-input(value='+1 818 554-9937')
+                +col(3).grid__col_push_bottom
+                    +button('button')._uppercase._bg_main._color_white.user-fill-profile__action Edit
+
+                +col(12)
+                    .user-fill-profile__subsection.user-fill-profile__subsection_visual
+                        +radio(true, 'sms-call', 1) SMS & Call
+                        +radio(false, 'sms-call', 2) SMS only
+                        +radio(false, 'sms-call', 3) no SMS
+                        +checkbox(true, 'messengers', 1) Viber
+                        +checkbox(false, 'messengers', 2) WhatsApp
+                +col(6)
+                    +field
+                        +field-label Email
+                        +field-input(value='mail@mail.com')
+                +col(6)
+                    +field
+                        +field-label Website
+                        +field-input(value='www.LocalModel.com')
+        .user-fill-profile__section
+            +heading._md Social Network (Past URL or Account name)
+            +grid
+                +col(6)
+                    +field
+                        +field-label Twitter
+                        +field-input
+                +col(6)
+                    +field
+                        +field-label Instagramm
+                        +field-input
+                +col(6)
+                    +field
+                        +field-label Tumblr
+                        +field-input
+                +col(6)
+                    +field
+                        +field-label Snapchat
+                        +field-input
+
+        +accordion
+            +accordion-item('Select your location')
+                +grid
+                    +col(6)
+                        +field
+                            +field-label City
+                            +selectbox('Los Angeles')
+                    +col(6)
+                        +field
+                            +field-label Address
+                            +field-input Los Angeles
+                    +col(12)
+                        //- map
+        .user-fill-profile__section
+            +grid
                 +col(4)
                     +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
                 +col(4)

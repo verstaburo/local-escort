@@ -1,11 +1,5 @@
 export default function accordion() {
-    const block = $('.accordion');
-
-    if (!block.length) {
-        return;
-    }
-
-    block.on('click', '.accordion__button', function (e) {
+    $(document).on('click', '.accordion__button', function (e) {
         e.preventDefault();
         const btn = $(this);
         const closeOther = !!btn.parents('.accordion').data('close-other');
