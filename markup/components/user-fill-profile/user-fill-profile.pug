@@ -204,13 +204,16 @@ mixin user-fill-profile-3
                             +checkbox(true, 'incall', 1) Incall
                         +col(12)
                             +radio(false, 'incall-availability', 1) Private Apartment
-                        +col(12)
+                        +col(12).grid__col_align_center.grid__col_space_between
                             +radio(false, 'incall-availability', 2) Hotel Room
+                            .user-fill-profile__column.user-fill-profile__column_half
+                                .user-fill-profile__label Stars
+                                +selectbox('0')._full
                         +col(12)
                             +radio(false, 'incall-availability', 3) Club/Studio
                         +col(12)
                             +radio(false, 'incall-availability', 4) Other
-                            +textarea('incall-details', 'Details here').__other-textarea
+                            +textarea('incall-details', 'Details here').user-fill-profile__other-textarea
                 .user-fill-profile__col
                     +grid
                         +col(12)
@@ -223,16 +226,16 @@ mixin user-fill-profile-3
                             +radio(false, 'outcall-availability', 3) Hotel & Home visits
                         +col(12)
                             +radio(false, 'outcall-availability', 4) Other
-                            +textarea('outcall-details', 'Details here').__other-textarea
+                            +textarea('outcall-details', 'Details here').user-fill-profile__other-textarea
         .user-fill-profile__section
             +grid
                 +col(4).grid__col_space_between
                     +checkbox(false, 'select-all', 1).js-user-fill-profile-days Select all
                     +selectbox('24 h')._small
                 +col(4)
-                    SPAN.label._flex_end From
+                    span.user-fill-profile__label.user-fill-profile__label_flex_end From
                 +col(4)
-                    SPAN.label._flex_end To
+                    span.user-fill-profile__label.user-fill-profile__label_flex_end To
 
                 each day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
                     +col(4).grid__col_align_center
