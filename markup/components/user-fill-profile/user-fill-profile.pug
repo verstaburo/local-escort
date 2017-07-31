@@ -527,7 +527,67 @@ mixin user-fill-profile-7
                     +col(4)
                         +checkbox(true, 'extreme', 3) Escort
 
-                +col(4).grid__col_push_bottom
+                +col(4)
                     +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
-                +col(4).grid__col_push_bottom
+                +col(4)
                     +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue
+
+//- Tours
+mixin user-fill-profile-8
+    form(action='#' method='post').user-fill-profile__main
+        .user-fill-profile__section
+            +heading._md Tour 1
+
+            +grid
+                +col(12)
+                    +accordion
+                        +accordion-item('Select Country and City')
+                            +grid
+                                +col(6)
+                                    +field
+                                        +field-label City
+                                        +selectbox('Los Angeles')
+                                +col(6)
+                                    +field
+                                        +field-label Address
+                                        +field-input Los Angeles
+
+        .user-fill-profile__section
+            +grid
+                +col(6)
+                    +field
+                        +field-label Tour name
+                        +field-input(value='Girls is on tour in Roterdam')
+                +col(6)
+                    +field
+                        +field-label Status
+                        +field-input(value="I'm right now on my tour (4 more days)")
+                +col(6)
+                    +field
+                        +field-label From
+                        +selectbox('22 JUL')
+                +col(6)
+                    +field
+                        +field-label To
+                        +selectbox('29 JUL')
+
+            +grid
+                +col(2)
+                    +field
+                        +field-label Country code
+                        +selectbox('+1')
+                +col(4)
+                    +field
+                        +field-label Phone
+                        +field-input(value='+1 818 554-9937')
+
+                +col(12)
+                    +accordion.accordion_dark.user-fill-profile__add-upcoming-tour
+                        +accordion-item('Add Upcoming Tour')
+
+            +grid
+                +col(4)
+                    +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
+                +col(4)
+                    +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue
+
