@@ -1,0 +1,46 @@
+.add-input
+    position relative
+    display inline-block
+    vertical-align top
+    border 1px solid borderColor
+    border-left 0
+    width 70px
+    height 42px
+
+    &__control
+        border 0
+        background-color transparent
+        display flex
+        align-items center
+        text-align center
+        width: 100%
+        height: 100%
+        padding 0 12px
+        font-size 16px
+        line-height 1.375
+        color darkGreyColor
+
+    &__icon
+        position absolute
+        top 0
+        left 0
+        display flex
+        flex-direction column
+        height 100%
+
+        &::before, &::after
+            content ''
+            display block
+            width 1px
+            height 50%
+            background-color borderColor
+
+    &__plus
+        margin-top 2px
+        margin-bottom 2px
+        transform translateX(-50%)
+        display block
+        width 12px
+        height 12px
+        flex-shrink 0
+        fill mainColor

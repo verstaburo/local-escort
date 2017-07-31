@@ -1,0 +1,5 @@
+mixin add-input(name, value, placeholder, type)
+    +b.add-input&attributes(attributes)
+        +e.icon
+            != pugHelpers.Icon.call(locals, {iconName: 'plus', className: 'add-input__plus', iconWidth: '12', iconHeight: '12'})
+        +e.INPUT.control(placeholder=placeholder name=name value=value type=type).control
