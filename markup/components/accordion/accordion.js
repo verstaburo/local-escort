@@ -15,7 +15,13 @@ export default function accordion() {
         } else {
             item.addClass('active');
             closeText.text(item.data('hide-text'));
-            content.slideDown();
+            content.slideDown(250, () => {
+                const map = content.find('.map');
+
+                if (map.length && google) {
+                    google.maps.event.trigger(map, 'resize');
+                }
+            });
 
             if (closeOther) {
                 const siblings = item.siblings('.accordion__item');

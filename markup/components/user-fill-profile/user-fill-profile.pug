@@ -12,6 +12,7 @@ include ../radio/radio
 include ../icon-button/icon-button
 include ../textarea/textarea
 include ../accordion/accordion
+include ../map/map
 
 mixin user-fill-profile(activeItem)
     +b.user-fill-profile&attributes(attributes)
@@ -314,8 +315,8 @@ mixin user-fill-profile-4
                             +field-label Address
                             +field-input Los Angeles
                     +col(12)
-                        //- map
-        .user-fill-profile__section
+                        +map(true)#user-fill-profile-map
+
             +grid
                 +col(4)
                     +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit

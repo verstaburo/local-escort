@@ -6,6 +6,7 @@ include ../components/arrow-up/arrow-up
 include ../components/filter/filter
 include ../components/popup-welcome/popup-welcome
 include ../components/select-city-popup/select-city-popup
+include ../components/map/map
 
 block header
     +header
@@ -21,6 +22,8 @@ block popups
     +select-city-popup
 
 block scripts
-    script(src='%=static=%js/separate-js/ajax/fill-profile/step3.js')
+    script(src='%=static=%js/separate-js/ajax/fill-profile/step4.js')
+    +map-scripts
+
 block footer
     +footer
