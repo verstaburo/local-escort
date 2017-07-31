@@ -1,5 +1,5 @@
-mixin range-slider
-    +b.range-slider&attributes(attributes)
+mixin range-slider(min, max, initialMin, initialMax)
+    +b.range-slider(data-min=min data-max=max, data-value-min=initialMin data-value-max=initialMax)&attributes(attributes)
         block
 
 mixin range-slider-fields
