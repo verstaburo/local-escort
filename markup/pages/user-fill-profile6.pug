@@ -1,0 +1,27 @@
+extends ../components/layout-default/layout-default
+include ../components/header/header
+include ../components/footer/footer
+include ../components/user-fill-profile/user-fill-profile
+include ../components/arrow-up/arrow-up
+include ../components/filter/filter
+include ../components/popup-welcome/popup-welcome
+include ../components/select-city-popup/select-city-popup
+
+block header
+    +header
+
+block content
+    +user-fill-profile(6)
+        +user-fill-profile-6
+    +arrow-up
+
+block popups
+    +popup-welcome
+    +filter-extended
+    +select-city-popup
+
+block scripts
+    //script(src='%=static=%js/separate-js/ajax/fill-profile/step6.js')
+
+block footer
+    +footer
