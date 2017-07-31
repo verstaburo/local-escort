@@ -12,6 +12,12 @@ mixin model-preview(photos, name, age, price, isOnline)
             +e.pagination
             +e.button._prev
             +e.button._next
+            +e.breakinfo
+                +e.row._top
+                    span On tour in Moscow
+                    != pugHelpers.Icon.call(locals, { iconName: 'plane', className: 'model-preview__plane', iconWidth: 14, iconHeight: 14 })
+                +e.row._bottom
+                    span 19 OCT - 29 DEC
 
         +e.footer
             +model-common-info(name, age, price).__info

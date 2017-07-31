@@ -76,6 +76,11 @@
             font-family fontSecond
             font-size 23px
             letter-spacing initial
+            transition(background-color, color)
+
+            &.active
+                background-color: darkGreyColor
+                color: mainColor
 
         &_profile
             flex: 1
@@ -92,16 +97,12 @@
         width: 50%
         height: 100%
         opacity: 0
-        background-color: #000
         transition(opacity)
         cursor: pointer
         z-index: 5
 
         &.swiper-button-disabled
             pointer-events none
-
-        &:hover
-            opacity: .2
 
         &_prev
             left: 0
@@ -146,3 +147,34 @@
 
             &-active
                 background-color #fff
+
+    &__breakinfo
+        position: absolute
+        bottom: 0
+        left: 0
+        display: none
+        width: 100%
+        z-index: 25
+        padding: 15px 17px
+        background-color: darkGreyColor
+
+    &__row
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        &_top
+            span
+                font-size 16px
+                color #fff
+
+        &_bottom
+            margin-top: 4px
+
+            span
+                font-size 12px
+                letter-spacing 1px
+                color rgba(#fff, .5)
+
+    &__plane
+        fill: mainColor
