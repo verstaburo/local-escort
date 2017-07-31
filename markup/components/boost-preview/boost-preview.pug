@@ -1,0 +1,13 @@
+mixin boost-preview(img, heading, description, credits, hasBtn)
+    +b.boost-preview&attributes(attributes)
+        +e.picture
+            +e.IMG(src=img alt=heading).img
+            +e.credits
+                span= credits
+                != pugHelpers.Icon.call(locals, {iconName: 'currency', className: 'boost-preview__icon', iconWidth: '14', iconHeight: '13'})
+        +e.content
+            +e.SPAN.heading=heading
+            +e.P.description=description
+
+            if hasBtn
+                +e.A(href='#').btn Select

@@ -1,0 +1,27 @@
+include ../container/container
+include ../heading/heading
+include ../grid/grid
+include ../boost-preview/boost-preview
+
+mixin boost-account()
+    +b.boost-account&attributes(attributes)
+        +container
+            +heading Boost my account
+            +e.content
+                +grid
+                    +col(4)
+                        +boost-preview('static/img/content/likes/1.jpg', 'Raise my profile to the top', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '70', true)
+                    +col(4)
+                        +boost-preview('static/img/content/likes/2.jpg', 'Auto-Raise my profile to the top', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '60', true)
+                    +col(4)
+                        +boost-preview('static/img/content/likes/3.jpg', 'Place in Photostream', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '55', true)
+                    +col(4)
+                        +boost-preview('static/img/content/likes/1.jpg', 'VIP profile', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '110', true)
+                    +col(4)
+                        +boost-preview('static/img/content/likes/2.jpg', 'Deleting a bad feedback', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '20', true)
+                    +col(4)
+                        +boost-preview('static/img/content/likes/3.jpg', 'Advertising in social networks', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '30', true)
+                    +col(4)
+                        +boost-preview('static/img/content/likes/1.jpg', 'Post a profile in the additional City', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '45', true)
+                    +col(4)
+                        +boost-preview('static/img/content/likes/2.jpg', 'Place a form in the additional category', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '45', true)

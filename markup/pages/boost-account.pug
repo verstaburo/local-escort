@@ -1,0 +1,25 @@
+extends ../components/layout-default/layout-default
+include ../components/header/header
+include ../components/footer/footer
+include ../components/boost-account/boost-account
+include ../components/arrow-up/arrow-up
+include ../components/filter/filter
+include ../components/popup-welcome/popup-welcome
+include ../components/select-city-popup/select-city-popup
+include ../components/map/map
+
+block header
+    +header
+
+block content
+    +boost-account
+    +arrow-up
+
+block popups
+    +popup-welcome
+    +filter-extended
+    +select-city-popup
+
+
+block footer
+    +footer
