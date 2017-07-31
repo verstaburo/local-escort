@@ -582,7 +582,7 @@ mixin user-fill-profile-8
                         +field-input(value='+1 818 554-9937')
 
                 +col(12)
-                    +accordion.accordion_dark.user-fill-profile__add-upcoming-tour
+                    +accordion.accordion_dark
                         +accordion-item('Add Upcoming Tour')
 
             +grid
@@ -591,3 +591,36 @@ mixin user-fill-profile-8
                 +col(4)
                     +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue
 
+//- Tours
+mixin user-fill-profile-9
+    form(action='#' method='post').user-fill-profile__main
+        .user-fill-profile__section
+            +heading._md Verification
+
+            +grid
+                +col(12)
+                    span.user-fill-profile__label Picture 1
+                    span.user-fill-profile__label Explanation for the picture 1
+
+                +col(4)
+                    +file-column(null, 'photo', 'image/*', false, 'Add photo', 'The size should not exceed 2 MB')
+                +col(8)
+                    +textarea Details here
+
+                +col(12)
+                    +accordion.accordion_dark
+                        +accordion-item('Add one more picture')
+
+        .user-fill-profile__section
+            +heading._md Video for Porn Star status
+            +grid
+                +col(6)
+                    +field
+                        +field-label Video file
+                        +file(null, 'video-file', 'video/*', true)
+                +col(6)
+                    +field
+                        +field-label Video URL
+                        +field-input(placeholder="Paste the link")
+                +col(4)
+                    +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
