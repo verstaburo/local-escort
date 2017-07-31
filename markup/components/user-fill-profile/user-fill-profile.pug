@@ -322,3 +322,48 @@ mixin user-fill-profile-4
                     +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
                 +col(4)
                     +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue
+
+//- Rate
+mixin user-fill-profile-5
+    form(action='#' method='post').user-fill-profile__main
+        .user-fill-profile__section
+            +heading._md Rate
+            +grid
+                +col(4).grid__col_push_bottom
+                    span.user-fill-profile__label.user-fill-profile__label_control-like 1/2 hour
+                +col(4)
+                    +field
+                        +field-label Incall
+                        +selectbox('100 $')
+                +col(4)
+                    +field
+                        +field-label
+                            | Outcall
+                            +selectbox('DOL ($)')._small
+                        +selectbox('125 $')
+
+                +col(4)
+                    span.user-fill-profile__label 1 hour
+                +col(4)
+                    +selectbox('150 $')
+                +col(4)
+                    +selectbox('175 $')
+
+                +col(4)
+                    span.user-fill-profile__label 2 hour
+                +col(4)
+                    +selectbox('200 $')
+                +col(4)
+                    +selectbox('225 $')
+
+                +col(4)
+                    span.user-fill-profile__label Night
+                +col(4)
+                    +selectbox('500 $')
+                +col(4)
+                    +selectbox('550 $')
+
+                +col(4)
+                    +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
+                +col(4)
+                    +button('button')._uppercase._bg_main._color_white.user-fill-profile__action.js-user-fill-profile-continue continue
