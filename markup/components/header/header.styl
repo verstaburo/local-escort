@@ -39,7 +39,11 @@
             .navbar
                 height: 60px
 
-            .search-bar__close
+                &__item
+                    +below(1200px)
+                        min-width: 100px
+
+              .search-bar__close
                 margin: 0
                 border: 0
                 border-left: 1px solid borderColor
@@ -63,6 +67,8 @@
 
                 &__item_filter
                     min-width: 163px
+                    +below(1250px)
+                        min-width: 100px
 
                     .navbar__col:first-of-type
                         margin-left: 0

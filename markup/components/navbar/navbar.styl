@@ -36,13 +36,20 @@
     &__item
         display: block
         min-width: 149px
+
         +below(1320px)
             min-width: 135px
+
+        +below(1200px)
+            .button
+                padding: 0 12px
+
+            .selectbox__box
+                padding: 0 12px
 
         &_logo
             +below(1320px)
                 min-width: 88px
-                height: 88px
 
                 .logo__text
                     display: none
