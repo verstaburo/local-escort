@@ -1,7 +1,9 @@
-mixin payment-method(heading, ...logos)
-    +b.A(href='#').payment-method&attributes(attributes)
-        +e.heading=heading
-        if logos
-            +e.logos
-                each logo in logos
-                    +e.IMG.logo(src='__static__img/content/payment-methods/'+src alt='').logo
+mixin payment-method(heading, checked)
+    +b.LABEL.payment-method&attributes(attributes)
+        +e.INPUT(type='radio' name='payment-method' value=heading).control
+        +e.content
+            +e.heading=heading
+            block
+
+mixin payment-method-img(src)
+    +e.IMG(src='__static__img/content/payment-methods/'+src alt='').logo&attributes(attributes)

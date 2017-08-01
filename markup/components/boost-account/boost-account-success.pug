@@ -1,0 +1,21 @@
+include ../container/container
+include ../heading/heading
+include ../grid/grid
+include ../boost-preview/boost-preview
+include ../button/button
+
+mixin boost-account-success-block
+    +e.success&attributes(attributes)
+        +e.success-icon
+            != pugHelpers.Icon.call(locals, {iconName: 'currency', iconWidth: '29',iconHeight: '29'})
+        +heading._md Congratulations!
+        p You have credited your account to
+        +heading 2260
+        block
+
+mixin boost-account-success()
+    +b.boost-account&attributes(attributes)
+        +container
+            +e.content._success
+                +boost-account-success-block
+                    +button._uppercase._bg_darkGrey._color_white.__continue Continue placing an order

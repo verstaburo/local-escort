@@ -1,0 +1,64 @@
+include ../container/container
+include ../heading/heading
+include ../grid/grid
+include ../button/button
+include ../payment-method/payment-method
+include ../boost-preview/boost-preview
+
+mixin boost-account()
+    +b.boost-account&attributes(attributes)
+        +container
+            +heading Add credits
+            +e.content
+                +e.section
+                    +heading._md Selected service
+                +e.section
+                    +grid
+                        +col(9).grid__col_align_center
+                            +e.text
+                                span My Credits
+                                +heading.B 2260
+                        +col(3)
+                            +button._uppercase._border_standart.__action._add-credits + Add credits
+
+                +e.section
+                    +grid
+                        +col(4)
+                            +boost-preview-interactive('550 Credit', 'Buy for $450', 'Popular', false)
+                        +col(4)
+                            +boost-preview-interactive('1150 Credit', 'Buy for $450', 'Popular', true)
+                        +col(4)
+                            +boost-preview-interactive('2550 Credit', 'Buy for $450', 'Profitable', false)
+
+                +e.section
+                    +heading._md Select a Payment Method
+
+                    +grid
+                        +col(3)
+                            +payment-method('Bitcoin', false)
+                                +payment-method-img('1.png')._bitcoin
+                        +col(3)
+                            +payment-method('Credit cards', false)
+                                +payment-method-img('2.png')._cards
+                        +col(3)
+                            +payment-method('WebMoney', false)
+                                +payment-method-img('3.png')._webmoney
+                        +col(3)
+                            +payment-method('Coupon from Epay', false)
+
+                        +col(3)
+                            +payment-method('Western Union', false)
+                                +payment-method-img('5.png')._western-union
+                        +col(3)
+                            +payment-method('Bank Transfer', false)
+                                +payment-method-img('6.png')._bank-transfer
+                        +col(3)
+                            +payment-method('Zombaio', false)
+                                +payment-method-img('7.png')._zombaio
+                        +col(3)
+                            +payment-method('Ccbill', false)
+                                +payment-method-img('8.png')._ccbill
+                +e.section
+                    +grid
+                        +col(3)
+                            +button._uppercase._bg_darkGrey._color_white.__action._pay-now Pay now

@@ -1,23 +1,58 @@
 .payment-method
-    display: flex
-    align-items: center
-    justify-content: center
-    width: 100%
-    min-height: 60px
+    display: block
     text-decoration: none
-    border: 1px solid borderColor
-    ellipsis(100%)
+    cursor pointer
+
+    &__control
+        display: none
+
+        &:checked
+            & + ^[0]__content
+                background-color: mainColor
+                border-color transparent
+
+                & ^[0]__heading
+                    color #fff
+
+    &__content
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 0 24px
+        width: 100%
+        min-height: 60px
+        text-decoration: none
+        border: 1px solid borderColor
+        ellipsis(100%)
+        transition(border-color, background-color)
 
     &__heading
         font-size 16px
         color: darkGreyColor
         padding-right: 10px
         ellipsis(100%)
+        transition(color)
 
-    &__logos
-        display: flex
-        align-items: center
-        flex-shrink: 0
+    &__logo
+        height: auto
 
-    &__logo:not(:first-child)
-        margin-left: 20px
+        &_bitcoin
+            width: 77.1px
+
+        &_cards
+            width: 107.8px
+
+        &_webmoney
+            width: 101.4px
+
+        &_western-union
+            width: 89.4px
+
+        &_bank-transfer
+            width: 51px
+
+        &_zombaio
+            width: 85px
+
+        &_ccbill
+            width: 47px

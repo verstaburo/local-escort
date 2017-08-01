@@ -5,8 +5,27 @@
     .container > .heading
         margin-top: 47px
 
+    &_inner
+        .container > .heading
+            border-top: 1px solid borderColor
+            padding-top: 40px
+            padding-bottom: 11px
+            margin-top: 0
+
+        & ^[0]__content
+            margin-top: 0
+
     &__content
         margin-top: 22px
+
+        &_success
+            display: flex
+            justify-content: center
+            align-items: center
+            min-height: 500px
+
+        &_border_top
+            border-top: 1px solid borderColor
 
     &__section
 
@@ -43,3 +62,46 @@
         span
             display: block
             font-size: 16px
+
+    &__success
+        display: block
+        text-align: center
+        max-width: 330px
+
+        &_inner
+            padding-top: 66px
+            padding-bottom: 88px
+            margin-left: auto
+            margin-right: auto
+
+        &-icon
+            margin-left: auto
+            margin-right: auto
+            border-radius: 50%
+            display: flex
+            align-items: center
+            justify-content: center
+            width 78px
+            height 78px
+            background-color #e9e9e9
+
+            svg
+                fill: darkGreyColor
+
+
+        .heading
+            margin-top: 10px
+
+            &_md
+                margin-top: 28px
+
+        p
+            margin-top: 9px
+            font-size 16px
+            line-height 1.375
+            text-align center
+            color rgba(darkGreyColor, .59)
+
+    &__continue
+        width: 303px
+        margin-top: 18px
