@@ -1,13 +1,32 @@
+include ../badges/badges
+
 mixin boost-preview(img, heading, description, credits, hasBtn)
     +b.boost-preview&attributes(attributes)
         +e.picture
             +e.IMG(src=img alt=heading).img
-            +e.credits
-                span= credits
-                != pugHelpers.Icon.call(locals, {iconName: 'currency', className: 'boost-preview__icon', iconWidth: '14', iconHeight: '13'})
         +e.content
             +e.SPAN.heading=heading
             +e.P.description=description
-
+            +e.credits
+                span= credits
+                != pugHelpers.Icon.call(locals, {iconName: 'currency',className: 'boost-preview__icon',iconWidth: '14',iconHeight: '13'})
             if hasBtn
-                +e.A(href='#').btn Select
+                +e.A(href='#').btn
+                    span Select
+
+mixin boost-preview-interactive(credits, money, badge, selected)
+    +b.LABEL.boost-preview._interactive&attributes(attributes)
+        +e.INPUT(type='checkbox' name='service' checked=!!selected).control
+        +e.content
+            if badge
+                +badges._top
+                    +badges-item._skew._verified
+                        span= badge
+            +e.text
+                +e.SPAN.heading=credits
+                +e.SPAN.description=money
+
+            +icon-button('currency', 18, 18).SPAN._flex._circle._size_md
+        +e.btn
+            span Select
+            != pugHelpers.Icon.call(locals, {iconName: 'ok', iconWidth: '15', iconHeight: '11.25'})

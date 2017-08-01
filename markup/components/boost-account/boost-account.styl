@@ -2,8 +2,44 @@
     display: block
     padding-bottom: 54px
 
-    .heading
+    .container > .heading
         margin-top: 47px
 
     &__content
         margin-top: 22px
+
+    &__section
+
+        & > .heading
+            margin-bottom: 11px
+
+        &:not(:first-child)
+            margin-top: 40px
+            padding-top: 35px
+            border-top: 1px solid borderColor
+
+    &__add-more
+        width: 100%
+        height: 100%
+        border: 1px solid borderColor
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 40px
+
+        span
+            font-size 16px
+            line-height 1.375
+            color rgba(darkGreyColor, .59)
+
+    &__action
+        width: 100%
+
+    &__text
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+        span
+            display: block
+            font-size: 16px

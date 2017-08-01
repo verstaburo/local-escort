@@ -1,0 +1,65 @@
+include ../container/container
+include ../heading/heading
+include ../grid/grid
+include ../button/button
+include ../payment-method/payment-method
+include ../boost-preview/boost-preview
+
+mixin boost-account()
+    +b.boost-account&attributes(attributes)
+        +container
+            +heading Payment
+            +e.content
+                +e.section
+                    +heading._md Selected service
+                    +grid
+                        +col(9)
+                            +boost-preview('static/img/content/likes/1.jpg', 'Raise my profile to the top', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '70', false)._inline
+                        +col(3)
+                            +e.add-more
+                                span Add <br> one more
+                                +icon-button('plus', 14, 14, 'icon-button__icon icon-button__icon_fill').A(href='#')._flex._size_md._border_transparent._bg_main._color_white._circle
+                +e.section
+                    +grid
+                        +col(6).grid__col_space_between.grid__col_align_center
+                            +e.text
+                                span Total payment
+                                +heading.B 70 Credits
+                            +e.text
+                                span My Credits
+                                +heading.B 2260
+                        +col(3)
+                            +button._uppercase._border_standart.__action._add-credits + Add credits
+                        +col(3)
+                            +button._uppercase._bg_darkGrey._color_white.__action._pay-now Pay now
+
+                +e.section
+                    +grid
+                        +col(4)
+                            +boost-preview-interactive('550 Credit', 'Buy for $450', 'Popular', false)
+                        +col(4)
+                            +boost-preview-interactive('1150 Credit', 'Buy for $450', 'Popular', true)
+                        +col(4)
+                            +boost-preview-interactive('2550 Credit', 'Buy for $450', 'Profitable', false)
+
+                +e.section
+                    +heading._md Select a Payment Method
+
+                    +grid
+                        +col(3)
+                            +payment-method('Bitcoin', '')
+                        +col(3)
+                            +payment-method('Credit cards', '')
+                        +col(3)
+                            +payment-method('WebMoney', '')
+                        +col(3)
+                            +payment-method('Coupon from Epay', '')
+
+                        +col(3)
+                            +payment-method('Western Union', '')
+                        +col(3)
+                            +payment-method('Bank Transfer', '')
+                        +col(3)
+                            +payment-method('Zombaio', '')
+                        +col(3)
+                            +payment-method('Ccbill', '')

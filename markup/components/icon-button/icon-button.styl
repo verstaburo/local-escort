@@ -9,6 +9,24 @@
     cursor pointer
     border: 1px solid borderColor
 
+    &_flex
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 0
+        line-height: initial
+
+    &_circle
+        border-radius: 50%
+
+    &_size_big
+        width: 60px
+        height: 60px
+
+    &_size_md
+        width: 40px
+        height: 40px
+
     &_uppercase
         text-transform: uppercase
 
@@ -42,3 +60,10 @@
 
         &_grey
             border-color #262728
+
+        &_transparent
+            border-color transparent
+
+    &_bg
+        &_main
+            background-color: mainColor

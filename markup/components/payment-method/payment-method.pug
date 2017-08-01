@@ -1,0 +1,7 @@
+mixin payment-method(heading, ...logos)
+    +b.A(href='#').payment-method&attributes(attributes)
+        +e.heading=heading
+        if logos
+            +e.logos
+                each logo in logos
+                    +e.IMG.logo(src='__static__img/content/payment-methods/'+src alt='').logo

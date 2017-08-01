@@ -4,17 +4,75 @@
     width: 100%
     height: 100%
 
+    &_interactive
+        & ^[0]__content
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+            padding: 0
+            min-height: 112px
+            text-align: left
+            border: 1px solid borderColor
+            border-bottom: 0
+
+        & ^[0]__heading
+            padding: 0
+
+        & ^[0]__description
+            padding: 0
+            margin-top: 7px
+
+        & ^[0]__btn
+            position: relative
+            border: 1px solid borderColor
+
+            span, svg
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+
+            svg
+                transform: translate(-50%, -50%) scale(0)
+    &_inline
+        flex-direction: row
+
+        & ^[0]__picture
+            width: 247px
+            height: 149px
+
+        & ^[0]__content
+            padding: 35px 139px 35px 39px
+            flex: 1
+            text-align: left
+            border: 1px solid borderColor
+            border-left 0
+
+        & ^[0]__heading
+            padding: 0
+
+        & ^[0]__description
+            padding: 0
+            margin-top: 9px
+            max-width: 275px
+
+        & ^[0]__credits
+            top: 50%
+            right: 40px
+
     &__picture
         position: relative
         flex-shrink 0
+        overflow: hidden
+        height: 212px
 
     &__img
-        width: 100%
-        height 212px
+        fill-img()
 
     &__credits
         position: absolute
-        top: 100%
+        top: 0
         right: 24px
         transform: translateY(-50%)
         display: flex
@@ -35,6 +93,7 @@
         margin-left: 4px
 
     &__content
+        position: relative
         display: flex
         flex-direction: column
         padding-top 36px
@@ -42,6 +101,7 @@
         border-top: 0
         text-align: center
         flex-grow 1
+        transition(background-color, border-color)
 
     &__heading
         display: block
@@ -70,3 +130,51 @@
         font-weight: 700
         color: darkGreyColor
         text-transform: uppercase
+        cursor: pointer
+        transition(background-color)
+
+        span, svg
+            transition(transform, opacity)
+
+        svg
+            fill: #fff
+
+    .icon-button
+        width: 46px
+        height: 46px
+        margin-left: 16px
+
+    &__control
+        display: none
+
+        &:checked
+            & + ^[0]__content
+                background-color: mainColor
+                border-color transparent
+
+                & ^[0]__heading
+                    color: #fff
+
+                & ^[0]__description
+                    color: rgba(#fff, .59)
+
+                .badges
+                    opacity 0
+
+            & ~ ^[0]__btn
+                background-color mainColor
+                border-left-color transparent
+                border-right-color transparent
+                border-bottom-color transparent
+                border-top-color rgba(borderColor, .15)
+
+                svg
+                    transform: translate(-50%, -50%) scale(1)
+
+                span
+                    opacity 0
+
+    .badges
+        top: -1px
+        right: -1px
+        transition(opacity)
