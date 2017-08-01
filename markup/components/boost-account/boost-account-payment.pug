@@ -47,19 +47,26 @@ mixin boost-account()
 
                     +grid
                         +col(3)
-                            +payment-method('Bitcoin', '')
+                            +payment-method('Bitcoin', false)
+                                +payment-method-img('1.png')._bitcoin
                         +col(3)
-                            +payment-method('Credit cards', '')
+                            +payment-method('Credit cards', false)
+                                +payment-method-img('2.png')._cards
                         +col(3)
-                            +payment-method('WebMoney', '')
+                            +payment-method('WebMoney', false)
+                                +payment-method-img('3.png')._webmoney
                         +col(3)
-                            +payment-method('Coupon from Epay', '')
+                            +payment-method('Coupon from Epay', false)
 
                         +col(3)
-                            +payment-method('Western Union', '')
+                            +payment-method('Western Union', false)
+                                +payment-method-img('5.png')._western-union
                         +col(3)
-                            +payment-method('Bank Transfer', '')
+                            +payment-method('Bank Transfer', false)
+                                +payment-method-img('6.png')._bank-transfer
                         +col(3)
-                            +payment-method('Zombaio', '')
+                            +payment-method('Zombaio', false)
+                                +payment-method-img('7.png')._zombaio
                         +col(3)
-                            +payment-method('Ccbill', '')
+                            +payment-method('Ccbill', false)
+                                +payment-method-img('8.png')._ccbill
