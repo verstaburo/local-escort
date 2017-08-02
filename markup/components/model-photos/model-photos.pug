@@ -4,24 +4,18 @@ mixin model-photos
     +b.model-photos&attributes(attributes)
         +grid
             +col(6).model-photos__column.model-photos__column_height-1
-                +e.A(href='#' data-popup-id='#profile-photo' data-action='show').link.js-toggle-popup
+                +e.link
                     +e.IMG(src='%=static=%img/content/model-photo/1.jpg' alt='').img
-                    +e.P.description
-                        b +9
-                        span photos
             +col(6)
                 +grid
                     +col(12).model-photos__column
-                        +e.A(href='#' data-popup-id='#profile-video' data-action='show').link.js-toggle-popup
+                        +e.A(href='#' data-popup-id='#profile-video' data-action='show').link._video.js-toggle-popup
                             +e.IMG(src='%=static=%img/content/model-photo/2.jpg' alt='').img
                             +e.description
                                 +e.play
                     +col(6).model-photos__column
-                        +e.A(href='#' data-popup-id='#profile-photo' data-action='show').link.js-toggle-popup
+                        +e.link
                             +e.IMG(src='%=static=%img/content/model-photo/3.jpg' alt='').img
-                            +e.P.description
-                                b +9
-                                span photos
                     +col(6).model-photos__column
                         +e.A(href='#' data-popup-id='#profile-photo' data-action='show').link.js-toggle-popup
                             +e.IMG(src='%=static=%img/content/model-photo/4.jpg' alt='').img

@@ -13,14 +13,16 @@ include ../components/profile-video-popup/profile-video-popup
 include ../components/profile-photo-popup/profile-photo-popup
 include ../components/auth-popup/auth-popup
 include ../components/model-list/model-list
+include ../components/model-photos/model-photos
 
 block header
     +header
 
 block content
-    div(style="height: 2000px")
-        +demo
-            +demo-link('#auth-popup')(data-popup-id='#auth-popup' data-action='show').js-toggle-popup 05/Registration_ (1,1, 1,2)
+    div(style="height: 2000px; margin-top: 100px")
+        +model-photos
+        //+demo
+        //    +demo-link('#profile-video')(data-popup-id='#profile-video' data-action='show').js-toggle-popup 05/Registration_ (1,1, 1,2)
 
 block popups
-    +auth-popup
+    +profile-video-popup
