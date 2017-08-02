@@ -2,6 +2,7 @@ include ../model-common-info/model-common-info
 include ../rating/rating
 include ../short-info/short-info
 include ../tags/tags
+include ../close/close
 
 mixin model-info-popup()
     +b.model-info-popup&attributes(attributes)
@@ -24,3 +25,4 @@ mixin model-info-popup()
             +tags-item('#') With Video
 
         +e.A.action(href='#') View profile
+        +close

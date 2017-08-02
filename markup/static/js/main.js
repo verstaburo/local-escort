@@ -27,12 +27,14 @@ import sendForm from '../../components/send-form/send-form';
 import userMessages from '../../components/user-messages/user-messages';
 import fileUpload from '../../components/file/file';
 import authPopup from '../../components/auth-popup/auth-popup';
+import modelInfoPopup from '../../components/model-info-popup/model-info-popup';
 
 $(() => {
     svg4everybody();
     objectFitImages();
     header();
     photoTape();
+    modelInfoPopup();
     filter();
     searchBar();
     modelPreview();

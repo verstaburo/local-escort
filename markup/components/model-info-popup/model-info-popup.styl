@@ -22,12 +22,21 @@ modelInfoPopupMediumXPadding = 18px
         height: 9px
         background-color: #fff
 
+    .close
+        position: absolute
+        top: 0
+        right: 0
+        transform: translate(50%, -50%)
+        z-index 50
+
+        +above(1024px)
+            display: none
+
     &__header
-        border: 0
+        border-bottom: 1px solid borderColor
 
     &__rating
         padding: 23px modelInfoPopupBigXPadding 22px;
-        border-top: 1px solid borderColor
         border-bottom: 1px solid borderColor
 
     &__info
@@ -36,8 +45,8 @@ modelInfoPopupMediumXPadding = 18px
         padding: 22px modelInfoPopupBigXPadding 18px;
 
     &__tags
-        padding-left: 18px
-        padding-right: 18px
+        margin-left: 18px
+        margin-right: 18px
 
     &__action
         display: flex
