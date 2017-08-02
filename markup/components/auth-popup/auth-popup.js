@@ -23,8 +23,14 @@ export default function authPopup() {
 
         cols.eq(0).hide();
         cols.eq(1).fadeIn();
+        cols
+            .parents('.auth-popup__col_action')
+            .addClass('active');
 
-        const siblingsCols = action.siblings('.auth-popup__col_action').find('.auth-popup__col');
+        const siblingsCols = action
+            .siblings('.auth-popup__col_action')
+            .removeClass('active')
+            .find('.auth-popup__col');
 
         siblingsCols.eq(1).hide();
         siblingsCols.eq(0).fadeIn();
