@@ -50,13 +50,11 @@ export default function modelPreview() {
         pagination: '.model-preview__pagination',
     };
 
-    const block = $('.model-preview__content');
+    const block = $('.model-preview__slider');
 
     if (!block.length) {
         return;
     }
-
-    let slider = new Swiper(block, settings);
 
     // grid
     const grid = $('.js-model-preview-grid');
@@ -66,14 +64,29 @@ export default function modelPreview() {
     }
 
     grid.on('rebuild', () => {
-       grid
-           .find('.model-preview')
-           .removeClass('model-preview_masonry')
-           .addClass('model-preview_masonry');
+        grid
+            .find('.model-preview')
+            .removeClass('model-preview_masonry')
+            .addClass('model-preview_masonry');
 
+        grid.find('.model-preview__slider').each(function() {
+            $(this).swiper(settings);
+        });
 
-        slider.forEach(item => item.destroy());
-        slider = new Swiper(grid.find('.model-preview__content'), settings);
         toggleBreakInfo();
+    });
+
+    // close breakinfo
+    $(document).on('click', '.model-preview__breakinfo .close', function(e) {
+        e.preventDefault();
+        const previewBlock = $(this).parents('.model-preview');
+
+        previewBlock
+            .find('.model-preview__action_info')
+            .removeClass('active');
+
+        previewBlock
+            .find('.model-preview__breakinfo')
+            .fadeOut();
     });
 }

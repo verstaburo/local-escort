@@ -24,7 +24,7 @@ export default () => {
     if (popup.length) {
         popup.on('aftershow', function() {
             $(this)
-                .find('.swiper-container')
+                .find('.recommended-slider__items')
                 .each(function() {
                     $(this)[0].swiper.update();
                 })

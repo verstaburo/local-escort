@@ -30,6 +30,10 @@
         & ^[0]__content::before
             opacity: .2
 
+    &__slider
+        position: relative
+        display: block
+
     &__content
         position: relative
         display: block
@@ -54,6 +58,7 @@
     &__footer
         display: block
         position: relative
+        z-index: 10
 
     &__actions
         position: absolute
@@ -73,6 +78,7 @@
         align-items: center
         height: 60px
         text-decoration: none
+        cursor: pointer
 
         &_info
             width: 60px

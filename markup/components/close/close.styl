@@ -7,5 +7,14 @@
     height: 36px
     background-color: #2b2c2d
 
+    &_top_right
+        position: absolute
+        top: 0
+        right: 0
+        transform: translate(50%, -50%)
+
+        +above(1025px)
+            display: none
+
     &__icon
         fill: #fff

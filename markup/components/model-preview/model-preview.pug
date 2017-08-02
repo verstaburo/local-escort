@@ -1,11 +1,13 @@
 include ../model-common-info/model-common-info
+include ../close/close
 
 mixin model-preview(photos, name, age, price, isOnline)
     +b.model-preview&attributes(attributes)
-        +e.content.swiper-container
-            +e.photos.swiper-wrapper
-                each photo in photos
-                    +e.IMG.photo.swiper-slide(src=`%=static=%img/content/model-preview/${photo}.jpg` alt=`Model ${name}`)
+        +e.content
+            +e.slider.swiper-container
+                +e.photos.swiper-wrapper
+                    each photo in photos
+                        +e.IMG.photo.swiper-slide(src=`%=static=%img/content/model-preview/${photo}.jpg` alt=`Model ${name}`)
             if isOnline
                 +e.online
             block
@@ -13,6 +15,7 @@ mixin model-preview(photos, name, age, price, isOnline)
             +e.button._prev
             +e.button._next
             +e.breakinfo
+                +close._top_right
                 +e.row._top
                     span On tour in Moscow
                     != pugHelpers.Icon.call(locals, { iconName: 'plane', className: 'model-preview__plane', iconWidth: 14, iconHeight: 14 })
@@ -22,5 +25,5 @@ mixin model-preview(photos, name, age, price, isOnline)
         +e.footer
             +model-common-info(name, age, price).__info
             +e.actions
-                +e.A(href='#').action._info i
+                +e.DIV.action._info i
                 +e.A(href='#').action._profile View profile
