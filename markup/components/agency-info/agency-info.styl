@@ -1,16 +1,41 @@
 .agency-info
     display: block
 
+    +below(768px)
+        .breadcrumbs
+            margin-left: 9px
+            margin-bottom: 32px
+
+        .grid
+            margin-left: 31px
+            margin-right: 31px
+
+            &__col
+                width: 100%
+
+                &:not(:first-child)
+                    padding-top: 0
+
+
     &__header
         display: flex
         justify-content: space-between
         margin-bottom: 30px
+
+        +below(768px)
+            flex-direction: column
+            margin-bottom: 0
 
     &__heading
         display: block
         font-size 20px
         font-weight 400
         letter-spacing initial
+
+        +below(768px)
+            order: 2
+            margin-left: 31px
+            margin-right: 31px
 
         span
             color darkGreyColor
