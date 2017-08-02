@@ -1,6 +1,10 @@
 .model-info
     display: block
 
+    +below(768px)
+        padding-left: 31px
+        padding-right: 31px
+
     &__description
         margin-top: 30px
         color rgba(darkGreyColor, .79)
@@ -9,8 +13,24 @@
         font-weight 300
         line-height 26px
 
+        +below(768px)
+            margin-top: 27px
+
     .grid
         margin-top: 47px
+
+        +below(768px)
+            margin-top: 11px
+            margin-left: 0
+            margin-right: 0
+
+            &__col
+                width: 100%
+                padding-left: 0
+                padding-right: 0
+
+                &:not(:first-child)
+                    padding-top: 0
 
     &__item
         display: flex
@@ -41,5 +61,10 @@
     &__row
         margin-top: 53px
 
+        +below(768px)
+            margin-top: 35px
     &__tour
         margin-top: 52px
+
+        +below(768px)
+            margin-top: 40px

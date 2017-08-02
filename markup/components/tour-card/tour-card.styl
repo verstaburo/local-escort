@@ -3,6 +3,9 @@
     background-color: #fff
     padding: 40px
 
+    +below(768px)
+        padding: 26px 31px 27px 29px
+
     &_dark
         background-color: darkGreyColor
 
@@ -24,19 +27,34 @@
         align-items: center
         justify-content: space-between
 
+        +below(768px)
+            align-items: flex-start
+
     &__heading
         color darkGreyColor
         font-family fontMain
         font-size 20px
         font-weight 400
+        margin-right: 20px
 
     &__plane
         fill: #dfdfdf
         transform: rotate(90deg)
 
+        +below(768px)
+            margin-top: 5px
+
     &__info
         margin-top: 23px
         display: flex
 
+        +below(768px)
+            flex-direction: column
+            margin-right: 7
+
     &__col:not(:last-child)
         margin-right: 60px
+
+        +below(768px)
+            margin-right: 0
+            margin-bottom: 15px
