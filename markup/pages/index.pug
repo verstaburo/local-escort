@@ -12,6 +12,7 @@ include ../components/profile-common-popup/profile-common-popup
 include ../components/profile-video-popup/profile-video-popup
 include ../components/profile-photo-popup/profile-photo-popup
 include ../components/auth-popup/auth-popup
+include ../components/map/map
 
 block header
     +header
@@ -71,6 +72,10 @@ block popups
     +profile-video-popup
     +profile-photo-popup
     +auth-popup
+
+block scripts
+    +map-scripts
+    script(src='%=static=%js/separate-js/maps/profile-contacts.js')
 
 block footer
     +footer

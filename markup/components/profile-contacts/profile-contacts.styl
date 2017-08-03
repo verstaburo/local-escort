@@ -1,14 +1,37 @@
 .profile-contacts
     display: block
 
+    +below(768px)
+        padding: 0 31px
+
+        & > .grid > .grid__col_twelve .heading_md
+            margin-bottom: 17px
+
     .contacts-card
         margin-top: 45px
 
-    .grid
+        +below(768px)
+            margin-top: 33px
+
+    & > .grid
         margin-top: 47px
+
+        +below(768px)
+            margin-top: 35px
+
+            .grid__col
+                width: 100%
+                padding-top: 0
 
         .grid
             margin-top: -(grid-gap)
+
+            +below(768px)
+                margin-top: 0
+
+       & > .grid ^[0]__child_grid
+            +below(768px)
+                margin-top: 35px
 
     &__item
         display: flex

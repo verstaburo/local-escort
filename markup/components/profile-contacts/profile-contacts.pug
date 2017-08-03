@@ -4,7 +4,7 @@ include ../heading/heading
 
 mixin profile-contacts()
     +b.profile-contacts&attributes(attributes)
-        +e.H2.heading Contacts
+        +heading.H2 Contacts
         +contacts-card
         +grid
             +col(12)
@@ -36,7 +36,7 @@ mixin profile-contacts()
                             span Hotel room
                             b 5 stars
             +col(6)
-                +grid
+                +grid.profile-contacts__child_grid
                     +col(12)
                         +heading._md Outcall
                     +col(12)
