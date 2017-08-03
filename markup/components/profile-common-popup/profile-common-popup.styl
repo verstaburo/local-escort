@@ -2,6 +2,38 @@
     display: flex
     min-width: 703px
 
+    .avatar
+        display: none
+
+    +below(700px)
+        flex-direction: column
+
+    &__card
+        +below(700px)
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding-top: 40px
+            padding-bottom: 40px
+
+            .heading
+                text-align: center
+
+            .rating__value
+                margin-left: 14px
+
+    .popup__close
+        right: -31px
+
+    +below(768px)
+        min-width: initial
+        width: 100%
+        margin-left: 31px
+        margin-right: 31px
+
+        .share__buttons
+            margin-top: 0
+
     .image-bg
         width: 100%
         height: 347px
@@ -14,6 +46,15 @@
         &_card
             width: 258px
             background-color: darkGreyColor
+
+            +below(700px)
+                width: 100%
+
+                .image-bg
+                    display: none
+
+                .avatar
+                    display: block
 
             & ^[0]__footer
                 padding: 0 25px
@@ -51,16 +92,61 @@
         display: block
         text-align: center
 
+        +below(700px)
+            & + ^[0]__footer
+                display: none
+
+        +below(768px)
+            padding-left: 18px
+            padding-right: 18px
+
+        &__content
+            +below(700px)
+                padding-left: 12px
+                padding-right: 12px
+                padding-bottom: 37px
+
         &__phone
             display: inline-flex
             align-items: center
             margin-top: 77px
             margin-bottom: 72px
             text-decoration: none
+            color: darkGreyColor
 
+            +below(768px)
+                margin-top: 40px
+                margin-bottom: 40px
+
+            +below(700px)
+                display: flex
+                align-items: initial
+                width: 100%
+                padding-left: 21px
+                border: 1px solid borderColor
+                border-bottom: 2px solid mainColor
+                text-align: left
+                height: 63px
+                margin-top: 30px
+                margin-bottom: 31px
+
+                .heading
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    padding-left: 10px
+                    padding-right: 10px
+                    border-left: 1px solid borderColor
+                    font-size: 16px
+                    flex: 1
         &__icon
             margin-right: 15px
             fill: mainColor
+            flex-shrink: 0
+
+            +below(700px)
+                align-self: center
+                margin-right: 21px
 
         &__text
             display: inline-block
@@ -73,6 +159,9 @@
             font-weight 400
             line-height 1.375
             text-align: center
+
+            +below(700px)
+                margin-top: 11px
 
     // qr code popup
     &-qr

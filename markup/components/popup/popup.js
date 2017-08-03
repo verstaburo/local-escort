@@ -3,6 +3,7 @@ import { freeze, unfreeze } from '../../static/js/disable-scroll';
 export default function popup() {
     const POPUP_CLASS = '.popup';
     const WRAPPER_CLASS = '.popup__wrapper';
+    const CLOSE_BTN_CLASS = '.popup__close';
     const ACTIVE_POPUP_CLASS = 'active';
     const TOGGLE_BTN_CLASS = '.js-toggle-popup';
     const DATA_ACTION_ATTR = 'action';
@@ -102,9 +103,15 @@ export default function popup() {
         }
     };
 
+    const onCloseBtnClick = function(e) {
+        e.preventDefault();
+        $(this).parents('.popup').trigger(HIDE_EVENT);
+    };
+
     $(document)
         .on(SHOW_EVENT, POPUP_CLASS, onShow)
         .on(HIDE_EVENT, POPUP_CLASS, onHide)
         .on('click', TOGGLE_BTN_CLASS, onToggleBtnClick)
-        .on('click', POPUP_CLASS, onWrapperClick);
+        .on('click', POPUP_CLASS, onWrapperClick)
+        .on('click', CLOSE_BTN_CLASS, onCloseBtnClick);
 }

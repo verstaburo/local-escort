@@ -21,6 +21,7 @@ include ../components/recommended-slider/recommended-slider
 include ../components/reviews/reviews
 include ../components/send-form/send-form
 include ../components/textarea/textarea
+include ../components/profile-common-popup/profile-common-popup
 
 block header
     +header
@@ -29,8 +30,10 @@ block content
     div(style="height: 2000px; margin-top: 100px; background-color: transparent")
         //+container
 
-        //+demo
-        //    +demo-link('#profile-video')(data-popup-id='#profile-video' data-action='show').js-toggle-popup 05/Registration_ (1,1, 1,2)
+        +demo
+            +demo-link('#profile-video')(data-popup-id='#profile-call' data-action='show').js-toggle-popup call
+            +demo-link('#profile-video')(data-popup-id='#profile-qr' data-action='show').js-toggle-popup qr
+            +demo-link('#profile-video')(data-popup-id='#profile-report' data-action='show').js-toggle-popup report
 
 block scripts
     //+map-scripts
@@ -38,3 +41,6 @@ block scripts
 
 block popups
     +profile-video-popup
+    +profile-common-popup-call
+    +profile-common-popup-qr
+    +profile-common-popup-report

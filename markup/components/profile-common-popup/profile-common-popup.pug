@@ -10,9 +10,11 @@ include ../info-control/info-control
 mixin profile-common-popup(id)
     +popup(id=id)
         +b.profile-common-popup&attributes(attributes)
+            +popup-close.popup__close_kind_square
             +e.col._card
                 +e.card
                     +image-bg('model-photo/5.jpg')
+                    +avatar('navbar.png')._size_big
                     +e.footer._column
                         +heading._md._uppercase Sonya
                         +e.rating
