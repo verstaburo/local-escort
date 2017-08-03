@@ -168,6 +168,30 @@
         display: block
         text-align: center
 
+        &__share
+            display: none
+
+        +below(700px)
+            display: none
+
+            & + ^[0]__footer
+                display: block
+                border-top: 0
+                height: initial
+                padding-top: 34px
+                padding-left: 40px
+                padding-right: 40px
+                padding-bottom: 37px
+
+                .share
+                    margin-top: 37px
+
+                .profile-common-popup-qr__share
+                    display: block
+                    font-size 16px
+                    text-align center
+                    color rgba(darkGreyColor, .59)
+
         &__img
             margin-top: 50px
             width: 246px
