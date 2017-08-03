@@ -1,16 +1,16 @@
 .recommended-slider
     display: block
 
+    +below(768px)
+        margin-left: 31px
+        margin-right: 31px
+
     &__items
         position: relative
         margin-top: 58px
 
-    &__heading
-        color darkGreyColor
-        font-family fontSecond
-        font-size 33px
-        font-weight 400
-        letter-spacing initial
+        +below(768px)
+            margin-top: 33px
 
     &__button
         position: absolute
@@ -24,6 +24,9 @@
         cursor: pointer
         opacity: 1
         transition(opacity)
+
+        +below(768px)
+            display: none
 
         &.swiper-button-disabled
             opacity: 0

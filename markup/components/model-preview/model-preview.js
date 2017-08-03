@@ -56,6 +56,10 @@ export default function modelPreview() {
         return;
     }
 
+    block.each(function() {
+        $(this).swiper(settings);
+    });
+
     // grid
     const grid = $('.js-model-preview-grid');
 

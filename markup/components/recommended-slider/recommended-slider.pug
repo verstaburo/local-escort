@@ -1,8 +1,9 @@
 include ../model-preview/model-preview
+include ../heading/heading
 
 mixin recommended-slider()
     +b.recommended-slider&attributes(attributes)
-        +e.H2.heading Recommended
+        +heading Recommended
 
         +e.items.swiper-container
             .swiper-wrapper

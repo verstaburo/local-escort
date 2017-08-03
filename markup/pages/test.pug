@@ -17,13 +17,14 @@ include ../components/model-photos/model-photos
 include ../components/agency-card/agency-card
 include ../components/map/map
 include ../components/share/share
+include ../components/recommended-slider/recommended-slider
 
 block header
     +header
 
 block content
     div(style="height: 2000px; margin-top: 100px; background-color: #fff")
-        +agency-card
+        +recommended-slider
         //+demo
         //    +demo-link('#profile-video')(data-popup-id='#profile-video' data-action='show').js-toggle-popup 05/Registration_ (1,1, 1,2)
 
