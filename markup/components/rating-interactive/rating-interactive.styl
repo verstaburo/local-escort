@@ -2,16 +2,13 @@
     display: inline-flex
     flex-direction: row-reverse
     justify-content: flex-end
-    border: 1px solid borderColor
     position relative
-
-    +below(768px)
-        padding-bottom 62px
+    padding-left: 1px
+    padding-top: 1px
 
     &_dark
-        border-color #262728
 
-        & ^[0]__star:not(:last-child)
+        & ^[0]__star
             border-color: #262728
 
         & ^[0]__icon
@@ -49,20 +46,20 @@
         cursor: pointer
         background-color: transparent
         transition(border-color, background-color)
+        border: 1px solid borderColor
+        margin-left: -1px
+        margin-top: -1px
 
         +below(768px)
             width 52px
 
-        &:not(:last-child)
-            border-left: 1px solid borderColor
-
         &.active
             background-color: darkGreyColor
-            border-left-color: #262728
+            border-color: #262728
 
             & ~ ^[0]__star
                 background-color: darkGreyColor
-                border-left-color: #262728
+                border-color: #262728
 
         &:hover ~ ^[0]__star ^[0]__icon,
         &:hover ^[0]__icon,

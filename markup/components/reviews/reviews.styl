@@ -1,15 +1,18 @@
 .reviews
     display: block
 
-    &__heading
-        color darkGreyColor
-        font-family fontSecond
-        font-size 33px
-        font-weight 400
-        letter-spacing initial
-
     .send-form
         margin-top: 58px
+
+        +below(1024px)
+            margin-top: 33px
+            margin-left: 12px
+            margin-right: 12px
+
+    +below(1024px)
+        .heading
+            margin-left: 31px
+            margin-right: 31px
 
     &__control
         width: 100%
@@ -51,18 +54,39 @@
         font-family fontMain
         font-size 16px
         font-weight 400
+        +below(1024px)
+            margin-left: 31px
+            margin-right: 31px
 
     &__rate
         margin-top: 32px
 
+        +below(1024px)
+            margin-left: 31px
+            margin-right: 31px
+
         &-row
             display: flex
+
+            +below(1024px)
+                flex-direction: column
 
             &:not(:first-child)
                 margin-top: 35px
 
-            .rating-interactive-counter:not(:last-child)
-                margin-right: 49px
+                +below(1024px)
+                    margin-top: 0
+
+            .rating-interactive-counter
+                +below(1024px)
+                    width: auto
+                    margin-top: 20px
+
+                &:not(:last-child)
+                    margin-right: 49px
+
+                    +below(1024px)
+                        margin-right: 0
 
     &__no-reviews
         margin-top: 35px
@@ -70,8 +94,17 @@
         font-size: 16px
         color: rgba(darkGreyColor, .5)
 
+        +below(1024px)
+            margin-left: 31px
+            margin-right: 31px
+
     &__login
         margin-top: 50px
+
+        +below(1024px)
+            margin-top: 35px
+            margin-left: 31px
+            margin-right: 31px
 
         &-heading, &-sep
             color darkGreyColor
@@ -85,19 +118,45 @@
             padding-right: 24px
             color: rgba(darkGreyColor, .3)
 
+            +below(1024px)
+                margin-top: 40px
+                display: block
+                width: 100%
+                text-align: center
+
         &-buttons
             display: flex
             align-items: center
             margin-top: 15px
 
-            &.button
+            +below(1024px)
+                flex-direction: column
+                align-items: flex-start
+
+            .button
                 min-width: 131px
+
+                +below(1024px)
+                    width: 70%
+
+                +below(768px)
+                    width: 100%
 
     &__items
         margin-top: 54px
 
+        +below(1024px)
+            margin-top: 35px
+
+            .review
+                margin-left: 31px
+                margin-right: 31px
+
         .review:not(:first-child)
             margin-top: 40px
+
+            +below(1024px)
+                margin-top: 25px
 
 .review
     display: block
@@ -133,6 +192,9 @@
         display: flex
         padding-right: 1px
         padding-top: 1px
+
+        +below(1024px)
+            flex-direction: column
 
     &__item
         display: block
