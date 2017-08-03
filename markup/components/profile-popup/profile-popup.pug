@@ -11,6 +11,7 @@ include ../grid/grid
 include ../model-preview/model-preview
 include ../recommended-slider/recommended-slider
 include ../reviews/reviews
+include ../heading/heading
 
 mixin profile-popup()
     +popup.popup_start#profile-popup
@@ -34,8 +35,10 @@ mixin profile-popup()
                                     +model-info
                                 +e.row
                                     +profile-contacts
-                                +e.row
-                                    +agency-card
+                                +e.row._agencies
+                                    +heading Agencies
+                                    //- TODO responsive
+                                    +agency-card-new
                                 +e.row
                                     +share
                                 +e.row

@@ -38,8 +38,29 @@
             z-index: 3
             margin-left: 0
 
+            +below(768px)
+                position: absolute
+                top: 100%
+                left: 0
+                padding-left: 31px
+                padding-right: 31px
+                display: flex
+                align-items: center
+                width: 100%
+                height: 60px
+                border-bottom: 1px solid borderColor
+
+                .rating
+                    width: 100%
+
+                    &__value
+                        color: darkGreyColor
+
             &-label
                 color: #909090
+
+                +below(768px)
+                    display: none
 
         & ^[0]__description
             li
@@ -52,14 +73,33 @@
             padding-left: 42px
             padding-right: 41px
 
-        & ^[0]__col
-              &:first-child
-                width: 270px
-                flex-shrink: 0
-                margin-right: 30px
+            +below(768px)
+                padding-left: 30px
+                padding-right: 30px
 
-              &:not(:last-child)
-                margin-right: 0p
+                &_bottom
+                    flex-direction: column
+                    justify-content: flex-start
+                    margin-top: 60px
+
+            & ^[0]__col
+                +below(768px)
+                    width: 100%
+
+                &:first-child
+                    width: 270px
+                    flex-shrink: 0
+                    margin-right: 30px
+
+                    +below(768px)
+                        margin-right: 0
+                        width: 100%
+
+                &:not(:last-child)
+                    margin-right: 0px
+
+                    +below(768px)
+                        margin-bottom: 21px
 
     &__picture
         position absolute
@@ -73,6 +113,7 @@
         width 0
         min-width 100%
         min-height 100%
+        max-height: 100%
 
     &__row
         padding: 30px 0
@@ -123,11 +164,6 @@
                 flex-shrink: 0
                 margin: 0 11px
 
-    &__heading
-        font-size 20px
-        font-weight 400
-        text-transform uppercase
-
     &__info
         margin-left: 17px
 
@@ -157,3 +193,7 @@
 
     .button
         line-height: 3.125
+
+        +below(768px)
+            width: 100%
+            line-height: 3.625
