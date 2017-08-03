@@ -37,7 +37,7 @@ mixin contacts-card()
                                             != pugHelpers.Icon.call(locals, { iconName: 's-tw', className: 'contacts-card__icon contacts-card__icon_tw', iconWidth: '17', iconHeight: '14' })
                                         a(href='#').contacts-card__link
                                             != pugHelpers.Icon.call(locals, { iconName: 's-link', className: 'contacts-card__icon contacts-card__icon_link', iconWidth: '16', iconHeight: '16' })
-                            +short-info.show-mob
+                            +short-info.hide-desktop
                                 +short-info-heading website
                                 +short-info-content
                                     +short-info-text.A(href='#') Visit Website

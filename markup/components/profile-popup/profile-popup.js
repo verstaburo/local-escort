@@ -18,5 +18,11 @@ export default function profilePopup() {
 
     popup.on('aftershow', function() {
        $(this).find('.swiper-container')[0].swiper.update();
+
+        const map = document.querySelector('.contacts-card__block_map');
+
+        if (map && google) {
+            google.maps.event.trigger(map, 'resize');
+        }
     })
 };
