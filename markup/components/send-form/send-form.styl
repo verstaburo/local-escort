@@ -1,33 +1,25 @@
 .send-form
+    position: relative
     display: block
     background-color: #fff
-    padding: 27px 29px
+    padding: 44px 30px 27px 29px
     box-shadow 0 20px 50px rgba(29, 29, 29, .02)
 
-    &__controls
-        position: relative
-        display: block
-        border-bottom: 1px solid borderColor
-        padding-bottom: 20px
-        padding-right: 160px
+    .textarea
+        box-shadow: none
+        padding: 0
+        background-color: transparent
 
-    &__control
-        white-space pre-line
-        width: 100%
-        color darkGreyColor
-        font-family fontMain
-        font-size 16px
-        font-weight 400
-        line-height 1.375
+        &__control
+            padding-right: 160px
 
-        &[placeholder]:empty::before
-            content: attr(placeholder)
-            pointer-events none
+            +below(768px)
+                padding-right: 0
 
     &__button
         position: absolute
-        bottom: 0
-        right: 0
+        bottom: 27px
+        right: 30px
         color darkGreyColor
         font-family fontMain
         font-size 16px
@@ -40,3 +32,6 @@
         letter-spacing 1px
         display: none
         transition(all)
+
+        +below(768px)
+            display: none !important

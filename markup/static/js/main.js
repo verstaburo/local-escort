@@ -28,11 +28,13 @@ import userMessages from '../../components/user-messages/user-messages';
 import fileUpload from '../../components/file/file';
 import authPopup from '../../components/auth-popup/auth-popup';
 import modelInfoPopup from '../../components/model-info-popup/model-info-popup';
+import textarea from '../../components/textarea/textarea';
 
 $(() => {
     svg4everybody();
     objectFitImages();
     header();
+    textarea();
     photoTape();
     modelInfoPopup();
     filter();

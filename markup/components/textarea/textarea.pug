@@ -1,4 +1,4 @@
 mixin textarea(name, placeholder)
     +b.textarea&attributes(attributes)
-        +e.TEXTAREA(name=name placeholder=placeholder).control
+        +e.control(name=name placeholder=placeholder contenteditable)
             block

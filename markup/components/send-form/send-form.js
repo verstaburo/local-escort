@@ -1,11 +1,8 @@
 export default function sendForm() {
-    $(document).on('input change', '.send-form__control', function() {
-        const el = $(this);
-        const text = el.text().trim();
-        const btn = el.parents('.send-form').find('.send-form__button');
-
-        el.attr('value', text);
-        el.prop('value', text);
+    $(document).on('input change', '.send-form .textarea__control', function() {
+        const textarea = $(this);
+        const btn = textarea.parents('.send-form').find('.send-form__button');
+        const text = textarea.text().trim();
 
         if (!!text) {
             btn.fadeIn();
@@ -13,6 +10,4 @@ export default function sendForm() {
             btn.fadeOut();
         }
     });
-
-    $(document).find('.send-form__control').trigger('change');
 }
