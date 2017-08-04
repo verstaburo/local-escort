@@ -1,10 +1,17 @@
 .profile-photo-popup
     display: flex
     flex-direction: column
-    height: 100%
+    max-height: 100%
     padding-left: 20px
-
+    max-width: 100vw
     pointer-events none
+    overflow: hidden
+
+    +below(1024px)
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        padding-left: 0
 
     *
         pointer-events all
@@ -95,11 +102,14 @@
         margin-bottom: auto
         display: block
         max-width: 916px
+        width: 100%
 
-        .image-bg
-            z-index: initial
-            width 916px
-            height 515px
+        +below(1024px)
+            margin: auto
+
+        &-img
+            width: 100%
+            height: auto
 
         &-items
             position: relative
@@ -107,6 +117,9 @@
     &__thumbs
         margin-top: auto
         display: block
+
+        +below(1024px)
+            display: none
 
         .swiper-wrapper
             margin-left: calc(-50% + 187.5px) // 187.5px = (slide width) * 1.5

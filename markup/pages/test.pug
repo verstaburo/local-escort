@@ -22,6 +22,7 @@ include ../components/reviews/reviews
 include ../components/send-form/send-form
 include ../components/textarea/textarea
 include ../components/profile-common-popup/profile-common-popup
+include ../components/profile-photo-popup/profile-photo-popup
 
 block header
     +header
@@ -31,9 +32,7 @@ block content
         //+container
 
         +demo
-            +demo-link('#profile-video')(data-popup-id='#profile-call' data-action='show').js-toggle-popup call
-            +demo-link('#profile-video')(data-popup-id='#profile-qr' data-action='show').js-toggle-popup qr
-            +demo-link('#profile-video')(data-popup-id='#profile-report' data-action='show').js-toggle-popup report
+            +demo-link('#profile-video')(data-popup-id='#profile-photo' data-action='show').js-toggle-popup call
 
 block scripts
     //+map-scripts
@@ -44,3 +43,4 @@ block popups
     +profile-common-popup-call
     +profile-common-popup-qr
     +profile-common-popup-report
+    +profile-photo-popup
