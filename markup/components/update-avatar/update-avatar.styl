@@ -7,9 +7,20 @@
     min-height: 168px
     padding: 24px 54px 24px 24px
 
+    +below(520px)
+        flex-direction: column
+        padding: 24px
+        padding-bottom: 0
+
     &__buttons
         display: inline-flex
         align-items: center
+
+        +below(520px)
+            display: flex
+            flex-direction: column
+            width: 100%
+            margin-top: 20px
 
     &__action
         display: flex
@@ -24,14 +35,26 @@
         background-color: transparent
         cursor: pointer
 
-        &:not(:last-child)::after
-            content: ''
-            margin-left: 24px
-            margin-right: 24px
-            display: block
-            height: 21px
-            width: 1px
-            background-color: borderColor
+        +below(520px)
+            width: 100%
+            justify-content: center
+            height: 60px
+
+        &:not(:last-child)
+            +below(520px)
+                border-bottom: 1px solid borderColor
+
+            &::after
+                content: ''
+                margin-left: 24px
+                margin-right: 24px
+                display: block
+                height: 21px
+                width: 1px
+                background-color: borderColor
+
+                +below(520px)
+                    display: none
 
     &__control
         display: none

@@ -3,6 +3,20 @@
     padding-top: 45px
     padding-bottom: 54px
 
+    &__member
+        padding-bottom: 30px
+        border-bottom: 1px solid borderColor
+
+    .grid__col
+        +below(1024px)
+            &_four:not(:nth-child(-n+3)) // do not touch first 3 elements (info-control blocks)
+                width: 50%
+                +below(768px)
+                    width: 100%
+
+        +below(768px)
+            width: 100%
+
     &__button
         width: 100%
 

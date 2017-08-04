@@ -4,6 +4,7 @@ include ../button/button
 include ../field/field
 include ../heading/heading
 include ../file/file
+include ../selectbox/selectbox
 include ../update-avatar/update-avatar
 
 mixin registration()
@@ -12,13 +13,17 @@ mixin registration()
             +heading Registration
 
             +grid.FORM(method='post' action='#' enctype='multipart/form-data')
-                +col(4)
+                +col(4).hide-mob
                     +info-control('radio', 'profile-type', 'regular', true)._light Regular member
-                +col(4)
+                +col(4).hide-mob
                     +info-control('radio', 'profile-type', 'independent')._light Independent
-                +col(4)
+                +col(4).hide-mob
                     +info-control('radio', 'profile-type', 'agency')._light Agency
 
+                +col(4).hide-desktop
+                    +field.registration__member
+                        +field-label Member
+                        +selectbox('Regular member')
                 +col(4)
                     +field
                         +field-label Your name
