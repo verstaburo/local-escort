@@ -2,6 +2,9 @@
     display: block
     padding-bottom: 40px
 
+    +below(1300px)
+        margin-top: 30px
+
     &__header
         display: flex
         justify-content: space-between
@@ -12,5 +15,12 @@
         .button
             min-width: 164px
 
+            +below(1024px)
+                display: none
+
     &__load
         margin-top: 40px
+
+    .grid__col
+        +below(1024px)
+            width: 100%
