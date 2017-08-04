@@ -5,6 +5,7 @@ include ../field/field
 include ../heading/heading
 include ../file/file
 include ../selectbox/selectbox
+include ../captcha/captcha
 include ../update-avatar/update-avatar
 
 mixin registration()
@@ -53,7 +54,7 @@ mixin registration()
                         +field-label Confirm password
                         +field-input(type='password')
                 +col(4).grid__col_push_bottom
-                    .g-recaptcha(data-sitekey="6LfEjSoUAAAAAFQHsQmbifMEftYf5OJVqIlX_AyW")
+                    +captcha
 
                 +col(4).grid__col_push_center
                     +button('button')._uppercase._bg_darkGrey._color_main.__button sign up

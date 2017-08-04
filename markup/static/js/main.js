@@ -29,6 +29,7 @@ import fileUpload from '../../components/file/file';
 import authPopup from '../../components/auth-popup/auth-popup';
 import modelInfoPopup from '../../components/model-info-popup/model-info-popup';
 import textarea from '../../components/textarea/textarea';
+import captcha from "../../components/captcha/captcha";
 
 $(() => {
     svg4everybody();
@@ -63,4 +64,5 @@ $(() => {
     userMessages();
     fileUpload();
     authPopup();
+    captcha();
 });
