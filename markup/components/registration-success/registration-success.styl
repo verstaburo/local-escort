@@ -6,6 +6,16 @@
     height: 100%
     min-height: 500px
 
+    +below(1024px)
+        padding-top: 20px
+        padding-bottom: 20px
+        min-height: 400px
+
+    +below(768px)
+        min-height: 300px
+        padding-left: 20px
+        padding-right: 20px
+
     &__text
         margin-top: 23px
         display: inline-block
@@ -20,6 +30,9 @@
     &__follow
         margin-top: 40px
         text-align: center
+
+        +below(768px)
+            margin-top: 15px
 
         &-us
             margin-bottom: 16px
