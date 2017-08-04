@@ -59,6 +59,11 @@
             & ^[0]__footer
                 padding: 0 25px
 
+                +below(700px)
+                    &_column
+                        height: auto
+                        margin-top: 30px
+
             .heading
                 color: #fff
                 margin-bottom: 6px
@@ -73,6 +78,11 @@
     &__button
         min-width: 207px
         margin: 0 auto
+
+        +below(700px)
+            width: 100%
+            margin-left: 25px
+            margin-right: 25px
 
     &__footer
         margin-top: auto
@@ -202,8 +212,37 @@
         padding: 35px 30px
         height: 100%
 
-        .info-control:not(:last-child)
-            margin-bottom: 12px
+        &__checked
+            display: none
+
+            +below(700px)
+                display: block
+
+        &__heading
+            display: none
+            font-size 16px
+            text-align center
+            color rgba(darkGreyColor, .59)
+            padding-top: 34px
+            padding-bottom: 36px
+            border-bottom: 1px solid borderColor
+
+            +below(700px)
+                display: block
+
+        +below(700px)
+            padding: 0
+
+        .info-control
+            +below(700px)
+                &__box
+                    border-color: transparent
+
+            &:not(:last-child)
+                margin-bottom: 12px
+
+                +below(700px)
+                    margin-bottom: 0
 
         & ~ ^[0]__footer ^[0]__button
             display: none
@@ -224,6 +263,11 @@
             font-size 16px
             font-weight 400
             line-height 1.375
+
+            +below(700px)
+                padding: 19px 20px
+                border: 0
+                height: 237px
 
             &::placeholder
                 opacity: 1

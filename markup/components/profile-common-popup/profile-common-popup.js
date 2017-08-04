@@ -1,34 +1,51 @@
 export function profileReportPopup() {
     const form = $('.profile-common-popup-report');
     const popup = form.parents('.popup');
-    const step = form.find('.profile-common-popup-report__step').eq(0);
-
-    if (!form.length) {
-        return;
-    }
-
-    step.show();
 
     popup
-        .find('.profile-common-popup__button')
-        .hide();
+        .on('show', function() {
+            const step = form.find('.profile-common-popup-report__step').eq(0);
+            const el = $(this);
 
-    const btn = popup
-        .find('.profile-common-popup__button')
-        .eq(0)
-        .show();
+            if (!step.length) {
+                return;
+            }
 
-    popup
-        .on('click', '.js-profile-report-next', (e) => {
+            step
+                .show()
+                .nextAll()
+                .hide();
+
+            el
+                .find('.profile-common-popup__button')
+                .hide();
+
+            el
+                .find('.profile-common-popup__button')
+                .eq(0)
+                .show();
+    })
+        .on('click', '.js-profile-report-next', function(e) {
             e.preventDefault();
+            const step = form.find('.profile-common-popup-report__step').eq(0);
+
+            const checkedItem = step
+                .find('.info-control__control:checked')
+                .attr('checked', true)
+                .parent()
+                .get(0)
+                .outerHTML;
+
             step
                 .hide()
                 .next('.profile-common-popup-report__step')
-                .fadeIn();
+                .fadeIn()
+                .find('.profile-common-popup-report__checked')
+                .html(checkedItem);
 
-            btn
+            $(this)
                 .hide()
-                .next('.profile-common-popup__button')
+                .next()
                 .fadeIn();
         })
         .on('click', '.js-profile-report-submit', (e) => {

@@ -53,12 +53,15 @@ mixin profile-common-popup-report
     +profile-common-popup('profile-report')
         +b.FORM(method='post' action='#').profile-common-popup-report
             +e.step
+                +e.SPAN.heading Report
                 +info-control('radio', 'reason', 1) Theme name for report one
                 +info-control('radio', 'reason', 2) Theme name for report
                 +info-control('radio', 'reason', 3, true) Theme name for report three
                 +info-control('radio', 'reason', 4) Other
             +e.step
+                +e.checked
                 +e.TEXTAREA(placeholder='Please describe your complaint').control
+
         .profile-common-popup__footer
             +button(href='#')._border_standart._uppercase.profile-common-popup__button.js-profile-report-next Continue
             +button(href='#')._border_standart._uppercase.profile-common-popup__button.js-profile-report-submit Send report
