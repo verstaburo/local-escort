@@ -3,11 +3,31 @@
     padding-top: 45px
     padding-bottom: 54px
 
+    +below(1300px)
+        margin-top: 30px
+
+    +below(768px)
+        margin-top: 0
+        padding-top: 35px
+        padding-bottom: 40px
+
     &__button
         width: 100%
 
         &_resend
             margin-top: 35px
 
+            +below(768px)
+                margin-top: 4px
+
     .grid
         min-height: 480px
+
+        +below(1024px)
+            min-height: initial
+
+            &__col
+                width: 50%
+
+                +below(768px)
+                    width: 100%

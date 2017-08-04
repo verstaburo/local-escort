@@ -2,7 +2,7 @@ export default function captcha() {
     $(window).on('resize load', function() {
         const captcha = $('.g-recaptcha');
 
-        if (!captcha) {
+        if (!captcha.length) {
             return;
         }
 
