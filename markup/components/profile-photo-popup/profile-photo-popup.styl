@@ -1,7 +1,7 @@
 .profile-photo-popup
     display: flex
     flex-direction: column
-    max-height: 100%
+    height: 100%
     padding-left: 20px
     max-width: 100vw
     pointer-events none
@@ -16,6 +16,9 @@
     *
         pointer-events all
 
+        +below(768px)
+            pointer-events: none
+
     &__footer
         display: flex
         justify-content: space-between
@@ -23,6 +26,7 @@
         height 60px
         box-shadow 0 10px 40px rgba(29, 29, 29, .1)
         background-color darkGreyColor
+        pointer-events: all
 
     &__link
         color rgba(#fff, .5)
@@ -68,6 +72,8 @@
         z-index: 1
         transform: translate3d(0, 0, 0)
         transition: transform .5s ease-in-out
+        pointer-events: all
+
 
         &_prev
             left: 0
@@ -104,12 +110,28 @@
         max-width: 916px
         width: 100%
 
+        +below(768px)
+            height: 100%
+
         +below(1024px)
             margin: auto
 
         &-img
             width: 100%
             height: auto
+            pointer-events: all
+
+            &-wrap
+                +below(768px)
+                    display: flex
+                    flex: 1
+                    align-items: center
+                    pointer-events: none
+
+        &-item
+            +below(768px)
+                display: flex
+                flex-direction: column
 
         &-items
             position: relative

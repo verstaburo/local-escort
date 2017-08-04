@@ -2,13 +2,14 @@ include ../popup/popup
 include ../image-bg/image-bg
 
 mixin profile-photo-popup()
-    +popup.popup__wrapper_100#profile-photo
+    +popup.popup__wrapper_100.popup_no_mobile_paddings#profile-photo
         +b.profile-photo-popup&attributes(attributes)
             +e.gallery.swiper-container
                 +e.UL.gallery-items.swiper-wrapper
                     - for (var i = 0; i < 15; i++)
                         +e.LI.gallery-item.swiper-slide
-                            +e.IMG(src='__static__img/content/photo-popup/gallery/1.jpg' alt='').gallery-img
+                            +e.gallery-img-wrap
+                                +e.IMG(src='__static__img/content/photo-popup/gallery/1.jpg' alt='').gallery-img
                             +e.footer
                                 +e.A(href='#').like
                                     != pugHelpers.Icon.call(locals, {iconName: 'like', className: 'profile-photo-popup__like-icon', iconWidth: 13, iconHeight: 11})

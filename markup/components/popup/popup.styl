@@ -11,6 +11,10 @@
     overflow-y: auto
     overflow-x: hidden
 
+    &.popup_no_mobile_paddings
+        +below(768px)
+            padding: 0
+
     &_wrapper_100
         & ^[0]__wrapper
             height: 100%
