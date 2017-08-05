@@ -2,8 +2,23 @@
     display: block
     padding-bottom: 54px
 
+    +below(1300px)
+        padding-top: 30px
+
+    +below(768px)
+        padding-top: 0
+
+        .container
+            padding-left: 0
+            padding-right: 0
+
     .heading
         margin-top: 47px
+
+        +below(768px)
+            margin-top: 32px
+            padding-left: 31px
+            padding-right: 31px
 
     .dotted-dropdown
         z-index: 100
@@ -19,17 +34,35 @@
         flex-shrink: 0
         margin-top: 23px
 
+        +below(768px)
+            position: fixed
+            bottom: 0
+            left: 0
+            width: 100%
+            z-index 50
+
     &__content
         display: flex
         margin-top: 46px
         height: 486px
         border 1px solid borderColor
 
+        +below(900px)
+            height: auto
+
+        +below(900px)
+            margin-top: 33px
+            border: 0
+
     &__left
         width: 352px
         flex-shrink: 0
         padding-top: 1px
         overflow: hidden
+
+        +below(900px)
+            width: 100%
+            border-top: 1px solid borderColor
 
         .message
             margin-top: -1px
@@ -38,17 +71,30 @@
             border-right: 1px solid borderColor
             cursor: pointer
 
+            +below(900px)
+                border-right: 0
+                border-bottom: 1px
+
             &:not(:last-child)
                 border-bottom 1px solid borderColor
 
             &.active
                 background-color #fff
                 border-color transparent
+
+                +below(900px)
+                    background-color: transparent
+                    box-shadow: none
+                    border-bottom-color borderColor
     &__right
         display: flex
         flex-direction: column
         flex: 1
         overflow: hidden
+
+        +below(900px)
+            //- TODO AJAX PRELOAD??
+            display: none
 
         .message
             display: inline-flex
@@ -68,6 +114,10 @@
         padding-right: 24px
         padding-top: 24px
 
+        +below(768px)
+            padding-left: 12px
+            padding-right: 12px
+
     &__header
         display: flex
         justify-content: space-between
@@ -76,6 +126,17 @@
         flex-shrink: 0
         margin-left: 24px
         margin-right: 24px
+
+        +below(768px)
+            margin-left: 31px
+            margin-right: 31px
+
+    .avatar
+        margin-right: auto
+        margin-left: 8px
+
+        +above(900px)
+            display: none
 
     &__heading
         font-family fontMain
