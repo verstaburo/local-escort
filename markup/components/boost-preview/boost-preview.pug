@@ -11,8 +11,12 @@ mixin boost-preview(img, heading, description, credits, hasBtn)
                 span= credits
                 != pugHelpers.Icon.call(locals, {iconName: 'currency',className: 'boost-preview__icon',iconWidth: '14',iconHeight: '13'})
             if hasBtn
-                +e.A(href='#').btn
-                    span Select
+                +e.buttons
+                    +e.A(href='#').btn._main
+                        span more
+
+                    +e.A(href='#').btn
+                        span Select
 
 mixin boost-preview-interactive(credits, money, badge, selected)
     +b.LABEL.boost-preview._interactive&attributes(attributes)
@@ -27,6 +31,7 @@ mixin boost-preview-interactive(credits, money, badge, selected)
                 +e.SPAN.description=money
 
             +icon-button('currency', 18, 18).SPAN._flex._circle._size_md
-        +e.btn
-            span Select
-            != pugHelpers.Icon.call(locals, {iconName: 'ok', iconWidth: '15', iconHeight: '11.25'})
+        +e.buttons
+            +e.btn
+                span Select
+                != pugHelpers.Icon.call(locals, {iconName: 'ok', iconWidth: '15', iconHeight: '11.25'})

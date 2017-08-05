@@ -19,7 +19,7 @@ mixin boost-account()
                         +col(3)
                             +button._uppercase._border_standart.__action._add-credits + Add credits
 
-                +e.section
+                +e.section._interactive
                     +grid
                         +col(4)
                             +boost-preview-interactive('550 Credit', 'Buy for $450', 'Popular', false)
@@ -28,34 +28,34 @@ mixin boost-account()
                         +col(4)
                             +boost-preview-interactive('2550 Credit', 'Buy for $450', 'Profitable', false)
 
-                +e.section
+                +e.section._payment
                     +heading._md Select a Payment Method
 
                     +grid
                         +col(3)
                             +payment-method('Bitcoin', false)
-                                +payment-method-img('1.png')._bitcoin
+                                +payment-method-img('1.png', '1_1.png')._bitcoin
                         +col(3)
                             +payment-method('Credit cards', false)
-                                +payment-method-img('2.png')._cards
+                                +payment-method-img('2.png', '2_1.png')._cards
                         +col(3)
                             +payment-method('WebMoney', false)
-                                +payment-method-img('3.png')._webmoney
+                                +payment-method-img('3.png', '3_1.png')._webmoney
                         +col(3)
                             +payment-method('Coupon from Epay', false)
 
                         +col(3)
                             +payment-method('Western Union', false)
-                                +payment-method-img('5.png')._western-union
+                                +payment-method-img('5.png', '5_1.png')._western-union
                         +col(3)
                             +payment-method('Bank Transfer', false)
-                                +payment-method-img('6.png')._bank-transfer
+                                +payment-method-img('6.png', '6_1.png')._bank-transfer
                         +col(3)
                             +payment-method('Zombaio', false)
-                                +payment-method-img('7.png')._zombaio
+                                +payment-method-img('7.png', '7_1.png')._zombaio
                         +col(3)
                             +payment-method('Ccbill', false)
-                                +payment-method-img('8.png')._ccbill
+                                +payment-method-img('8.png', '8_1.png')._ccbill
                 +e.section
                     +grid
                         +col(3)

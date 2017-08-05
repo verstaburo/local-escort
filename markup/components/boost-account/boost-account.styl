@@ -2,8 +2,18 @@
     display: block
     padding-bottom: 54px
 
+    +below(1300px)
+        padding-top: 30px
+
+    +below(768px)
+        padding-top: 0
+        padding-bottom: 32px
+
     .container > .heading
         margin-top: 47px
+
+        +below(768px)
+            margin-top: 32px
 
     &_inner
         .container > .heading
@@ -18,19 +28,44 @@
     &__content
         margin-top: 22px
 
+        +below(768px)
+            margin-top: 9px
+
         &_success
             display: flex
             justify-content: center
             align-items: center
             min-height: 500px
 
+            +below(768px)
+                min-height: initial
+                padding-top: 32px
+
         &_border_top
             border-top: 1px solid borderColor
 
     &__section
 
+        +below(540px)
+            &_interactive
+                display: none
+
+            &_payment
+                .grid__col
+                    padding-top: 0
+                    margin-top: -1px
+
+                    &:first-child
+                        padding-top: 31px
+                        margin-top: 0
+
         & > .heading
             margin-bottom: 11px
+
+        &:first-child
+            +below(540px)
+                & > .heading
+                    display: none
 
         &:not(:first-child)
             margin-top: 40px
@@ -45,6 +80,15 @@
         justify-content: space-between
         align-items: center
         padding: 0 40px
+
+        +below(920px)
+            padding: 40px
+
+        +below(540px)
+            padding: 18px 10px 20px 21px
+
+            br
+                display: none
 
         span
             font-size 16px
@@ -105,3 +149,33 @@
     &__continue
         width: 303px
         margin-top: 18px
+
+
+    .grid__col
+        +below(540px)
+            width: 100%
+
+        &_four
+            +below(1024px)
+                width: 50%
+
+            +below(700px)
+                width: 100%
+
+        &_six
+            +below(920px)
+                width: 80%
+
+            +below(540px)
+                width: 100%
+
+        &_three
+            +below(920px)
+                width: 50%
+
+            +below(540px)
+                width: 100%
+
+        &_nine
+            +below(920px)
+                width: 100%

@@ -23,7 +23,7 @@
             padding: 0
             margin-top: 7px
 
-        & ^[0]__btn
+        & ^[0]__buttons
             position: relative
             border: 1px solid borderColor
 
@@ -32,12 +32,23 @@
                 top: 50%
                 left: 50%
                 transform: translate(-50%, -50%) scale(0)
+
+        & ^[0]__btn
+            +below(768px)
+                width: 100%
+
     &_inline
         flex-direction: row
 
         & ^[0]__picture
             width: 247px
             height: 149px
+
+            +below(768px)
+                height: 100%
+
+            +below(660px)
+                display: none
 
         & ^[0]__content
             padding: 35px 139px 35px 39px
@@ -46,17 +57,45 @@
             border: 1px solid borderColor
             border-left 0
 
+            +below(660px)
+                border-left: 1px solid borderColor
+
+            +below(540px)
+                padding: 36px 31px 39px
+
         & ^[0]__heading
             padding: 0
+
+            +below(540px)
+                margin-left: auto
+                margin-right: auto
+                display: block
+                text-align center
+                max-width: 196px
+                padding-left: 15px
+                padding-right: 15px
 
         & ^[0]__description
             padding: 0
             margin-top: 9px
             max-width: 275px
 
+            +below(540px)
+                margin-left: auto
+                margin-right: auto
+                display: block
+                text-align center
+                max-width: 196px
+
         & ^[0]__credits
             top: 50%
             right: 40px
+
+
+            +below(540px)
+                top: -11px
+                right: -22px
+                transform: translate(0, 0)
 
     &__picture
         position: relative
@@ -106,6 +145,9 @@
         padding: 0 22px
         letter-spacing: initial
 
+        +below(540px)
+            padding-bottom: 36px
+
     &__description
         padding: 0 40px 36px
         margin-top: 10px
@@ -113,21 +155,46 @@
         line-height: 1.375
         color: rgba(darkGreyColor, .59)
 
+        +below(540px)
+            display: none
+
     &__btn
         display: flex
-        justify-content: center
         align-items: center
+        justify-content: center
         width: 100%
-        height: 60px
-        margin-top: auto
+        color: darkGreyColor
         text-decoration: none
-        border-top: 1px solid borderColor
         font-size: 16px
         letter-spacing 1px
         font-weight: 700
-        color: darkGreyColor
         text-transform: uppercase
         cursor: pointer
+
+        +below(768px)
+            width: 50%
+
+        &_main
+            color: mainColor
+            display: none
+
+            +below(768px)
+                display: flex
+
+        &_hide
+            display: none
+            color: rgba(darkGreyColor, .59)
+
+            +below(768px)
+                display: flex
+
+    &__buttons
+        display: flex
+        width: 100%
+        height: 60px
+        margin-top: auto
+        border-top: 1px solid borderColor
+
         transition(background-color)
 
         span, svg
@@ -158,7 +225,7 @@
                 .badges
                     opacity 0
 
-            & ~ ^[0]__btn
+            & ~ ^[0]__buttons
                 background-color mainColor
                 border-left-color transparent
                 border-right-color transparent
