@@ -121,6 +121,9 @@
         margin-top: 26px
         display: inline-block
 
+        +below(768px)
+            display: block
+
     &__info
         display: inline-flex
         margin-top: 26px
@@ -128,12 +131,26 @@
         border-top: 1px solid borderColor
         border-bottom: 1px solid borderColor
 
+        +below(768px)
+            display: flex
+            flex-direction: column
+            padding: 0
+
         &-item
             display: flex
             align-items: center
+            flex-wrap: wrap
+
+            +below(768px)
+                width: 100%
+                padding: 12px 0
 
             &:not(:last-child)
                 margin-right: 24px
+
+                +below(768px)
+                    margin-right: 0
+                    border-bottom: 1px solid borderColor
 
         &-text
             display: inline-block
@@ -143,8 +160,8 @@
             font-weight 400
             line-height 1.375
 
-            &:not(:first-child)
-                margin-left: 5px
+            &:not(:last-child)
+                margin-right: 5px
 
             &_grey
                 color #757576
