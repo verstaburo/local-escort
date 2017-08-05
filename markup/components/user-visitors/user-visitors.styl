@@ -2,8 +2,17 @@
     display: block
     padding-bottom: 54px
 
+    +below(1300px)
+        padding-top: 30px
+
+    +below(768px)
+        padding-top: 0
+
     .heading
         margin-top: 47px
+
+        +below(768px)
+            margin-top: 32px
 
     &__content
         margin-top: 46px
