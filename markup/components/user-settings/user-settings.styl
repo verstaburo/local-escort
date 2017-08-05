@@ -2,9 +2,26 @@
     display: block
     padding-bottom: 54px
 
+    +below(1300px)
+        padding-top: 30px
+
+    +below(768px)
+        padding-top: 0
+
     .heading
         margin-top: 47px
 
     &__action
         width: 100%
+
+
+    .grid__col
+
+        &_three
+            +below(920px)
+                width: 50%
+
+        +below(768px)
+            width: 100%
+
 
