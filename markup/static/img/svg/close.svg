@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
-    <title>Combined Shape</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="01-Model-list" fill-rule="evenodd">
-        <g id="01_List_8_search-2" transform="translate(-896.000000, -36.000000)">
-            <g id="search" transform="translate(169.000000, 0.000000)">
-                <g id="action" transform="translate(646.000000, 14.000000)">
-                    <g id="close" transform="translate(59.000000, 0.000000)">
-                        <path d="M28.7279221,28.7279221 L20.7279221,28.7279221 L20.7279221,30.7279221 L28.7279221,30.7279221 L28.7279221,38.7279221 L30.7279221,38.7279221 L30.7279221,30.7279221 L38.7279221,30.7279221 L38.7279221,28.7279221 L30.7279221,28.7279221 L30.7279221,20.7279221 L28.7279221,20.7279221 L28.7279221,28.7279221 Z" id="Combined-Shape" transform="translate(29.727922, 29.727922) rotate(-45.000000) translate(-29.727922, -29.727922) "></path>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.56 15.56"><title>close</title><polygon points="6.36 7.78 0 14.14 1.41 15.56 7.78 9.19 14.14 15.56 15.56 14.14 9.19 7.78 15.56 1.41 14.14 0 7.78 6.36 1.41 0 0 1.41 6.36 7.78"/></svg>
