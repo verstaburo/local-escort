@@ -6,6 +6,7 @@ include ../button/button
 include ../checkbox/checkbox
 include ../accordion/accordion
 include ../rating-interactive/rating-interactive
+include ../field/field
 
 mixin filter()
     +b.FORM(method='POST' action='#').filter&attributes(attributes)
@@ -58,78 +59,78 @@ mixin filter-additional()
                 +e.rating
                     +grid.grid_items_center
                         +col(6)
-                            +e.SPAN.label._left Rating
+                            +heading._md._color_white Rating
                             +rating-interactive(5)._dark
                         +col(6).grid__col_align_right.hide-mob
                             +e.SPAN.sublabel Select minimum stars rating
             +e.row
                 +grid
                     +col(12)
-                        +e.SPAN.label._top Parameters
+                        +heading._md._color_white Parameters
                     +col(3)
-                        +e.header
-                            +e.SPAN.sublabel Nationality
-                        +selectbox('any')._deep-dark
-                            +selectbox-control(name='nationality')
-                                option(value='any') any
-                                option(value='item1') item 1
-                                option(value='item2') item 2
+                        +field
+                            +field-label._grey Nationality
+                            +selectbox('any')._deep-dark
+                                +selectbox-control(name='nationality')
+                                    option(value='any') any
+                                    option(value='item1') item 1
+                                    option(value='item2') item 2
+                                    option(value='item3') item 3
+                    +col(3)
+                        +field
+                            +field-label._grey Language
+                            +selectbox('any')._deep-dark
+                                +selectbox-control(name='language')
+                                    option(value='any') any
+                                    option(value='item1') item 1
+                                    option(value='item2') item 2
                                 option(value='item3') item 3
                     +col(3)
-                        +e.header
-                            +e.SPAN.sublabel Language
-                        +selectbox('any')._deep-dark
-                            +selectbox-control(name='language')
-                                option(value='any') any
-                                option(value='item1') item 1
-                                option(value='item2') item 2
-                                option(value='item3') item 3
+                        +field
+                            +field-label._grey Hair color
+                            +selectbox('any')._deep-dark
+                                +selectbox-control(name='hair_color')
+                                    option(value='any') any
+                                    option(value='item1') item 1
+                                    option(value='item2') item 2
+                                    option(value='item3') item 3
                     +col(3)
-                        +e.header
-                            +e.SPAN.sublabel Hair color
-                        +selectbox('any')._deep-dark
-                            +selectbox-control(name='hair_color')
-                                option(value='any') any
-                                option(value='item1') item 1
-                                option(value='item2') item 2
-                                option(value='item3') item 3
+                        +field
+                            +field-label._grey Eye color
+                            +selectbox('any')._deep-dark
+                                +selectbox-control(name='eye_color')
+                                    option(value='any') any
+                                    option(value='item1') item 1
+                                    option(value='item2') item 2
+                                    option(value='item3') item 3
                     +col(3)
-                        +e.header
-                            +e.SPAN.sublabel Eye color
-                        +selectbox('any')._deep-dark
-                            +selectbox-control(name='eye_color')
-                                option(value='any') any
-                                option(value='item1') item 1
-                                option(value='item2') item 2
-                                option(value='item3') item 3
+                        +field
+                            +field-label._grey Breast size
+                            +range-slider._dark
+                                +range-slider-fields
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='breast-min')._min
+                                        +range-slider-text A
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='breast-max')._max
+                                        +range-slider-text FF
+                                +range-slider-control.js-filter-breast
                     +col(3)
-                        +e.header
-                            +e.SPAN.sublabel Breast size
-                        +range-slider._dark
-                            +range-slider-fields
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='breast-min')._min
-                                    +range-slider-text A
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='breast-max')._max
-                                    +range-slider-text FF
-                            +range-slider-control.js-filter-breast
-                    +col(3)
-                        +e.header
-                            +e.SPAN.sublabel Shoe size
-                        +range-slider._dark
-                            +range-slider-fields
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='shoe-min')._min
-                                    +range-slider-text
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='shoe-max')._max
-                                    +range-slider-text
-                            +range-slider-control.js-filter-shoe
+                        +field
+                            +field-label._grey Shoe size
+                            +range-slider._dark
+                                +range-slider-fields
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='shoe-min')._min
+                                        +range-slider-text
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='shoe-max')._max
+                                        +range-slider-text
+                                +range-slider-control.js-filter-shoe
             +e.row
                 +grid
                     +col(12)
-                        +e.SPAN.label._top Service for
+                        +heading._md._color_white Service for
 
                     +col(2)
                         +checkbox(false, 'service-for', 'men')._black Men
@@ -174,7 +175,7 @@ mixin filter-additional()
                 +accordion-item('Services', 'Show', 'Hide').filter-additional__services
                     +grid
                         +col(12)
-                            +e.SPAN.label._top Sex
+                            +heading._md._color_white Sex
                         +col(3)
                             +checkbox(false, 'services-sex', 'classical-sex')._black Classical sex
                         +col(3)
@@ -207,7 +208,7 @@ mixin filter-additional()
                             +checkbox(false, 'services-sex', 'cum-on-breast')._black Cum on breast
                     +grid
                         +col(12)
-                            +e.SPAN.label._top Massage
+                            +heading._md._color_white Massage
                         +col(3)
                             +checkbox(false, 'services-message', 'classic')._black Classic
                         +col(3)
@@ -226,7 +227,7 @@ mixin filter-additional()
                             +checkbox(false, 'services-message', 'sakura')._black Sakura
                     +grid
                         +col(12)
-                            +e.SPAN.label._top Striptease
+                            +heading._md._color_white Striptease
                         +col(3)
                             +checkbox(false, 'services-striptease', 'professional')._black professional
                         +col(3)
@@ -238,7 +239,7 @@ mixin filter-additional()
 
                     +grid
                         +col(12)
-                            +e.SPAN.label._top BDSM
+                            +heading._md._color_white BDSM
                         +col(3)
                             +checkbox(false, 'services-bdsm', 'bandage')._black Bandage
                         +col(3)
@@ -258,7 +259,7 @@ mixin filter-additional()
 
                     +grid
                         +col(12)
-                            +e.SPAN.label._top Extreme
+                            +heading._md._color_white Extreme
                         +col(3)
                             +checkbox(false, 'services-extreme', 'strapon')._black Strapon
                         +col(3)
@@ -276,7 +277,7 @@ mixin filter-additional()
 
                     +grid
                         +col(12)
-                            +e.SPAN.label._top Other
+                            +heading._md._color_white Other
                         +col(3)
                             +checkbox(false, 'services-other', 'role-play')._black Role play
                         +col(3)
@@ -314,89 +315,93 @@ mixin filter-extended(dark)
             +container
                 +grid
                     +col(3)
-                        +e.header
-                            +e.SPAN.label Categories
-                        +selectbox('Escorts')(class=SelectModifier)
-                            +selectbox-control(name='escorts')
-                                option(value='escorts') escorts
-                                option(value='item1') item 1
-                                option(value='item2') item 2
-                                option(value='item3') item 3
+                        +field
+                            +field-label Categories
+                            +selectbox('Escorts')(class=SelectModifier)
+                                +selectbox-control(name='escorts')
+                                    option(value='escorts') escorts
+                                    option(value='item1') item 1
+                                    option(value='item2') item 2
+                                    option(value='item3') item 3
                     +col(3)
-                        +e.header
-                            +e.SPAN.label Age
-                        +range-slider(class=RangeModifier)
-                            +range-slider-fields
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='age-min')._min
-                                    +range-slider-text
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='age-max')._max
-                                    +range-slider-text
-                            +range-slider-control.js-filter-age
+                        +field
+                            +field-label Age
+                            +range-slider(class=RangeModifier)
+                                +range-slider-fields
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='age-min')._min
+                                        +range-slider-text
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='age-max')._max
+                                        +range-slider-text
+                                +range-slider-control.js-filter-age
                     +col(3)
-                        +e.header
-                            +e.SPAN.label Rate per hour
-                        +range-slider(class=RangeModifier)
-                            +range-slider-fields
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='cost-min')._min
-                                    +range-slider-text
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='cost-max')._max
-                                    +range-slider-text
-                            +range-slider-control.js-filter-rate
+                        +field
+                            +field-label Rate per hour
+                            +range-slider(class=RangeModifier)
+                                +range-slider-fields
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='cost-min')._min
+                                        +range-slider-text
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='cost-max')._max
+                                        +range-slider-text
+                                +range-slider-control.js-filter-rate
                     +col(3)
-                        +e.header
-                            +e.SPAN.label Availability
-                        +selectbox('All')(class=SelectModifier)
-                            +selectbox-control(name='availability')
-                                option(value='all') All
-                                option(value='item1') item 1
-                                option(value='item2') item 2
-                                option(value='item3') item 3
+                        +field
+                            +field-label Availability
+                            +selectbox('All')(class=SelectModifier)
+                                +selectbox-control(name='availability')
+                                    option(value='all') All
+                                    option(value='item1') item 1
+                                    option(value='item2') item 2
+                                    option(value='item3') item 3
                     +col(3)
-                        +e.header
-                            +e.SPAN.label Orientation
-                        +selectbox('All')(class=SelectModifier)
-                            +selectbox-control(name='orientation')
-                                option(value='all') All
-                                option(value='item1') item 1
-                                option(value='item2') item 2
-                                option(value='item3') item 3
+                        +field
+                            +field-label Orientation
+                            +selectbox('All')(class=SelectModifier)
+                                +selectbox-control(name='orientation')
+                                    option(value='all') All
+                                    option(value='item1') item 1
+                                    option(value='item2') item 2
+                                    option(value='item3') item 3
                     +col(3)
-                        +e.header
-                            +e.SPAN.label Height
-                        +range-slider(class=RangeModifier)
-                            +range-slider-fields
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='height-min')._min
-                                    +range-slider-text
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='height-max')._max
-                                    +range-slider-text
-                            +range-slider-control.js-filter-height
+                        +field
+                            +field-label
+                                | Height
+                                +selectbox('cm')._small
+                            +range-slider(class=RangeModifier)
+                                +range-slider-fields
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='height-min')._min
+                                        +range-slider-text
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='height-max')._max
+                                        +range-slider-text
+                                +range-slider-control.js-filter-height
                     +col(3)
-                        +e.header
-                            +e.SPAN.label Weight
-                        +range-slider(class=RangeModifier)
-                            +range-slider-fields
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='weight-min')._min
-                                    +range-slider-text
-                                +range-slider-field
-                                    +range-slider-input(type='hidden' name='weight-max')._max
-                                    +range-slider-text
-                            +range-slider-control.js-filter-weight
+                        +field
+                            +field-label
+                                | Weight
+                                +selectbox('kg')._small
+                            +range-slider(class=RangeModifier)
+                                +range-slider-fields
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='weight-min')._min
+                                        +range-slider-text
+                                    +range-slider-field
+                                        +range-slider-input(type='hidden' name='weight-max')._max
+                                        +range-slider-text
+                                +range-slider-control.js-filter-weight
                     +col(3)
-                        +e.header
-                            +e.SPAN.label Ethnicity
-                        +selectbox('All')(class=SelectModifier)
-                            +selectbox-control(name='ethnicity')
-                                option(value='all') All
-                                option(value='item1') item 1
-                                option(value='item2') item 2
-                                option(value='item3') item 3
+                        +field
+                            +field-label Ethnicity
+                            +selectbox('All')(class=SelectModifier)
+                                +selectbox-control(name='ethnicity')
+                                    option(value='all') All
+                                    option(value='item1') item 1
+                                    option(value='item2') item 2
+                                    option(value='item3') item 3
                 +grid
                     +col(2)
                         +checkbox(true, 'verified', 1)(class=CheckboxModifier) Verified
