@@ -7,6 +7,14 @@
     &__header
         margin-top: 8px
 
+        .grid__col:first-child
+            +below(1134px)
+                width: 100%
+
+        +below(1134px)
+            .grid__col:not(:first-child)
+                width: (100/3)%
+
     &__container
         margin-top: 32px
         border: 1px solid borderColor
