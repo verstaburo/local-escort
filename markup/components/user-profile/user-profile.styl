@@ -1,0 +1,51 @@
+.user-profile
+    display: block
+    background-color bgColor
+    padding-bottom: 58px
+    box-sizing: border-box
+
+    &__header
+        margin-top: 8px
+
+    &__container
+        margin-top: 32px
+        border: 1px solid borderColor
+
+    &__main
+        display: flex
+
+    &__content
+        display: block
+        flex: 1
+
+    &__sidebar
+        display: flex
+        flex-direction: column
+        width: 316px
+        padding-bottom: 57px
+        background-color: #fff
+
+    &__short-info
+        margin-top: auto
+        padding-top: 30px
+        padding-left: 55px
+        padding-right: 55px
+
+        .short-info:not(:last-child)
+            margin-bottom: 21px
+
+    &__row
+        width: 100%
+
+        &:not(:first-child)
+            margin-top: 50px
+            padding-left: 58px
+            padding-right: 58px
+
+        &_left_padding
+            padding-right: 0
+
+        &_agencies
+
+            & > .heading
+                margin-bottom: 45px

@@ -1,0 +1,86 @@
+include ../profile-card/profile-card
+include ../model-photos/model-photos
+include ../short-info/short-info
+include ../agency-info/agency-info
+include ../model-info/model-info
+include ../profile-contacts/profile-contacts
+include ../agency-card/agency-card
+include ../share/share
+include ../grid/grid
+include ../model-preview/model-preview
+include ../recommended-slider/recommended-slider
+include ../reviews/reviews
+include ../heading/heading
+include ../container/container
+include ../button/button
+
+mixin user-profile(isPopup)
+    +b.user-profile&attributes(attributes)
+        +container
+            +grid.grid_items_center.user-profile__header
+                +col(5)
+                    +heading My profile
+
+                +col(2)
+                    +short-info
+                        +short-info-heading._md Your profile is at the
+                        +short-info-content
+                            +short-info-text._md 2741 place
+                +col(3)
+                    +button()(href='#')._uppercase._bg_darkGrey._color_white Boost my account
+                +col(2)
+                    +button()(href='#')._uppercase._border_standart Edit profile
+
+
+            +e.container
+                +e.main
+                    +e.content
+                        +e.row
+                            +model-photos
+                        +e.row
+                            +agency-info
+                        +e.row
+                            +model-info
+                        +e.row
+                            +profile-contacts
+                        +e.row._agencies
+                            +heading Agencies
+                            +agency-card-new
+                        +e.row
+                            +share
+                        +e.row
+                            +grid
+                                +col(4)
+                                    +button()(data-popup-id='#profile-report' data-action='show')._uppercase._border_standart.js-toggle-popup Report
+                                +col(4)
+                                    +button()(data-popup-id='#profile-qr' data-action='show')._uppercase._border_standart.js-toggle-popup QR Code
+                                +col(4)
+                                    +button()(href='#')._uppercase._border_standart Save as PDF
+                    +e.sidebar
+                        +profile-card I'm working now!
+                        +e.short-info
+                            +short-info
+                                +short-info-heading Profile ID
+                                +short-info-content
+                                    +short-info-text 8715552
+                            +short-info
+                                +short-info-heading page views
+                                +short-info-content
+                                    +short-info-text 14,485 <span>(Since 01.11.12)</span>
+                            +short-info
+                                +short-info-heading Hand verified
+                                +short-info-content
+                                    +short-info-text 22.08.2015
+                            +short-info
+                                +short-info-heading last modified
+                                +short-info-content
+                                    +short-info-text 03.09.2015
+
+                +e.row._left_padding
+                    +recommended-slider
+
+                +e.row
+                    //- +reviews
+                    //- +reviews-rate
+                    //- +reviews-rate-no-login
+                    +reviews-feedbacks
