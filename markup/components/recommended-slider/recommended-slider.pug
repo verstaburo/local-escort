@@ -1,10 +1,19 @@
 include ../model-preview/model-preview
 include ../heading/heading
+include ../grid/grid
 
 mixin recommended-slider()
     +b.recommended-slider&attributes(attributes)
         +heading Recommended
 
+        // mobile items
+        +grid
+            +col(12)
+                +model-preview([10, 10], 'Anna', 22, 390)
+            +col(12)
+                +model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325)
+
+        // > mobile res
         +e.items.swiper-container
             .swiper-wrapper
                 - for (var i = 0; i < 6; i++)
@@ -13,4 +22,7 @@ mixin recommended-slider()
                     +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390).swiper-slide
 
             +e.button._prev
+                != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
             +e.button._next
+                != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
+

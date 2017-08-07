@@ -5,17 +5,31 @@
         margin-left: 31px
         margin-right: 31px
 
+        .item
+            height: auto
+
+    .grid
+        +above(769px)
+            display: none
+
+        .model-preview
+            margin-left: auto
+            margin-right: auto
+
     &__items
         position: relative
         margin-top: 58px
 
         +below(768px)
-            margin-top: 33px
+            display: none
 
     &__button
         position: absolute
         top: 45%
         transform: translateY(-50%)
+        display: flex
+        align-items: center
+        justify-content: center
         width: 40px
         height: 40px
         border-radius: 50%
@@ -25,15 +39,15 @@
         opacity: 1
         transition(opacity)
 
-        +below(768px)
-            display: none
-
         &.swiper-button-disabled
             opacity: 0
             pointer-events: none
 
         &_prev
             left: 50px
+
+            svg
+                transform: rotate(180deg)
 
         &_next
             right: 50px

@@ -21,12 +21,20 @@ export default () => {
 
     recommendedSliderInit();
 
+    $(window).on('resize', recommendedSliderInit);
+
     if (popup.length) {
         popup.on('aftershow', function() {
             $(this)
                 .find('.recommended-slider__items')
                 .each(function() {
-                    $(this)[0].swiper.update();
+                    const el = $(this);
+
+                    if (!el[0].swiper) {
+                        return;
+                    }
+
+                    el[0].swiper.update();
                 })
         });
     }
