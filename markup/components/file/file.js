@@ -7,7 +7,7 @@ export default function fileUpload() {
        }
 
        const fileNames = [...control[0].files].map(file => file.name).join(', ');
-       const text = control.parent().find('.file__text');
+       const text = control.parent().find('.file__text span');
 
        if (!!fileNames) {
            text.text(fileNames);

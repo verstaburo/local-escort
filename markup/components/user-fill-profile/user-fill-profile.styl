@@ -2,6 +2,12 @@
     display: block
     padding-bottom: 54px
 
+    +below(1300px)
+        padding-top: 30px
+
+    +below(768px)
+        padding-top: 0
+
     .heading
         margin-top: 47px
 
@@ -12,12 +18,25 @@
         display: flex
         margin-top: 46px
 
+        +below(1023px)
+            flex-direction: column
+
     &__main
         flex: 1
         margin-right: 24px
 
+        +below(1023px)
+            flex: 0
+            width: 100%
+            margin-right: 0
+            order: 2
+
     &__sidebar
         width: 258px
+
+        +below(1023px)
+            width: 100%
+            margin-bottom: 24px
 
     &__masonry-item:not(:last-child)
         margin-bottom: 24px
@@ -110,3 +129,7 @@
         .accordion__button
             padding-left: 30px
             padding-right: 30px
+
+    .grid__col
+        +below(768px)
+            width: 100%

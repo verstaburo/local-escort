@@ -1,7 +1,8 @@
 mixin file(placeholder, name, accept, showFiles)
     +b.LABEL.file&attributes(attributes)
         - var placeholder = placeholder || 'Select the file or drag and drop them here'
-        +e.text(data-placeholder=placeholder)=placeholder
+        +e.text(data-placeholder=placeholder)
+            span=placeholder
         +e.INPUT(type='file' name=name||'file' accept=accept data-show-files=!!showFiles+'').control
         +e.button
             != pugHelpers.Icon.call(locals, {iconName: 'plus', className: 'file__icon', iconWidth: '14', iconHeight: '14'})
@@ -13,7 +14,8 @@ mixin file-column(placeholder, name, accept, showFiles, heading, description)
 
         +e.content
             +e.heading=heading
-            +e.text(data-placeholder=placeholder)=placeholder
+            +e.text(data-placeholder=placeholder)
+                span=placeholder
             +e.description=description
 
         +e.button
