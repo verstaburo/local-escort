@@ -6,9 +6,11 @@ include ../components/arrow-up/arrow-up
 include ../components/filter/filter
 include ../components/popup-welcome/popup-welcome
 include ../components/select-city-popup/select-city-popup
+include ../components/user-nav/user-nav
 
 block header
     +header
+        +user-nav-model(1)
 
 block content
     +user-fill-profile(7)

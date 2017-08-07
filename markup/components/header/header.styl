@@ -4,6 +4,7 @@
     width: 100%
     position: relative
     z-index: 200
+    background-color: bgColor
 
     .show-fixed
         display: none
@@ -20,6 +21,10 @@
 
         &:not(.no-shadow)
             box-shadow: 0 10px 40px rgba(29, 29, 29, .1)
+
+        & ^[0]__user-nav
+            border-top: 1px solid borderColor
+            border-bottom 0
 
         .photo-tape
             z-index: 200
@@ -130,3 +135,14 @@
 
             &_mobile
                 display: block
+
+    &__user-nav
+        order: 3
+        border-bottom: 1px solid borderColor
+
+        +below(1024px)
+            .container
+                padding: 0
+
+        +below(768px)
+            display: none

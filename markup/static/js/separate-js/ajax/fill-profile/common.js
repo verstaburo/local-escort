@@ -11,21 +11,19 @@ $(function() {
             url: link.attr('href'),
             type: 'GET',
             success: function(data) {
-                setTimeout(function () { // emulate server delay
-                    $('.user-fill-profile__main').replaceWith(data);
+                $('.user-fill-profile__main').replaceWith(data);
 
-                    // if there's masonry grid, then rebuild it
-                    if ($('.user-fill-profile__main').find('.js-masonry').length) {
-                        rebuildGrd();
-                    }
+                // if there's masonry grid, then rebuild it
+                if ($('.user-fill-profile__main').find('.js-masonry').length) {
+                    rebuildGrd();
+                }
 
-                    // change active menu item
-                    link
-                        .parents('.fill-profile-nav__item')
-                        .addClass('active')
-                        .siblings()
-                        .removeClass('active')
-                }, 500);
+                // change active menu item
+                link
+                    .parents('.fill-profile-nav__item')
+                    .addClass('active')
+                    .siblings()
+                    .removeClass('active');
             }
         });
     });

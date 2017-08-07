@@ -136,6 +136,12 @@ mixin header(dark)
                 //            != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
                 //        +navbar-col
                 //            +navbar-description._dark._solo login
+
+        if block
+            +e.user-nav
+                +container
+                    block
+
         // MOBILE NAVBAR
         +e.NAV.navbar_mobile
             +navbar(class=!!dark ? '_dark' : '')

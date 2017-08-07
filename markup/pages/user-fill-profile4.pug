@@ -7,9 +7,11 @@ include ../components/filter/filter
 include ../components/popup-welcome/popup-welcome
 include ../components/select-city-popup/select-city-popup
 include ../components/map/map
+include ../components/user-nav/user-nav
 
 block header
     +header
+        +user-nav-model(1)
 
 block content
     +user-fill-profile(4)
