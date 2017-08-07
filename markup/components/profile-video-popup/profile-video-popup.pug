@@ -2,6 +2,7 @@ include ../popup/popup
 include ../youtube-video/youtube-video
 
 mixin profile-video-popup()
-    +popup#profile-video
+    +popup.popup_wrapper_100#profile-video
         +b.profile-video-popup&attributes(attributes)
             +youtube-video(src='https://www.youtube.com/embed/XiQ0WCIIn3Q')
+            +popup-close

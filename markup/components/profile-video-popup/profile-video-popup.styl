@@ -1,3 +1,29 @@
 .profile-video-popup
+    position: relative
+    align-self: center
     display: block
-    min-width: 915px
+    max-width: 915px
+    width: 100%
+
+    .popup__close
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translate(100%, -50%)
+        display: flex
+        background-color: transparent
+        cursor: pointer
+
+        +below(1024px)
+            display: block
+            width: 100%
+            top: 0
+            left: 0
+            height: 30%
+            background-image linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5))
+            transform: translate(0, 0)
+
+        &-icon
+            position: absolute
+            top: 21px
+            right: 21px
