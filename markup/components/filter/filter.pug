@@ -21,25 +21,25 @@ mixin filter()
                         option(value='item3') item 3
 
             +e.col
-                +range-slider
+                +range-slider(18, 48, 18, 48)
                     +range-slider-fields
                         +range-slider-field
-                            +range-slider-input(type='hidden' name='age-min')._min
+                            +range-slider-input(type='hidden' name='age-min')
                             +range-slider-text y.o
                         +range-slider-field
-                            +range-slider-input(type='hidden' name='age-max')._max
+                            +range-slider-input(type='hidden' name='age-max')
                             +range-slider-text y.o
-                    +range-slider-control.js-filter-age
+                    +range-slider-control
             +e.col
-                +range-slider
+                +range-slider(135, 195, 135, 195)
                     +range-slider-fields
                         +range-slider-field
-                            +range-slider-input(type='hidden' name='cost-min')._min
+                            +range-slider-input(type='hidden' name='cost-min')
                             +range-slider-text $
                         +range-slider-field
-                            +range-slider-input(type='hidden' name='cost-max')._max
+                            +range-slider-input(type='hidden' name='cost-max')
                             +range-slider-text $
-                    +range-slider-control.js-filter-rate
+                    +range-slider-control
 
             +e.col
                 +selectbox('Incall/Outcall')
@@ -107,27 +107,27 @@ mixin filter-additional()
                     +col(3)
                         +field
                             +field-label._grey Breast size
-                            +range-slider._dark
+                            +range-slider(32, 40, 32, 40)._dark
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='breast-min')._min
+                                        +range-slider-input(type='hidden' name='breast-min')
                                         +range-slider-text A
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='breast-max')._max
+                                        +range-slider-input(type='hidden' name='breast-max')
                                         +range-slider-text FF
-                                +range-slider-control.js-filter-breast
+                                +range-slider-control
                     +col(3)
                         +field
                             +field-label._grey Shoe size
-                            +range-slider._dark
+                            +range-slider(34, 45, 34, 45)._dark
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='shoe-min')._min
+                                        +range-slider-input(type='hidden' name='shoe-min')
                                         +range-slider-text
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='shoe-max')._max
+                                        +range-slider-input(type='hidden' name='shoe-max')
                                         +range-slider-text
-                                +range-slider-control.js-filter-shoe
+                                +range-slider-control
             +e.row
                 +grid
                     +col(12)
@@ -327,27 +327,27 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Age
-                            +range-slider(class=RangeModifier)
+                            +range-slider(18, 48, 18, 48)(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='age-min')._min
+                                        +range-slider-input(type='hidden' name='age-min')
                                         +range-slider-text
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='age-max')._max
+                                        +range-slider-input(type='hidden' name='age-max')
                                         +range-slider-text
-                                +range-slider-control.js-filter-age
+                                +range-slider-control
                     +col(3)
                         +field
                             +field-label Rate per hour
-                            +range-slider(class=RangeModifier)
+                            +range-slider(135, 195, 135, 195)(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='cost-min')._min
+                                        +range-slider-input(type='hidden' name='cost-min')
                                         +range-slider-text
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='cost-max')._max
+                                        +range-slider-input(type='hidden' name='cost-max')
                                         +range-slider-text
-                                +range-slider-control.js-filter-rate
+                                +range-slider-control
                     +col(3)
                         +field
                             +field-label Availability
@@ -371,29 +371,29 @@ mixin filter-extended(dark)
                             +field-label
                                 | Height
                                 +selectbox('cm')._small
-                            +range-slider(class=RangeModifier)
+                            +range-slider(135, 195, 135, 195)(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='height-min')._min
+                                        +range-slider-input(type='hidden' name='height-min')
                                         +range-slider-text
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='height-max')._max
+                                        +range-slider-input(type='hidden' name='height-max')
                                         +range-slider-text
-                                +range-slider-control.js-filter-height
+                                +range-slider-control
                     +col(3)
                         +field
                             +field-label
                                 | Weight
                                 +selectbox('kg')._small
-                            +range-slider(class=RangeModifier)
+                            +range-slider(40, 200, 40, 200)(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='weight-min')._min
+                                        +range-slider-input(type='hidden' name='weight-min')
                                         +range-slider-text
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='weight-max')._max
+                                        +range-slider-input(type='hidden' name='weight-max')
                                         +range-slider-text
-                                +range-slider-control.js-filter-weight
+                                +range-slider-control
                     +col(3)
                         +field
                             +field-label Ethnicity

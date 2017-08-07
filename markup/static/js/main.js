@@ -30,11 +30,13 @@ import authPopup from '../../components/auth-popup/auth-popup';
 import modelInfoPopup from '../../components/model-info-popup/model-info-popup';
 import textarea from '../../components/textarea/textarea';
 import captcha from "../../components/captcha/captcha";
+import rangeSlider from '../../components/range-slider/range-slider';
 
 $(() => {
     svg4everybody();
     objectFitImages();
     header();
+    rangeSlider();
     textarea();
     photoTape();
     modelInfoPopup();
