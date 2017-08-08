@@ -14,12 +14,13 @@ mixin recommended-slider()
                 +model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325)
 
         // > mobile res
-        +e.items.swiper-container
-            .swiper-wrapper
-                - for (var i = 0; i < 6; i++)
-                    +model-preview([10, 10], 'Anna', 22, 390).swiper-slide
-                    +model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325).swiper-slide
-                    +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390).swiper-slide
+        +e.items
+            .swiper-container.js-recommended-slider
+                .swiper-wrapper
+                    - for (var i = 0; i < 6; i++)
+                        +model-preview([10, 10], 'Anna', 22, 390).swiper-slide
+                        +model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325).swiper-slide
+                        +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390).swiper-slide
 
             +e.button._prev
                 != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 14, iconHeight: 7})

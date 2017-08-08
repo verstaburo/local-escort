@@ -17,20 +17,20 @@ include ../button/button
 mixin user-profile(isPopup)
     +b.user-profile&attributes(attributes)
         +container
-            +grid.grid_items_center.user-profile__header
-                +col(5)
-                    +heading My profile
+            unless isPopup
+                +grid.grid_items_center.user-profile__header
+                    +col(5)
+                        +heading My profile
 
-                +col(2)
-                    +short-info
-                        +short-info-heading._md Your profile is at the
-                        +short-info-content
-                            +short-info-text._md 2741 place
-                +col(3)
-                    +button()(href='#')._uppercase._bg_darkGrey._color_white Boost my account
-                +col(2)
-                    +button()(href='#')._uppercase._border_standart Edit profile
-
+                    +col(2)
+                        +short-info
+                            +short-info-heading._md Your profile is at the
+                            +short-info-content
+                                +short-info-text._md 2741 place
+                    +col(3)
+                        +button()(href='#')._uppercase._bg_darkGrey._color_white Boost my account
+                    +col(2)
+                        +button()(href='#')._uppercase._border_standart Edit profile
 
             +e.container
                 +e.main
@@ -80,7 +80,4 @@ mixin user-profile(isPopup)
                     +recommended-slider
 
                 +e.row
-                    //- +reviews
-                    //- +reviews-rate
-                    //- +reviews-rate-no-login
-                    +reviews-feedbacks
+                    block

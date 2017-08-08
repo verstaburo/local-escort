@@ -12,67 +12,21 @@ include ../model-preview/model-preview
 include ../recommended-slider/recommended-slider
 include ../reviews/reviews
 include ../heading/heading
+include ../user-profile/user-profile
 
 mixin profile-popup()
     +popup.popup_start#profile-popup
-        +b.profile-popup-button._prev
-            +e.icon-container
-                != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
-        +b.profile-popup-button._next
-            +e.icon-container
-                != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
+        +b.profile-popup
+            +e.button._prev
+                +e.icon-container
+                    != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
+            +e.button._next
+                +e.icon-container
+                    != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
 
-        +container.swiper-container
-            .swiper-wrapper
-                - for (var i = 0; i < 4; i++)
-                    +b.profile-popup.swiper-slide
-                        +e.main
-                            +e.content
-                                +model-photos
-                                +e.row
-                                    +agency-info
-                                +e.row
-                                    +model-info
-                                +e.row
-                                    +profile-contacts
-                                +e.row._agencies
-                                    +heading Agencies
-                                    //- TODO responsive
-                                    +agency-card-new
-                                +e.row
-                                    +share
-                                +e.row
-                                    +grid
-                                        +col(4)
-                                            +button()(data-popup-id='#profile-report' data-action='show')._uppercase._border_standart.js-toggle-popup Report
-                                        +col(4)
-                                            +button()(data-popup-id='#profile-qr' data-action='show')._uppercase._border_standart.js-toggle-popup QR Code
-                                        +col(4)
-                                            +button()(href='#')._uppercase._border_standart Save as PDF
-                            +e.ASIDE.sidebar
-                                +profile-card I'm working now!
-                                +e.short-info
-                                    +short-info
-                                        +short-info-heading Profile ID
-                                        +short-info-content
-                                            +short-info-text 8715552
-                                    +short-info
-                                        +short-info-heading page views
-                                        +short-info-content
-                                            +short-info-text 14,485 <span>(Since 01.11.12)</span>
-                                    +short-info
-                                        +short-info-heading Hand verified
-                                        +short-info-content
-                                            +short-info-text 22.08.2015
-                                    +short-info
-                                        +short-info-heading last modified
-                                        +short-info-content
-                                            +short-info-text 03.09.2015
-                        +e.row._left_padding
-                            +recommended-slider
-
-                        +e.row
-                            //- +reviews
-                            //- +reviews-rate
-                            //- +reviews-rate-no-login
-                            +reviews-feedbacks
+            +container
+                .js-profile-popup.swiper-container
+                    .swiper-wrapper
+                        - for (var i = 0; i < 4; i++)
+                            +user-profile(true).swiper-slide
+                                +reviews

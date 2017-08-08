@@ -57,7 +57,13 @@ export default function modelPreview() {
     }
 
     block.each(function() {
-        $(this).swiper(settings);
+        const el = $(this);
+
+        el.swiper(settings);
+
+        el.parents('.popup').on('aftershow', function() {
+           el[0].swiper.update();
+        });
     });
 
     // grid

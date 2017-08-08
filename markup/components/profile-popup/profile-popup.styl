@@ -1,45 +1,19 @@
 .profile-popup
     display: block
-    background-color bgColor
-    padding-bottom: 58px
     box-sizing: border-box
 
-    &__main
-        display: flex
+    .user-profile
+        max-width: 100vw
 
-    &__content
-        display: block
-        flex: 1
+        .container
+            width: 100%
+            padding: 0
 
-    &__sidebar
-        display: flex
-        flex-direction: column
-        width: 316px
-        padding-bottom: 57px
-        background-color: #fff
+        &__container
+            margin-top: 0
+            border: 0
 
-    &__short-info
-        margin-top: auto
-        padding-top: 30px
-        padding-left: 55px
-        padding-right: 55px
-
-        .short-info:not(:last-child)
-            margin-bottom: 21px
-
-    &__row
-        margin-top: 50px
-        width: 100%
-        padding: 0 58px
-
-        &_left_padding
-            padding-right: 0
-
-        &_agencies
-            margin-left: 31px
-            margin-right: 31px
-
-    &-button
+    &__button
         position: fixed
         display: block
         width: 156px
@@ -52,13 +26,6 @@
 
         +below(1300px)
             display: none
-
-        &__icon-container
-            display: flex
-            justify-content: center
-            align-items: center
-            width: 50%
-            height: 100%
 
         svg
             fill: rgba(#fff, .4)
@@ -83,6 +50,9 @@
             svg
                 transform: rotate(-90deg)
 
+            & ^[0]__icon-container
+                margin-left: auto
+
         &_next
             right: 0
             transform: translate3d(50%, -50%, 0)
@@ -95,3 +65,10 @@
 
             svg
                 transform: rotate(90deg)
+
+    &__icon-container
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 50%
+        height: 100%

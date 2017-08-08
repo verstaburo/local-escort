@@ -7,19 +7,17 @@ export default function profilePopup() {
         return;
     }
 
-    const sliderContainer = popup.find('.swiper-container');
-
-    const slider = new Swiper(sliderContainer, {
+    const slider = new Swiper('.js-profile-popup', {
         slidesPerView: 1,
-        prevButton: '.profile-popup-button_prev',
-        nextButton: '.profile-popup-button_next',
+        prevButton: '.profile-popup__button_prev',
+        nextButton: '.profile-popup__button_next',
         touchRatio: 0,
     });
 
     popup.on('aftershow', function() {
-       $(this).find('.swiper-container')[0].swiper.update();
-
         const map = document.querySelector('.contacts-card__block_map');
+
+        slider.update();
 
         if (map && google) {
             google.maps.event.trigger(map, 'resize');

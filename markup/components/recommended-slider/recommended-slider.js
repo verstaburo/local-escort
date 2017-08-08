@@ -1,14 +1,29 @@
 import Swiper from 'swiper';
 
-function recommendedSliderInit() {
-    const block = $('.recommended-slider');
-    const items = block.find('.recommended-slider__items');
+function recommendedSliderInit(element) {
+    let block = null;
+
+    if (element && element.length) {
+        block = element.find('.recommended-slider');
+    } else {
+        block = $('.recommended-slider');
+    }
+
+    const items = block.find('.js-recommended-slider');
 
     if (!block.length || !items.length) {
         return;
     }
 
-    const slider = new Swiper(items, {
+    if (recommendedSliderInit.slider) {
+        if (Array.isArray(recommendedSliderInit.slider)) {
+            recommendedSliderInit.slider.forEach(slider => slider.destroy())
+        } else {
+            recommendedSliderInit.slider.destroy();
+        }
+    }
+
+    recommendedSliderInit.slider = new Swiper(items, {
         slidesPerView: 'auto',
         spaceBetween: 24,
         prevButton: '.recommended-slider__button_prev',
@@ -21,21 +36,7 @@ export default () => {
 
     recommendedSliderInit();
 
-    $(window).on('resize', recommendedSliderInit);
-
-    if (popup.length) {
-        popup.on('aftershow', function() {
-            $(this)
-                .find('.recommended-slider__items')
-                .each(function() {
-                    const el = $(this);
-
-                    if (!el[0].swiper) {
-                        return;
-                    }
-
-                    el[0].swiper.update();
-                })
-        });
-    }
+    popup.on('aftershow', function() {
+        recommendedSliderInit($(this));
+    });
 };

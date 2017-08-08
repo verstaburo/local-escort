@@ -11,6 +11,8 @@ include ../components/profile-common-popup/profile-common-popup
 include ../components/profile-video-popup/profile-video-popup
 include ../components/profile-photo-popup/profile-photo-popup
 include ../components/map/map
+include ../components/reviews/reviews
+
 
 block header
     +header
@@ -18,6 +20,8 @@ block header
 
 block content
     +user-profile
+        +reviews
+        //-+reviews-rate-no-login
     +arrow-up
 
 block popups
@@ -31,8 +35,8 @@ block popups
     +profile-photo-popup
 
 block scripts
-    +map-scripts
     script(src='%=static=%js/separate-js/maps/profile-contacts.js')
+    +map-scripts
 
 block footer
     +footer
