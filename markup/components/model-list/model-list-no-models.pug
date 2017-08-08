@@ -22,14 +22,14 @@ mixin model-list()
                     +sort-ui
                 +e.header-col.hide-mob
                     +button.A(href='#')._color_white._bg_darkGrey._uppercase.__control View on map
-            +e.SECTION.not-found
+            +e.not-found
                 +e.not-found-content
                     +e.not-found-picture
                         != pugHelpers.Icon.call(locals, {iconName: 'leg', className: 'model-list__not-found-icon', iconWidth: '32', iconHeight: '60'})
                     +e.H2.not-found-title Models not found
                     +e.P.not-found-description Unfortunately, the models on specified criteria was not found. Try changing the settings
 
-            +e.H2.heading._margin You may be interested in
+            +heading You may be interested in
 
             +grid-masonry(4, '.model-preview').js-model-preview-grid
                 +model-preview([7, 7, 7], 'Sonya', 20, 325, true)
