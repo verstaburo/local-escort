@@ -14,8 +14,8 @@ function recommendedSliderInit() {
         new Swiper(el, {
             slidesPerView: 'auto',
             spaceBetween: 24,
-            prevButton: block.find('.recommended-slider__button_prev'),
-            nextButton: block.find('.recommended-slider__button_next'),
+            prevButton: el.parents('.recommended-slider').find('.recommended-slider__button_prev'),
+            nextButton: el.parents('.recommended-slider').find('.recommended-slider__button_next'),
         });
     });
 }
