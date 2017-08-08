@@ -42,13 +42,13 @@ function toggleBreakInfo() {
 
 export default function modelPreview() {
 
-    const settings = {
+    const getSettings = el => ({
         slidesPerView: 1,
         touchRatio: 0,
-        prevButton: '.model-preview__button_prev',
-        nextButton: '.model-preview__button_next',
-        pagination: '.model-preview__pagination',
-    };
+        prevButton: el.find('.model-preview__button_prev'),
+        nextButton: el.find('.model-preview__button_next'),
+        pagination: el.find('.model-preview__pagination'),
+    });
 
     const block = $('.model-preview__slider');
 
@@ -59,14 +59,13 @@ export default function modelPreview() {
     block.each(function() {
         const el = $(this);
 
-        el.swiper(settings);
+        new Swiper($(this), getSettings($(this).parents('.model-preview')))
 
         el.parents('.popup').on('aftershow', function() {
            el[0].swiper.update();
         });
     });
 
-    // grid
     const grid = $('.js-model-preview-grid');
 
     if (!grid.length) {
@@ -80,7 +79,7 @@ export default function modelPreview() {
             .addClass('model-preview_masonry');
 
         grid.find('.model-preview__slider').each(function() {
-            $(this).swiper(settings);
+            new Swiper($(this), getSettings($(this).parents('.model-preview')))
         });
 
         toggleBreakInfo();

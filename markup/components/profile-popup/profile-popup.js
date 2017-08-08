@@ -7,20 +7,27 @@ export default function profilePopup() {
         return;
     }
 
+    const reInitMap = function() {
+        const map = $('.contacts-card__block_map');
+
+        if (map.length && google) {
+            map.each(function() {
+                google.maps.event.trigger($(this)[0], 'resize');
+            });
+        }
+    };
+
     const slider = new Swiper('.js-profile-popup', {
         slidesPerView: 1,
         prevButton: '.profile-popup__button_prev',
         nextButton: '.profile-popup__button_next',
         touchRatio: 0,
+        onSlideChangeStart: reInitMap,
     });
 
-    popup.on('aftershow', function() {
-        const map = document.querySelector('.contacts-card__block_map');
 
+    popup.on('aftershow', () => {
         slider.update();
-
-        if (map && google) {
-            google.maps.event.trigger(map, 'resize');
-        }
-    })
+        reInitMap();
+    });
 };
