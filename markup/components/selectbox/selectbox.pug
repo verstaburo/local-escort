@@ -1,8 +1,7 @@
-mixin selectbox(initialValue)
+mixin selectbox()
     +b.selectbox&attributes(attributes)
-        //- TODO initialValue ДЛЯ ЗАГЛУШКИ
         +e.box
-            +e.SPAN.value= initialValue
+            +e.SPAN.value
         != pugHelpers.Icon.call(locals, {iconName: 'arrow-sl', className: 'selectbox__arrow', iconWidth: '8', iconHeight: '8'})
         block
 
@@ -16,4 +15,6 @@ mixin selectbox-list
 
 mixin selectbox-list-item
     +e.LI.item&attributes(attributes)
-        block
+        span
+            block
+        != pugHelpers.Icon.call(locals, {iconName: 'ok', iconWidth: '12', iconHeight: '9'})

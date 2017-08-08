@@ -31,10 +31,12 @@ import modelInfoPopup from '../../components/model-info-popup/model-info-popup';
 import textarea from '../../components/textarea/textarea';
 import captcha from "../../components/captcha/captcha";
 import rangeSlider from '../../components/range-slider/range-slider';
+import selectbox from "../../components/selectbox/selectbox";
 
 $(() => {
     svg4everybody();
     objectFitImages();
+    selectbox();
     header();
     rangeSlider();
     textarea();

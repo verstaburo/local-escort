@@ -59,28 +59,59 @@
     &__list
         position: absolute
         top: 100%
-        min-width: 100%
+        width: 258px
         left: 0
-        display: block
+        display: none
         margin-top: 13px
         box-shadow 0 10px 40px rgba(29, 29, 29, .1)
-        z-index: 2
+        z-index: 100
+
+        &_dropdown
+            border-left: 1px solid rgba(#efefef, .06)
+            top: 0
+            left: 100%
+            margin-top: 0
+            margin-left: -1px
+            opacity: 0
+            pointer-events: none
+            transition(opacity)
 
     &__item
         display: flex
         align-items: center
+        justify-content: space-between
         padding: 0 20px;
         height: 60px
         color: #fff
-        line-height: 1.375;
+        line-height: 1.375
         letter-spacing: initial
         background-color darkGreyColor
         cursor: pointer
         transition(background-color, color)
+        font-size: 16px
+
+        svg
+            opacity: 0
+            width: 12px
+            height: 9px
+            fill: #fff
+            transition(opacity)
 
         &:hover
+            & ^[0]__list_dropdown
+                opacity: 1
+                pointer-events: all
+
+        &:hover:not(.selectbox__item_active)
             background-color #212223
             color: mainColor
+
+        &_active
+            background-color: mainColor
+            color: #fff
+
+            svg
+                opacity 1
 
     &_small
         display: flex
