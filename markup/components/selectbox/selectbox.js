@@ -91,6 +91,14 @@ export default function selectbox() {
         generateList($(this));
     });
 
+    const deactivateAll = function() {
+        $(document)
+            .find(`.${CONTAINER}`)
+            .removeClass(ACTIVE)
+            .find(`.${LIST}`)
+            .slideUp(DURATION);
+    };
+
     const onSelectboxClick = function(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -98,6 +106,8 @@ export default function selectbox() {
         const selectbox = $(this);
         const list = selectbox.find(`.${LIST}`);
         const isActive = selectbox.hasClass(ACTIVE);
+
+        deactivateAll();
 
         if (isActive) {
             list.slideUp(DURATION, () => {
@@ -152,11 +162,5 @@ export default function selectbox() {
     $(document)
         .on('click', `.${CONTAINER}`, onSelectboxClick)
         .on('click', `.${LIST_ITEM}`, onListItemClick)
-        .on('click', function() {
-            $(this)
-                .find(`.${CONTAINER}`)
-                .removeClass(ACTIVE)
-                .find(`.${LIST}`)
-                .slideUp(DURATION);
-        });
+        .on('click', deactivateAll);
 }
