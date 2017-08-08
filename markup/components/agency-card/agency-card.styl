@@ -123,6 +123,9 @@
         &:not(:last-child)
             border-bottom: 1px solid borderColor
 
+            +below(768px)
+                border-bottom: 0
+
         &_top
             position: relative
             padding-top: 56px
@@ -170,6 +173,9 @@
     &__rating
         margin-left: auto
 
+        +below(768px)
+            background-color: #fff
+
         .rating__value
             margin-left: 14px
 
@@ -197,3 +203,5 @@
         +below(768px)
             width: 100%
             line-height: 3.625
+            background-color: #fff
+            border-top: 1px solid borderColor

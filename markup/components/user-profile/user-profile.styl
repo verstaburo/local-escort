@@ -4,8 +4,16 @@
     padding-bottom: 58px
     box-sizing: border-box
 
+    & > .container
+        +below(768px)
+            padding: 0
+
     &__header
         margin-top: 8px
+
+        +below(768px)
+            padding-left: 31px
+            padding-right: 31px
 
         .grid__col:first-child
             +below(1134px)
@@ -15,16 +23,30 @@
             .grid__col:not(:first-child)
                 width: (100/3)%
 
+                +below(768px)
+                    width: 100%
+
     &__container
         margin-top: 32px
         border: 1px solid borderColor
 
+        +below(768px)
+            border: 0
+
     &__main
         display: flex
+
+        +below(1023px)
+            flex-direction: column
 
     &__content
         display: block
         flex: 1
+
+        +below(1023px)
+            width: 100%
+            flex: initial
+            order: 2
 
     &__sidebar
         display: flex
@@ -33,15 +55,29 @@
         padding-bottom: 57px
         background-color: #fff
 
+        +below(1023px)
+            width: 100%
+            order: 1
+
     &__short-info
         margin-top: auto
         padding-top: 30px
         padding-left: 55px
         padding-right: 55px
 
+        +below(768px)
+            padding-left 40px
+            padding-right: 40px
+
+        +between(660px, 1023px)
+            display: flex
+
         .short-info:not(:last-child)
             margin-bottom: 21px
 
+            +between(660px, 1023px)
+                margin-bottom: 0
+                margin-right: 24px
     &__row
         width: 100%
 
@@ -50,10 +86,24 @@
             padding-left: 58px
             padding-right: 58px
 
+            +below(768px)
+                padding-left: 0
+                padding-right: 0
+
         &_left_padding
             padding-right: 0
 
         &_agencies
-
             & > .heading
                 margin-bottom: 45px
+
+        &_mob_padding
+            +below(768px)
+                &:not(:first-child)
+                    padding-left: 31px
+                    padding-right: 31px
+
+        & > .grid
+            +below(700px)
+                .grid__col
+                    width: 100%
