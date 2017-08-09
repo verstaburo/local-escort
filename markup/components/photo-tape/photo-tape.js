@@ -6,6 +6,8 @@ function togglePopup() {
     block.find('.photo-tape__item').off('hover');
     block.off('click');
 
+    let timer = null;
+
     if (!!('ontouchstart' in window)) {
         block.on('click', '.photo-tape__link', function(e) {
             console.log('click');
@@ -24,9 +26,13 @@ function togglePopup() {
     } else {
         block.find('.photo-tape__item').hover(
             function() {
-                $(this).find('.model-info-popup').fadeIn();
+                const item = $(this).find('.model-info-popup');
+                timer = setTimeout(() => {
+                    item.fadeIn();
+                }, 200);
             },
             function() {
+                clearTimeout(timer);
                 $(this).find('.model-info-popup').fadeOut();
             }
         );
