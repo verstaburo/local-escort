@@ -921,7 +921,7 @@ mixin user-fill-profile-9
         .user-fill-profile__section
             +heading._md Verification
 
-            +grid
+            +grid.js-user-fill-profile-picture-container
                 +col(12)
                     span.user-fill-profile__label Picture 1
                     span.user-fill-profile__label Explanation for the picture 1
@@ -931,9 +931,10 @@ mixin user-fill-profile-9
                 +col(8)
                     +textarea Details here
 
+            +grid
                 +col(12)
-                    +accordion.accordion_dark
-                        +accordion-item('Add one more picture')
+                    +accordion(false, true).accordion_dark
+                        +accordion-item('Add one more picture').js-user-fill-profile-add-more-picture
 
         .user-fill-profile__section
             +heading._md Video for Porn Star status
