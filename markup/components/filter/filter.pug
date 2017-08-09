@@ -13,7 +13,7 @@ mixin filter()
     +b.FORM(method='POST' action='#').filter&attributes(attributes)
         +container.filter__container
             +e.col
-                +selectbox('Escort')
+                +selectbox
                     +selectbox-control(name='escorts')
                         option(value='escorts') escorts
                         option(value='item1') item 1
@@ -42,7 +42,7 @@ mixin filter()
                     +range-slider-control
 
             +e.col
-                +selectbox('Incall/Outcall')
+                +selectbox
                     +selectbox-control(name='escorts')
                         option(value='escorts') escorts
                         option(value='item1') item 1
@@ -71,7 +71,7 @@ mixin filter-additional()
                     +col(3)
                         +field
                             +field-label._grey Nationality
-                            +selectbox('any')._deep-dark
+                            +selectbox._deep-dark
                                 +selectbox-control(name='nationality')
                                     option(value='any') any
                                     option(value='item1') item 1
@@ -80,16 +80,16 @@ mixin filter-additional()
                     +col(3)
                         +field
                             +field-label._grey Language
-                            +selectbox('any')._deep-dark
+                            +selectbox._deep-dark
                                 +selectbox-control(name='language')
                                     option(value='any') any
                                     option(value='item1') item 1
                                     option(value='item2') item 2
-                                option(value='item3') item 3
+                                    option(value='item3') item 3
                     +col(3)
                         +field
                             +field-label._grey Hair color
-                            +selectbox('any')._deep-dark
+                            +selectbox._deep-dark
                                 +selectbox-control(name='hair_color')
                                     option(value='any') any
                                     option(value='item1') item 1
@@ -98,7 +98,7 @@ mixin filter-additional()
                     +col(3)
                         +field
                             +field-label._grey Eye color
-                            +selectbox('any')._deep-dark
+                            +selectbox._deep-dark
                                 +selectbox-control(name='eye_color')
                                     option(value='any') any
                                     option(value='item1') item 1
@@ -318,7 +318,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Categories
-                            +selectbox('Escorts')(class=SelectModifier)
+                            +selectbox(class=SelectModifier)
                                 +selectbox-control(name='escorts')
                                     option(value='escorts') escorts
                                     option(value='item1') item 1
@@ -351,7 +351,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Availability
-                            +selectbox('All')(class=SelectModifier)
+                            +selectbox(class=SelectModifier)
                                 +selectbox-control(name='availability')
                                     option(value='all') All
                                     option(value='item1') item 1
@@ -360,7 +360,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Orientation
-                            +selectbox('All')(class=SelectModifier)
+                            +selectbox(class=SelectModifier)
                                 +selectbox-control(name='orientation')
                                     option(value='all') All
                                     option(value='item1') item 1
@@ -370,7 +370,11 @@ mixin filter-extended(dark)
                         +field
                             +field-label
                                 | Height
-                                +selectbox('cm')._small
+                                +selectbox._small
+                                    +selectbox-control(name='height')
+                                        option(value='1') cm
+                                        option(value='2') in
+                                        option(value='3') ft
                             +range-slider(135, 195, 135, 195)(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
@@ -384,7 +388,10 @@ mixin filter-extended(dark)
                         +field
                             +field-label
                                 | Weight
-                                +selectbox('kg')._small
+                                +selectbox._small
+                                    +selectbox-control(name='weight')
+                                        option(value='1') kg
+                                        option(value='2') lb
                             +range-slider(40, 200, 40, 200)(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
@@ -397,7 +404,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Ethnicity
-                            +selectbox('All')(class=SelectModifier)
+                            +selectbox(class=SelectModifier)
                                 +selectbox-control(name='ethnicity')
                                     option(value='all') All
                                     option(value='item1') item 1

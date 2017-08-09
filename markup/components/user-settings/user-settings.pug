@@ -16,7 +16,7 @@ mixin user-settings()
                     +col(4)
                         +field
                             +field-label Nickname
-                            +selectbox('English')._default-text
+                            +field-input
                     +col(4)
                         +field
                             +field-label Email
@@ -24,7 +24,10 @@ mixin user-settings()
                     +col(4)
                         +field
                             +field-label Interface language
-                            +selectbox('english')
+                            +selectbox
+                                +selectbox-control(name='interface-lang')
+                                    option(value='eng') English
+                                    option(value='fr') French
                     +col(12)
                         +field.DIV
                             +field-label Avatar
@@ -53,7 +56,7 @@ mixin user-settings2()
                     +col(4)
                         +field
                             +field-label Nickname
-                            +selectbox('English')._default-text
+                            +field-input
                     +col(4)
                         +field
                             +field-label Email
@@ -61,7 +64,10 @@ mixin user-settings2()
                     +col(4)
                         +field
                             +field-label Interface language
-                            +selectbox('english')
+                            +selectbox
+                                +selectbox-control(name='interface-lang')
+                                    option(value='eng') English
+                                    option(value='fr') French
                     +col(12)
                         +field.DIV
                             +field-label Avatar

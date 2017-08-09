@@ -17,7 +17,14 @@ mixin model-list()
                     +heading(3).H1 All escorts
                 +e.header-col.hide-mob
                     +e.label Sort by
-                    +selectbox('Date').__control
+                    +selectbox.__control
+                        +selectbox-control(name='sory-by')
+                            optgroup(label='Date')
+                                option(value='date-newest') Newest first
+                                option(value='date-oldest') Oldest first
+                            option(value='distance') Distance
+                            option(value='Rating') Rating
+                            option(value='Price') Price
                 +e.header-col.hide-desktop
                     +sort-ui
                 +e.header-col.hide-mob

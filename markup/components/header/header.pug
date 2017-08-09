@@ -53,7 +53,14 @@ mixin header(dark)
                             != pugHelpers.Icon.call(locals, {iconName: 'filter-button', className: 'header__filter-icon', iconWidth: 21, iconHeight: 12})
 
                 +navbar-item.show-fixed
-                    +selectbox('Date').__control
+                    +selectbox.__control
+                        +selectbox-control(name='sory-by')
+                            optgroup(label='Date')
+                                option(value='date-newest') Newest first
+                                option(value='date-oldest') Oldest first
+                            option(value='distance') Distance
+                            option(value='Rating') Rating
+                            option(value='Price') Price
                 +navbar-item.show-fixed
                     +button(href='#')._color_white._bg_darkGrey._uppercase View on map
                 +navbar-item._dropdown._credits

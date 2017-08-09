@@ -24,7 +24,11 @@ mixin registration()
                 +col(4).hide-desktop
                     +field.registration__member
                         +field-label Member
-                        +selectbox('Regular member')
+                        +selectbox
+                            +selectbox-control
+                                option(value='1') Regular member
+                                option item #1
+                                option item #2
                 +col(4)
                     +field
                         +field-label Your name

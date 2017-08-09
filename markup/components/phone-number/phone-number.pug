@@ -13,7 +13,14 @@ mixin phone-number()
                 +col(2)
                     +field
                         +field-label Country code
-                        +selectbox('+1')
+                        +selectbox
+                            +selectbox-control
+                                option(value='1') +1
+                                option(value='2') +2
+                                option(value='3') +3
+                                option(value='4') +4
+                                option(value='5') +5
+                                option(value='6') +6
                 +col(4)
                     +field
                         +field-label Phone number
