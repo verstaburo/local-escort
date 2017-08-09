@@ -271,4 +271,8 @@ function initMap() {
     } else {
         $(myLocBtn).hide();
     }
+
+    $('#model-map').on('aftershow', function() {
+        google.maps.event.trigger(map, 'resize');
+    });
 }

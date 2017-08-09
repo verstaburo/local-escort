@@ -1,0 +1,7 @@
+include ../map/map
+include ../popup/popup
+
+mixin model-map()
+    +popup#model-map
+        +b.model-map&attributes(attributes)
+            +map
