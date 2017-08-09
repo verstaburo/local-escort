@@ -138,11 +138,11 @@ mixin header(dark)
                                 +navbar-link.DIV
                                     +follow-us
                 //+navbar-item
-                //    +navbar-link(href='#')._row
-                //        +navbar-col
-                //            != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
-                //        +navbar-col
-                //            +navbar-description._dark._solo login
+                    +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show').js-toggle-popup._row
+                        +navbar-col
+                            != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
+                        +navbar-col
+                            +navbar-description._dark._solo login
 
         if block
             +e.user-nav
@@ -170,8 +170,8 @@ mixin header(dark)
                         +navbar-badge._top_right 2
                         +avatar('navbar.png')._size_small
                 //+navbar-item
-                //    +navbar-link(href='#')
-                //        != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
+                    +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show').js-toggle-popup._row
+                        != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
 
         +e.search-bar
             +search-bar(class=!!dark ? '_dark' : '')._extended

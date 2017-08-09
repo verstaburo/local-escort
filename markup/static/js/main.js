@@ -32,6 +32,7 @@ import textarea from '../../components/textarea/textarea';
 import captcha from "../../components/captcha/captcha";
 import rangeSlider from '../../components/range-slider/range-slider';
 import selectbox from "../../components/selectbox/selectbox";
+import help from "../../components/help/help";
 
 $(() => {
     svg4everybody();
@@ -69,4 +70,5 @@ $(() => {
     fileUpload();
     authPopup();
     captcha();
+    help();
 });

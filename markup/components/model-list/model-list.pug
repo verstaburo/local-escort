@@ -9,10 +9,12 @@ include ../badges/badges
 include ../heading/heading
 include ../boost/boost
 include ../vip/vip
+include ../help/help
 
-mixin model-list()
+mixin model-list(isHelp)
     +b.model-list&attributes(attributes)
         +filter.hide-mob
+        +help
         +container
             +e.header
                 +e.header-col._flexible

@@ -1,0 +1,39 @@
+.help
+    display: block
+    padding: 23px 0
+    background-color: mainColor
+
+    &__description
+        margin-top: 9px
+        font-size 16px
+        line-height 1.375
+        color #fff
+
+    .container
+        display: flex
+
+        +below(768px)
+            flex-wrap wrap
+
+    &__col
+        display: block
+        min-width: 164px
+
+        +below(768px)
+            width: 100%
+
+        &_flexible
+            flex: 1
+
+        &:not(:last-child)
+            margin-right: 24px
+
+            +below(768px)
+                margin-right: 0
+                margin-bottom: 12px
+
+        &:first-child
+            margin-bottom: 28px
+
+    &__action
+        width: 100%
