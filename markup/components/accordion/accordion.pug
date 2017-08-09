@@ -1,6 +1,6 @@
-mixin accordion(closeOther)
+mixin accordion(closeOther, noAction)
     - var s = !!closeOther + ''
-    .accordion(data-close-other=s)&attributes(attributes)
+    .accordion(data-close-other=s data-no-action=!!noAction+'')&attributes(attributes)
         block
 
 mixin accordion-item(heading, showText, hideText)

@@ -837,84 +837,79 @@ mixin user-fill-profile-7
 //- Tours
 mixin user-fill-profile-8
     form(action='#' method='post').user-fill-profile__main
-        .user-fill-profile__section
-            +heading._md Tour 1
+        .user-fill-profile__sections
+            .user-fill-profile__section
+                +heading._md Tour 1
 
+                +grid
+                    +col(12)
+                        +accordion
+                            +accordion-item('Select Country and City')
+                                +grid
+                                    +col(6)
+                                        +field
+                                            +field-label City
+                                            +selectbox
+                                                +selectbox-control(name='city')
+                                                    option Los Angeles
+                                                    option New York
+                                                    option Miami
+                                    +col(6)
+                                        +field
+                                            +field-label Address
+                                            +field-input Los Angeles
+
+            .user-fill-profile__section
+                +grid
+                    +col(6)
+                        +field
+                            +field-label Tour name
+                            +field-input(value='Girls is on tour in Roterdam')
+                    +col(6)
+                        +field
+                            +field-label Status
+                            +field-input(value="I'm right now on my tour (4 more days)")
+                    +col(6)
+                        +field
+                            +field-label From
+                            +selectbox
+                                +selectbox-control(name='from')
+                                    option 20 JUL
+                                    option 21 JUL
+                                    option(selected) 22 JUL
+                                    option 23 JUL
+                                    option 24 JUL
+                    +col(6)
+                        +field
+                            +field-label To
+                            +selectbox
+                                +selectbox-control(name='to')
+                                    option 26 JUL
+                                    option 27 JUL
+                                    option 28 JUL
+                                    option(selected) 29 JUL
+
+                +grid
+                    +col(2)
+                        +field
+                            +field-label Country code
+                            +selectbox
+                                +selectbox-control(name='country-code')
+                                    option +1
+                                    option +2
+                                    option +3
+                                    option +4
+                                    option +5
+                    +col(4)
+                        +field
+                            +field-label Phone
+                            +field-input(value='+1 818 554-9937')
+
+        .user-fill-profile__section
             +grid
                 +col(12)
-                    +accordion
-                        +accordion-item('Select Country and City')
-                            +grid
-                                +col(6)
-                                    +field
-                                        +field-label City
-                                        +selectbox
-                                            +selectbox-control(name='city')
-                                                option Los Angeles
-                                                option New York
-                                                option Miami
-                                +col(6)
-                                    +field
-                                        +field-label Address
-                                        +field-input Los Angeles
-
-        .user-fill-profile__section
-            +grid
-                +col(6)
-                    +field
-                        +field-label Tour name
-                        +field-input(value='Girls is on tour in Roterdam')
-                +col(6)
-                    +field
-                        +field-label Status
-                        +field-input(value="I'm right now on my tour (4 more days)")
-                +col(6)
-                    +field
-                        +field-label From
-                        +selectbox
-                            +selectbox-control(name='from')
-                                option 20 JUL
-                                option 21 JUL
-                                option(selected) 22 JUL
-                                option 23 JUL
-                                option 24 JUL
-                +col(6)
-                    +field
-                        +field-label To
-                        +selectbox
-                            +selectbox-control(name='to')
-                                option 20 JUL
-                                option 21 JUL
-                                option 22 JUL
-                                option 23 JUL
-                                option 24 JUL
-                                option 25 JUL
-                                option 26 JUL
-                                option 27 JUL
-                                option 28 JUL
-                                option(selected) 29 JUL
-
-            +grid
-                +col(2)
-                    +field
-                        +field-label Country code
-                        +selectbox
-                            +selectbox-control(name='country-code')
-                                option +1
-                                option +2
-                                option +3
-                                option +4
-                                option +5
-                +col(4)
-                    +field
-                        +field-label Phone
-                        +field-input(value='+1 818 554-9937')
-
-                +col(12)
-                    +accordion.accordion_dark
-                        +accordion-item('Add Upcoming Tour')
-
-            +grid
+                    +accordion(false, true).accordion_dark
+                        +accordion-item('Add Upcoming Tour').js-user-fill-profile-add-tour
                 +col(4)
                     +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
                 +col(4)

@@ -2,6 +2,11 @@ export default function accordion() {
     $(document).on('click', '.accordion__button', function (e) {
         e.preventDefault();
         const btn = $(this);
+
+        if (btn.parents('.accordion').data('no-action')) {
+            return;
+        }
+
         const closeOther = !!btn.parents('.accordion').data('close-other');
         const item = btn.parents('.accordion__item');
         const isActive = item.hasClass('active');
