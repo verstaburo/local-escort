@@ -1,0 +1,24 @@
+.blog
+    display: block
+    padding-top: 45px
+    padding-bottom: 54px
+
+    +below(1024px)
+        padding-top: 32px
+        padding-bottom: 32px
+
+    .grid
+        margin-top: 22px
+
+        +below(1024px)
+            margin-top: 9px
+
+        &__col
+            +below(1134px)
+                width: (100/3)%
+
+            +below(768px)
+                width: 50%
+
+            +below(500px)
+                width: 100%

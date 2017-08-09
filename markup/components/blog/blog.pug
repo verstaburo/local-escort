@@ -1,0 +1,31 @@
+include ../heading/heading
+include ../grid/grid
+include ../container/container
+include ../post-preview/post-preview
+
+mixin blog()
+    +b.blog&attributes(attributes)
+        +container
+            +heading Blog
+            +grid
+                +col(3)
+                    +post-preview('likes/1.jpg', '1 dec 2016')
+                        | Download our mobile application! Available in the App Store and Android Market
+                +col(3)
+                    +post-preview('likes/2.jpg', '1 dec 2016')
+                        | Change the conditions for checking photos on Skype
+                +col(3)
+                    +post-preview('likes/3.jpg', '1 dec 2016')
+                        | Children were allowed to look at statues depicting naked people
+                +col(3)
+                    +post-preview('likes/1.jpg', '1 dec 2016')
+                        | Google and "Yandex" found erotics instead of images of fairy-tale characters
+                +col(3)
+                    +post-preview('likes/2.jpg', '1 dec 2016')
+                        | In St. Petersburg, opened an erotic hypermarket with a museum and a lecture hall
+                +col(3)
+                    +post-preview('likes/3.jpg', '1 dec 2016')
+                        | NN.ru: How to create the main portal of the region and profitable to sell corporations
+                +col(3)
+                    +post-preview('likes/1.jpg', '1 dec 2016')
+                        | Main Exhibit: How Private Museums Earn
