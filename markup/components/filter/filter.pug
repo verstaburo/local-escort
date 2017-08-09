@@ -311,8 +311,16 @@ mixin filter-extended(dark)
     - var MoreOptionsButtonModifier = !!dark ? '_bg_darkGrey _color_white _border_grey' : '_border_standart';
     - var IconButtonModifier = !!dark ? '_color_white _border_grey' : '';
 
-    +popup#filter-extended
+    +popup.popup_no_mobile_paddings#filter-extended
         +filter-extended-wrapper(class=FilterModifier)
+            +e.UL.mobile-nav
+                li.active
+                    a(href='#') All
+                li
+                    a(href='#') Independent
+                li
+                    a(href='#') Agency’s
+
             +container
                 +grid
                     +col(3)
