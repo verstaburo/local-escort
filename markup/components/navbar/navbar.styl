@@ -227,35 +227,53 @@
     &_dark
         background-color: darkGreyColor
 
+        .search-bar
+            background-color: darkGreyColor
+
+            &__input, &__input::placeholder
+                color: #fff
+
+            &__close
+                border-left-color: #212223 !important
+
+        .selectbox__value
+            color: #fff
+
         .logo::before
             background-color: #2a2a2b
 
         & ^[0]__heading
-            color: mainColor
+            color: #fff !important
 
         & ^[0]__description
-            color: mainColor
+            color: #fff !important
+
+        svg
+            fill: mainColor
 
         & ^[0]__link
 
             +above(1024px)
                 &:hover
-                    background-color: mainColor
-                    color: #fff
+                    background-color: #212223
+                    color: mainColor
 
                     & ^[0]__heading
-                        color: #fff !important
+                        color: mainColor !important
                     & ^[0]__description
-                        color: #fff !important
+                        color: mainColor !important
 
                 &.active
-                    background-color: mainColor
-                    color: #fff
+                    background-color: #212223
+                    color: mainColor
 
                     & ^[0]__heading
-                        color: #fff !important
+                        color: mainColor !important
                     & ^[0]__description
-                        color: #fff !important
+                        color: mainColor !important
+
+                    svg
+                        fill: #fff
 
         & ^[0]__item:not(:last-child)
             border-color: #262728
