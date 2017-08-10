@@ -51,6 +51,7 @@ mixin header(dark)
                             +navbar-heading Filter
                         +navbar-col
                             != pugHelpers.Icon.call(locals, {iconName: 'filter-button', className: 'header__filter-icon', iconWidth: 21, iconHeight: 12})
+                            != pugHelpers.Icon.call(locals, {iconName: 'close', className: 'header__filter-close', iconWidth: 14, iconHeight: 14})
 
                 +navbar-item.show-fixed
                     +selectbox.__control

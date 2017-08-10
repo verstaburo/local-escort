@@ -37,6 +37,20 @@
         display: block
         min-width: 149px
 
+        &_filter
+            .header__filter-close
+                display: none
+
+            .navbar__link.active
+                .header__filter-close
+                    display: block
+
+                .header__filter-icon
+                    display: none
+
+                .navbar__badge
+                    display: none
+
         +below(1320px)
             min-width: 135px
 
