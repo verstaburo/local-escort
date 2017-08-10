@@ -14,7 +14,8 @@ include ../help/help
 mixin model-list(isHelp)
     +b.model-list&attributes(attributes)
         +filter.hide-mob
-        +help
+        if isHelp
+            +help
         +container
             +e.header
                 +e.header-col._flexible
