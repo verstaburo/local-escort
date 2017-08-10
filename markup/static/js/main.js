@@ -22,7 +22,6 @@ import youtubeVideo from '../../components/youtube-video/youtube-video';
 import profilePhotoPopup from '../../components/profile-photo-popup/profile-photo-popup';
 import reviews from '../../components/reviews/reviews';
 import agency from '../../components/agency/agency';
-import map from '../../components/map/map';
 import sendForm from '../../components/send-form/send-form';
 import userMessages from '../../components/user-messages/user-messages';
 import fileUpload from '../../components/file/file';
@@ -65,7 +64,6 @@ $(() => {
     profilePhotoPopup();
     reviews();
     agency();
-    map();
     sendForm();
     userMessages();
     fileUpload();

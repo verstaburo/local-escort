@@ -1,4 +1,4 @@
-function initMap() {
+(function() {
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 13,
         center: {lat: 40.76163, lng: -73.97486600000002},
@@ -275,4 +275,4 @@ function initMap() {
     $('#model-map').on('aftershow', function() {
         google.maps.event.trigger(map, 'resize');
     });
-}
+})();

@@ -23,7 +23,6 @@ mixin map(isDefault)
                     != pugHelpers.Icon.call(locals, {iconName: 'my-location', className: 'map__location', iconWidth: 19, iconHeight: 19})
             +e.block&attributes(attributes)
 
-mixin map-scripts(src, callback = 'initMap')
+mixin map-scripts(src)
     if src
         script(src=`%=static=%js/separate-js/maps/${src}.js`)
-    script(async defer src=`https://maps.googleapis.com/maps/api/js?key=AIzaSyCb75twxWdJqfiHIVuKVReb-39Yo1EFQUQ&callback=${callback}`)
