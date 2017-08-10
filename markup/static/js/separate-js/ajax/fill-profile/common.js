@@ -27,6 +27,9 @@ $(function() {
 
                 // re-init selectboxes
                 initSelectbox();
+
+                // re-init map
+                userProfileMap();
             }
         });
     });

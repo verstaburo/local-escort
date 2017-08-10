@@ -21,10 +21,10 @@ export default function accordion() {
             item.addClass('active');
             closeText.text(item.data('hide-text'));
             content.slideDown(250, () => {
-                const map = content.find('.map');
+                const map = content.find('.map__block');
 
                 if (map.length && google) {
-                    google.maps.event.trigger(map, 'resize');
+                    google.maps.event.trigger(map[0], 'resize');
                 }
             });
 
