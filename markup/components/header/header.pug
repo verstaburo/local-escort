@@ -62,7 +62,7 @@ mixin header(dark)
                             option(value='Rating') Rating
                             option(value='Price') Price
                 +navbar-item.show-fixed
-                    +button(href='#')._color_white._bg_darkGrey._uppercase View on map
+                    +button(href='#' data-popup-id='#model-map' data-action='toggle')._color_white._bg_darkGrey._uppercase.js-toggle-popup View on map
                 +navbar-item._dropdown._credits
                     +navbar-link-dropdown(href='#')
                         +navbar-heading Credits

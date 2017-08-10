@@ -34,7 +34,7 @@ mixin model-list(isHelp)
                 +e.header-col.hide-desktop
                     +sort-ui
                 +e.header-col.hide-mob.hide-when-header-fixed
-                    +button.A(href='#')._color_white._bg_darkGrey._uppercase.__control View on map
+                    +button(href='#' data-popup-id='#model-map' data-action='toggle')._color_white._bg_darkGrey._uppercase.js-toggle-popup View on map
             +grid-masonry(4, '.js-masonry-item').js-model-preview-grid
                 +boost(true).js-masonry-item
                 +model-preview([7, 7, 7], 'Sonya', 20, 325, true).js-masonry-item

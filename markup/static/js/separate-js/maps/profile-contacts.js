@@ -1,4 +1,4 @@
-function initMap() {
+(function() {
     $('.contacts-card__block_map').each(function() {
         var map = new google.maps.Map($(this)[0], {
             zoom: 13,
@@ -244,4 +244,4 @@ function initMap() {
             ]
         });
     })
-}
+})();

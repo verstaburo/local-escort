@@ -16,9 +16,13 @@ const filterExtended = () => {
             const header = $('.header');
             const el = $(this);
 
-            header
-                .css('z-index', '')
-                .removeClass('no-shadow');
+            header.removeClass('no-shadow');
+
+
+            if ($(document).find('.popup.active').length === 0) {
+                header.css('z-index', '');
+            }
+
             el
                 .find('.popup__wrapper')
                 .css('padding-top', '');
