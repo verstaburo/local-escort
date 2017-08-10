@@ -1,0 +1,58 @@
+.terms
+    display: block
+    padding-top: 96px
+    padding-bottom: 54px
+
+    +below(1300px)
+        padding-top: 46px
+
+    +below(1024px)
+        padding-top: 31px
+        padding-bottom: 31px
+
+    &__main
+        display: flex
+
+        +below(768px)
+            flex-direction: column
+
+    &__sidebar
+        width: 258px
+        margin-right: 72px
+
+        +below(768px)
+            width: 100%
+            margin-right: 0
+            margin-bottom: 31px
+
+        .list
+            &:not(:last-child)
+                padding-bottom: 24px
+                border-bottom: 1px solid borderColor
+                margin-bottom: 24px
+
+            &__item
+                &.active
+                    .list__button
+                        background-color: darkGreyColor
+
+                    .list__text
+                        color: #fff
+
+
+            &__button
+                justify-content: flex-start
+                background-color: transparent
+                color: darkGreyColor
+
+                &:hover
+                    background-color: darkGreyColor
+
+                    .list__text
+                        color: #fff
+
+    &__content
+        flex: 1
+
+        .text
+            margin-top: 10px

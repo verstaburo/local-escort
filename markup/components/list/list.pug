@@ -6,8 +6,9 @@ mixin list-item()
     +e.LI.item&attributes(attributes)
         block
 
-mixin list-button()
+mixin list-button(noSL)
     +e.A.button&attributes(attributes)
         +e.SPAN.text
             block
-        != pugHelpers.Icon.call(locals, {iconName: 'arrow-sl', className: 'list__arrow', iconWidth: '8', iconHeight: '8'})
+        unless noSL
+            != pugHelpers.Icon.call(locals, {iconName: 'arrow-sl', className: 'list__arrow', iconWidth: '8', iconHeight: '8'})
