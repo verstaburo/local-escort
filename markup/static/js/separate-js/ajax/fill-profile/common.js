@@ -24,6 +24,9 @@ $(function() {
                     .addClass('active')
                     .siblings()
                     .removeClass('active');
+
+                // re-init selectboxes
+                initSelectbox();
             }
         });
     });

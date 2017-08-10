@@ -163,4 +163,12 @@ export default function selectbox() {
         .on('click', `.${CONTAINER}`, onSelectboxClick)
         .on('click', `.${LIST_ITEM}`, onListItemClick)
         .on('click', deactivateAll);
+
+    window.initSelectbox = (selectbox = null) => {
+        if (!selectbox) {
+            $(`.${CONTAINER}`).each(function() {
+                generateList($(this));
+            });
+        }
+    }
 }
