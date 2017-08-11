@@ -1,15 +1,12 @@
 const CONTAINER         = 'selectbox';
-const BOX               = 'selectbox__box';
 const VALUE             = 'selectbox__value';
 const CONTROL           = 'selectbox__control';
 const ACTIVE            = 'selectbox_active';
-const DISABLED          = 'selectbox_disabled';
 const LIST              = 'selectbox__list';
 const LIST_ITEM         = 'selectbox__item';
 const LIST_ITEM_VALUE   = 'span';
 const LIST_ITEM_ACTIVE  = 'selectbox__item_active';
-const DROPDOWN          = 'selectbox__list_dropdown';
-const DURATION          = 250;
+const DROPDOWN          = 'selectbox__dropdown';
 
 const normalizeList = (list) => {
     const footer = $('.footer');
@@ -75,7 +72,6 @@ const generateList = (selectbox) => {
                 const dropdownItem = generateListItem(item.prop('label')).appendTo(list);
 
                 const dropdown = $('<ul></ul>')
-                    .addClass(LIST)
                     .addClass(DROPDOWN)
                     .appendTo(dropdownItem);
 
@@ -179,6 +175,24 @@ export default function selectbox() {
             $(`.${CONTAINER}`).each(function() {
                 generateList($(this));
             });
+        } else {
+            generateList(selectbox)
+        }
+    };
+
+    window.setSelectboxListPosition = (selectbox = null) => {
+        if (!selectbox) {
+            $(`.${LIST}`).each(function() {
+               normalizeList($(this));
+            });
+        } else {
+            normalizeList(selectbox.find(`.${LIST}`));
         }
     }
+
+    $(document).on('aftershow', '.popup', function() {
+       $(this).find(`.${CONTAINER}`).each(function() {
+          normalizeList($(this));
+       });
+    });
 }

@@ -26,6 +26,10 @@ export default function accordion() {
                 if (map.length && google) {
                     google.maps.event.trigger(map[0], 'resize');
                 }
+
+                content.find('.selectbox').each(function() {
+                    window.setSelectboxListPosition($(this));
+                });
             });
 
             if (closeOther) {

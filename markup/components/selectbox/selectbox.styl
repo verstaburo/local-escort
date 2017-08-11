@@ -41,6 +41,9 @@
             width: initial
             left: initial
 
+        & ^[0]__dropdown
+            width: initial
+
     &_default-text
         & ^[0]__value
             text-transform: initial;
@@ -78,17 +81,20 @@
         opacity: 0
         pointer-events none
         transition(opacity)
+        max-height: 240px
 
-        &_dropdown
-            border-left: 1px solid rgba(#efefef, .06)
-            top: 0
-            left: 100%
-            margin-top: 0
-            margin-left: -1px
-            opacity: 0
-            pointer-events: none
-            height: 100%
-            background-color: darkGreyColor
+    &__dropdown
+        position: absolute
+        border-left: 1px solid rgba(#efefef, .06)
+        top: 0
+        left: 100%
+        margin-left: -1px
+        opacity: 0
+        pointer-events: none
+        height: 100%
+        background-color: darkGreyColor
+        transition(opacity)
+        width: 258px
 
     &__item
         display: flex
@@ -113,7 +119,7 @@
             margin-left: 24px
 
         &:hover
-            & ^[0]__list_dropdown
+            & ^[0]__dropdown
                 opacity: 1
                 pointer-events: all
 
