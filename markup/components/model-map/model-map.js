@@ -6,7 +6,8 @@ export default function modelMap() {
 
             header
                 .css('z-index', +el.css('z-index') + 1)
-                .addClass('no-shadow');
+                .addClass('no-shadow')
+                .addClass('fixed');
 
             header
                 .find('.navbar')
@@ -61,6 +62,10 @@ export default function modelMap() {
             const el = $(this);
 
             header.removeClass('no-shadow');
+
+            if ($(window).scrollTop() < header.height()) {
+                header.removeClass('fixed');
+            }
 
             if ($(document).find('.popup.active').length <= 1) {
                 header.css('z-index', '');

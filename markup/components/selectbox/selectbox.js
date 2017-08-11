@@ -11,6 +11,20 @@ const LIST_ITEM_ACTIVE  = 'selectbox__item_active';
 const DROPDOWN          = 'selectbox__list_dropdown';
 const DURATION          = 250;
 
+const normalizeList = (list) => {
+    const footer = $('.footer');
+
+    // direction -> to top
+    if (footer.offset().top + footer.outerHeight() < list.outerHeight() + list.offset().top) {
+        list.css({
+            marginTop: 0,
+            marginBottom: list.css('margin-top'),
+            top: '-100%',
+            transform: 'translateY(-100%)',
+        });
+    }
+};
+
 const generateList = (selectbox) => {
     if (!selectbox.length || !selectbox.hasClass(CONTAINER)) {
         return
@@ -80,9 +94,11 @@ const generateList = (selectbox) => {
         });
 
     if (!existingList.length) {
-        selectbox.append(list)
+        selectbox.append(list);
+        normalizeList(list);
     } else {
-        existingList.replaceWith(list)
+        existingList.replaceWith(list);
+        normalizeList(list);
     }
 };
 
@@ -95,8 +111,6 @@ export default function selectbox() {
         $(document)
             .find(`.${CONTAINER}`)
             .removeClass(ACTIVE)
-            .find(`.${LIST}`)
-            .slideUp(DURATION);
     };
 
     const onSelectboxClick = function(e) {
@@ -110,13 +124,9 @@ export default function selectbox() {
         deactivateAll();
 
         if (isActive) {
-            list.slideUp(DURATION, () => {
-                selectbox.removeClass(ACTIVE);
-            });
+            selectbox.removeClass(ACTIVE);
         } else {
-            list.slideDown(DURATION, () => {
-                selectbox.addClass(ACTIVE);
-            });
+            selectbox.addClass(ACTIVE);
         }
     };
 
