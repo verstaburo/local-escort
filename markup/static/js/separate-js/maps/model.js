@@ -275,4 +275,39 @@
     $('#model-map').on('aftershow', function() {
         google.maps.event.trigger(map, 'resize');
     });
+
+    // random marker position
+    var rand = function (n) {
+        return Math.random() > .5 ? n - Math.random() : n + Math.random()
+    };
+
+    // markers
+    var locations = [],
+        avatars = ['navbar', 'andrew', 'anya', 'jackson', 'john', 'mika', 'miya', 'sarah'];
+
+    // generate markers
+    for (var i = 0; i < 500; i++) {
+        locations.push(new google.maps.LatLng(rand(40.76163), rand(-73.97486600000002)));
+    }
+
+    var markers = locations.map(function(loc, i) {
+        return new CustomMarker(loc, map, {
+            marker_id: i,
+            img: '/static/img/content/avatars/' +  avatars[Math.floor(Math.random() * avatars.length)] + '.png',
+        });
+    });
+
+    new MarkerClusterer(
+        map,
+        markers,
+        {
+            styles: [{
+                url: '/static/img/content/cluster/m1.png',
+                textColor: 'white',
+                width: 50,
+                height: 50,
+                textSize: 16
+            }]
+        }
+    );
 })();

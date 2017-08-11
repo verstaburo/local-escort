@@ -24,6 +24,10 @@ export default function modelMap() {
                     'padding-bottom': 0,
                 });
 
+            $('[data-popup-id="#model-map"]').each(function() {
+                $(this).text('view on list');
+            });
+
             // filter
             const filter = $(document).find('.filter_extended');
 
@@ -60,6 +64,10 @@ export default function modelMap() {
         .on('hide', function() {
             const header = $('.header');
             const el = $(this);
+
+            $('[data-popup-id="#model-map"]').each(function() {
+                $(this).text('view on map');
+            });
 
             header.removeClass('no-shadow');
 
@@ -118,5 +126,8 @@ export default function modelMap() {
             filter
                 .find('.icon-button')
                 .removeClass('icon-button_color_white icon-button_border_grey');
+        })
+        .on('aftershow', function() {
+            $(this).find('.map__content').scrollbar();
         });
 }

@@ -1,7 +1,12 @@
 include ../map/map
 include ../popup/popup
+include ../model-preview/model-preview
 
 mixin model-map()
     +popup#model-map
         +b.model-map&attributes(attributes)
             +map
+                +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390)
+                +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390)
+                +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390)
+                +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390)
