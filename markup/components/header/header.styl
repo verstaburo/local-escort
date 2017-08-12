@@ -56,7 +56,7 @@
             .navbar
                 z-index: 150
 
-                &__link
+                &__link:not(.navbar__link_row)
                     &:hover, &.active
                         .navbar__heading, .navbar__description
                             color: mainColor
@@ -87,8 +87,15 @@
                 &__item_credits
                     min-width: initial
 
+                    &:hover
+                        .navbar__link_dropdown > .navbar__description
+                            color: mainColor
+
+                            svg
+                                fill: mainColor
+
                     .navbar__dropdown .navbar__heading
-                        display: block
+                            display: block
 
                     .navbar__heading
                         display: none
@@ -100,6 +107,16 @@
 
                         svg
                             fill: darkGreyColor
+                    //
+                    //.navbar__link:hover
+                    //    color: mainColor
+                    //
+                    //    .navbar__description svg
+                    //        fill: mainColor
+
+                &_dark
+                    .navbar__item_credits .navbar__description svg
+                        fill: mainColor
 
                 &__item_profile
                     min-width: initial
