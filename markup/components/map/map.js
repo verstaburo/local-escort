@@ -1,0 +1,21 @@
+export default function map() {
+    $(document).on('click', '.map__heading svg', function() {
+       const map = $(this).parents('.map');
+
+       map
+           .find('.map__heading')
+           .removeClass('active');
+
+       map
+           .find('.map__marker')
+           .removeClass('active');
+
+       map
+           .find('.map__content')
+           .last()
+           .children()
+           .slideUp(250, function () {
+               $(this).remove();
+           });
+    });
+}

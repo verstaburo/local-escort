@@ -4,6 +4,7 @@ mixin map(isDefault)
             +e.heading
                 +e.SPAN.text All escorts
                 +e.SPAN.text._main 41908
+                != pugHelpers.Icon.call(locals, {iconName: 'close', iconWidth: '14', iconHeight: '14'})
 
             +e.content
                 block

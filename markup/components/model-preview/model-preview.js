@@ -40,7 +40,7 @@ function toggleBreakInfo() {
     }
 }
 
-export default function modelPreview() {
+export default function modelPreview(model) {
 
     const getSettings = el => ({
         slidesPerView: 1,
@@ -50,7 +50,7 @@ export default function modelPreview() {
         pagination: el.find('.model-preview__pagination'),
     });
 
-    const block = $('.model-preview__slider');
+    const block = model && model.find('.model-preview__slider') || $('.model-preview__slider');
 
     if (!block.length) {
         return;
@@ -59,7 +59,7 @@ export default function modelPreview() {
     block.each(function() {
         const el = $(this);
 
-        new Swiper($(this), getSettings($(this).parents('.model-preview')))
+        new Swiper($(this), getSettings($(this).parents('.model-preview')));
 
         el.parents('.popup').on('aftershow', function() {
            el[0].swiper.update();
@@ -67,6 +67,25 @@ export default function modelPreview() {
     });
 
     const grid = $('.js-model-preview-grid');
+
+    // close breakinfo
+    $(document).on('click', '.model-preview__breakinfo .close', function(e) {
+        e.preventDefault();
+        const previewBlock = $(this).parents('.model-preview');
+
+        previewBlock
+            .find('.model-preview__action_info')
+            .removeClass('active');
+
+        previewBlock
+            .find('.model-preview__breakinfo')
+            .fadeOut();
+    });
+
+    if (model) {
+        toggleBreakInfo();
+        return;
+    }
 
     if (!grid.length) {
         return;
@@ -84,18 +103,6 @@ export default function modelPreview() {
 
         toggleBreakInfo();
     });
-
-    // close breakinfo
-    $(document).on('click', '.model-preview__breakinfo .close', function(e) {
-        e.preventDefault();
-        const previewBlock = $(this).parents('.model-preview');
-
-        previewBlock
-            .find('.model-preview__action_info')
-            .removeClass('active');
-
-        previewBlock
-            .find('.model-preview__breakinfo')
-            .fadeOut();
-    });
 }
+
+window.modelPreviewInit = modelPreview;

@@ -33,6 +33,7 @@ import rangeSlider from '../../components/range-slider/range-slider';
 import selectbox from "../../components/selectbox/selectbox";
 import help from "../../components/help/help";
 import modelMap from "../../components/model-map/model-map";
+import map from "../../components/map/map";
 
 $(() => {
     svg4everybody();
@@ -70,5 +71,6 @@ $(() => {
     authPopup();
     captcha();
     help();
+    map();
     modelMap();
 });

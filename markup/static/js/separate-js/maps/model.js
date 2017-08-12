@@ -272,7 +272,9 @@
         $(myLocBtn).hide();
     }
 
-    $('#model-map').on('aftershow', function() {
+    var modelMap = $('#model-map');
+
+    modelMap.on('aftershow', function() {
         google.maps.event.trigger(map, 'resize');
     });
 
@@ -293,7 +295,7 @@
     var markers = locations.map(function(loc, i) {
         return new CustomMarker(loc, map, {
             marker_id: i,
-            img: '/static/img/content/avatars/' +  avatars[Math.floor(Math.random() * avatars.length)] + '.png',
+            img: 'static/img/content/avatars/' +  avatars[Math.floor(Math.random() * avatars.length)] + '.png',
         });
     });
 
@@ -302,7 +304,7 @@
         markers,
         {
             styles: [{
-                url: '/static/img/content/cluster/m1.png',
+                url: 'static/img/content/cluster/m1.png',
                 textColor: 'white',
                 width: 50,
                 height: 50,
@@ -310,4 +312,55 @@
             }]
         }
     );
+
+    // event
+
+    modelMap
+        .on('click', '.map__marker', function() {
+            var el = $(this);
+
+            if (el.hasClass('active')) {
+                return;
+            }
+
+            el.addClass('active');
+
+            $('.map__heading').addClass('active');
+
+            $.ajax({
+                url: 'model-map-ajax-example.html',
+                type: 'GET',
+                success: function(data) {
+                    var model = $('.map__content')
+                        .last()
+                        .append(data)
+                        .children()
+                        .last()
+                        .attr('id', 'marker-' + el.data('marker_id'));
+
+                    modelPreviewInit(model); // init effects slider, etc.
+                }
+            });
+
+            console.log('You just clicked on marker with marker_id' + el.data('marker_id'));
+        })
+        .on('click', '.map__marker .close', function(e) {
+            e.stopPropagation();
+            var el = $(this).parent();
+            el.removeClass('active');
+
+            var mapHeading = $('.map__heading'),
+                mapContent = $('.map__content');
+
+            mapContent.find('#marker-' + el.data('marker_id'))
+                .slideUp(250, function() {
+                    $(this).remove();
+
+                    if (!mapContent.last().children().length) {
+                        mapHeading.removeClass('active');
+                    }
+                });
+
+            console.log('You just closed marker with marker_id ' + el.data('marker_id'));
+        });
 })();
