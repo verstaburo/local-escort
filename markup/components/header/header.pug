@@ -163,8 +163,9 @@ mixin header(dark)
                     +navbar-link(href='#' data-popup-id='#filter-extended' data-action='toggle').js-toggle-popup
                         != pugHelpers.Icon.call(locals, {iconName: 'filter-button', className: 'navbar__icon_filter', iconWidth: '19', iconHeight: '12'})
                 +navbar-item
-                    +navbar-link(href='#')
+                    +navbar-link(href='#' data-popup-id='#model-map' data-action='toggle')._mob-map.js-toggle-popup
                         != pugHelpers.Icon.call(locals, {iconName: 'location', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
+                        != pugHelpers.Icon.call(locals, {iconName: 'sort-2', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
 
                 +navbar-item
                     +navbar-link(href='#')

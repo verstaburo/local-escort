@@ -24,7 +24,7 @@ export default function modelMap() {
                     'padding-bottom': 0,
                 });
 
-            $('[data-popup-id="#model-map"]').each(function() {
+            $('.header__navbar_desktop [data-popup-id="#model-map"]').each(function() {
                 $(this).text('view on list');
             });
 
@@ -65,7 +65,7 @@ export default function modelMap() {
             const header = $('.header');
             const el = $(this);
 
-            $('[data-popup-id="#model-map"]').each(function() {
+            $('.header__navbar_desktop [data-popup-id="#model-map"]').each(function() {
                 $(this).text('view on map');
             });
 

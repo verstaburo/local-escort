@@ -3,6 +3,6 @@ include ../popup/popup
 include ../model-preview/model-preview
 
 mixin model-map()
-    +popup#model-map
+    +popup.popup_no_mobile_paddings.popup_wrapper_100#model-map
         +b.model-map&attributes(attributes)
             +map

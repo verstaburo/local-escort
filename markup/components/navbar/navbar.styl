@@ -127,6 +127,10 @@
         +below(1024px)
             align-items: center
 
+        +below(540px)
+            min-width: 64px
+            padding: 0
+
         &_has_badge
             position: relative
 
@@ -141,6 +145,12 @@
 
         &.active
             background-color: #fff
+
+            +below(1024px)
+                background-color: mainColor
+
+                svg
+                    fill: #fff
 
         &_active-style_main
 

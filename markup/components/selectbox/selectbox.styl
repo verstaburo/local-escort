@@ -96,6 +96,11 @@
         transition(opacity)
         width: 258px
 
+        +below(1024px)
+            position: static
+            margin-left: 0
+            border-left: 0
+
     &__item
         display: flex
         align-items: center
