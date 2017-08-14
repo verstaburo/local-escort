@@ -283,6 +283,11 @@
         return Math.random() > .5 ? n - Math.random() : n + Math.random()
     };
 
+    // just generate random string
+    var generateId = function() {
+        return Math.random().toString(36).replace('.', '');
+    };
+
     // markers
     var locations = [],
         avatars = ['navbar', 'andrew', 'anya', 'jackson', 'john', 'mika', 'miya', 'sarah'];
@@ -292,12 +297,31 @@
         locations.push(new google.maps.LatLng(rand(40.76163), rand(-73.97486600000002)));
     }
 
-    var markers = locations.map(function(loc, i) {
+    var markers = locations.map(function(loc) {
         return new CustomMarker(loc, map, {
-            marker_id: i,
+            marker_id: generateId(),
             img: 'static/img/content/avatars/' +  avatars[Math.floor(Math.random() * avatars.length)] + '.png',
         });
     });
+
+    // add a few groups
+    var group1 = new CustomGroup(new google.maps.LatLng(35.76163, -65.97486600000002), map);
+    group1.add('static/img/content/avatars/navbar.png', generateId());
+    group1.add('static/img/content/avatars/andrew.png', generateId());
+    group1.add('static/img/content/avatars/anya.png', generateId());
+    group1.add('static/img/content/avatars/jackson.png', generateId());
+    group1.add('static/img/content/avatars/john.png', generateId());
+    group1.add('static/img/content/avatars/mika.png', generateId());
+    group1.add('static/img/content/avatars/miya.png', generateId());
+
+    var group2 = new CustomGroup(new google.maps.LatLng(32.76163, -60.97486600000002), map);
+    group2.add('static/img/content/avatars/navbar.png', generateId());
+    group2.add('static/img/content/avatars/mika.png', generateId());
+    group2.add('static/img/content/avatars/miya.png', generateId());
+    group2.add('static/img/content/avatars/sarah.png', generateId());
+
+    markers.push(group1);
+    markers.push(group2);
 
     new MarkerClusterer(
         map,
@@ -362,5 +386,55 @@
                 });
 
             console.log('You just closed marker with marker_id ' + el.data('marker_id'));
-        });
+        })
+        .on('click', '.map__group', function() {
+            var el = $(this);
+
+            if (el.hasClass('active')) {
+                return;
+            }
+
+            el.addClass('active');
+
+            $.ajax({
+                url: 'model-map-ajax-example.html',
+                type: 'GET',
+                success: function(data) {
+                    el.data('group_id').split(',').forEach(function(item) {
+                        var model = $('.map__content')
+                            .last()
+                            .append(data)
+                            .children()
+                            .last()
+                            .attr('id', 'group-' + item);
+
+                        modelPreviewInit(model); // init effects slider, etc.
+                    });
+                }
+            });
+
+            console.log('You just clicked on marker with group_id ' + el.data('group_id'));
+        })
+        .on('click', '.map__group .close', function(e) {
+            e.stopPropagation();
+            var el = $(this).parent();
+            el.removeClass('active');
+
+            var mapHeading = $('.map__heading'),
+                mapContent = $('.map__content'),
+                ids = el.data('group_id').split(',');
+
+                ids.forEach(function(item) {
+                    mapContent.find('#group-' + item)
+                        .slideUp(250, function() {
+                            $(this).remove();
+
+                            if (!mapContent.last().children().length) {
+                                mapHeading.removeClass('active');
+                            }
+                        });
+                });
+
+            console.log('You just closed marker with group ' + el.data('group_id'));
+        })
 })();

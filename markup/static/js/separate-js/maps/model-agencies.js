@@ -337,8 +337,6 @@
                         .children()
                         .last()
                         .attr('id', 'marker-' + el.data('marker_id'));
-
-                    modelPreviewInit(model); // init effects slider, etc.
                 }
             });
 
