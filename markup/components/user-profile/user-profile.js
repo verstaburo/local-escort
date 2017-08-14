@@ -1,3 +1,3 @@
-export default function user-profile() {
-    
+export default function userProfile() {
+
 }

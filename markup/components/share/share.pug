@@ -1,4 +1,6 @@
 include ../icon-button/icon-button
+include ../dotted-dropdown/dotted-dropdown
+include ../list/list
 
 mixin share-button(kind)
     case kind
@@ -15,7 +17,14 @@ mixin share-button(kind)
         when 'g+'
             +icon-button('s-g-plus', 26, 17, 'share__icon_gp')(href='#').A.__button
         when 'dots'
-            +icon-button('dots', 19, 3, 'share__icon_dots').A.__button
+            +dotted-dropdown.__button
+                +list
+                    +list-item
+                        +list-button(href='#') Item #1
+                    +list-item
+                        +list-button(href='#') Item #1
+                    +list-item
+                        +list-button(href='#') Item #1
 
 mixin share-buttons
     +b.share&attributes(attributes)
@@ -32,6 +41,4 @@ mixin share()
             +share-button('ok')
             +share-button('email')
             +share-button('g+')
-            +share-button('dots').hide-desktop
-
-        +icon-button('dots', 19, 3, 'share__icon_dots').A.__button.hide-mob._dots
+            +share-button('dots')

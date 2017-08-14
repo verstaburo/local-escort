@@ -34,6 +34,7 @@ import selectbox from "../../components/selectbox/selectbox";
 import help from "../../components/help/help";
 import modelMap from "../../components/model-map/model-map";
 import map from "../../components/map/map";
+import userProfile from '../../components/user-profile/user-profile';
 
 $(() => {
     svg4everybody();
@@ -71,6 +72,7 @@ $(() => {
     authPopup();
     captcha();
     help();
+    userProfile();
     map();
     modelMap();
 });
