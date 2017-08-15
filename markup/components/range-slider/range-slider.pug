@@ -1,5 +1,5 @@
-mixin range-slider(min, max, initialMin, initialMax)
-    +b.range-slider(data-min=min data-max=max, data-value-min=initialMin data-value-max=initialMax)&attributes(attributes)
+mixin range-slider(min, max, name)
+    +b.range-slider(data-min=min data-max=max data-name=name)&attributes(attributes)
         block
 
 mixin range-slider-fields
@@ -10,15 +10,27 @@ mixin range-slider-field
     +e.field&attributes(attributes)
         block
 
-mixin range-slider-input
-    +e.INPUT.input&attributes(attributes)
+mixin range-slider-in-field
+    +e.range-text
+        block
 
-mixin range-slider-text
-    +e.DIV.text&attributes(attributes)
-        +e.B.value
-        if block
-            +e.SPAN.label
-                block
+mixin range-slider-input
+    +e.INPUT.input&attributes(attributes).js-grow-input
+
+mixin range-slider-text(name, outside)
+    if outside
+        div.range-slider__text(data-name=name)&attributes(attributes)
+            b.range-slider__value
+            if block
+                span.range-slider__label
+                    block
+
+    else
+        +e.DIV.text(data-name=name)&attributes(attributes)
+            +e.B.value
+            if block
+                +e.SPAN.label
+                    block
 
 mixin range-slider-control
     +e.slider&attributes(attributes)

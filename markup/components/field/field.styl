@@ -50,3 +50,25 @@
         font-family fontMain
         font-size 16px
         font-weight 400
+
+    &__range-text
+        display: none
+
+        +below(1024px)
+            display: flex
+            margin-right: auto
+
+        .range-slider__text
+            margin-left: 3px
+            display: flex
+            font-size 16px
+            font-weight bold
+            color inherit
+
+            &:first-child
+                .range-slider__value::before
+                    content: 'from '
+
+            &:last-child
+                .range-slider__value::before
+                    content: 'to '

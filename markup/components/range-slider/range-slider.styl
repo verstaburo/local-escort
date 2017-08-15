@@ -1,7 +1,16 @@
 .range-slider
     display: block
 
+    +below(1024px)
+        display: flex
+        align-items: center
+        border: 1px solid borderColor
+        height: 60px
+
     &_dark
+        +below(1024px)
+            border-color rgba(#efefef, .06)
+
         & ^[0]__fields
             border-color: rgba(#efefef, .06)
 
@@ -19,6 +28,9 @@
         display: flex
         border: 1px solid borderColor
 
+        +below(1024px)
+            display: none
+
     &__field
         display: flex
         justify-content: center
@@ -27,14 +39,26 @@
         width: 50%
         height: 60px
 
+        +below(1024px)
+            display: none
+
         &:not(:last-child)
             border-right: 1px solid borderColor
 
-    &__text
+    .range-slider__text
         font-size: 16px
+        +below(1024px)
+            display: none
 
     &__input
         display: block
+        font-size: 16px
+        font-weight: 700
+        background-color: transparent
+        initial-letter initial
+        text-align: right
+        +below(1024px)
+            display: none
 
     &__value
         font-weight: 700
@@ -46,6 +70,9 @@
 
     &__slider
         display: block
+
+        +below(1024px)
+            width: calc(100% - 58px)
 
         &.ui-slider-horizontal
             height: 2px
@@ -67,6 +94,31 @@
             border 2px solid mainColor
             border-radius: 50%
             background-color #fff
+
+            +below(1024px)
+                display: flex
+                justify-content: center
+                align-items: center
+                width 60px
+                height 60px
+                border solid 1px rgba(mainColor, .4)
+                border-radius: 0
+                margin-left: -1px
+                top: 1px
+                transform: translateY(-50%)
+
+                &::before
+                    content: ''
+                    display: block
+                    width: 8px
+                    height: 8px
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4IDgiPjxwYXRoIGZpbGw9IiNkMmEzNmYiIGQ9Ik02LDZIMFY4SDhWMEg2WiIvPjwvc3ZnPg==')
+
+                &:first-of-type::before
+                    transform: rotate(135deg)
+
+                &:last-of-type::before
+                    transform: rotate(-45deg)
 
         .ui-widget-header
             background-color mainColor

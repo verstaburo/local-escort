@@ -21,24 +21,24 @@ mixin filter()
                         option(value='item3') item 3
 
             +e.col
-                +range-slider(18, 48, 18, 48)
+                +range-slider(18, 48, 'qfwe12baszadv')
                     +range-slider-fields
                         +range-slider-field
-                            +range-slider-input(type='hidden' name='age-min')
-                            +range-slider-text y.o
+                            +range-slider-input(data-type='min' name='age-min' value=18)
+                            +range-slider-text('qfwe12baszadv')(data-type='min') y.o
                         +range-slider-field
-                            +range-slider-input(type='hidden' name='age-max')
-                            +range-slider-text y.o
+                            +range-slider-input(data-type='max' name='age-max' value=48)
+                            +range-slider-text('qfwe12baszadv')(data-type='max') y.o
                     +range-slider-control
             +e.col
-                +range-slider(135, 195, 135, 195)
+                +range-slider(135, 195, 'vy4128z1231b3')
                     +range-slider-fields
                         +range-slider-field
-                            +range-slider-input(type='hidden' name='cost-min')
-                            +range-slider-text $
+                            +range-slider-input(data-type='min' name='cost-min' value=135)
+                            +range-slider-text('vy4128z1231b3')(data-type='min') $
                         +range-slider-field
-                            +range-slider-input(type='hidden' name='cost-max')
-                            +range-slider-text $
+                            +range-slider-input(data-type='max' name='cost-max' value=195)
+                            +range-slider-text('vy4128z1231b3')(data-type='max') $
                     +range-slider-control
 
             +e.col
@@ -107,26 +107,32 @@ mixin filter-additional()
                     +col(3)
                         +field
                             +field-label._grey Breast size
-                            +range-slider(32, 40, 32, 40)._dark
+                                +range-slider-in-field
+                                    +range-slider-text('sdvasd1231qwe', true)(data-type='min') A
+                                    +range-slider-text('sdvasd1231qwe', true)(data-type='max') FF
+                            +range-slider(32, 40, 'sdvasd1231qwe')._dark
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='breast-min')
-                                        +range-slider-text A
+                                        +range-slider-input(data-type='min' name='breast-min' value=32)
+                                        +range-slider-text('sdvasd1231qwe')(data-type='min') A
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='breast-max')
-                                        +range-slider-text FF
+                                        +range-slider-input(data-type='max' name='breast-max' value=40)
+                                        +range-slider-text('sdvasd1231qwe')(data-type='max') FF
                                 +range-slider-control
                     +col(3)
                         +field
                             +field-label._grey Shoe size
-                            +range-slider(34, 45, 34, 45)._dark
+                                +range-slider-in-field
+                                    +range-slider-text('sdvasd1231qwe1', true)(data-type='min')
+                                    +range-slider-text('sdvasd1231qwe1', true)(data-type='max')
+                            +range-slider(34, 45, 'sdvasd1231qwe1')._dark
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='shoe-min')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='min' name='shoe-min' value=34)
+                                        +range-slider-text('sdvasd1231qwe1')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='shoe-max')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='max' name='shoe-max' value=45)
+                                        +range-slider-text('sdvasd1231qwe1')(data-type='max')
                                 +range-slider-control
             +e.row
                 +grid
@@ -335,26 +341,32 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Age
-                            +range-slider(18, 48, 18, 48)(class=RangeModifier)
+                                +range-slider-in-field
+                                    +range-slider-text('vqwe1llllgnwbre1', true)(data-type='min')
+                                    +range-slider-text('vqwe1llllgnwbre1', true)(data-type='max')
+                            +range-slider(18, 48, 'vqwe1llllgnwbre1')(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='age-min')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='min' name='age-min' value=18)
+                                        +range-slider-text('vqwe1llllgnwbre1')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='age-max')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='max' name='age-max' value=48)
+                                        +range-slider-text('vqwe1llllgnwbre1')(data-type='max')
                                 +range-slider-control
                     +col(3)
                         +field
                             +field-label Rate per hour
-                            +range-slider(135, 195, 135, 195)(class=RangeModifier)
+                                +range-slider-in-field
+                                    +range-slider-text('ihte1bxvhhwqqe', true)(data-type='min')
+                                    +range-slider-text('ihte1bxvhhwqqe', true)(data-type='max')
+                            +range-slider(135, 195, 'ihte1bxvhhwqqe')(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='cost-min')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='min' name='cost-min' value=135)
+                                        +range-slider-text('ihte1bxvhhwqqe')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='cost-max')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='max' name='cost-max' value=195)
+                                        +range-slider-text('ihte1bxvhhwqqe')(data-type='max')
                                 +range-slider-control
                     +col(3)
                         +field
@@ -378,36 +390,42 @@ mixin filter-extended(dark)
                         +field
                             +field-label
                                 | Height
+                                +range-slider-in-field
+                                    +range-slider-text('uuuutewbqbxqbw1', true)(data-type='min')
+                                    +range-slider-text('uuuutewbqbxqbw1', true)(data-type='max')
                                 +selectbox._small
                                     +selectbox-control(name='height')
                                         option(value='1') cm
                                         option(value='2') in
                                         option(value='3') ft
-                            +range-slider(135, 195, 135, 195)(class=RangeModifier)
+                            +range-slider(135, 195, 'uuuutewbqbxqbw1')(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='height-min')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='min' name='height-min' value=135)
+                                        +range-slider-text('uuuutewbqbxqbw1')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='height-max')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='max' name='height-max' value=195)
+                                        +range-slider-text('uuuutewbqbxqbw1')(data-type='max')
                                 +range-slider-control
                     +col(3)
                         +field
                             +field-label
                                 | Weight
+                                +range-slider-in-field
+                                    +range-slider-text('hynvzqkjkwhvbqw125v', true)(data-type='min')
+                                    +range-slider-text('hynvzqkjkwhvbqw125v', true)(data-type='max')
                                 +selectbox._small
                                     +selectbox-control(name='weight')
                                         option(value='1') kg
                                         option(value='2') lb
-                            +range-slider(40, 200, 40, 200)(class=RangeModifier)
+                            +range-slider(40, 200, 'hynvzqkjkwhvbqw125v')(class=RangeModifier)
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='weight-min')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='min' name='weight-min' value=40)
+                                        +range-slider-text('hynvzqkjkwhvbqw125v')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(type='hidden' name='weight-max')
-                                        +range-slider-text
+                                        +range-slider-input(data-type='max' name='weight-max' value=200)
+                                        +range-slider-text('hynvzqkjkwhvbqw125v')(data-type='max')
                                 +range-slider-control
                     +col(3)
                         +field
