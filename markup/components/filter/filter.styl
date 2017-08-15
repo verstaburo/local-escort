@@ -136,6 +136,15 @@
     background-color darkGreyColor
     padding: 15px 0
 
+    +above(400px)
+        &__rating-heading
+            display: flex
+            align-items: center
+
+            .heading
+                display: inline-block
+                margin-right: 20px
+
     .rating-interactive
         +below(768px)
             margin-top: 21px
