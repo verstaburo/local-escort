@@ -6,6 +6,9 @@ include ../container/container
 mixin select-city-popup()
     +popup#select-city
         +b.select-city-popup&attributes(attributes)
+            +e.select
+                span Select City
+                +popup-close.popup__close_kind_square
             +container
                 +accordion(true).accordion_dark
                     +accordion-item('United States')
