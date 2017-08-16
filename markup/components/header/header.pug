@@ -10,7 +10,7 @@ include ../button/button
 include ../city-list/city-list
 include ../selectbox/selectbox
 
-mixin header(dark)
+mixin header(dark, isGuest)
     +b.HEADER.header&attributes(attributes)
         // DESKTOP NAVBAR
         +e.NAV.navbar._desktop
@@ -81,69 +81,73 @@ mixin header(dark)
                             +navbar-item
                                 +navbar-link(href='#')._row
                                     +navbar-heading Boost my account
-                +navbar-item._dropdown._profile
-                    +navbar-link-dropdown(href='#')._row._has_badge
-                        +navbar-badge._top_right 2
-                        +navbar-col
-                            +avatar('navbar.png')._size_small
-                        +navbar-col
-                            +navbar-heading Megan
-                            +navbar-description menu
-                    +navbar-dropdown
-                        +navbar-items
-                            +navbar-item
-                                +navbar-link(href='#')._row
-                                    +navbar-heading My Profile
-                            +navbar-item
-                                +navbar-link(href='#')._row
-                                    +navbar-heading Settings
-                            +navbar-item
-                                +navbar-link(href='#')._row
-                                    +navbar-col
-                                        +navbar-heading Messages
-                                    +navbar-col
-                                        +navbar-badge._default 1
-                            +navbar-item
-                                +navbar-link(href='#')._row
-                                    +navbar-col
-                                        +navbar-heading Visitors
-                                    +navbar-col
-                                        +navbar-badge._default._dark
-                            +navbar-item
-                                +navbar-link(href='#')._row
-                                    +navbar-col
-                                        +navbar-heading FEEDS
-                                    +navbar-col
-                                        +navbar-badge._default 2
-                            +navbar-item
-                                +navbar-link(href='#')._row
-                                    +navbar-col
-                                        +navbar-heading Invite Friends
-                                    +navbar-col
-                                        +navbar-badge._default._dark
-                            +navbar-item
-                                +navbar-link(href='#')._row
-                                    +navbar-heading Invite Friends
 
-                        +navbar-items
-                            +navbar-item
-                                +navbar-link(href='#')._row._transparentify
-                                    +navbar-heading About us
-                            +navbar-item
-                                +navbar-link(href='#')._row._transparentify
-                                    +navbar-heading Help
-                            +navbar-item
-                                +navbar-link(href='#')._row._transparentify
-                                    +navbar-heading privacy & Terms
-                            +navbar-item
-                                +navbar-link.DIV
-                                    +follow-us
-                //+navbar-item
-                    +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show').js-toggle-popup._row
-                        +navbar-col
-                            != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
-                        +navbar-col
-                            +navbar-description._dark._solo login
+                if isGuest
+                    +navbar-item._login
+                        +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show')._row.js-toggle-popup
+                            +navbar-col
+                                != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
+                            +navbar-col
+                                +navbar-description._dark._solo login
+
+                else
+                    +navbar-item._dropdown._profile
+                        +navbar-link-dropdown(href='#')._row._has_badge
+                            +navbar-badge._top_right 2
+                            +navbar-col
+                                +avatar('navbar.png')._size_small
+                            +navbar-col
+                                +navbar-heading Megan
+                                +navbar-description menu
+                        +navbar-dropdown
+                            +navbar-items
+                                +navbar-item
+                                    +navbar-link(href='#')._row
+                                        +navbar-heading My Profile
+                                +navbar-item
+                                    +navbar-link(href='#')._row
+                                        +navbar-heading Settings
+                                +navbar-item
+                                    +navbar-link(href='#')._row
+                                        +navbar-col
+                                            +navbar-heading Messages
+                                        +navbar-col
+                                            +navbar-badge._default 1
+                                +navbar-item
+                                    +navbar-link(href='#')._row
+                                        +navbar-col
+                                            +navbar-heading Visitors
+                                        +navbar-col
+                                            +navbar-badge._default._dark
+                                +navbar-item
+                                    +navbar-link(href='#')._row
+                                        +navbar-col
+                                            +navbar-heading FEEDS
+                                        +navbar-col
+                                            +navbar-badge._default 2
+                                +navbar-item
+                                    +navbar-link(href='#')._row
+                                        +navbar-col
+                                            +navbar-heading Invite Friends
+                                        +navbar-col
+                                            +navbar-badge._default._dark
+                                +navbar-item
+                                    +navbar-link(href='#')._row
+                                        +navbar-heading Invite Friends
+
+                            +navbar-items
+                                +navbar-item
+                                    +navbar-link(href='#')._row._transparentify
+                                        +navbar-heading About us
+                                +navbar-item
+                                    +navbar-link(href='#')._row._transparentify
+                                        +navbar-heading Help
+                                +navbar-item
+                                    +navbar-link(href='#')._row._transparentify
+                                        +navbar-heading privacy & Terms
+                                +navbar-item
+                                    +navbar-link.DIV
+                                        +follow-us
 
         if block
             +e.user-nav
@@ -167,13 +171,15 @@ mixin header(dark)
                         != pugHelpers.Icon.call(locals, {iconName: 'location', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
                         != pugHelpers.Icon.call(locals, {iconName: 'sort-2', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
 
-                +navbar-item
-                    +navbar-link(href='#')
-                        +navbar-badge._top_right 2
-                        +avatar('navbar.png')._size_small
-                //+navbar-item
-                    +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show').js-toggle-popup._row
-                        != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
+                if isGuest
+                    +navbar-item
+                        +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show').js-toggle-popup
+                            != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
+                else
+                    +navbar-item
+                        +navbar-link(href='#')
+                            +navbar-badge._top_right 2
+                            +avatar('navbar.png')._size_small
 
         +e.search-bar
             +search-bar(class=!!dark ? '_dark' : '')._extended
