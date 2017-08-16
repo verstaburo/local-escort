@@ -1,6 +1,14 @@
 .profile-popup
     display: block
     box-sizing: border-box
+    padding-top: 60px
+    padding-bottom: 60px
+
+    .popup__close
+        transform: translate(0, 0)
+
+        +below(1140px)
+            display: flex !important
 
     & > .container .swiper-container
         max-width: 100vw
@@ -25,6 +33,13 @@
         cursor: pointer
         border-radius: 50%
         transition(transform, background-color)
+        z-index: 50
+
+        +below(1190px)
+            background-color: rgba(#000, .5)
+
+            svg
+                fill: #fff
 
         +below(1300px)
             width: 78px
@@ -40,6 +55,12 @@
 
         &:hover
             background-color: rgba(#fff, .08)
+
+            +below(1190px)
+                background-color: rgba(#000, .7)
+
+            +below(1024px)
+                background-color: rgba(#000, .5)
 
             svg
                 fill: #fff
