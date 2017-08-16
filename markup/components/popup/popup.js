@@ -44,12 +44,12 @@ export default function popup() {
         }
 
         popup.fadeIn(ANIMATION_DURATION, () => {
-            popup
-                .addClass(ACTIVE_POPUP_CLASS)
-                .trigger(AFTER_SHOW_EVENT);
+            popup.addClass(ACTIVE_POPUP_CLASS);
 
             getCurrentPopupButtons('#' + popup.attr('id')).addClass('active');
             freeze();
+
+            popup.trigger(AFTER_SHOW_EVENT);
         });
     };
 
@@ -61,11 +61,10 @@ export default function popup() {
         }
 
         popup.fadeOut(ANIMATION_DURATION, () => {
-            popup
-                .removeClass(ACTIVE_POPUP_CLASS)
-                .trigger(AFTER_HIDE_EVENT);
+            popup.removeClass(ACTIVE_POPUP_CLASS);
             getCurrentPopupButtons('#' + popup.attr('id')).removeClass('active');
             unfreeze();
+            popup.trigger(AFTER_SHOW_EVENT);
         });
     };
 

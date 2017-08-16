@@ -2,9 +2,9 @@ include ../popup/popup
 include ../follow-us/follow-us
 
 mixin user-dropdown-popup()
-    +popup.popup_no_mobile_paddings.popup_wrapper_100.popup_start#user-dropdown-popup
+    +popup.popup_no_mobile_paddings.popup_wrapper_100.popup_start.popup_overflow_hidden#user-dropdown-popup
         +b.user-dropdown-popup&attributes(attributes)
-            +e.row
+            +e.row._credits
                 +e.col
                     +e.A(href='#').link._color_main
                         | 2260
@@ -12,8 +12,10 @@ mixin user-dropdown-popup()
                 +e.col
                     +e.A(href='#').link Buy Credits
             +e.row
-                +e.A(href='#').link Transaction History
-                +e.A(href='#').link boost my account
+                +e.col
+                    +e.A(href='#').link Transaction History
+                +e.col
+                    +e.A(href='#').link boost my account
             +e.UL.row._nav
                 li
                     +e.A(href='#').link My Profile

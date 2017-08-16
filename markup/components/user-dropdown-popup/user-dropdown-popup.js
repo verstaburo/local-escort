@@ -5,16 +5,20 @@ export default function userDropdownPopup() {
         return;
     }
 
-    const navbar = $('.header__navbar').filter(function() {
-        return $(this).is(':visible');
-    });
-
-    popup.on('show', () => {
+    popup.on('aftershow', () => {
+        const navbar = $('.header__navbar_mobile');
         const offset = navbar.outerHeight() + navbar.offset().top;
 
+        console.log($('html').offset().top);
         popup
             .css('top', `${offset}px`)
             .find('.popup__wrapper')
             .css('height', $(window).height() - offset)
     });
 }
+
+$(window).on('resize', function() {
+   if ($(window).width() > 1024) {
+       $('#user-dropdown-popup').trigger('hide');
+   }
+});
