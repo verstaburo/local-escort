@@ -1,0 +1,42 @@
+include ../popup/popup
+include ../follow-us/follow-us
+
+mixin user-dropdown-popup()
+    +popup.popup_no_mobile_paddings.popup_wrapper_100.popup_start#user-dropdown-popup
+        +b.user-dropdown-popup&attributes(attributes)
+            +e.row
+                +e.col
+                    +e.A(href='#').link._color_main
+                        | 2260
+                        != pugHelpers.Icon.call(locals, { iconName: 'currency', className: 'user-dropdown-popup__icon_currency', iconWidth: '14', iconHeight: '13' })
+                +e.col
+                    +e.A(href='#').link Buy Credits
+            +e.row
+                +e.A(href='#').link Transaction History
+                +e.A(href='#').link boost my account
+            +e.UL.row._nav
+                li
+                    +e.A(href='#').link My Profile
+                li
+                    +e.A(href='#').link Settings
+                li
+                    +e.A(href='#').link Logout
+                li
+                    +e.A(href='#').link
+                        | Messages
+                        +e.SPAN.badge 1
+                li
+                    +e.A(href='#').link Visitors
+                li
+                    +e.A(href='#').link
+                        | Likes
+                        +e.SPAN.badge 2
+                li
+                    +e.A(href='#').link Invite Friends
+            +e.row
+                +e.col
+                    +e.A(href='#').link._color_grey About us
+                    +e.A(href='#').link._color_grey Help
+                    +e.A(href='#').link._color_grey privacy & Terms
+                +e.col
+                    +follow-us

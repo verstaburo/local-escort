@@ -35,6 +35,7 @@ import help from "../../components/help/help";
 import modelMap from "../../components/model-map/model-map";
 import map from "../../components/map/map";
 import userProfile from '../../components/user-profile/user-profile';
+import userDropdownPopup from '../../components/user-dropdown-popup/user-dropdown-popup';
 
 (function($){
     var event = 'oninput' in document.createElement('input') ? 'input' : 'keydown';
@@ -81,6 +82,7 @@ $(() => {
     objectFitImages();
     selectbox();
     header();
+    userDropdownPopup();
     rangeSlider();
     textarea();
     photoTape();

@@ -9,6 +9,7 @@ include ../accordion/accordion
 include ../button/button
 include ../city-list/city-list
 include ../selectbox/selectbox
+include ../user-dropdown-popup/user-dropdown-popup
 
 mixin header(dark, isGuest)
     +b.HEADER.header&attributes(attributes)
@@ -83,6 +84,7 @@ mixin header(dark, isGuest)
                                     +navbar-heading Boost my account
 
                 if isGuest
+                    // user isn't authorized
                     +navbar-item._login
                         +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show')._row.js-toggle-popup
                             +navbar-col
@@ -91,6 +93,7 @@ mixin header(dark, isGuest)
                                 +navbar-description._dark._solo login
 
                 else
+                    // user is authorized
                     +navbar-item._dropdown._profile
                         +navbar-link-dropdown(href='#')._row._has_badge
                             +navbar-badge._top_right 2
@@ -172,12 +175,14 @@ mixin header(dark, isGuest)
                         != pugHelpers.Icon.call(locals, {iconName: 'sort-2', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
 
                 if isGuest
+                    // user is authorized
                     +navbar-item
                         +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show').js-toggle-popup
                             != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
                 else
-                    +navbar-item
-                        +navbar-link(href='#')
+                    // user isn't authorized
+                    +navbar-item._profile
+                        +navbar-link(href='#' data-popup-id='#user-dropdown-popup' data-action='toggle').js-toggle-popup
                             +navbar-badge._top_right 2
                             +avatar('navbar.png')._size_small
 
@@ -185,3 +190,6 @@ mixin header(dark, isGuest)
             +search-bar(class=!!dark ? '_dark' : '')._extended
 
         +photo-tape
+
+    // mobile profile popup, if user is authorized.
+    +user-dropdown-popup
