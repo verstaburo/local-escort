@@ -1,7 +1,23 @@
 .registration
     display: block
-    padding-top: 45px
+    padding-top: 38px
     padding-bottom: 54px
+
+    & > .container > .heading
+        margin-bottom: 22px
+
+    .grid:first-of-type
+        padding-bottom: 15px
+
+        &::after
+            content: ''
+            display: block
+            width: 100%
+            height: 1px
+            background-color: borderColor
+            margin-top: 40px
+            margin-left: 12px
+            margin-right: 12px
 
     &__member
         padding-bottom: 30px

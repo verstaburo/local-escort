@@ -13,14 +13,14 @@ mixin registration()
         +container
             +heading Registration
 
-            +grid.FORM(method='post' action='#' enctype='multipart/form-data')
+            form.grid(method='post' action='#' enctype='multipart/form-data')
                 +col(4).hide-mob
                     +info-control('radio', 'profile-type', 'regular', true)._light Regular member
                 +col(4).hide-mob
                     +info-control('radio', 'profile-type', 'independent')._light Independent
                 +col(4).hide-mob
                     +info-control('radio', 'profile-type', 'agency')._light Agency
-
+            +grid
                 +col(4).hide-desktop
                     +field.registration__member
                         +field-label Member
