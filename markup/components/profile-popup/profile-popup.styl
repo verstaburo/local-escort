@@ -2,8 +2,10 @@
     display: block
     box-sizing: border-box
 
-    .user-profile
+    & > .container .swiper-container
         max-width: 100vw
+
+    .user-profile
 
         .container
             width: 100%
@@ -25,7 +27,12 @@
         transition(transform, background-color)
 
         +below(1300px)
-            display: none
+            width: 78px
+            height: 78px
+
+            svg
+                width: 12.5px
+                height: 7px
 
         svg
             fill: rgba(#fff, .4)
