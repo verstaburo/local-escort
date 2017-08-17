@@ -6,6 +6,7 @@ include ../components/arrow-up/arrow-up
 include ../components/filter/filter
 include ../components/popup-welcome/popup-welcome
 include ../components/select-city-popup/select-city-popup
+include ../components/model-map/model-map
 
 block header
     +header
@@ -18,9 +19,11 @@ block popups
     +popup-welcome
     +filter-extended
     +select-city-popup
+    +model-map
 
 block scripts
     script(src='%=static=%js/separate-js/ajax/agency-list-load.js')
+    script(src=`%=static=%js/separate-js/maps/model-agencies.js`)
 
 block footer
     +footer
