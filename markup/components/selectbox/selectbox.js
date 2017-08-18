@@ -10,6 +10,7 @@ const DROPDOWN          = 'selectbox__dropdown';
 
 const normalizeList = (list) => {
     const footer = $('.footer');
+    const w = $(window);
 
     // direction -> to top
     if (footer.offset().top + footer.outerHeight() < list.outerHeight() + list.offset().top) {
@@ -19,6 +20,21 @@ const normalizeList = (list) => {
             top: '-100%',
             transform: 'translateY(-100%)',
         });
+    }
+
+    if (list.offset().left < 0) {
+        if (list.css('right') === 'auto') {
+            console.log(list.offset().left , 31, 'px');
+            list.css('left', 0);
+        } else if (list.css('left') === 'auto') {
+            list.css('right', 0);
+        } else {
+            list.css({
+                left: 0,
+                right: 'initial'
+            });
+        }
+
     }
 };
 
