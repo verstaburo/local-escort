@@ -3,7 +3,7 @@ include ../button/button
 include ../heading/heading
 
 mixin auth-popup()
-    +popup.popup_paddings#auth-popup
+    +popup.popup_paddings.popup_wrapper_100#auth-popup
         +popup-close.popup__close_no_translate
         +container.container__height_100p
             +b.auth-popup&attributes(attributes)

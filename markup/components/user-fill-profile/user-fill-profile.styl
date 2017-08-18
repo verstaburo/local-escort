@@ -74,6 +74,15 @@
         display: flex
         width: 100%
 
+        +below(768px)
+            flex-direction: column
+
+            &_labeled
+                .checkbox, .radio
+                    &:not(:last-child)
+                        margin-bottom: 12px
+
+
         &_visual
             justify-content: space-between
             border: 1px solid borderColor
@@ -82,11 +91,18 @@
     &__col
         width: 50%
 
+        +below(768px)
+            width: 100%
+
         &:first-child
             margin-right: 25px
+            margin-bottom: 25px
 
         &:last-child
             margin-left: 25px
+
+            +below(768px)
+                margin-left: 0
 
     &__other-textarea
         margin-top: 20px

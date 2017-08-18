@@ -4,8 +4,9 @@ include ../count-info/count-info
 include ../popup/popup
 
 mixin popup-welcome()
-    +popup#popup-welcome
+    +popup.popup_no_mobile_paddings#popup-welcome
         +b.popup-welcome&attributes(attributes)
+            +popup-close.popup__close_kind_square.popup__close_no_translate
             +image-bg('popup/welcome.jpg').__img
             +e.text-block
                 +e.H2.heading Adult content 18+

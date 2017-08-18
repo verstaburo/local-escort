@@ -339,9 +339,9 @@ mixin user-fill-profile-3
                             option(value='22') 22:00
                             option(value='23') 23:00
                             option(value='24') 24:00
-                +col(4)
+                +col(4).hide-mob
                     span.user-fill-profile__label.user-fill-profile__label_flex_end From
-                +col(4)
+                +col(4).hide-mob
                     span.user-fill-profile__label.user-fill-profile__label_flex_end To
 
                 each day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -432,7 +432,7 @@ mixin user-fill-profile-4
                     +button('button')._uppercase._bg_main._color_white.user-fill-profile__action Edit
 
                 +col(12)
-                    .user-fill-profile__subsection.user-fill-profile__subsection_visual
+                    .user-fill-profile__subsection.user-fill-profile__subsection_visual.user-fill-profile__subsection_labeled
                         +radio(true, 'sms-call', 1) SMS & Call
                         +radio(false, 'sms-call', 2) SMS only
                         +radio(false, 'sms-call', 3) no SMS
