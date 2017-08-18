@@ -45,8 +45,8 @@ export default function modelPreview(model) {
     const getSettings = el => ({
         slidesPerView: 1,
         touchRatio: 0,
-        prevButton: el.find('.model-preview__button_prev'),
-        nextButton: el.find('.model-preview__button_next'),
+        // prevButton: el.find('.model-preview__button_prev'),
+        // nextButton: el.find('.model-preview__button_next'),
         pagination: el.find('.model-preview__pagination'),
     });
 
@@ -104,5 +104,27 @@ export default function modelPreview(model) {
         toggleBreakInfo();
     });
 }
+
+$(document).on('mousemove', '.model-preview__slider', function({ clientX }) {
+    const el = $(this);
+    const swiper = this.swiper;
+
+    if (!swiper) {
+        return;
+    }
+
+    const slideWidth = el.outerWidth();
+    const slideCount = swiper.slides.length;
+    const columnWidth = slideWidth / slideCount;
+    let currentSlide = swiper.activeIndex;
+
+    const nextSlide = Math.floor((clientX - el.offset().left) / columnWidth);
+
+    if (nextSlide === currentSlide) {
+        return;
+    }
+
+    swiper.slideTo(nextSlide);
+});
 
 window.modelPreviewInit = modelPreview;
