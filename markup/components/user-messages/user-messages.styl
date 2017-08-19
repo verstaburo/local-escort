@@ -100,11 +100,10 @@
             display: none
 
         .message
-            display: inline-flex
-            width: initial
+            display: inline-block
+            width: auto
             min-width: 278px
-            flex: 0
-            flex-shrink: 0
+            max-width: 100%
 
             &:not(:last-child)
                 margin-bottom: 12px
@@ -116,6 +115,7 @@
         padding-left: 24px
         padding-right: 24px
         padding-top: 24px
+        align-items: flex-start
 
         +below(768px)
             padding-left: 12px
