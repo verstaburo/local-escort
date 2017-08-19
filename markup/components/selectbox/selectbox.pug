@@ -3,6 +3,7 @@ mixin selectbox()
         +e.box
             +e.SPAN.value
         != pugHelpers.Icon.call(locals, {iconName: 'arrow-sl', className: 'selectbox__arrow', iconWidth: '8', iconHeight: '8'})
+        +e.list-wrapper
         block
 
 mixin selectbox-control

@@ -3,6 +3,7 @@ const VALUE             = 'selectbox__value';
 const CONTROL           = 'selectbox__control';
 const ACTIVE            = 'selectbox_active';
 const LIST              = 'selectbox__list';
+const LIST_WRAPPER      = 'selectbox__list-wrapper';
 const LIST_ITEM         = 'selectbox__item';
 const LIST_ITEM_VALUE   = 'span';
 const LIST_ITEM_ACTIVE  = 'selectbox__item_active';
@@ -10,11 +11,12 @@ const DROPDOWN          = 'selectbox__dropdown';
 
 const normalizeList = (list) => {
     const footer = $('.footer');
+    const wrap = list.parents(`.${LIST_WRAPPER}`);
     const w = $(window);
 
     // direction -> to top
-    if (footer.offset().top + footer.outerHeight() < list.outerHeight() + list.offset().top) {
-        list.css({
+    if (footer.offset().top + footer.outerHeight() < wrap.outerHeight() + wrap.offset().top) {
+        wrap.css({
             marginTop: 0,
             marginBottom: list.css('margin-top'),
             top: '-100%',
@@ -22,14 +24,13 @@ const normalizeList = (list) => {
         });
     }
 
-    if (list.offset().left < 0) {
-        if (list.css('right') === 'auto') {
-            console.log(list.offset().left , 31, 'px');
-            list.css('left', 0);
+    if (wrap.offset().left < 0) {
+        if (wrap.css('right') === 'auto') {
+            wrap.css('left', 0);
         } else if (list.css('left') === 'auto') {
-            list.css('right', 0);
+            wrap.css('right', 0);
         } else {
-            list.css({
+            wrap.css({
                 left: 0,
                 right: 'initial'
             });
@@ -43,6 +44,7 @@ const generateList = (selectbox) => {
         return
     }
 
+    const wrap = selectbox.find(`.${LIST_WRAPPER}`);
     const control = selectbox.find(`.${CONTROL}`);
     const value = selectbox.find(`.${VALUE}`);
 
@@ -50,7 +52,6 @@ const generateList = (selectbox) => {
         return
     }
 
-    const existingList = selectbox.find(`.${LIST}`);
     const list = $('<ul></ul>').addClass(LIST);
 
     const generateListItem = title => {
@@ -66,6 +67,8 @@ const generateList = (selectbox) => {
 
         return item;
     };
+
+    let hasDropdown = false;
 
     control
         .children()
@@ -85,6 +88,7 @@ const generateList = (selectbox) => {
 
             if (isOptgroup) {
 
+                hasDropdown = true;
                 const dropdownItem = generateListItem(item.prop('label')).appendTo(list);
 
                 const dropdown = $('<ul></ul>')
@@ -105,13 +109,13 @@ const generateList = (selectbox) => {
             }
         });
 
-    if (!existingList.length) {
-        selectbox.append(list);
-        normalizeList(list);
-    } else {
-        existingList.replaceWith(list);
-        normalizeList(list);
+    wrap.append(list);
+
+    if (hasDropdown) {
+        wrap.addClass('selectbox__list-wrapper_has_dropdown');
     }
+
+    normalizeList(list);
 };
 
 export default function selectbox() {
