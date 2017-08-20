@@ -1,48 +1,118 @@
-export default function grid() {
+/**
+ * @param grid
+ * @returns {number} number of columns for current resulution
+ */
+const getColumnsCount = (grid) => {
+    const cols = grid.data('cols') || {};
+
+    const desktop = Number(cols.desktop) || 4;
+    const laptop = Number(cols.laptop) || 3;
+    const tablet = Number(cols.tablet) || 2;
+    const mobile = Number(cols.mobile) || 1;
+
+    const isLaptop = window.matchMedia('(max-width: 1024px)').matches;
+    const isTablet = window.matchMedia('(max-width: 768px)').matches;
+    const isMobile = window.matchMedia('(max-width: 540px)').matches;
+
+    if (isMobile) {
+        return mobile;
+    } else if (isTablet) {
+        return tablet;
+    } else if (isLaptop) {
+        return laptop;
+    }
+
+    return desktop;
+};
+
+/**
+ * @param {Number} columns
+ * if columns were provided, then use it to build grid, otherwise, detect columns count automatically
+ * @param {Boolean} resort
+ * if we need to resort (for example, after breakpoint change) we regroup all items
+ */
+export default function grid(columns, resort = false) {
     const gridElement = $('.js-masonry');
 
     if (!gridElement.length) {
         return;
     }
 
+    // grid settings
     const GRID_COLUMNS_COUNT = 12;
-
-    let COLUMNS = Math.ceil(gridElement.data('columns'));
-    const blocks = $(gridElement.data('block'));
-
-    if (!COLUMNS || !blocks.length) {
-        return;
-    }
-
-    if (COLUMNS % 2 !== 0 && GRID_COLUMNS_COUNT % COLUMNS !== 0) {
-        console.warn(`data-columns should be an even number, you have specified ${COLUMNS}, it just changed to ${COLUMNS - 1}`);
-        COLUMNS -= 1;
-    }
-
     const COLUMN_CLASSNAME = 'grid__col';
 
-    const getColumn = n => {
-        const num = n - 1 < 0 ? 0 : n - 1 >= GRID_COLUMNS_COUNT ? GRID_COLUMNS_COUNT - 1 : n - 1;
+    const existingColumns = gridElement.find('.grid__col');
+    const newItems = gridElement.find('.js-masonry-item').filter(function() {
+        return $(this).parent().hasClass('js-masonry');
+    });
 
-        const modifiers = [
-            'one', 'two', 'three', 'four',
-            'fifth', 'six', 'seven', 'eight',
-            'nine', 'ten', 'eleven', 'twelve',
-        ];
+    const totalItemsCount = gridElement.find('.js-masonry-item').length;
 
-        const className = `${COLUMN_CLASSNAME} ${COLUMN_CLASSNAME}_${modifiers[num]}`;
+    let columnsCount = Number(columns) > 0 ? columns : getColumnsCount(gridElement);
 
-        return $(`<div class="${className}"></div>`);
+    if (totalItemsCount.length < columnsCount) {
+        columnsCount = totalItemsCount;
+    }
+
+    // matrix
+    // example: [[], [], [], []]
+    const mtx = new Array(columnsCount).fill('').map(() => []);
+
+    const pushElementIntoMtx = function(i, item) {
+        mtx[i % columnsCount].push(item || $(this));
     };
 
-    const columnElements = new Array(blocks.length >= COLUMNS ? COLUMNS : blocks.length)
-        .fill(0)
-        .map(() => getColumn(GRID_COLUMNS_COUNT / COLUMNS));
+    // existing columns, if new items were appended to the container (old items, for example if new items just added via ajax)
+    // shift items from the columns in the same order as we append it
+    // skip if resort === true
+    if (existingColumns.length && !resort) {
+        existingColumns.each(function(i) {
+            $(this).find('.js-masonry-item').each(function() {
+                pushElementIntoMtx(i, $(this));
+            });
+        });
+    }
 
-    blocks.each((i, el) => columnElements[i % columnElements.length].append(el));
+    // first load (grid build) or new items which added via ajax
+    // skip if resort === true
+    if (newItems.length && !resort) {
+        newItems.each(pushElementIntoMtx);
+    }
+
+    if (resort) {
+        gridElement.find('.js-masonry-item').each(pushElementIntoMtx);
+    }
+
+    const modifiers = [
+        'one', 'two', 'three', 'four',
+        'fifth', 'six', 'seven', 'eight',
+        'nine', 'ten', 'eleven', 'twelve',
+    ];
+
+    // make DOM elements from the matrix
+    const cols = mtx.map(item => {
+        const num = Math.floor(GRID_COLUMNS_COUNT / columnsCount) - 1;
+        const className = `${COLUMN_CLASSNAME} ${COLUMN_CLASSNAME}_${modifiers[num]}`;
+        return $(`<div class="${className}"></div>`).append(item);
+    });
 
     gridElement
+        .data('columns-count', columnsCount)
         .html('')
-        .append(columnElements)
+        .append(cols)
         .trigger('rebuild');
 };
+
+// rebuild grid when breakpoint just changed
+$(window).on('resize', function() {
+   const gridElement =  $('.js-masonry');
+   const oldCount = Number(gridElement.data('columns-count'));
+   const nextCount = getColumnsCount(gridElement);
+
+   if (oldCount === nextCount) {
+       return;
+   }
+
+   grid(nextCount, true);
+});

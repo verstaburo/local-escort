@@ -12,8 +12,8 @@ mixin grid()
     .grid&attributes(attributes)
         block
 
-mixin grid-masonry(columns, blockClass)
-    +grid.grid_masonry.js-masonry(data-columns=columns data-block=blockClass)&attributes(attributes)
+mixin grid-masonry(columns)
+    +grid.grid_masonry.js-masonry(data-cols=columns)&attributes(attributes)
         block
 
 mixin col(number)
