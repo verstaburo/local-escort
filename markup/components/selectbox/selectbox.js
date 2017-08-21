@@ -12,7 +12,6 @@ const DROPDOWN          = 'selectbox__dropdown';
 const normalizeList = (list) => {
     const footer = $('.footer');
     const wrap = list.parents(`.${LIST_WRAPPER}`);
-    const w = $(window);
 
     if (!wrap.length) {
         return;
