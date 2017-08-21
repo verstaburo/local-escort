@@ -9,10 +9,13 @@ $(function() {
             url: 'model-list-ajax-example.html',
             type: 'GET',
             success: function(data) {
-                setTimeout(function () { // emulate server delay
-                    container.append(data);
+                container.append(data);
+                if ($(window).width() <= 540) {
+                    // get current columns count (need to prevent user sort-ui btns)
+                    rebuildGrd(Number(container.data('columns-count')));
+                } else {
                     rebuildGrd();
-                }, 500);
+                }
             }
         });
     })

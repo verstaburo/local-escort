@@ -36,6 +36,7 @@ import modelMap from "../../components/model-map/model-map";
 import map from "../../components/map/map";
 import userProfile from '../../components/user-profile/user-profile';
 import userDropdownPopup from '../../components/user-dropdown-popup/user-dropdown-popup';
+import modelList from "../../components/model-list/model-list";
 
 (function($){
     var event = 'oninput' in document.createElement('input') ? 'input' : 'keydown';
@@ -117,4 +118,5 @@ $(() => {
     userProfile();
     map();
     modelMap();
+    modelList();
 });

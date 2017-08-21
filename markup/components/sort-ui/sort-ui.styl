@@ -1,13 +1,12 @@
 .sort-ui
-    display: inline-block
-    vertical-align: middle
+    display: inline-flex
+
+    &__item
+        padding: 10px
 
     &__icon
-        stroke: #fff
+        fill: #fff
         transition(fill)
-
-        &:not(:last-child)
-            margin-right: 18px
 
         &.active
             fill: mainColor

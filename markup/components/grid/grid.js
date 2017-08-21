@@ -49,7 +49,7 @@ export default function grid(columns, resort = false) {
 
     const totalItemsCount = gridElement.find('.js-masonry-item').length;
 
-    let columnsCount = Number(columns) > 0 ? columns : getColumnsCount(gridElement);
+    let columnsCount = Number(columns) > 0 ? Number(columns) : getColumnsCount(gridElement);
 
     if (totalItemsCount.length < columnsCount) {
         columnsCount = totalItemsCount;
