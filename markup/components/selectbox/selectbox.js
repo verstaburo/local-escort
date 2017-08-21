@@ -14,11 +14,15 @@ const normalizeList = (list) => {
     const wrap = list.parents(`.${LIST_WRAPPER}`);
     const w = $(window);
 
+    if (!wrap.length) {
+        return;
+    }
+
     // direction -> to top
     if (footer.offset().top + footer.outerHeight() < wrap.outerHeight() + wrap.offset().top) {
         wrap.css({
             marginTop: 0,
-            marginBottom: list.css('margin-top'),
+            marginBottom: wrap.css('margin-top'),
             top: '-100%',
             transform: 'translateY(-100%)',
         });
@@ -27,7 +31,7 @@ const normalizeList = (list) => {
     if (wrap.offset().left < 0) {
         if (wrap.css('right') === 'auto') {
             wrap.css('left', 0);
-        } else if (list.css('left') === 'auto') {
+        } else if (wrap.css('left') === 'auto') {
             wrap.css('right', 0);
         } else {
             wrap.css({
