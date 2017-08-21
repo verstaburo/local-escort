@@ -4,6 +4,7 @@ include ../image-bg/image-bg
 mixin profile-photo-popup()
     +popup.popup_wrapper_100.popup_no_mobile_paddings#profile-photo
         +b.profile-photo-popup&attributes(attributes)
+            +popup-close.popup__close_kind_square.popup__close_no_translate
             +e.gallery.swiper-container
                 +e.UL.gallery-items.swiper-wrapper
                     - for (var i = 0; i < 15; i++)
@@ -20,9 +21,9 @@ mixin profile-photo-popup()
                                     +e.A(href='#').link Report
 
                 +e.button._prev
-                    != pugHelpers.Icon.call(locals, {iconName: 'caret', className: 'profile-photo-popup__caret-icon', iconWidth: 11, iconHeight: 22})
+                    != pugHelpers.Icon.call(locals, {iconName: 'caret', className: 'profile-photo-popup__caret-icon', iconWidth: 22, iconHeight: 11})
                 +e.button._next
-                    != pugHelpers.Icon.call(locals, {iconName: 'caret', className: 'profile-photo-popup__caret-icon', iconWidth: 11, iconHeight: 22})
+                    != pugHelpers.Icon.call(locals, {iconName: 'caret', className: 'profile-photo-popup__caret-icon', iconWidth: 22, iconHeight: 11})
 
             +e.thumbs.swiper-container
                 +e.UL.thumbs-items.swiper-wrapper
