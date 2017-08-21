@@ -172,7 +172,7 @@ mixin header(dark, isGuest)
                 +navbar-item
                     +navbar-link(href='#' data-popup-id='#model-map' data-action='toggle')._mob-map.js-toggle-popup
                         != pugHelpers.Icon.call(locals, {iconName: 'location', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
-                        != pugHelpers.Icon.call(locals, {iconName: 'sort-2', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
+                        != pugHelpers.Icon.call(locals, {iconName: 'list-view', className: 'navbar__icon_list-view', iconWidth: '22', iconHeight: '14'})
 
                 if isGuest
                     // user is authorized
