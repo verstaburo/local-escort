@@ -9,7 +9,7 @@ include ../badges/badges
 include ../heading/heading
 
 mixin model-list()
-    +b.model-list&attributes(attributes)
+    +b.model-list._search&attributes(attributes)
         +container
             +filter.hide-mob
             +e.header
@@ -31,13 +31,13 @@ mixin model-list()
                     +button(href='#' data-popup-id='#model-map' data-action='toggle')._color_white._bg_darkGrey._uppercase.js-toggle-popup View on map
 
             +grid-masonry({ desktop: 4, laptop: 3, tablet: 2, mobile: 1}).js-model-preview-grid
-                +model-preview([7, 7, 7], 'Megan', 20, 325, true)
+                +model-preview([7, 7, 7], 'Megan', 20, 325, true).js-masonry-item
                     +badges._top
                         +badges-item._new._skew
                             span New
                         +badges-item._info
                             span 1 hour ago
-                +model-preview([5, 5, 5, 5], 'Megan', 22, 390)
+                +model-preview([5, 5, 5, 5], 'Megan', 22, 390).js-masonry-item
                     +badges._top
                         +badges-item._vip._skew
                             span Vip

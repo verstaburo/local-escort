@@ -51,7 +51,7 @@ export default function grid(columns, resort = false) {
 
     let columnsCount = Number(columns) > 0 ? Number(columns) : getColumnsCount(gridElement);
 
-    if (totalItemsCount.length < columnsCount) {
+    if (totalItemsCount < columnsCount) {
         columnsCount = totalItemsCount;
     }
 

@@ -2,6 +2,11 @@
     display: block
     padding-bottom: 40px
 
+    &_search
+        .grid__col_six
+            +above(1025px)
+                @extends .grid__col_three
+
     .filter
         +below(1300px)
             margin-top: 45px
