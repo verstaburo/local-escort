@@ -4,9 +4,9 @@
     &__item
         padding: 10px
 
-    &__icon
-        fill: #fff
-        transition(fill)
-
         &.active
-            fill: mainColor
+            & ^[0]__icon
+                fill: mainColor
+    &__icon
+        fill: darkGreyColor
+        transition(fill)
