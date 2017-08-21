@@ -68,7 +68,7 @@ mixin agency()
 
             +e.models
                 +heading Agency models
-                +grid-masonry(4, '.js-masonry-item').js-model-preview-grid
+                +grid-masonry({ desktop: 4, laptop: 3, tablet: 2, mobile: 1}).js-model-preview-grid
                     +boost(true).js-masonry-item
                     +model-preview([7, 7, 7], 'Sonya', 20, 325, true).js-masonry-item
                         +badges._top

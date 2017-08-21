@@ -10,7 +10,7 @@ mixin user-following()
         +container
             +heading Following
             +e.content
-                +grid-masonry(4, '.js-masonry-item').js-model-preview-grid
+                +grid-masonry({ desktop: 4, laptop: 3, tablet: 2, mobile: 1}).js-model-preview-grid
                     +model-preview([7, 7, 7], 'Sonya', 20, 325, true).js-masonry-item
                         +badges._top
                             +badges-item._new._skew

@@ -38,7 +38,7 @@ mixin model-list()
 
             +heading You may be interested in
 
-            +grid-masonry(4, '.model-preview').js-model-preview-grid
+            +grid-masonry({ desktop: 4, laptop: 3, tablet: 2, mobile: 1}).js-model-preview-grid
                 +model-preview([7, 7, 7], 'Sonya', 20, 325, true)
                     +badges._top
                         +badges-item._new._skew

@@ -51,7 +51,7 @@ mixin user-fill-profile-1
     form(action='#' enctype='multipart/form-data' method='post').user-fill-profile__main
         .user-fill-profile__section
             +heading._md Photos
-            +grid-masonry(3, '.user-fill-profile__masonry-item').js-user-fill-profile-photos
+            +grid-masonry({ desktop: 3, laptop: 2, tablet: 2, mobile: 1}).js-user-fill-profile-photos
                 +uploaded-photo('profile/photos/1.jpg').user-fill-profile__masonry-item
                 +uploaded-photo('profile/photos/2.jpg').user-fill-profile__masonry-item
                 +file-column(null, 'photo', 'image/*', false, 'Add photo', 'The size should not exceed 2 MB').user-fill-profile__masonry-item
