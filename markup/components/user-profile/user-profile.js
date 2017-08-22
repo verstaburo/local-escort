@@ -15,8 +15,10 @@ export default function userProfile() {
 
     const next = card.next();
     const parent = card.parent();
+    const popup = block.parents('.popup');
 
     const top = hT >= wT ? hT + header.outerHeight() : wT;
+
     const btm = next.length ? next.offset().top - next.outerHeight() - card.outerHeight() : parent.height() - card.outerHeight();
 
     let translate = 0;
@@ -36,5 +38,4 @@ export default function userProfile() {
     card.css('transform', `translate3d(0, ${translate}px, 0`);
 }
 
-
-$(window).on('scroll', userProfile);
+$('.user-profile').parents('.popup').on('scroll', userProfile);
