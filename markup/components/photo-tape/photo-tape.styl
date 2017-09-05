@@ -30,6 +30,10 @@ photoTapeItemWidthMobile = 60px
         text-decoration: none
         font-size: 0
 
+        &:hover
+            & ^[0]__photo
+                opacity: .5
+
     &__photo
         width: 100%
         height: auto
@@ -84,6 +88,3 @@ photoTapeItemWidthMobile = 60px
 
         +below(1300px)
             display: none
-
-    .model-info-popup
-        display: none

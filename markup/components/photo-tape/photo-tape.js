@@ -15,12 +15,12 @@ function togglePopup() {
 
             const popup = $(this).siblings('.model-info-popup');
 
-            popup.parents('.photo-tape').find('.model-info-popup').fadeOut();
+            popup.parents('.photo-tape').find('.model-info-popup').removeClass('active');
 
-            if (popup.is(':visible')) {
-                popup.fadeOut();
+            if (popup.hasClass('active')) {
+                popup.removeClass('active');
             } else {
-                popup.fadeIn();
+                popup.addClass('active');
             }
         });
     } else {
@@ -28,12 +28,12 @@ function togglePopup() {
             function() {
                 const item = $(this).find('.model-info-popup');
                 timer = setTimeout(() => {
-                    item.fadeIn();
+                    item.addClass('active');
                 }, 200);
             },
             function() {
                 clearTimeout(timer);
-                $(this).find('.model-info-popup').fadeOut();
+                $(this).find('.model-info-popup').removeClass('active');
             }
         );
     }
