@@ -8,7 +8,9 @@
         background-color: #fff
 
         & > ^[0]__close
-            display: table-cell
+            opacity: 1
+            pointer-events all
+            margin-right: 14px
 
             +below(1024px)
                 display: none
@@ -36,7 +38,10 @@
         fill: darkGreyColor
 
     &__close
-        display: none
+        display: table-cell
+        opacity: 0
+        pointer-events none
         width: 60px
         height: 60px
-        margin-right: 14px
+        margin-right: -60px
+        transition(all)
