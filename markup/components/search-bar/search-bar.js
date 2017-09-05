@@ -9,10 +9,11 @@ export default function searchBar() {
 
     input.on('focus', () => {
         form
-           .addClass('search-bar_extended')
-           .parents('.navbar__item')
-           .prevAll(':not(.navbar__item_logo)')
-           .hide();
+            .addClass('search-bar_extended')
+            .parents('.navbar__item')
+            .addClass('active')
+            .prevAll(':not(.navbar__item_logo)')
+            .hide();
     });
 
     close.on('click', (e) => {
@@ -20,6 +21,7 @@ export default function searchBar() {
         form
             .removeClass('search-bar_extended')
             .parents('.navbar__item')
+            .removeClass('active')
             .prevAll(':not(.navbar__item_logo)')
             .show();
     });
