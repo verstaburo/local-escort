@@ -8,12 +8,14 @@
         height: 62px
 
     &__dropdown
+        box-shadow 0 10px 40px 0 rgba(29, 29, 29, .1)
+
         & ^[0]__item
             min-width: initial
             min-height: 80px
 
-            &:not(:last-of-type)
-                border-right: 0
+            &:not(:first-child)
+                border: 0
 
         & ^[0]__link
               padding: 0
@@ -93,6 +95,11 @@
             & > ^[0]__dropdown
                 opacity: 1
                 pointer-events: all
+                transform: translateY(0)
+
+
+                .navbar__item
+                    opacity: 1
 
             & ^[0]__arrow
                 opacity: 1
@@ -254,8 +261,14 @@
         background-color: #1a1b1c
         z-index: 50
         opacity: 0
-        transition(opacity)
+        transition(opacity, transform)
+        transform: translate3d(0, -60px, 0)
         pointer-events none
+
+        .navbar__item
+            opacity: 0
+            transition(opacity)
+            transition-delay .4s
 
     &__suggest
         position absolute
