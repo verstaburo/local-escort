@@ -38,7 +38,11 @@ const normalizeList = (list) => {
                 right: 'initial'
             });
         }
+    }
 
+    if (wrap.offset().left + wrap.outerWidth() >= $(window).width()) {
+        console.log(wrap);
+        wrap.css('transform', `translateX(-${wrap.offset().left + wrap.outerWidth() - $(window).width() + 12}px)`)
     }
 };
 
@@ -145,6 +149,7 @@ export default function selectbox() {
         if (isActive) {
             selectbox.removeClass(ACTIVE);
         } else {
+            normalizeList(list);
             selectbox.addClass(ACTIVE);
         }
     };

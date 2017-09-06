@@ -17,7 +17,7 @@
                 display: none
 
         & > ^[0]__placeholder span
-            opacity .4
+            display: block
 
     &__input
         flex: 1
@@ -44,9 +44,8 @@
         ellipsis(100%)
 
         span
-            opacity: 0
-            color: darkGreyColor
-            transition(opacity)
+            display: none
+            color: rgba(darkGreyColor, .4)
 
     &__button
         display: block
