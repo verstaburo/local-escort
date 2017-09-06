@@ -85,7 +85,12 @@
            & > a
                 color: #fff
 
+        &.navbar__item_dropdown:hover:not(.navbar__item_no_hover),
+        &.active
+            border-color darkGreyColor
+
         &_dropdown:hover, &.active, &_active, &_active:hover
+
             & ^[0]__link
                 background-color: darkGreyColor
 
@@ -114,7 +119,11 @@
         &:not(:first-child)
             border-left: 1px solid borderColor
 
-        &:hover:not(.navbar__item_no_hover), &.active
+            .navbar_dark &
+                border-left: 1px solid #262728
+
+        &:hover:not(.navbar__item_no_hover),
+        &.active
             border-color transparent
             box-shadow 0 10px 40px rgba(29, 29, 29, .1)
 
@@ -268,7 +277,7 @@
         .navbar__item
             opacity: 0
             transition(opacity)
-            transition-delay .4s
+            transition-delay .35s
 
     &__suggest
         position absolute

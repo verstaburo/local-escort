@@ -5,5 +5,5 @@ mixin search-bar(placeholder)
         +e.placeholder!= placeholder || 'Search'
         +e.INPUT.input(type='text' name='search')
         +e.BUTTON.button(type='submit')
-            != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'search-bar__icon', iconWidth: '16', iconHeight: '16'})
+            != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'search-bar__icon', iconWidth: '18', iconHeight: '18'})
         +icon-button('close', 16, 16, 'icon-button__icon icon-button__icon_fill').__close
