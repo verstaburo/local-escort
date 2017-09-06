@@ -36,7 +36,7 @@ mixin header(dark, isGuest)
                         +navbar-description 2154
 
                 +navbar-item._flexible._no_hover
-                    +search-bar(class=!!dark ? '_dark' : '')
+                    +search-bar('Search <span>(for example, a telephone number)</span>')(class=!!dark ? '_dark' : '')
 
                 +navbar-item(data-popup-id='#select-city' data-action='toggle')._city._dropdown.js-toggle-popup
                     +navbar-link-dropdown(href='#')
@@ -187,7 +187,7 @@ mixin header(dark, isGuest)
                             +avatar('navbar.png')._size_small
 
         +e.search-bar
-            +search-bar(class=!!dark ? '_dark' : '')._extended
+            +search-bar()(class=!!dark ? '_dark' : '')._extended
 
         +photo-tape
 

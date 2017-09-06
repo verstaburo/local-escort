@@ -6,15 +6,15 @@ export default function citySuggest() {
     }
 
     try {
-        if (!sessionStorage.getItem('selectedCity')) {
-            setTimeout(() => { suggestPopup.fadeIn() }, 1500);
+        if (!localStorage.getItem('selectedCity')) {
+            setTimeout(() => { suggestPopup.addClass('active') }, 1500);
         }
     } catch (e) {}
 
     suggestPopup.on('click', '#confirmCity', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        suggestPopup.fadeOut();
-        sessionStorage.setItem('selectedCity', true);
+        suggestPopup.removeClass('active');
+        localStorage.setItem('selectedCity', true);
     });
 };

@@ -1,8 +1,9 @@
 include ../icon-button/icon-button
 
-mixin search-bar()
+mixin search-bar(placeholder)
     +b.FORM(method='POST' action='#').search-bar&attributes(attributes)
-        +e.INPUT.input(type='text' name='search' placeholder='search')
+        +e.placeholder!= placeholder || 'Search'
+        +e.INPUT.input(type='text' name='search')
         +e.BUTTON.button(type='submit')
             != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'search-bar__icon', iconWidth: '16', iconHeight: '16'})
         +icon-button('close', 16, 16, 'icon-button__icon icon-button__icon_fill').__close

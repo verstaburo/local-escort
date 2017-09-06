@@ -1,5 +1,14 @@
 .city-suggest
     background-color darkGreyColor
+    opacity 0
+    transform: translate3d(0, 100px, 0)
+    pointer-events none
+    transition(opacity, transform)
+
+    &.active
+        opacity: 1
+        transform: translate3d(0, 0, 0)
+        pointer-events all
 
     &::after
         triangle(darkGreyColor, up)

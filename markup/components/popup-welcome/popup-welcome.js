@@ -1,15 +1,12 @@
 export default function popupWelcome() {
     const popup = $('#popup-welcome');
 
-    // я использую sessionStorage вместо localStorage,
-    // т.к тут хранится сессия, т.е, если я закрою браузер, то sessionStorage автоматически чистится
-
-    // записываем в статическую переменную функции значение из sessionStorage
-    // для браузеров, которые не поддерживают sessionStorage
-    // try catch нужен для браузеров, которые не поддежривают sessionStorage
+    // записываем в статическую переменную функции значение из localStorage
+    // для браузеров, которые не поддерживают localStorage
+    // try catch нужен для браузеров, которые не поддежривают localStorage
     // они бросают исключение, если нет такого API, а мы его перехватываем
     try {
-        popupWelcome.yearsAccepted = sessionStorage.getItem('yearsAccepted');
+        popupWelcome.yearsAccepted = localStorage.getItem('yearsAccepted');
     } catch (e) {}
 
     // если попапа нет, то дабы избежать ошибок в консоле, останавливаем выполнение функции
@@ -21,9 +18,9 @@ export default function popupWelcome() {
     const showPopup = () => {
         try {
             // проверяем, если есть запись о подтверждении возраста в статической переменной функции
-            // или в sessionStorage
+            // или в localStorage
             // если есть, то показываем попап
-            if (!sessionStorage.getItem('yearsAccepted') || !popupWelcome.yearsAccepted) {
+            if (!localStorage.getItem('yearsAccepted') || !popupWelcome.yearsAccepted) {
                 popup.trigger('show');
             }
         } catch(e) {
@@ -41,9 +38,9 @@ export default function popupWelcome() {
 
             try {
                 // при клике на кнопку - yes, I have 18
-                // записываем в sessionStorage ключь yearsAccepted со значением true
-                sessionStorage.setItem('yearsAccepted', true);
-                // так же для браузеров, которые не поддерживают sessionStorage, пишем ее в статическую переменную
+                // записываем в localStorage ключь yearsAccepted со значением true
+                localStorage.setItem('yearsAccepted', true);
+                // так же для браузеров, которые не поддерживают localStorage, пишем ее в статическую переменную
                 popupWelcome.yearsAccepted = true;
                 // скрываем попап
                 popup.trigger('hide');
