@@ -1,45 +1,5 @@
 import Swiper from 'swiper';
 
-function toggleBreakInfo() {
-    const infoBtn = $('.model-preview__action_info');
-
-    infoBtn.off('hover');
-    infoBtn.off('click');
-
-    // show breakinfo
-    if ('ontouchstart' in window) {
-        infoBtn.on('click', function(e) {
-            e.preventDefault();
-            const btn = $(this);
-            const isActive = btn.hasClass('active');
-            const breakInfo = btn.parents('.model-preview').find('.model-preview__breakinfo');
-
-            if (isActive) {
-                btn.removeClass('active');
-                breakInfo.fadeOut();
-            } else {
-                btn.addClass('active');
-                breakInfo.fadeIn();
-            }
-        });
-    } else {
-        infoBtn.hover(
-            function() {
-                const btn = $(this);
-                const breakInfo = btn.parents('.model-preview').find('.model-preview__breakinfo');
-                btn.addClass('active');
-                breakInfo.fadeIn();
-            },
-            function() {
-                const btn = $(this);
-                const breakInfo = btn.parents('.model-preview').find('.model-preview__breakinfo');
-                btn.removeClass('active');
-                breakInfo.fadeOut();
-            }
-        );
-    }
-}
-
 export default function modelPreview(model) {
 
     const getSettings = el => ({
@@ -67,25 +27,6 @@ export default function modelPreview(model) {
     });
 
     const grid = $('.js-model-preview-grid');
-
-    // close breakinfo
-    $(document).on('click', '.model-preview__breakinfo .close', function(e) {
-        e.preventDefault();
-        const previewBlock = $(this).parents('.model-preview');
-
-        previewBlock
-            .find('.model-preview__action_info')
-            .removeClass('active');
-
-        previewBlock
-            .find('.model-preview__breakinfo')
-            .fadeOut();
-    });
-
-    if (model) {
-        toggleBreakInfo();
-        return;
-    }
 
     if (!grid.length) {
         return;
@@ -125,6 +66,35 @@ $(document).on('mousemove', '.model-preview__slider', function({ clientX }) {
     }
 
     swiper.slideTo(nextSlide);
+});
+
+// close breakinfo
+$(document).on('click', '.model-preview__breakinfo .close', function(e) {
+    e.preventDefault();
+    const previewBlock = $(this).parents('.model-preview');
+
+    previewBlock
+        .find('.model-preview__action_info')
+        .removeClass('active');
+
+    previewBlock
+        .find('.model-preview__breakinfo')
+        .fadeOut();
+});
+
+$(document).on('click', '.model-preview__action_info', function (e) {
+    e.preventDefault();
+    const btn = $(this);
+    const isActive = btn.hasClass('active');
+    const breakInfo = btn.parents('.model-preview').find('.model-preview__breakinfo');
+
+    if (isActive) {
+        btn.removeClass('active');
+        breakInfo.fadeOut();
+    } else {
+        btn.addClass('active');
+        breakInfo.fadeIn();
+    }
 });
 
 window.modelPreviewInit = modelPreview;

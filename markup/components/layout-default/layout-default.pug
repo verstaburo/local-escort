@@ -10,7 +10,7 @@ html(class="no-js", lang="en")
         +head(head.defaults)
     body.page
         |%=symbols=%
-
+        //-+loader
         block header
 
         section.page__wrapper
@@ -19,7 +19,6 @@ html(class="no-js", lang="en")
 
         block footer
 
-        +loader
         .page__overlay
         block popups
         block scripts
