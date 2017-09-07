@@ -4,7 +4,7 @@ mixin model-photos
     +b.model-photos&attributes(attributes)
         +grid
             +col(6).model-photos__column.model-photos__column_height-1
-                +e.link
+                +e.A(href='#' data-popup-id='#profile-photo' data-action='show').link.js-toggle-popup
                     +e.IMG(src='%=static=%img/content/model-photo/1.jpg' alt='').img
             +col(6)
                 +grid
@@ -14,7 +14,7 @@ mixin model-photos
                             +e.description
                                 +e.play
                     +col(6).model-photos__column
-                        +e.link
+                        +e.A(href='#' data-popup-id='#profile-photo' data-action='show').link.js-toggle-popup
                             +e.IMG(src='%=static=%img/content/model-photo/3.jpg' alt='').img
                     +col(6).model-photos__column
                         +e.A(href='#' data-popup-id='#profile-photo' data-action='show').link.js-toggle-popup

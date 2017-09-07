@@ -36,6 +36,13 @@
         display: block
         width: 100%
         height: 100%
+        background-color: #000;
+        overflow: hidden;
+
+        &:hover
+            & ^[0]__img
+                opacity: .5
+                transform: scale(1.08)
 
         &_video
             & ^[0]__description
@@ -54,6 +61,7 @@
         width: 100%
         height: 100%
         fill-img()
+        transition(transform, opacity)
 
     &__description
         position: absolute
@@ -100,4 +108,4 @@
             border-style: solid
             border-width: 9px 0 9px 16px
             border-color: transparent transparent transparent #fff
-            margin-right: 4px
+            margin-left: 4px

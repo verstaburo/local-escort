@@ -2,7 +2,7 @@ mixin checkbox(checked, name, value)
   +b.LABEL.checkbox&attributes(attributes)
     +e.INPUT.input(type='checkbox' name=name||'', value=value||'', checked=checked||false)
     +e.SPAN.box
-        != pugHelpers.Icon.call(locals, {iconName: 'ok', iconWidth: '12', iconHeight: '9'})
+        != pugHelpers.Icon.call(locals, {iconName: 'ok', iconWidth: '12', iconHeight: '10'})
     if block
         +e.SPAN.text
             block
