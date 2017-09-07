@@ -4,6 +4,7 @@ html(class="no-js", lang="en")
     include ../../../node_modules/bemto.pug/bemto
     include ../popup/popup
     include ../head/head
+    include ../loader/loader
 
     head
         +head(head.defaults)
@@ -18,6 +19,7 @@ html(class="no-js", lang="en")
 
         block footer
 
+        +loader
         .page__overlay
         block popups
         block scripts
