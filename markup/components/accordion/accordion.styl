@@ -7,19 +7,46 @@
         & ^[0]__heading
             color: #fff
 
-        & ^[0]__item:not(:last-child)
-            border-color: rgba(#efefef, .06)
+        & ^[0]__item:not(.active)
+              &:hover
+                  background-color: rgba(#efefef, .06)
+
+              &::before
+                background-color: rgba(#efefef, .06)
 
     &__item
+        position: relative
         display: block
-        padding: 35px 0
+        padding: 35px 40px
+        transition(background-color)
 
-        &:not(:last-child)
-            border-bottom: 1px solid borderColor
+        &:not(.active):hover
+            &::before
+                background-color: transparent
+
+            + .accordion__item::before
+                background-color: transparent
+
+        &::before
+            position: absolute
+            top: 0
+            left: 0
+            content: ''
+            display: block
+            width: calc(100% - 80px)
+            height: 1px
+            background-color: borderColor
+            transition(background-color)
+
+        &:first-child::before
+            display: none
 
         &.active
             & ^[0]__close-icon
-                transform: rotate(0)
+                transform: rotate(45deg)
+
+            & ^[0]__heading
+                color: mainColor
 
     &__button
         display: flex
@@ -37,6 +64,7 @@
         margin-right: 15px
         font-weight: 400
         user-select none
+        transition(color)
 
         +below(768px)
             ellipsis(100%)
@@ -52,7 +80,7 @@
 
         &-icon
             fill: mainColor
-            transform: rotate(-45deg)
+            transform: rotate(0deg)
             transition(fill, transform)
 
     &__content

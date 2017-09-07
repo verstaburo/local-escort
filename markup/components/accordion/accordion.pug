@@ -10,6 +10,6 @@ mixin accordion-item(heading, showText, hideText)
             .accordion__close
                 if showText && hideText
                     .accordion__close-text=showText
-                != pugHelpers.Icon.call(locals, {iconName: 'close', className: 'accordion__close-icon', iconWidth: '14', iconHeight: '14'})
+                != pugHelpers.Icon.call(locals, {iconName: 'plus-sm', className: 'accordion__close-icon', iconWidth: '14', iconHeight: '14'})
         .accordion__content
             block
