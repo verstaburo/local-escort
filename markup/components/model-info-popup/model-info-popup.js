@@ -4,6 +4,8 @@ export default function modelInfoPopup() {
 
         $(this)
             .parents('.model-info-popup')
-            .fadeOut();
+            .fadeOut(250, function() {
+                $(this).removeClass('model-info-popup_left model-info-popup_right')
+            });
     });
 }

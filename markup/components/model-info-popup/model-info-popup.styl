@@ -30,6 +30,28 @@ modelInfoPopupMediumXPadding = 18px
         height: 9px
         background-color: #fff
 
+
+    &_left
+        left: 0
+        transform: translate(0, 100px)
+
+        &::before
+            left: 30px
+
+        &.active
+            transform: translate(0, -4px)
+
+    &_right
+        left: 100%
+        transform: translate(-100%, 100px)
+
+        &::before
+            left: initial
+            right: 30px
+
+        &.active
+            transform: translate(-100%, -4px)
+
     &__header
         border-bottom: 1px solid borderColor
         border-left: 0
