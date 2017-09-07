@@ -278,6 +278,14 @@ window.userProfileMap = function() {
         $(myLocBtn).hide();
     }
 
+    var modelMap = $('#model-map');
+    // hide google logo etc
+    modelMap.find('.gm-style-cc').hide();
+    modelMap.find('.gmnoprint ').hide();
+    modelMap.find('.gmnoscreen').hide();
+    modelMap.find('.gmnoprint').hide();
+    modelMap.find('[href="https://maps.google.com/maps?ll=40.74375,-73.946027&z=13&t=m&hl=ru-RU&gl=US&mapclient=apiv3"]').parent().hide();
+
     $('#model-map').on('aftershow', function() {
         google.maps.event.trigger(map, 'resize');
     });
