@@ -4,6 +4,9 @@
     padding: 0 40px
     overflow: hidden
 
+    .short-info
+        margin-top: 2px
+
     &_new
         position: relative
         padding: 0
@@ -25,13 +28,14 @@
 
         .heading
             color: #fff
+            letter-spacing: 1px
 
         & ^[0]__info
             position: relative
             z-index: 3
             margin-left: 0
             width: 270px
-            flex-shrink: 0
+            flex-shrink: 1
             margin-right: 30px
 
         & ^[0]__rating
@@ -60,6 +64,7 @@
 
             &-label
                 color: #909090
+                letter-spacing: 1px
 
                 +below(768px)
                     display: none
@@ -69,7 +74,7 @@
                 color: #909090
 
                 &:not(:last-child)::after
-                    background-color: #909090
+                    background-color: rgba(#e5e5e5, .15)
 
         & ^[0]__row
             padding-left: 42px
@@ -195,7 +200,7 @@
 
         &_top
             position: relative
-            padding-top: 48px
+            padding-top: 56px
             min-height: 140px
             z-index: 1
 
@@ -214,6 +219,11 @@
             align-items: center
             min-height: 112px
             background-color: #fff
+
+            & ^[0]__col:last-child
+                margin-left: 34px
+                +below(768px)
+                    margin-left: 0
 
     &__description
         display: flex
