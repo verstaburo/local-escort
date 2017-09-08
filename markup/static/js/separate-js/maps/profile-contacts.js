@@ -4,7 +4,7 @@
             zoom: 13,
             center: {lat: 40.76163, lng: -73.97486600000002},
             mapTypeId: 'roadmap',
-            scrollwheel: true,
+            scrollwheel: false,
             disableDefaultUI: true,
             styles: [
                 {
@@ -242,6 +242,22 @@
                     ]
                 }
             ]
+        });
+
+
+        var self = $(this);
+
+        google.maps.event.addListener(map, 'tilesloaded', function() {
+            // hide google logo etc
+            self.find('.gm-style-cc').hide();
+            self.find('.gmnoprint ').hide();
+            self.find('.gmnoscreen').hide();
+            self.find('[target="_blank"]').parent().hide();
+            self.find('[target="_new"]').parent().hide();
+        })
+
+        new CustomMarker(new google.maps.LatLng(40.76163, -73.97486600000002), map, {
+            img: 'static/img/content/avatars/navbar.png',
         });
     })
 })();

@@ -41,8 +41,6 @@ export default function modelPreview(model) {
         grid.find('.model-preview__slider').each(function() {
             new Swiper($(this), getSettings($(this).parents('.model-preview')))
         });
-
-        toggleBreakInfo();
     });
 }
 

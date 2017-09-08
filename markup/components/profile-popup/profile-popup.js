@@ -12,16 +12,19 @@ export default function profilePopup() {
 
         if (map.length && google) {
             map.each(function() {
-                google.maps.event.trigger($(this)[0], 'resize');
+                const self = $(this);
+                google.maps.event.trigger(self[0], 'resize');
+
+                setTimeout(() => {
+                    // hide google logo etc
+                    self.find('.gm-style-cc').hide();
+                    self.find('.gmnoprint ').hide();
+                    self.find('.gmnoscreen').hide();
+                    self.find('[target="_blank"]').parent().hide();
+                    self.find('[target="_new"]').parent().hide();
+                }, 0);
             });
         }
-
-        // hide google logo etc
-        map.find('.gm-style-cc').hide();
-        map.find('.gmnoprint ').hide();
-        map.find('.gmnoscreen').hide();
-        map.find('[href="https://maps.google.com/maps?ll=40.74375,-73.946027&z=13&t=m&hl=ru-RU&gl=US&mapclient=apiv3"]').parent().hide();
-
     };
 
     const slider = new Swiper('.js-profile-popup', {
