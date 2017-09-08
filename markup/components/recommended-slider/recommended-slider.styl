@@ -20,18 +20,21 @@
         position: relative
         margin-top: 58px
 
+        > .swiper-container
+            padding-bottom: 30px
+
         +below(768px)
             display: none
 
     &__button
         position: absolute
-        top: 45%
+        top: 41%
         transform: translateY(-50%)
         display: flex
         align-items: center
         justify-content: center
-        width: 40px
-        height: 40px
+        width: 60px
+        height: 60px
         border-radius: 50%
         z-index: 1
         background-color: darkGreyColor
@@ -44,15 +47,21 @@
             pointer-events: none
 
         &_prev
-            left: 50px
+            left: 69px
 
             svg
                 transform: rotate(-90deg)
                 fill: #fff
 
         &_next
-            right: 50px
+            right: 69px
 
             svg
                 transform: rotate(90deg)
                 fill: #fff
+
+    .model-preview
+        box-sizing: border-box
+
+        &__actions
+            position: static

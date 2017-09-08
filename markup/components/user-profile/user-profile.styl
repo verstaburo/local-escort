@@ -83,7 +83,7 @@
         width: 100%
 
         &:not(:first-child)
-            margin-top: 45px
+            margin-top: 51px
             padding-left: 58px
             padding-right: 58px
 
@@ -91,8 +91,16 @@
                 padding-left: 0
                 padding-right: 0
 
-        &_left_padding
+        &_left_padding:not(:first-child)
             padding-right: 0
+
+        &_share
+            padding-top: 58px
+            border-top: 1px solid borderColor
+
+            .share
+                padding-bottom: 52px
+                border-bottom: 1px solid borderColor
 
         &_agencies
             &:not(:first-child)
@@ -100,6 +108,9 @@
 
             & > .heading
                 margin-bottom: 45px
+
+        &_acts:not(:first-child)
+            margin-top: 27px
 
         &_mob_padding
             +below(768px)
@@ -111,3 +122,14 @@
             +below(700px)
                 .grid__col
                     width: 100%
+
+    .share
+        &__label
+            margin-right: 114px
+
+        &__buttons
+            width: 100%
+            margin: 0
+
+        &__button:last-child
+            margin-left: auto
