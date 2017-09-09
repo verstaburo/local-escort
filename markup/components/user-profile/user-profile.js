@@ -9,10 +9,11 @@ export default function userProfile(isInPopup) {
     }
 
     const sT = $(window).scrollTop();
-    const topBreakpoint = isInPopup ? parent.offset().top : parent.offset().top - header.outerHeight();
+    const hT = !isInPopup ? header.outerHeight() : 0;
+    const topBreakpoint = parent.offset().top - hT;
     const bottomBreakpoint = next.length ?
-        next.offset().top - card.outerHeight() :
-        parent.offset().top + parent.outerHeight() - card.outerHeight();
+        next.offset().top - card.outerHeight() - hT:
+        parent.offset().top + parent.outerHeight() - card.outerHeight() - hT;
 
     if (sT <= topBreakpoint) {
         card
