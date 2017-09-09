@@ -24,13 +24,11 @@ export default function userProfile(isInPopup) {
                 transform: ''
             });
     } else if (sT >= bottomBreakpoint) {
-        let top = next.offset().top - card.outerHeight() - parent.offset().top;
-
         card
             .removeClass('fixed')
             .css({
                 position: 'absolute',
-                top,
+                top: bottomBreakpoint,
                 transform: ''
             });
     } else {
