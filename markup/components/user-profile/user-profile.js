@@ -1,41 +1,50 @@
-export default function userProfile() {
-    const block = $('.user-profile');
+export default function userProfile(isInPopup) {
+    const header = $('.header');
+    const card = $('.user-profile__profile-card');
+    const next = card.next();
+    const parent = card.parent();
 
-    if (!block.length) {
+    if (!card.length) {
         return;
     }
 
-    const card = block.find('.profile-card');
-    const header = $('.header');
+    const sT = $(window).scrollTop();
+    const topBreakpoint = isInPopup ? parent.offset().top : parent.offset().top - header.outerHeight();
+    const bottomBreakpoint = next.length ?
+        next.offset().top - card.outerHeight() :
+        parent.offset().top + parent.outerHeight() - card.outerHeight();
 
-    const hT = header.offset().top;
-    const wT = $(window).scrollTop();
-    const sT = card.parent().offset().top;
-    const cT = card.offset().top;
+    if (sT <= topBreakpoint) {
+        card
+            .removeClass('fixed')
+            .css({
+                position: '',
+                top: '',
+                transform: ''
+            });
+    } else if (sT >= bottomBreakpoint) {
+        let top = next.offset().top - card.outerHeight() - parent.offset().top;
 
-    const next = card.next();
-    const parent = card.parent();
-    const popup = block.parents('.popup');
+        card
+            .removeClass('fixed')
+            .css({
+                position: 'absolute',
+                top,
+                transform: ''
+            });
+    } else {
+        const oT = !isInPopup && header.hasClass('fixed') ? header.outerHeight() : 0;
 
-    const top = hT >= wT ? hT + header.outerHeight() : wT;
-
-    const btm = next.length ? next.offset().top - next.outerHeight() - card.outerHeight() : parent.height() - card.outerHeight();
-
-    let translate = 0;
-
-    if (top >= sT) {
-        translate = top - sT;
+        card
+            .addClass('fixed')
+            .css({
+                position: '',
+                top: '',
+                transform: `translate3d(0, ${oT}px, 0)`
+            });
     }
-
-    if (top <= sT) {
-        translate = 0;
-    }
-
-    if (top >= btm) {
-        translate = btm;
-    }
-
-    card.css('transform', `translate3d(0, ${translate}px, 0`);
 }
 
-$('.user-profile').parents('.popup').on('scroll', userProfile);
+$(window).on('scroll', () => {
+   userProfile(false);
+});

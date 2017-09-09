@@ -33,6 +33,19 @@
         +below(768px)
             border: 0
 
+    &__profile-card
+        width: 316px
+        transition(transform)
+
+        +below(1023px)
+            position: static !important
+            width: 100%
+
+        &.fixed
+            position: fixed
+            top: 0
+            transform: translate3d(0, 0, 0)
+
     &__main
         display: flex
 
