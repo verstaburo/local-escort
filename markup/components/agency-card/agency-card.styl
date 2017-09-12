@@ -112,6 +112,12 @@
     &_column
         box-sizing: border-box
 
+        &:first-of-type {
+            .map__content & {
+                margin-top: 95px
+            }
+        }
+
         & ^[0]__info
             width: 100%
 
@@ -137,6 +143,7 @@
             height: 60px
             border-bottom: 1px solid borderColor
             background-color: #fff
+            margin-left: 0
 
             .rating
                 width: 100%

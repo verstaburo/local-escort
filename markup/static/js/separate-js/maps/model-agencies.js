@@ -332,6 +332,11 @@
                 return;
             }
 
+            var pMap = el.parents('.map');
+
+            pMap.find('.map__marker').removeClass('active');
+            pMap.find('.map__group').removeClass('active');
+
             el.addClass('active');
 
             $('.map__heading').addClass('active');
@@ -342,6 +347,7 @@
                 success: function(data) {
                     var model = $('.map__content')
                         .last()
+                        .html('')
                         .append(data)
                         .children()
                         .last()

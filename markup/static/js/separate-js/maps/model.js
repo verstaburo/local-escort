@@ -356,7 +356,12 @@
                 return;
             }
 
-            el.addClass('active');
+            el
+                .addClass('active')
+                .siblings('.map__marker')
+                .removeClass('active')
+                .siblings('.map__group')
+                .removeClass('active');
 
             $('.map__heading').addClass('active');
 
@@ -366,6 +371,7 @@
                 success: function(data) {
                     var model = $('.map__content')
                         .last()
+                        .html('')
                         .append(data)
                         .children()
                         .last()
@@ -403,15 +409,21 @@
                 return;
             }
 
+            var pMap = el.parents('.map');
+
+            pMap.find('.map__marker').removeClass('active');
+            pMap.find('.map__group').removeClass('active');
+
             el.addClass('active');
 
             $.ajax({
                 url: 'model-map-ajax-example.html',
                 type: 'GET',
                 success: function(data) {
+                    var model = $('.map__content').last().html('');
+
                     el.data('group_id').split(',').forEach(function(item) {
-                        var model = $('.map__content')
-                            .last()
+                        model
                             .append(data)
                             .children()
                             .last()
