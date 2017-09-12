@@ -56,7 +56,7 @@ mixin message-custom-badge
 mixin message-custom-photos(photos)
     +e.photos&attributes(attributes)
         each src in photos
-            +e.photo
+            +e.photo(data-full='__static__img/content/photo-popup/gallery/1.jpg')
                 img(src='__static__img/content/'+src alt='')
 
 mixin message-custom-reviews

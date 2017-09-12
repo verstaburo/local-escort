@@ -24,7 +24,14 @@ export default function userMessages() {
 
 $(window).on('load', function() {
     setMessagesHeight();
-    const scrollTop = $('.user-messages').offset().top - $('.user-nav').outerHeight();
+
+    const block = $('.user-messages');
+
+    if (!block.length) {
+        return;
+    }
+
+    const scrollTop = block.offset().top - $('.user-nav').outerHeight();
 
     if (scrollTop > $(window).scrollTop()) {
         $('html, body').animate({ scrollTop }, 250);

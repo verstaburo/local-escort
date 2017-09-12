@@ -10,6 +10,10 @@ export default function userNav() {
     const offsetTop = block.offset().top;
 
     $(window).on('scroll', () => {
+        if ($(document).find('.popup.active').length) {
+            return;
+        }
+
        const sT = $(window).scrollTop();
        const isFixed = block.hasClass('fixed');
 
