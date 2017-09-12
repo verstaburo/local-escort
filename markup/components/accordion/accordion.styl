@@ -14,6 +14,10 @@
               &::before
                 background-color: rgba(#efefef, .06)
 
+        .accordion__item.active::before {
+            background-color: rgba(#efefef, .06)
+        }
+
     &__item
         position: relative
         display: block
@@ -33,7 +37,7 @@
             left: 0
             content: ''
             display: block
-            width: calc(100% - 80px)
+            width: 100%
             height: 1px
             background-color: borderColor
             transition(background-color)
