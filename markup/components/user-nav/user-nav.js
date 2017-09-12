@@ -1,6 +1,6 @@
 export default function userNav() {
     const block = $('.user-nav');
-    const pageWrapper = $('.page-wrapper');
+    const pageWrapper = $('.page__wrapper');
 
     if (!block.length) {
         return;
