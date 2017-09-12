@@ -1,4 +1,4 @@
-export default function userProfile(isInPopup) {
+function scrollIntoPage() {
     const header = $('.header');
     const card = $('.user-profile__profile-card');
     const next = card.next();
@@ -8,42 +8,52 @@ export default function userProfile(isInPopup) {
         return;
     }
 
+    if (card.parents('.popup')) {
+        return;
+    }
+
     const sT = $(window).scrollTop();
-    const hT = !isInPopup ? header.outerHeight() : 0;
-    const topBreakpoint = parent.offset().top - hT;
+    const pOT = parent.offset().top;
+
+    const hT = header.outerHeight();
+    const topBreakpoint = pOT - hT;
     const bottomBreakpoint = next.length ?
-        next.offset().top - card.outerHeight() - hT:
-        parent.offset().top + parent.outerHeight() - card.outerHeight() - hT;
+        next.offset().top - card.outerHeight() - pOT:
+        pOT + parent.outerHeight() - card.outerHeight() - hT;
 
     if (sT <= topBreakpoint) {
-        card
-            .removeClass('fixed')
-            .css({
-                position: '',
-                top: '',
-                transform: ''
-            });
+        card.css({ transform: 'translate3d(0, 0, 0)'});
     } else if (sT >= bottomBreakpoint) {
-        card
-            .removeClass('fixed')
-            .css({
-                position: 'absolute',
-                top: bottomBreakpoint,
-                transform: ''
-            });
+        card.css({ transform: `translate3d(0, ${bottomBreakpoint > 0 ? bottomBreakpoint : 0}px, 0` });
     } else {
-        const oT = !isInPopup && header.hasClass('fixed') ? header.outerHeight() : 0;
-
-        card
-            .addClass('fixed')
-            .css({
-                position: '',
-                top: '',
-                transform: `translate3d(0, ${oT}px, 0)`
-            });
+        card.css({ transform: `translate3d(0, ${sT - topBreakpoint}px, 0)` });
     }
 }
 
-$(window).on('scroll', () => {
-   userProfile(false);
-});
+function scrollIntoPopup() {
+    const popup = $(this);
+    const card = popup.find('.user-profile__profile-card');
+    const next = card.next();
+    const parent = card.parent();
+
+    const sT = popup.scrollTop();
+    const pOT = parent.offset().top;
+
+    const topBreakpoint = sT + pOT;
+    const bottomBreakpoint = next.length ?
+        sT + next.offset().top - topBreakpoint - card.outerHeight() :
+        topBreakpoint + parent.outerHeight() - card.outerHeight();
+
+    if (sT <= topBreakpoint) {
+        card.css({ transform: 'translate3d(0, 0, 0)'});
+    } else if (sT >= bottomBreakpoint) {
+        card.css({ transform: `translate3d(0, ${bottomBreakpoint > 0 ? bottomBreakpoint : 0}px, 0` });
+    } else {
+        card.css({ transform: `translate3d(0, ${sT - topBreakpoint}px, 0)` });
+    }
+}
+
+export default function userProfile() {
+    $(window).on('scroll', scrollIntoPage);
+    $('.js-profile-popup-wr').on('scroll', scrollIntoPopup);
+}

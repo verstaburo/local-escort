@@ -38,6 +38,7 @@
 
         +below(1023px)
             position: static !important
+            transform: translate3d(0, 0, 0) !important
             width: 100%
 
         &.fixed
@@ -61,6 +62,7 @@
             order: 2
 
     &__sidebar
+        position: relative
         display: flex
         flex-direction: column
         width: 316px
