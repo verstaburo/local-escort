@@ -8,7 +8,7 @@ include ../send-form/send-form
 mixin user-messages()
     +b.user-messages&attributes(attributes)
         +container
-            +heading(1) Messages
+            //- +heading(1) Messages
             +e.content
                 +e.left.js-user-messages-scrollable
                     +message('nikolas.png', 'Nikolas', '10 hours ago')._truncate.active

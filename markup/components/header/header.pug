@@ -152,11 +152,6 @@ mixin header(dark, isGuest)
                                     +navbar-link.DIV
                                         +follow-us
 
-        if block
-            +e.user-nav
-                +container
-                    block
-
         // MOBILE NAVBAR
         +e.NAV.navbar_mobile
             +navbar(class=!!dark ? '_dark' : '')

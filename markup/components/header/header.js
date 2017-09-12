@@ -40,6 +40,10 @@ export default function header() {
     $(window).on('scroll', () => {
        const sT = $(window).scrollTop();
 
+       if (header.siblings('.user-nav').length) {
+           return;
+       }
+
        if ($(document).find('.popup.active').length) {
            return;
        }

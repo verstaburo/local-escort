@@ -1,5 +1,22 @@
 .user-nav
-    display: flex
+    display: block
+    width: 100%
+    background-color: #f7f7f7
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 10px 40px rgba(29, 29, 29, 0)
+    clear: both;
+    transition(border-color, box-shadow)
+
+    &.fixed
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 999
+        border-color: transparent;
+        box-shadow: 0 10px 40px rgba(29, 29, 29, .1)
+
+    &__items
+        display: flex
 
     &__item
         position: relative

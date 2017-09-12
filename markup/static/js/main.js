@@ -5,6 +5,7 @@ import searchBar from '../../components/search-bar/search-bar';
 import modelPreview from '../../components/model-preview/model-preview';
 import grid from '../../components/grid/grid';
 import header from '../../components/header/header';
+import userNav from '../../components/user-nav/user-nav';
 import photoTape from '../../components/photo-tape/photo-tape';
 import arrowUp from '../../components/arrow-up/arrow-up';
 import citySuggest from '../../components/city-suggest/city-suggest';
@@ -83,6 +84,7 @@ $(() => {
     objectFitImages();
     selectbox();
     header();
+    userNav();
     userDropdownPopup();
     rangeSlider();
     textarea();
