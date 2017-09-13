@@ -6,7 +6,7 @@ export default function arrowUp() {
         return;
     }
 
-    w.scroll(function () {
+    w.on('scoll', function () {
         if (w.scrollTop() - w.innerHeight() >= 0) {
             btn.addClass('active');
         } else {

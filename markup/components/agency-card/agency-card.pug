@@ -32,16 +32,18 @@ mixin agency-card()
             +e.col._push_right
                 +button(href='#')._uppercase._border_standart more
 
-mixin agency-card-new
+mixin agency-card-new(avatar, bg)
     +b.agency-card._new&attributes(attributes)
         +badges._top
             +badges-item._vip._skew
                 span top 1
 
-        +avatar('navbar.png')._size_medium
+        +avatar(avatar||'navbar.png')._size_medium
 
         +e.row._top
-            +e.IMG(src='%=static=%img/content/agency-card/bg.jpg' alt='Agency').picture
+            - var nextBg = bg ? '%=static=%img/content/agency-card/'+bg : '%=static=%img/content/agency-card/bg.jpg';
+
+            +e.IMG(src=nextBg alt='Agency').picture
             +e.info
                 +heading._md._uppercase Premium Escape
                 +e.UL.description
