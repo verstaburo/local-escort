@@ -4,11 +4,12 @@
     box-shdow: 0 0 0 0 rgba(0, 0, 0, 0)
     transition(box-shadow)
 
-    &:first-of-type {
-        .map__content & {
+    .badges
+        pointer-events none
+
+    &:first-of-type
+        .map__content &
             margin-top: 95px
-        }
-    }
 
     &_masonry
         margin-left: auto
@@ -44,8 +45,42 @@
             opacity: .2
 
     &__slider
-        position: relative
+        position: static !important
         display: block
+
+    &__cutoff
+        position: absolute
+        top: 0
+        left: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        width: 100%
+        height: 100%
+        background-color: rgba(darkGreyColor, .85)
+        z-index: 18
+        opacity: 0
+        transition(opacity)
+        pointer-events none
+
+        b
+            color #fff
+            font-family fontSecond
+            font-size 33px
+            font-weight 400
+            letter-spacing initial
+
+        span
+            margin-top: 5px
+            color rgba(#fff, .4)
+            font-size 12px
+            font-weight 400
+            text-transform uppercase
+            letter-spacing 1px
+
+        .cutoff:hover &
+            opacity 1
 
     &__content
         overflow: hidden
@@ -62,8 +97,9 @@
             height: 60px
             background-image: linear-gradient(transparent, #000)
             opacity: 0
-            z-index: 2
+            z-index: 19
             transition(opacity)
+            pointer-events: none
 
     &__info
         transition(background-color, border-color)
@@ -71,7 +107,7 @@
     &__footer
         display: block
         position: relative
-        z-index: 10
+        z-index: 21
 
     &__actions
         position: absolute
@@ -149,6 +185,7 @@
         background-color: #42de9f
         border-radius: 50%
         z-index: 2
+        pointer-events none
 
     &__pagination
         position: absolute
@@ -159,16 +196,18 @@
         transition(opacity)
 
         .swiper-pagination-bullet
-            width 4px
-            height 4px
-            box-shadow 0 2px 9px rgba(0, 0, 0, .5)
-            background-color rgba(255, 255, 255, .3)
+            width 6px
+            height 6px
+            background-color rgba(#fff, .7)
             margin: 0
             transition(background-color)
-            margin-left: 8px
+            margin-left: 12px
+
+            &:first-child
+                margin-left: 0
 
             &-active
-                background-color #fff
+                background-color mainColor
 
     &__breakinfo
         position: absolute

@@ -8,6 +8,16 @@ export default function modelPreview(model) {
         // prevButton: el.find('.model-preview__button_prev'),
         // nextButton: el.find('.model-preview__button_next'),
         pagination: el.find('.model-preview__pagination'),
+        onSlideChangeStart({ container, activeIndex}) {
+            const slider = $(container);
+            const maxSlides = Number(slider.data('max-slides'));
+
+            if (maxSlides) {
+                slider
+                    .parents('.model-preview')
+                    .toggleClass('cutoff', activeIndex + 1 >= maxSlides);
+            }
+        }
     });
 
     const block = model && model.find('.model-preview__slider') || $('.model-preview__slider');

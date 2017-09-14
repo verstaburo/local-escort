@@ -2,18 +2,25 @@ include ../model-common-info/model-common-info
 include ../close/close
 
 mixin model-preview(photos, name, age, price, isOnline)
+    - var maxPhotosCount = 5
+
     +b.model-preview&attributes(attributes)
         +e.content
-            +e.slider.swiper-container
+            +e.slider.swiper-container(data-max-slides=maxPhotosCount)
                 +e.photos.swiper-wrapper
-                    each photo in photos
-                        +e.IMG.photo.swiper-slide(src=`%=static=%img/content/model-preview/${photo}.jpg` alt=`Model ${name}`)
+                    each photo, index in photos.slice(0, maxPhotosCount)
+                        +e.slide.swiper-slide
+                            +e.IMG.photo(src=`%=static=%img/content/model-preview/${photo}.jpg` alt=`Model ${name}`)
             if isOnline
                 +e.online
             block
+            if photos.length > maxPhotosCount
+                +e.cutoff
+                    b=`+${photos.slice(maxPhotosCount).length}`
+                    span photos
             +e.pagination
-            //+e.button._prev
-            //+e.button._next
+            //- +e.button._prev
+            //- +e.button._next
             +e.breakinfo
                 +close._top_right
                 +e.row._top
