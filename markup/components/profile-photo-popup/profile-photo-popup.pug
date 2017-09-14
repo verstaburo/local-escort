@@ -3,14 +3,20 @@ include ../image-bg/image-bg
 
 mixin profile-photo-popup()
     +popup.popup_wrapper_100.popup_no_mobile_paddings#profile-photo
+        -
+            var photos = [
+                '2gIk0JesfcU', '5z3RP3WcCzM', '6JYdOZOvbMc', '9vcqR9xn9Xs', 'bT5H_Y19elg', 'CFd_bUWQmKc', 'LzcEjBBY4HQ', 'qlyzxARk1vI', 'rbS2X7ZNrPs', 'waV07EuIyWc',
+                '2qV381CHOAI', '6fQ4TLhHo5E', '7tfYiLDH3sY', 'a4po7Rib3OU', 'caTismvfOhU', 'fSPzIGSUA0k', 'mZD7euCB0e4', 'qpP0MHRN9aI', 'TVmLpvHW0wo', 'yv5tyB3Ol8E',
+                '2WteQH2P7As', '6hL9kQdYmy8', '-8vt7Bk3zZE', 'B785gH4avX4', 'cCZzxfrI9Ns', 'GTb48hdMYmY', 'NqS-QbK9rao', 'QyA47anhbno', 'VzALMySZMK0'
+            ];
         +b.profile-photo-popup&attributes(attributes)
             +popup-close.popup__close_kind_square.popup__close_no_translate
             +e.gallery.swiper-container
                 +e.UL.gallery-items.swiper-wrapper
-                    - for (var i = 0; i < 15; i++)
+                    each photo in photos
                         +e.LI.gallery-item.swiper-slide
                             +e.gallery-img-wrap
-                                +e.IMG(src='__static__img/content/photo-popup/gallery/1.jpg' alt='').gallery-img
+                                +e.IMG(src=`__static__img/content/photo-popup/gallery/${photo}.jpg` alt='').gallery-img
                             +e.footer
                                 +e.A(href='#').like
                                     != pugHelpers.Icon.call(locals, {iconName: 'like', className: 'profile-photo-popup__like-icon', iconWidth: 13, iconHeight: 11})
@@ -27,7 +33,7 @@ mixin profile-photo-popup()
 
             +e.thumbs.swiper-container
                 +e.UL.thumbs-items.swiper-wrapper
-                    - for (var i = 0; i < 15; i++)
+                    each photo in photos
                         +e.LI.thumbs-item.swiper-slide
-                            +image-bg('photo-popup/thumbs/1.jpg')
+                            +image-bg(`photo-popup/gallery/${photo}.jpg`)
                             != pugHelpers.Icon.call(locals, {iconName: 'zoom', className: 'profile-photo-popup__zoom-icon', iconWidth: 13, iconHeight: 13})
