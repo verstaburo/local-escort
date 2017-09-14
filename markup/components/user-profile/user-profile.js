@@ -1,6 +1,8 @@
 function scrollIntoPage() {
-    const header = $('.header');
-    const card = $('.user-profile__profile-card');
+    const userNav = $('.user-nav');
+    const card = $('.user-profile__profile-card').filter(function() {
+        return !$(this).parents('.popup').length;
+    });
     const next = card.next();
     const parent = card.parent();
 
@@ -8,23 +10,19 @@ function scrollIntoPage() {
         return;
     }
 
-    if (card.parents('.popup')) {
-        return;
-    }
-
     const sT = $(window).scrollTop();
     const pOT = parent.offset().top;
 
-    const hT = header.outerHeight();
+    const hT = userNav.outerHeight();
     const topBreakpoint = pOT - hT;
     const bottomBreakpoint = next.length ?
-        next.offset().top - card.outerHeight() - pOT:
+        next.offset().top - card.outerHeight():
         pOT + parent.outerHeight() - card.outerHeight() - hT;
 
     if (sT <= topBreakpoint) {
         card.css({ transform: 'translate3d(0, 0, 0)'});
     } else if (sT >= bottomBreakpoint) {
-        card.css({ transform: `translate3d(0, ${bottomBreakpoint > 0 ? bottomBreakpoint : 0}px, 0` });
+        card.css({ transform: `translate3d(0, ${bottomBreakpoint > 0 ? bottomBreakpoint - pOT : 0}px, 0` });
     } else {
         card.css({ transform: `translate3d(0, ${sT - topBreakpoint}px, 0)` });
     }
@@ -41,13 +39,13 @@ function scrollIntoPopup() {
 
     const topBreakpoint = sT + pOT;
     const bottomBreakpoint = next.length ?
-        sT + next.offset().top - topBreakpoint - card.outerHeight() :
+        sT + next.offset().top - card.outerHeight() :
         topBreakpoint + parent.outerHeight() - card.outerHeight();
 
     if (sT <= topBreakpoint) {
         card.css({ transform: 'translate3d(0, 0, 0)'});
     } else if (sT >= bottomBreakpoint) {
-        card.css({ transform: `translate3d(0, ${bottomBreakpoint > 0 ? bottomBreakpoint : 0}px, 0` });
+        card.css({ transform: `translate3d(0, ${bottomBreakpoint > 0 ? bottomBreakpoint - topBreakpoint : 0}px, 0` });
     } else {
         card.css({ transform: `translate3d(0, ${sT - topBreakpoint}px, 0)` });
     }
