@@ -39,6 +39,7 @@ import userProfile from '../../components/user-profile/user-profile';
 import userDropdownPopup from '../../components/user-dropdown-popup/user-dropdown-popup';
 import modelList from "../../components/model-list/model-list";
 import fullPhotoPopup from "../../components/full-photo-popup/full-photo-popup";
+import rating from "../../components/rating/rating";
 
 (function($){
     var event = 'oninput' in document.createElement('input') ? 'input' : 'keydown';
@@ -123,4 +124,5 @@ $(() => {
     map();
     modelMap();
     modelList();
+    rating();
 });
