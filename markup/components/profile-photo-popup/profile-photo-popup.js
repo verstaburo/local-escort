@@ -16,6 +16,25 @@ export default function profilePhotoPopup() {
         initialSlide: 0,
         nextButton: '.profile-photo-popup__button_next',
         prevButton: '.profile-photo-popup__button_prev',
+        onSlideChangeStart({ container }) {
+            const $container = $(container);
+            const activeSlide = $container.find('.swiper-slide-active');
+            const isLiked = activeSlide.data('liked') === 'true';
+
+            const likesEl = $container
+                .parents('.profile-photo-popup__container')
+                .find('.js-like-photo');
+
+            if (isLiked) {
+                likesEl.addClass('active');
+            } else {
+                likesEl.removeClass('active');
+            }
+
+            likesEl
+                .find('.js-likes-count')
+                .text(activeSlide.data('likes') || '');
+        }
     };
 
     let gallerySlider = new Swiper(gallery, galleryCfg);
@@ -49,4 +68,29 @@ export default function profilePhotoPopup() {
             });
     });
 
+    // likes
+    $(document).on('click', '.js-like-photo', function(e) {
+        e.preventDefault();
+
+        const self = $(this);
+        const likesEl = self.find('.js-likes-count');
+        const activeSlide = $(gallerySlider.container).find('.swiper-slide-active');
+
+        let likesCount = Number(likesEl.text()) || 0;
+
+        if (self.hasClass('active')) {
+            likesCount -= 1;
+            self.removeClass('active');
+            activeSlide.data('liked', 'false');
+        } else {
+            likesCount += 1;
+            self.addClass('active');
+            activeSlide.data('liked', 'true');
+        }
+
+        const nextLikes = likesCount <= 0 ? '' : likesCount;
+
+        likesEl.text(nextLikes);
+        activeSlide.data('likes', nextLikes);
+    });
 }
