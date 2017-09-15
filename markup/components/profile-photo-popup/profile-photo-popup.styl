@@ -10,6 +10,7 @@
 
     .popup__close
         z-index: 100
+        pointer-events all !important
 
     +below(1024px)
         flex-direction: row
@@ -87,7 +88,7 @@
         display: flex
         align-items: center
         width: 20%
-        height: calc(100% - 60px)
+        height: 100%
         cursor: pointer
         position: absolute
         top: 0
