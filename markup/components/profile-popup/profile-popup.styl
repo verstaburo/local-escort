@@ -26,77 +26,43 @@
     &__button
         position: fixed
         display: block
-        width: 156px
+        width: 78px
         height: 156px
         top: 50%
-        background-color: rgba(#fff, .05)
+        transform: translate3d(0, -50%, 0);
         cursor: pointer
-        border-radius: 50%
         transition(transform, background-color)
         z-index: 50
+        overflow: hidden;
 
-        +below(1190px)
-            background-color: rgba(#000, .5)
-
-            svg
-                fill: #fff
-
-        +below(1300px)
-            width: 78px
-            height: 78px
-
-            svg
-                width: 12.5px
-                height: 7px
-
-        svg
-            fill: rgba(#fff, .4)
-            transition(fill)
+        &::before
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            display: block;
+            width: 200%;
+            height: 100%;
+            background-color: rgba(#fff, .05)
+            border-radius: 50%;
 
         &:hover
             background-color: rgba(#fff, .08)
 
-            +below(1190px)
-                background-color: rgba(#000, .7)
-
-            +below(1024px)
-                background-color: rgba(#000, .5)
-
-            svg
-                fill: #fff
+        svg
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
 
         &_prev
             left: 0
-            transform: translate3d(-50%, -50%, 0)
 
-            &.swiper-button-disabled
-                transform: translate3d(-100%, -50%, 0)
-
-            .profile-popup-button__icon-container
-                margin-left: auto
+            &::before
+                left: -100%;
 
             svg
-                transform: rotate(-90deg)
-
-            & ^[0]__icon-container
-                margin-left: auto
+                transform: translate(-50%, -50%) rotate(-180deg)
 
         &_next
             right: 0
-            transform: translate3d(50%, -50%, 0)
-
-            &.swiper-button-disabled
-                transform: translate3d(100%, -50%, 0)
-
-            .profile-popup-button__icon-container
-                margin-right: auto
-
-            svg
-                transform: rotate(90deg)
-
-    &__icon-container
-        display: flex
-        justify-content: center
-        align-items: center
-        width: 50%
-        height: 100%

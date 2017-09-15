@@ -19,11 +19,9 @@ mixin profile-popup()
         +b.profile-popup
             +popup-close.popup__close_kind_square.popup__close_no_translate
             +e.button._prev
-                +e.icon-container
-                    != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
+                != pugHelpers.Icon.call(locals, {iconName: 'photo-caret'})
             +e.button._next
-                +e.icon-container
-                    != pugHelpers.Icon.call(locals, {iconName: 'caret', iconWidth: 25, iconHeight: 14})
+                != pugHelpers.Icon.call(locals, {iconName: 'photo-caret'})
 
             +container
                 .js-profile-popup.swiper-container

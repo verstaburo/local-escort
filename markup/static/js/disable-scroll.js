@@ -7,7 +7,7 @@ export function freeze() {
         const top = h.scrollTop() ? h.scrollTop() : $('body').scrollTop();
 
         if (window.innerWidth > h.width()) {
-            h.css('overflow-y', 'scroll');
+            h.css('overflow-y', 'hidden');
         }
 
         h.css({ width: '100%', height: '100%', position: 'fixed', top: -top });
