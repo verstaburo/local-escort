@@ -20,7 +20,7 @@ mixin boost-preview(img, heading, description, credits, hasBtn)
 
 mixin boost-preview-interactive(credits, money, badge, selected)
     +b.LABEL.boost-preview._interactive&attributes(attributes)
-        +e.INPUT(type='checkbox' name='service' checked=!!selected).control
+        +e.INPUT(type='radio' name='service' checked=!!selected).control
         +e.content
             if badge
                 +badges._top

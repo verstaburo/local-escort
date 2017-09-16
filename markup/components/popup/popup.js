@@ -43,6 +43,12 @@ export default function popup() {
             return;
         }
 
+        const activePopup = $('.popup.active');
+
+        if (activePopup.length) {
+            popup.css('z-index', Number(activePopup.css('z-index')) + 1);
+        }
+
         popup.fadeIn(ANIMATION_DURATION, () => {
             popup.addClass(ACTIVE_POPUP_CLASS);
 
@@ -61,7 +67,7 @@ export default function popup() {
         }
 
         popup.fadeOut(ANIMATION_DURATION, () => {
-            popup.removeClass(ACTIVE_POPUP_CLASS);
+            popup.removeClass(ACTIVE_POPUP_CLASS).css('z-index', '');
             getCurrentPopupButtons('#' + popup.attr('id')).removeClass('active');
             unfreeze();
             popup.trigger(AFTER_SHOW_EVENT);
