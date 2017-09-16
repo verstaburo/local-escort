@@ -39,5 +39,13 @@ export default function profilePopup() {
     popup.on('aftershow', () => {
         slider.update();
         reInitMap();
+
+        const scrollWidth = popup.outerWidth() - popup[0].scrollWidth;
+
+        if (scrollWidth > 0) {
+            popup
+                .find('.profile-popup__button_next')
+                .css('right', scrollWidth);
+        }
     });
 };

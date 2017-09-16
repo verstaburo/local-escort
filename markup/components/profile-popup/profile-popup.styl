@@ -29,11 +29,15 @@
         width: 78px
         height: 156px
         top: 50%
-        transform: translate3d(0, -50%, 0);
+        transform: translate3d(0, -50%, 0)
         cursor: pointer
-        transition(transform, background-color)
+        transition(transform, background-color, opacity)
         z-index: 50
-        overflow: hidden;
+        overflow: hidden
+
+        +below(1300px)
+            width: 39px
+            height: 78px
 
         &::before
             position: absolute;
@@ -46,23 +50,44 @@
             background-color: rgba(#fff, .05)
             border-radius: 50%;
 
+            +below(1200px)
+                background-color: darkGreyColor
+
         &:hover
-            background-color: rgba(#fff, .08)
+            &::before
+                background-color: rgba(#fff, .08)
+
+                +below(1200px)
+                    background-color: darkGreyColor
+
+            svg
+                opacity 1
 
         svg
             position: absolute
             top: 50%
-            left: 50%
             transform: translate(-50%, -50%)
+            transition(opacity)
+            opacity .6
 
         &_prev
             left: 0
 
+            &.swiper-button-disabled
+                transform: translate3d(-100%, -50%, 0)
+
             &::before
-                left: -100%;
+                left: -100%
 
             svg
+                left: 41%
                 transform: translate(-50%, -50%) rotate(-180deg)
 
         &_next
             right: 0
+
+            &.swiper-button-disabled
+                transform: translate3d(100%, -50%, 0)
+
+            svg
+                left: 59%
