@@ -9,7 +9,7 @@ mixin boost-account()
     +b.boost-account&attributes(attributes)
         +container
             +heading Payment
-            +e.content
+            +e.FORM(method='POST' action='boost-account-success.html').content
                 +e.section
                     +heading._md Selected service
                     +grid
@@ -29,9 +29,9 @@ mixin boost-account()
                                 span My Credits
                                 +heading.B 2260
                         +col(3)
-                            +button._uppercase._border_standart.__action._add-credits + Add credits
+                            +button.A(href='boost-account-payment2.html')._uppercase._border_standart.__action._add-credits + Add credits
                         +col(3)
-                            +button._uppercase._bg_darkGrey._color_white.__action._pay-now Pay now
+                            +button(type='submit')._uppercase._bg_darkGrey._color_white.__action._pay-now Pay now
 
                 +e.section._interactive
                     +grid

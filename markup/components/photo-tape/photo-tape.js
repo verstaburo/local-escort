@@ -22,49 +22,89 @@ const setAdditionalClass = popup => {
         setClassHelper('model-info-popup_left');
     }
 };
-
+//
+// function togglePopup() {
+//     const block = $('.photo-tape');
+//
+//     block.find('.photo-tape__item').off('hover');
+//     block.off('click');
+//
+//     let timer = null;
+//
+//     if (!!('ontouchstart' in window)) {
+//         block.on('click', '.photo-tape__link', function(e) {
+//             e.preventDefault();
+//
+//             const popup = $(this).siblings('.model-info-popup');
+//
+//             popup
+//                 .parents('.photo-tape')
+//                 .find('.model-info-popup')
+//                 .removeClass('active model-info-popup_left model-info-popup_right');
+//
+//             if (popup.hasClass('active')) {
+//                 popup.removeClass('active model-info-popup_left model-info-popup_right');
+//             } else {
+//                 setAdditionalClass(popup);
+//                 popup.addClass('active');
+//             }
+//         });
+//     } else {
+//         block.find('.photo-tape__item').hover(
+//             function() {
+//                 const item = $(this).find('.model-info-popup');
+//                 timer = setTimeout(() => {
+//                     setAdditionalClass(item);
+//                     item.addClass('active');
+//                 }, 200);
+//             },
+//             function() {
+//                 clearTimeout(timer);
+//                 $(this).find('.model-info-popup').removeClass('active model-info-popup_left model-info-popup_right');
+//             }
+//         );
+//     }
+// }
 
 function togglePopup() {
-    const block = $('.photo-tape');
+    $(document)
+        .on('click', '.photo-tape__link', function(e) {
+            const self = $(this);
 
-    block.find('.photo-tape__item').off('hover');
-    block.off('click');
+            if (self.find('.photo-tape__text').length) {
+                return;
+            }
 
-    let timer = null;
-
-    if (!!('ontouchstart' in window)) {
-        block.on('click', '.photo-tape__link', function(e) {
             e.preventDefault();
+            e.stopPropagation();
 
-            const popup = $(this).siblings('.model-info-popup');
+            const popup = self.siblings('.model-info-popup');
 
             popup
                 .parents('.photo-tape')
                 .find('.model-info-popup')
                 .removeClass('active model-info-popup_left model-info-popup_right');
 
+            popup
+                .find('.photo-tape__link')
+                .removeClass('active');
+
             if (popup.hasClass('active')) {
+                self.removeClass('active');
                 popup.removeClass('active model-info-popup_left model-info-popup_right');
             } else {
                 setAdditionalClass(popup);
+                self.addClass('active');
                 popup.addClass('active');
             }
+        })
+        .on('click', () => {
+            $('.photo-tape')
+                .find('.model-info-popup')
+                .removeClass('active model-info-popup_left model-info-popup_right');
+
+            $('.photo-tape__link').removeClass('active');
         });
-    } else {
-        block.find('.photo-tape__item').hover(
-            function() {
-                const item = $(this).find('.model-info-popup');
-                timer = setTimeout(() => {
-                    setAdditionalClass(item);
-                    item.addClass('active');
-                }, 200);
-            },
-            function() {
-                clearTimeout(timer);
-                $(this).find('.model-info-popup').removeClass('active model-info-popup_left model-info-popup_right');
-            }
-        );
-    }
 }
 
 export default function photoTape() {

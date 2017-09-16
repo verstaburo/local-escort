@@ -19,10 +19,10 @@ mixin model-info-popup()
                     +short-info-text En, Fr
 
         +tags.__tags
-            +tags-item('#') Incall
-            +tags-item('#') Outcall
-            +tags-item('#') Pornstar
-            +tags-item('#') With Video
+            +tags-item('model-list-search-result.html') Incall
+            +tags-item('model-list-search-result.html') Outcall
+            +tags-item('model-list-search-result.html') Pornstar
+            +tags-item('model-list-search-result.html') With Video
 
-        +e.A.action(href='#') View profile
+        +e.A.action(href='#' data-popup='#profile-popup' data-action='show').js-toggle-popup View profile
         +close._top_right

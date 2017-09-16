@@ -9,7 +9,7 @@ mixin boost-account()
     +b.boost-account&attributes(attributes)
         +container
             +heading Add credits
-            +e.content
+            +e.FORM(method='POST' action='boost-account-success.html').content
                 +e.section
                     +grid
                         +col(9).grid__col_align_center
@@ -59,4 +59,4 @@ mixin boost-account()
                 +e.section
                     +grid
                         +col(3)
-                            +button._uppercase._bg_darkGrey._color_white.__action._pay-now Pay now
+                            +button(type='submit')._uppercase._bg_darkGrey._color_white.__action._pay-now Pay now
