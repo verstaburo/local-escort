@@ -2,6 +2,10 @@ function setListPos(canditate) {
     const block = canditate || $('.list');
     const vW = $(window).width();
 
+    if (!block.length) {
+        return;
+    }
+
     block.each(function() {
         const dropdown = $(this).find('.list');
 

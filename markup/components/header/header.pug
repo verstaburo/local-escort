@@ -17,21 +17,21 @@ mixin header(dark, isGuest)
         +e.NAV.navbar._desktop
             +navbar(class=!!dark ? '_dark' : '')
                 +navbar-item._logo
-                    +navbar-link(href='#')
+                    +navbar-link(href='index.html')
                         +logo
 
                 +navbar-item
-                    +navbar-link(href='#')
+                    +navbar-link(href='model-list.html')
                         +navbar-heading All Escorts
                         +navbar-description 44062
 
                 +navbar-item
-                    +navbar-link(href='#')
+                    +navbar-link(href='model-list.html')
                         +navbar-heading Independent
                         +navbar-description 41908
 
                 +navbar-item
-                    +navbar-link(href='#')
+                    +navbar-link(href='agency-list.html')
                         +navbar-heading Agency's
                         +navbar-description 2154
 
@@ -74,13 +74,13 @@ mixin header(dark, isGuest)
                     +navbar-dropdown
                         +navbar-items
                             +navbar-item
-                                +navbar-link(href='#')._row
+                                +navbar-link(href='boost-account-payment.html')._row
                                     +navbar-heading Buy credits
                             +navbar-item
                                 +navbar-link(href='#')._row
                                     +navbar-heading Transaction history
                             +navbar-item
-                                +navbar-link(href='#')._row
+                                +navbar-link(href='boost-account.html')._row
                                     +navbar-heading Boost my account
 
                 if isGuest
@@ -105,25 +105,25 @@ mixin header(dark, isGuest)
                         +navbar-dropdown
                             +navbar-items
                                 +navbar-item
-                                    +navbar-link(href='#')._row
+                                    +navbar-link(href='user-profile-feedbacks.html')._row
                                         +navbar-heading My Profile
                                 +navbar-item
-                                    +navbar-link(href='#')._row
+                                    +navbar-link(href='user-settings.html')._row
                                         +navbar-heading Settings
                                 +navbar-item
-                                    +navbar-link(href='#')._row
+                                    +navbar-link(href='user-messages.html')._row
                                         +navbar-col
                                             +navbar-heading Messages
                                         +navbar-col
                                             +navbar-badge._default 1
                                 +navbar-item
-                                    +navbar-link(href='#')._row
+                                    +navbar-link(href='user-visitors.html')._row
                                         +navbar-col
                                             +navbar-heading Visitors
                                         +navbar-col
                                             +navbar-badge._default._dark
                                 +navbar-item
-                                    +navbar-link(href='#')._row
+                                    +navbar-link(href='user-feeds.html')._row
                                         +navbar-col
                                             +navbar-heading FEEDS
                                         +navbar-col
@@ -136,17 +136,17 @@ mixin header(dark, isGuest)
                                             +navbar-badge._default._dark
                                 +navbar-item
                                     +navbar-link(href='#')._row
-                                        +navbar-heading Invite Friends
+                                        +navbar-heading Logout
 
                             +navbar-items
                                 +navbar-item
-                                    +navbar-link(href='#')._row._transparentify
+                                    +navbar-link(href='terms.html')._row._transparentify
                                         +navbar-heading About us
                                 +navbar-item
-                                    +navbar-link(href='#')._row._transparentify
+                                    +navbar-link(href='terms.html')._row._transparentify
                                         +navbar-heading Help
                                 +navbar-item
-                                    +navbar-link(href='#')._row._transparentify
+                                    +navbar-link(href='terms.html')._row._transparentify
                                         +navbar-heading privacy & Terms
                                 +navbar-item
                                     +navbar-link.DIV
@@ -156,7 +156,7 @@ mixin header(dark, isGuest)
         +e.NAV.navbar_mobile
             +navbar(class=!!dark ? '_dark' : '')
                 +navbar-item
-                    +navbar-link(href='#')
+                    +navbar-link(href='index.html')
                         +logo
                 +navbar-item
                     +navbar-link(href='#')._active-style_main.js-header-toggle-search-bar
@@ -172,7 +172,7 @@ mixin header(dark, isGuest)
                 if isGuest
                     // user is authorized
                     +navbar-item
-                        +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show').js-toggle-popup
+                        +navbar-link(href='user-profile-feedbacks.html' data-popup-id='#auth-popup' data-action='show').js-toggle-popup
                             != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
                 else
                     // user isn't authorized
