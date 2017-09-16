@@ -3,16 +3,16 @@ mixin user-nav-model(activeItem)
         +container
             +e.UL.items&attributes(attributes)
                 +e.LI.item(class=activeItem === 1 ? 'active' : '')
-                    +e.A(href='#').link My profile
+                    +e.A(href='user-profile-feedbacks.html').link My profile
                 +e.LI.item(class=activeItem === 2 ? 'active' : '')
-                    +e.A(href='#').link Settings
+                    +e.A(href='user-settings.html').link Settings
                 +e.LI.item(class=activeItem === 3 ? 'active' : '')
-                    +e.A(href='#').link Messages
+                    +e.A(href='user-messages.html').link Messages
                     +e.SPAN.badge 1
                 +e.LI.item(class=activeItem === 4 ? 'active' : '')
-                    +e.A(href='#').link Visitors
+                    +e.A(href='user-visitors.html').link Visitors
                 +e.LI.item(class=activeItem === 5 ? 'active' : '')
-                    +e.A(href='#').link Feeds
+                    +e.A(href='user-feeds.html').link Feeds
                 +e.LI.item(class=activeItem === 6 ? 'active' : '')
                     +e.A(href='#').link Invite Friends
 
@@ -21,16 +21,16 @@ mixin user-nav-user(activeItem)
         +container
             +e.UL.items&attributes(attributes)
                 +e.LI.item(class=activeItem === 1 ? 'active' : '')
-                    +e.A(href='#').link following
+                    +e.A(href='user-following.html').link Following
                 +e.LI.item(class=activeItem === 2 ? 'active' : '')
-                    +e.A(href='#').link My activity
+                    +e.A(href='user-activity.html').link My activity
                 +e.LI.item(class=activeItem === 3 ? 'active' : '')
-                    +e.A(href='#').link Messages
+                    +e.A(href='user-messages.html').link Messages
                     +e.SPAN.badge 1
                 +e.LI.item(class=activeItem === 4 ? 'active' : '')
-                    +e.A(href='#').link Feeds
+                    +e.A(href='user-feeds.html').link Feeds
                     +e.SPAN.badge 1
                 +e.LI.item(class=activeItem === 5 ? 'active' : '')
-                    +e.A(href='#').link Settings
+                    +e.A(href='user-settings-user.html').link Settings
                 +e.LI.item(class=activeItem === 6 ? 'active' : '')
                     +e.A(href='#').link Invite Friends

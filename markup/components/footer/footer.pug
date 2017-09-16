@@ -11,7 +11,7 @@ mixin footer()
                 +col(6).footer__column
                     +grid.footer__row
                         +col(4).footer__col.footer__col_half-mob.no-padding-top
-                            +logo.A(href='#')._light
+                            +logo.A(href='index.html')._light
                         +col(4).footer__col.footer__col_half-mob.no-padding-top
                             +e.select
                                 +e.SPAN.heading._big City
@@ -31,34 +31,34 @@ mixin footer()
                                         != pugHelpers.Icon.call(locals, {iconName: 's-tw', className: 'footer__icon footer__icon_tw', iconWidth: '19', iconHeight: '15'})
                     +grid.footer__row
                         +col(4).footer__col.footer__col_half-mob.no-padding-top
-                            +e.A(href='#').item
+                            +e.A(href='model-list.html').item
                                 span All escorts
                                 span 44062
                         +col(4).footer__col.footer__col_half-mob.no-padding-top
-                            +e.A(href='#').item._white
+                            +e.A(href='model-list.html').item._white
                                 span Independent
                                 span 41908
                         +col(4).grid__col_push_right.footer__col.footer__col_half-mob
-                            +e.A(href='#').item._white
+                            +e.A(href='agency-list.html').item._white
                                 span Agency’s
                                 span 2154
                 +col(6).footer__column
                     +grid.footer__row
                         +col(4).footer__col.hide-mob
                             +vertical-nav
-                                +vertical-nav-item('#') My Profile
+                                +vertical-nav-item('user-profile-feedbacks.html') My Profile
                                 +vertical-nav-item('#') Edit
                                 +vertical-nav-item('#') LogOut
                         +col(4).footer__col.footer__col_half-mob.no-padding-top
                             +vertical-nav
-                                +vertical-nav-item('#') Buy Credits
-                                +vertical-nav-item('#') Boost Me Up
-                                +vertical-nav-item('#') Help
+                                +vertical-nav-item('boost-account-payment.html') Buy Credits
+                                +vertical-nav-item('boost-account.html') Boost Me Up
+                                +vertical-nav-item('model-list-help.html') Help
                         +col(4).footer__col.footer__col_half-mob.no-padding-top
                             +vertical-nav
-                                +vertical-nav-item('#') Privacy & Terms
-                                +vertical-nav-item('#') About Us
-                                +vertical-nav-item('#') Contact Us
+                                +vertical-nav-item('terms.html') Privacy & Terms
+                                +vertical-nav-item('terms.html') About Us
+                                +vertical-nav-item('terms.html') Contact Us
 
                     +grid.footer__row
                         +col(4).footer__col.footer__col_half-mob.order-4

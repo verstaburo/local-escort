@@ -9,8 +9,8 @@ include ../components/select-city-popup/select-city-popup
 include ../components/user-nav/user-nav
 
 block header
-    +header
-    +user-nav-model(5)
+    +header(null, null, 'menu', true)
+    +user-nav-user(4)
 
 block content
     +user-feeds
