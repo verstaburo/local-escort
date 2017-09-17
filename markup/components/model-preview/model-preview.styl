@@ -134,13 +134,9 @@
             color mainColor
             font-family fontSecond
             font-size 23px
-            letter-spacing initial
-            transition(background-color, color)
+            letter-spacing 0
             font-style: italic
-
-            &.active, &:hover
-                background-color: darkGreyColor
-                color: mainColor
+            iziAnimation(darkGreyColor, mainColor)
 
         &_profile
             flex: 1
@@ -150,6 +146,7 @@
             font-weight 400
             letter-spacing 1px
             text-transform uppercase
+            iziAnimation()
 
     &__button
         position: absolute

@@ -109,6 +109,43 @@ pseudo(display = block, pos = absolute, content = "")
   content: content
   display: display
   position: pos
+
+/*
+izi animation
+ */
+iziAnimation(bg = mainColor, color = #fff)
+    &
+        position: relative
+        z-index: 0
+        overflow: hidden
+        transition: all cubic-bezier(0.7,0,0.9,1)
+
+    &:hover, &.active
+        color: color
+        border-color bg
+        background-color: bg
+
+        svg
+            fill: color
+
+        &::before
+            transform: scale3d(9, 9, 1)
+
+    &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 100%
+        display: block
+        width: 13%
+        height: 50%
+        transition: transform .25s cubic-bezier(0.7,0,0.9,1)
+        border-radius: 50%
+        background-color: bg
+        transform-origin: 100% 50%
+        transform: scale3d(1, 2, 1)
+        margin: -15px 0 0 1px
+        z-index: -1
 /*
 Миксин для треугольников, сделанных через :before и :after
 Пример:
