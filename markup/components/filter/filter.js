@@ -6,7 +6,7 @@ const filterExtended = () => {
             const el = $(this);
 
             header
-                .css('z-index', +el.css('z-index') + 1)
+                .css('z-index', 9999)
                 .addClass('no-shadow');
             el
                 .find('.popup__wrapper')
