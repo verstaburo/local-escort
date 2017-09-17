@@ -18,19 +18,10 @@ mixin range-slider-input
     +e.INPUT.input&attributes(attributes).js-grow-input
 
 mixin range-slider-text(name, outside)
-    if outside
-        div.range-slider__text(data-name=name)&attributes(attributes)
-            b.range-slider__value
-            if block
-                span.range-slider__label
-                    block
-
-    else
-        +e.DIV.text(data-name=name)&attributes(attributes)
-            +e.B.value
-            if block
-                +e.SPAN.label
-                    block
+    div.range-slider__text(data-name=name)&attributes(attributes)
+        b.range-slider__value
+        span.range-slider__label
+            block
 
 mixin range-slider-control
     +e.slider&attributes(attributes)
