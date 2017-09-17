@@ -79,15 +79,17 @@ function togglePopup() {
             e.stopPropagation();
 
             const popup = self.siblings('.model-info-popup');
+            const siblings = self
+                .parents('.photo-tape__item')
+                .siblings('.photo-tape__item');
 
-            popup
-                .parents('.photo-tape')
-                .find('.model-info-popup')
-                .removeClass('active model-info-popup_left model-info-popup_right');
-
-            popup
+            siblings
                 .find('.photo-tape__link')
                 .removeClass('active');
+
+            siblings
+                .find('.model-info-popup')
+                .removeClass('active model-info-popup_left model-info-popup_right');
 
             if (popup.hasClass('active')) {
                 self.removeClass('active');
