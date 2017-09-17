@@ -3,7 +3,7 @@ include ../button/button
 mixin vip(masonry)
     - var masonryModifier = !!masonry ? '_masonry' : '';
 
-    +b.vip(class=masonryModifier)&attributes(attributes)
+    +b.A.vip(href='boost-account.html' class=masonryModifier)&attributes(attributes)
         +e.content
             +e.icon vip
             +e.SPAN.heading Your VIP profile

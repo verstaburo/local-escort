@@ -3,7 +3,7 @@ include ../button/button
 mixin boost(masonry)
     - var masonryModifier = !!masonry ? '_masonry' : '';
 
-    +b.boost(class=masonryModifier)&attributes(attributes)
+    +b.A.boost(href='boost-account.html' class=masonryModifier)&attributes(attributes)
         +e.content
             +e.icon
                 != pugHelpers.Icon.call(locals, {iconName: 'arrow-boost', iconWidth: '16', iconHeight: '30'})
