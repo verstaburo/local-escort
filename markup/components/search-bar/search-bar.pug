@@ -1,7 +1,7 @@
 include ../icon-button/icon-button
 
 mixin search-bar(placeholder)
-    +b.FORM(method='POST' action='#').search-bar&attributes(attributes)
+    +b.FORM(method='get' action='model-list-search-result.html').search-bar&attributes(attributes)
         +e.placeholder!= placeholder || 'Search'
         +e.INPUT.input(type='text' name='search')
         +e.BUTTON.button(type='submit')

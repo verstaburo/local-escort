@@ -10,10 +10,10 @@ include ../update-avatar/update-avatar
 
 mixin registration()
     +b.registration&attributes(attributes)
-        +container
+        form.container(method='post' action='phone-number.html' enctype='multipart/form-data')
             +heading Registration
 
-            form.grid(method='post' action='#' enctype='multipart/form-data')
+            .grid
                 +col(4).hide-mob
                     +info-control('radio', 'profile-type', 'regular', true)._light Regular member
                 +col(4).hide-mob

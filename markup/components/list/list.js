@@ -9,6 +9,10 @@ function setListPos(canditate) {
     block.each(function() {
         const dropdown = $(this).find('.list');
 
+        if (!dropdown) {
+            return;
+        }
+
         if (dropdown.offset().left < 0) {
             dropdown.css('left', '100%');
         }

@@ -9,7 +9,7 @@ mixin phone-number()
     +b.phone-number&attributes(attributes)
         +container
             +heading Phone number
-            +grid
+            form.grid(method='post' action='registration-success.html')
                 +col(2)
                     +field
                         +field-label Country code
@@ -38,4 +38,4 @@ mixin phone-number()
                     +button(href='#')._uppercase._bg_darkGrey._color_white.__button._resend Resend code
 
                 +col(4).grid__col_push_center.grid__col_push_bottom
-                    +button(href='#')._uppercase._bg_darkGrey._color_main.__button sign up
+                    +button(type='submit')._uppercase._bg_darkGrey._color_main.__button sign up

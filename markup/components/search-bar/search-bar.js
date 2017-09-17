@@ -50,4 +50,26 @@ export default function searchBar() {
                 $(this).data('min-width', $(this).css('min-width'));
             });
     });
+
+    $(document).on('input', '.search-bar__input', function() {
+       const self = $(this);
+       const placeholder = self.siblings('.search-bar__placeholder');
+
+       if (self.val().length) {
+           placeholder.hide();
+       } else {
+           placeholder.show();
+       }
+    });
+
+    input.each(function() {
+        const self = $(this);
+        const placeholder = input.siblings('.search-bar__placeholder');
+
+        if (self.val().length) {
+            placeholder.hide();
+        } else {
+            placeholder.show();
+        }
+    });
 }

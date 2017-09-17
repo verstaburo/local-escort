@@ -1,7 +1,7 @@
 include ../image-bg/image-bg
 
 mixin post-preview(src, date)
-    +b.A(href='#').post-preview&attributes(attributes)
+    +b.A(href='post.html').post-preview&attributes(attributes)
         +image-bg(src)
         +e.body
             +e.P.text
