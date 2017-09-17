@@ -2,7 +2,22 @@
     display: flex
     width: 100%
     height: 88px
-    background-color: bgColor;
+    background-color: bgColor
+
+    & > .navbar__item:not(.navbar__item_dropdown).active
+        .navbar__link
+            background-color: #fff
+
+        .navbar__heading
+            color: darkGreyColor
+
+    &_dark
+        & > .navbar__item:not(.navbar__item_dropdown).active
+            .navbar__link
+                background-color: #212223
+
+            .navbar__heading
+                color: mainColor !important
 
     +below(1024px)
         height: 62px
@@ -96,15 +111,6 @@
 
             & ^[0]__heading
                 color: #fff
-
-            & > ^[0]__dropdown
-                opacity: 1
-                pointer-events: all
-                transform: translateY(0)
-
-
-                .navbar__item
-                    opacity: 1
 
             & ^[0]__arrow
                 opacity: 1
@@ -279,6 +285,14 @@
             transition(opacity)
             transition-delay .35s
 
+        &.active
+            opacity: 1
+            pointer-events: all
+            transform: translateY(0)
+
+            .navbar__item
+                opacity: 1
+
     &__suggest
         position absolute
         top 100%
@@ -323,7 +337,7 @@
 
             +above(1024px)
                 &:hover
-                    background-color: #212223
+                    background-color: #212223 !important
                     color: mainColor
 
                     & ^[0]__heading
@@ -342,6 +356,11 @@
 
                     svg
                         fill: #fff
+
+                    & ^[0]__heading
+                        color: mainColor !important
+                    & ^[0]__description
+                        color: mainColor !important
 
         & ^[0]__item:not(:last-child)
             border-color: #262728
