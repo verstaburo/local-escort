@@ -213,6 +213,9 @@
             min-height: 140px
             z-index: 1
 
+            &:hover::before
+                background-color: rgba(darkGreyColor, .8)
+
             &:before
                 content: ''
                 position: absolute
@@ -223,6 +226,7 @@
                 height: 100%
                 z-index: 1
                 background-color: rgba(darkGreyColor, .7)
+                transition(background-color)
 
         &_bottom
             align-items: center

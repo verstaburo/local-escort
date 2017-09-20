@@ -312,7 +312,7 @@ mixin user-fill-profile-3
             +grid
                 +col(4).grid__col_space_between
                     +checkbox(false, 'select-all', 1).js-user-fill-profile-days Select all
-                    +selectbox._small
+                    +selectbox._small.js-user-fill-profile-hours-from-main
                         +selectbox-control(name='hours-from')
                             option(value='0') 00:00
                             option(value='1') 01:00
@@ -348,7 +348,7 @@ mixin user-fill-profile-3
                     +col(4).grid__col_align_center
                         +checkbox(false, 'day', day).js-user-fill-profile-day #{day}
                     +col(4)
-                        +selectbox
+                        +selectbox.js-user-fill-profile-hours-from
                             +selectbox-control(name='hours-from')
                                 option(value='0') 00:00
                                 option(value='1') 01:00

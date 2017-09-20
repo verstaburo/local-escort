@@ -13,4 +13,21 @@ $(function() {
                 $(this).prop('checked', daysCheckbox.prop('checked'));
             });
     });
+
+    /*
+        CHANGE ALL HOURS-FROM
+     */
+
+    pageWrapper.on('change', '.js-user-fill-profile-hours-from-main select', function() {
+        var selected = $(this).prop('selectedIndex');
+
+        pageWrapper
+            .find('.js-user-fill-profile-hours-from .selectbox__list')
+            .each(function() {
+                $(this)
+                    .find('.selectbox__item')
+                    .eq(selected)
+                    .trigger('click');
+            });
+    });
 });

@@ -191,6 +191,7 @@ export default function selectbox() {
             .trigger('click');
 
         value.text(text);
+        deactivateAll();
     };
 
     $(document)
@@ -216,7 +217,7 @@ export default function selectbox() {
         } else {
             normalizeList(selectbox.find(`.${LIST}`));
         }
-    }
+    };
 
     $(document).on('aftershow', '.popup', function() {
        $(this).find(`.${CONTAINER}`).each(function() {
