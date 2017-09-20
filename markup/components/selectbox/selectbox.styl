@@ -8,6 +8,10 @@
             opacity: 1
             pointer-events all
 
+        & ^[0]__list
+            opacity: 1
+            pointer-events: all
+
     &_grey
         & ^[0]__box
             background-color bgColor
@@ -76,6 +80,11 @@
         overflow-y: auto
         flex-shrink: 0
         box-shadow 0 10px 40px rgba(29, 29, 29, .1)
+        background-color darkGreyColor
+        opacity: 0
+        pointer-events none
+        transition-delay .25s
+        transition(opacity)
 
         &-wrapper
             position: absolute
