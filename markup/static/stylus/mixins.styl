@@ -67,8 +67,14 @@ visual-hide()
     clip rect(0, 0, 0, 0)
 
 // Standart project transition
-transition(value1, value2 = false)
-    if value2
+transition(value1, value2 = false, value3 = false, value4 = false)
+    if value4
+        transition value1 .25s ease-in-out, value2 .25s ease-in-out, value3 .25s ease-in-out, value4 .25s ease-in-out
+
+    else if value3
+        transition value1 .25s ease-in-out, value2 .25s ease-in-out, value3 .25s ease-in-out
+
+    else if value2
         transition value1 .25s ease-in-out, value2 .25s ease-in-out
 
     else

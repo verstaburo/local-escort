@@ -77,6 +77,7 @@ export default function grid(columns, resort = false) {
     // first load (grid build) or new items which added via ajax
     // skip if resort === true
     if (newItems.length && !resort) {
+        newItems.addClass('preload');
         newItems.each(pushElementIntoMtx);
     }
 
@@ -101,7 +102,9 @@ export default function grid(columns, resort = false) {
         .data('columns-count', columnsCount)
         .html('')
         .append(cols)
-        .trigger('rebuild');
+        .trigger('rebuild')
+        .find('.preload')
+        .removeClass('preload');
 };
 
 // rebuild grid when breakpoint just changed
