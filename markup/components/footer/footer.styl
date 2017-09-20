@@ -71,11 +71,14 @@
     &__social-items
         margin-top: 21px
 
-        a:hover
-            opacity: .75
+        a
+            transition(opacity)
 
-        a:not(:last-child)
-            margin-right: 29px
+            &:hover
+                opacity: .75
+
+            &:not(:last-child)
+                margin-right: 29px
 
     &__item
         display: block
