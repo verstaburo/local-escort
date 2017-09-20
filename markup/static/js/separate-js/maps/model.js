@@ -281,7 +281,7 @@
         modelMap.find('.gmnoscreen').hide();
         modelMap.find('[target="_blank"]').parent().hide();
         modelMap.find('[target="_new"]').parent().hide();
-    })
+    });
 
     modelMap.on('aftershow', function() {
         google.maps.event.trigger(map, 'resize');

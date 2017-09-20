@@ -9,7 +9,7 @@ function setListPos(canditate) {
     block.each(function() {
         const dropdown = $(this).find('.list');
 
-        if (!dropdown) {
+        if (!dropdown.length) {
             return;
         }
 

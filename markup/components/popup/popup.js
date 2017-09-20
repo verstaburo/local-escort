@@ -70,7 +70,7 @@ export default function popup() {
             popup.removeClass(ACTIVE_POPUP_CLASS).css('z-index', '');
             getCurrentPopupButtons('#' + popup.attr('id')).removeClass('active');
             unfreeze();
-            popup.trigger(AFTER_SHOW_EVENT);
+            popup.trigger(AFTER_HIDE_EVENT);
         });
     };
 

@@ -65,6 +65,8 @@ export default function modelMap() {
             const header = $('.header');
             const el = $(this);
 
+            el.find('.model-map').hide(500);
+
             $('.header__navbar_desktop [data-popup-id="#model-map"]').each(function() {
                 $(this).text('view on map');
             });
@@ -129,5 +131,14 @@ export default function modelMap() {
         })
         .on('aftershow', function() {
             $(this).find('.map__content').scrollbar();
-        });
+            $(this).find('.model-map').show(500, function() {
+                google.maps.event.trigger($(this).find('.map__block')[0], 'resize');
+
+                $(this).find('.map__marker, .map__group').fadeIn(250);
+            });
+        })
+        .on('afterhide', function() {
+            $(this).find('.model-map').hide();
+            $(this).find('.map__marker, .map__group').hide();
+        })
 }
