@@ -4,6 +4,7 @@
     align-items: center
     width: 100%
     height: 100%
+    transition(background)
 
     &_extended
         background-color: #fff
@@ -56,6 +57,10 @@
 
     &__icon
         fill: darkGreyColor
+        transition(all)
+
+        &:hover
+            fill: rgba(darkGreyColor, .6)
 
     &__close
         display: table-cell
