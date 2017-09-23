@@ -5,7 +5,7 @@ modelInfoPopupMediumXPadding = 18px
     position: absolute;
     top: 100%
     left: 50%;
-    transform: translate(-50%, 100px)
+    transform: translate3d(-50%, 10px, 0) scale(.98)
     display: block
     width: 258px
     background-color: #fff
@@ -17,7 +17,7 @@ modelInfoPopupMediumXPadding = 18px
     transition(opacity, transform)
 
     &.active
-        transform: translate(-50%, -4px)
+        transform: translate3d(-50%, -4px, 0) scale(1)
         opacity: 1;
         pointer-events all
 
@@ -26,7 +26,7 @@ modelInfoPopupMediumXPadding = 18px
         position: absolute
         top: 0
         left: 50%
-        transform: translate(-50%, -50%) rotate(45deg)
+        transform: translate3d(-50%, -50%, 0) rotate(45deg)
         width: 9px
         height: 9px
         background-color: #fff
@@ -34,24 +34,24 @@ modelInfoPopupMediumXPadding = 18px
 
     &_left
         left: 0
-        transform: translate(0, 100px)
+        transform: translate3d(0, 10px, 0) scale(.98)
 
         &::before
             left: 30px
 
         &.active
-            transform: translate(0, -4px)
+            transform: translate3d(0, -4px, 0) scale(1)
 
     &_right
         left: 100%
-        transform: translate(-100%, 100px)
+        transform: translate3d(-100%, 10px, 0) scale(.98)
 
         &::before
             left: initial
             right: 30px
 
         &.active
-            transform: translate(-100%, -4px)
+            transform: translate3d(-100%, -4px, 0) scale(1)
 
     &__header
         border-bottom: 1px solid borderColor

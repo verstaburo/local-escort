@@ -1,14 +1,14 @@
 .city-suggest
     background-color darkGreyColor
     opacity 0
-    transform: translate3d(0, 100px, 0)
+    transform: translate3d(0, 10px, 0) scale(.98)
     pointer-events none
     transition(opacity, transform)
     box-shadow 0 10px 40px 0 rgba(29, 29, 29, .1)
 
     &.active
         opacity: 1
-        transform: translate3d(0, 0, 0)
+        transform: translate3d(0, 0, 0) scale(1)
         pointer-events all
 
     &::after
