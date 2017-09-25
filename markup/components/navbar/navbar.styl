@@ -22,6 +22,9 @@
     +below(1024px)
         height: 62px
 
+    svg
+        transition(all)
+
     &__dropdown
         box-shadow 0 10px 40px 0 rgba(29, 29, 29, .1)
 
@@ -207,7 +210,7 @@
         margin-left: 12px
 
     &__icon
-        transition(stroke, fill)
+        transition(all)
 
         &_search
             fill: darkGreyColor
@@ -233,12 +236,16 @@
         letter-spacing initial
         line-height: 1.1875
         font-size: 16px
+        transition(all)
 
         &_dark
             color: darkGreyColor
 
         &_solo
             margin-top: 0
+
+        & svg
+            transition(all)
 
     &__badge
         position: absolute
@@ -275,24 +282,26 @@
         display: block
         width: 100%
         background-color: #1a1b1c
-        z-index: 50
+        z-index: -1
         opacity: 0
         transition(opacity, transform)
-        transform: translate3d(0, -60px, 0)
+        transform: translate3d(0, -15px, 0)
         pointer-events none
 
-        .navbar__item
+        .navbar__items
             opacity: 0
-            transition(opacity)
-            transition-delay .35s
+            transform: translate3d(0, -10px, 0)
+            transition(opacity, transform)
+            transition-delay .15s
 
         &.active
             opacity: 1
             pointer-events: all
             transform: translateY(0)
 
-            .navbar__item
+            .navbar__items
                 opacity: 1
+                transform: translate3d(0, 0, 0)
 
     &__suggest
         position absolute

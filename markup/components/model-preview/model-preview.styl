@@ -29,6 +29,7 @@
             opacity: 1
             pointer-events all
             position: static
+            transform: translate3d(0, 0, 0) scale(1)
 
     &:hover
         box-shadow: 0 10px 40px rgba(29, 29, 29, 0.1)
@@ -42,6 +43,7 @@
         & ^[0]__actions
             opacity: 1
             pointer-events all
+            transform: translate3d(0, 0, 0) scale(1)
 
         & ^[0]__pagination
             opacity: 1
@@ -123,8 +125,9 @@
         background-color: #fff
         opacity: 0
         pointer-events none
-        transition(opacity)
+        transition(opacity, transform)
         z-index: 3
+        transform: translate3d(0, 10px, 0) scale(.98)
 
     &__action
         display: flex
@@ -202,14 +205,14 @@
             height 6px
             background-color rgba(#fff, .7)
             margin: 0
-            transition(background-color)
+            transition(background-color, opacity)
             margin-left: 12px
 
             &:first-child
                 margin-left: 0
 
             &-active
-                background-color mainColor
+                background-color rgba(mainColor, 1)
 
     &__breakinfo
         position: absolute
