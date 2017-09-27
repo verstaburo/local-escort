@@ -15,7 +15,7 @@ mixin model-preview(photos, name, age, price, isOnline)
                 +e.online
             block
             if photos.length > maxPhotosCount
-                +e.cutoff
+                +e.A.cutoff(href="#")
                     b=`+${photos.slice(maxPhotosCount).length}`
                     span photos
             +e.pagination

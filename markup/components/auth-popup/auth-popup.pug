@@ -30,9 +30,9 @@ mixin auth-popup()
                     +e.col
                         +e.content
                             +heading._color_white New Account
-                            +button(href='registration.html')._uppercase._color_white._bg_darkGrey.__button regular member
-                            +button(href='registration.html')._uppercase._color_white._bg_darkGrey.__button independent
-                            +button(href='registration.html')._uppercase._color_white._bg_darkGrey.__button Agency
+                            +button('a', 'noizi')(href='registration.html')._uppercase._color_white._bg_darkGrey.__button regular member
+                            +button('a', 'noizi')(href='registration.html')._uppercase._color_white._bg_darkGrey.__button independent
+                            +button('a', 'noizi')(href='registration.html')._uppercase._color_white._bg_darkGrey.__button Agency
 
 mixin login-popup()
     +popup.popup_paddings#login-popup

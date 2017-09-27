@@ -21,8 +21,8 @@ export default function authPopup() {
 
         const cols = action.find('.auth-popup__col');
 
-        cols.eq(0).hide();
-        cols.eq(1).fadeIn();
+        /*cols.eq(0).hide();
+        cols.eq(1).fadeIn();*/
         cols
             .parents('.auth-popup__col_action')
             .addClass('active');
@@ -32,8 +32,8 @@ export default function authPopup() {
             .removeClass('active')
             .find('.auth-popup__col');
 
-        siblingsCols.eq(1).hide();
-        siblingsCols.eq(0).fadeIn();
+        /*siblingsCols.eq(1).hide();
+        siblingsCols.eq(0).fadeIn();*/
     };
 
     actions.hover(toggle);

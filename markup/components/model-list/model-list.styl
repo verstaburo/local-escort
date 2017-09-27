@@ -29,8 +29,8 @@
             display: flex
             align-items: center
 
-            &:not(:last-child)
-                margin-right: 24px
+            &:not(:first-child)
+                margin-left: 24px
 
             &_flexible
                 flex: 1
@@ -78,6 +78,7 @@
             height: 78px
             background-color: #e8e8e8
             border-radius: 50%
+            overflow hidden
 
         &-icon
             position: absolute
@@ -95,3 +96,15 @@
             opacity .59
             font-size 16px
             line-height 22px
+
+    .model-preview
+        +above(541px)
+            max-width none
+
+    .boost
+        +above(541px)
+            max-width none
+
+    .vip
+        +above(541px)
+            max-width none

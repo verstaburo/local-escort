@@ -1,3 +1,5 @@
-mixin button(tag)
-    +b(tag || 'a').button&attributes(attributes)
+mixin button(tag, izi)
+    - var addClass = ""
+    - if (izi) {addClass = "_" + izi;} else {addClass= "_izi";}
+    +b(tag || 'a')(class="button" + addClass)&attributes(attributes)
         block
