@@ -15,6 +15,7 @@
     &__navbar
         position: relative
         z-index: 150
+        transform: translate3d(0, 0, 0)
 
         .navbar__item_credits .navbar__dropdown
             .navbar__items
@@ -31,6 +32,9 @@
 
         &:not(.no-shadow123)
             box-shadow: 0 10px 40px rgba(29, 29, 29, .1)
+
+            .header__navbar
+                box-shadow: 0 10px 40px rgba(29, 29, 29, .1)
 
         & ^[0]__user-nav
             border-top: 1px solid borderColor
@@ -49,7 +53,20 @@
                 border-color: transparent
 
         & ^[0]__navbar
-            order: 2
+            position: absolute
+            top 0
+            left 0
+            width 100%
+            opacity 0
+            transition all .4s ease-in-out
+            /*order: 2*/
+
+            &.move
+                opacity 1
+                transform: translate3d(0, 88px, 0)
+
+                +below(768px)
+                    transform: translate3d(0, 60px, 0)
 
         & ^[0]__navbar_desktop
 

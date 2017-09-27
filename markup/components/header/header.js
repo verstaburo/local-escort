@@ -3,6 +3,7 @@ export default function header() {
     const photoTape = header.find('.photo-tape').offset().top;
     const pageWrapper = $('.page__wrapper');
     const hideWhenFixed = $('.hide-when-header-fixed');
+    const navigation = $('.header__navbar');
 
     if (!header.length) {
         return;
@@ -29,6 +30,7 @@ export default function header() {
 
     if (header.hasClass('js-always-fixed')) {
         header.addClass('fixed');
+        setTimeout(() => { navigation.addClass('move') }, 250);
         pageWrapper.css('margin-top', header.outerHeight());
         hideWhenFixed.css({ opacity: 0, 'pointer-events': 'none' });
 
@@ -60,6 +62,7 @@ export default function header() {
            }
 
            header.addClass('fixed');
+           setTimeout(() => { navigation.addClass('move') }, 50);
            pageWrapper.css('margin-top', header.outerHeight());
            hideWhenFixed.css({ opacity: 0, 'pointer-events': 'none' });
        } else {
@@ -68,6 +71,7 @@ export default function header() {
            }
 
            header.removeClass('fixed');
+           navigation.removeClass('move');
            pageWrapper.css('margin-top', 0);
            hideWhenFixed.css({ opacity: 1, 'pointer-events': 'all' });
        }

@@ -12,6 +12,7 @@
     color: darkGreyColor
     transition(all)
     /*iziAnimation()*/
+    box-sizing border-box
 
     &_inline
         display: inline-block
@@ -56,16 +57,21 @@
         &_light
             background-color: rgba(#fff, .03)
 
+    &_izi
+        border-width 0
+        iziAnimation()
+
     &_border
         &_standart
+            border-width 1px
             border-color borderColor
 
         &_grey
+            border-width 1px
             border-color #262728;
 
         &_light-white
+            border-width 1px
             border-color rgba(#fff, .2)
 
-    &_izi
-        iziAnimation()
 
