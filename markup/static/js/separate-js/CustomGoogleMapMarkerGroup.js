@@ -44,7 +44,7 @@ CustomGroup.prototype.draw = function() {
 
         var close = document.createElement('div');
         close.className = 'close';
-        close.innerHTML = '<svg class="close__icon" width="14" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg-symbols.svg#close"></use></svg>'
+        close.innerHTML = '<svg class="close__icon" width="14" height="14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="svg-symbols.svg#close"></use></svg>'
 
         div.appendChild(close);
         div.dataset.group_id = this.id.join(',');

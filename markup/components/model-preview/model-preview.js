@@ -8,6 +8,7 @@ export default function modelPreview(model) {
         // prevButton: el.find('.model-preview__button_prev'),
         // nextButton: el.find('.model-preview__button_next'),
         pagination: el.find('.model-preview__pagination'),
+        autoHeight: true,
         onSlideChangeStart({ container, activeIndex}) {
             const slider = $(container);
             const maxSlides = Number(slider.data('max-slides'));

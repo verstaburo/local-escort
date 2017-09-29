@@ -18,8 +18,13 @@
             fill: rgba(#fff, .15)
 
         & ^[0]__reset
-            border-color #262728
             color: rgba(#fff, .1)
+            border: 1px solid #262728
+            margin-top: -1px
+            margin-left: -1px
+
+            &:hover
+                color: rgba(#fff, .6)
 
     &__reset
         display: flex
@@ -31,6 +36,7 @@
         font-size 16px
         font-weight 400
         text-transform uppercase
+        transition(all)
 
         +below(400px)
             width: 100%

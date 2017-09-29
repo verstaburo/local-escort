@@ -17,6 +17,9 @@ export default function modelMap() {
                 .find('.search-bar')
                 .addClass('search-bar_dar');
 
+            header
+                .find('.header__navbar').addClass('move');
+
             el
                 .find('.popup__wrapper')
                 .css({
@@ -75,6 +78,7 @@ export default function modelMap() {
 
             if ($(window).scrollTop() < header.height()) {
                 header.removeClass('fixed');
+                header.find('.header__navbar').removeClass('move');
             }
 
             if ($(document).find('.popup.active').length <= 1) {
