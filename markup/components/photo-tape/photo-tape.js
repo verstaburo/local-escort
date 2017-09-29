@@ -119,7 +119,11 @@ export default function photoTape() {
     new Swiper(block, {
         slidesPerView: 'auto',
         freeMode: true,
-        freeModeSticky: true
+        freeModeSticky: true,
+        onSlideChangeStart() {
+            $('.photo-tape__link.active').removeClass('active');
+            $('.model-info-popup.active').removeClass('active model-info-popup_left model-info-popup_right');
+        }
     });
 
     togglePopup();

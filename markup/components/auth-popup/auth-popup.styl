@@ -124,12 +124,16 @@
         letter-spacing 1px
         text-transform uppercase
         background-color: darkGreyColor
+        transition(all)
 
         &::placeholder
             color #fff
 
         &:not(:last-child)
             margin-bottom: 12px
+
+        &:focus
+            border-color mainColor
 
     &__link
         margin-top: 39px

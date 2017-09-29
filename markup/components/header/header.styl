@@ -5,6 +5,7 @@
     position: relative
     z-index: 200
     background-color: bgColor
+    transform translate3d(0, 0, 0)
 
     &__filter-icon
         fill: darkGreyColor
@@ -28,13 +29,16 @@
         position: fixed
         top: 0
         left: 0
-        transform: translate3d(0, 0, 0)
 
         &:not(.no-shadow123)
             box-shadow: 0 10px 40px rgba(29, 29, 29, .1)
 
             .header__navbar
                 box-shadow: 0 10px 40px rgba(29, 29, 29, .1)
+
+        &.no-shadow
+            .header__navbar
+                box-shadow none
 
         & ^[0]__user-nav
             border-top: 1px solid borderColor

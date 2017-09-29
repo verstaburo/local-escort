@@ -50,11 +50,11 @@ export default function header() {
            return;
        }
 
-       if ($(window).width() > 768) {
-           shouldBeFixed = sT >= photoTape
-       } else {
+       /*if ($(window).width() > 768) {*/
+        shouldBeFixed = sT >= photoTape
+       /*} else {
            shouldBeFixed = sT > 0;
-       }
+       }*/
 
        if (shouldBeFixed) {
            if (header.hasClass('fixed')) {

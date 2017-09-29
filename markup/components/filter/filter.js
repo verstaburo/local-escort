@@ -4,13 +4,14 @@ const filterExtended = () => {
         .on('show', function() {
             const header = $('.header');
             const el = $(this);
+            const paddingTop = $('.photo-tape').outerHeight() + $('.header__navbar').outerHeight();
 
             header
                 .css('z-index', 9999)
                 .addClass('no-shadow');
             el
                 .find('.popup__wrapper')
-                .css('padding-top', header.outerHeight());
+                .css('padding-top', paddingTop);
         })
         .on('afterhide', function() {
             const header = $('.header');
