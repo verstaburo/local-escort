@@ -152,7 +152,8 @@ function jadeAndPugInheritanceProcessing() {
         extension: `.${templaterName}`,
         skip: ['node_modules']
     };
-    const isInheritanceEnabled = tars.options.watch.isActive && templaterIsPugOrJade;
+    //const isInheritanceEnabled = tars.options.watch.isActive && templaterIsPugOrJade;
+    const isInheritanceEnabled = false;
 
     if (isInheritanceEnabled) {
         return tars.packages.streamCombiner(
@@ -183,10 +184,10 @@ module.exports = () => {
         ];
 
         if (templaterIsPugOrJade && tars.options.watch.isActive) {
-            filesToCompile.push(
-                `!./markup/${tars.config.fs.componentsFolderName}/**/_*.${tars.templater.ext}`,
-                `./markup/${tars.config.fs.componentsFolderName}/**/*.${tars.templater.ext}`
-            );
+            //filesToCompile.push(
+            //    `!./markup/${tars.config.fs.componentsFolderName}/**/_*.${tars.templater.ext}`,
+            //    `./markup/${tars.config.fs.componentsFolderName}/**/*.${tars.templater.ext}`
+            //);
         }
 
         try {

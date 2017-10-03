@@ -50,7 +50,7 @@ mixin filter()
                         option(value='item3') item 3
 
             +e.col._no_width._push_right
-                +icon-button('filter-button', 21, 12)(data-popup-id='#filter-extended' data-action='show').__button.js-toggle-popup
+                +icon-button('filter-button', 23, 16)(data-popup-id='#filter-extended' data-action='show').__button.js-toggle-popup
 
 mixin filter-additional()
     +b.filter-additional
@@ -462,7 +462,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +button()(class=ResetButtonModifier)._uppercase.__reset reset options
                     +col(3).grid__col_align_right.grid__col_align_right._push_right
-                        +icon-button('filter-button', 21, 12, 'icon-button__icon icon-button__icon_fill')(
+                        +icon-button('filter-button', 23, 16, 'icon-button__icon icon-button__icon_fill')(
                             data-popup-id='#filter-extended',
                             data-action='hide'
                             class=IconButtonModifier)._uppercase.js-toggle-popup Hide
