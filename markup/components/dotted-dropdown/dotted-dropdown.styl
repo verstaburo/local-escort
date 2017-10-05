@@ -28,6 +28,9 @@
         cursor: pointer
         iziAnimation()
 
+        &:hover
+            border-width: 0
+
     &__icon
         position: absolute
         top: 50%
@@ -45,11 +48,18 @@
         right: 0
         width: 236px
         display: none
+        z-index 10
+
+        .list__button:hover .list__text
+            color mainColor
 
     &_pure
         & ^[0]__button
             background-color: transparent
             border-color: transparent
+
+            &::before
+                display none
 
             &:hover
                 background-color: transparent

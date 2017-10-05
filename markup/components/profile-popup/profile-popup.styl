@@ -49,6 +49,7 @@
             height: 100%;
             background-color: rgba(#fff, .05)
             border-radius: 50%;
+            transition(all)
 
             +below(1200px)
                 background-color: darkGreyColor
@@ -58,17 +59,17 @@
                 background-color: rgba(#fff, .08)
 
                 +below(1200px)
-                    background-color: darkGreyColor
+                    background-color: rgba(darkGreyColor, .8)
 
             svg
-                opacity 1
+                fill rgba(mainColor, 1)
 
         svg
             position: absolute
             top: 50%
             transform: translate(-50%, -50%)
-            transition(opacity)
-            opacity .6
+            transition(all)
+            fill: rgba(#fff, .6)
 
         &_prev
             left: 0

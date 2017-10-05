@@ -36,8 +36,9 @@
             border-left: 1px solid borderColor
 
         &.active, &:hover
-            box-shadow 0 10px 40px rgba(29, 29, 29, .07)
+            box-shadow 0 10px 40px rgba(29, 29, 29, .07), 0 1px 0 0 #fff
             background-color #fff
+            z-index 2
 
             & ^[0]__link
                 color: mainColor
@@ -47,6 +48,8 @@
 
             & + ^[0]__item
                 border-color: transparent
+        &:hover
+            z-index 1
 
     &__link
         display: flex
