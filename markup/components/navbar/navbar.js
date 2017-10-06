@@ -11,6 +11,9 @@ export default function navbar() {
                 self.removeClass('active');
                 dropdown.removeClass('active');
             } else {
+                $('.js-toggle-popup.active').not('[data-popup-id="#model-map"]').click();
+                $('.navbar__item_dropdown').not(self).removeClass('active');
+                $('.navbar__dropdown').not(dropdown).removeClass('active');
                 self.addClass('active');
                 dropdown.addClass('active');
             }

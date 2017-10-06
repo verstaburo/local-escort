@@ -22,7 +22,8 @@ const builtInPugHelpers = {
 
         const iconData = this.__iconsData[iconName];
         const symbolsConfig = tars.config.svg.symbolsConfig;
-        const symbolsSpriteFileName = `svg-symbols${tars.options.build.hash}.svg`;
+        const symbolsSpriteFileName = 'svg-symbols.svg';
+        //const symbolsSpriteFileName = `svg-symbols${tars.options.build.hash}.svg`;
 
         if (!iconData) {
             throw new Error('There is no icon with name: ' + iconName);

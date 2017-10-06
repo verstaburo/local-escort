@@ -51,6 +51,19 @@
             & ^[0]__heading
                 color: mainColor
 
+        &_no-lr-paddings
+
+            & ^[0]__button
+                padding-left 0
+                padding-right 0
+
+        &_topborder, &_topborder:first-child
+            &::before
+                display block
+
+            &:hover::before
+                background-color: borderColor
+
     &__button
         display: flex
         padding: 35px 40px

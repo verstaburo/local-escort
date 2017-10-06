@@ -8,7 +8,26 @@
         overflow: hidden;
     }
 
+    &:hover
+        & ^[0]__content
+            border-color: mainColor
+
+        & ^[0]__heading
+            color: mainColor
+
+        & ^[0]__description
+            color: rgba(mainColor, .59)
+
+        & ^[0]__buttons
+            border-color: mainColor
+
+        & ^[0]__btn
+            span
+                color: mainColor
+
     &_interactive
+        transition(all)
+
         & ^[0]__content
             display: flex
             flex-direction: row
@@ -40,6 +59,42 @@
         & ^[0]__btn
             +below(768px)
                 width: 100%
+
+        .icon-button
+            cursor default
+
+        &:hover
+            & ^[0]__content
+                background-color mainColor
+                border-color: transparent
+
+            & ^[0]__buttons
+                background-color mainColor
+                border-color: transparent
+                border-top-color rgba(#fff, .15)
+
+            & ^[0]__heading
+                color: #fff
+
+            & ^[0]__description
+                color: rgba(#fff, .59)
+
+            .icon-button
+                border-color: rgba(#fff, .15)
+
+                svg
+                    fill: #fff
+
+                &:hover
+                    border-color: rgba(#fff, .15)
+
+                    svg
+                        fill: #fff
+
+            & ^[0]__btn
+
+                span
+                    color: #fff
 
     &_inline
         flex-direction: row
@@ -148,6 +203,7 @@
         font-size: 20px
         padding: 0 22px
         letter-spacing: initial
+        transition(all)
 
         +below(540px)
             padding-bottom: 36px
@@ -158,6 +214,7 @@
         font-size: 16px
         line-height: 1.375
         color: rgba(darkGreyColor, .59)
+        transition(all)
 
         +below(540px)
             display: none
@@ -199,18 +256,42 @@
         margin-top: auto
         border-top: 1px solid borderColor
 
-        transition(background-color)
+        transition(all)
 
         span, svg
-            transition(transform, opacity)
+            transition(all)
 
         svg
             fill: #fff
+
+        &:hover
+            background-color mainColor
+            border-color: transparent
+            border-top-color rgba(#fff, .15)
+
+            & ^[0]__btn
+
+                span
+                    color: #fff
+
 
     .icon-button
         width: 46px
         height: 46px
         margin-left: 16px
+        transition(all)
+
+        &::before
+            display none
+
+        &:hover
+            border-color: inherit
+
+            svg
+                fill: inherit
+
+        svg
+            transition(all)
 
     &__control
         display: none
@@ -229,8 +310,11 @@
                 .badges
                     opacity 0
 
-                .icon-button svg
-                    fill: #fff
+                .icon-button
+                    border-color: rgba(#fff, .15)
+
+                    svg
+                        fill: #fff
 
             & ~ ^[0]__buttons
                 background-color mainColor
@@ -242,10 +326,12 @@
                 svg
                     transform: translate(-50%, -50%) scale(1)
 
-                span
-                    opacity 0
+                & ^[0]__btn
+                    span
+                        opacity 0
 
     .badges
         top: -1px
         right: -1px
         transition(opacity)
+

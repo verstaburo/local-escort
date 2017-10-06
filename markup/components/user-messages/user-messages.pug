@@ -60,4 +60,6 @@ mixin user-messages()
                                 | Perhaps they'll take notice & make changes for the betterment overall
                             +message('nikolas.png', 'Nikolas', 'Dec 23, 2016 12:30 PM')._white._left
                                 | Says the unverified, pic-less profiler. hysterical. you do realize you voiced your response to several previous winners
-                    +send-form('Message', 'Send message')
+                    +e.send
+                        +e.send-activation Message
+                        +send-form('Message', 'Send message')

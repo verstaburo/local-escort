@@ -30,9 +30,14 @@
             height: 65px
             transform: translateX(24px)
 
-    .send-form
+    &__send
+        position relative
         flex-shrink: 0
         margin-top: 23px
+        width 100%
+        overflow hidden
+        transition(all)
+        will-change height
 
         +below(768px)
             position: fixed
@@ -40,6 +45,41 @@
             left: 0
             width: 100%
             z-index 50
+
+        .send-form
+            opacity 0
+            position absolute
+            top 0
+            left 0
+            pointer-events none
+
+        &.active
+
+            & ^[0]__send-activation
+                position absolute
+                pointer-events none
+                color #fff
+
+            & .send-form
+                opacity 1
+                pointer-events all
+                position relative
+
+    &__send-activation
+        position relative
+        top: 0
+        left: 0
+        width: 100%
+        height 100%;
+        padding 19px 24px
+        background-color #fff
+        color darkGreyColor
+        font-family fontMain
+        font-size 16px
+        font-weight 400
+        line-height 1.38
+        pointer-events all
+        transition(all)
 
     &__content
         display: flex

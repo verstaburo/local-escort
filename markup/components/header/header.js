@@ -5,6 +5,21 @@ export default function header() {
     const hideWhenFixed = $('.hide-when-header-fixed');
     const navigation = $('.header__navbar');
 
+    function headerHeight() {
+        if ($(window).width() < 769) {
+            return '122px';
+        } else if ($(window).width() < 1025) {
+            return '150px';
+        } else {
+            return '176px';
+        }
+    }
+
+    let fixedPagePadding = headerHeight();
+    $(window).on('resize', () => {
+       fixedPagePadding = headerHeight();
+    });
+
     if (!header.length) {
         return;
     }
@@ -31,7 +46,7 @@ export default function header() {
     if (header.hasClass('js-always-fixed')) {
         header.addClass('fixed');
         setTimeout(() => { navigation.addClass('move') }, 250);
-        pageWrapper.css('margin-top', header.outerHeight());
+        pageWrapper.css('margin-top', fixedPagePadding/*header.outerHeight()*/);
         hideWhenFixed.css({ opacity: 0, 'pointer-events': 'none' });
 
         return;
@@ -63,7 +78,7 @@ export default function header() {
 
            header.addClass('fixed');
            setTimeout(() => { navigation.addClass('move') }, 50);
-           pageWrapper.css('margin-top', header.outerHeight());
+           pageWrapper.css('margin-top', fixedPagePadding/*header.outerHeight()*/);
            hideWhenFixed.css({ opacity: 0, 'pointer-events': 'none' });
        } else {
            if (!header.hasClass('fixed')) {
