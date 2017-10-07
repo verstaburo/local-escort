@@ -54,9 +54,10 @@ function scrollIntoPage() {
 }*/
 
 export default function userProfile() {
+    const card = $('.user-profile__profile-card');
+
     function paramDefine() {
         const userNav = $('.user-nav');
-        const card = $('.user-profile__profile-card');
         const popup = card.parents('.js-profile-popup-wr');
         const next = card.next();
         const parent = card.parent();
@@ -79,17 +80,12 @@ export default function userProfile() {
     }
 
     function scrollInto() {
-        let param = paramDefine();
-        $(window).on('resize', () => {
-            param = paramDefine();
-        });
-        const card = $('.user-profile__profile-card');
+        const param = paramDefine();
         const hT = param.topSpace;
         const pOT = param.parentTop;
         const topBreakpoint = param.topBreak;
         const bottomBreakpoint = param.bottomBreak;
         const sT = $(window).scrollTop();
-        console.log(topBreakpoint, bottomBreakpoint, sT);
         if (sT <= topBreakpoint) {
             card.css({ transform: 'translate3d(0, 0, 0)'});
         } else if (sT >= bottomBreakpoint) {

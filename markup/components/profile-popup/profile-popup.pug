@@ -26,6 +26,10 @@ mixin profile-popup()
             +container
                 .js-profile-popup.swiper-container
                     .swiper-wrapper
-                        - for (var i = 0; i < 4; i++)
+                        - for (var i = 0; i < 2; i++)
                             +user-profile(true).swiper-slide
-                                +reviews
+                                +reviews-rate-no-login-interactive
+                            +user-profile(true).swiper-slide
+                                +reviews-rate-interactive
+
+

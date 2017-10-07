@@ -64,6 +64,27 @@ mixin reviews-rate()
             +e.items
                 block
 
+mixin reviews-rate-interactive()
+    +b.reviews&attributes(attributes)
+        +heading Reviews
+
+        +e.content
+            +e.rate-heading Rate the quality of services
+
+            +e.rate
+                +e.rate-row
+                    +rating-interactive-counter(5, 'service-1', 'Service')
+                    +rating-interactive-counter(5, 'service-2', 'Service')
+                    +rating-interactive-counter(5, 'service-3', 'Service')
+                +e.rate-row
+                    +rating-interactive-counter(5, 'service-4', 'Service')
+                    +rating-interactive-counter(5, 'service-5', 'Service')
+
+        +send-form('Give feedback', 'Send review', 'false').js-activation-field
+            +e.SPAN.activator.reviews__activator Give feedback
+
+        +e.SPAN.no-reviews There are no reviews
+
 mixin reviews-rate-no-login()
     +b.reviews&attributes(attributes)
         +heading Reviews
@@ -93,6 +114,41 @@ mixin reviews-rate-no-login()
                     +share-button('email')
                     +share-button('g+')
                     +share-button('dots')
+
+mixin reviews-rate-no-login-interactive()
+    +b.reviews&attributes(attributes)
+        +heading Reviews
+        +e.content
+            +e.rate-heading Rate the quality of services
+
+            +e.rate
+                +e.rate-row
+                    +rating-interactive-counter(5, 'service-1', 'Service')
+                    +rating-interactive-counter(5, 'service-2', 'Service')
+                    +rating-interactive-counter(5, 'service-3', 'Service')
+                +e.rate-row
+                    +rating-interactive-counter(5, 'service-4', 'Service')
+                    +rating-interactive-counter(5, 'service-5', 'Service')
+
+        +send-form('Give feedback', 'Send review', 'false').js-activation-field
+            +e.SPAN.activator.reviews__activator Give feedback
+
+        +e.SPAN.no-reviews There are no reviews
+
+        +e.content
+            +e.login
+                +e.SPAN.login-heading To leave a comment you need to enter through
+                +e.login-buttons
+                    +button()(href='#')._uppercase._bg_darkGrey._color_main Login
+                    +e.login-sep Or
+                    +share-buttons
+                        +share-button('vk')
+                        +share-button('fb')
+                        +share-button('tw')
+                        +share-button('ok')
+                        +share-button('email')
+                        +share-button('g+')
+                        +share-button('dots')
 
 mixin reviews-feedbacks
     +b.reviews&attributes(attributes)

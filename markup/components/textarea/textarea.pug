@@ -1,4 +1,6 @@
-mixin textarea(name, placeholder)
+mixin textarea(name, placeholder, contenteditable)
+    -var contentEdit = 'true'
+    -if (contenteditable) {contentEdit = contenteditable} else {contentEdit = 'true'}
     +b.textarea&attributes(attributes)
-        +e.control(name=name placeholder=placeholder contenteditable='true')
+        +e.control(name=name placeholder=placeholder contenteditable=contentEdit)
             block

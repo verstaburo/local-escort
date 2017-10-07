@@ -8,4 +8,12 @@ export default function reviews() {
 
     $('.reviews__control').each(toggleButton);
     $(document).on('input', '.reviews__control', toggleButton);
+
+    $(document).on('click', '.js-activation-field', (evt) => {
+        evt.preventDefault();
+        const self = $(evt.target).closest('.reviews');
+        $(self).find('.textarea__control').attr('contenteditable', 'true');
+        $(self).find('.reviews__activator, .reviews__no-reviews').hide();
+        $(self).find('.reviews__content').slideDown(400);
+    });
 };

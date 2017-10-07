@@ -1,7 +1,7 @@
 include ../textarea/textarea
 
-mixin send-form(placeholder, buttonValue)
+mixin send-form(placeholder, buttonValue, contenteditable)
     +b.FORM(action="#" method="POST").send-form&attributes(attributes)
-        +textarea('message', placeholder)
+        +textarea('message', placeholder, contenteditable)
             block
         +e.BUTTON.button=buttonValue
