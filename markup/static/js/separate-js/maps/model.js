@@ -246,6 +246,7 @@
     var zoomInBtn = document.querySelector('.js-map-zoom-in'),
         zoomOutBtn = document.querySelector('.js-map-zoom-out'),
         myLocBtn = document.querySelector('.js-map-my-location'),
+        modelMap = $('.model-map'),
         posMarker = new google.maps.Marker({
             map: map,
             animation: google.maps.Animation.DROP,
@@ -343,7 +344,7 @@
 
     // event
 
-    $('.model-map')
+    modelMap
         .on('click', '.map__marker', function() {
             var el = $(this);
 
