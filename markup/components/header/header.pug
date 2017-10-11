@@ -11,7 +11,7 @@ include ../city-list/city-list
 include ../selectbox/selectbox
 include ../user-dropdown-popup/user-dropdown-popup
 
-mixin header(dark, isGuest, activeMenu, isUser)
+mixin header(dark, isGuest, activeMenu, isUser, isAgency)
 
     - var getActive = function(candidate) { return activeMenu === candidate ? 'active' : ''};
     - var avatar = isUser ? 'jackson.png' : 'navbar.png'
@@ -68,7 +68,7 @@ mixin header(dark, isGuest, activeMenu, isUser)
                             option(value='Rating') Rating
                             option(value='Price') Price
                 +navbar-item.show-fixed
-                    +button(href='model-map.html')._color_white._bg_darkGrey._uppercase View on map
+                    +button(href=isAgency ? 'model-map-agencies.html' : 'model-map.html')._color_white._bg_darkGrey._uppercase View on map
                 +navbar-item._dropdown._credits
                     +navbar-link-dropdown(href='#')
                         +navbar-heading Credits
@@ -169,7 +169,7 @@ mixin header(dark, isGuest, activeMenu, isUser)
                     +navbar-link(href='#' data-popup-id='#filter-extended' data-action='toggle').js-toggle-popup
                         != pugHelpers.Icon.call(locals, {iconName: 'filter-button', className: 'navbar__icon_filter', iconWidth: '19', iconHeight: '12'})
                 +navbar-item
-                    +navbar-link(href='#' data-popup-id='#model-map' data-action='toggle')._mob-map.js-toggle-popup
+                    +navbar-link(href=isAgency ? 'model-map-agencies.html' : 'model-map.html')._mob-map
                         != pugHelpers.Icon.call(locals, {iconName: 'location', className: 'navbar__icon_location', iconWidth: '18', iconHeight: '21'})
                         != pugHelpers.Icon.call(locals, {iconName: 'list-view', className: 'navbar__icon_list-view', iconWidth: '22', iconHeight: '14'})
 
