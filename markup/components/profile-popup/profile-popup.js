@@ -36,6 +36,10 @@ export default function profilePopup() {
     });
 
 
+    popup.on('show', () => {
+        popup.css('top', $(window).scrollTop());
+    });
+
     popup.on('aftershow', () => {
         slider.update();
         reInitMap();
