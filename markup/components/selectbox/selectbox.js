@@ -17,14 +17,16 @@ const normalizeList = (list) => {
         return;
     }
 
-    // direction -> to top
-    if (footer.offset().top + footer.outerHeight() < wrap.outerHeight() + wrap.offset().top) {
-        wrap.css({
-            marginTop: 0,
-            marginBottom: wrap.css('margin-top'),
-            top: '-100%',
-            transform: 'translateY(-100%)',
-        });
+    if (footer.length) {
+        // direction -> to top
+        if (footer.offset().top + footer.outerHeight() < wrap.outerHeight() + wrap.offset().top) {
+            wrap.css({
+                marginTop: 0,
+                marginBottom: wrap.css('margin-top'),
+                top: '-100%',
+                transform: 'translateY(-100%)',
+            });
+        }
     }
 
     if (wrap.offset().left < 0) {

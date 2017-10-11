@@ -1,0 +1,24 @@
+extends ../components/layout-default/layout-default
+include ../components/header/header
+include ../components/footer/footer
+include ../components/model-list/model-list
+include ../components/arrow-up/arrow-up
+include ../components/filter/filter
+include ../components/popup-welcome/popup-welcome
+include ../components/select-city-popup/select-city-popup
+include ../components/model-map/model-map
+
+block header
+    +header(true, null, 'all escorts')
+
+block content
+    +model-map
+    +arrow-up
+
+block popups
+    +popup-welcome
+    +select-city-popup
+    +filter-extended(true)
+
+block scripts
+    script(src=`%=static=%js/separate-js/maps/model.js`)
