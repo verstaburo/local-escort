@@ -25,7 +25,20 @@
             .navbar__link
                 padding: 0 36px
 
-    &.fixed
+    &_map
+        position: relative !important
+        z-index: 9999 !important
+
+        & ^[0]__navbar
+            position: static !important
+            opacity: 1 !important
+            order: 2 !important
+            transform: translate3d(0, 0, 0) !important
+
+        ~ .page__wrapper
+            margin-top: 0 !important
+
+    &.fixed, &_map
         position: fixed
         top: 0
         left: 0

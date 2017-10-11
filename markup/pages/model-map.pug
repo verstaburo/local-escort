@@ -1,5 +1,5 @@
 extends ../components/layout-default/layout-default
-include ../components/header/header
+include ../components/header/header-map
 include ../components/footer/footer
 include ../components/model-list/model-list
 include ../components/arrow-up/arrow-up
@@ -9,7 +9,7 @@ include ../components/select-city-popup/select-city-popup
 include ../components/model-map/model-map
 
 block header
-    +header(true, null, 'all escorts')
+    +header(true, null, 'all escorts')._map.no-shadow
 
 block content
     +model-map

@@ -56,6 +56,10 @@ function scrollIntoPage() {
 export default function userProfile() {
     const card = $('.user-profile__profile-card');
 
+    if (!card.length) {
+        return;
+    }
+
     function paramDefine() {
         const userNav = $('.user-nav');
         const popup = card.parents('.js-profile-popup-wr');

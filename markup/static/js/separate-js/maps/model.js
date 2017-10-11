@@ -272,8 +272,6 @@
         $(myLocBtn).hide();
     }
 
-    var modelMap = $('#model-map');
-
     google.maps.event.addListener(map, 'tilesloaded', function() {
         // hide google logo etc
         modelMap.find('.gm-style-cc').hide();
@@ -283,9 +281,6 @@
         modelMap.find('[target="_new"]').parent().hide();
     });
 
-    modelMap.on('aftershow', function() {
-        google.maps.event.trigger(map, 'resize');
-    });
 
     // random marker position
     var rand = function (n) {
@@ -348,7 +343,7 @@
 
     // event
 
-    modelMap
+    $('.model-map')
         .on('click', '.map__marker', function() {
             var el = $(this);
 

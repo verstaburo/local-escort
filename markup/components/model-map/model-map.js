@@ -1,4 +1,17 @@
 export default function modelMap() {
+    const modelMap = $('.model-map');
+    const header = $('.header');
+
+    if (!modelMap.length) {
+        return;
+    }
+
+    modelMap.height($(window).height() - header.outerHeight());
+    modelMap.find('.map__content').scrollbar();
+    modelMap.find('.map__marker, .map__group').fadeIn(250);
+}
+
+function smodelMap() {
     $('.model-map').parents('.popup')
         .on('show', function() {
             const header = $('.header');
