@@ -28,7 +28,7 @@ mixin model-list()
                 +e.header-col.hide-desktop
                     +sort-ui
                 +e.header-col.hide-mob
-                    +button(href='#' data-popup-id='#model-map' data-action='toggle')._color_white._bg_darkGrey._uppercase.js-toggle-popup View on map
+                    +button(href='model-map.html')._color_white._bg_darkGrey._uppercaseView on map
 
             +grid-masonry({ desktop: 4, laptop: 3, tablet: 2, mobile: 1}).js-model-preview-grid
                 +model-preview([7, 7, 7], 'Megan', 20, 325, true).js-masonry-item
