@@ -43,7 +43,6 @@ const normalizeList = (list) => {
     }
 
     if (wrap.offset().left + wrap.outerWidth() >= $(window).width()) {
-        console.log(wrap);
         wrap.css('transform', `translateX(-${wrap.offset().left + wrap.outerWidth() - $(window).width() + 12}px)`)
     }
 };
@@ -156,7 +155,7 @@ export default function selectbox() {
         }
     };
 
-    const onListItemClick = function(e) {
+    const onListItemClick = function(e, data) {
         e.preventDefault();
         e.stopPropagation();
 
@@ -186,20 +185,34 @@ export default function selectbox() {
 
         item.addClass(LIST_ITEM_ACTIVE);
 
-        selectbox
-            .find(`.${CONTROL}`)
-            .prop('selectedIndex', selectedIndex)
-            .trigger('change')
-            .trigger('click');
+        if (data !== 'ignore') {
+            selectbox
+                .find(`.${CONTROL}`)
+                .prop('selectedIndex', selectedIndex)
+                .trigger('change')
+                .trigger('click');
+        }
 
         value.text(text);
         deactivateAll();
     };
 
+    const onChange = function() {
+        const self = $(this);
+
+        self
+            .parents('.selectbox')
+            .find('.selectbox__item')
+            .eq(self.prop('selectedIndex'))
+            .trigger('click', ['ignore']);
+
+    };
+
     $(document)
         .on('click', `.${CONTAINER}`, onSelectboxClick)
         .on('click', `.${LIST_ITEM}`, onListItemClick)
-        .on('click', deactivateAll);
+        .on('click', deactivateAll)
+        .on('change', `.${CONTROL}`, onChange);
 
     window.initSelectbox = (selectbox = null) => {
         if (!selectbox) {

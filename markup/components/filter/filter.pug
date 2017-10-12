@@ -296,7 +296,7 @@ mixin filter-additional()
                 +col(3)
                     +button._uppercase._bg_light._color_main Apply <span>(18021)</span>
                 +col(3)
-                    +button._uppercase._bg_darkGrey._color_white._border_grey Reset options
+                    +button._uppercase._bg_darkGrey._color_white._border_grey.js-filter-reset Reset options
                 +col(3).grid__col_push_right
                     +button(
                         data-show-text='+ show more options',
@@ -460,7 +460,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +button()(class=ApplyButtonModifier)._uppercase.__hide-additional Apply <span>(19405)</span>
                     +col(3)
-                        +button()(class=ResetButtonModifier)._uppercase.__reset reset options
+                        +button()(class=ResetButtonModifier)._uppercase.__reset.js-filter-reset reset options
                     +col(3).grid__col_align_right.grid__col_align_right._push_right
                         +icon-button('filter-button', 23, 16, 'icon-button__icon icon-button__icon_fill')(
                             data-popup-id='#filter-extended',

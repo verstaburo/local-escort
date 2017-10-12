@@ -57,6 +57,53 @@ const toggleAdditional = () => {
     });
 };
 
+const resetFilterElements = (container) => {
+    if (!container.length) {
+        return;
+    }
+
+    // reset selectboxes
+    container
+        .find('select')
+        .prop('selectedIndex', 0)
+        .trigger('change');
+
+    // reset checkboxes
+    container
+        .find('input[type="checkbox"]')
+        .prop('checked', false)
+        .trigger('change');
+
+    // reset radio buttons
+    container
+        .find('input[type="radio"]')
+        .prop('checked', false)
+        .trigger('change');
+
+    // reset inputs
+    container
+        .find('input')
+        .filter(function() {
+            const type = $(this).prop('type');
+            return type !== 'checkbox' && type !== 'radio';
+        })
+        .val('')
+        .trigger('change');
+
+    // reset textareas
+    container
+        .find('textarea')
+        .val('')
+        .trigger('change');
+};
+
+const resetFilter = () => {
+    $(document).on('click', '.js-filter-reset', function(e) {
+        e.preventDefault();
+        resetFilterElements($(this).parents('.filter'));
+    });
+};
+
 export default function filter() {
     const block = $('.filter');
 
@@ -66,4 +113,5 @@ export default function filter() {
 
     toggleAdditional();
     filterExtended();
+    resetFilter();
 }
