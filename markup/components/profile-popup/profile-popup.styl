@@ -23,6 +23,16 @@
             margin-top: 0
             border: 0
 
+    &__slider
+        position: relative
+
+    &__slide
+        display: none
+        transition opacity .5s ease
+
+        &.active
+            display: block
+
     &__button
         position: fixed
         display: block

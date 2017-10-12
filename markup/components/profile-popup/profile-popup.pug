@@ -24,12 +24,19 @@ mixin profile-popup()
                 != pugHelpers.Icon.call(locals, {iconName: 'photo-caret'})
 
             +container
-                .js-profile-popup.swiper-container
-                    .swiper-wrapper
-                        - for (var i = 0; i < 2; i++)
-                            +user-profile(true).swiper-slide
-                                +reviews-rate-no-login-interactive
-                            +user-profile(true).swiper-slide
+                //.js-profile-popup.swiper-container
+                //    .swiper-wrapper
+                //        - for (var i = 0; i < 2; i++)
+                //            +user-profile(true).swiper-slide
+                //                +reviews-rate-no-login-interactive
+                //            +user-profile(true).swiper-slide
                                 +reviews-rate-interactive
+                +e.slider.js-profile-popup
+                    +e.slide.active
+                        +user-profile(true)
+                            +reviews-rate-no-login-interactive
+                    +e.slide
+                        +user-profile(true)
+                            +reviews-rate-interactive
 
 

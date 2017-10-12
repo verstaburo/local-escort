@@ -27,21 +27,48 @@ export default function profilePopup() {
         }
     };
 
-    const slider = new Swiper('.js-profile-popup', {
-        slidesPerView: 1,
-        prevButton: '.profile-popup__button_prev',
-        nextButton: '.profile-popup__button_next',
-        touchRatio: 0,
-        onSlideChangeStart: reInitMap,
-    });
+    // const slider = new Swiper('.js-profile-popup', {
+    //     slidesPerView: 1,
+    //     prevButton: '.profile-popup__button_prev',
+    //     nextButton: '.profile-popup__button_next',
+    //     touchRatio: 0,
+    //     onSlideChangeStart: reInitMap,
+    // });
 
+    $(document).on('click', '.profile-popup__button', function (e) {
+        e.preventDefault();
+        const self = $(this);
+        const slider = self.parents('.profile-popup');
+        const activeSlide = slider.find('.profile-popup__slide.active');
+        const slides = slider.find('.profile-popup__slide');
+        let nextSlide = null;
+
+        if (self.hasClass('profile-popup__button_next')) {
+            const candidate = activeSlide.next();
+            nextSlide = candidate.length ? candidate : slides.first();
+        }
+
+        if (self.hasClass('profile-popup__button_prev')) {
+            const candidate = activeSlide.prev();
+            nextSlide = candidate.length ? candidate : slides.last();
+        }
+
+        nextSlide
+            .fadeIn()
+            .addClass('active')
+            .siblings()
+            .hide()
+            .removeClass('active');
+
+        reInitMap();
+    });
 
     popup.on('show', () => {
         popup.css('top', $(window).scrollTop());
     });
 
     popup.on('aftershow', () => {
-        slider.update();
+        // slider.update();
         reInitMap();
 
         const scrollWidth = popup.outerWidth() - popup[0].scrollWidth;
