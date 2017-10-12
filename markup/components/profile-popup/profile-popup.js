@@ -61,6 +61,7 @@ export default function profilePopup() {
             .removeClass('active');
 
         reInitMap();
+        self.parents('.js-profile-popup-wr').scroll();
     });
 
     popup.on('show', () => {

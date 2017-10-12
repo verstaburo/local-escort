@@ -21,7 +21,7 @@
     &__item
         position: relative
         display: block
-        transition(background-color)
+        m-transition(background-color)
 
         &:not(.active):hover
             &::before
@@ -39,7 +39,7 @@
             width: 100%
             height: 1px
             background-color: borderColor
-            transition(background-color)
+            m-transition(background-color)
 
         &:first-child::before
             display: none
@@ -81,7 +81,7 @@
         margin-right: 15px
         font-weight: 400
         user-select none
-        transition(color)
+        m-transition(color)
 
         +below(768px)
             ellipsis(100%)
@@ -98,7 +98,7 @@
         &-icon
             fill: mainColor
             transform: rotate(0deg)
-            transition(fill, transform)
+            m-transition(fill, transform)
 
     &__content
         padding-top: 35px
