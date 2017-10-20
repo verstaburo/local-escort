@@ -494,7 +494,13 @@ mixin user-fill-profile-4
 mixin user-fill-profile-5
     form(action='#' method='post').user-fill-profile__main
         .user-fill-profile__section
-            +heading._md Rate
+            +field
+                +field-label
+                    +heading._md Rate
+                    +selectbox._small
+                        +selectbox-control(name='rate').js-change-currency
+                            option(value='$') DOL ($)
+                            option(value='€') EUR (€)
             +grid
                 +col(4).grid__col_push_bottom
                     span.user-fill-profile__label.user-fill-profile__label_control-like 1/2 hour
@@ -502,7 +508,7 @@ mixin user-fill-profile-5
                     +field
                         +field-label Incall
                         +selectbox
-                            +selectbox-control(name='rate-incall')
+                            +selectbox-control(name='rate-incall').js-change-currency-el
                                 option(value='50') 50 $
                                 option(value='60') 60 $
                                 option(value='70') 70 $
@@ -518,14 +524,9 @@ mixin user-fill-profile-5
                                 option(value='200') 200 $
                 +col(4)
                     +field
-                        +field-label
-                            | Outcall
-                            +selectbox._small
-                                +selectbox-control(name='rate')
-                                    option(value='1') DOL ($)
-                                    option(value='2') EUR (€)
+                        +field-label Outcall
                         +selectbox
-                            +selectbox-control(name='rate-outcall')
+                            +selectbox-control(name='rate-outcall').js-change-currency-el
                                 option(value='50') 50 $
                                 option(value='60') 60 $
                                 option(value='70') 70 $
@@ -544,7 +545,7 @@ mixin user-fill-profile-5
                     span.user-fill-profile__label 1 hour
                 +col(4)
                     +selectbox
-                        +selectbox-control(name='rate-per-hour')
+                        +selectbox-control(name='rate-per-hour').js-change-currency-el
                             option(value='50') 50 $
                             option(value='60') 60 $
                             option(value='70') 70 $
@@ -560,7 +561,7 @@ mixin user-fill-profile-5
                             option(value='200') 200 $
                 +col(4)
                     +selectbox
-                        +selectbox-control(name='rate')
+                        +selectbox-control(name='rate').js-change-currency-el
                             option(value='50') 50 $
                             option(value='60') 60 $
                             option(value='70') 70 $
@@ -579,7 +580,7 @@ mixin user-fill-profile-5
                     span.user-fill-profile__label 2 hour
                 +col(4)
                     +selectbox
-                            +selectbox-control(name='rate')
+                            +selectbox-control(name='rate').js-change-currency-el
                                 option(value='50') 50 $
                                 option(value='60') 60 $
                                 option(value='70') 70 $
@@ -595,7 +596,7 @@ mixin user-fill-profile-5
                                 option(value='200') 200 $
                 +col(4)
                     +selectbox
-                        +selectbox-control(name='rate')
+                        +selectbox-control(name='rate').js-change-currency-el
                             option(value='50') 50 $
                             option(value='60') 60 $
                             option(value='70') 70 $
@@ -615,7 +616,7 @@ mixin user-fill-profile-5
                     span.user-fill-profile__label Night
                 +col(4)
                     +selectbox
-                        +selectbox-control(name='rate')
+                        +selectbox-control(name='rate').js-change-currency-el
                             option(value='50') 50 $
                             option(value='60') 60 $
                             option(value='70') 70 $
@@ -636,7 +637,7 @@ mixin user-fill-profile-5
                             option(value='200') 200 $
                 +col(4)
                     +selectbox
-                        +selectbox-control(name='rate')
+                        +selectbox-control(name='rate').js-change-currency-el
                             option(value='50') 50 $
                             option(value='60') 60 $
                             option(value='70') 70 $

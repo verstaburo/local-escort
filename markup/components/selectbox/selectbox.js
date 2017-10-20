@@ -117,7 +117,7 @@ const generateList = (selectbox) => {
             }
         });
 
-    wrap.append(list);
+    wrap.html(list);
 
     if (hasDropdown) {
         wrap.addClass('selectbox__list-wrapper_has_dropdown');

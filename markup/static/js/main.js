@@ -42,6 +42,7 @@ import fullPhotoPopup from "../../components/full-photo-popup/full-photo-popup";
 import rating from "../../components/rating/rating";
 import list from "../../components/list/list";
 import navbar from "../../components/navbar/navbar";
+import changeCurrency from "../../components/user-fill-profile/changeCurrency";
 
 (function($){
     var event = 'oninput' in document.createElement('input') ? 'input' : 'keydown';
@@ -123,6 +124,7 @@ $(() => {
     authPopup();
     captcha();
     help();
+    changeCurrency();
     userProfile();
     map();
     modelMap();
