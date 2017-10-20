@@ -26,7 +26,7 @@
                 color: mainColor
 
     &_interactive
-        transition(all)
+        m-transition(all)
 
         & ^[0]__content
             display: flex
@@ -196,14 +196,14 @@
         border-top: 0
         text-align: center
         flex-grow 1
-        transition(background-color, border-color)
+        m-transition(background-color, border-color)
 
     &__heading
         display: block
         font-size: 20px
         padding: 0 22px
         letter-spacing: initial
-        transition(all)
+        m-transition(all)
 
         +below(540px)
             padding-bottom: 36px
@@ -214,7 +214,7 @@
         font-size: 16px
         line-height: 1.375
         color: rgba(darkGreyColor, .59)
-        transition(all)
+        m-transition(all)
 
         +below(540px)
             display: none
@@ -249,6 +249,10 @@
             +below(768px)
                 display: flex
 
+        span:nth-child(2)
+            display: none
+            color #fff
+
     &__buttons
         display: flex
         width: 100%
@@ -256,10 +260,10 @@
         margin-top: auto
         border-top: 1px solid borderColor
 
-        transition(all)
+        m-transition(all)
 
         span, svg
-            transition(all)
+            m-transition(all)
 
         svg
             fill: #fff
@@ -279,7 +283,7 @@
         width: 46px
         height: 46px
         margin-left: 16px
-        transition(all)
+        m-transition(all)
 
         &::before
             display none
@@ -291,7 +295,7 @@
                 fill: inherit
 
         svg
-            transition(all)
+            m-transition(all)
 
     &__control
         display: none
@@ -328,10 +332,14 @@
 
                 & ^[0]__btn
                     span
-                        opacity 0
+                        &:nth-child(1)
+                            display: none
+
+                        &:nth-child(2)
+                            display: block
 
     .badges
         top: -1px
         right: -1px
-        transition(opacity)
+        m-transition(opacity)
 

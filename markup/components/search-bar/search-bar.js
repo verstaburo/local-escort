@@ -23,17 +23,21 @@ export default function searchBar() {
             });
     });
 
+    const closeSearchbar = (e) => form
+        .removeClass('search-bar_extended')
+        .parents('.navbar__item')
+        .removeClass('active')
+        .prevAll(':not(.navbar__item_logo)')
+        .each(function() {
+            const item = $(this);
+            item.velocity({ minWidth: item.data('min-width'), opacity: 1 });
+        });
+
+    input.on('blur', closeSearchbar);
+
     close.on('click', (e) => {
         e.preventDefault();
-        form
-            .removeClass('search-bar_extended')
-            .parents('.navbar__item')
-            .removeClass('active')
-            .prevAll(':not(.navbar__item_logo)')
-            .each(function() {
-                const item = $(this);
-                item.velocity({ minWidth: item.data('min-width'), opacity: 1 });
-            })
+        closeSearchbar();
     });
 
     $(window).on('resize', () => {
