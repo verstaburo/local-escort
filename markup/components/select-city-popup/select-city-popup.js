@@ -10,9 +10,14 @@ export default function selectCityPopup() {
     });
 
     popup.on('show', () => {
-       const offset = navbar.outerHeight() + navbar.offset().top;
+        let offset = navbar.outerHeight() + navbar.offset().top;
+        const userNav = $('.user-nav');
 
-       popup
+        if (userNav.length && userNav.hasClass('fixed')) {
+            offset = userNav.outerHeight();
+        }
+
+        popup
            .css('top', `${offset}px`)
            .find('.popup__wrapper')
            .css('height', $(window).height() - offset)

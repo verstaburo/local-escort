@@ -3,6 +3,7 @@ include ../grid/grid
 include ../logo/logo
 include ../selectbox/selectbox
 include ../vertical-nav/vertical-nav
+include ../input-selectlike/input-selectlike
 
 mixin footer()
     +b.FOOTER.footer&attributes(attributes)
@@ -15,11 +16,7 @@ mixin footer()
                         +col(4).footer__col.footer__col_half-mob.no-padding-top
                             +e.select
                                 +e.SPAN.heading._big City
-                                +selectbox._dark._small._default-text
-                                    +selectbox-control(name='city')
-                                        option(value='1') Los Angeles
-                                        option(value='2') New Your
-                                        option(value='3') Miami
+                                +input-selectlike('city', 'Los Angeles', true)(data-popup-id="#select-city" data-action="open")._small.js-toggle-popup
                         +col(4).footer__col.hide-mob
                             +e.social
                                 +e.SPAN.heading Follow us

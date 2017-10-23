@@ -14,6 +14,7 @@ include ../textarea/textarea
 include ../accordion/accordion
 include ../map/map
 include ../add-input/add-input
+include ../input-selectlike/input-selectlike
 
 mixin user-fill-profile(activeItem)
     +b.user-fill-profile&attributes(attributes)
@@ -472,11 +473,8 @@ mixin user-fill-profile-4
                     +col(6)
                         +field
                             +field-label City
-                            +selectbox
-                                +selectbox-control(name='city')
-                                    option(value='1') Los Angeles
-                                    option(value='2') New York
-                                    option(value='3') Miami
+                            +input-selectlike('city', 'Los Angeles', true)(data-popup-id="#select-city" data-action="open").js-toggle-popup
+
                     +col(6)
                         +field
                             +field-label Address
@@ -849,11 +847,8 @@ mixin user-fill-profile-8
                                     +col(6)
                                         +field
                                             +field-label City
-                                            +selectbox
-                                                +selectbox-control(name='city')
-                                                    option Los Angeles
-                                                    option New York
-                                                    option Miami
+                                            +input-selectlike('city', 'Los Angeles', true)(data-popup-id="#select-city" data-action="open").js-toggle-popup
+
                                     +col(6)
                                         +field
                                             +field-label Address

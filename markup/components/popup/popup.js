@@ -98,6 +98,7 @@ export default function popup() {
     };
 
     const onWrapperClick = function(e) {
+        e.stopPropagation();
         const popup = $(this);
         const target = $(e.target);
 
