@@ -83,19 +83,22 @@
 
     &__caret-icon
         fill: #fff
-        transition(all)
+        m-transition(all)
+
+        +above(1024px)
+            display: none
 
     &__button
         display: flex
         align-items: center
-        width: 20%
+        width: 50%
         height: 100%
         cursor: pointer
         position: absolute
         top: 0
         z-index: 1
         transform: translate3d(0, 0, 0)
-        transition: transform .5s ease-in-out
+        m-transition: transform .5s ease-in-out
         pointer-events: all
 
         &:hover
@@ -107,6 +110,7 @@
         &_prev
             left: 0
             padding-left: 41px
+            cursor: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTMgMjQiIHdpZHRoPSIxMyIgaGVpZ2h0PSIyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTMgMjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojRkZGRkZGO308L3N0eWxlPjx0aXRsZT5QYXRoIDU8L3RpdGxlPjxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPjxnIGlkPSJfeDMwXzItTW9kZWwtY2FyZCI+PGcgaWQ9Il94MzBfMl94NUZfQ2FyZF94MkZfcGhvdG8tcG9wdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDgyIC0zNDgpIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMjUgMTAyKSI+PHBhdGggY2xhc3M9InN0MCIgZD0iTTg2OS43LDI2OC4zTDg1OS40LDI1OGwxMC4zLTEwLjNjMC40LTAuNCwwLjQtMSwwLTEuNHMtMS0wLjQtMS40LDBsLTExLDExYy0wLjQsMC40LTAuNCwxLDAsMS40bDExLDExYzAuNCwwLjQsMSwwLjQsMS40LDBDODcwLjEsMjY5LjMsODcwLjEsMjY4LjcsODY5LjcsMjY4LjNMODY5LjcsMjY4LjN6Ii8+PC9nPjwvZz48L2c+PC9zdmc+') 13 24, auto;
 
             &.swiper-button-disabled
                 transform: translate3d(-100%, 0, 0)
@@ -117,6 +121,7 @@
         &_next
             padding-right: 41px
             right: 0
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMyIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDEzIDI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPiA8dGl0bGU+UGF0aCA1PC90aXRsZT4gPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+IDxnIGlkPSIwMi1Nb2RlbC1jYXJkIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgPGcgaWQ9IjAyX0NhcmQvcGhvdG8tcG9wdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDgyIC0zNDgpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPiAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIyNSAxMDIpIj4gICAgPHBhdGggZD0ibTg1Ny4yOSAyNjguMjljLTAuMzkwNTIgMC4zOTA1Mi0wLjM5MDUyIDEuMDIzNyAwIDEuNDE0MiAwLjM5MDUyIDAuMzkwNTIgMS4wMjM3IDAuMzkwNTIgMS40MTQyIDBsMTEtMTFjMC4zOTA1Mi0wLjM5MDUyIDAuMzkwNTItMS4wMjM3IDAtMS40MTQybC0xMS0xMWMtMC4zOTA1Mi0wLjM5MDUyLTEuMDIzNy0wLjM5MDUyLTEuNDE0MiAwLTAuMzkwNTIgMC4zOTA1Mi0wLjM5MDUyIDEuMDIzNyAwIDEuNDE0MmwxMC4yOTMgMTAuMjkzLTEwLjI5MyAxMC4yOTN6IiBmaWxsPSIjZmZmIi8+ICAgPC9nPiAgPC9nPiA8L2c+PC9zdmc+') 13 24, auto;
 
             &.swiper-button-disabled
                 opacity: 0
@@ -130,7 +135,7 @@
         top: 8px
         right: 8px
         opacity: 0
-        transition(opacity)
+        m-transition(opacity)
 
     &__container
         margin: auto
@@ -199,4 +204,4 @@
             z-index: initial
             width: 100%
             height: 100%
-            transition(opacity)
+            m-transition(opacity)
