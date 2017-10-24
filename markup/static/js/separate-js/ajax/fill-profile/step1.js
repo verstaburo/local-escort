@@ -27,7 +27,7 @@ $(function() {
 
             control.type = '';
             control.type = 'file';
-            console.log(123);
+
             rebuildGrd();
         };
 

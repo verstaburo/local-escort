@@ -473,7 +473,8 @@ mixin user-fill-profile-4
                     +col(6)
                         +field
                             +field-label City
-                            +input-selectlike('city', 'Los Angeles', true)(data-popup-id="#select-city" data-action="open").js-toggle-popup
+                            +input-selectlike(data-popup-id="#select-city" data-action="open")._small.js-toggle-popup
+                                +input-selectlike-control(name='city' value='Los Angeles' readonly=true).js-change-city
 
                     +col(6)
                         +field
@@ -847,7 +848,8 @@ mixin user-fill-profile-8
                                     +col(6)
                                         +field
                                             +field-label City
-                                            +input-selectlike('city', 'Los Angeles', true)(data-popup-id="#select-city" data-action="open").js-toggle-popup
+                                            +input-selectlike(data-popup-id="#select-city" data-action="open")._small.js-toggle-popup
+                                                +input-selectlike-control(name='city' value='Los Angeles' readonly=true).js-change-city
 
                                     +col(6)
                                         +field

@@ -45,7 +45,7 @@ mixin header(dark, isGuest, activeMenu, isUser, isAgency)
                 +navbar-item(data-popup-id='#select-city' data-action='toggle')._city._dropdown.js-toggle-popup
                     +navbar-link-dropdown(href='#')
                         +navbar-heading City
-                        +navbar-description Los Angeles
+                        +navbar-description.js-change-city Los Angeles
                     +navbar-popup-wrapper
                         +city-suggest.__suggest
 

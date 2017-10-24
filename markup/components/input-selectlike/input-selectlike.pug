@@ -1,4 +1,7 @@
-mixin input-selectlike(name, value, readonly)
+mixin input-selectlike
     +b.input-selectlike&attributes(attributes)
-        +e.INPUT(name=name value=value readonly=readonly).control
+        block
         != pugHelpers.Icon.call(locals, {iconName: 'arrow-sl', className: 'input-selectlike__arrow', iconWidth: '8', iconHeight: '8'})
+
+mixin input-selectlike-control
+    +e.INPUT.control&attributes(attributes)
