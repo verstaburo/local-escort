@@ -17,7 +17,7 @@
     &__marker, &__group
         position absolute
         cursor pointer
-        transition(border-color)
+        m-transition(border-color)
         padding: 10px
         border: 2px solid transparent
         border-radius: 50%
@@ -80,7 +80,7 @@
             fill: rgba(#fff, .4)
             margin-left: auto
             cursor: pointer
-            transition(all)
+            m-transition(all)
 
         &.active
             svg
@@ -161,14 +161,14 @@
             margin-bottom: 6px
 
     &__zoom-out, &__zoom-in
-        transition(all)
+        m-transition(all)
         fill: #fff
 
         ^[0]__button:hover &
             opacity .6
 
     &__location
-        transition(all)
+        m-transition(all)
         fill: mainColor
 
         ^[0]__button:hover &

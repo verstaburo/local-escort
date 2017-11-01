@@ -2,7 +2,7 @@
     display: block
     max-width: 258px
     box-shdow: 0 0 0 0 rgba(0, 0, 0, 0)
-    transition(all)
+    m-transition(all)
 
     &.preload
         opacity 0
@@ -68,7 +68,7 @@
         background-color: rgba(darkGreyColor, .85)
         z-index: 18
         opacity: 0
-        transition(opacity)
+        m-transition(opacity)
         text-decoration none
         pointer-events none
 
@@ -107,11 +107,11 @@
             background-image: linear-gradient(transparent, #000)
             opacity: 0
             z-index: 19
-            transition(opacity)
+            m-transition(opacity)
             pointer-events: none
 
     &__info
-        transition(background-color, border-color)
+        m-transition(background-color, border-color)
 
     &__footer
         display: block
@@ -127,7 +127,7 @@
         background-color: #fff
         opacity: 0
         pointer-events none
-        transition(opacity, transform)
+        m-transition(opacity, transform)
         z-index: 3
         transform: translate3d(0, 10px, 0) scale(.98)
 
@@ -164,7 +164,7 @@
         width: 50%
         height: 100%
         opacity: 0
-        transition(opacity)
+        m-transition(opacity)
         cursor: pointer
         z-index: 5
 
@@ -200,7 +200,7 @@
         left: 12px
         z-index: 20
         opacity: 0
-        transition(opacity)
+        m-transition(opacity)
 
         .swiper-pagination-bullet
             width 6px
@@ -208,7 +208,7 @@
             background-color rgba(#fff, .7)
             margin: 0
             opacity: 1
-            transition(background-color, opacity)
+            m-transition(background-color, opacity)
             margin-left: 12px
 
             &:first-child
