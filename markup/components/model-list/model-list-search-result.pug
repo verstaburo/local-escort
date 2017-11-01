@@ -8,13 +8,13 @@ include ../side-border-btn/side-border-btn
 include ../badges/badges
 include ../heading/heading
 
-mixin model-list()
+mixin model-list(heading)
     +b.model-list._search&attributes(attributes)
         +container
             +filter.hide-mob
             +e.header
                 +e.header-col._flexible
-                    +heading(2).H1 Search result
+                    +heading(2).H1=heading ? 'Search result: ' + heading : 'Search result'
                 +e.header-col.hide-mob
                     +e.label Sort by
                     +selectbox.__control
@@ -28,7 +28,7 @@ mixin model-list()
                 +e.header-col.hide-desktop
                     +sort-ui
                 +e.header-col.hide-mob
-                    +button(href='model-map.html')._color_white._bg_darkGrey._uppercaseView on map
+                    +button(href='model-map.html')._color_white._bg_darkGrey._uppercaseView View on map
 
             +grid-masonry({ desktop: 4, laptop: 3, tablet: 2, mobile: 1}).js-model-preview-grid
                 +model-preview([7, 7, 7], 'Megan', 20, 325, true).js-masonry-item

@@ -8,7 +8,11 @@ mixin agency-info()
             +e.H2.heading
                 span Agency
                 a(href='agency.html') Premium Escape
-            +breadcrumbs('USA', 'los angeles', 'agency', 'Massage')
+            +breadcrumbs-container
+                +breadcrumbs-link(href='model-list-search-result-usa.html') USA
+                +breadcrumbs-link(href='model-list-search-result-los-angeles.html') Los Angeles
+                +breadcrumbs-link(href='model-list-search-result-agency.html') Agency
+                +breadcrumbs-link(href='model-list-search-result-massage.html') Massage
 
         +grid
             +col(6)

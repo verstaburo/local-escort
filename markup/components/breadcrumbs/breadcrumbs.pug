@@ -3,3 +3,12 @@ mixin breadcrumbs(...items)
         for item in items
             +e.LI.item
                 +e.A(href='#').link=item
+
+mixin breadcrumbs-container
+    +b.UL.breadcrumbs&attributes(attributes)
+        block
+
+mixin breadcrumbs-link
+    +e.LI.item
+        +e.A(href='#').link&attributes(attributes)
+            block

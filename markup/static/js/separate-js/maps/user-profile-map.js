@@ -292,6 +292,23 @@ window.userProfileMap = function() {
     $('#model-map').on('aftershow', function() {
         google.maps.event.trigger(map, 'resize');
     });
+
+    // set marker
+
+    var marker= null;
+
+    google.maps.event.addListener(map, 'click', function(event) {
+        if (marker) {
+            marker.setMap(null);
+            marker = null;
+        }
+
+        marker = new google.maps.Marker({
+            position: event.latLng,
+            map: map
+        });
+
+     });
 };
 
 userProfileMap();

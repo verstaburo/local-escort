@@ -473,7 +473,7 @@ mixin user-fill-profile-4
                     +col(6)
                         +field
                             +field-label City
-                            +input-selectlike(data-popup-id="#select-city" data-action="open")._small.js-toggle-popup
+                            +input-selectlike(data-popup-id="#select-city" data-action="open").js-toggle-popup
                                 +input-selectlike-control(name='city' value='Los Angeles' readonly=true).js-change-city
 
                     +col(6)
@@ -506,155 +506,38 @@ mixin user-fill-profile-5
                 +col(4)
                     +field
                         +field-label Incall
-                        +selectbox
-                            +selectbox-control(name='rate-incall').js-change-currency-el
-                                option(value='50') 50 $
-                                option(value='60') 60 $
-                                option(value='70') 70 $
-                                option(value='80') 80 $
-                                option(value='90') 90 $
-                                option(value='100') 100 $
-                                option(value='110') 110$
-                                option(value='115') 115$
-                                option(value='120') 120 $
-                                option(value='125') 125 $
-                                option(value='150') 150 $
-                                option(value='175') 175 $
-                                option(value='200') 200 $
+                        +field-input(value="100 $").js-change-currency-el
                 +col(4)
                     +field
                         +field-label Outcall
-                        +selectbox
-                            +selectbox-control(name='rate-outcall').js-change-currency-el
-                                option(value='50') 50 $
-                                option(value='60') 60 $
-                                option(value='70') 70 $
-                                option(value='80') 80 $
-                                option(value='90') 90 $
-                                option(value='100') 100 $
-                                option(value='110') 110$
-                                option(value='115') 115$
-                                option(value='120') 120 $
-                                option(value='125' selected) 125 $
-                                option(value='150') 150 $
-                                option(value='175') 175 $
-                                option(value='200') 200 $
+                        +field-input(value="150 $").js-change-currency-el
 
                 +col(4).grid__col_align_center
                     span.user-fill-profile__label 1 hour
                 +col(4)
-                    +selectbox
-                        +selectbox-control(name='rate-per-hour').js-change-currency-el
-                            option(value='50') 50 $
-                            option(value='60') 60 $
-                            option(value='70') 70 $
-                            option(value='80') 80 $
-                            option(value='90') 90 $
-                            option(value='100') 100 $
-                            option(value='110') 110$
-                            option(value='115') 115$
-                            option(value='120') 120 $
-                            option(value='125') 125 $
-                            option(value='150' selected) 150 $
-                            option(value='175') 175 $
-                            option(value='200') 200 $
+                    +field
+                        +field-input(value="150 $").js-change-currency-el
                 +col(4)
-                    +selectbox
-                        +selectbox-control(name='rate').js-change-currency-el
-                            option(value='50') 50 $
-                            option(value='60') 60 $
-                            option(value='70') 70 $
-                            option(value='80') 80 $
-                            option(value='90') 90 $
-                            option(value='100') 100 $
-                            option(value='110') 110$
-                            option(value='115') 115$
-                            option(value='120') 120 $
-                            option(value='125') 125 $
-                            option(value='150') 150 $
-                            option(value='175' selected) 175 $
-                            option(value='200') 200 $
+                    +field
+                        +field-input(value="200 $").js-change-currency-el
 
                 +col(4).grid__col_align_center
                     span.user-fill-profile__label 2 hour
                 +col(4)
-                    +selectbox
-                            +selectbox-control(name='rate').js-change-currency-el
-                                option(value='50') 50 $
-                                option(value='60') 60 $
-                                option(value='70') 70 $
-                                option(value='80') 80 $
-                                option(value='90') 90 $
-                                option(value='100') 100 $
-                                option(value='110') 110$
-                                option(value='115') 115$
-                                option(value='120') 120 $
-                                option(value='125') 125 $
-                                option(value='150') 150 $
-                                option(value='175') 175 $
-                                option(value='200') 200 $
+                    +field
+                        +field-input(value="200 $").js-change-currency-el
                 +col(4)
-                    +selectbox
-                        +selectbox-control(name='rate').js-change-currency-el
-                            option(value='50') 50 $
-                            option(value='60') 60 $
-                            option(value='70') 70 $
-                            option(value='80') 80 $
-                            option(value='90') 90 $
-                            option(value='100') 100 $
-                            option(value='110') 110$
-                            option(value='115') 115$
-                            option(value='120') 120 $
-                            option(value='125') 125 $
-                            option(value='150') 150 $
-                            option(value='175') 175 $
-                            option(value='200') 200 $
-                            option(value='225' selected) 225 $
+                    +field
+                        +field-input(value="250 $").js-change-currency-el
 
                 +col(4).grid__col_align_center
                     span.user-fill-profile__label Night
                 +col(4)
-                    +selectbox
-                        +selectbox-control(name='rate').js-change-currency-el
-                            option(value='50') 50 $
-                            option(value='60') 60 $
-                            option(value='70') 70 $
-                            option(value='80') 80 $
-                            option(value='90') 90 $
-                            option(value='100') 100 $
-                            option(value='110') 110$
-                            option(value='115') 115$
-                            option(value='120') 120 $
-                            option(value='125') 125 $
-                            option(value='150') 150 $
-                            option(value='175') 175 $
-                            option(value='200') 200 $
-                            option(value='225') 225 $
-                            option(value='250') 200 $
-                            option(value='500' selected) 500 $
-                            option(value='550') 550 $
-                            option(value='200') 200 $
+                    +field
+                        +field-input(value="300 $").js-change-currency-el
                 +col(4)
-                    +selectbox
-                        +selectbox-control(name='rate').js-change-currency-el
-                            option(value='50') 50 $
-                            option(value='60') 60 $
-                            option(value='70') 70 $
-                            option(value='80') 80 $
-                            option(value='90') 90 $
-                            option(value='100') 100 $
-                            option(value='110') 110$
-                            option(value='115') 115$
-                            option(value='120') 120 $
-                            option(value='125') 125 $
-                            option(value='150') 150 $
-                            option(value='175') 175 $
-                            option(value='200') 200 $
-                            option(value='225') 225 $
-                            option(value='250') 200 $
-                            option(value='500') 500 $
-                            option(value='550' selected) 550 $
-                            option(value='200') 200 $
+                    +field
+                        +field-input(value="350 $").js-change-currency-el
 
                 +col(4)
                     +button('button')._uppercase._bg_darkGrey._color_main.user-fill-profile__action Save & Exit
@@ -860,7 +743,7 @@ mixin user-fill-profile-8
                                     +col(6)
                                         +field
                                             +field-label City
-                                            +input-selectlike(data-popup-id="#select-city" data-action="open")._small.js-toggle-popup
+                                            +input-selectlike(data-popup-id="#select-city" data-action="open").js-toggle-popup
                                                 +input-selectlike-control(name='city' value='Los Angeles' readonly=true).js-change-city
 
                                     +col(6)
