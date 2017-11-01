@@ -43,6 +43,7 @@ import rating from "../../components/rating/rating";
 import list from "../../components/list/list";
 import navbar from "../../components/navbar/navbar";
 import changeCurrency from "../../components/user-fill-profile/changeCurrency";
+import checkbox from "../../components/checkbox/checkbox";
 
 (function($){
     var event = 'oninput' in document.createElement('input') ? 'input' : 'keydown';
@@ -88,6 +89,7 @@ $(() => {
     svg4everybody();
     objectFitImages();
     selectbox();
+    checkbox();
     navbar();
     header();
     userNav();

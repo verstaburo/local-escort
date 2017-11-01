@@ -696,50 +696,62 @@ mixin user-fill-profile-7
                     +field
                         +field-label Currency
                         +selectbox
-                            +selectbox-control(name='currency')
-                                option(value='usd') DOL $
-                                option(value='usd') EUR €
+                            +selectbox-control(name='currency').js-change-currency
+                                option(value='$') DOL $
+                                option(value='€') EUR €
 
         .user-fill-profile__section
             +heading._md Sex
             +grid
                 +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(true, 'sex', 0) Classical Sex
-                    +add-input('classical-sex-value', '100 $')
-                +col(4).grid__col_align_center
+                    +add-input('classical-sex-value', '100 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(false, 'sex', 1) Sex
-                +col(4).grid__col_align_center
+                    +add-input('sex-value', '0 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(false, 'sex', 2) Deep throating
+                    +add-input('deep-throating-value', '0 $', '', 'text', 'js-change-currency-el')
 
                 +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(true, 'sex', 3) Anal sex
-                    +add-input('sex-value', '2500 $')
-                +col(4).grid__col_align_center
+                    +add-input('sex-value', '2500 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(false, 'sex', 4) BJ with condom
-                +col(4).grid__col_align_center
+                    +add-input('bj-with-condom-value', '0 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(false, 'sex', 5) BJ in your car
+                    +add-input('bj-in-your-car-value', '0 $', '', 'text', 'js-change-currency-el')
 
-                +col(4)
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(true, 'sex', 6) Lesbian sex
-                +col(4)
+                    +add-input('lesbian-sex-value', '0 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(false, 'sex', 7) Cunnilingus
-                +col(4)
+                    +add-input('cunnilingus-value', '0 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(false, 'sex', 8) Sex toys
+                    +add-input('sex-toys-value', '0 $', '', 'text', 'js-change-currency-el')
 
                 +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(true, 'sex', 9) Couples
-                    +add-input('classical-sex-value', '0 $')
-                +col(4).grid__col_align_center
+                    +add-input('classical-sex-value', '0 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(false, 'sex', 10) BJ without condom
-                +col(4).grid__col_align_center
+                    +add-input('bj-without-condom-value', '0 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(false, 'sex', 11) Cum on breast
+                    +add-input('on-breast-value', '0 $', '', 'text', 'js-change-currency-el')
 
-                +col(4)
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(true, 'sex', 12) Cum on face
-                +col(4)
+                    +add-input('cum-on-face-value', '0 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(false, 'sex', 13) Cum in mouth
-                +col(4)
+                    +add-input('cum-in-mount-value', '0 $', '', 'text', 'js-change-currency-el')
+                +col(4).grid__col_align_center.grid__col_space_between
                     +checkbox(true, 'sex', 14) Classical sex
+                    +add-input('classical-sex-value', '0 $', '', 'text', 'js-change-currency-el')
 
         .user-fill-profile__section
                 +heading._md Massage
