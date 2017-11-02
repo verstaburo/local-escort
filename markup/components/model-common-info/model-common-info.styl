@@ -3,6 +3,10 @@
     background-color: transparent
     border: 1px solid borderColor
 
+    .grid__col_six &
+        +below(768px)
+            display: block
+
     &__col
         display: flex
         flex-direction: column
@@ -10,24 +14,48 @@
         min-height: 98px
         overflow hidden
 
+        .grid__col_six &
+            +below(768px)
+                min-height: 0
+
         &_left
             padding: 0 29px
             border-right: 1px solid borderColor
             flex: 1
 
+            .grid__col_six &
+                +below(768px)
+                    padding: 12px 14px
+                    border: 0
+                    border-bottom: 1px solid borderColor
+
         &_right
             align-items: center
             padding: 0 27px
+
+            .grid__col_six &
+                +below(768px)
+                    padding: 12px 14px
+                    flex-direction: row
+                    justify-content: flex-start
 
     &__name
         font-size: 20px
         text-transform: uppercase
         ellipsis(100%)
 
+        .grid__col_six &
+            +below(768px)
+                font-size: 16px
+
     &__age
         font-size: 16px
         margin-top: 4px
         letter-spacing initial
+
+        .grid__col_six &
+            +below(768px)
+                opacity: .59
 
     &__price
         font-family: fontSecond
@@ -36,9 +64,21 @@
         letter-spacing initial
         ellipsis(65px)
 
+        .grid__col_six &
+            +below(768px)
+                font-size: 18px
+                line-height: 1
+                margin-right: 6px
+
     &__label
         margin-top: 5px
         font-family: fontSecond
         font-size: 18px
         color: mainColor
         letter-spacing initial
+
+        .grid__col_six &
+            +below(768px)
+                font-size: 18px
+                margin-top: -3px
+                line-height: 1
