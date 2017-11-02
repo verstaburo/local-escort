@@ -133,4 +133,6 @@ $(() => {
     modelList();
     rating();
     list();
+
+    $('.js-datepicker').datepicker();
 });

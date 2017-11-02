@@ -7,6 +7,12 @@
     iziAnimation()
     cursor: pointer
     text-decoration: none
+    m-transition(all)
+
+    &.preload
+        opacity 0
+        pointer-events none
+        transform: translateY(100px)
 
     &.active, &:hover
         & ^[0]__button
