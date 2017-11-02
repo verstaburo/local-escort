@@ -11,3 +11,15 @@ mixin boost(masonry)
             +e.P.description You are currently on the site in 2546. You only have 2 visitor. Аttract new visitors.
         +button('div', 'noizi')._uppercase.__button
             <b>boost</b>
+
+mixin boost-empty(masonry)
+    - var masonryModifier = !!masonry ? '_masonry' : '';
+
+    +b.A.boost(href='boost-account.html' class=masonryModifier)&attributes(attributes)
+        +e.DIV.content
+            +e.icon
+                != pugHelpers.Icon.call(locals, {iconName: 'arrow-boost', iconWidth: '16', iconHeight: '30'})
+            +e.P.heading Add model
+            +e.P.description Here's no models yet
+        +button('div', 'noizi')._uppercase.__button
+            <b>Add model</b>

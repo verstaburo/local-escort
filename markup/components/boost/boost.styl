@@ -7,6 +7,12 @@
     text-wrap: normal
     text-decoration: none
     color: darkGreyColor
+    m-transition(all)
+
+    &.preload
+        opacity 0
+        pointer-events none
+        transform: translateY(100px)
 
     &.active, &:hover
         & ^[0]__button
