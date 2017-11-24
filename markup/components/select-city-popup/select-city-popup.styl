@@ -14,22 +14,27 @@
     padding-top: 20px
     padding-bottom: 20px
     overflow auto;
+    max-height: 627px
 
     +below(1024px)
         padding-top: 0
+        max-height 100%
 
     &__select
-        display: none
+        display: flex
         justify-content: space-between
         align-items: center
         border-bottom: 1px solid rgba(#efefef, .06)
+        width: auto
+        max-width: 1182px
+        margin: 0 auto
+        padding-bottom: 20px;
 
         .popup__close
             position: static
             transform: translate(0, 0)
-
-            +below(1024px)
-                display: flex !important
+            display: flex !important
+            cursor pointer
 
         span
             font-size 16px
