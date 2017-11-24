@@ -16,9 +16,9 @@ mixin boost-account()
                         +col(9)
                             +boost-preview('static/img/content/likes/1.jpg', 'Raise my profile to the top', 'Here is the description. You are currently on the site in 2546. You only have 2 visitor.', '70', false)._inline
                         +col(3)
-                            +e.add-more
+                            +e.A(href='#').add-more
                                 span Add <br> one more
-                                +icon-button('plus', 14, 14, 'icon-button__icon icon-button__icon_fill').A(href='#')._flex._size_md._border_transparent._bg_main._color_white._circle
+                                +icon-button('plus', 14, 14, 'icon-button__icon icon-button__icon_fill').SPAN._flex._size_md._border_transparent._bg_main._color_white._circle
                 +e.section
                     +grid
                         +col(6).grid__col_space_between.grid__col_align_center
