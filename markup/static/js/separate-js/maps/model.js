@@ -4,6 +4,7 @@
         center: {lat: 40.76163, lng: -73.97486600000002},
         mapTypeId: 'roadmap',
         scrollwheel: true,
+        gestureHandling: 'greedy',
         disableDefaultUI: true,
         styles: [
             {
@@ -310,7 +311,7 @@
     });
 
     // add a few groups
-    var group1 = new CustomGroup(new google.maps.LatLng(35.76163, -65.97486600000002), map);
+    var group1 = new CustomGroup(new google.maps.LatLng(40.7463715, -74.0190931), map);
     group1.add('static/img/content/avatars/navbar.png', generateId());
     group1.add('static/img/content/avatars/andrew.png', generateId());
     group1.add('static/img/content/avatars/anya.png', generateId());
@@ -319,14 +320,27 @@
     group1.add('static/img/content/avatars/mika.png', generateId());
     group1.add('static/img/content/avatars/miya.png', generateId());
 
-    var group2 = new CustomGroup(new google.maps.LatLng(32.76163, -60.97486600000002), map);
+    var group2 = new CustomGroup(new google.maps.LatLng(40.7844179, -74.016783), map);
     group2.add('static/img/content/avatars/navbar.png', generateId());
     group2.add('static/img/content/avatars/mika.png', generateId());
     group2.add('static/img/content/avatars/miya.png', generateId());
     group2.add('static/img/content/avatars/sarah.png', generateId());
 
+    var group3 = new CustomGroup(new google.maps.LatLng(40.7918497, -74.0918452), map);
+    group2.add('static/img/content/avatars/navbar.png', generateId());
+    group2.add('static/img/content/avatars/mika.png', generateId());
+    group2.add('static/img/content/avatars/miya.png', generateId());
+    group2.add('static/img/content/avatars/sarah.png', generateId());
+
+    var group4 = new CustomGroup(new google.maps.LatLng(40.78842, -73.9552857), map);
+    group2.add('static/img/content/avatars/navbar.png', generateId());
+    group2.add('static/img/content/avatars/mika.png', generateId());
+    group2.add('static/img/content/avatars/miya.png', generateId());
+
     markers.push(group1);
     markers.push(group2);
+    markers.push(group3);
+    markers.push(group4);
 
     new MarkerClusterer(
         map,
