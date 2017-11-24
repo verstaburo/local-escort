@@ -4,6 +4,7 @@ const gulp = tars.packages.gulp;
 const gulpif = tars.packages.gulpif;
 const plumber = tars.packages.plumber;
 const notifier = tars.helpers.notifier;
+const prettify = require('gulp-jsbeautifier');
 
 /**
  * Minify HTML (optional task)
@@ -33,6 +34,17 @@ module.exports = () => {
                 tars.require('gulp-htmlmin')(minifyOpts),
                 tars.require('gulp-html-prettify')(prettifyOpts)
             ))
+            .pipe(prettify({
+                braceStyle: 'expand',
+                indentWithTabs: true,
+                indentInnerHtml: true,
+                preserveNewlines: true,
+                endWithNewline: true,
+                wrapLineLength: 120,
+                maxPreserveNewlines: 50,
+                wrapAttributesIndentSize: 1,
+                unformatted: ['use'],
+            }))
             .pipe(gulp.dest('./dev/'))
             .pipe(
                 notifier.success('Compiled html\'ve been processed.')
