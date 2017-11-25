@@ -44,6 +44,7 @@ import list from "../../components/list/list";
 import navbar from "../../components/navbar/navbar";
 import changeCurrency from "../../components/user-fill-profile/changeCurrency";
 import checkbox from "../../components/checkbox/checkbox";
+import addInput from "../../components/add-input/add-input";
 
 (function($){
     var event = 'oninput' in document.createElement('input') ? 'input' : 'keydown';
@@ -104,6 +105,7 @@ $(() => {
     grid();
     window.rebuildGrd = grid;
     fullPhotoPopup();
+    addInput();
     arrowUp();
     citySuggest();
     accordion();

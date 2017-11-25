@@ -12,6 +12,7 @@ export default function changeCurrency() {
 
             if (item.prop('tagName') === "INPUT") {
                 item.val(item.val().replace(/\$|\€/g, self.val()));
+                item.prop('placeholder', item.prop('placeholder').replace(/\$|\€/g, self.val()));
             }
 
             if (item.prop('tagName') === "SELECT") {
