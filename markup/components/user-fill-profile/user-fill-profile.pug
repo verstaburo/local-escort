@@ -311,8 +311,10 @@ mixin user-fill-profile-3
                             +textarea('outcall-details', 'Details here').user-fill-profile__other-textarea
         .user-fill-profile__section
             +grid
-                +col(4).grid__col_space_between
+                +col(4)
                     +checkbox(false, 'select-all', 1).js-user-fill-profile-days Select all
+                +col(4).grid__col_space_between.hide-mob
+                    span.user-fill-profile__label.user-fill-profile__label_flex_end From
                     +selectbox._small.js-user-fill-profile-hours-from-main
                         +selectbox-control(name='hours-from')
                             option(value='0') 00:00
@@ -340,11 +342,35 @@ mixin user-fill-profile-3
                             option(value='22') 22:00
                             option(value='23') 23:00
                             option(value='24') 24:00
-                +col(4).hide-mob
-                    span.user-fill-profile__label.user-fill-profile__label_flex_end From
-                +col(4).hide-mob
+                +col(4).grid__col_space_between.hide-mob
                     span.user-fill-profile__label.user-fill-profile__label_flex_end To
-
+                    +selectbox._small.js-user-fill-profile-hours-to-main
+                        +selectbox-control(name='hours-to')
+                            option(value='0') 00:00
+                            option(value='1') 01:00
+                            option(value='2') 02:00
+                            option(value='3') 03:00
+                            option(value='4') 04:00
+                            option(value='5') 05:00
+                            option(value='6') 06:00
+                            option(value='7') 07:00
+                            option(value='8') 08:00
+                            option(value='9') 09:00
+                            option(value='10') 10:00
+                            option(value='11') 11:00
+                            option(value='12') 12:00
+                            option(value='13') 13:00
+                            option(value='14') 14:00
+                            option(value='15') 15:00
+                            option(value='16') 16:00
+                            option(value='17') 17:00
+                            option(value='18') 18:00
+                            option(value='19') 19:00
+                            option(value='20') 20:00
+                            option(value='21') 21:00
+                            option(value='22') 22:00
+                            option(value='23') 23:00
+                            option(value='24' selected) 24:00
                 each day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
                     +col(4).grid__col_align_center
                         +checkbox(false, 'day', day).js-user-fill-profile-day #{day}
@@ -377,7 +403,7 @@ mixin user-fill-profile-3
                                 option(value='23') 23:00
                                 option(value='24') 24:00
                     +col(4)
-                        +selectbox
+                        +selectbox.js-user-fill-profile-hours-to
                             +selectbox-control(name='hours-to')
                                 option(value='0') 00:00
                                 option(value='1') 01:00
@@ -493,7 +519,7 @@ mixin user-fill-profile-4
 mixin user-fill-profile-5
     form(action='#' method='post').user-fill-profile__main
         .user-fill-profile__section
-            +field
+            +field.DIV
                 +field-label
                     +heading._md Rate
                     +selectbox._small

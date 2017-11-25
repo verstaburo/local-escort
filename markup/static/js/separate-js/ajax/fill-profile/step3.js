@@ -30,4 +30,20 @@ $(function() {
                     .trigger('click');
             });
     });
+
+    /*
+        CHANGE ALL HOURS-TO
+     */
+    pageWrapper.on('change', '.js-user-fill-profile-hours-to-main select', function() {
+        var selected = $(this).prop('selectedIndex');
+
+        pageWrapper
+            .find('.js-user-fill-profile-hours-to .selectbox__list')
+            .each(function() {
+                $(this)
+                    .find('.selectbox__item')
+                    .eq(selected)
+                    .trigger('click');
+            });
+    });
 });
