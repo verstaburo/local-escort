@@ -21,7 +21,7 @@
             display: inline-block
 
     &__input
-        flex: 1
+        flex-grow: 1
         height: 100%
         border: 0
         background-color: transparent
@@ -44,6 +44,9 @@
         transform: translateY(-50%)
         pointer-events: none
         ellipsis(100%)
+
+        .search-bar_dark &
+            color: #fff
 
         span
             display: none

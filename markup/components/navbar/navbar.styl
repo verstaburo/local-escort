@@ -29,7 +29,7 @@
         box-shadow 0 10px 40px 0 rgba(29, 29, 29, .1)
 
         & ^[0]__item
-            min-width: initial
+            min-width: auto
             min-height: 80px
             flex: 1
 
@@ -70,7 +70,7 @@
                 width: 135px
 
             +below(1024px)
-                width initial
+                width auto
 
             .navbar__link
                 padding-right 20px
@@ -149,7 +149,7 @@
             flex: 1
 
         +below(1024px)
-            min-width: initial
+            min-width: auto
             flex: 1 0 60px
 
         &:not(:first-child)
@@ -204,7 +204,7 @@
 
         &_row
             flex-direction: row
-            justify-content: initial
+            justify-content: auto
             align-items: center
 
         +above(1024px)
@@ -264,7 +264,7 @@
         margin-top: 2px
         display: block
         color mainColor
-        letter-spacing initial
+        letter-spacing auto
         line-height: 1.1875
         font-size: 16px
         transition(all)
