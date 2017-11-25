@@ -21,8 +21,6 @@ export default function authPopup() {
 
         const cols = action.find('.auth-popup__col');
 
-        /*cols.eq(0).hide();
-        cols.eq(1).fadeIn();*/
         cols
             .parents('.auth-popup__col_action')
             .addClass('active');
@@ -31,15 +29,7 @@ export default function authPopup() {
             .siblings('.auth-popup__col_action')
             .removeClass('active')
             .find('.auth-popup__col');
-
-        /*siblingsCols.eq(1).hide();
-        siblingsCols.eq(0).fadeIn();*/
     };
 
-    actions.hover(toggle);
     actionsBtn.click(toggle);
-
-    if ('ontouchstart' in window) {
-        actions.off('mouseenter mouseleave');
-    }
 }
