@@ -14,7 +14,7 @@ include ../heading/heading
 include ../container/container
 include ../button/button
 
-mixin user-profile(isPopup)
+mixin user-profile(isPopup, isEmpty)
     +b.user-profile&attributes(attributes)
         +container
             unless isPopup
@@ -32,6 +32,12 @@ mixin user-profile(isPopup)
                     +col(2)
                         +button()(href='#')._uppercase._border_standart Edit profile
 
+            if isEmpty
+                +grid.grid_items_center.user-profile__header
+                    +col(9)
+                        +heading My profile
+                    +col(3)
+                        +button()(href='registration.html')._uppercase._bg_darkGrey._color_white Add model
             +e.container
                 +e.main
                     +e.content
