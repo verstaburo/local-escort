@@ -138,3 +138,8 @@ $(() => {
 
     $('.js-datepicker').datepicker();
 });
+
+
+$(window).on('load', function () {
+    $('html').removeClass('loading');
+});

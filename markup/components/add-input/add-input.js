@@ -1,14 +1,15 @@
-window.addInputTimer;
+var timer;
 
 export default function addInput() {
 
-    $('.add-input__control').on('input', function () {
+    $('.js-currency-input').on('input', function () {
         const self = $(this);
 
         self.val(self.val().replace(/[^\d+]/g, ''));
 
-        window.addInputTimer = setTimeout(() => {
-            clearTimeout(window.addInputTimer);
+        timer = setTimeout(() => {
+
+            clearTimeout(timer);
             const currency = self.prop('placeholder').indexOf('$') !== -1 ? '$' : '€';
 
             if (!self.val().length) {
