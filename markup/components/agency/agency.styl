@@ -6,7 +6,6 @@
         margin-top: 52px
         background-color: #fff
         box-shadow: 0 20px 50px rgba(29, 29, 29, .02)
-        overflow hidden
 
         +below(768px)
             margin-top: 24px
@@ -14,6 +13,7 @@
         .image-bg
             z-index: initial
             height: 300px
+            overflow hidden
 
             +below(768px)
                 height: 150px
@@ -38,6 +38,7 @@
         .badges
             left: initial
             right: -40px
+            overflow hidden
 
         &_info
             padding-left: 150px // 120px + 30px = avatar width + avatar margin right
@@ -104,6 +105,22 @@
         &_rating
             margin-left: 66px
 
+            .rating__dropdown
+                min-width: 320px;
+                right: 0;
+                left: auto;
+                padding: 30px;
+
+                +below(580px)
+                    left: 50%;
+                    transform: translateX(-50%)
+
+                &::before
+                    left: 65%
+
+                    +below(580px)
+                        left: 50%
+
             +below(900px)
                 width: 50%
                 margin-left: 0
@@ -114,6 +131,7 @@
 
             .rating__value
                 margin-left: 14px
+
 
         &_phone
             margin-left: auto
