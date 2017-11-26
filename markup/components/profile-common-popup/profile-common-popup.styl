@@ -8,6 +8,19 @@
     +below(700px)
         flex-direction: column
 
+    .rating__dropdown
+        min-width: 320px;
+        padding: 30px;
+        margin-left: -20px;
+
+        +below(700px)
+            left: 50%;
+            transform: translateX(-50%);
+            margin-left: 0;
+
+        &::before
+            display: none
+
     &__card
         +below(700px)
             display: flex

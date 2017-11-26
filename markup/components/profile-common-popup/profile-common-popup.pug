@@ -19,6 +19,16 @@ mixin profile-common-popup(id)
                         +heading._md._uppercase Sonya
                         +e.rating
                             +rating(4)._dark
+                                +rating-dropdown-item('Category 1')
+                                    +rating(4)
+                                +rating-dropdown-item('Category 2')
+                                    +rating(3)
+                                +rating-dropdown-item('Category 3')
+                                    +rating(5)
+                                +rating-dropdown-item('Category 4')
+                                    +rating(3)
+                                +rating-dropdown-item('Category 5')
+                                    +rating(2)
             +e.col._info
                 block
 
