@@ -27,8 +27,15 @@
             &::before
                 background-color: transparent
 
+                .accordion_faq &
+                    background-color borderColor
+
             + .accordion__item::before
                 background-color: transparent
+
+                .accordion_faq &
+                    background-color borderColor
+
 
         &::before
             position: absolute
@@ -73,6 +80,10 @@
         cursor: pointer
         -webkit-tap-highlight-color transparent
 
+        ^[0]_faq &
+            padding-left: 0
+            padding-right: 0
+
     &__heading
         display: block
         font-family: fontSecond
@@ -83,8 +94,14 @@
         user-select none
         m-transition(color)
 
+        ^[0]_faq &
+            font-size: 18px
+
         +below(768px)
             ellipsis(100%)
+
+            ^[0]_faq &
+                white-space normal
 
     &__close
         display: flex
@@ -105,3 +122,9 @@
         padding-bottom 40px;
         overflow hidden
         display: none
+
+        ^[0]_faq &
+            padding-top: 0
+
+            p:first-child
+                margin-top: 0

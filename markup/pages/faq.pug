@@ -6,20 +6,25 @@ include ../components/arrow-up/arrow-up
 include ../components/filter/filter
 include ../components/popup-welcome/popup-welcome
 include ../components/select-city-popup/select-city-popup
+include ../components/accordion/accordion
 
 block header
     +header
 
 block content
     +terms('Faq', 6)
-        p I was always attracted to programming, even at the institute I won the All-Russian Olympiad. And in 1999, we partnered with Mikhail Iosilevich launched an information site in Nizhny Novgorod. It was called NN.ru.
-        p There was everything: starting from the flea market, where one can sell another mobile phone, ending with local news. The fact that your neighbor broke his leg is always more interesting than a catastrophe in Southeast Asia. Our advantage was in proximity to local rumors, gossip and other information that is constantly circulating. It remained to create a platform where it could spread. In Nizhny Novgorod, then, as in other regions, there was a local point of traffic exchange, when providers provided users with free access to local sites. This helped to assemble the first audience.
-        p We had only $ 1,000, which Misha took from his father. We agreed on free rent for the first time in friendship. Then I still borrowed $ 10,000 from my parents, but I returned everything successfully. At first we, co-founders of the startup, were forced to work both as a blacksmith, a reaper, and a pipe on the pipe. Often I came home at three in the morning. My first wife left me, she said that I was an idiot, although I was an intelligent man: I could get a job and make normal money.
-        p But I had a desire to take place - to do something significant. We created a news aggregator, opened a city poster, developed a news rating that reflected the interest of users to a specific news and based on it showed it to others. But soon it turned out that communication is more in demand than receiving information. Six months after the launch, we opened a forum. This is a city-wide kitchen where they discuss news and wash each other's bones. Journalists and government officials followed us. One of the mayors of the city constantly hung on our forum.
-        p We in every possible way fueled interest in the site, placed a lot of outdoor advertising. We made it especially provocative - it was important for us to attract attention. Officials paid attention to us - the antimonopoly committee was tried five times, almost after each of our major advertising campaign. Elements of eroticism and omissions they treated as curses. We put on the placards an ellipsis, and then in court they argued that it was they who thought it all up themselves. Sometimes we lost the courts and paid fines. But it was perceived as part of the payment for success: thus it was possible to attract a lot of the audience.
-        p We always created new functions, focusing on the needs of people: there was a bulletin board - the analogue of the American Craiglist, virtual mail. Our development is similar to the story of Arsen Tomsky, who created his projects in Yakutia.
-        p In 2003, we did what is now called a social network. Initially these were "private messages" organized in the form of internal correspondence. We created advanced large profiles, built-in blog, ads, user recommendations. Then there was a technical opportunity to create galleries and video blogs. People were dragging it out, and they kept coming back.
-        p Online communication users quickly switched to offline. Somewhere in 2001 one of them invited others to the park to celebrate their birthday. I also came there and was amazed: two hundred people gathered. We then laughed that these actions need to be coordinated. On May shish kebabs hundreds of people came. Then we started to coordinate the events with the city authorities, when thousands began to come.
+        +accordion.accordion_faq
+            +accordion-item('Question 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit labore quidem officia, quo suscipit quaerat dolorem culpa earum unde?').accordion__item_topborder
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ad inventore velit numquam, tempora pariatur deleniti officia. Ea aliquam ipsa possimus vero natus, totam ab obcaecati ex officiis dolor incidunt.
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ad inventore velit numquam, tempora pariatur deleniti officia. Ea aliquam ipsa possimus vero natus, totam ab obcaecati ex officiis dolor incidunt.
+            +accordion-item('Question 2. Lorem ipsum dolor sit amet')
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ad inventore velit numquam, tempora pariatur deleniti officia. Ea aliquam ipsa possimus vero natus, totam ab obcaecati ex officiis dolor incidunt.
+            +accordion-item('Question 3. Lorem ipsum dolor sit amet')
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ad inventore velit numquam, tempora pariatur deleniti officia. Ea aliquam ipsa possimus vero natus, totam ab obcaecati ex officiis dolor incidunt.
+            +accordion-item('Question 4. Lorem ipsum dolor sit amet')
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ad inventore velit numquam, tempora pariatur deleniti officia. Ea aliquam ipsa possimus vero natus, totam ab obcaecati ex officiis dolor incidunt.
+            +accordion-item('Question 5. Lorem ipsum dolor sit amet')
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ad inventore velit numquam, tempora pariatur deleniti officia. Ea aliquam ipsa possimus vero natus, totam ab obcaecati ex officiis dolor incidunt.
 
     +arrow-up
 
