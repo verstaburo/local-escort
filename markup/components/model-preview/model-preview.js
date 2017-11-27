@@ -77,34 +77,34 @@ $(document).on('mousemove', '.model-preview__slider', function({ clientX }) {
     swiper.slideTo(nextSlide);
 });
 
-// close breakinfo
-$(document).on('click', '.model-preview__breakinfo .close', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const previewBlock = $(this).parents('.model-preview');
-
-    previewBlock
-        .find('.model-preview__action_info')
-        .removeClass('active');
-
-    previewBlock
-        .find('.model-preview__breakinfo')
-        .fadeOut();
-});
-
 $(document).on('click', '.model-preview__action_info', function (e) {
     e.preventDefault();
     e.stopPropagation();
     const btn = $(this);
     const isActive = btn.hasClass('active');
-    const breakInfo = btn.parents('.model-preview').find('.model-preview__breakinfo');
+    const popup = btn.parents('.model-preview__footer').find('.model-preview__popup');
+    const fullinfo = popup.find('.model-preview__fullinfo');
+    const photos = btn.parents('.model-preview').find('.model-preview__photos');
 
     if (isActive) {
         btn.removeClass('active');
-        breakInfo.fadeOut();
+        popup.removeClass('active');
+        fullinfo.slideUp(250, () => {
+            popup.css('margin-top', `0`)
+        });
     } else {
         btn.addClass('active');
-        breakInfo.fadeIn();
+        popup.addClass('active');
+
+        fullinfo.slideDown(250, () => {
+            let marginTop = fullinfo.outerHeight();
+
+            if (photos.outerHeight() < photos) {
+                marginTop = photos.outerHeight();
+            }
+
+            popup.css('margin-top', `-${marginTop}px`)
+        });
     }
 });
 
