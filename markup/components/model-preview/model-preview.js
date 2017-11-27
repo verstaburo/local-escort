@@ -88,13 +88,12 @@ $(document).on('click', '.model-preview__action_info', function (e) {
 
     if (isActive) {
         btn.removeClass('active');
-        popup.removeClass('active');
         fullinfo.slideUp(250, () => {
             popup.css('margin-top', `0`)
+            popup.removeClass('active');
         });
     } else {
         btn.addClass('active');
-        popup.addClass('active');
 
         fullinfo.slideDown(250, () => {
             let marginTop = fullinfo.outerHeight();
@@ -104,6 +103,7 @@ $(document).on('click', '.model-preview__action_info', function (e) {
             }
 
             popup.css('margin-top', `-${marginTop}px`)
+            popup.addClass('active');
         });
     }
 });
