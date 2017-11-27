@@ -4,7 +4,7 @@ include ../close/close
 mixin model-preview(photos, name, age, price, isOnline)
     - var maxPhotosCount = 5
 
-    +b.model-preview&attributes(attributes)
+    +b.model-preview(class="js-toggle-popup" data-popup-id="#profile-popup")&attributes(attributes)
         +e.content
             +e.slider.swiper-container(data-max-slides=maxPhotosCount)
                 +e.photos.swiper-wrapper

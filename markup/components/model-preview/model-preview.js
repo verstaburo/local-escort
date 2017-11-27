@@ -80,6 +80,7 @@ $(document).on('mousemove', '.model-preview__slider', function({ clientX }) {
 // close breakinfo
 $(document).on('click', '.model-preview__breakinfo .close', function(e) {
     e.preventDefault();
+    e.stopPropagation();
     const previewBlock = $(this).parents('.model-preview');
 
     previewBlock
@@ -93,6 +94,7 @@ $(document).on('click', '.model-preview__breakinfo .close', function(e) {
 
 $(document).on('click', '.model-preview__action_info', function (e) {
     e.preventDefault();
+    e.stopPropagation();
     const btn = $(this);
     const isActive = btn.hasClass('active');
     const breakInfo = btn.parents('.model-preview').find('.model-preview__breakinfo');

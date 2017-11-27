@@ -7,6 +7,16 @@ include ../components/filter/filter
 include ../components/popup-welcome/popup-welcome
 include ../components/select-city-popup/select-city-popup
 include ../components/model-map/model-map
+include ../components/filter/filter
+include ../components/popup-welcome/popup-welcome
+include ../components/select-city-popup/select-city-popup
+include ../components/profile-popup/profile-popup
+include ../components/profile-common-popup/profile-common-popup
+include ../components/profile-video-popup/profile-video-popup
+include ../components/profile-photo-popup/profile-photo-popup
+include ../components/auth-popup/auth-popup
+include ../components/map/map
+include ../components/model-map/model-map
 
 block header
     +header(null, null, 'independent')
@@ -16,9 +26,16 @@ block content
     +arrow-up
 
 block popups
+    +profile-popup
     +popup-welcome
     +select-city-popup
+    +profile-video-popup
+    +profile-photo-popup
+    +auth-popup
     +filter-extended
+    +profile-common-popup-call
+    +profile-common-popup-qr
+    +profile-common-popup-report
 
 block scripts
     script(src='%=static=%js/separate-js/ajax/model-list-load.js')
