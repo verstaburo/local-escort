@@ -267,12 +267,18 @@ window.userProfileMap = function() {
         map.setZoom(map.getZoom() - 1);
     });
 
+    // search addr
+    var input = document.querySelector('.js-map-addr-input');
+    var geocoder = new google.maps.Geocoder;
+
     if ('geolocation' in navigator) {
         google.maps.event.addDomListener(myLocBtn, 'click', function () {
             navigator.geolocation.getCurrentPosition(function (pos) {
                 var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                 map.setCenter(latlng);
                 marker.setPosition(latlng);
+                geocodeLatLng(latlng);
+                onDragEnd(marker);
             });
         });
     } else {
@@ -308,7 +314,57 @@ window.userProfileMap = function() {
             draggable: true
         });
 
+        geocodeLatLng(event.latLng);
+        onDragEnd(marker);
      });
+
+
+    var searchBox = new google.maps.places.SearchBox(input);
+
+    searchBox.addListener('places_changed', function() {
+        var places = searchBox.getPlaces();
+
+        if (places.length === 0) {
+            return;
+        }
+
+        if (marker) {
+            marker.setMap(null);
+        }
+
+        var latLng = places[0].geometry.location
+
+        marker = new google.maps.Marker({
+            position: latLng,
+            map: map,
+            draggable: true
+        });
+
+        map.setCenter(latLng);
+        marker.setPosition(latLng);
+        onDragEnd(marker);
+    });
+
+
+    function geocodeLatLng(q) {
+        var latlng = { lat: q.lat(), lng: q.lng() }
+
+        geocoder.geocode({'location': latlng}, function(results, status) {
+            if (status === 'OK') {
+                if (results[1]) {
+                    input.value = results[1].formatted_address;
+                }
+            } else {
+                input.value = '';
+            }
+        });
+    }
+
+    function onDragEnd(marker) {
+        google.maps.event.addListener(marker, 'dragend', function(event) {
+            geocodeLatLng(event.latLng);
+        });
+    }
 };
 
 userProfileMap();
