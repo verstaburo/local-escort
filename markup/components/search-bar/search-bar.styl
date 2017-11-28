@@ -21,6 +21,7 @@
             display: inline-block
 
     &__input
+        width: 100%
         flex-grow: 1
         height: 100%
         border: 0
@@ -61,12 +62,14 @@
     &__icon
         fill: darkGreyColor
         m-transition(all)
+        flex-shirnk: 0
 
         &:hover
             opacity .6
 
     &__close
-        display: table-cell
+        flex-shirnk: 0
+        display: inline-block
         opacity: 0
         pointer-events none
         width: 60px
