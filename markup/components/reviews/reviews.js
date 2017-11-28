@@ -11,9 +11,22 @@ export default function reviews() {
 
     $(document).on('click', '.js-activation-field', (evt) => {
         evt.preventDefault();
+        const that = $(evt.target);
         const self = $(evt.target).closest('.reviews');
+
         $(self).find('.textarea__control').attr('contenteditable', 'true');
         $(self).find('.reviews__activator, .reviews__no-reviews').hide();
-        $(self).find('.reviews__content').slideDown(400);
+        $(self).find('.reviews__content').fadeIn(250, () => {
+            let parentEl = that.parents('.popup');
+            let st = parentEl.scrollTop()
+
+            if (!parentEl.length) {
+                parentEl = $('html, body');
+            }
+
+            parentEl.animate({
+                scrollTop: st + that.offset().top + that.outerHeight() - $(window).height() + 20
+            }, 400);
+        });
     });
 };
