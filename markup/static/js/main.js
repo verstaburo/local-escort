@@ -45,6 +45,7 @@ import navbar from "../../components/navbar/navbar";
 import changeCurrency from "../../components/user-fill-profile/changeCurrency";
 import checkbox from "../../components/checkbox/checkbox";
 import addInput from "../../components/add-input/add-input";
+import './jquery.inputmask.bundle';
 
 (function($){
     var event = 'oninput' in document.createElement('input') ? 'input' : 'keydown';
@@ -87,6 +88,13 @@ import addInput from "../../components/add-input/add-input";
 }(jQuery));
 
 $(() => {
+
+    /**
+     * Inputmask
+     */
+    $('.js-phone-mask').inputmask('(999) 999-9999');
+
+
     svg4everybody();
     objectFitImages();
     selectbox();
