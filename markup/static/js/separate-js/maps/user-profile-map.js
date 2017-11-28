@@ -252,10 +252,11 @@ window.userProfileMap = function() {
     var zoomInBtn = document.querySelector('.js-map-zoom-in'),
         zoomOutBtn = document.querySelector('.js-map-zoom-out'),
         myLocBtn = document.querySelector('.js-map-my-location'),
-        posMarker = new google.maps.Marker({
+        marker = new google.maps.Marker({
             map: map,
             animation: google.maps.Animation.DROP,
             position: {lat: -9999, lng: -9999},
+            draggable: true
         });
 
     google.maps.event.addDomListener(zoomInBtn, 'click', function () {
@@ -271,7 +272,7 @@ window.userProfileMap = function() {
             navigator.geolocation.getCurrentPosition(function (pos) {
                 var latlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                 map.setCenter(latlng);
-                posMarker.setPosition(latlng);
+                marker.setPosition(latlng);
             });
         });
     } else {
@@ -295,8 +296,6 @@ window.userProfileMap = function() {
 
     // set marker
 
-    var marker= null;
-
     google.maps.event.addListener(map, 'click', function(event) {
         if (marker) {
             marker.setMap(null);
@@ -305,7 +304,8 @@ window.userProfileMap = function() {
 
         marker = new google.maps.Marker({
             position: event.latLng,
-            map: map
+            map: map,
+            draggable: true
         });
 
      });

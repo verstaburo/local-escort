@@ -251,6 +251,7 @@
             map: map,
             animation: google.maps.Animation.DROP,
             position: {lat: -9999, lng: -9999},
+            draggable: true
         });
 
     google.maps.event.addDomListener(zoomInBtn, 'click', function () {
