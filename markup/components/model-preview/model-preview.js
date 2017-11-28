@@ -77,6 +77,21 @@ $(document).on('mousemove', '.model-preview__slider', function({ clientX }) {
     swiper.slideTo(nextSlide);
 });
 
+$(document).on('click', '.model-preview .close', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const btn = $(this);
+    const popup = btn.parents('.model-preview__footer').find('.model-preview__popup');
+    const fullinfo = popup.find('.model-preview__fullinfo');
+
+    fullinfo.slideUp(250, () => {
+        popup.css('margin-top', `0`)
+        popup.removeClass('active');
+        popup.parents('.model-preview').removeClass('active')
+    });
+});
+
 $(document).on('click', '.model-preview__action_info', function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -91,6 +106,7 @@ $(document).on('click', '.model-preview__action_info', function (e) {
         fullinfo.slideUp(250, () => {
             popup.css('margin-top', `0`)
             popup.removeClass('active');
+            popup.parents('.model-preview').removeClass('active')
         });
     } else {
         btn.addClass('active');
@@ -98,12 +114,13 @@ $(document).on('click', '.model-preview__action_info', function (e) {
         fullinfo.slideDown(250, () => {
             let marginTop = fullinfo.outerHeight();
 
-            if (photos.outerHeight() < photos) {
+            if (photos.outerHeight() < marginTop) {
                 marginTop = photos.outerHeight();
             }
 
             popup.css('margin-top', `-${marginTop}px`)
             popup.addClass('active');
+            popup.parents('.model-preview').addClass('active')
         });
     }
 });
