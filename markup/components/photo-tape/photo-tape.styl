@@ -34,16 +34,35 @@ photoTapeItemWidthMobile = 60px
             & ^[0]__photo
                 opacity: .7
 
-            & ^[0]__badge
-                width: 24px
-                height: 24px
-                border-radius: 4px 0 0
+            & ^[0]__put
+                transform scale(1)
+                border-radius 0
 
     &__photo
         width: 100%
         height: auto
         pointer-events none
         m-transition(opacity)
+
+    &__put
+        position relative
+        z-index 2
+        display block
+        width 100%
+        height 88px
+        transform scale(.35)
+        transform-origin bottom right
+        border-top-left-radius 10px
+        m-transition(transform, border-radius)
+        border-top-left-radius 16px
+        overflow hidden
+
+        img
+            width: 100%
+            height: auto
+            pointer-events none
+            m-transition(opacity)
+            opacity 1 !important
 
     &__badge
         position: absolute
@@ -56,8 +75,6 @@ photoTapeItemWidthMobile = 60px
         height: 100%
         border-radius 0
         background-color: mainColor
-        will-change: width, height;
-        m-transition(width, height, border-radius)
 
         +below(768px)
             top: photoTapeItemWidthMobile
