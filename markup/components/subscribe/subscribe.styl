@@ -1,0 +1,30 @@
+.subscribe
+    display flex
+    flex-wrap wrap
+    padding 1px 0 0 1px
+
+    &-button
+        display flex
+        justify-content space-between
+        align-items center
+        width 50%
+        min-width 140px
+        max-width 183px
+        height 60px
+        font-size 16px
+        padding 10px 20px
+        border solid 1px #e5e5e5
+        color #1a1b1c
+        cursor pointer
+        iziAnimation()
+
+        +below(768px)
+            width 100%
+            max-width 100%
+
+        .subscribe &
+            margin -1px 0 0 -1px
+
+        &__icon
+            fill: #1a1b1c
+            m-transition(fill)

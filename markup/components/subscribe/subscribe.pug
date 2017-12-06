@@ -1,0 +1,9 @@
+mixin subscribe()
+    +b.subscribe&attributes(attributes)
+        block
+
+mixin subscribe-button(name, width, height)
+    +b.subscribe-button
+        +e.title
+            block
+        != pugHelpers.Icon.call(locals, {iconName: name, className: 'subscribe-button__icon', iconWidth: width, iconHeight: height})

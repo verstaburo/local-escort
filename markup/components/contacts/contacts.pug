@@ -1,0 +1,67 @@
+include ../grid/grid
+include ../field/field
+include ../button/button
+include ../share/share
+include ../subscribe/subscribe
+include ../heading/heading
+
+
+mixin contacts()
+    +b.contacts&attributes(attributes)
+        +e.FORM.form.grid(action="#" method="post")
+            +col(6)
+                +field
+                    +field-label Your name
+                    +field-input
+            +col(6)
+                +field
+                    +field-label Email
+                    +field-input
+
+            +col(12)
+                +field
+                    +field-label Message
+                    +field-input
+            +col(3)
+                +button._uppercase._bg_darkGrey._color_main Send
+
+        +e.info
+            +heading._md.__heading Email
+            +grid
+                +col(6)
+                    +e.infoblock
+                        +e.infotitle General Inquiries, Feedbacks & Suggestions:
+                        +e.infotext info@localescorts.com
+                +col(6)
+                    +e.infoblock
+                        +e.infotitle Marketing department
+                        +e.infotext marketing@localescorts.com
+                +col(6)
+                    +e.infoblock
+                        +e.infotitle Affiliates
+                        +e.infotext affiliates@localescorts.com
+                +col(6)
+                    +e.infoblock
+                        +e.infotitle Tech. Support
+                        +e.infotext help@localescorts.com
+
+        +grid
+            +col(6)
+                +e.actions
+                    +heading._md.__heading Subscribe to
+                    +subscribe
+                        +subscribe-button('Telegram') Telegram
+                        +subscribe-button('s-fb') Facebook
+                        +subscribe-button('s-vk') Vkontakte
+                        +subscribe-button('Viber') Viber
+                        +subscribe-button('WhatsApp') WhatsApp
+            +col(6)
+                +e.actions
+                    +heading._md.__heading Follow us
+                    +share-buttons
+                        +share-button('vk')
+                        +share-button('fb')
+                        +share-button('tw')
+                        +share-button('ok')
+                        +share-button('email')
+                        +share-button('g+')

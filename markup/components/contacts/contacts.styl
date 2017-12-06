@@ -1,0 +1,50 @@
+.contacts
+    display: block
+
+    &__heading
+        padding-top 50px
+        padding-bottom 40px
+
+        +below(768px)
+            padding-top 16px
+
+        .contacts__info &
+            padding-top 40px
+            padding-bottom 0
+
+            +below(768px)
+                padding-bottom 20px
+
+    &__info
+        display block
+
+        +below(768px)
+            .grid__col
+                padding-top 0
+
+        &block
+            display flex
+            flex-direction column
+            height 100%
+            padding 20px 0
+            border-bottom 1px solid #e5e5e5
+
+        &title
+            display block
+            font-size 16px
+            color #888889
+            margin-bottom 5px
+            flex-grow 1
+
+        &text
+            display block
+            font-size 18px
+            color #1a1b1c
+
+    .share__buttons
+        +below(768px)
+            margin-top 0
+
+    .grid__col
+        +below(768px)
+            width 100%
