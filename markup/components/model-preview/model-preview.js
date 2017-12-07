@@ -161,18 +161,18 @@ $(document).on('click', '.model-preview__action_info', function (e) {
 
         const contentHeight = popup
             .parents('.model-preview')
-            .find('.model-review__content')
+            .find('.model-preview__content')
             .outerHeight();
 
         let mgt = fiHeight;
-        const breakHeight = popup.find('.model-preview__breakinfo');
-
-        if (breakHeight.length) {
-            mgt += breakHeight.outerHeight();
-        }
+        const breakInfo = popup.find('.model-preview__breakinfo');
 
         if (mgt > contentHeight - 20) {
             mgt = contentHeight - 20;
+
+            if (breakInfo.length) {
+                mgt -= breakInfo.height();
+            }
         }
 
         popup.css({ marginTop: mgt * -1 });
