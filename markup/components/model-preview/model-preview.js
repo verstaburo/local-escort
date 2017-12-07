@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+import {TweenLite} from 'gsap';
 
 export default function modelPreview(model) {
 
@@ -103,25 +104,63 @@ $(document).on('click', '.model-preview__action_info', function (e) {
 
     if (isActive) {
         btn.removeClass('active');
-        fullinfo.slideUp(250, () => {
-            popup.css('margin-top', `0`)
-            popup.removeClass('active');
-            popup.parents('.model-preview').removeClass('active')
-        });
+
+        popup
+            .removeClass('active')
+            .parents('.model-preview')
+            .removeClass('active');
+
+        fullinfo
+            .animate({ maxHeight: 0 }, () => {
+                fullinfo.css({
+                    maxHeight: '',
+                    display: ''
+                });
+            });
+
+        popup.css('margin-top', 0);
+
     } else {
         btn.addClass('active');
 
-        fullinfo.slideDown(250, () => {
-            let marginTop = fullinfo.outerHeight();
+        const clone = fullinfo
+            .clone()
+            .css({
+                position: 'absolute',
+                left: '0',
+                top: '0',
+                opacity: 0,
+                height: 'auto',
+                display: 'block',
+                pointerEvents: 'none'
+            })
+            .appendTo($('body'));
 
-            if (photos.outerHeight() < marginTop) {
-                marginTop = photos.outerHeight();
-            }
 
-            popup.css('margin-top', `-${marginTop}px`)
-            popup.addClass('active');
-            popup.parents('.model-preview').addClass('active')
-        });
+        const fiHeight = clone.outerHeight() + 28;
+        clone.remove();
+
+        popup
+            .addClass('active')
+            .parents('.model-preview')
+            .addClass('active');
+
+        fullinfo
+            .css({ maxHeight: 0, display: 'block' })
+            .animate({ maxHeight: fiHeight });
+
+        const contentHeight = popup
+            .parents('.model-preview')
+            .find('.model-review__content')
+            .outerHeight();
+
+        let mgt = fiHeight;
+
+        if (fiHeight > contentHeight - 20) {
+            mgt = contentHeight - 20;
+        }
+
+        popup.css({ marginTop: mgt * -1 });
     }
 });
 
