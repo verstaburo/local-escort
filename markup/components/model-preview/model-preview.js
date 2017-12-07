@@ -1,5 +1,4 @@
 import Swiper from 'swiper';
-import {TweenLite} from 'gsap';
 
 export default function modelPreview(model) {
 
@@ -78,7 +77,7 @@ $(document).on('mousemove', '.model-preview__slider', function({ clientX }) {
     swiper.slideTo(nextSlide);
 });
 
-$(document).on('click', '.model-preview .close', function(e) {
+$(document).on('click', '.model-preview .close', function (e) {
     e.preventDefault();
     e.stopPropagation();
 
@@ -86,11 +85,22 @@ $(document).on('click', '.model-preview .close', function(e) {
     const popup = btn.parents('.model-preview__footer').find('.model-preview__popup');
     const fullinfo = popup.find('.model-preview__fullinfo');
 
-    fullinfo.slideUp(250, () => {
-        popup.css('margin-top', `0`)
-        popup.removeClass('active');
-        popup.parents('.model-preview').removeClass('active')
-    });
+    btn.removeClass('active');
+
+    popup
+        .removeClass('active')
+        .parents('.model-preview')
+        .removeClass('active');
+
+    fullinfo
+        .animate({ maxHeight: 0 }, () => {
+            fullinfo.css({
+                maxHeight: '',
+                display: ''
+            });
+        });
+
+    popup.css('margin-top', 0);
 });
 
 $(document).on('click', '.model-preview__action_info', function (e) {
@@ -155,8 +165,13 @@ $(document).on('click', '.model-preview__action_info', function (e) {
             .outerHeight();
 
         let mgt = fiHeight;
+        const breakHeight = popup.find('.model-preview__breakinfo');
 
-        if (fiHeight > contentHeight - 20) {
+        if (breakHeight.length) {
+            mgt += breakHeight;
+        }
+
+        if (mgt > contentHeight - 20) {
             mgt = contentHeight - 20;
         }
 
