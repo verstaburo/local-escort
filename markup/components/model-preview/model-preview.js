@@ -168,7 +168,7 @@ $(document).on('click', '.model-preview__action_info', function (e) {
         const breakHeight = popup.find('.model-preview__breakinfo');
 
         if (breakHeight.length) {
-            mgt += breakHeight;
+            mgt += breakHeight.outerHeight();
         }
 
         if (mgt > contentHeight - 20) {
