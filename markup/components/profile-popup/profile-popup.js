@@ -64,6 +64,25 @@ export default function profilePopup() {
         self.parents('.js-profile-popup-wr').scroll();
     });
 
+    $(document).on('keyup', function (e) {
+        const LEFT_ARROW = 37;
+        const RIGHT_ARROW = 39;
+
+        const activePopup = $(document).find('.js-profile-popup-wr.active');
+
+        if (!activePopup.length) {
+            return;
+        }
+
+        if (e.keyCode === LEFT_ARROW) {
+            activePopup.find('.profile-popup__button_prev').click();
+        }
+
+        if (e.keyCode === RIGHT_ARROW) {
+            activePopup.find('.profile-popup__button_next').click();
+        }
+    });
+
     popup.on('show', () => {
         popup.css('top', $(window).scrollTop());
     });

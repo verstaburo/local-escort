@@ -109,9 +109,15 @@ export default function popup() {
         }
     };
 
-    const onCloseBtnClick = function(e) {
+    const onCloseBtnClick = function (e) {
         e.preventDefault();
         $(this).parents('.popup').trigger(HIDE_EVENT);
+    };
+
+    const onEscapeHandler = function (e) {
+        if (e.keyCode === 27) {
+            $(document).find(POPUP_CLASS).trigger(HIDE_EVENT);
+        }
     };
 
     $(document)
@@ -119,5 +125,6 @@ export default function popup() {
         .on(HIDE_EVENT, POPUP_CLASS, onHide)
         .on('click', TOGGLE_BTN_CLASS, onToggleBtnClick)
         .on('click', POPUP_CLASS, onWrapperClick)
-        .on('click', CLOSE_BTN_CLASS, onCloseBtnClick);
+        .on('click', CLOSE_BTN_CLASS, onCloseBtnClick)
+        .on('keyup', onEscapeHandler);
 }

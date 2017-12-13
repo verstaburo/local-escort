@@ -60,6 +60,7 @@ export default function profilePhotoPopup() {
                 const slider = el[0].swiper;
 
                 slider.update();
+                slider.enableKeyboardControl();
 
                 if (el.hasClass('profile-photo-popup__thumbs')) {
                     slider.slideNext();
