@@ -1,38 +1,40 @@
 extends ../components/layout-default/layout-default
 include ../components/header/header
 include ../components/footer/footer
-include ../components/model-list/model-list-search-result
-include ../components/image-bg/image-bg
+include ../components/user-profile/user-profile
+include ../components/arrow-up/arrow-up
 include ../components/filter/filter
 include ../components/popup-welcome/popup-welcome
 include ../components/select-city-popup/select-city-popup
-include ../components/filter/filter
-include ../components/popup-welcome/popup-welcome
-include ../components/select-city-popup/select-city-popup
-include ../components/profile-popup/profile-popup
+include ../components/user-nav/user-nav
 include ../components/profile-common-popup/profile-common-popup
 include ../components/profile-video-popup/profile-video-popup
 include ../components/profile-photo-popup/profile-photo-popup
-include ../components/auth-popup/auth-popup
 include ../components/map/map
-include ../components/model-map/model-map
+include ../components/reviews/reviews
+
 
 block header
-    +header(null, null, 'all escorts')
+    +header
 
 block content
-    +model-list('Los Angeles')
+    +user-profile(true)
+        +reviews-feedbacks
+    +arrow-up
 
 block popups
     +popup-welcome
-    +select-city-popup
-    +profile-video-popup
-    +profile-photo-popup
-    +auth-popup
     +filter-extended
+    +select-city-popup
     +profile-common-popup-call
     +profile-common-popup-qr
     +profile-common-popup-report
+    +profile-video-popup
+    +profile-photo-popup
+
+block scripts
+    script(src='%=static=%js/separate-js/maps/profile-contacts.js')
+    +map-scripts
 
 block footer
     +footer

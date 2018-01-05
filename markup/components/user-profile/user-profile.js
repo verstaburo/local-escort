@@ -11,8 +11,17 @@ function scrollIntoPage() {
     const sT = $(window).scrollTop();
     const userNav = $('.user-nav');
 
-    const topBreakpoint = sT <= sidebar.offset().top - userNav.outerHeight();
-    const bottomBreakpoint = sT >= card.next().offset().top - card.outerHeight() - userNav.outerHeight();
+    let offsetTop = userNav.outerHeight();
+
+    if (!userNav.length) {
+        const headerHeight = $('.header.fixed').outerHeight() || 0;
+        const navbarHeight = $('.header__navbar.move').outerHeight() || 0;
+
+        offsetTop = headerHeight + navbarHeight;
+    }
+
+    const topBreakpoint = sT <= sidebar.offset().top - offsetTop;
+    const bottomBreakpoint = sT >= card.next().offset().top - card.outerHeight() - offsetTop;
 
     if (topBreakpoint) {
         card
@@ -31,7 +40,7 @@ function scrollIntoPage() {
     } else {
         card
             .css({
-                transform: `translate3d(0, ${userNav.outerHeight()}px, 0)`,
+                transform: `translate3d(0, ${offsetTop}px, 0)`,
                 bottom: ''
             })
             .removeClass('attached')
@@ -67,5 +76,5 @@ function scrollIntoPopup() {
 
 export default function userProfile() {
     $(window).on('scroll', scrollIntoPage);
-    $('.js-profile-popup-wr').on('scroll', scrollIntoPopup);
+    // $('.js-profile-popup-wr').on('scroll', scrollIntoPopup);
 }

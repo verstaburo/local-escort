@@ -9,6 +9,7 @@ export default function modelPreview(model) {
         // nextButton: el.find('.model-preview__button_next'),
         pagination: el.find('.model-preview__pagination'),
         autoHeight: true,
+        observerParents: true,
         onSlideChangeStart({ container, activeIndex}) {
             const slider = $(container);
             const maxSlides = Number(slider.data('max-slides'));
@@ -17,6 +18,11 @@ export default function modelPreview(model) {
                 slider
                     .parents('.model-preview')
                     .toggleClass('cutoff', activeIndex + 1 >= maxSlides);
+            }
+        },
+        breakpoints: {
+            1024: {
+                touchRatio: 1
             }
         }
     });
@@ -50,7 +56,11 @@ export default function modelPreview(model) {
             .addClass('model-preview_masonry');
 
         grid.find('.model-preview__slider').each(function() {
-            new Swiper($(this), getSettings($(this).parents('.model-preview')))
+            if (this.swiper) {
+                return this.swiper.update();
+            }
+
+            new Swiper($(this), getSettings($(this).parents('.model-preview')));
         });
     });
 }
@@ -59,7 +69,7 @@ $(document).on('mousemove', '.model-preview__slider', function({ clientX }) {
     const el = $(this);
     const swiper = this.swiper;
 
-    if (!swiper) {
+    if (!swiper || $(window).width() < 1024) {
         return;
     }
 
