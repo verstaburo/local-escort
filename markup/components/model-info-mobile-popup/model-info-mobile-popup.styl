@@ -1,0 +1,66 @@
+.model-info-mobile-popup
+    display flex
+    flex-direction column
+    max-width 100%;
+    width 320px
+    background #fff;
+    box-shadow 0 10px 40px rgba(29, 29, 29, .1)
+
+    +below(700px)
+        width 100%
+        height 100%
+
+        .popup__close
+            height 67px
+            width 67px
+
+    &__info
+        display flex
+        border 0
+        border-bottom 1px solid borderColor
+
+    &__rating
+        display flex
+        align-items center
+        justify-content space-between
+        padding 23px 30px 22px
+        border-bottom 1px solid borderColor
+        cursor auto !important
+
+    &__shortinfo
+        display flex
+        justify-content space-between
+        padding 22px 30px 18px
+
+    &__tags
+        display flex
+        margin-left 18px
+        margin-right 18px
+        flex-grow 1
+
+    &__action
+        display flex
+        justify-content center
+        align-items center
+        margin-top 18px
+        width 100%
+        height 60px
+        border-top 1px solid borderColor
+        font-size 16px
+        text-transform uppercase
+        text-decoration none
+        color darkGreyColor
+        iziAnimation()
+
+    &__tour
+        display block
+        width 100%
+        z-index 25
+        padding 15px 17px
+        background-color darkGreyColor
+
+        +below(700px)
+            padding-right 100px
+
+        &:empty
+            display none

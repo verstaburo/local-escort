@@ -5,6 +5,7 @@ html(class="no-js loading", lang="en")
     include ../popup/popup
     include ../head/head
     include ../loader/loader
+    include ../model-info-mobile-popup/model-info-mobile-popup
 
     head
         +head(head.defaults)
@@ -20,7 +21,10 @@ html(class="no-js loading", lang="en")
         block footer
 
         .page__overlay
+
         block popups
+        +model-info-mobile-popup
+
         block scripts
         script(src='%=static=%js/separate-js/jquery-ui.min.js')
         script(src='%=static=%js/separate-js/jquery.ui.touch-punch.min.js')

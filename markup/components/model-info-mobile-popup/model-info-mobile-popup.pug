@@ -1,0 +1,18 @@
+include ../popup/popup
+include ../model-common-info/model-common-info
+include ../rating/rating
+include ../short-info/short-info
+include ../tags/tags
+
+mixin model-info-mobile-popup()
+    +popup.popup_no_mobile_paddings.popup_mobile_only#model-info-mobile-popup
+        +b.model-info-mobile-popup&attributes(attributes)
+            +popup-close.popup__close_kind_square.popup__close_no_translate
+
+            +e.tour
+            +e.info
+            +e.rating
+            +e.shortinfo
+            +e.tags
+
+            +e.A.action(href='#' target='_blank') View profile

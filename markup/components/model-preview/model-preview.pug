@@ -8,7 +8,7 @@ mixin model-preview(photos, name, age, price, isOnline)
     - var maxPhotosCount = 5
 
     +b.model-preview&attributes(attributes)
-        +e.A(href='model-profile.html').content
+        +e.A(href='model-profile.html' target='_blank').content
             +e.slider.swiper-container(data-max-slides=maxPhotosCount)
                 +e.photos.swiper-wrapper
                     each photo, index in photos.slice(0, maxPhotosCount)
@@ -56,4 +56,4 @@ mixin model-preview(photos, name, age, price, isOnline)
 
             +e.actions
                 +e.DIV.action._info i
-                +e.DIV.action._profile View profile
+                +e.A(href='model-profile.html' target='_blank').action._profile View profile

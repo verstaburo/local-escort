@@ -93,35 +93,45 @@ $(document).on('mousemove', '.model-preview__slider', function({ clientX }) {
     swiper.slideTo(nextSlide);
 });
 
-$(document).on('click', '.model-preview .close', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const btn = $(this);
-    const popup = btn.parents('.model-preview__footer').find('.model-preview__popup');
-    const fullinfo = popup.find('.model-preview__fullinfo');
-
-    btn.removeClass('active');
-
-    popup
-        .removeClass('active')
-        .parents('.model-preview')
-        .removeClass('active');
-
-    fullinfo
-        .animate({ maxHeight: 0 }, () => {
-            fullinfo.css({
-                maxHeight: '',
-                display: ''
-            });
-        });
-
-    popup.css('margin-top', 0);
-});
-
 $(document).on('click', '.model-preview__action_info', function (e) {
     e.preventDefault();
     e.stopPropagation();
+
+    if ($(window).width() <= 768) {
+        const mobilePopup = $('#model-info-mobile-popup');
+
+        if (!mobilePopup.length) {
+            return;
+        }
+
+        const self = $(this).parents('.model-preview');
+
+        const selftour = self.find('.model-preview__breakinfo').html();
+        const selfinfo = self.find('.model-preview__info').html();
+        const selfrating = self.find('.model-preview__rating').html();
+        const selfshort = self.find('.model-preview__shortinfo').html();
+        const selftags = self.find('.model-preview__tags').html();
+        const selfaction = self.find('.model-preview__action_profile').attr('href');
+
+        const mobiletour = mobilePopup.find('.model-info-mobile-popup__tour');
+        const mobileinfo = mobilePopup.find('.model-info-mobile-popup__info');
+        const mobilerating = mobilePopup.find('.model-info-mobile-popup__rating');
+        const mobileshort = mobilePopup.find('.model-info-mobile-popup__shortinfo');
+        const mobiletags = mobilePopup.find('.model-info-mobile-popup__tags');
+        const mobileaction = mobilePopup.find('.model-info-mobile-popup__action');
+
+        mobiletour.html(selftour);
+        mobileinfo.html(selfinfo);
+        mobilerating.html(selfrating);
+        mobileshort.html(selfshort);
+        mobiletags.html(selftags);
+        mobileaction.attr('href', selfaction);
+
+        mobilePopup.trigger('show');
+
+        return;
+    }
+
     const btn = $(this);
     const isActive = btn.hasClass('active');
     const popup = btn.parents('.model-preview__footer').find('.model-preview__popup');
