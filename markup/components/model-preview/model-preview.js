@@ -9,7 +9,10 @@ export default function modelPreview(model) {
         // nextButton: el.find('.model-preview__button_next'),
         pagination: el.find('.model-preview__pagination'),
         autoHeight: true,
-        observerParents: true,
+        preloadImages: false,
+        lazyLoading: true,
+        watchSlidesVisibility: true,
+        lazyLoadingInPrevNext: true,
         onSlideChangeStart({ container, activeIndex}) {
             const slider = $(container);
             const maxSlides = Number(slider.data('max-slides'));
@@ -19,6 +22,9 @@ export default function modelPreview(model) {
                     .parents('.model-preview')
                     .toggleClass('cutoff', activeIndex + 1 >= maxSlides);
             }
+        },
+        onLazyImageReady(slider) {
+            slider.updateAutoHeight();
         },
         breakpoints: {
             1024: {

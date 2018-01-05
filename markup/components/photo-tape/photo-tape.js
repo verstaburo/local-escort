@@ -120,6 +120,10 @@ export default function photoTape() {
         slidesPerView: 'auto',
         freeMode: true,
         freeModeSticky: true,
+        preloadImages: false,
+        lazyLoading: true,
+        watchSlidesVisibility: true,
+        lazyLoadingInPrevNext: true,
         onSlideChangeStart() {
             $('.photo-tape__link.active').removeClass('active');
             $('.model-info-popup.active').removeClass('active model-info-popup_left model-info-popup_right');

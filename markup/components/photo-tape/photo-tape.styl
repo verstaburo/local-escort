@@ -57,6 +57,9 @@ photoTapeItemWidthMobile = 60px
         border-top-left-radius 16px
         overflow hidden
 
+        +below(768px)
+            height: photoTapeItemWidthMobile
+
         img
             width: 100%
             height: auto
@@ -78,6 +81,7 @@ photoTapeItemWidthMobile = 60px
 
         +below(768px)
             top: photoTapeItemWidthMobile
+            height: photoTapeItemWidthMobile
 
         &::before, &::after
             position: absolute

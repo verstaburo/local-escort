@@ -7,7 +7,8 @@ mixin photo-tape()
                 +e.LI.item.swiper-slide
                     +e.A.link._put(href='boost-account.html')
                         +e.put
-                            +e.IMG(src=`%=static=%img/content/photo-tape/11.jpg` alt=`Model 1`).photo
+                            +e.IMG(data-src=`static/img/content/photo-tape/11.jpg` alt=`Model 1`).photo.swiper-lazy
+                            .swiper-lazy-preloader
                         +e.SPAN.badge
                         +e.SPAN.text put me here
 
@@ -15,6 +16,7 @@ mixin photo-tape()
                     - for (var j = 1; j <= 15; j++)
                         +e.LI.item.swiper-slide
                             +e.A(href='#').link
-                                +e.IMG(src=`%=static=%img/content/photo-tape/${j}.jpg` alt=`Model ${j}`).photo
+                                +e.IMG(data-src=`static/img/content/photo-tape/${j}.jpg` alt=`Model ${j}`).photo.swiper-lazy
+                                .swiper-lazy-preloader
 
                             +model-info-popup.__popup
