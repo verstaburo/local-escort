@@ -70,7 +70,7 @@ const generateList = (selectbox) => {
             .text(title)
             .appendTo(item);
 
-        $('<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../svg-symbols.svg#ok"></use></svg>')
+        $('<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ok"></use></svg>')
             .appendTo(item);
 
         return item;

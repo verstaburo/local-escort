@@ -5,7 +5,7 @@ export default function fullPhotoPopup() {
                 <div class="full-photo-popup">
                     <div class="popup__close popup__close_kind_square">
                         <svg class="popup__close-icon" width="18" height="18">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../svg-symbols.svg#close"></use>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
                         </svg>
                     </div>
                     <img src="${src}" class="full-photo-popup__img">

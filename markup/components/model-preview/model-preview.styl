@@ -114,6 +114,9 @@
             m-transition(opacity)
             pointer-events: none
 
+            +below(767px)
+                opacity .2
+
     &__info
         position relative
         z-index 30
@@ -211,6 +214,9 @@
         z-index: 20
         opacity: 0
         m-transition(opacity)
+
+        +below(767px)
+            opacity 1
 
         .swiper-pagination-bullet
             width 6px
