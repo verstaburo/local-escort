@@ -26,6 +26,7 @@ export default function header() {
 
     // toggle mobile search-bar
     const searchBar = header.find('.header__search-bar');
+
     header.on('click', '.js-header-toggle-search-bar', function (e) {
         e.preventDefault();
         const el = $(this);
@@ -41,6 +42,19 @@ export default function header() {
             el.addClass('active');
             searchBar.slideDown();
         }
+    });
+
+    $(document).on('click', '.page__overlay', () => {
+        const el = $('.js-header-toggle-search-bar');
+        const overlay = $('.page__overlay');
+
+        if (!el.length ||! overlay.length) {
+            return;
+        }
+
+        overlay.fadeOut();
+        el.removeClass('active');
+        searchBar.slideUp();
     });
 
     if (header.hasClass('js-always-fixed')) {
