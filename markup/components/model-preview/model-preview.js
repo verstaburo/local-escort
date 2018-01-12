@@ -211,9 +211,13 @@ $(document).on('click', '.js-show-profile-popup', (e) => {
     }
 
     e.preventDefault();
-    $('#profile-popup')
-        .trigger('hide')
-        .trigger('show');
+    const popup =  $('#profile-popup');
+
+    popup.trigger('hide');
+
+    setTimeout(() => {
+        popup.trigger('show');
+    }, 200);
 });
 
 window.modelPreviewInit = modelPreview;
