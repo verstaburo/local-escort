@@ -18,6 +18,11 @@ include ../components/auth-popup/auth-popup
 include ../components/map/map
 include ../components/model-map/model-map
 
+include ../components/profile-popup/profile-popup
+include ../components/profile-common-popup/profile-common-popup
+include ../components/profile-video-popup/profile-video-popup
+include ../components/profile-photo-popup/profile-photo-popup
+
 block header
     +header(true, null, 'all escorts')._map.no-shadow
 
@@ -31,5 +36,13 @@ block popups
     +auth-popup
     +filter-extended(true)
 
+    +profile-popup
+    +profile-photo-popup
+    +profile-video-popup
+    +profile-common-popup-call
+    +profile-common-popup-qr
+    +profile-common-popup-report
+
 block scripts
     script(src=`%=static=%js/separate-js/maps/model.js`)
+    script(src='%=static=%js/separate-js/maps/profile-contacts.js')

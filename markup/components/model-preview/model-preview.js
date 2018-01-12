@@ -205,4 +205,15 @@ $(document).on('click', '.model-preview__action_info', function (e) {
     }
 });
 
+$(document).on('click', '.js-show-profile-popup', (e) => {
+    if ($(window).width() <= 768) {
+        return;
+    }
+
+    e.preventDefault();
+    $('#profile-popup')
+        .trigger('hide')
+        .trigger('show');
+});
+
 window.modelPreviewInit = modelPreview;
