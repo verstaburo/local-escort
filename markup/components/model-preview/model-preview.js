@@ -206,18 +206,14 @@ $(document).on('click', '.model-preview__action_info', function (e) {
 });
 
 $(document).on('click', '.js-show-profile-popup', (e) => {
-    if ($(window).width() <= 768) {
+    const popup = $('#profile-popup');
+
+    if ($(window).width() <= 768 || !popup.length || popup.hasClass('active')) {
         return;
     }
 
     e.preventDefault();
-    const popup =  $('#profile-popup');
-
-    popup.trigger('hide');
-
-    setTimeout(() => {
-        popup.trigger('show');
-    }, 200);
+    popup.trigger('show');
 });
 
 window.modelPreviewInit = modelPreview;
