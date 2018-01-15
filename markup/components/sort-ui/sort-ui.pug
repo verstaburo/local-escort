@@ -1,6 +1,6 @@
 mixin sort-ui()
     +b.UL.sort-ui&attributes(attributes)
-        +e.LI.item(data-view='list')
+        +e.LI.item.active(data-view='list')
             != pugHelpers.Icon.call(locals, {iconName: 'sort-1', className: 'sort-ui__icon', iconWidth: '16', iconHeight: '16'})
-        +e.LI.item.active(data-view='table')
+        +e.LI.item(data-view='table')
             != pugHelpers.Icon.call(locals, {iconName: 'sort-2', className: 'sort-ui__icon', iconWidth: '16', iconHeight: '16'})

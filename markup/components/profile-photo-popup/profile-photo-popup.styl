@@ -56,6 +56,9 @@
         align-items: center
         text-decoration: none
 
+        +below(768px)
+            pointer-events: all
+
         &.active
             & ^[0]__like-icon
                 &_stroke

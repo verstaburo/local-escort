@@ -20,6 +20,10 @@
             pointer-events: none
             m-transition(opacity)
 
+            +below(768px)
+                position static
+                display none
+
         &_dropdown
             & > ^[0]__button ^[0]__arrow
                 display: block
@@ -28,6 +32,9 @@
             & > .list
                 opacity: 1
                 pointer-events all
+
+                +below(768px)
+                    display block
 
             & > ^[0]__button
                 background-color: #f7f7f7

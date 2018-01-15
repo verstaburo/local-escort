@@ -49,6 +49,17 @@ export default function searchBar() {
         closeSearchbar();
     });
 
+    $(document).on('click', (e) => {
+        const self = $(e.target);
+
+        if (self.hasClass('search-bar') || self.parents('.search-bar')) {
+            return;
+        }
+
+        closeSearchbar();
+        $('#filter').trigger('hide');
+    });
+
     $(window).on('resize', () => {
         const sb = form.find('search-bar_extended');
 

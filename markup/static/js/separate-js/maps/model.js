@@ -426,6 +426,7 @@
             pMap.find('.map__marker').removeClass('active');
             pMap.find('.map__group').removeClass('active');
 
+            $('.map__heading').addClass('active');
             el.addClass('active');
 
             $.ajax({

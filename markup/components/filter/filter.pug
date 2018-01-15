@@ -436,7 +436,7 @@ mixin filter-extended(dark)
                                     option(value='item1') item 1
                                     option(value='item2') item 2
                                     option(value='item3') item 3
-                +grid
+                +grid.filter__checkboxes
                     +col(2)
                         +checkbox(true, 'verified', 1)(class=CheckboxModifier) Verified
                     +col(2)
@@ -459,9 +459,9 @@ mixin filter-extended(dark)
                         )._uppercase.js-toggle-filter-additional + show more options
                     +col(3)
                         +button()(class=ApplyButtonModifier)._uppercase.__hide-additional Apply <span>(19405)</span>
-                    +col(3)
+                    +col(3).filter__hide-additional-mob
                         +button()(class=ResetButtonModifier)._uppercase.__reset.js-filter-reset reset options
-                    +col(3).grid__col_align_right.grid__col_align_right._push_right
+                    +col(3).grid__col_align_right.grid__col_align_right._push_right.filter__hide-additional-mob
                         +icon-button('filter-button', 23, 16, 'icon-button__icon icon-button__icon_fill')(
                             data-popup-id='#filter-extended',
                             data-action='hide'

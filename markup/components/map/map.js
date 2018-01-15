@@ -1,5 +1,5 @@
 export default function map() {
-    $(document).on('click', '.map__heading svg', function() {
+    $(document).on('click', '.map__heading', function() {
        const map = $(this).parents('.map');
 
        map
@@ -8,6 +8,10 @@ export default function map() {
 
        map
            .find('.map__marker')
+           .removeClass('active');
+
+       map
+           .find('.map__group')
            .removeClass('active');
 
        map

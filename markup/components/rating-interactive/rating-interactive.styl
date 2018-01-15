@@ -6,8 +6,9 @@
     padding-left: 1px
     padding-top: 1px
 
-    +below(400px)
+    +below(768px)
         flex-wrap: wrap
+        width 100%
 
     &_dark
 
@@ -38,9 +39,9 @@
         text-transform uppercase
         m-transition(all)
 
-        +below(400px)
+        +below(768px)
             width: 100%
-            height: 52px
+            height: 60px
             order: 2
             border: 1px solid borderColor
             margin-top: -1px
@@ -62,7 +63,9 @@
 
         +below(768px)
             width 52px
-            height: 52px
+            height: 60px
+            flex: 1
+            flex-basis auto
 
         &.active
             background-color: darkGreyColor

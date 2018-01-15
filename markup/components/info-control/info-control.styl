@@ -31,8 +31,14 @@
             & ^[0]__label
                 color: #fff
 
+
+
             & ^[0]__ok
                 fill mainColor
+
+        &.active, &:hover
+            +below(768px)
+                background-color darkGreyColor
 
     &__label
         color darkGreyColor

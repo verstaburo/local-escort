@@ -92,6 +92,10 @@
         transition-delay .25s
         m-transition(opacity)
 
+        +below(768px)
+            width 100%
+            min-width 258px
+
         &-wrapper
             position: absolute
             top: 100%
@@ -107,6 +111,11 @@
 
             &_has_dropdown
                 width: 516px
+
+
+            +below(768px)
+                width 100%
+                min-width 258px
 
     &__dropdown
         position: absolute
@@ -128,6 +137,10 @@
             position: static
             margin-left: 0
             border-left: 0
+
+        +below(768px)
+            width 100%
+            min-width 258px
 
     &__item
         display: flex

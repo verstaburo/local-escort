@@ -52,6 +52,10 @@
         .dotted-dropdown
             flex-shrink: 0
 
+            &__content
+                +below(768px)
+                    width calc(100vw - 80px)
+
     .table
         margin-top: 45px
         margin-left: 13px

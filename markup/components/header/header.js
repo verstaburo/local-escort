@@ -29,6 +29,7 @@ export default function header() {
 
     header.on('click', '.js-header-toggle-search-bar', function (e) {
         e.preventDefault();
+        e.stopPropagation();
         const el = $(this);
         const overlay = $('.page__overlay');
         const isActive = el.hasClass('active');
@@ -41,20 +42,22 @@ export default function header() {
             overlay.fadeIn();
             el.addClass('active');
             searchBar.slideDown();
+            $('.popup.active').trigger('hide');
         }
     });
 
-    $(document).on('click', '.page__overlay', () => {
+    $(document).on('click', (e) => {
         const el = $('.js-header-toggle-search-bar');
         const overlay = $('.page__overlay');
+        const self = $(e.target);
 
-        if (!el.length || !overlay.length) {
+        if (self.hasClass('search-bar') || self.parents('.search-bar').length) {
             return;
         }
 
-        overlay.fadeOut();
         el.removeClass('active');
         searchBar.slideUp();
+        overlay.fadeOut();
     });
 
     if (header.hasClass('js-always-fixed')) {

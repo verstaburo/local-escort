@@ -12,13 +12,20 @@ const filterExtended = () => {
             el
                 .find('.popup__wrapper')
                 .css('padding-top', paddingTop);
+
+            $('.popup').each(function() {
+                const self = $(this);
+
+                if (self.attr('id') !== 'filter-extended') {
+                    self.trigger('hide');
+                }
+            });
         })
         .on('afterhide', function() {
             const header = $('.header');
             const el = $(this);
 
             header.removeClass('no-shadow');
-
 
             if ($(document).find('.popup.active').length === 0) {
                 header.css('z-index', '');
@@ -28,6 +35,14 @@ const filterExtended = () => {
                 .find('.popup__wrapper')
                 .css('padding-top', '');
         });
+
+
+    $(document).on('click', '.filter__mobile-nav a', function(e) {
+        const self = $(this);
+        const li = $(self).parent();
+
+        li.addClass('active').siblings().removeClass('active');
+    });
 };
 
 const toggleAdditional = () => {

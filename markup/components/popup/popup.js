@@ -45,7 +45,7 @@ export default function popup() {
 
         const activePopup = $('.popup.active');
 
-        if (activePopup.length) {
+        if (activePopup.length && activePopup.attr('z-index') < 100000) {
             popup.css('z-index', Number(activePopup.css('z-index')) + 1);
         }
 
