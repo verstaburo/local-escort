@@ -42,8 +42,11 @@ $(window).on('resize', setMessagesHeight);
 
 $(document).on('click', '.user-messages__send-activation', (evt) => {
     const self = evt.target;
-    const newHeight = $(self).siblings('.send-form').outerHeight();
-    $(self).parents('.user-messages__send').velocity( { 'min-height': `${newHeight}px` }, 250, () => {
-        $(self).parents('.user-messages__send').addClass('active');
+    const form = $(self).siblings('.send-form');
+    const newHeight = form.outerHeight();
+    const send = $(self).parents('.user-messages__send');
+    send.velocity( { 'min-height': `${newHeight}px` }, 250, () => {
+        send.addClass('active');
+        form.find('.textarea__control').focus();
     });
 });

@@ -48,7 +48,7 @@ export default function header() {
         const el = $('.js-header-toggle-search-bar');
         const overlay = $('.page__overlay');
 
-        if (!el.length ||! overlay.length) {
+        if (!el.length || !overlay.length) {
             return;
         }
 
