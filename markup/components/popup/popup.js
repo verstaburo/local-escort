@@ -37,7 +37,7 @@ export default function popup() {
             });
     };
 
-    const onShow = function () {
+    const onShow = function (e) {
         const popup = $(this);
 
         if (popup.hasClass(ACTIVE_POPUP_CLASS)) {
@@ -151,7 +151,20 @@ export default function popup() {
         }
     };
 
+    const onShowPopup = (e, data) => {
+        const { id, template } = data;
+
+        loadTemplate(id, template).then(popup => {
+            if (!popup.length) {
+                return;
+            }
+
+            popup.trigger('show');
+        });
+    };
+
     $(document)
+        .on('showpopup', onShowPopup)
         .on(SHOW_EVENT, POPUP_CLASS, onShow)
         .on(HIDE_EVENT, POPUP_CLASS, onHide)
         .on('click', TOGGLE_BTN_CLASS, onToggleBtnClick)
