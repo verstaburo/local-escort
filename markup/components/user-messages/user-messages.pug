@@ -10,7 +10,7 @@ mixin user-messages()
         +container
             //- +heading(1) Messages
             +e.content
-                +e.left.js-user-messages-scrollable
+                +e.left.js-user-messages-scrollable.active
                     +message('nikolas.png', 'Nikolas', '10 hours ago')._truncate.active
                         | Eva moved to LA a few months ago to lorem ispum dolor sit amet
                     +message('valentin.png', 'Valentin', '1 hours ago', null, null, true)._truncate

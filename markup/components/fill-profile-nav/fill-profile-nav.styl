@@ -16,6 +16,13 @@
                 border-color: mainColor
                 background-color: #fff
 
+            & ^[0]__icon
+                display none
+
+                &_close
+                    display block
+                    opacity 1
+
         &.completed
             & ^[0]__icon
                 opacity: 1
@@ -41,3 +48,7 @@
         transform: translateX(2px)
         fill: mainColor
         opacity: 0
+
+        &_close
+            display none
+            fill darkGreyColor

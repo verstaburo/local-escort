@@ -57,7 +57,6 @@ export default function searchBar() {
         }
 
         closeSearchbar();
-        $('#filter').trigger('hide');
     });
 
     $(window).on('resize', () => {

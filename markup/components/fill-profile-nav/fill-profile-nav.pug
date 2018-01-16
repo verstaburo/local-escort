@@ -9,3 +9,4 @@ mixin fill-profile-nav-item(href)
         +e.A(href=href||'#').link
             block
             != pugHelpers.Icon.call(locals, {iconName: 'ok', className: 'fill-profile-nav__icon', iconWidth: '11', iconHeight: '10'})
+            != pugHelpers.Icon.call(locals, {iconName: 'close', className: 'fill-profile-nav__icon fill-profile-nav__icon_close', iconWidth: '14', iconHeight: '14'})

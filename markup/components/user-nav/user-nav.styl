@@ -6,6 +6,12 @@
     box-shadow: 0 10px 40px rgba(29, 29, 29, 0)
     clear: both;
     m-transition(border-color, box-shadow)
+    overflow-x auto
+    webkit-overflow-scrolling: touch
+
+    .container
+        +below(768px)
+            padding: 0
 
     &.fixed
         position: fixed
@@ -25,6 +31,7 @@
         height: 60px
         background-color: bgColor
         m-transition(background-color)
+        white-space nowrap
 
         +below(1024px)
             padding-left: 15px

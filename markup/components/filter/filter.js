@@ -36,7 +36,6 @@ const filterExtended = () => {
                 .css('padding-top', '');
         });
 
-
     $(document).on('click', '.filter__mobile-nav a', function(e) {
         const self = $(this);
         const li = $(self).parent();
