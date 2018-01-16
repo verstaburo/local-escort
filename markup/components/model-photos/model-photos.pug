@@ -9,7 +9,7 @@ mixin model-photos
             +col(6)
                 +grid
                     +col(12).model-photos__column
-                        +e.A(href='#' data-popup-id='#profile-video' data-action='show').link._video.js-toggle-popup
+                        +e.A(href='#' data-popup-id='#profile-video' data-popup-template='popups/profile-video.html' data-action='show').link._video.js-toggle-popup
                             +e.IMG(src='%=static=%img/content/model-photo/2.jpg' alt='').img
                             +e.description
                                 +e.play
