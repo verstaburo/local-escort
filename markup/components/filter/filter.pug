@@ -50,7 +50,7 @@ mixin filter()
                         option(value='item3') item 3
 
             +e.col._no_width._push_right
-                +icon-button('filter-button', 23, 16)(data-popup-id='#filter-extended' data-action='show').__button.js-toggle-popup
+                +icon-button('filter-button', 23, 16)(data-popup-id='#filter-extended' data-popup-template='popups/filter-extended.html' data-action='show').__button.js-toggle-popup
 
 mixin filter-additional()
     +b.filter-additional
@@ -318,7 +318,7 @@ mixin filter-extended(dark)
     - var IconButtonModifier = !!dark ? '_color_white _border_grey' : '';
 
     +popup.popup_no_mobile_paddings#filter-extended
-        +filter-extended-wrapper(class=FilterModifier)
+        +filter-extended-wrapper(class=FilterModifier).js-filter-modifiers
             +e.UL.mobile-nav
                 li.active
                     a(href='#') All
@@ -332,7 +332,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Categories
-                            +selectbox(class=SelectModifier)
+                            +selectbox(class=SelectModifier).js-select-modifiers
                                 +selectbox-control(name='escorts')
                                     option(value='escorts') escorts
                                     option(value='item1') item 1
@@ -344,7 +344,7 @@ mixin filter-extended(dark)
                                 +range-slider-in-field
                                     +range-slider-text('vqwe1llllgnwbre1', true)(data-type='min')
                                     +range-slider-text('vqwe1llllgnwbre1', true)(data-type='max')
-                            +range-slider(18, 48, 'vqwe1llllgnwbre1')(class=RangeModifier)
+                            +range-slider(18, 48, 'vqwe1llllgnwbre1')(class=RangeModifier).js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
                                         +range-slider-input(data-type='min' name='age-min' value=18)
@@ -359,7 +359,7 @@ mixin filter-extended(dark)
                                 +range-slider-in-field
                                     +range-slider-text('ihte1bxvhhwqqe', true)(data-type='min')
                                     +range-slider-text('ihte1bxvhhwqqe', true)(data-type='max')
-                            +range-slider(135, 195, 'ihte1bxvhhwqqe')(class=RangeModifier)
+                            +range-slider(135, 195, 'ihte1bxvhhwqqe')(class=RangeModifier).js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
                                         +range-slider-input(data-type='min' name='cost-min' value=135)
@@ -371,7 +371,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Availability
-                            +selectbox(class=SelectModifier)
+                            +selectbox(class=SelectModifier).js-select-modifiers
                                 +selectbox-control(name='availability')
                                     option(value='all') All
                                     option(value='item1') item 1
@@ -380,7 +380,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Orientation
-                            +selectbox(class=SelectModifier)
+                            +selectbox(class=SelectModifier).js-select-modifiers
                                 +selectbox-control(name='orientation')
                                     option(value='all') All
                                     option(value='item1') item 1
@@ -398,7 +398,7 @@ mixin filter-extended(dark)
                                         option(value='1') cm
                                         option(value='2') in
                                         option(value='3') ft
-                            +range-slider(135, 195, 'uuuutewbqbxqbw1')(class=RangeModifier)
+                            +range-slider(135, 195, 'uuuutewbqbxqbw1')(class=RangeModifier).js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
                                         +range-slider-input(data-type='min' name='height-min' value=135)
@@ -418,7 +418,7 @@ mixin filter-extended(dark)
                                     +selectbox-control(name='weight')
                                         option(value='1') kg
                                         option(value='2') lb
-                            +range-slider(40, 200, 'hynvzqkjkwhvbqw125v')(class=RangeModifier)
+                            +range-slider(40, 200, 'hynvzqkjkwhvbqw125v')(class=RangeModifier).js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
                                         +range-slider-input(data-type='min' name='weight-min' value=40)
@@ -430,7 +430,7 @@ mixin filter-extended(dark)
                     +col(3)
                         +field
                             +field-label Ethnicity
-                            +selectbox(class=SelectModifier)
+                            +selectbox(class=SelectModifier).js-select-modifiers
                                 +selectbox-control(name='ethnicity')
                                     option(value='all') All
                                     option(value='item1') item 1
@@ -438,17 +438,17 @@ mixin filter-extended(dark)
                                     option(value='item3') item 3
                 +grid.filter__checkboxes
                     +col(2)
-                        +checkbox(true, 'verified', 1)(class=CheckboxModifier) Verified
+                        +checkbox(true, 'verified', 1)(class=CheckboxModifier).js-checkbox-modifiers Verified
                     +col(2)
-                        +checkbox(true, 'top_100', 1)(class=CheckboxModifier) TOP 100
+                        +checkbox(true, 'top_100', 1)(class=CheckboxModifier).js-checkbox-modifiers TOP 100
                     +col(2)
-                        +checkbox(true, 'with_video', 1)(class=CheckboxModifier) With Video
+                        +checkbox(true, 'with_video', 1)(class=CheckboxModifier).js-checkbox-modifiers With Video
                     +col(2)
-                        +checkbox(false, 'porn_star', 1)(class=CheckboxModifier) Porn Star
+                        +checkbox(false, 'porn_star', 1)(class=CheckboxModifier).js-checkbox-modifiers Porn Star
                     +col(2)
-                        +checkbox(false, 'on_tour', 1)(class=CheckboxModifier) on Tour
+                        +checkbox(false, 'on_tour', 1)(class=CheckboxModifier).js-checkbox-modifiers on Tour
                     +col(2)
-                        +checkbox(false, 'with_reviews', 1)(class=CheckboxModifier) With reviews
+                        +checkbox(false, 'with_reviews', 1)(class=CheckboxModifier).js-checkbox-modifiers With reviews
 
                 +grid
                     +col(3)
@@ -456,14 +456,15 @@ mixin filter-extended(dark)
                             data-show-text='+ show more options',
                             data-hide-text='- hide more options',
                             class=MoreOptionsButtonModifier
-                        )._uppercase.js-toggle-filter-additional + show more options
+                        )._uppercase.js-toggle-filter-additional.js-moreoptionsbutton-modifiers + show more options
                     +col(3)
-                        +button()(class=ApplyButtonModifier)._uppercase.__hide-additional Apply <span>(19405)</span>
+                        +button()(class=ApplyButtonModifier)._uppercase.__hide-additional.js-applybutton-modifiers Apply <span>(19405)</span>
                     +col(3).filter__hide-additional-mob
-                        +button()(class=ResetButtonModifier)._uppercase.__reset.js-filter-reset reset options
+                        +button()(class=ResetButtonModifier)._uppercase.__reset.js-filter-reset.js-resetbutton-modifiers reset options
                     +col(3).grid__col_align_right.grid__col_align_right._push_right.filter__hide-additional-mob
                         +icon-button('filter-button', 23, 16, 'icon-button__icon icon-button__icon_fill')(
                             data-popup-id='#filter-extended',
+                            data-popup-template='popups/filter-extended.html',
                             data-action='hide'
-                            class=IconButtonModifier)._uppercase.js-toggle-popup Hide
+                            class=IconButtonModifier)._uppercase.js-toggle-popup.js-iconbutton-modifiers Hide
             +filter-additional

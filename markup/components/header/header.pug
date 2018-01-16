@@ -50,7 +50,7 @@ mixin header(dark, isGuest, activeMenu, isUser, isAgency)
                         +city-suggest.__suggest
 
                 +navbar-item._filter.show-fixed
-                    +navbar-link(href='#' data-popup-id='#filter-extended' data-action='toggle')._row._has_badge.js-toggle-popup
+                    +navbar-link(href='#' data-popup-id='#filter-extended' data-popup-template='popups/filter-extended.html' data-action='toggle')._row._has_badge.js-toggle-popup
                         +navbar-badge._top_right 2
                         +navbar-col
                             +navbar-heading Filter
@@ -166,7 +166,7 @@ mixin header(dark, isGuest, activeMenu, isUser, isAgency)
                     +navbar-link(href='#')._active-style_main.js-header-toggle-search-bar
                         != pugHelpers.Icon.call(locals, {iconName: 'search', className: 'navbar__icon_search', iconWidth: '14', iconHeight: '14'})
                 +navbar-item
-                    +navbar-link(href='#' data-popup-id='#filter-extended' data-action='toggle').js-toggle-popup
+                    +navbar-link(href='#' data-popup-id='#filter-extended' data-popup-template='popups/filter-extended.html' data-action='toggle').js-toggle-popup
                         != pugHelpers.Icon.call(locals, {iconName: 'filter-button', className: 'navbar__icon_filter', iconWidth: '19', iconHeight: '12'})
                 +navbar-item
                     +navbar-link(href=isAgency ? 'model-map-agencies.html' : 'model-map.html')._mob-map
