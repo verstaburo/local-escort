@@ -43,7 +43,7 @@ mixin header(dark, isGuest, activeMenu, isUser, isAgencies)
                 +navbar-item._flexible._no_hover
                     +search-bar('Search <span>(for example, a telephone number)</span>')(class=!!dark ? '_dark' : '')
 
-                +navbar-item(data-popup-id='#select-city' data-action='toggle')._city._dropdown.js-toggle-popup
+                +navbar-item(data-popup-id='#select-city' data-popup-template='popups/select-city-popup.html' data-action='toggle')._city._dropdown.js-toggle-popup
                     +navbar-link-dropdown(href='#')
                         +navbar-heading City
                         +navbar-description Los Angeles

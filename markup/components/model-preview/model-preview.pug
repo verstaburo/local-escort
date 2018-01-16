@@ -7,13 +7,15 @@ include ../tags/tags
 mixin model-preview(photos, name, age, price, isOnline)
     - var maxPhotosCount = 5
 
+    - var photosHeight = {1: 342, 2: 328, 3: 387, 4: 276, 5: 317, 6: 320, 7: 347, 8: 387, 9: 399, 10: 257}
+
     +b.model-preview&attributes(attributes)
         +e.A(href='model-profile.html' target='_blank').content.js-show-profile-popup
             +e.slider.swiper-container(data-max-slides=maxPhotosCount)
                 +e.photos.swiper-wrapper
                     each photo, index in photos.slice(0, maxPhotosCount)
                         +e.slide.swiper-slide
-                            +e.IMG.photo.swiper-lazy(data-src=`static/img/content/model-preview/${photo}.jpg` alt=`Model ${name}`)
+                            +e.IMG.photo.swiper-lazy(data-src=`static/img/content/model-preview/${photo}.jpg` alt=`Model ${name}` style=`height: ${photosHeight[photo]}px;`)
                             .swiper-lazy-preloader
             if isOnline
                 +e.online

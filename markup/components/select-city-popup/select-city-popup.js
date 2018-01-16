@@ -1,16 +1,11 @@
 export default function selectCityPopup() {
-    const popup = $('#select-city');
-
-    if (!popup.length) {
-        return;
-    }
-
-    const navbar = $('.header__navbar').filter(function() {
+    const navbar = $('.header__navbar').filter(function () {
         return $(this).is(':visible');
     });
 
-    popup.on('show', () => {
-        let offset = navbar.outerHeight() + navbar.offset().top;
+    $(document).on('show', '#select-city', function () {
+        const popup = $(this);
+        let offset = (navbar.outerHeight() + navbar.position().top);
         const userNav = $('.user-nav');
 
         if (userNav.length && userNav.hasClass('fixed')) {

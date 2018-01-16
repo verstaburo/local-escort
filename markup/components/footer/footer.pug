@@ -16,7 +16,7 @@ mixin footer()
                         +col(4).footer__col.footer__col_half-mob.no-padding-top
                             +e.select
                                 +e.SPAN.heading._big City
-                                +input-selectlike(data-popup-id="#select-city" data-action="open")._small.js-toggle-popup
+                                +input-selectlike(data-popup-id="#select-city" data-popup-template='popups/select-city-popup.html' data-action="open")._small.js-toggle-popup
                                     +input-selectlike-control(name='city' value='Los Angeles' readonly=true).js-change-city
                         +col(4).footer__col.hide-mob
                             +e.social
