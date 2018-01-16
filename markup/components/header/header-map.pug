@@ -91,7 +91,7 @@ mixin header(dark, isGuest, activeMenu, isUser, isAgencies)
                 if isGuest
                     // user isn't authorized
                     +navbar-item._login
-                        +navbar-link(href='#' data-popup-id='#auth-popup' data-action='show')._row.js-toggle-popup
+                        +navbar-link(href='#' data-popup-id='#auth-popup' data-popup-template='popups/auth-popup.html' data-action='show')._row.js-toggle-popup
                             +navbar-col
                                 != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
                             +navbar-col
@@ -177,7 +177,7 @@ mixin header(dark, isGuest, activeMenu, isUser, isAgencies)
                 if isGuest
                     // user isn't authorized
                     +navbar-item
-                        +navbar-link(href='user-profile-feedbacks.html' data-popup-id='#auth-popup' data-action='show').js-toggle-popup
+                        +navbar-link(href='user-profile-feedbacks.html' data-popup-id='#auth-popup' data-popup-template='popups/auth-popup.html' data-action='show').js-toggle-popup
                             != pugHelpers.Icon.call(locals, {iconName: 'profile', className: 'navbar__icon_profile', iconWidth: '18', iconHeight: '17'})
                 else
                     // user is authorized

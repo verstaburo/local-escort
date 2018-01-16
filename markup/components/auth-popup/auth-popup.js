@@ -1,14 +1,5 @@
 export default function authPopup() {
-    const authPopup = $('.auth-popup');
-
-    if (!authPopup.length) {
-        return;
-    }
-
-    const actions = authPopup.find('.auth-popup__col_action');
-    const actionsBtn = authPopup.find('.js-auth-popup-action-btn');
-
-    const toggle = function(e) {
+    const toggle = function (e) {
         e.preventDefault();
         const el = $(this);
         let action = null;
@@ -31,5 +22,5 @@ export default function authPopup() {
             .find('.auth-popup__col');
     };
 
-    actionsBtn.click(toggle);
+    $(document).on('click', '.js-auth-popup-action-btn', toggle);
 }
