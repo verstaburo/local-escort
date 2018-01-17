@@ -52,7 +52,12 @@ function scrollIntoPopup() {
     const popup = $(this);
     const card = popup.find('.profile-popup__slide.active .user-profile__profile-card');
     const sidebar = card.parents('.user-profile__sidebar');
+    const buttons = popup.find('.profile-popup__buttons');
     const sT = popup.scrollTop();
+
+    // scroll buttons
+    const buttonsTop = sT - buttons.height() / 2;
+    buttons.css('transform', `translateY(${buttonsTop}px)`);
 
     const topBreakpoint = sT <= sidebar.offset().top + sT;
     const bottomBreakpoint = sT >= card.next().offset().top - card.outerHeight() + sT;
