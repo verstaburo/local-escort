@@ -1,33 +1,39 @@
 export function profileReportPopup() {
-    const form = $('.profile-common-popup-report');
-    const popup = form.parents('.popup');
+    $(document).on('show', '#profile-report', function () {
+        const popup = $(this);
+        const form = popup.find('.profile-common-popup-report');
 
-    popup
-        .on('show', function() {
-            const step = form.find('.profile-common-popup-report__step').eq(0);
-            const el = $(this);
+        const step = form
+            .find('.profile-common-popup-report__step')
+            .eq(0);
 
-            if (!step.length) {
-                return;
-            }
+        const el = $(this);
 
-            step
-                .show()
-                .nextAll()
-                .hide();
+        if (!step.length) {
+            return;
+        }
 
-            el
-                .find('.profile-common-popup__button')
-                .hide();
+        step
+            .show()
+            .nextAll()
+            .hide();
 
-            el
-                .find('.profile-common-popup__button')
-                .eq(0)
-                .show();
+        el
+            .find('.profile-common-popup__button')
+            .hide();
+
+        el
+            .find('.profile-common-popup__button')
+            .eq(0)
+            .show();
     })
-        .on('click', '.js-profile-report-next', function(e) {
+        .on('click', '.js-profile-report-next', function (e) {
             e.preventDefault();
-            const step = form.find('.profile-common-popup-report__step').eq(0);
+            const form = $(this).parents('.profile-common-popup').find('.profile-common-popup-report');
+
+            const step = form
+                .find('.profile-common-popup-report__step')
+                .eq(0);
 
             const checkedItem = step
                 .find('.info-control__control:checked')
@@ -50,6 +56,6 @@ export function profileReportPopup() {
         })
         .on('click', '.js-profile-report-submit', (e) => {
             e.preventDefault();
-            form.submit();
+            $(this).parents('.profile-common-popup-report').submit();
         })
 }
