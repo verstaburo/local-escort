@@ -41,17 +41,27 @@
         &.active
             display: block
 
+    &__buttons
+        position fixed
+        top: 50%
+        left: 0
+        right: 0
+        width 100%
+        transform: translateY(-50%)
+        display flex
+        justify-content space-between
+        z-index: 50
+        pointer-events none
+
     &__button
-        position: fixed
         display: block
         width: 78px
         height: 156px
-        top: 50%
-        transform: translate3d(0, -50%, 0)
         cursor: pointer
         m-transition(transform, background-color, opacity)
-        z-index: 50
         overflow: hidden
+        position relative
+        pointer-events all
 
         +below(1300px)
             width: 39px

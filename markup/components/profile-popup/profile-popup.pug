@@ -18,19 +18,14 @@ mixin profile-popup()
     +popup.popup_start.popup_no_mobile_paddings.popup_no_transform.popup_profile-popup.js-profile-popup-wr#profile-popup
         +b.profile-popup
             +popup-close.popup__close_kind_square.popup__close_no_translate
-            +e.button._prev
-                != pugHelpers.Icon.call(locals, {iconName: 'photo-caret'})
-            +e.button._next
-                != pugHelpers.Icon.call(locals, {iconName: 'photo-caret'})
+
+            +e.buttons
+                +e.button._prev
+                    != pugHelpers.Icon.call(locals, {iconName: 'photo-caret'})
+                +e.button._next
+                    != pugHelpers.Icon.call(locals, {iconName: 'photo-caret'})
 
             +container
-                //.js-profile-popup.swiper-container
-                //    .swiper-wrapper
-                //        - for (var i = 0; i < 2; i++)
-                //            +user-profile(true).swiper-slide
-                //                +reviews-rate-no-login-interactive
-                //            +user-profile(true).swiper-slide
-                                +reviews-rate-interactive
                 +e.slider.js-profile-popup
                     +e.slide.active
                         +user-profile(true)
