@@ -112,6 +112,8 @@ export default function profilePopup() {
                 .css('right', scrollWidth);
         }
 
-        $(this).find('.model-preview').each(window.modelPreviewInit);
+        $(this).find('.model-preview').each(function () {
+            window.modelPreviewInit($(this));
+        });
     });
 };
