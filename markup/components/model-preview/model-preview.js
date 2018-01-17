@@ -33,7 +33,7 @@ export default function modelPreview(model) {
         }
     });
 
-    const block = model && model.find('.model-preview__slider') || $('.model-preview__slider');
+    const block = modelro && model.find('.model-preview__slider') || $('.model-preview__slider');
 
     if (!block.length) {
         return;
