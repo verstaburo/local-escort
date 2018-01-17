@@ -59,7 +59,7 @@ mixin user-profile(isPopup, isEmpty)
                                 +col(4)
                                     +button()(data-popup-id='#profile-report' data-action='show')._uppercase._border_standart.js-toggle-popup Report
                                 +col(4)
-                                    +button()(data-popup-id='#profile-qr' data-action='show')._uppercase._border_standart.js-toggle-popup QR Code
+                                    +button()(data-popup-id='#profile-qr' data-popup-template='popups/profile-qr.html' data-action='show')._uppercase._border_standart.js-toggle-popup QR Code
                                 +col(4)
                                     +button()(href='#')._uppercase._border_standart Save as PDF
                     +e.sidebar

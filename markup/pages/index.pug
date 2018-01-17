@@ -28,7 +28,7 @@ block content
             +demo-link('model-list-help.html') 01_List_10_help
             +demo-link('#profile-popup')(data-popup-id='#profile-popup' data-action='show').js-toggle-popup 02_card_1
             +demo-link('#profile-call')(data-popup-id='#profile-call' data-popup-template='popups/profile-call.html' data-action='show').js-toggle-popup 02_card/call
-            +demo-link('#profile-qr')(data-popup-id='#profile-qr' data-action='show').js-toggle-popup 02_card/QR
+            +demo-link('#profile-qr')(data-popup-id='#profile-qr' data-popup-template='popups/profile-qr.html' data-action='show').js-toggle-popup 02_card/QR
             +demo-link('#profile-report')(data-popup-id='#profile-report' data-action='show').js-toggle-popup 02_card/report(1,2)
             +demo-link('#profile-photo')(data-popup-id='#profile-photo' data-popup-template='popups/profile-photo.html' data-action='show').js-toggle-popup 02_card/photo popup
             +demo-link('#profile-video')(data-popup-id='#profile-video' data-popup-template='popups/profile-video.html' data-action='show').js-toggle-popup 02_card/video popup
@@ -76,7 +76,6 @@ block content
     +arrow-up
 
 block popups
-    +profile-common-popup-qr
     +profile-common-popup-report
 
 block scripts
