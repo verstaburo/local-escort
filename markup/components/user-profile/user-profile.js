@@ -76,5 +76,8 @@ function scrollIntoPopup() {
 
 export default function userProfile() {
     $(window).on('scroll', scrollIntoPage);
-    $('.js-profile-popup-wr').on('scroll', scrollIntoPopup);
+
+    $(document).on('show', '#profile-popup', function () {
+        $(this).off('scroll').on('scroll', scrollIntoPopup);
+    });
 }

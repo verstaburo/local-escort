@@ -208,12 +208,16 @@ $(document).on('click', '.model-preview__action_info', function (e) {
 $(document).on('click', '.js-show-profile-popup', (e) => {
     const popup = $('#profile-popup');
 
-    if ($(window).width() <= 768 || !popup.length || popup.hasClass('active')) {
+    if ($(window).width() <= 768 || popup.hasClass('active')) {
         return;
     }
 
     e.preventDefault();
-    popup.trigger('show');
+
+    $(document).trigger('showpopup', {
+        id: '#profile-popup',
+        template: 'popups/profile-popup.html'
+    });
 });
 
 window.modelPreviewInit = modelPreview;

@@ -1,39 +1,43 @@
 import Swiper from 'swiper';
+import modelPreview from '../model-preview/model-preview';
 
 export default function profilePopup() {
-    const popup = $('#profile-popup');
-
-    if (!popup.length) {
-        return;
-    }
-
-    const reInitMap = function() {
+    const reInitMap = function () {
         const map = $('.contacts-card__block_map');
 
         if (map.length && google) {
-            map.each(function() {
-                const self = $(this);
-                google.maps.event.trigger(self[0], 'resize');
+            map
+                .each(function () {
+                    const self = $(this);
 
-                setTimeout(() => {
-                    // hide google logo etc
-                    self.find('.gm-style-cc').hide();
-                    self.find('.gmnoprint ').hide();
-                    self.find('.gmnoscreen').hide();
-                    self.find('[target="_blank"]').parent().hide();
-                    self.find('[target="_new"]').parent().hide();
-                }, 0);
-            });
+                    google
+                        .maps
+                        .event
+                        .trigger(self[0], 'resize');
+
+                    setTimeout(() => {
+                        // hide google logo etc
+                        self
+                            .find('.gm-style-cc')
+                            .hide();
+                        self
+                            .find('.gmnoprint ')
+                            .hide();
+                        self
+                            .find('.gmnoscreen')
+                            .hide();
+                        self
+                            .find('[target="_blank"]')
+                            .parent()
+                            .hide();
+                        self
+                            .find('[target="_new"]')
+                            .parent()
+                            .hide();
+                    }, 0);
+                });
         }
     };
-
-    // const slider = new Swiper('.js-profile-popup', {
-    //     slidesPerView: 1,
-    //     prevButton: '.profile-popup__button_prev',
-    //     nextButton: '.profile-popup__button_next',
-    //     touchRatio: 0,
-    //     onSlideChangeStart: reInitMap,
-    // });
 
     $(document).on('click', '.profile-popup__button', function (e) {
         e.preventDefault();
@@ -45,12 +49,16 @@ export default function profilePopup() {
 
         if (self.hasClass('profile-popup__button_next')) {
             const candidate = activeSlide.next();
-            nextSlide = candidate.length ? candidate : slides.first();
+            nextSlide = candidate.length
+                ? candidate
+                : slides.first();
         }
 
         if (self.hasClass('profile-popup__button_prev')) {
             const candidate = activeSlide.prev();
-            nextSlide = candidate.length ? candidate : slides.last();
+            nextSlide = candidate.length
+                ? candidate
+                : slides.last();
         }
 
         nextSlide
@@ -61,7 +69,9 @@ export default function profilePopup() {
             .removeClass('active');
 
         reInitMap();
-        self.parents('.js-profile-popup-wr').scroll();
+        self
+            .parents('.js-profile-popup-wr')
+            .scroll();
     });
 
     $(document).on('keyup', function (e) {
@@ -75,28 +85,33 @@ export default function profilePopup() {
         }
 
         if (e.keyCode === LEFT_ARROW) {
-            activePopup.find('.profile-popup__button_prev').click();
+            activePopup
+                .find('.profile-popup__button_prev')
+                .click();
         }
 
         if (e.keyCode === RIGHT_ARROW) {
-            activePopup.find('.profile-popup__button_next').click();
+            activePopup
+                .find('.profile-popup__button_next')
+                .click();
         }
     });
 
-    popup.on('show', () => {
-        popup.css('top', $(window).scrollTop());
+    $(document).on('show', '#profile-popup', function () {
+        $(this).css('top', $(window).scrollTop());
     });
 
-    popup.on('aftershow', () => {
+    $(document).on('aftershow', '#profile-popup', function () {
         // slider.update();
         reInitMap();
-
-        const scrollWidth = popup.outerWidth() - popup[0].scrollWidth;
+        const scrollWidth = $(this).outerWidth() - $(this)[0].scrollWidth;
 
         if (scrollWidth > 0) {
-            popup
+            $(this)
                 .find('.profile-popup__button_next')
                 .css('right', scrollWidth);
         }
+
+        $(this).find('.model-preview').each(window.modelPreviewInit);
     });
 };

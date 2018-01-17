@@ -1,4 +1,4 @@
-(function() {
+var profileContactsMap = function() {
     $('.contacts-card__block_map').each(function() {
         var map = new google.maps.Map($(this)[0], {
             zoom: 13,
@@ -260,4 +260,10 @@
             img: 'static/img/content/avatars/navbar.png',
         });
     })
-})();
+};
+
+profileContactsMap();
+
+$(document).on('show', '#profile-popup', function () {
+    profileContactsMap();
+});

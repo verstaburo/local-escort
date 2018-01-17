@@ -8,22 +8,25 @@ function recommendedSliderInit() {
         return;
     }
 
-    items.each(function() {
-        const el = $(this);
+    items
+        .each(function () {
+            const el = $(this);
 
-        new Swiper(el, {
-            slidesPerView: 'auto',
-            spaceBetween: 24,
-            prevButton: el.parents('.recommended-slider').find('.recommended-slider__button_prev'),
-            nextButton: el.parents('.recommended-slider').find('.recommended-slider__button_next'),
+            new Swiper(el, {
+                slidesPerView: 'auto',
+                spaceBetween: 24,
+                prevButton: el
+                    .parents('.recommended-slider')
+                    .find('.recommended-slider__button_prev'),
+                nextButton: el
+                    .parents('.recommended-slider')
+                    .find('.recommended-slider__button_next')
+            });
         });
-    });
 }
 
 export default () => {
-    const popup = $('.recommended-slider').parents('.popup');
-
     recommendedSliderInit();
 
-    popup.on('aftershow', recommendedSliderInit);
+    $(document).on('aftershow', '#profile-popup', recommendedSliderInit);
 };

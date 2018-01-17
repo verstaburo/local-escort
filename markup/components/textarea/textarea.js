@@ -11,4 +11,11 @@ export default function textarea() {
     });
 
     $(document).find('.textarea__control').trigger('change');
-}
+
+
+    $(document).on('show', function() {
+        const t = $('.textarea__control');
+        t.text(t.text().trim());
+        $(document).find('.textarea__control').trigger('change');
+    });
+};
