@@ -1,5 +1,5 @@
 mixin avatar(src, alt, isOnline)
     +b.avatar&attributes(attributes)
-        +e.IMG(src='%=static=%img/content/avatars/'+src alt=alt||'avatar').img
+        +e.IMG(src='static/img/content/avatars/'+src alt=alt||'avatar').img
         if isOnline
             +e.SPAN.online
