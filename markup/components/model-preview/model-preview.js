@@ -71,7 +71,7 @@ export default function modelPreview(model) {
     });
 }
 
-$(document).on('mousemove', '.model-preview__slider', function({ clientX }) {
+$(document).on('mousemove', '.model-preview__slider', function ({ clientX }) {
     const el = $(this);
     const swiper = this.swiper;
 
