@@ -115,6 +115,9 @@
     .reviews
         margin-top: 14px
 
+        +below(768px)
+            margin-left: -52px;
+
         &__items
             margin-top: 0
 
@@ -124,6 +127,7 @@
 
         +below(768px)
             display: block
+            margin-left: -52px
 
     &__info
         display: inline-flex
@@ -136,6 +140,7 @@
             display: flex
             flex-direction: column
             padding: 0
+            margin-left: -52px
 
         &-item
             display: flex

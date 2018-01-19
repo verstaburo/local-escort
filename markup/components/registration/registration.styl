@@ -38,3 +38,16 @@
 
     &__avatar_update
         display: none
+
+    &__captcha
+        +below(768px)
+            margin-left: -11px;
+
+        +below(500px)
+            margin-left: 0;
+            display flex
+            justify-content: center;
+
+            .g-recaptcha
+                flex-grow: 0;
+                transform: scale(0.87) !important;
