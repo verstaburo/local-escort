@@ -19,7 +19,7 @@ export default function youtubeVideo() {
     $(document)
         // recalc player size when popup just opened
         .on('aftershow', '.popup', function() {
-            console.log(123);
+
             $(this)
                 .find('.youtube-video')
                 .each(resizeVideo);
