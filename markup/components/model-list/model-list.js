@@ -22,14 +22,4 @@ export default function modelList() {
             rebuildGrd(2, true, true);
         }
     });
-
-    // $(window).on('resize', () => {
-    //     const sortUi = $('.sort-ui__item.active');
-
-    //     if ($(window).width() > 540 || !sortUi.length) {
-    //         return;
-    //     }
-
-
-    // });
 }
