@@ -290,6 +290,11 @@
         return Math.random() > .5 ? n - Math.random() : n + Math.random()
     };
 
+    // just generate random string
+    var generateId = function() {
+        return Math.random().toString(36).replace('.', '');
+    };
+
     // markers
     var locations = [],
         avatars = ['navbar', 'andrew', 'anya', 'jackson', 'john', 'mika', 'miya', 'sarah'];

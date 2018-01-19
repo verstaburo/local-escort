@@ -15,7 +15,7 @@ mixin model-preview(photos, name, age, price, isOnline)
                 +e.photos.swiper-wrapper
                     each photo, index in photos.slice(0, maxPhotosCount)
                         +e.slide.swiper-slide
-                            +e.IMG.photo.swiper-lazy(data-src=`static/img/content/model-preview/${photo}.jpg` alt=`Model ${name}` style=`height: ${photosHeight[photo]}px;`)
+                            +e.IMG.photo.swiper-lazy(data-src=`static/img/content/model-preview/${photo}.jpg` alt=`Model ${name}` data-width=258 data-height=photosHeight[photo])
                             .swiper-lazy-preloader
             if isOnline
                 +e.online

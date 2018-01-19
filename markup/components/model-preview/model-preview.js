@@ -47,6 +47,16 @@ export default function modelPreview(model) {
         el.parents('.popup').on('aftershow', function() {
            el[0].swiper.update();
         });
+
+        el.parents('.model-preview').each(function() {
+            const ratios = $(this).find('.model-preview__photo').map(function() {
+                return Number($(this).data('height')) / Number($(this).data('width')) * 100;
+            });
+
+            const maxRatio = Math.max(...ratios);
+
+            $(this).find('.model-preview__slide').css('padding-bottom', maxRatio + '%');
+        });
     });
 
     const grid = $('.js-model-preview-grid');
@@ -60,6 +70,16 @@ export default function modelPreview(model) {
             .find('.model-preview')
             .removeClass('model-preview_masonry')
             .addClass('model-preview_masonry');
+
+        grid.find('.model-preview').each(function() {
+            const ratios = $(this).find('.model-preview__photo').map(function() {
+                return Number($(this).data('height')) / Number($(this).data('width')) * 100;
+            });
+
+            const maxRatio = Math.max(...ratios);
+
+            $(this).find('.model-preview__slide').css('padding-bottom', maxRatio + '%');
+        });
 
         grid.find('.model-preview__slider').each(function() {
             if (this.swiper) {

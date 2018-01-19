@@ -1,12 +1,6 @@
 export default function youtubeVideo() {
-    const block = $('.youtube-video');
-
-    if (!block.length) {
-        return;
-    }
-
     // save aspect ratio
-    block.each(function() {
+    $('.youtube-video').each(function() {
        $(this)
            .data('aspectRatio', this.width / this.height)
            .removeAttr('width')
@@ -25,6 +19,7 @@ export default function youtubeVideo() {
     $(document)
         // recalc player size when popup just opened
         .on('aftershow', '.popup', function() {
+            console.log(123);
             $(this)
                 .find('.youtube-video')
                 .each(resizeVideo);
@@ -44,9 +39,9 @@ export default function youtubeVideo() {
         });
 
     // resize
-    block.each(resizeVideo);
+    $('.youtube-video').each(resizeVideo);
 
     $(window).on('resize', () => {
-        block.each(resizeVideo);
+        $('.youtube-video').each(resizeVideo);
     });
 }

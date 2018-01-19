@@ -56,7 +56,7 @@
             opacity: .2
 
     &__slider
-        position: static !important
+        position: relative !important
         display: block
 
     &__cutoff
@@ -191,8 +191,16 @@
             right: 0
 
     &__photo
-        width: 100%
-        height: auto
+        position absolute
+        top 0
+        left 0
+        right 0
+        width 0
+        height 0
+        min-width 100%
+        min-height 100%
+        object-fit: cover
+        font-family 'object-fit: cover;'
 
     &__online
         position: absolute
@@ -258,11 +266,11 @@
         position relative
 
         &.active
-            min-width 258px
+            max-width 258px
             background-color #ffffff
 
             + .popup__actions
-                min-width 258px
+                max-width 258px
 
         .close
             z-index 60
