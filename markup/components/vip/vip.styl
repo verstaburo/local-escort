@@ -12,6 +12,9 @@
     +below(400px)
         min-height 300px
 
+        .grid__col_six &
+            min-height 260px
+
     &.preload
         opacity 0
         pointer-events none
@@ -59,6 +62,10 @@
         margin-top: 20px
         transition all 0.25s ease-in-out
 
+        +below(400px)
+            .grid__col_six &
+                margin-top 0
+
     &__heading
         color #fff
         font-family fontMain
@@ -70,6 +77,10 @@
         text-align center
         width: 100%
 
+        +below(400px)
+            .grid__col_six &
+                font-size 16px
+
     &__text
         display: block
         color rgba(#fff, .56)
@@ -80,6 +91,10 @@
         text-align center
         width: 100%
 
+        +below(400px)
+            .grid__col_six &
+                font-size 16px
+
     &__button
         margin-top: auto
         border-top-color: rgba(borderColor, .08)
@@ -88,6 +103,8 @@
 
         +below(400px)
             padding: 0
+            .grid__col_six &
+                font-size 14px
 
         &::after
             display: none !important

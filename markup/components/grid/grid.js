@@ -117,5 +117,17 @@ $(window).on('resize', function() {
        return;
    }
 
-   grid(nextCount, true);
+    const sortUi = $('.sort-ui__item.active');
+
+    if (sortUi.length && $(window).width() <= 540) {
+        if (sortUi.data('view').toLowerCase() === 'list') {
+            grid(1, false, false);
+        }
+
+        if (sortUi.data('view').toLowerCase() === 'table') {
+            grid(2, false, false);
+        }
+    } else {
+        grid(nextCount, true);
+    }
 });
