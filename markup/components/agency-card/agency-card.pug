@@ -41,7 +41,7 @@ mixin agency-card-new(avatar, bg)
         +avatar(avatar||'navbar.png')._size_medium
 
         +e.A(href='agency.html').row._top
-            - var nextBg = bg ? '%=static=%img/content/agency-card/'+bg : '%=static=%img/content/agency-card/bg.jpg';
+            - var nextBg = bg ? 'static/img/content/agency-card/'+bg : 'static/img/content/agency-card/bg.jpg';
 
             +e.IMG(src=nextBg alt='Agency').picture
             +e.info

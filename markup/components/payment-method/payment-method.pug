@@ -6,5 +6,5 @@ mixin payment-method(heading, checked)
             block
 
 mixin payment-method-img(src, srcChecked)
-    +e.IMG(src='__static__img/content/payment-methods/'+src alt='').logo&attributes(attributes)
-    +e.IMG(src='__static__img/content/payment-methods/'+srcChecked alt='').logo._checked&attributes(attributes)
+    +e.IMG(src='static/img/content/payment-methods/'+src alt='').logo&attributes(attributes)
+    +e.IMG(src='static/img/content/payment-methods/'+srcChecked alt='').logo._checked&attributes(attributes)

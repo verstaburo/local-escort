@@ -16,7 +16,7 @@ mixin profile-photo-popup()
                     +e.UL.gallery-items.swiper-wrapper
                         each photo, index in photos
                             +e.LI.gallery-item.swiper-slide(data-likes=Math.ceil(Math.random() * 100) data-liked=(Math.random() > 0.5).toString())
-                                +e.IMG(src=`__static__img/content/photo-popup/gallery/${photo}.jpg`).gallery-img
+                                +e.IMG(src=`static/img/content/photo-popup/gallery/${photo}.jpg`).gallery-img
 
                     +e.button._prev
                         != pugHelpers.Icon.call(locals, {iconName: 'photo-caret', className: 'profile-photo-popup__caret-icon'})

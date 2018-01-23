@@ -1,6 +1,6 @@
 mixin uploaded-photo(src)
     +b.uploaded-photo&attributes(attributes)
-        +e.IMG(src='__static__img/content/'+src alt='').img
+        +e.IMG(src='static/img/content/'+src alt='').img
         +e.actions
             +e.A(href='#').action Remove
             +e.A(href='#').action Set as main
