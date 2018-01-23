@@ -9,6 +9,7 @@
             & ^[0]__link
                 background-color: mainColor
                 color: #fff
+                iziAnimation(darkGreyColor, mainColor)
 
         &.active
             & ^[0]__link
@@ -42,7 +43,10 @@
         font-weight 400
         line-height 1.375
         background-color #fff
-        m-transition(color, border-color)
+        m-transition(all)
+
+        &:hover
+            color mainColor
 
     &__icon
         transform: translateX(2px)
