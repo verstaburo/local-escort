@@ -22,4 +22,22 @@ export default function modelList() {
             rebuildGrd(2, true, true);
         }
     });
+
+    if ($(window).width() > 540) {
+        return;
+    }
+
+    const sortActiveItem = $('.sort-ui__item.active');
+
+    if (!sortActiveItem.length) {
+        return;
+    }
+
+    if (sortActiveItem.data('view').toLowerCase() === 'list') {
+        rebuildGrd(1, true, true);
+    }
+
+    if (sortActiveItem.data('view').toLowerCase() === 'table') {
+        rebuildGrd(2, true, true);
+    }
 }

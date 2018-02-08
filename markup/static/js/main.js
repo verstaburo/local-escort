@@ -145,7 +145,7 @@ $(() => {
     rating();
     list();
 
-    $('.js-datepicker').datepicker();
+    $('.js-datepicker').datepicker({ autoHide: true });
 });
 
 

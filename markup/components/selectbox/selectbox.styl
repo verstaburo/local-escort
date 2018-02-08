@@ -117,6 +117,10 @@
                 width 100%
                 min-width 258px
 
+            .selectbox_dark &,
+            .selectbox_deep-dark &
+                box-shadow: 0 10px 40px 0 rgba(mainColor, .2);
+
     &__dropdown
         position: absolute
         border-left: 1px solid rgba(#efefef, .06)
@@ -135,7 +139,7 @@
 
         .selectbox_dark &,
         .selectbox_deep-dark &
-            box-shadow: 0 10px 40px 0 rgba(mainColor, .1);
+            box-shadow: 0 10px 40px 0 rgba(mainColor, .5);
 
         +below(1024px)
             position: static

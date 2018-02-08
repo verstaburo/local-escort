@@ -29,9 +29,6 @@
 
             m-transition(border-color)
 
-            &:not(:last-child)
-                margin-right: 27px
-
             &.active
                 border-bottom-color: mainColor
 
@@ -47,6 +44,8 @@
             letter-spacing: 1px
             color: darkGreyColor
             m-transition(opacity)
+            padding-left: 16px
+            padding-right: 16px
 
     .grid__col_three, .grid__col_six
         +below(1104px)
