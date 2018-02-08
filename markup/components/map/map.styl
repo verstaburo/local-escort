@@ -72,7 +72,7 @@
         &:not(.active) + .scroll-wrapper
             pointer-events: none !important
 
-        +below(540px)
+        +below(767px)
             top: 12px
             left: 12px
             right: 12px
@@ -96,7 +96,7 @@
         .model-map &
             top 30px
 
-            +below(540px)
+            +below(767px)
                 top 30px
 
     .scroll-wrapper
@@ -112,7 +112,7 @@
         max-height: 100%
 
         &.scroll-wrapper
-            +below(540px)
+            +below(767px)
                 left: 50%
                 transform: translateX(-50%)
 
@@ -147,8 +147,8 @@
         z-index: 100
         display: block
 
-        +below(540px)
-            display: none
+        // +below(767px)
+        //     display: none
 
     &__button
         display: flex
@@ -176,3 +176,6 @@
 
         ^[0]__button:hover &
             opacity .6
+
+    .scroll-wrapper > .scroll-content
+        overflow-x: hidden !important;

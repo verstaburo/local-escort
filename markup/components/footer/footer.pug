@@ -65,13 +65,9 @@ mixin footer()
                             +e.select
                                 +e.SPAN.heading._big Language
                                 +selectbox._dark._small._default-text
-                                    +selectbox-control(name='city')
-                                        option(value='1') Los Angeles
-                                        option(value='2') New Your
-                                        option(value='4') Miami
-                                        option(value='5') Miami
-                                        option(value='6') Miami
-                                        option(value='7') Miami
+                                    +selectbox-control(name='language')
+                                        option(value='1') RU
+                                        option(value='2') EN
                         +col(4).footer__col.footer__col_half-mob.no-padding-top
                             +e.select
                                 +e.SPAN.heading._big CY.
@@ -84,7 +80,7 @@ mixin footer()
                                 +e.SPAN.heading Follow us
 
                                 +e.social-items
-                                    a(href='#')
+                                    a(href='https://facebook.com')
                                         != pugHelpers.Icon.call(locals, { iconName: 's-fb', className: 'footer__icon footer__icon_fb', iconWidth: '9', iconHeight: '19' })
-                                    a(href='#')
+                                    a(href='https://twitter.com')
                                         != pugHelpers.Icon.call(locals, { iconName: 's-tw', className: 'footer__icon footer__icon_tw', iconWidth: '19', iconHeight: '15' })

@@ -6,39 +6,39 @@ mixin user-dropdown-popup()
         +b.user-dropdown-popup&attributes(attributes)
             +e.row._credits
                 +e.col
-                    +e.A(href='#').link._color_main
+                    +e.A(href='boost-account-payment.html').link._color_main
                         | 2260
                         != pugHelpers.Icon.call(locals, { iconName: 'currency', className: 'user-dropdown-popup__icon_currency', iconWidth: '14', iconHeight: '13' })
                 +e.col
-                    +e.A(href='#').link Buy Credits
+                    +e.A(href='boost-account-payment.html').link Buy Credits
             +e.row
                 +e.col
                     +e.A(href='#').link Transaction History
                 +e.col
-                    +e.A(href='#').link boost my account
+                    +e.A(href='boost-account.html').link boost my account
             +e.UL.row._nav
                 li
-                    +e.A(href='#').link My Profile
+                    +e.A(href='user-profile-feedbacks.html').link My Profile
                 li
-                    +e.A(href='#').link Settings
+                    +e.A(href='user-settings.html').link Settings
                 li
                     +e.A(href='#').link Logout
                 li
-                    +e.A(href='#').link
+                    +e.A(href='user-messages.html').link
                         | Messages
                         +e.SPAN.badge 1
                 li
-                    +e.A(href='#').link Visitors
+                    +e.A(href='user-visitors.html').link Visitors
                 li
                     +e.A(href='#').link
                         | Likes
                         +e.SPAN.badge 2
                 li
-                    +e.A(href='#').link Invite Friends
+                    +e.A(href='user-likes.html').link Invite Friends
             +e.row
                 +e.col
-                    +e.A(href='#').link._color_grey About us
-                    +e.A(href='#').link._color_grey Help
-                    +e.A(href='#').link._color_grey privacy & Terms
+                    +e.A(href='about-us.html').link._color_grey About us
+                    +e.A(href='model-list-help.html').link._color_grey Help
+                    +e.A(href='terms.html').link._color_grey privacy & Terms
                 +e.col
                     +follow-us

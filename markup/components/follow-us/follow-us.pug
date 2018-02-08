@@ -1,7 +1,7 @@
 mixin follow-us()
     +b.follow-us&attributes(attributes)
         +e.SPAN.heading Follow us
-        a(href='#')
+        a(href='https://www.facebook.com')
             != pugHelpers.Icon.call(locals, { iconName: 's-fb', className: 'follow-us__icon follow-us__icon_fb', iconWidth: '9', iconHeight: '19' })
-        a(href='#')
+        a(href='https://twitter.com/')
             != pugHelpers.Icon.call(locals, { iconName: 's-tw', className: 'follow-us__icon follow-us__icon_tw', iconWidth: '19', iconHeight: '15' })
