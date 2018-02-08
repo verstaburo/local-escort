@@ -9,6 +9,9 @@ mixin field-label
 mixin field-input
     +e.INPUT(type="text").input&attributes(attributes)
 
+mixin field-textarea
+    +e.TEXTAREA.textarea&attributes(attributes)
+
 mixin field-input-ok
     +e.input-ok
         +e.INPUT(type="text").input&attributes(attributes)
