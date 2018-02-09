@@ -175,6 +175,9 @@
             align-items: center
             height: 60px
 
+            +below(767px)
+                height auto
+
         &_flex_end
             display: flex
             align-items: flex-end
@@ -214,3 +217,12 @@
         opacity: 1;
         pointer-events: all;
     }
+
+    &__mobile-label
+        +above(768px)
+            display none
+
+    &__morelabel
+        +below(767px)
+            font-size: 14px
+            color: rgba(darkGreyColor, .6);
