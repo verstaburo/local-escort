@@ -87,10 +87,12 @@
         padding-left: 55px
         padding-right: 55px
 
-        +below(768px)
+
+        +below(767px)
             padding-top: 30px
-            padding-left 40px
-            padding-right: 40px
+            padding-left 31px
+            padding-right: 31px
+            margin -20px 0 0 -10px
 
         +between(660px, 1023px)
             display: flex
@@ -101,6 +103,18 @@
             +between(660px, 1023px)
                 margin-bottom: 0
                 margin-right: 24px
+
+        +below(767px)
+            display flex
+            flex-wrap wrap
+
+            .short-info
+                width 50%
+                padding 20px 0 0 10px
+
+                &:not(:last-child)
+                    margin: 0
+
     &__row
         width: 100%
 
