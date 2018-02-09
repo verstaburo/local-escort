@@ -7,7 +7,7 @@ mixin auth-popup()
         +popup-close.popup__close_no_translate
         +container.container__height_100p
             +b.auth-popup&attributes(attributes)
-                +e.col._action.active
+                +e.col._action.active.js-auth-popup-action-btn-mob
                     +e.col
                         +e.IMG(src='static/img/content/auth-popup/singup.jpg' alt='').image
                         +e.content._transparentify
@@ -21,7 +21,7 @@ mixin auth-popup()
                                 +e.INPUT(type='password' name='password' placeholder='password').input
                             +button(href='#')._uppercase._color_main._bg_grey.__button login
                             +e.A(href='#').link Forgot your password?
-                +e.col._action
+                +e.col._action.js-auth-popup-action-btn-mob
                     +e.col
                         +e.IMG(src='static/img/content/auth-popup/signin.jpg' alt='').image
                         +e.content._transparentify

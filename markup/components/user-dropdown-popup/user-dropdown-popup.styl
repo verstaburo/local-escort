@@ -28,18 +28,29 @@
         &:not(:last-child)
             border-bottom: 1px solid #262728
 
+        &_transaction
+            & ^[0]__col:nth-child(2)
+                text-align: center
+                padding-left: 18px
+
         &_credits
-            padding-top: 0
-            padding-bottom 0
+            padding: 0
 
             & ^[0]__link
                 display: flex
                 justify-content: center
+                align-items: center
                 padding-top: 21px
-                padding-bottom: 19px
+                padding-bottom: 21px
+                padding-left: 15px
+                padding-right: 15px
 
-            & ^[0]__col:not(:last-child)
-                border-right: 1px solid #262728
+            & ^[0]__col
+                padding: 0
+
+                &:not(:last-child)
+                    border-right: 1px solid #262728
+                    padding: 0
 
         &:last-child
             & ^[0]__link
@@ -59,7 +70,10 @@
         width: 50%
 
         &_s0
-            flex-shrink 0
+            flex: 1 1 auto
+
+            + .user-dropdown-popup__col
+                width 35%
 
         &:not(:last-child)
             padding-right: 24px

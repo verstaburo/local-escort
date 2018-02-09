@@ -93,7 +93,7 @@
         span
             margin-top: 5px
             color rgba(#fff, .4)
-            font-size 12px
+            font-size 12pxt
             font-weight 400
             text-transform uppercase
             letter-spacing 1px
@@ -101,6 +101,10 @@
         .cutoff:hover &
             opacity 1
             pointer-events none
+
+        +below(767px)
+            .cutoff &
+                opacity 1
 
     &__content
         overflow: hidden

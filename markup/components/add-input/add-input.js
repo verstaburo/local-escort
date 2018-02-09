@@ -7,9 +7,8 @@ export default function addInput() {
 
         self.val(self.val().replace(/[^\d+]/g, ''));
 
+        clearTimeout(timer);
         timer = setTimeout(() => {
-
-            clearTimeout(timer);
             const currency = self.prop('placeholder').indexOf('$') !== -1 ? '$' : '€';
 
             if (!self.val().length) {

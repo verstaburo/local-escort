@@ -37,20 +37,20 @@ mixin model-list(isHelp)
                     +button(href='model-map.html')._color_white._bg_darkGrey._uppercase View on map
             +grid-masonry({ desktop: 4, laptop: 3, tablet: 2, mobile: 1}).js-model-preview-grid
                 +boost(true).js-masonry-item
-                +model-preview([7, 7, 7], 'Sonya', 20, 325, true).js-masonry-item
+                +model-preview([7, 7, 7, 7, 7, 7, 7], 'Sonya', 20, 325, true).js-masonry-item
                     +badges._top
                         +badges-item._new._skew
                             span New
                         +badges-item._info
                             span 1 hour ago
-                +model-preview([5, 5, 5, 5], 'Megan', 22, 390).js-masonry-item
+                +model-preview([5, 5, 5, 5, 5, 5], 'Megan', 22, 390).js-masonry-item
                     +badges._top
                         +badges-item._vip._skew
                             span Vip
                     +badges._bottom
                         +badges-item._verified._skew
                             span Verified
-                +model-preview([8, 8, 8, 8], 'Valeria', 26, 420).js-masonry-item
+                +model-preview([8, 8, 8, 8, 8, 8], 'Valeria', 26, 420).js-masonry-item
                     +badges._top
                         +badges-item._vip._skew
                             span Vip
@@ -70,13 +70,13 @@ mixin model-list(isHelp)
                             span 1 hour ago
                         +badges-item._vip._skew
                             span Vip
-                +model-preview([1, 1, 1, 1, 1, 1], 'Kate', 25, 380).js-masonry-item
+                +model-preview([1, 1, 1, 1, 1, 1, 1], 'Kate', 25, 380).js-masonry-item
                     +badges._top
                         +badges-item._vip._skew
                             span Vip
                 +model-preview([10, 10], 'Anna', 22, 390).js-masonry-item
                 +vip(true).js-masonry-item
-                +model-preview([3, 3, 3, 3, 3], 'Sofi', 20, 325).js-masonry-item
-                +model-preview([4, 4, 4, 4, 4], 'Anna', 22, 390).js-masonry-item
+                +model-preview([3, 3, 3, 3, 3, 3, 3], 'Sofi', 20, 325).js-masonry-item
+                +model-preview([4, 4, 4, 4, 4, 4, 4, 4], 'Anna', 22, 390).js-masonry-item
 
             +side-border-btn('button').__load.js-load-models Load more

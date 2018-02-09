@@ -23,4 +23,12 @@ export default function authPopup() {
     };
 
     $(document).on('click', '.js-auth-popup-action-btn', toggle);
+
+    $(document).on('click', '.js-auth-popup-action-btn-mob', function (e) {
+        if ($(window).width() > 768 || $(this).hasClass('active')) {
+            return;
+        }
+
+        toggle.call(this, e);
+    });
 }

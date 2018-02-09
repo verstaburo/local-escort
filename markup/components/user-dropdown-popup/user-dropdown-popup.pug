@@ -11,7 +11,7 @@ mixin user-dropdown-popup()
                         != pugHelpers.Icon.call(locals, { iconName: 'currency', className: 'user-dropdown-popup__icon_currency', iconWidth: '14', iconHeight: '13' })
                 +e.col
                     +e.A(href='boost-account-payment.html').link Buy Credits
-            +e.row
+            +e.row._transaction
                 +e.col
                     +e.A(href='#').link Transaction History
                 +e.col
