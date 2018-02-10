@@ -11,7 +11,7 @@
         font-weight 400
 
         +below(768px)
-            font-size 26px
+            font-size 24px
 
     &__description
         opacity .4
@@ -25,18 +25,21 @@
         +below(540px)
             padding-left 5px
             padding-right 5px
-            margin-top 25px
+            margin-top 12px
 
     &__img
         height 183px
         width 100%
+
+        +below(540px)
+            height 140px
 
     &__text-block
         padding: 65px 95px 70px;
         background-color darkGreyColor
 
         +below(768px)
-            padding 30px
+            padding 20px 30px
 
     &__info-container
         margin-top 30px
@@ -46,6 +49,9 @@
         +above(768px)
             margin-right 30px
 
+        +below(540px)
+            margin-top: 20px
+
     &__buttons
         display flex
         justify-content space-between
@@ -53,6 +59,9 @@
 
         +below(768px)
             flex-direction column
+
+        +below(540px)
+            margin-top: 20px
 
     &__button
         max-width 258px
@@ -63,6 +72,10 @@
 
         +below(768px)
             max-width 100%
+
+        +below(540px)
+            max-height: 50px;
+            line-height: 52px;
 
         &:not(:first-child)
             +below(768px)

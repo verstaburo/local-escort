@@ -12,7 +12,7 @@ export default function popupWelcome() {
         try {
             // проверяем, если есть запись о подтверждении возраста в статической переменной
             // функции или в localStorage если есть, то показываем попап
-            if (!localStorage.getItem('yearsAccepted') || !popupWelcome.yearsAccepted) {
+            if (true || !localStorage.getItem('yearsAccepted') || !popupWelcome.yearsAccepted) {
                 $(document).trigger('showpopup', {
                     id: '#popup-welcome',
                     template: 'popups/popup-welcome.html',
