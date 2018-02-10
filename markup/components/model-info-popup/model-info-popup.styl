@@ -31,7 +31,6 @@ modelInfoPopupMediumXPadding = 18px
         height: 9px
         background-color: #fff
 
-
     &_left
         left: 0
         transform: translate3d(0, 10px, 0) scale(.98)
@@ -44,14 +43,21 @@ modelInfoPopupMediumXPadding = 18px
 
     &_right
         left: 100%
+        margin-left: -12px
         transform: translate3d(-100%, 10px, 0) scale(.98)
 
         &::before
-            left: initial
-            right: 30px
+            left: auto
+            right: 24px
+
+            +below(540px)
+                display none
 
         &.active
             transform: translate3d(-100%, -4px, 0) scale(1)
+
+        .close
+            right 6px
 
     &__header
         border-bottom: 1px solid borderColor
