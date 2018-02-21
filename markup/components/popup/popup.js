@@ -179,8 +179,8 @@ export default function popup() {
         .on('showpopup', onShowPopup)
         .on(SHOW_EVENT, POPUP_CLASS, onShow)
         .on(HIDE_EVENT, POPUP_CLASS, onHide)
-        .on('click', TOGGLE_BTN_CLASS, onToggleBtnClick)
-        .on('click', POPUP_CLASS, onWrapperClick)
-        .on('click', CLOSE_BTN_CLASS, onCloseBtnClick)
+        .on('click touchstart', TOGGLE_BTN_CLASS, onToggleBtnClick)
+        .on('click touchstart', POPUP_CLASS, onWrapperClick)
+        .on('click touchstart', CLOSE_BTN_CLASS, onCloseBtnClick)
         .on('keyup', onEscapeHandler);
 }

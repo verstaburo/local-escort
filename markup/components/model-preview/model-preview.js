@@ -4,7 +4,7 @@ export default function modelPreview(model) {
 
     const getSettings = el => ({
         slidesPerView: 1,
-        touchRatio: 0,
+        touchRatio: 1,
         // prevButton: el.find('.model-preview__button_prev'),
         // nextButton: el.find('.model-preview__button_next'),
         pagination: el.find('.model-preview__pagination'),
@@ -25,11 +25,6 @@ export default function modelPreview(model) {
         },
         onLazyImageReady(slider) {
             slider.updateAutoHeight();
-        },
-        breakpoints: {
-            1024: {
-                touchRatio: 1
-            }
         }
     });
 

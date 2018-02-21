@@ -360,10 +360,11 @@
 
     // event
 
-    modelMap
-        .on('click', '.map__marker', function() {
+    $(document)
+        .on('click touchstart', '.map__marker', function() {
             var el = $(this);
 
+            console.log(123);
             if (el.hasClass('active')) {
                 return;
             }
@@ -395,7 +396,7 @@
 
             console.log('You just clicked on marker with marker_id' + el.data('marker_id'));
         })
-        .on('click', '.map__marker .close', function(e) {
+        .on('click touchstart', '.map__marker .close', function(e) {
             e.stopPropagation();
             var el = $(this).parent();
             el.removeClass('active');
@@ -414,7 +415,7 @@
 
             console.log('You just closed marker with marker_id ' + el.data('marker_id'));
         })
-        .on('click', '.map__group', function() {
+        .on('click touchstart', '.map__group', function() {
             var el = $(this);
 
             if (el.hasClass('active')) {
@@ -449,7 +450,7 @@
 
             console.log('You just clicked on marker with group_id ' + el.data('group_id'));
         })
-        .on('click', '.map__group .close', function(e) {
+        .on('click touchstart', '.map__group .close', function(e) {
             e.stopPropagation();
             var el = $(this).parent();
             el.removeClass('active');

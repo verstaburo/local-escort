@@ -359,8 +359,8 @@
 
     // event
 
-    modelMap
-        .on('click', '.map__marker', function() {
+    $(document)
+        .on('click touchstart', '.map__marker', function() {
             var el = $(this);
 
             if (el.hasClass('active')) {
@@ -392,7 +392,7 @@
 
             console.log('You just clicked on marker with marker_id' + el.data('marker_id'));
         })
-        .on('click', '.map__marker .close', function(e) {
+        .on('click touchstart', '.map__marker .close', function(e) {
             e.stopPropagation();
             var el = $(this).parent();
             el.removeClass('active');
@@ -410,5 +410,63 @@
                 });
 
             console.log('You just closed marker with marker_id ' + el.data('marker_id'));
+        })
+        .on('click touchstart', '.map__group', function() {
+            var el = $(this);
+
+            if (el.hasClass('active')) {
+                return;
+            }
+
+            var pMap = el.parents('.map');
+
+            pMap.find('.map__marker').removeClass('active');
+            pMap.find('.map__group').removeClass('active');
+
+            $('.map__heading').addClass('active');
+            el.addClass('active');
+
+            $.ajax({
+                url: 'model-map-ajax-example.html',
+                type: 'GET',
+                success: function(data) {
+                    var model = $('.map__content').last().html('');
+
+                    el.data('group_id').split(',').forEach(function(item) {
+                        model
+                            .append(data)
+                            .children()
+                            .last()
+                            .attr('id', 'group-' + item);
+
+                        modelPreviewInit(model); // init effects slider, etc.
+                    });
+                }
+            });
+
+            console.log('You just clicked on marker with group_id ' + el.data('group_id'));
+        })
+        .on('click touchstart', '.map__group .close', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            var el = $(this).parent();
+            el.removeClass('active');
+
+            var mapHeading = $('.map__heading'),
+                mapContent = $('.map__content'),
+                ids = el.data('group_id').split(',');
+
+                ids.forEach(function(item) {
+                    mapContent.find('#group-' + item)
+                        .slideUp(250, function() {
+                            $(this).remove();
+
+                            if (!mapContent.last().children().length) {
+                                mapHeading.removeClass('active');
+                            }
+                        });
+                });
+
+            console.log('You just closed marker with group ' + el.data('group_id'));
         });
 })();
