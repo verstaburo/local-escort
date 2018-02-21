@@ -7,7 +7,10 @@ export default function modelMap() {
     }
 
     modelMap.height($(window).height() - header.outerHeight());
+
     modelMap.find('.map__content').scrollbar({ scrollx: false });
+
+
     modelMap.find('.map__marker, .map__group').fadeIn(250);
 }
 
