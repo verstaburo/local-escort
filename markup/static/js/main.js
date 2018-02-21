@@ -1,5 +1,6 @@
 import svg4everybody from 'svg4everybody';
 import objectFitImages from 'object-fit-images';
+import './jquery.pointer-events-polyfill.min';
 import filter from '../../components/filter/filter';
 import searchBar from '../../components/search-bar/search-bar';
 import modelPreview from '../../components/model-preview/model-preview';
@@ -95,6 +96,7 @@ $(() => {
      */
     $('.js-phone-mask').inputmask('(999) 999-9999');
 
+    window.pointerEventsPolyfill();
 
     svg4everybody();
     objectFitImages();

@@ -12,9 +12,6 @@ mixin boost-preview(img, heading, description, credits, hasBtn)
                 != pugHelpers.Icon.call(locals, {iconName: 'currency',className: 'boost-preview__icon',iconWidth: '14',iconHeight: '13'})
             if hasBtn
                 +e.buttons
-                    +e.A(href='#').btn._main
-                        span more
-
                     +e.A(href='boost-account-payment.html').btn
                         span Select
 
