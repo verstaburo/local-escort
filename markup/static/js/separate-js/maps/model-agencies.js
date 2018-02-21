@@ -300,8 +300,13 @@
         avatars = ['navbar', 'andrew', 'anya', 'jackson', 'john', 'mika', 'miya', 'sarah'];
 
     // generate markers
-    for (var i = 0; i < 500; i++) {
+    for (var i = 0; i < 30; i++) {
         locations.push(new google.maps.LatLng(rand(40.76163), rand(-73.97486600000002)));
+    }
+
+    // generate markers
+    for (var i = 0; i < 30; i++) {
+        locations.push(new google.maps.LatLng(rand(30.76163), rand(-53.97486600000002)));
     }
 
     var markers = locations.map(function(loc, i) {

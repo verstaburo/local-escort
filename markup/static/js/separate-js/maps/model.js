@@ -301,7 +301,7 @@
         avatars = ['navbar', 'andrew', 'anya', 'jackson', 'john', 'mika', 'miya', 'sarah'];
 
     // generate markers
-    for (var i = 0; i < 500; i++) {
+    for (var i = 0; i < 50; i++) {
         locations.push(new google.maps.LatLng(rand(40.76163), rand(-73.97486600000002)));
     }
 
@@ -339,10 +339,16 @@
     group2.add('static/img/content/avatars/mika.png', generateId());
     group2.add('static/img/content/avatars/miya.png', generateId());
 
+    var group5 = new CustomGroup(new google.maps.LatLng(45.2158986, 32.9285052), map);
+    group2.add('static/img/content/avatars/navbar.png', generateId());
+    group2.add('static/img/content/avatars/mika.png', generateId());
+    group2.add('static/img/content/avatars/miya.png', generateId());
+
     markers.push(group1);
     markers.push(group2);
     markers.push(group3);
     markers.push(group4);
+    markers.push(group5);
 
     new MarkerClusterer(
         map,
