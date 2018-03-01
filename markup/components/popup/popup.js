@@ -104,18 +104,18 @@ export default function popup() {
         const el = $(this);
         const action = el.data(DATA_ACTION_ATTR);
 
-        el.css({
-            pointerEvents: 'none',
-            cursor: 'not-allowed',
-            opacity: 0.5,
-        }).attr('disabled', 'disabled');
+        // el.css({
+        //     pointerEvents: 'none',
+        //     cursor: 'not-allowed',
+        //     opacity: 0.5,
+        // }).attr('disabled', 'disabled');
 
         loadTemplate(el.data(DATA_ATTR), el.data(DATA_TEMPLATE_URL)).then(popup => {
-            el.css({
-                pointerEvents: '',
-                cursor: '',
-                opacity: '',
-            }).attr('disabled', 'enabled');
+            // el.css({
+            //     pointerEvents: '',
+            //     cursor: '',
+            //     opacity: '',
+            // }).attr('disabled', 'enabled');
 
             if (!popup.length) {
                 return;

@@ -7,7 +7,7 @@ export default function rangeSlider() {
 
     $('.range-slider__input').autoGrowInput({ minWidth: 10, maxWidth: 60, comfortZone: 5 });
 
-    blocks.each(function() {
+    blocks.each(function () {
         const block = $(this);
         const slider = block.find('.range-slider__slider');
         const name = block.data('name');
