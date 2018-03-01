@@ -1,6 +1,6 @@
 function setInputValues(el, multiplier = 1) {
     const val = Number(el.data('initial-value')) * multiplier;
-    el.val(Math.round(val).trigger('change'));
+    el.val(Math.round(val)).trigger('change');
 }
 
 function setSelectValues(el, multiplier) {
@@ -28,14 +28,14 @@ function setRangeSliderValues(el, multiplier) {
     const slider = el.find('.range-slider__slider');
 
     slider
-        .slider('option', 'min', min)
-        .slider('option', 'max', max);
+        .slider('option', 'min', Math.round(min))
+        .slider('option', 'max', Math.round(max));
 
     const minControl = el.find('.range-slider__input[data-type="min"]');
     const maxControl = el.find('.range-slider__input[data-type="max"]');
 
-    minControl.val(Math.round(min).trigger('change').trigger('input'));
-    maxControl.val(Math.round(max).trigger('change').trigger('input'));
+    minControl.val(Math.round(min)).trigger('change').trigger('input');
+    maxControl.val(Math.round(max)).trigger('change').trigger('input');
 }
 
 function selectToRangeConnector(el, target) {
