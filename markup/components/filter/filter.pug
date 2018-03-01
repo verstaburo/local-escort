@@ -394,11 +394,10 @@ mixin filter-extended(dark)
                                     +range-slider-text('uuuutewbqbxqbw1', true)(data-type='min')
                                     +range-slider-text('uuuutewbqbxqbw1', true)(data-type='max')
                                 +selectbox._small
-                                    +selectbox-control(name='height')
-                                        option(value='1') cm
-                                        option(value='2') in
-                                        option(value='3') ft
-                            +range-slider(135, 195, 'uuuutewbqbxqbw1')(class=RangeModifier).js-range-modifiers
+                                    +selectbox-control(name='height' data-switcher-id="#uuuutewbqbxqbw1")
+                                        option(value='cm' selected data-multiplier="1") cm
+                                        option(value='inch' data-multiplier="0.393700787") inch
+                            +range-slider(135, 195, 'uuuutewbqbxqbw1')(class=RangeModifier data-initial-min="135" data-initial-max="195")#uuuutewbqbxqbw1.js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
                                         +range-slider-input(data-type='min' name='height-min' value=135)
@@ -415,10 +414,10 @@ mixin filter-extended(dark)
                                     +range-slider-text('hynvzqkjkwhvbqw125v', true)(data-type='min')
                                     +range-slider-text('hynvzqkjkwhvbqw125v', true)(data-type='max')
                                 +selectbox._small
-                                    +selectbox-control(name='weight')
-                                        option(value='1') kg
-                                        option(value='2') lb
-                            +range-slider(40, 200, 'hynvzqkjkwhvbqw125v')(class=RangeModifier).js-range-modifiers
+                                    +selectbox-control(name='weight' data-switcher-id="#hynvzqkjkwhvbqw125v")
+                                        option(value='kg' data-multiplier="1") kg
+                                        option(value='lbs' data-multiplier="2.20462") lbs
+                            +range-slider(40, 200, 'hynvzqkjkwhvbqw125v')(class=RangeModifier data-initial-min="40" data-initial-max="200")#hynvzqkjkwhvbqw125v.js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
                                         +range-slider-input(data-type='min' name='weight-min' value=40)

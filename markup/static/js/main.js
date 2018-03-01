@@ -45,6 +45,7 @@ import navbar from "../../components/navbar/navbar";
 import changeCurrency from "../../components/user-fill-profile/changeCurrency";
 import checkbox from "../../components/checkbox/checkbox";
 import addInput from "../../components/add-input/add-input";
+import selectToRangeConnector from "./selectToRangeConnector";
 import "../../components/fill-profile-nav/fill-profile-nav";
 import './jquery.inputmask.bundle';
 
@@ -143,6 +144,7 @@ $(() => {
     modelList();
     rating();
     list();
+    selectToRangeConnector();
 
     $('.js-datepicker').datepicker({ autoHide: true });
 });

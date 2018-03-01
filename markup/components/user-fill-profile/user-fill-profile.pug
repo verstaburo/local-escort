@@ -163,34 +163,34 @@ mixin user-fill-profile-2
                         +field-label
                             | Height
                             +selectbox._small
-                                +selectbox-control
-                                    option(value='1') cm
-                                    option(value='2') in
+                                +selectbox-control(data-switcher-id="#ixul9q1rfp")
+                                    option(value='cm' selected data-multiplier="1") cm
+                                    option(value='inch' data-multiplier="0.393700787") inch
                         +selectbox
-                            +selectbox-control(name='height')
-                                option(value='160') 160
-                                option(value='165') 165
-                                option(value='170') 170
-                                option(value='175' selected) 175
-                                option(value='180') 180
-                                option(value='185') 185
-                                option(value='190') 190
+                            +selectbox-control(name='height')#ixul9q1rfp
+                                option(value='160' data-initial-value="160") 160
+                                option(value='165' data-initial-value="165") 165
+                                option(value='170' data-initial-value="170") 170
+                                option(value='175' selected data-initial-value="175") 175
+                                option(value='180' data-initial-value="180") 180
+                                option(value='185' data-initial-value="185") 185
+                                option(value='190' data-initial-value="190") 190
                 +col(4)
                     +field
                         +field-label
                             | Weight
                             +selectbox._small
-                                +selectbox-control
-                                    option(value='1') kg
-                                    option(value='2') pd
+                                +selectbox-control(data-switcher-id="#ev2g13xb8a")
+                                    option(value='kg' selected data-multiplier="1") kg
+                                    option(value='lbs' data-multiplier="2.20462") lbs
                         +selectbox
-                            +selectbox-control(name='weight')
-                                option(value='40') 40
-                                option(value='45') 45
-                                option(value='50') 50
-                                option(value='55' selected) 55
-                                option(value='60') 60
-                                option(value='65') 65
+                            +selectbox-control(name='weight' data-switcher-id="#ev2g13xb8a")
+                                option(value='40' data-initial-value="40") 40
+                                option(value='45' data-initial-value="45") 45
+                                option(value='50' data-initial-value="50") 50
+                                option(value='55' selected data-initial-value="55") 55
+                                option(value='60' data-initial-value="60") 60
+                                option(value='65' data-initial-value="65") 65
                 +col(4)
                     +field
                         +field-label Hair color
