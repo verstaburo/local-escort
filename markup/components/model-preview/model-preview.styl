@@ -102,7 +102,7 @@
             opacity 1
             pointer-events none
 
-        +below(767px)
+        +below(768px)
             .cutoff &
                 opacity 1
 
@@ -125,7 +125,7 @@
             m-transition(opacity)
             pointer-events: none
 
-            +below(767px)
+            +below(768px)
                 opacity .2
 
     &__info
@@ -137,6 +137,9 @@
         display: block
         position: relative
         z-index: 21
+
+        &:hover
+            z-index: 111;
 
     &__actions
         position: absolute
@@ -234,7 +237,7 @@
         opacity: 0
         m-transition(opacity)
 
-        +below(767px)
+        +below(768px)
             opacity 1
 
         .swiper-pagination-bullet

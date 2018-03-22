@@ -40,6 +40,8 @@ export default function popup() {
     const onShow = function (e) {
         const popup = $(this);
 
+        popup.css('pointer-events', 'none');
+
         if (popup.hasClass(ACTIVE_POPUP_CLASS)) {
             return;
         }
@@ -51,7 +53,7 @@ export default function popup() {
         }
 
         popup.fadeIn(ANIMATION_DURATION, () => {
-            popup.addClass(ACTIVE_POPUP_CLASS);
+            popup.addClass(ACTIVE_POPUP_CLASS).css('pointer-events', '');
 
             getCurrentPopupButtons('#' + popup.attr('id')).addClass('active');
             freeze();
@@ -181,6 +183,6 @@ export default function popup() {
         .on(HIDE_EVENT, POPUP_CLASS, onHide)
         .on('click touchstart', TOGGLE_BTN_CLASS, onToggleBtnClick)
         .on('click touchstart', POPUP_CLASS, onWrapperClick)
-        .on('click touchstart', CLOSE_BTN_CLASS, onCloseBtnClick)
+        .on('click touchstart', `${CLOSE_BTN_CLASS}, .js-popup-close`, onCloseBtnClick)
         .on('keyup', onEscapeHandler);
 }

@@ -172,6 +172,30 @@ $(document).on('click', '.model-preview__action_info', function (e) {
         popup.css('margin-top', 0);
 
     } else {
+        // закрыть все попапы
+        $('.model-preview__popup.active').each(function () {
+            const sPopup = $(this);
+            const sBtn = sPopup.parents('.model-preview__footer').find('.model-preview__action_info');
+            const sFullinfo = sPopup.find('.model-preview__fullinfo');
+
+            sBtn.removeClass('active');
+
+            sPopup
+                .removeClass('active')
+                .parents('.model-preview')
+                .removeClass('active');
+
+            sFullinfo
+                .animate({ maxHeight: 0 }, () => {
+                    sFullinfo.css({
+                        maxHeight: '',
+                        display: ''
+                    });
+                });
+
+            sPopup.css('margin-top', 0);
+        });
+
         btn.addClass('active');
 
         const clone = fullinfo
@@ -233,6 +257,30 @@ $(document).on('click', '.js-show-profile-popup', (e) => {
         id: '#profile-popup',
         template: 'popups/profile-popup.html'
     });
+});
+
+$(document).on('click', '.model-preview__popup .close', function (e) {
+    const self = $(this);
+    const popup = self.parents('.model-preview__footer').find('.model-preview__popup');
+    const btn = self.parents('.model-preview__footer').find('.model-preview__action_info');
+    const fullinfo = popup.find('.model-preview__fullinfo');
+
+    btn.removeClass('active');
+
+    popup
+        .removeClass('active')
+        .parents('.model-preview')
+        .removeClass('active');
+
+    fullinfo
+        .animate({ maxHeight: 0 }, () => {
+            fullinfo.css({
+                maxHeight: '',
+                display: ''
+            });
+        });
+
+    popup.css('margin-top', 0);
 });
 
 window.modelPreviewInit = modelPreview;
