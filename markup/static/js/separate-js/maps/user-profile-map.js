@@ -287,7 +287,7 @@ window.userProfileMap = function() {
 
     var modelMap = $('#model-map');
     // hide google logo etc
-    setTimeout(() => {
+    setTimeout(function() {
         // hide google logo etc
         modelMap.find('.gm-style-cc').hide();
         modelMap.find('.gmnoprint ').hide();
