@@ -1,5 +1,5 @@
-window.userProfileMap = function() {
-    var el = document.getElementById('user-fill-profile-map');
+window.userProfileMap = function(element) {
+    var el = element || document.getElementById('user-fill-profile-map');
 
     if (!el) {
         return;
@@ -268,7 +268,7 @@ window.userProfileMap = function() {
     });
 
     // search addr
-    var input = document.querySelector('.js-map-addr-input');
+    var input = $(el).parents('.grid').find('.js-map-addr-input')[0];
     var geocoder = new google.maps.Geocoder;
 
     if ('geolocation' in navigator) {
