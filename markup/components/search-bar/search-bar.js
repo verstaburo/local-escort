@@ -44,12 +44,12 @@ export default function searchBar() {
 
     input.on('blur', closeSearchbar);
 
-    close.on('click', (e) => {
+    close.on('click touchstart', (e) => {
         e.preventDefault();
         closeSearchbar();
     });
 
-    $(document).on('click', (e) => {
+    $(document).on('click touchstart', (e) => {
         const self = $(e.target);
 
         if (self.hasClass('search-bar') || self.parents('.search-bar')) {

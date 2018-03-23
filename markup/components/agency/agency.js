@@ -8,10 +8,10 @@ export default function agency() {
 
        if (isActive) {
             el.removeClass('active');
-            content.slideUp();
+            content.fadeOut(250);
        } else {
            el.addClass('active');
-           content.slideDown();
+           content.fadeIn(250);
        }
     });
 }
