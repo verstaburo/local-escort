@@ -40,7 +40,7 @@ $(window).on('load', function() {
 
 $(window).on('resize', setMessagesHeight);
 
-$(document).on('click', '.user-messages__send-activation', (evt) => {
+$(document).on('click touchstart', '.user-messages__send-activation', (evt) => {
     const self = evt.target;
     const form = $(self).siblings('.send-form');
     const newHeight = form.outerHeight();
