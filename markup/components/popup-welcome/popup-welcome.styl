@@ -58,7 +58,7 @@
         margin-top 37px
 
         +below(768px)
-            flex-direction column
+            display block
 
         +below(540px)
             margin-top: 20px
@@ -80,6 +80,10 @@
         &:not(:first-child)
             +below(768px)
                 margin-top 10px
+
+        &:last-child
+            +below(768px)
+                margin-bottom 10px
 
     &__count-info
         border-left 1px solid transparent
