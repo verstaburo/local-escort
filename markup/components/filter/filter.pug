@@ -14,7 +14,7 @@ mixin filter()
         +container.filter__container
             +e.col
                 +selectbox
-                    +selectbox-control(name='escorts')
+                    +selectbox-control(name='categories' data-filter-element="filter-categories")
                         option(value='escorts') escorts
                         option(value='item1') item 1
                         option(value='item2') item 2
@@ -24,26 +24,26 @@ mixin filter()
                 +range-slider(18, 48, 'qfwe12baszadv')
                     +range-slider-fields
                         +range-slider-field
-                            +range-slider-input(data-type='min' name='age-min' value=18)
+                            +range-slider-input(data-type='min' name='age-min' value=18 data-filter-element="filter-age")
                             +range-slider-text('qfwe12baszadv')(data-type='min') y.o
                         +range-slider-field
-                            +range-slider-input(data-type='max' name='age-max' value=48)
+                            +range-slider-input(data-type='max' name='age-max' value=48 data-filter-element="filter-age")
                             +range-slider-text('qfwe12baszadv')(data-type='max') y.o
                     +range-slider-control
             +e.col
                 +range-slider(135, 195, 'vy4128z1231b3')
                     +range-slider-fields
                         +range-slider-field
-                            +range-slider-input(data-type='min' name='cost-min' value=135)
+                            +range-slider-input(data-type='min' name='cost-min' value=135 data-filter-element="filter-rate")
                             +range-slider-text('vy4128z1231b3')(data-type='min') $
                         +range-slider-field
-                            +range-slider-input(data-type='max' name='cost-max' value=195)
+                            +range-slider-input(data-type='max' name='cost-max' value=195 data-filter-element="filter-rate")
                             +range-slider-text('vy4128z1231b3')(data-type='max') $
                     +range-slider-control
 
             +e.col
                 +selectbox
-                    +selectbox-control(name='escorts')
+                    +selectbox-control(name='categories' data-filter-element="filter-categories")
                         option(value='escorts') escorts
                         option(value='item1') item 1
                         option(value='item2') item 2
@@ -61,7 +61,7 @@ mixin filter-additional()
                     +grid.grid_items_center
                         +col(6).filter-additional__rating-heading
                             +heading._md._color_white Rating
-                            +rating-interactive(5)._dark
+                            +rating-interactive(5)(data-filter-element="filter-rating")._dark
                         +col(6).grid__col_align_right.hide-mob
                             +e.SPAN.sublabel Select minimum stars rating
             +e.row
@@ -72,7 +72,7 @@ mixin filter-additional()
                         +field
                             +field-label._grey Nationality
                             +selectbox._deep-dark
-                                +selectbox-control(name='nationality')
+                                +selectbox-control(name='nationality' data-filter-element="filter-nationality")
                                     option(value='any') any
                                     option(value='item1') item 1
                                     option(value='item2') item 2
@@ -81,7 +81,7 @@ mixin filter-additional()
                         +field
                             +field-label._grey Language
                             +selectbox._deep-dark
-                                +selectbox-control(name='language')
+                                +selectbox-control(name='language' data-filter-element="filter-language")
                                     option(value='any') any
                                     option(value='item1') item 1
                                     option(value='item2') item 2
@@ -90,7 +90,7 @@ mixin filter-additional()
                         +field
                             +field-label._grey Hair color
                             +selectbox._deep-dark
-                                +selectbox-control(name='hair_color')
+                                +selectbox-control(name='hair_color' data-filter-element="filter-hair-color")
                                     option(value='any') any
                                     option(value='item1') item 1
                                     option(value='item2') item 2
@@ -99,7 +99,7 @@ mixin filter-additional()
                         +field
                             +field-label._grey Eye color
                             +selectbox._deep-dark
-                                +selectbox-control(name='eye_color')
+                                +selectbox-control(name='eye_color' data-filter-element="filter-eye-color")
                                     option(value='any') any
                                     option(value='item1') item 1
                                     option(value='item2') item 2
@@ -113,10 +113,10 @@ mixin filter-additional()
                             +range-slider(32, 40, 'sdvasd1231qwe')._dark
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(data-type='min' name='breast-min' value=32)
+                                        +range-slider-input(data-type='min' name='breast-min' value=32 data-filter-element="filter-breast-size")
                                         +range-slider-text('sdvasd1231qwe')(data-type='min') A
                                     +range-slider-field
-                                        +range-slider-input(data-type='max' name='breast-max' value=40)
+                                        +range-slider-input(data-type='max' name='breast-max' value=40 data-filter-element="filter-breast-size")
                                         +range-slider-text('sdvasd1231qwe')(data-type='max') FF
                                 +range-slider-control
                     +col(3)
@@ -128,10 +128,10 @@ mixin filter-additional()
                             +range-slider(34, 45, 'sdvasd1231qwe1')._dark
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(data-type='min' name='shoe-min' value=34)
+                                        +range-slider-input(data-type='min' name='shoe-min' value=34 data-filter-element="filter-shoe-size")
                                         +range-slider-text('sdvasd1231qwe1')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(data-type='max' name='shoe-max' value=45)
+                                        +range-slider-input(data-type='max' name='shoe-max' value=45 data-filter-element="filter-shoe-size")
                                         +range-slider-text('sdvasd1231qwe1')(data-type='max')
                                 +range-slider-control
             +e.row
@@ -140,157 +140,158 @@ mixin filter-additional()
                         +heading._md._color_white Service for
 
                     +col(2)
-                        +checkbox(false, 'service-for', 'men')._black Men
+                        +checkbox(false, 'service-for', 'men', 'filter-service-for-men')._black Men
                     +col(2)
-                        +checkbox(false, 'service-for', 'women')._black Women
+                        +checkbox(false, 'service-for', 'women', 'filter-service-for-women')._black Women
                     +col(2)
-                        +checkbox(false, 'service-for', 'couples')._black Couples
+                        +checkbox(false, 'service-for', 'couples', 'filter-service-for-couples')._black Couples
                     +col(2)
-                        +checkbox(false, 'service-for', 'trans')._black Trans
+                        +checkbox(false, 'service-for', 'trans', 'filter-service-for-trans')._black Trans
                     +col(2)
-                        +checkbox(false, 'service-for', 'gays')._black Gays
+                        +checkbox(false, 'service-for', 'gays', 'filter-service-for-gays')._black Gays
                     +col(2)
-                        +checkbox(false, 'service-for', '2+')._black 2+
+                        +checkbox(false, 'service-for', '2+', 'filter-service-for-2plus')._black 2+
+
             +accordion.accordion_dark
                 +accordion-item('Keywords', 'Show', 'Hide').filter-additional__keywords
                     +grid
                         +col(2)
-                            +checkbox(true, 'keywords', 'vip_companion')._black Vip Companion
+                            +checkbox(true, 'keywords', 'vip_companion', 'filter-keywords-vip-companion')._black Vip Companion
                         +col(2)
-                            +checkbox(true, 'keywords', 'muscular')._black Muscular
+                            +checkbox(true, 'keywords', 'muscular', 'filter-keywords-muscular')._black Muscular
                         +col(2)
-                            +checkbox(false, 'keywords', 'model_ex-model')._black Model/Ex-model
+                            +checkbox(false, 'keywords', 'model_ex-model', 'filter-keywords-model_ex-model')._black Model/Ex-model
                         +col(2)
-                            +checkbox(false, 'keywords', 'occasional')._black Occasional
+                            +checkbox(false, 'keywords', 'occasional', 'filter-keywords-occasional')._black Occasional
                         +col(2)
-                            +checkbox(false, 'keywords', 'super-busty')._black Super busty
+                            +checkbox(false, 'keywords', 'super-busty', 'filter-keywords-super-busty')._black Super busty
                         +col(2)
-                            +checkbox(false, 'keywords', 'super-booty')._black Super booty
+                            +checkbox(false, 'keywords', 'super-booty', 'filter-keywords-wwwwsuper-bootywww')._black Super booty
                         +col(2)
-                            +checkbox(false, 'keywords', 'petite')._black Petite
+                            +checkbox(false, 'keywords', 'petite', 'filter-keywords-petite')._black Petite
                         +col(2)
-                            +checkbox(false, 'keywords', 'all-natural')._black All natural
+                            +checkbox(false, 'keywords', 'all-natural', 'filter-keywords-all-natural')._black All natural
                         +col(2)
-                            +checkbox(false, 'keywords', 'college-girl')._black College girl
+                            +checkbox(false, 'keywords', 'college-girl', 'filter-keywords-college-girl')._black College girl
                         +col(2)
-                            +checkbox(false, 'keywords', 'bbw')._black BBW
+                            +checkbox(false, 'keywords', 'bbw', 'filter-keywords-bbw')._black BBW
                         +col(2)
-                            +checkbox(false, 'keywords', 'fitness-girl')._black Fitness girl
+                            +checkbox(false, 'keywords', 'fitness-girl', 'filter-keywords-fitness-girl')._black Fitness girl
                         +col(2)
-                            +checkbox(false, 'keywords', 'mature')._black Mature
+                            +checkbox(false, 'keywords', 'mature', 'filter-keywords-mature')._black Mature
 
                 +accordion-item('Services', 'Show', 'Hide').filter-additional__services
                     +grid
                         +col(12)
                             +heading._md._color_white Sex
                         +col(3)
-                            +checkbox(false, 'services-sex', 'classical-sex')._black Classical sex
+                            +checkbox(false, 'services-sex', 'classical-sex', 'filter-services-sex-classical-sex')._black Classical sex
                         +col(3)
-                            +checkbox(false, 'services-sex', 'sex')._black Sex
+                            +checkbox(false, 'services-sex', 'sex', 'filter-services-sex-sex')._black Sex
                         +col(3)
-                            +checkbox(false, 'services-sex', 'deep-throating')._black Deep throating
+                            +checkbox(false, 'services-sex', 'deep-throating', 'filter-services-sex-deep-throating')._black Deep throating
                         +col(3)
-                            +checkbox(false, 'services-sex', 'cum-of-face')._black Cum of face
+                            +checkbox(false, 'services-sex', 'cum-of-face', 'filter-services-sex-cum-of-face')._black Cum of face
                         +col(3)
-                            +checkbox(false, 'services-sex', 'anal-sex')._black Anal sex
+                            +checkbox(false, 'services-sex', 'anal-sex', 'filter-services-sex-anal-sex')._black Anal sex
                         +col(3)
-                            +checkbox(false, 'services-sex', 'bj-with-condom')._black BJ with condom
+                            +checkbox(false, 'services-sex', 'bj-with-condom', 'filter-services-sex-bj-with-condom')._black BJ with condom
                         +col(3)
-                            +checkbox(false, 'services-sex', 'bj-in-your-car')._black BJ in your car
+                            +checkbox(false, 'services-sex', 'bj-in-your-car', 'filter-services-sex-bj-in-your-car')._black BJ in your car
                         +col(3)
-                            +checkbox(false, 'services-sex', 'cum-in-mouth')._black Cum in mouth
+                            +checkbox(false, 'services-sex', 'cum-in-mouth', 'filter-services-sex-cum-in-mouth')._black Cum in mouth
                         +col(3)
-                            +checkbox(false, 'services-sex', 'lesbian-sex')._black Lesbian sex
+                            +checkbox(false, 'services-sex', 'lesbian-sex', 'filter-services-sex-lesbian-sex')._black Lesbian sex
                         +col(3)
-                            +checkbox(false, 'services-sex', 'cunnilingus')._black Cunnilingus
+                            +checkbox(false, 'services-sex', 'cunnilingus', 'filter-services-sex-cunnilingus')._black Cunnilingus
                         +col(3)
-                            +checkbox(false, 'services-sex', 'sex-toys')._black Sex toys
+                            +checkbox(false, 'services-sex', 'sex-toys', 'filter-services-sex-sex-toys')._black Sex toys
                         +col(3)
-                            +checkbox(false, 'services-sex', 'classical-sex')._black Classical sex
+                            +checkbox(false, 'services-sex', 'classical-sex', 'filter-services-sex-classical-sex')._black Classical sex
                         +col(3)
-                            +checkbox(false, 'services-sex', 'couples')._black Couples
+                            +checkbox(false, 'services-sex', 'couples', 'filter-services-sex-couples')._black Couples
                         +col(3)
-                            +checkbox(false, 'services-sex', 'bj-without-condoms')._black BJ without condoms
+                            +checkbox(false, 'services-sex', 'bj-without-condoms', 'filter-services-sex-bj-without-condoms')._black BJ without condoms
                         +col(3)
-                            +checkbox(false, 'services-sex', 'cum-on-breast')._black Cum on breast
+                            +checkbox(false, 'services-sex', 'cum-on-breast', 'filter-services-sex-cum-on-breast')._black Cum on breast
                     +grid
                         +col(12)
                             +heading._md._color_white Massage
                         +col(3)
-                            +checkbox(false, 'services-message', 'classic')._black Classic
+                            +checkbox(false, 'services-massage', 'classic', 'filter-services-massage-classic')._black Classic
                         +col(3)
-                            +checkbox(false, 'services-message', 'relaxing')._black Relaxing
+                            +checkbox(false, 'services-massage', 'relaxing', 'filter-services-massage-relaxing')._black Relaxing
                         +col(3)
-                            +checkbox(false, 'services-message', 'urological')._black Urological
+                            +checkbox(false, 'services-massage', 'urological', 'filter-services-massage-urological')._black Urological
                         +col(3)
-                            +checkbox(false, 'services-message', 'erotic')._black Erotic
+                            +checkbox(false, 'services-massage', 'erotic', 'filter-services-massage-erotic')._black Erotic
                         +col(3)
-                            +checkbox(false, 'services-message', 'professional')._black Professional
+                            +checkbox(false, 'services-massage', 'professional', 'filter-services-massage-professional')._black Professional
                         +col(3)
-                            +checkbox(false, 'services-message', 'thai')._black Thai
+                            +checkbox(false, 'services-massage', 'thai', 'filter-services-massage-thai')._black Thai
                         +col(3)
-                            +checkbox(false, 'services-message', 'specific-area')._black Specific area
+                            +checkbox(false, 'services-massage', 'specific-area', 'filter-services-massage-specific-area')._black Specific area
                         +col(3)
-                            +checkbox(false, 'services-message', 'sakura')._black Sakura
+                            +checkbox(false, 'services-massage', 'sakura', 'filter-services-massage-sakura')._black Sakura
                     +grid
                         +col(12)
                             +heading._md._color_white Striptease
                         +col(3)
-                            +checkbox(false, 'services-striptease', 'professional')._black professional
+                            +checkbox(false, 'services-striptease', 'professional', 'filter-services-striptease-professional')._black professional
                         +col(3)
-                            +checkbox(false, 'services-striptease', 'amateur')._black amateur
+                            +checkbox(false, 'services-striptease', 'amateur', 'filter-services-striptease-amateur')._black amateur
                         +col(3)
-                            +checkbox(false, 'services-striptease', 'hardcore-lesbi-show')._black Hardcore Lesbi-show
+                            +checkbox(false, 'services-striptease', 'hardcore-lesbi-show', 'filter-services-striptease-hardcore-lesbi-show')._black Hardcore Lesbi-show
                         +col(3)
-                            +checkbox(false, 'services-striptease', 'soft-lesbi-show')._black Soft Lesbi-show
+                            +checkbox(false, 'services-striptease', 'soft-lesbi-show', 'filter-services-striptease-soft-lesbi-show')._black Soft Lesbi-show
 
                     +grid
                         +col(12)
                             +heading._md._color_white BDSM
                         +col(3)
-                            +checkbox(false, 'services-bdsm', 'bandage')._black Bandage
+                            +checkbox(false, 'services-bdsm', 'bandage', 'filter-services-bdsm-bandage')._black Bandage
                         +col(3)
-                            +checkbox(false, 'services-bdsm', 'games')._black Games
+                            +checkbox(false, 'services-bdsm', 'games', 'filter-services-bdsm-games')._black Games
                         +col(3)
-                            +checkbox(false, 'services-bdsm', 'getting-whipped')._black Getting Whipped
+                            +checkbox(false, 'services-bdsm', 'getting-whipped', 'filter-services-bdsm-getting-whipped')._black Getting Whipped
                         +col(3)
-                            +checkbox(false, 'services-bdsm', 'fetish')._black Fetish
+                            +checkbox(false, 'services-bdsm', 'fetish', 'filter-services-bdsm-fetish')._black Fetish
                         +col(3)
-                            +checkbox(false, 'services-bdsm', 'mistress')._black Mistress
+                            +checkbox(false, 'services-bdsm', 'mistress', 'filter-services-bdsm-mistress')._black Mistress
                         +col(3)
-                            +checkbox(false, 'services-bdsm', 'softcore-dominaton')._black Softcore dominaton
+                            +checkbox(false, 'services-bdsm', 'softcore-dominaton', 'filter-services-bdsm-softcore-dominaton')._black Softcore dominaton
                         +col(3)
-                            +checkbox(false, 'services-bdsm', 'slave')._black Slave
+                            +checkbox(false, 'services-bdsm', 'slave', 'filter-services-bdsm-slave')._black Slave
                         +col(3)
-                            +checkbox(false, 'services-bdsm', 'trampling')._black Trampling
+                            +checkbox(false, 'services-bdsm', 'trampling', 'filter-services-bdsm-trampling')._black Trampling
 
                     +grid
                         +col(12)
                             +heading._md._color_white Extreme
                         +col(3)
-                            +checkbox(false, 'services-extreme', 'strapon')._black Strapon
+                            +checkbox(false, 'services-extreme', 'strapon', 'filter-services-extreme-strapon')._black Strapon
                         +col(3)
-                            +checkbox(false, 'services-extreme', 'golden-rain-give')._black Golden rain, give
+                            +checkbox(false, 'services-extreme', 'golden-rain-give', 'filter-services-extreme-golden-rain-give')._black Golden rain, give
                         +col(3)
-                            +checkbox(false, 'services-extreme', 'copro')._black copro
+                            +checkbox(false, 'services-extreme', 'copro', 'filter-services-extreme-copro')._black copro
                         +col(3)
-                            +checkbox(false, 'services-extreme', 'fisting')._black Fisting
+                            +checkbox(false, 'services-extreme', 'fisting', 'filter-services-extreme-fisting')._black Fisting
                         +col(3)
-                            +checkbox(false, 'services-extreme', 'anilingus')._black Anilingus
+                            +checkbox(false, 'services-extreme', 'anilingus', 'filter-services-extreme-anilingus')._black Anilingus
                         +col(3)
-                            +checkbox(false, 'services-extreme', 'golden-rain-receive')._black Golden rain, receive
+                            +checkbox(false, 'services-extreme', 'golden-rain-receive', 'filter-services-extreme-golden-rain-receive')._black Golden rain, receive
                         +col(3)
-                            +checkbox(false, 'services-extreme', 'anal-fisting')._black Anal fisting
+                            +checkbox(false, 'services-extreme', 'anal-fisting', 'filter-services-extreme-anal-fisting')._black Anal fisting
 
                     +grid
                         +col(12)
                             +heading._md._color_white Other
                         +col(3)
-                            +checkbox(false, 'services-other', 'role-play')._black Role play
+                            +checkbox(false, 'services-other', 'role-play', 'filter-services-other-role-play')._black Role play
                         +col(3)
-                            +checkbox(false, 'services-other', 'photo-video')._black Photo/Video
+                            +checkbox(false, 'services-other', 'photo-video', 'filter-services-other-photo-video')._black Photo/Video
                         +col(3)
-                            +checkbox(false, 'services-other', 'escort')._black Escort
+                            +checkbox(false, 'services-other', 'escort', 'filter-services-other-escort')._black Escort
 
             +grid
                 +col(3)
@@ -347,10 +348,10 @@ mixin filter-extended(dark)
                             +range-slider(18, 48, 'vqwe1llllgnwbre1')(class=RangeModifier).js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(data-type='min' name='age-min' value=18)
+                                        +range-slider-input(data-type='min' name='age-min' value=18 data-filter-element="filter-age")
                                         +range-slider-text('vqwe1llllgnwbre1')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(data-type='max' name='age-max' value=48)
+                                        +range-slider-input(data-type='max' name='age-max' value=48 data-filter-element="filter-age")
                                         +range-slider-text('vqwe1llllgnwbre1')(data-type='max')
                                 +range-slider-control
                     +col(3)
@@ -362,17 +363,17 @@ mixin filter-extended(dark)
                             +range-slider(135, 195, 'ihte1bxvhhwqqe')(class=RangeModifier).js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(data-type='min' name='cost-min' value=135)
+                                        +range-slider-input(data-type='min' name='cost-min' value=135 data-filter-element="filter-rate")
                                         +range-slider-text('ihte1bxvhhwqqe')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(data-type='max' name='cost-max' value=195)
+                                        +range-slider-input(data-type='max' name='cost-max' value=195 data-filter-element="filter-rate")
                                         +range-slider-text('ihte1bxvhhwqqe')(data-type='max')
                                 +range-slider-control
                     +col(3)
                         +field
                             +field-label Availability
                             +selectbox(class=SelectModifier).js-select-modifiers
-                                +selectbox-control(name='availability')
+                                +selectbox-control(name='availability' data-filter-element="filter-availability")
                                     option(value='all') All
                                     option(value='item1') item 1
                                     option(value='item2') item 2
@@ -381,7 +382,7 @@ mixin filter-extended(dark)
                         +field
                             +field-label Orientation
                             +selectbox(class=SelectModifier).js-select-modifiers
-                                +selectbox-control(name='orientation')
+                                +selectbox-control(name='orientation' data-filter-element="filter-orientation")
                                     option(value='all') All
                                     option(value='item1') item 1
                                     option(value='item2') item 2
@@ -394,16 +395,16 @@ mixin filter-extended(dark)
                                     +range-slider-text('uuuutewbqbxqbw1', true)(data-type='min')
                                     +range-slider-text('uuuutewbqbxqbw1', true)(data-type='max')
                                 +selectbox._small
-                                    +selectbox-control(name='height' data-switcher-id="#uuuutewbqbxqbw1")
+                                    +selectbox-control(name='height' data-switcher-id="#uuuutewbqbxqbw1" data-filter-element="filter-height-type")
                                         option(value='cm' selected data-multiplier="1") cm
                                         option(value='inch' data-multiplier="0.393700787") inch
                             +range-slider(135, 195, 'uuuutewbqbxqbw1')(class=RangeModifier data-initial-min="135" data-initial-max="195")#uuuutewbqbxqbw1.js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(data-type='min' name='height-min' value=135)
+                                        +range-slider-input(data-type='min' name='height-min' value=135 data-filter-element="filter-height")
                                         +range-slider-text('uuuutewbqbxqbw1')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(data-type='max' name='height-max' value=195)
+                                        +range-slider-input(data-type='max' name='height-max' value=195 data-filter-element="filter-height")
                                         +range-slider-text('uuuutewbqbxqbw1')(data-type='max')
                                 +range-slider-control
                     +col(3)
@@ -414,40 +415,40 @@ mixin filter-extended(dark)
                                     +range-slider-text('hynvzqkjkwhvbqw125v', true)(data-type='min')
                                     +range-slider-text('hynvzqkjkwhvbqw125v', true)(data-type='max')
                                 +selectbox._small
-                                    +selectbox-control(name='weight' data-switcher-id="#hynvzqkjkwhvbqw125v")
+                                    +selectbox-control(name='weight' data-switcher-id="#hynvzqkjkwhvbqw125v" data-filter-element="filter-weight-type")
                                         option(value='kg' data-multiplier="1") kg
                                         option(value='lbs' data-multiplier="2.20462") lbs
                             +range-slider(40, 200, 'hynvzqkjkwhvbqw125v')(class=RangeModifier data-initial-min="40" data-initial-max="200")#hynvzqkjkwhvbqw125v.js-range-modifiers
                                 +range-slider-fields
                                     +range-slider-field
-                                        +range-slider-input(data-type='min' name='weight-min' value=40)
+                                        +range-slider-input(data-type='min' name='weight-min' value=40 data-filter-element="filter-weight")
                                         +range-slider-text('hynvzqkjkwhvbqw125v')(data-type='min')
                                     +range-slider-field
-                                        +range-slider-input(data-type='max' name='weight-max' value=200)
+                                        +range-slider-input(data-type='max' name='weight-max' value=200 data-filter-element="filter-weight")
                                         +range-slider-text('hynvzqkjkwhvbqw125v')(data-type='max')
                                 +range-slider-control
                     +col(3)
                         +field
                             +field-label Ethnicity
                             +selectbox(class=SelectModifier).js-select-modifiers
-                                +selectbox-control(name='ethnicity')
+                                +selectbox-control(name='ethnicity' data-filter-element="filter-ethnicity")
                                     option(value='all') All
                                     option(value='item1') item 1
                                     option(value='item2') item 2
                                     option(value='item3') item 3
                 +grid.filter__checkboxes
                     +col(2)
-                        +checkbox(true, 'verified', 1)(class=CheckboxModifier).js-checkbox-modifiers Verified
+                        +checkbox(true, 'additional-params', 'verified', "filter-verified")(class=CheckboxModifier).js-checkbox-modifiers Verified
                     +col(2)
-                        +checkbox(true, 'top_100', 1)(class=CheckboxModifier).js-checkbox-modifiers TOP 100
+                        +checkbox(true, 'additional-params', 'top100', "filter-top100")(class=CheckboxModifier).js-checkbox-modifiers TOP 100
                     +col(2)
-                        +checkbox(true, 'with_video', 1)(class=CheckboxModifier).js-checkbox-modifiers With Video
+                        +checkbox(true, 'additional-params', 'with video', "filter-with-video")(class=CheckboxModifier).js-checkbox-modifiers With Video
                     +col(2)
-                        +checkbox(false, 'porn_star', 1)(class=CheckboxModifier).js-checkbox-modifiers Porn Star
+                        +checkbox(false, 'additional-params', 'porn star', "filter-porn-star")(class=CheckboxModifier).js-checkbox-modifiers Porn Star
                     +col(2)
-                        +checkbox(false, 'on_tour', 1)(class=CheckboxModifier).js-checkbox-modifiers on Tour
+                        +checkbox(false, 'additional-params', 'on tour', "filter-on-tour")(class=CheckboxModifier).js-checkbox-modifiers on Tour
                     +col(2)
-                        +checkbox(false, 'with_reviews', 1)(class=CheckboxModifier).js-checkbox-modifiers With reviews
+                        +checkbox(false, 'additional-params', 'with reviews', "filter-with-reviews")(class=CheckboxModifier).js-checkbox-modifiers With reviews
 
                 +grid
                     +col(3)

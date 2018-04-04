@@ -30,10 +30,10 @@ mixin model-list(heading)
                     +sort-ui
                 +e.header-col.hide-mob
                     +button(href='model-map.html')._color_white._bg_darkGrey._uppercaseView View on map
-            if block
-                +e.search-tags
-                    +search-tags
-                        block
+
+            +e.search-tags
+                +search-tags
+
             +grid-masonry({ desktop: 4, laptop: 3, tablet: 2, mobile: 1}).js-model-preview-grid
                 +model-preview([7, 7, 7], 'Megan', 20, 325, true).js-masonry-item
                     +badges._top

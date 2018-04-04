@@ -1,6 +1,9 @@
-mixin checkbox(checked, name, value)
+mixin checkbox(checked, name, value, dataFilterElement)
   +b.LABEL.checkbox&attributes(attributes)
-    +e.INPUT.input(type='checkbox' name=name||'', value=value||'', checked=checked||false)
+    if dataFilterElement
+        +e.INPUT.input(type='checkbox' name=name||'', value=value||'', checked=checked||false data-filter-element=dataFilterElement)
+    else
+        +e.INPUT.input(type='checkbox' name=name||'', value=value||'', checked=checked||false)
     +e.SPAN.box
         != pugHelpers.Icon.call(locals, {iconName: 'ok', iconWidth: '12', iconHeight: '10'})
     if block

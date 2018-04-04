@@ -17,6 +17,7 @@ include ../components/auth-popup/auth-popup
 include ../components/map/map
 include ../components/model-map/model-map
 include ../components/search-tags/search-tags
+include ../components/filter/filter
 
 include ../components/profile-popup/profile-popup
 include ../components/profile-common-popup/profile-common-popup
@@ -28,23 +29,13 @@ block header
 
 block content
     +model-list('For Megan')
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
-        +search-tag Option 1
 
 block popups
+    +filter-extended
 
 block footer
     +footer
 
 block scripts
     script(src='%=static=%js/separate-js/maps/profile-contacts.js')
+    script(src='%=static=%js/separate-js/search-tags.js')
