@@ -1,0 +1,9 @@
+mixin search-tags()
+    +b.search-tags&attributes(attributes)
+        block
+
+mixin search-tag
+    +b.search-tag&attributes(attributes)
+        +e.SPAN.text
+            block
+        +e.SPAN.button

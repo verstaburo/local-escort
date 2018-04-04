@@ -1,0 +1,64 @@
+.search-tags
+    display: block
+    margin-left -20px
+    margin-top -20px
+
+.search-tag
+    position relative
+    display inline-block
+    font-size 0
+    max-width 200px
+    padding-right 20px
+    cursor pointer
+
+    .search-tags &
+        margin-left 20px
+        margin-top 20px
+
+    &__text
+        display inline-block
+        max-width 100%
+        text-overflow ellipsis
+        overflow hidden
+        font-size 12px
+        white-space nowrap
+        padding-left 8px
+        padding-right 10px
+        border-right 0
+        border 1px solid borderColor
+        line-height 22px
+        height 23px
+        m-transition(all)
+
+
+        .search-tag:hover &
+            color white
+            border-color transparent
+            background-color mainColor
+
+    &__button
+        display inline-block
+        position absolute
+        top 0
+        bottom 0
+        right 0
+        width 23px
+        height 23px
+        background-color mainColor
+
+        &::before,
+        &::after
+            content ''
+
+            position absolute
+            top: 50%
+            left 50%
+            width 11px
+            height 2px
+            background-color white
+
+        &::before
+            transform translate(-50%, -50%) rotate(45deg)
+
+        &::after
+            transform translate(-50%, -50%) rotate(-45deg)

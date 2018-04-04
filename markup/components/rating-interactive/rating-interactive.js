@@ -1,12 +1,6 @@
 export default function ratingInteractive() {
 
-    const block = $('.rating-interactive');
-
-    if (!block.length) {
-        return;
-    }
-
-    block
+    $(document)
         .on('click', '.rating-interactive__star', function() {
             const star = $(this);
             const activeStar = star.parent().children('.active');
