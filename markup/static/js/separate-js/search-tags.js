@@ -12,34 +12,36 @@ function renderFilterTags() {
 
     var getCheckboxes = function(name) {
         return $('[name="'+name+'"][data-filter-element]:checked').map(function() {
-            return $(this).val();
+            var el = $(this);
+
+            return { el: el.data('filter-element'), val: el.val() };
         });
     }
 
     var getCategories = function() {
-        return $('[data-filter-element="filter-categories"]').val();
+        return { el: 'filter-categories"', val: 'categories: ' + $('[data-filter-element="filter-categories"]').val() };
     }
 
     var getAge = function() {
         var min = $('[data-filter-element="filter-age"][data-type="min"]').val(),
             max = $('[data-filter-element="filter-age"][data-type="max"]').val();
 
-        return min + ' - ' + max + ' y.o';
+        return { el: 'filter-age', val: min + ' - ' + max + ' y.o' };
     }
 
     var getRate = function() {
         var min = $('[data-filter-element="filter-rate"][data-type="min"]').val(),
             max = $('[data-filter-element="filter-rate"][data-type="max"]').val();
 
-        return min + ' - ' + max + ' $';
+        return { el: 'filter-age', val: min + ' - ' + max + ' $' };
     }
 
     var getAvailability = function() {
-        return 'availability: ' + $('[data-filter-element="filter-availability"]').val();
+        return { el: 'filter-availability"', val: 'availability: ' + $('[data-filter-element="filter-availability"]').val() };
     }
 
     var getOrientation = function() {
-        return 'orientation: ' + $('[data-filter-element="filter-orientation"]').val();
+        return { el: 'filter-orientation"', val: 'orientation: ' + $('[data-filter-element="filter-orientation"]').val() };
     }
 
     var getHeight = function() {
@@ -59,28 +61,29 @@ function renderFilterTags() {
     }
 
     var getEthnicity = function() {
-        return 'ethnicity: ' + $('[data-filter-element="filter-ethnicity"]').val();
+        return { el: 'filter-ethnicity"', val: 'ethnicity: ' + $('[data-filter-element="filter-ethnicity"]').val() };
     }
 
-    var getRating = function() {
+    var getRating = function () {
         var el = $('[data-filter-element="filter-rating"]').find('.rating-interactive__control:checked');
-        return el.length ? 'rating - ' + el.val() : null;
+
+        return { el: 'filter-rating', val: el.length ? 'rating - ' + el.val() : null };
     }
 
     var getNationality = function() {
-        return 'nationality: ' + $('[data-filter-element="filter-nationality"]').val();
+        return { el: 'filter-ethnicity"', val: 'nationality: ' + $('[data-filter-element="filter-nationality"]').val() };
     }
 
     var getLanguage = function() {
-        return 'language: ' + $('[data-filter-element="filter-language"]').val();
+        return { el: 'filter-language"', val: 'language: ' + $('[data-filter-element="filter-language"]').val() };
     }
 
     var getHairColor = function() {
-        return 'hair color: ' + $('[data-filter-element="filter-hair-color"]').val();
+        return { el: 'filter-hair-color"', val: 'hair color: ' + $('[data-filter-element="filter-hair-color"]').val() };
     }
 
     var getEyeColor = function() {
-        return 'eye color: ' + $('[data-filter-element="filter-eye-color"]').val();
+        return { el: 'filter-eye-color"', val: 'eye color: ' + $('[data-filter-element="filter-eye-color"]').val() };
     }
 
     var getBreastSize = function() {
@@ -102,8 +105,8 @@ function renderFilterTags() {
     tags.push(getRate());
     tags.push(getAvailability());
     tags.push(getOrientation());
-    tags.push(getHeight());
-    tags.push(getWeight());
+    // tags.push(getHeight());
+    // tags.push(getWeight());
     tags.push(getEthnicity());
     $.merge(tags, getCheckboxes('additional-params'));
     tags.push(getRating());
@@ -126,14 +129,86 @@ function renderFilterTags() {
 
     //  Фильтрация значений undefined, null, false, '' и строк, который заканчиваются на any || all
     var filteredTags = $.grep(tags, function(item) {
-        return !!item && !/[any|all]$/i.test((item+'').toLowerCase());
+        return !!item.val && !/[any|all]$/i.test((item.val+'').toLowerCase());
     });
 
     var tagElements = $.map(filteredTags, function (item) {
-        return $('<div class="search-tag"><span class="search-tag__text">' + item + '</span><span class="search-tag__button"></span></div>');
+        return $('<div class="search-tag js-search-tag" data-filter-target-element="' + item.el + '"><span class="search-tag__text">' + item.val + '</span><span class="search-tag__button"></span></div>');
     });
 
     tagsContainerElement.html(tagElements);
 }
+
+/**
+ * Закрытие тегов
+ */
+
+$(document).on('click touchstart', '.js-search-tag', function (e) {
+    e.preventDefault();
+
+    var tag = $(this),
+        target = $('[data-filter-element="' + tag.data('filter-target-element') + '"]');
+
+    // чекбокс
+    if (target.hasClass('checkbox__input')) {
+        target.prop('checked', false);
+        target.trigger('change');
+    }
+
+    // рейтинг
+
+    if (target.hasClass('rating-interactive')) {
+        target.find('.rating-interactive__reset').click();
+    }
+
+    // селект
+
+    if (target.hasClass('selectbox__control')) {
+        target.prop('selectedIndex', 0).trigger('change');
+    }
+
+    // рендж слайдер
+
+    if (target.hasClass('range-slider__input')) {
+        var parent = target.eq(0).parents('.range-slider');
+
+        var min = target.filter(function () {
+            return $(this).data('type', 'min');
+        });
+
+        var max = target.filter(function () {
+            return $(this).data('type', 'max');
+        });
+
+        min.val(parent.data('min')).trigger('change');
+        max.val(parent.data('max')).trigger('change');
+
+        var type = target.data('filter-type-element');
+
+        if (type) {
+            $('[data-filter-element="' + type + '"]').prop('selectedIndex', 0).trigger('change');
+        }
+    }
+
+    $('.filter_extended').trigger('submit');
+
+    tag.fadeOut(250, function() {
+        $(this).remove();
+    });
+});
+
+
+/**
+ * Отправка фильтра
+ */
+
+$(document).on('submit', '.filter_extended', function (e) {
+    e.preventDefault();
+    renderFilterTags();
+
+    // ajax query
+
+    $(this).parents('.popup ').trigger('hide');
+});
 
 renderFilterTags();

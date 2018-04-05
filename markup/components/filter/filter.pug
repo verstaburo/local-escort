@@ -295,7 +295,7 @@ mixin filter-additional()
 
             +grid
                 +col(3)
-                    +button._uppercase._bg_light._color_main Apply <span>(18021)</span>
+                    +button.BUTTON(type="submit")._uppercase._bg_light._color_main Apply <span>(18021)</span>
                 +col(3)
                     +button._uppercase._bg_darkGrey._color_white._border_grey.js-filter-reset Reset options
                 +col(3).grid__col_push_right
@@ -458,7 +458,7 @@ mixin filter-extended(dark)
                             class=MoreOptionsButtonModifier
                         )._uppercase.js-toggle-filter-additional.js-moreoptionsbutton-modifiers + show more options
                     +col(3)
-                        +button()(class=ApplyButtonModifier)._uppercase.__hide-additional.js-applybutton-modifiers Apply <span>(19405)</span>
+                        +button.BUTTON()(type="submit" class=ApplyButtonModifier)._uppercase.__hide-additional.js-applybutton-modifiers Apply <span>(19405)</span>
                     +col(3).filter__hide-additional-mob
                         +button()(class=ResetButtonModifier)._uppercase.__reset.js-filter-reset.js-resetbutton-modifiers reset options
                     +col(3).grid__col_align_right.grid__col_align_right._push_right.filter__hide-additional-mob
