@@ -33,7 +33,7 @@ function renderFilterTags() {
         var min = $('[data-filter-element="filter-rate"][data-type="min"]').val(),
             max = $('[data-filter-element="filter-rate"][data-type="max"]').val();
 
-        return { el: 'filter-age', val: min + ' - ' + max + ' $' };
+        return { el: 'filter-rate', val: min + ' - ' + max + ' $' };
     }
 
     var getAvailability = function() {
@@ -49,7 +49,7 @@ function renderFilterTags() {
             max = $('[data-filter-element="filter-height"][data-type="max"]').val(),
             type = $('[data-filter-element="filter-height-type"]').val();
 
-        return min + ' - ' + max + ' ' + type;
+        return { el: 'filter-height-type', type: '', val: min + ' - ' + max + ' ' + type };
     }
 
     var getWeight = function() {
@@ -57,7 +57,7 @@ function renderFilterTags() {
             max = $('[data-filter-element="filter-weight"][data-type="max"]').val(),
             type = $('[data-filter-element="filter-weight-type"]').val();
 
-        return min + ' - ' + max + ' ' + type;
+        return { el: 'filter-height', type: 'filter-height-type', val: min + ' - ' + max + ' ' + type };
     }
 
     var getEthnicity = function() {
@@ -105,8 +105,8 @@ function renderFilterTags() {
     tags.push(getRate());
     tags.push(getAvailability());
     tags.push(getOrientation());
-    // tags.push(getHeight());
-    // tags.push(getWeight());
+    tags.push(getHeight());
+    tags.push(getWeight());
     tags.push(getEthnicity());
     $.merge(tags, getCheckboxes('additional-params'));
     tags.push(getRating());
@@ -133,7 +133,13 @@ function renderFilterTags() {
     });
 
     var tagElements = $.map(filteredTags, function (item) {
-        return $('<div class="search-tag js-search-tag" data-filter-target-element="' + item.el + '"><span class="search-tag__text">' + item.val + '</span><span class="search-tag__button"></span></div>');
+        var type = '';
+
+        if (item.type) {
+            type = 'data-type-element="' + item.type + '"';
+        }
+
+        return $('<div class="search-tag js-search-tag" data-filter-target-element="' + item.el + '" ' + type + '><span class="search-tag__text">' + item.val + '</span><span class="search-tag__button"></span></div>');
     });
 
     tagsContainerElement.html(tagElements);
@@ -173,11 +179,11 @@ $(document).on('click touchstart', '.js-search-tag', function (e) {
         var parent = target.eq(0).parents('.range-slider');
 
         var min = target.filter(function () {
-            return $(this).data('type', 'min');
+            return $(this).data('type') === 'min';
         });
 
         var max = target.filter(function () {
-            return $(this).data('type', 'max');
+            return $(this).data('type') === 'max';
         });
 
         min.val(parent.data('min')).trigger('change');
