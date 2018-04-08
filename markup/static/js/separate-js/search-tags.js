@@ -19,25 +19,31 @@ function renderFilterTags() {
     }
 
     var getCategories = function() {
-        return { el: 'filter-categories"', val: 'categories: ' + $('[data-filter-element="filter-categories"]').val() };
+        return { el: 'filter-categories"', val: 'categories: ' + $('[data-filter-element="filter-categories"]').val(), hideDesktop: true };
     }
 
     var getAge = function() {
-        var min = $('[data-filter-element="filter-age"][data-type="min"]').val(),
-            max = $('[data-filter-element="filter-age"][data-type="max"]').val();
+        var min = $('[data-filter-element="filter-age"][data-type="min"]'),
+            max = $('[data-filter-element="filter-age"][data-type="max"]'),
+            parent = min.parents('.range-slider');
 
-        return { el: 'filter-age', val: min + ' - ' + max + ' y.o' };
+        var val = +min.val() === +parent.data('min') && +max.val() === +parent.data('max') ? null : min.val() + ' - ' + max.val() + ' y.o';
+
+        return { el: 'filter-age', val: val, hideDesktop: true };
     }
 
     var getRate = function() {
-        var min = $('[data-filter-element="filter-rate"][data-type="min"]').val(),
-            max = $('[data-filter-element="filter-rate"][data-type="max"]').val();
+        var min = $('[data-filter-element="filter-rate"][data-type="min"]'),
+            max = $('[data-filter-element="filter-rate"][data-type="max"]'),
+            parent = min.parents('.range-slider');
 
-        return { el: 'filter-rate', val: min + ' - ' + max + ' $' };
+        var val = +min.val() === +parent.data('min') && +max.val() === +parent.data('max') ? null : min.val() + ' - ' + max.val() + ' $';
+
+        return { el: 'filter-rate', val: val, hideDesktop: true };
     }
 
     var getAvailability = function() {
-        return { el: 'filter-availability"', val: 'availability: ' + $('[data-filter-element="filter-availability"]').val() };
+        return { el: 'filter-availability"', val: 'availability: ' + $('[data-filter-element="filter-availability"]').val(), hideDesktop: true };
     }
 
     var getOrientation = function() {
@@ -45,19 +51,25 @@ function renderFilterTags() {
     }
 
     var getHeight = function() {
-        var min = $('[data-filter-element="filter-height"][data-type="min"]').val(),
-            max = $('[data-filter-element="filter-height"][data-type="max"]').val(),
-            type = $('[data-filter-element="filter-height-type"]').val();
+        var min = $('[data-filter-element="filter-height"][data-type="min"]'),
+            max = $('[data-filter-element="filter-height"][data-type="max"]'),
+            type = $('[data-filter-element="filter-height-type"]'),
+            parent = min.parents('.range-slider');
 
-        return { el: 'filter-height-type', type: '', val: min + ' - ' + max + ' ' + type };
+        var val = +min.val() === +parent.data('min') && +max.val() === +parent.data('max') ? null : min.val() + ' - ' + max.val() + ' ' + type;
+
+        return { el: 'filter-height', type: 'filter-height-type', val: val };
     }
 
     var getWeight = function() {
-        var min = $('[data-filter-element="filter-weight"][data-type="min"]').val(),
-            max = $('[data-filter-element="filter-weight"][data-type="max"]').val(),
-            type = $('[data-filter-element="filter-weight-type"]').val();
+        var min = $('[data-filter-element="filter-weight"][data-type="min"]'),
+            max = $('[data-filter-element="filter-weight"][data-type="max"]'),
+            type = $('[data-filter-element="filter-weight-type"]').val(),
+            parent = min.parents('.range-slider');
 
-        return { el: 'filter-height', type: 'filter-height-type', val: min + ' - ' + max + ' ' + type };
+        var val = +min.val() === +parent.data('min') && +max.val() === +parent.data('max') ? null : min.val() + ' - ' + max.val() + ' ' + type;
+
+        return { el: 'filter-weight', type: 'filter-weight-type', val: val };
     }
 
     var getEthnicity = function() {
@@ -133,13 +145,18 @@ function renderFilterTags() {
     });
 
     var tagElements = $.map(filteredTags, function (item) {
-        var type = '';
+        var type = '',
+            hide = '';
 
         if (item.type) {
             type = 'data-type-element="' + item.type + '"';
         }
 
-        return $('<div class="search-tag js-search-tag" data-filter-target-element="' + item.el + '" ' + type + '><span class="search-tag__text">' + item.val + '</span><span class="search-tag__button"></span></div>');
+        if (item.hideDesktop) {
+            hide = 'hide-desktop';
+        }
+
+        return $('<div class="search-tag js-search-tag ' + hide + '" data-filter-target-element="' + item.el + '" ' + type + '><span class="search-tag__text">' + item.val + '</span><span class="search-tag__button"></span></div>');
     });
 
     tagsContainerElement.html(tagElements);
@@ -203,18 +220,64 @@ $(document).on('click touchstart', '.js-search-tag', function (e) {
     });
 });
 
+/**
+ * Связывание фильтров (.filter и .filter_extended)
+ */
+
+function linkFilterElements(isExtended) {
+    var elements = [
+        $('[data-filter-element="filter-categories"]'),
+        $('[data-filter-element="filter-rate"][data-type="min"]'),
+        $('[data-filter-element="filter-rate"][data-type="max"]'),
+        $('[data-filter-element="filter-age"][data-type="min"]'),
+        $('[data-filter-element="filter-age"][data-type="max"]'),
+        $('[data-filter-element="filter-availability"]'),
+    ];
+
+    var link = function (el) {
+        var changedElement = el.filter(function() {
+            var extended = $(this).parents('.filter_extended').length;
+
+            return isExtended ? !!extended : !extended;
+        });
+
+        var restElements = el.filter(function () {
+            return changedElement[0] !== this;
+        });
+
+        if (changedElement.prop('tagName') === 'SELECT') {
+            restElements.prop('selectedIndex', changedElement.prop('selectedIndex')).trigger('change');
+        } else {
+            restElements.val(changedElement.val()).trigger('change');
+        }
+    }
+
+    $.each(elements, function() {
+        link($(this));
+    });
+}
 
 /**
  * Отправка фильтра
  */
 
-$(document).on('submit', '.filter_extended', function (e) {
+$(document).on('change', '.js-filter', function (e) {
     e.preventDefault();
+
+    linkFilterElements(false);
+    $('.js-filter-extended').trigger('submit', {});
+});
+
+$(document).on('submit', '.js-filter-extended', function (e, data) {
+    e.preventDefault();
+    var self = $(this);
+
+    if (!data) {
+        linkFilterElements(true);
+    }
+
     renderFilterTags();
-
-    // ajax query
-
-    $(this).parents('.popup ').trigger('hide');
+    self.parents('.popup ').trigger('hide');
 });
 
 renderFilterTags();

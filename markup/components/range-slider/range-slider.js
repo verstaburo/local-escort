@@ -30,6 +30,8 @@ export default function rangeSlider() {
         minValue.text(values[0]);
         maxValue.text(values[1]);
 
+        var interval = null;
+
         slider.slider({
             range: true,
             min,
@@ -41,6 +43,12 @@ export default function rangeSlider() {
                 maxControl.val(max);
                 minValue.text(min);
                 maxValue.text(max);
+
+                clearTimeout(interval);
+
+                var interval = setTimeout(function() {
+                    minControl.parents('form').trigger('change');
+                }, 200);
             },
             change(e, ui) {
                 const [min, max] = ui.values;

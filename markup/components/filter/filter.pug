@@ -10,7 +10,7 @@ include ../field/field
 include ../heading/heading
 
 mixin filter()
-    +b.FORM(method='POST' action='#').filter&attributes(attributes)
+    +b.FORM(method='POST' action='#').filter&attributes(attributes).js-filter
         +container.filter__container
             +e.col
                 +selectbox
@@ -43,11 +43,10 @@ mixin filter()
 
             +e.col
                 +selectbox
-                    +selectbox-control(name='categories' data-filter-element="filter-categories")
-                        option(value='escorts') escorts
-                        option(value='item1') item 1
-                        option(value='item2') item 2
-                        option(value='item3') item 3
+                    +selectbox-control(name='availability' data-filter-element="filter-availability")
+                        option(value='incall/outcall') Incall / Outcall
+                        option(value='incall') Incall
+                        option(value='outcall') Outcall
 
             +e.col._no_width._push_right
                 +icon-button('filter-button', 23, 16)(data-popup-id='#filter-extended' data-popup-template='popups/filter-extended.html' data-action='show').__button.js-toggle-popup
@@ -305,7 +304,7 @@ mixin filter-additional()
                     )._uppercase._bg_darkGrey._color_white._border_grey.js-toggle-filter-additional + show more options
 
 mixin filter-extended-wrapper
-    +b.FORM(method='POST' action='#').filter._extended&attributes(attributes)
+    +b.FORM(method='POST' action='#').filter._extended&attributes(attributes).js-filter-extended
         block
 
 mixin filter-extended(dark)
@@ -334,7 +333,7 @@ mixin filter-extended(dark)
                         +field
                             +field-label Categories
                             +selectbox(class=SelectModifier).js-select-modifiers
-                                +selectbox-control(name='escorts')
+                                +selectbox-control(name='escorts' data-filter-element="filter-categories")
                                     option(value='escorts') escorts
                                     option(value='item1') item 1
                                     option(value='item2') item 2
@@ -374,10 +373,9 @@ mixin filter-extended(dark)
                             +field-label Availability
                             +selectbox(class=SelectModifier).js-select-modifiers
                                 +selectbox-control(name='availability' data-filter-element="filter-availability")
-                                    option(value='all') All
-                                    option(value='item1') item 1
-                                    option(value='item2') item 2
-                                    option(value='item3') item 3
+                                    option(value='incall/outcall') Incall / Outcall
+                                    option(value='incall') Incall
+                                    option(value='outcall') Outcall
                     +col(3)
                         +field
                             +field-label Orientation
