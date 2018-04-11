@@ -2,6 +2,7 @@ export default function navbar() {
     $(document)
         .on('click', '.navbar__item_dropdown', function (e) {
             e.stopPropagation();
+            e.preventDefault();
 
             const self = $(this);
             const dropdown = self.find('.navbar__dropdown');
