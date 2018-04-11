@@ -15,7 +15,7 @@ mixin model-list(heading)
             +filter.hide-mob
             +e.header
                 +e.header-col._flexible
-                    +heading(2).H1=heading ? 'Search result: ' + heading : 'Search result'
+                    +heading(2).H1!=heading ? 'Search result for: <span>' + heading  + '</span>': 'Search result'
                 +e.header-col.hide-mob
                     +e.label Sort by
                     +selectbox.__control
@@ -29,7 +29,8 @@ mixin model-list(heading)
                 +e.header-col._sort-ui.hide-desktop
                     +sort-ui
                 +e.header-col.hide-mob
-                    +button(href='model-map.html')._color_white._bg_darkGrey._uppercaseView View on map
+                    +button(href='model-map.html')._uppercase._color_white._bg_darkGrey
+                        | View on map
 
             +e.search-tags
                 +search-tags
