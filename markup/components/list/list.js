@@ -24,7 +24,12 @@ function setListPos(canditate) {
 };
 
 export default function list() {
-    $(document).on('click', '.list__item_dropdown', function(e) {
+    $(document).on('touchstart', '.list__item_dropdown', function(e) {
+
+        if ($(window).width() > 1024) {
+            return;
+        }
+
         e.preventDefault();
         const self = $(this);
 

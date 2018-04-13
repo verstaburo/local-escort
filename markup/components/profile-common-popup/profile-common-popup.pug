@@ -71,8 +71,14 @@ mixin profile-common-popup-report
                 +info-control('radio', 'reason', 4) Other
             +e.step
                 +e.checked
-                +e.TEXTAREA(placeholder='Please describe your complaint').control
+                +e.TEXTAREA(placeholder='Please describe your complaint' required).control
+
+            +e.step
+                +e.ARTICLE.content
+                    +heading._md Congratulations!
+                    +e.P.text Your report has been successfully submited.
 
         .profile-common-popup__footer
-            +button(href='#')._border_standart._uppercase.profile-common-popup__button.js-profile-report-next Continue
-            +button(href='#')._border_standart._uppercase.profile-common-popup__button.js-profile-report-submit Send report
+            +button.BUTTON._border_standart._uppercase.profile-common-popup__button.js-profile-report-next Continue
+            +button.BUTTON._border_standart._uppercase.profile-common-popup__button.js-profile-report-submit Send report
+            +button.BUTTON._border_standart._uppercase.profile-common-popup__button.js-popup-close Ok

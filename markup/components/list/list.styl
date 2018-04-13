@@ -28,6 +28,21 @@
             & > ^[0]__button ^[0]__arrow
                 display: block
 
+        &:hover
+            +above(1025px)
+                & > .list
+                    opacity: 1
+                    pointer-events all
+
+                    +below(768px)
+                        display block
+
+                & > ^[0]__button
+                    background-color: #f7f7f7
+
+                    & > ^[0]__text
+                        color: rgba(darkGreyColor, .5)
+
         &.active
             & > .list
                 opacity: 1

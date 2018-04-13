@@ -26,36 +26,34 @@ export function profileReportPopup() {
             .find('.profile-common-popup__button')
             .eq(0)
             .show();
-    })
-        .on('click', '.js-profile-report-next', function (e) {
-            e.preventDefault();
-            const form = $(this).parents('.profile-common-popup').find('.profile-common-popup-report');
+    }).on('click', '.js-profile-report-next', function (e) {
+        e.preventDefault();
+        const form = $(this).parents('.profile-common-popup').find('.profile-common-popup-report');
 
-            const step = form
-                .find('.profile-common-popup-report__step')
-                .eq(0);
+        const step = form
+            .find('.profile-common-popup-report__step')
+            .eq(0);
 
-            const checkedItem = step
-                .find('.info-control__control:checked')
-                .attr('checked', true)
-                .parent()
-                .get(0)
-                .outerHTML;
+        const checkedItem = step
+            .find('.info-control__control:checked')
+            .attr('checked', true)
+            .parent()
+            .get(0)
+            .outerHTML;
 
-            step
-                .hide()
-                .next('.profile-common-popup-report__step')
-                .fadeIn()
-                .find('.profile-common-popup-report__checked')
-                .html(checkedItem);
+        step
+            .hide()
+            .next('.profile-common-popup-report__step')
+            .fadeIn()
+            .find('.profile-common-popup-report__checked')
+            .html(checkedItem);
 
-            $(this)
-                .hide()
-                .next()
-                .fadeIn();
-        })
-        .on('click', '.js-profile-report-submit', (e) => {
-            e.preventDefault();
-            $(this).parents('.profile-common-popup-report').submit();
-        })
+        $(this)
+            .hide()
+            .next()
+            .fadeIn();
+    }).on('click', '.js-profile-report-submit', function(e) {
+        e.preventDefault();
+        $(this).parents('.profile-common-popup').find('.profile-common-popup-report').submit();
+    });
 }
