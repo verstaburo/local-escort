@@ -1,7 +1,7 @@
 include ../button/button
 
 mixin city-list()
-    +b.FORM(method='POST' action='#').city-list&attributes(attributes)
+    +b.FORM(method='POST').city-list&attributes(attributes)
         +cities-container
             +cities-all
         +button('button')._uppercase._bg_grey._color_main.__button apply (18021)

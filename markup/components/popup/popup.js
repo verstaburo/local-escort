@@ -23,6 +23,34 @@ export default function popup() {
         return;
     }
 
+    const setCaller = function (targetPopup, btn, hide = true) {
+        if (!targetPopup.length) {
+            return;
+        }
+
+        if (hide) {
+            const t = targetPopup.data();
+            const callerId = targetPopup.attr('data-caller-target');
+            const callerTarget = $(`[data-caller-id="${callerId}"]`);
+
+            targetPopup.removeAttr('data-caller-target');
+            callerTarget.removeAttr('data-caller-id');
+
+            return;
+        }
+
+        // e6b30y3qkggk8eqybe6e80 - generate unique id
+        const id = (Math.random() * Date.now())
+            .toString(36)
+            .replace('.', '')
+            .repeat(2)
+            .split('')
+            .sort(() => 0.5 - Math.random()).join('');
+
+        targetPopup.attr('data-caller-target', id);
+        btn.attr('data-caller-id', id);
+    }
+
     const getCurrentPopupButtons = (id) => {
         return $(document)
             .find(TOGGLE_BTN_CLASS)
@@ -55,7 +83,7 @@ export default function popup() {
         popup.fadeIn(ANIMATION_DURATION, () => {
             popup.addClass(ACTIVE_POPUP_CLASS).css('pointer-events', '');
 
-            getCurrentPopupButtons('#' + popup.attr('id')).addClass('active');
+            const btns = getCurrentPopupButtons('#' + popup.attr('id')).addClass('active');
             freeze();
 
             popup.trigger(AFTER_SHOW_EVENT);
@@ -68,6 +96,8 @@ export default function popup() {
         if (!popup.hasClass(ACTIVE_POPUP_CLASS)) {
             return;
         }
+
+        setCaller(popup);
 
         popup.fadeOut(ANIMATION_DURATION, () => {
             popup
@@ -106,18 +136,7 @@ export default function popup() {
         const el = $(this);
         const action = el.data(DATA_ACTION_ATTR);
 
-        // el.css({
-        //     pointerEvents: 'none',
-        //     cursor: 'not-allowed',
-        //     opacity: 0.5,
-        // }).attr('disabled', 'disabled');
-
         loadTemplate(el.data(DATA_ATTR), el.data(DATA_TEMPLATE_URL)).then(popup => {
-            // el.css({
-            //     pointerEvents: '',
-            //     cursor: '',
-            //     opacity: '',
-            // }).attr('disabled', 'enabled');
 
             if (!popup.length) {
                 return;
@@ -125,14 +144,20 @@ export default function popup() {
 
             switch (action) {
                 case DATA_ACTION_TOGGLE:
-                    return popup.hasClass(ACTIVE_POPUP_CLASS)
-                        ? popup.trigger(HIDE_EVENT)
-                        : popup.trigger(SHOW_EVENT);
+                    if (popup.hasClass(ACTIVE_POPUP_CLASS)) {
+                        setCaller(popup);
+                        return popup.trigger(HIDE_EVENT);
+                    }
+                    setCaller(popup, el, false);
+                    return popup.trigger(SHOW_EVENT);
                 case DATA_ACTION_SHOW:
+                    setCaller(popup, el, false);
                     return popup.trigger(SHOW_EVENT);
                 case DATA_ACTION_HIDE:
+                    setCaller(popup);
                     return popup.trigger(HIDE_EVENT);
                 default:
+                    setCaller(popup, el, false);
                     return popup.trigger(SHOW_EVENT);
             }
         });
@@ -146,15 +171,17 @@ export default function popup() {
         if (target.hasClass(POPUP_CLASS.slice(1)) || target.hasClass(WRAPPER_CLASS.slice(1))) {
             e.preventDefault();
             e.stopPropagation();
+
             popup.trigger(HIDE_EVENT);
         }
     };
 
     const onCloseBtnClick = function (e) {
         e.preventDefault();
-        $(this)
-            .parents('.popup')
-            .trigger(HIDE_EVENT);
+        const popup = $(this).parents('.popup');
+
+        popup.trigger(HIDE_EVENT);
+        setCaller(popup);
     };
 
     const onEscapeHandler = function (e) {
@@ -162,6 +189,10 @@ export default function popup() {
             $(document)
                 .find(POPUP_CLASS)
                 .trigger(HIDE_EVENT);
+
+            $(POPUP_CLASS).each(function () {
+                setCaller($(this));
+            });
         }
     };
 
