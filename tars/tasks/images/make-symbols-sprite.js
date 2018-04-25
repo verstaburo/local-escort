@@ -39,8 +39,7 @@ module.exports = () => {
                                 id: defaultData.id,
                                 width: svg.width,
                                 height: svg.height,
-                                name: svg.name,
-                                viewBox: svg.viewBox,
+                                name: svg.name
                             };
                         }
                     }
