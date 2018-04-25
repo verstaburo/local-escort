@@ -270,3 +270,9 @@ $(() => {
 $(window).on('load', function () {
     $('html').removeClass('loading');
 });
+
+$(window).on('load resize', () => {
+	const p = $('.page__wrapper');
+
+	p.css('min-height', $(window).height() - p.offset().top - ($('.footer').height() || 0));
+});
