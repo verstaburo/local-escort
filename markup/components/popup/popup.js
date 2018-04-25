@@ -124,7 +124,19 @@ export default function popup() {
                     const popup = $(data);
 
                     popup.appendTo($('body'));
-                    resolve(popup);
+
+                    const promises = popup.find('img').map(function() {
+                        return new Promise((resolve) => {
+                            this.onload = resolve;
+                        });
+                    }).toArray();
+
+                    Promise
+                        .all(promises)
+                        .then(() => {
+
+                            resolve(popup);
+                        });
                 }
             });
         });
