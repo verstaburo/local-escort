@@ -27,17 +27,17 @@ module.exports = () => {
                         extension: '.svg'
                     }
                 ))
-                .pipe(tars.require('gulp-imagemin')(
-                    {
-                        svgoPlugins: [
-                            { cleanupIDs: false },
-                            { removeViewBox: false },
-                            { convertPathData: false },
-                            { mergePaths: false }
-                        ],
-                        use: []
-                    }
-                ))
+                // .pipe(tars.require('gulp-imagemin')(
+                //     {
+                //         svgoPlugins: [
+                //             { cleanupIDs: false },
+                //             { removeViewBox: false },
+                //             { convertPathData: false },
+                //             { mergePaths: false }
+                //         ],
+                //         use: []
+                //     }
+                // ))
                 .pipe(gulp.dest(`./dev/${svgImagesPath}/minified-svg/`))
                 .pipe(
                     notifier.success('SVG\'ve been minified')

@@ -17,7 +17,7 @@ module.exports = () => {
             tars.helpers.watcherLog(event, watchedPath);
 
             runSequence(
-                'images:minify-svg',
+                // 'images:minify-svg',
                 'images:make-symbols-sprite',
                 'html:concat-mocks-data',
                 'html:compile-templates',
