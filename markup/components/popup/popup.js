@@ -121,13 +121,13 @@ export default function popup() {
                 url,
                 type: 'GET',
                 success: function (data) {
-                    const popup = $(data);
+                    const nextPopup = $(data);
 
-                    popup.appendTo($('body'));
+                    nextPopup.appendTo($('body'));
 
-                    const promises = popup.find('img').map(function() {
-                        return new Promise((resolve) => {
-                            this.onload = resolve;
+                    const promises = nextPopup.find('img').map(function() {
+                        return new Promise((res) => {
+                            this.onload = res;
                         });
                     }).toArray();
 
@@ -135,7 +135,7 @@ export default function popup() {
                         .all(promises)
                         .then(() => {
 
-                            resolve(popup);
+                            resolve(nextPopup);
                         });
                 }
             });
