@@ -6,6 +6,7 @@ export default function popup() {
     const CLOSE_BTN_CLASS = '.popup__close';
     const ACTIVE_POPUP_CLASS = 'active';
     const TOGGLE_BTN_CLASS = '.js-toggle-popup';
+    const PRELOAD_POPUP = 'js-popup-preload';
     const DATA_ACTION_ATTR = 'action';
     const DATA_ACTION_SHOW = 'show';
     const DATA_ACTION_HIDE = 'hide';
@@ -67,6 +68,7 @@ export default function popup() {
 
     const onShow = function (e) {
         const popup = $(this);
+        const preload = popup.find('.popup__preload');
 
         popup.css('pointer-events', 'none');
 
@@ -87,6 +89,10 @@ export default function popup() {
             freeze();
 
             popup.trigger(AFTER_SHOW_EVENT);
+
+            setTimeout(() => {
+                preload.removeClass('is-active');
+            }, 1000);
         });
     };
 
@@ -124,19 +130,7 @@ export default function popup() {
                     const nextPopup = $(data);
 
                     nextPopup.appendTo($('body'));
-
-                    const promises = nextPopup.find('img').map(function() {
-                        return new Promise((res) => {
-                            this.onload = res;
-                        });
-                    }).toArray();
-
-                    Promise
-                        .all(promises)
-                        .then(() => {
-
-                            resolve(nextPopup);
-                        });
+                    resolve(nextPopup);
                 }
             });
         });

@@ -111,3 +111,32 @@
     .container
         +below(768px)
             padding: 0
+
+    &__preload
+        position fixed
+        top 0
+        left 0
+        right 0
+        bottom 0
+        align-items center
+        justify-content center
+        pointer-events none
+        display none
+
+        &::before
+            position relative
+            z-index 1
+            content: 'Loading...'
+            display inline-block
+            font-size 30px
+            color: mainColor
+
+        &.is-active
+            display flex
+
+            + *
+                opacity 0 !important
+                pointer-events none !important
+
+        + *
+            transition opacity .25s ease

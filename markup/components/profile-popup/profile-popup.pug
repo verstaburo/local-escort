@@ -15,10 +15,10 @@ include ../heading/heading
 include ../user-profile/user-profile
 
 mixin profile-popup()
-    +popup.popup_start.popup_no_mobile_paddings.popup_no_transform.popup_profile-popup.js-profile-popup-wr#profile-popup
+    +popup.popup_start.popup_no_mobile_paddings.popup_no_transform.popup_profile-popup.js-profile-popup-wr.js-popup-preload#profile-popup
+        .popup__preload.is-active
         +b.profile-popup
             +popup-close.popup__close_kind_square.popup__close_no_translate
-
             +e.buttons
                 +e.button._prev
                     != pugHelpers.Icon.call(locals, {iconName: 'photo-caret'})
