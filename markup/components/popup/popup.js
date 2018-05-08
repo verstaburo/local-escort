@@ -92,7 +92,7 @@ export default function popup() {
 
             setTimeout(() => {
                 preload.removeClass('is-active');
-            }, 2500);
+            }, 1500);
         });
     };
 
