@@ -111,7 +111,13 @@ export default function popup() {
 
         setCaller(popup);
 
-        popup.fadeOut(ANIMATION_DURATION, () => {
+        let durationShit = ANIMATION_DURATION;
+
+        if (popup.hasClass('js-profile-popup-wr')) {
+            durationShit = 0;
+        }
+
+        popup.fadeOut(durationShit, () => {
             popup
                 .removeClass(ACTIVE_POPUP_CLASS)
                 .css('z-index', '');
