@@ -82,7 +82,13 @@ export default function popup() {
             popup.css('z-index', Number(activePopup.css('z-index')) + 1);
         }
 
-        popup.fadeIn(ANIMATION_DURATION, () => {
+        let durationShit = ANIMATION_DURATION;
+
+        if (popup.hasClass('js-profile-popup-wr')) {
+            durationShit = 0;
+        }
+
+        popup.fadeIn(durationShit, () => {
             popup.addClass(ACTIVE_POPUP_CLASS).css('pointer-events', '');
 
             const btns = getCurrentPopupButtons('#' + popup.attr('id')).addClass('active');
