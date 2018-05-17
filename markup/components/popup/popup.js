@@ -122,7 +122,11 @@ export default function popup() {
                 .removeClass(ACTIVE_POPUP_CLASS)
                 .css('z-index', '');
             getCurrentPopupButtons('#' + popup.attr('id')).removeClass('active');
-            unfreeze();
+
+            if (!$('.popup.' + ACTIVE_POPUP_CLASS).length) {
+                unfreeze();
+            }
+
             popup.trigger(AFTER_HIDE_EVENT);
         });
     };
