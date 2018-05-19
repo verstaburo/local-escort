@@ -85,7 +85,7 @@ export default function popup() {
         let durationShit = ANIMATION_DURATION;
 
         if (popup.hasClass('js-profile-popup-wr')) {
-            durationShit = 0;
+            durationShit = 50;
         }
 
         popup.fadeIn(durationShit, () => {
