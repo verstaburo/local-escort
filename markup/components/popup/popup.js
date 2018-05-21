@@ -120,7 +120,7 @@ export default function popup() {
             durationShit = 0;
         }
 
-        const action = durationShit === '0' ? 'show' : 'fadeIn';
+        const action = durationShit === '0' ? 'hide' : 'fadeOut';
 
         popup[action](durationShit, () => {
             popup

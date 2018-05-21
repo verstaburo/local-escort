@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js dev
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js dev --lr
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\bogos\bin;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone;C:\WINDOWS\System32\OpenSSH;C:\Users\bogos\AppData\Local\Microsoft\WindowsApps;C:\Users\bogos\AppData\Roaming\npm;C:\Users\bogos\AppData\Local\Yarn\bin;C:\Program Files\Microsoft VS Code\bin
