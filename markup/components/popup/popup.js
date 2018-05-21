@@ -127,6 +127,7 @@ export default function popup() {
                 unfreeze();
             }
 
+            popup.find('.popup__preload').addClass('is-active');
             popup.trigger(AFTER_HIDE_EVENT);
         });
     };
