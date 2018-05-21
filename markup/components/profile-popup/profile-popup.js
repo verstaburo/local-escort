@@ -1,6 +1,30 @@
 import Swiper from 'swiper';
 import modelPreview from '../model-preview/model-preview';
 
+function getScrollbarWidth() {
+    var outer = document.createElement("div");
+    outer.style.visibility = "hidden";
+    outer.style.width = "100px";
+    document.body.appendChild(outer);
+
+    var widthNoScroll = outer.offsetWidth;
+    // force scrollbars
+    outer.style.overflow = "scroll";
+
+    // add innerdiv
+    var inner = document.createElement("div");
+    inner.style.width = "100%";
+    outer.appendChild(inner);
+
+    var widthWithScroll = inner.offsetWidth;
+
+    // remove divs
+    outer.parentNode.removeChild(outer);
+
+    return widthNoScroll - widthWithScroll;
+}
+
+
 export default function profilePopup() {
     const reInitMap = function () {
         const map = $('.contacts-card__block_map');
@@ -99,6 +123,7 @@ export default function profilePopup() {
 
     $(document).on('show', '#profile-popup', function () {
         $(this).css('top', $(window).scrollTop());
+        $(this).find('.profile-popup__button_next').css('margin-right', getScrollbarWidth());
     });
 
     $(document).on('aftershow', '#profile-popup', function () {
@@ -114,6 +139,12 @@ export default function profilePopup() {
 
         $(this).find('.model-preview').each(function () {
             window.modelPreviewInit($(this));
+        });
+    });
+
+    $(window).on('resize', () => {
+        $('.profile-popup__button_next').each(function() {
+            $(this).css('margin-right', getScrollbarWidth());
         });
     });
 };
