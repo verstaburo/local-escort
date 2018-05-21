@@ -85,10 +85,12 @@ export default function popup() {
         let durationShit = ANIMATION_DURATION;
 
         if (popup.hasClass('js-profile-popup-wr')) {
-            durationShit = 50;
+            durationShit = 0;
         }
 
-        popup.fadeIn(durationShit, () => {
+        const action = durationShit === '0' ? 'show' : 'fadeIn';
+
+        popup[action](durationShit, () => {
             popup.addClass(ACTIVE_POPUP_CLASS).css('pointer-events', '');
 
             const btns = getCurrentPopupButtons('#' + popup.attr('id')).addClass('active');
@@ -111,13 +113,16 @@ export default function popup() {
 
         setCaller(popup);
 
+
         let durationShit = ANIMATION_DURATION;
 
         if (popup.hasClass('js-profile-popup-wr')) {
             durationShit = 0;
         }
 
-        popup.fadeOut(durationShit, () => {
+        const action = durationShit === '0' ? 'show' : 'fadeIn';
+
+        popup[action](durationShit, () => {
             popup
                 .removeClass(ACTIVE_POPUP_CLASS)
                 .css('z-index', '');
