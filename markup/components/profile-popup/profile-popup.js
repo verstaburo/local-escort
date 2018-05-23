@@ -122,7 +122,7 @@ export default function profilePopup() {
     });
 
     $(document).on('show', '#profile-popup', function () {
-        $(this).css('top', $(window).scrollTop());
+        // $(this).css('top', $(window).scrollTop());
         $(this).find('.profile-popup__button_next').css('margin-right', getScrollbarWidth());
     });
 
