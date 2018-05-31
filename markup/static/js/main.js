@@ -267,6 +267,18 @@ $(() => {
 });
 
 
+window.refocusContentEditable = function () {
+    var curelement=window.event.target;
+    if(refocus_prevtarget) { // if we have a previous element
+        // if previous element was contentEditable and the next isn't then:
+        if(refocus_prevtarget.contentEditable == 'true' && curelement.contentEditable !== 'true') {
+            document.getElementById('editableFix').setSelectionRange(0, 0); // set caret focus to an element that handles caret focus correctly.
+            curelement.focus(); // focus the wanted element.
+        }
+    }
+    refocus_prevtarget=curelement;
+}
+
 $(window).on('load', function () {
     $('html').removeClass('loading');
 });

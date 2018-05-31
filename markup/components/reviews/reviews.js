@@ -14,8 +14,11 @@ export default function reviews() {
         const that = $(evt.target);
         const self = $(evt.target).closest('.reviews');
 
-        $(self).find('.textarea__control').attr('contenteditable', 'true').focus();
         $(self).find('.reviews__activator, .reviews__no-reviews').hide();
+
+        setTimeout(() => {
+            $(self).find('.textarea__control').attr('contenteditable', 'true').focus();
+        }, 100);
 
         if ($(self).find('.reviews__content').is(':visible')) {
             return;

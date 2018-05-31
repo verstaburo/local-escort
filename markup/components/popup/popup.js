@@ -97,6 +97,7 @@ export default function popup() {
             freeze();
 
             popup.trigger(AFTER_SHOW_EVENT);
+            $(window).trigger('resize');
 
             setTimeout(() => {
                 preload.removeClass('is-active');
