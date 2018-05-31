@@ -97,10 +97,15 @@ export default function popup() {
             freeze();
 
             popup.trigger(AFTER_SHOW_EVENT);
-            $(window).trigger('resize');
 
             setTimeout(() => {
                 preload.removeClass('is-active');
+                setTimeout(() => {
+                    $(window).trigger('resize');
+                    const t = $('.textarea__control');
+                    t.text(t.text().trim());
+                    $(document).find('.textarea__control').trigger('change');
+                }, 100);
             }, 1500);
         });
     };

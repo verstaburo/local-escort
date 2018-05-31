@@ -15,10 +15,7 @@ export default function reviews() {
         const self = $(evt.target).closest('.reviews');
 
         $(self).find('.reviews__activator, .reviews__no-reviews').hide();
-
-        setTimeout(() => {
-            $(self).find('.textarea__control').attr('contenteditable', 'true').focus();
-        }, 100);
+        $(self).find('.textarea__control').attr('contenteditable', 'true').focus();
 
         if ($(self).find('.reviews__content').is(':visible')) {
             return;
@@ -27,6 +24,7 @@ export default function reviews() {
         $(self).find('.reviews__content').fadeIn(250, () => {
             let parentEl = that.parents('.popup');
             let st = parentEl.scrollTop();
+            $(self).find('.textarea__control').attr('contenteditable', 'true').focus();
 
             if (!parentEl.length) {
                 parentEl = $('html, body');
