@@ -1,4 +1,5 @@
 import {freeze, unfreeze} from '../../static/js/disable-scroll';
+import review from '../reviews/reviews';
 
 export default function popup() {
     const POPUP_CLASS = '.popup';
@@ -104,6 +105,7 @@ export default function popup() {
                     const t = $('.textarea__control');
                     t.text(t.text().trim());
                     t.trigger('change');
+                    review();
                 }, 200);
             }, 1500);
         });
