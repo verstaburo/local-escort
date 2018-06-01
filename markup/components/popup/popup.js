@@ -103,7 +103,7 @@ export default function popup() {
                 setTimeout(() => {
                     const t = $('.textarea__control');
                     t.text(t.text().trim());
-                    $(document).find('.textarea__control').trigger('change');
+                    t.trigger('change');
                 }, 100);
             }, 1500);
         });
