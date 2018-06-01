@@ -101,7 +101,6 @@ export default function popup() {
             setTimeout(() => {
                 preload.removeClass('is-active');
                 setTimeout(() => {
-                    $(popup).trigger('resize');
                     const t = $('.textarea__control');
                     t.text(t.text().trim());
                     $(document).find('.textarea__control').trigger('change');
