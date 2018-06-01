@@ -104,7 +104,7 @@ export default function popup() {
                     const t = $('.textarea__control');
                     t.text(t.text().trim());
                     t.trigger('change');
-                }, 100);
+                }, 200);
             }, 1500);
         });
     };
