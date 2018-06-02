@@ -97,17 +97,18 @@ export default function popup() {
             const btns = getCurrentPopupButtons('#' + popup.attr('id')).addClass('active');
             freeze();
 
-            popup.trigger(AFTER_SHOW_EVENT);
-
-            setTimeout(() => {
-                preload.removeClass('is-active');
+            if (!preload.hasClass('is-active')) {
+                popup.trigger(AFTER_SHOW_EVENT);
+            } else {
                 setTimeout(() => {
+                    preload.removeClass('is-active');
                     const t = $('.textarea__control');
                     t.text(t.text().trim());
                     t.trigger('change');
                     review();
-                }, 200);
-            }, 1500);
+                    popup.trigger(AFTER_SHOW_EVENT);
+                }, 1500);
+            }
         });
     };
 
