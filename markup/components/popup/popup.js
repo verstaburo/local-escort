@@ -98,15 +98,18 @@ export default function popup() {
             freeze();
 
             if (!preload.hasClass('is-active')) {
-                popup.trigger(AFTER_SHOW_EVENT);
+                setTimeout(() => {
+                    popup.trigger(AFTER_SHOW_EVENT);
+                }, 200);
             } else {
                 setTimeout(() => {
                     preload.removeClass('is-active');
-                    const t = $('.textarea__control');
-                    t.text(t.text().trim());
-                    t.trigger('change');
-                    review();
-                    popup.trigger(AFTER_SHOW_EVENT);
+                    setTimeout(() => {
+                        const t = $('.textarea__control');
+                        t.text(t.text().trim());
+                        t.trigger('change');
+                        popup.trigger(AFTER_SHOW_EVENT);
+                    }, 200);
                 }, 1500);
             }
         });
