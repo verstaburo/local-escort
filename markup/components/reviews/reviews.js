@@ -17,6 +17,11 @@ export default function reviews() {
         $(self).find('.reviews__activator, .reviews__no-reviews').hide();
         $(self).find('.textarea__control').attr('contenteditable', 'true').focus();
 
+        setTimeout(() => {
+            const s = $(self).find('.textarea__control');
+            s.text(s.text() + ' ').trigger('change');
+        }, 10);
+
         if ($(self).find('.reviews__content').is(':visible')) {
             return;
         }
@@ -25,7 +30,10 @@ export default function reviews() {
             let parentEl = that.parents('.popup');
             let st = parentEl.scrollTop();
             $(self).find('.textarea__control').attr('contenteditable', 'true').focus();
-
+            setTimeout(() => {
+                const s = $(self).find('.textarea__control');
+                s.text(s.text() + ' ').trigger('change');
+            }, 10);
             if (!parentEl.length) {
                 parentEl = $('html, body');
             }
