@@ -13,6 +13,7 @@ export default function popup() {
     const DATA_ACTION_HIDE = 'hide';
     const DATA_TEMPLATE_URL = 'popup-template';
     const AFTER_HIDE_EVENT = 'afterhide';
+    const BEFORE_HIDE_EVENT = 'beforehide';
     const DATA_ACTION_TOGGLE = 'toggle';
     const DATA_ATTR = 'popup-id';
     const SHOW_EVENT = 'show';
@@ -122,6 +123,8 @@ export default function popup() {
             return;
         }
 
+        popup.trigger(BEFORE_HIDE_EVENT);
+
         setCaller(popup);
 
 
@@ -133,7 +136,9 @@ export default function popup() {
 
         const action = durationShit === '0' ? 'hide' : 'fadeOut';
 
+
         popup[action](durationShit, () => {
+
             popup
                 .removeClass(ACTIVE_POPUP_CLASS)
                 .css('z-index', '');
@@ -144,7 +149,9 @@ export default function popup() {
             }
 
             // popup.find('.popup__preload').addClass('is-active');
-            popup.trigger(AFTER_HIDE_EVENT);
+            setTimeout(() => {
+                popup.trigger(AFTER_HIDE_EVENT);
+            }, 100);
         });
     };
 
