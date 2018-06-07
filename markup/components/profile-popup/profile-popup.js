@@ -124,7 +124,7 @@ export default function profilePopup() {
     $(document).on('show', '#profile-popup', function () {
         // $(this).css('top', $(window).scrollTop());
         $(this).find('.profile-popup__button_next').css('margin-right', getScrollbarWidth());
-        $('.js-profile-popup-wr').scrollTop(0);
+        // $('.js-profile-popup-wr').scrollTop(0);
     });
 
     $(document).on('aftershow', '#profile-popup', function () {
