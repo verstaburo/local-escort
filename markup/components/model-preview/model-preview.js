@@ -27,10 +27,13 @@ export default function modelPreview(model) {
             slider.updateAutoHeight();
         }
     });
-
     const block = model && model.find('.model-preview__slider') || $('.model-preview__slider');
 
     if (!block.length) {
+        return;
+    }
+
+    if (block.hasClass('swiper-container-horizontal') || block.find('model-preview__slider').hasClass('swiper-container-horizontal')) {
         return;
     }
 
