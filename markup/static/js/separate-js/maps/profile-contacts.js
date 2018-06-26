@@ -1,5 +1,12 @@
 var profileContactsMap = function() {
     $('.contacts-card__block_map').each(function() {
+
+        if ($(this).hasClass('is-initialized')) {
+            return google.maps.event.trigger($(this)[0], 'resize');
+        }
+
+        $(this).addClass('is-initialized');
+
         var map = new google.maps.Map($(this)[0], {
             zoom: 13,
             center: {lat: 40.76163, lng: -73.97486600000002},

@@ -5,6 +5,12 @@ window.userProfileMap = function(element) {
         return;
     }
 
+    if (el.classList.contains('is-initialized')) {
+        return google.maps.event.trigger($(this)[0], 'resize');
+    }
+
+    el.classList.add('is-initialized');
+
     var map = new google.maps.Map(el, {
         zoom: 13,
         center: {lat: 40.76163, lng: -73.97486600000002},
