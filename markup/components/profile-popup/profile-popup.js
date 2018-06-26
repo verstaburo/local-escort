@@ -126,9 +126,9 @@ export default function profilePopup() {
         $(this).find('.profile-popup__button_next').css('margin-right', getScrollbarWidth());
     });
 
-    $(document).on('beforehide', '#profile-popup', function () {
-        $('.js-profile-popup-wr').scrollTop(0);
-    });
+    // $(document).on('beforehide', '#profile-popup', function () {
+    //     $('.js-profile-popup-wr').scrollTop(0);
+    // });
 
     $(document).on('aftershow', '#profile-popup', function () {
         // slider.update();
