@@ -25,7 +25,7 @@ export function freeze() {
     html.style.right = 0;
     html.style.bottom = 0;
     html.style.left = 0;
-    html.style.overflowY = 'scroll';
+    html.style.overflowY = 'hidden';
 }
 
 // Unfreeze page content scrolling
