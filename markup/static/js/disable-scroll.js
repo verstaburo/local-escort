@@ -12,7 +12,20 @@ export function freeze() {
 
     //     h.css({ width: '100%', height: '100%', position: 'fixed', top: -top });
     // }
-    $('body').addClass('disabled-scroll');
+    const html = document.querySelector('html');
+    const { position } = getComputedStyle(html);
+    const scrollTop = html.scrollTop || document.body.scrollTop;
+
+    if (position === 'fixed') {
+      return;
+    }
+
+    html.style.position = 'fixed';
+    html.style.top = `-${scrollTop}px`;
+    html.style.right = 0;
+    html.style.bottom = 0;
+    html.style.left = 0;
+    html.style.overflowY = 'scroll';
 }
 
 // Unfreeze page content scrolling
@@ -25,5 +38,19 @@ export function unfreeze() {
     //     $('html, body').scrollTop(-parseInt(h.css('top'), 10));
     //     h.css({ position: '', width: '', height: '', top: '', 'overflow-y': '' });
     // }
-    $('body').removeClass('disabled-scroll');
+    const html = document.querySelector('html');
+    const { position, top } = getComputedStyle(html);
+    const scrollTop = Math.abs(parseInt(top, 10));
+
+    if (position !== 'fixed') {
+      return;
+    }
+
+    html.style.position = '';
+    html.style.top = '';
+    html.style.right = '';
+    html.style.bottom = '';
+    html.style.left = '';
+    html.style.overflowY = '';
+    html.scrollTop = scrollTop;
 }
