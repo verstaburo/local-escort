@@ -443,8 +443,10 @@
                             .children()
                             .last()
                             .attr('id', 'group-' + item);
+                    });
 
-                        modelPreviewInit(model); // init effects slider, etc.
+                    $('.model-preview').each(function () {
+                        window.modelPreviewInit($(this));
                     });
                 }
             });
